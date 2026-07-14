@@ -34,6 +34,15 @@ COUNTRY_COORDS = {
     "Ethiopia": (9.1450, 40.4897),
     "Syria": (34.8021, 38.9968),
     "Cyprus": (35.1264, 33.4299),
+    "Indonesia": (-0.7893, 113.9213),
+    "Ghana": (7.9465, -1.0232),
+    "Côte d'Ivoire": (7.5400, -5.5471),
+    "Papua New Guinea": (-6.3149, 143.9555),
+    "Benin": (9.3077, 2.3158),
+    "Mali": (17.5707, -3.9962),
+    "Cameroon": (7.3697, 12.3547),
+    "Bolivia": (-16.2902, -63.5887),
+    "Ecuador": (-1.8312, -78.1834),
 }
 
 # Regiones egipcias / históricas (más específico que país, aparece seguido en
@@ -48,6 +57,14 @@ REGION_COORDS = {
     "Levant": (33.5000, 36.0000),
     "Anatolia": (39.0000, 35.0000),
     "Northern Syria or eastern Anatolia": (37.0000, 39.0000),
+    "Syria": (34.8021, 38.9968),
+    "Iran": (32.4279, 53.6880),
+    "Iran, Luristan": (33.5000, 47.5000),
+    "Bactria-Margiana or eastern Iran": (36.0000, 62.0000),
+    "Iberian Peninsula": (40.0000, -4.0000),
+    "Mesopotamia or Iran": (33.5000, 45.5000),
+    "Mesoamerica": (19.0000, -99.0000),
+    "central Côte d'Ivoire": (7.5400, -5.5471),
 }
 
 # Sitios / subregiones puntuales (lo más preciso que da la API del Met)
@@ -61,6 +78,15 @@ SUBREGION_COORDS = {
     "Abydos": (26.1833, 31.9192),
     "Elkab": (25.1167, 32.8000),
     "Hurbeit (Pharbaethos)": (30.6500, 31.6500),
+    "Nippur": (32.1300, 45.2400),
+    "Ur (modern Tell al-Muqayyar)": (30.9626, 46.1039),
+    "Nimrud (ancient Kalhu)": (36.0994, 43.3250),
+    "Tell Taya": (36.4000, 42.0000),
+    "probably from Kültepe (Karum Kanesh)": (38.8500, 35.6200),
+    "probably from Acemhöyük": (38.1900, 34.1700),
+    "said to be from Ziwiye": (36.0500, 47.3000),
+    "Kamterlan II": (33.5000, 47.5000),
+    "Shahr-i Qumis (ancient Hecatompylos)": (35.9500, 54.3800),
 }
 
 
