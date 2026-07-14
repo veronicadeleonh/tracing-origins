@@ -20,25 +20,35 @@ Departamentos priorizados por relevancia colonial/arqueológica:
 ## Estructura
 
 ```
-src/            scripts de descarga y procesamiento
-data/raw/       JSON crudo bajado de la API del Met (no versionado)
-data/processed/ datasets limpios, listos para geocodificar / mapear
+src/
+ ├── fetch_met.py       descarga objetos de la API del Met
+ ├── geocode.py         tabla de coordenadas + resolución de origen
+ ├── build_dataset.py   arma el CSV limpio
+ └── make_map.py        genera el mapa
+
+data/
+ ├── raw/
+ │    └── met_objects_raw.json   snapshot crudo congelado (versionado en git)
+ │
+ ├── processed/
+ │    └── met_objects.csv        dataset limpio, geocodificado
+ │
+ └── enrichment/
+      └── provenance.csv         piezas con proveniencia disputada (a poblar)
 ```
 
-## Uso
-
-```bash
-pip install -r requirements.txt
-python src/fetch_met.py --department 10 --limit 50
-```
+`met_objects_raw.json` es el dataset crudo congelado: `fetch_met.py` lo lee y
+lo mergea (no pisa lo que ya está), así que correrlo de nuevo solo agrega
+objetos nuevos. Los `*_pilot.json` viejos por departamento quedaron
+superados por este archivo único.
 
 ## Uso — pipeline completo
 
 ```bash
 pip install -r requirements.txt
-python src/fetch_met.py --department 10   # baja objetos a data/raw/
-python src/build_dataset.py                # geocodifica -> data/processed/objects.csv
-python src/make_map.py                     # genera maps/map_pilot.html
+python src/fetch_met.py --department 10    # baja objetos y mergea en data/raw/met_objects_raw.json
+python src/build_dataset.py                 # geocodifica -> data/processed/met_objects.csv
+python src/make_map.py                      # genera maps/map_pilot.html
 ```
 
 ## Estado
@@ -48,6 +58,7 @@ python src/make_map.py                     # genera maps/map_pilot.html
 - [x] Muestreo de calidad de campos geográficos
 - [x] Geocodificación (tabla propia de coordenadas, sin Nominatim en bulk)
 - [x] Mapa piloto (168 objetos de los 6 departamentos prioritarios completos: Egyptian Art, Arts of Africa/Oceania/Americas, Ancient West Asian Art, Asian Art, Islamic Art, Greek and Roman Art — 161 geocodificados, `maps/map_pilot.html`)
+- [x] Reorganización del modelo de datos: raw congelado en `met_objects_raw.json`, processed en `met_objects.csv`, stub de `enrichment/provenance.csv` para proveniencia disputada
 - [ ] Bajar los departamentos completos (no solo la muestra piloto) y ampliar la tabla de coordenadas a medida que aparecen nuevos países/regiones
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
 

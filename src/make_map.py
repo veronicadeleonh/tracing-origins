@@ -1,6 +1,6 @@
 """
 Genera un mapa interactivo (Leaflet, via folium) con una línea desde el Met
-hasta el lugar de origen de cada pieza geocodificada en data/processed/objects.csv.
+hasta el lugar de origen de cada pieza geocodificada en data/processed/met_objects.csv.
 
 Cada punto de origen agrupa las piezas que salieron de ahí; al hacer click se
 abre una ficha por pieza con nombre, imagen (si hay), cultura/período, medio,
@@ -17,7 +17,7 @@ from pathlib import Path
 
 import folium
 
-CSV_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "objects.csv"
+CSV_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "met_objects.csv"
 OUT_PATH = Path(__file__).resolve().parent.parent / "maps" / "map_pilot.html"
 
 MET_COLOR = "#b23a48"

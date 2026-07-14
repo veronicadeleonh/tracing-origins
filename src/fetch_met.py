@@ -8,7 +8,10 @@ Uso:
     python src/fetch_met.py --department 10 --limit 50
     python src/fetch_met.py --department 5 --limit 0   # 0 = todos
 
-Guarda un JSON por objeto en data/raw/<objectID>.json
+Todo se guarda mergeado en un único archivo: data/raw/met_objects_raw.json
+(lista de objetos, sin duplicados por objectID). Si el objeto ya está en el
+archivo no se vuelve a pedir, así que correr el script de nuevo solo baja lo
+que falta.
 """
 
 import argparse
@@ -20,7 +23,8 @@ import requests
 from tqdm import tqdm
 
 API_BASE = "https://collectionapi.metmuseum.org/public/collection/v1"
-RAW_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
+RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "met_objects_raw.json"
+CHECKPOINT_EVERY = 250  # guarda a disco cada N objetos nuevos, por si se corta a mitad de camino
 
 # Departamentos con mayor relevancia para proveniencia colonial/arqueológica.
 DEPARTMENTS = {
@@ -45,26 +49,45 @@ def get_object(object_id: int) -> dict:
     return resp.json()
 
 
+def load_existing() -> dict[int, dict]:
+    if not RAW_PATH.exists():
+        return {}
+    data = json.loads(RAW_PATH.read_text())
+    return {obj["objectID"]: obj for obj in data}
+
+
+def save(objects_by_id: dict[int, dict]) -> None:
+    RAW_PATH.parent.mkdir(parents=True, exist_ok=True)
+    ordered = [objects_by_id[k] for k in sorted(objects_by_id)]
+    RAW_PATH.write_text(json.dumps(ordered, ensure_ascii=False, indent=2))
+
+
 def fetch_department(department_id: int, limit: int = 0, delay: float = 0.05) -> None:
-    RAW_DIR.mkdir(parents=True, exist_ok=True)
     ids = get_object_ids(department_id)
     if limit:
         ids = ids[:limit]
 
     dept_name = DEPARTMENTS.get(department_id, str(department_id))
-    print(f"Departamento {department_id} ({dept_name}): {len(ids)} objetos a bajar")
+    objects_by_id = load_existing()
+    pending = [i for i in ids if i not in objects_by_id]
+    print(f"Departamento {department_id} ({dept_name}): {len(ids)} objetos, {len(pending)} nuevos a bajar")
 
-    for object_id in tqdm(ids):
-        out_path = RAW_DIR / f"{object_id}.json"
-        if out_path.exists():
-            continue
+    new_since_checkpoint = 0
+    for object_id in tqdm(pending):
         try:
             data = get_object(object_id)
         except requests.RequestException as exc:
             print(f"  error en {object_id}: {exc}")
             continue
-        out_path.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+        objects_by_id[object_id] = data
+        new_since_checkpoint += 1
+        if new_since_checkpoint >= CHECKPOINT_EVERY:
+            save(objects_by_id)
+            new_since_checkpoint = 0
         time.sleep(delay)
+
+    save(objects_by_id)
+    print(f"Guardado en {RAW_PATH} ({len(objects_by_id)} objetos totales)")
 
 
 if __name__ == "__main__":

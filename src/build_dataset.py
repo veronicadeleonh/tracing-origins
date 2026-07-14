@@ -1,7 +1,6 @@
 """
-Lee todo lo que haya en data/raw/ (tanto archivos de un objeto como bundles
-tipo lista, ej. el piloto de Egyptian Art) y arma un CSV limpio con el origen
-geocodificado de cada pieza.
+Lee data/raw/met_objects_raw.json (el snapshot crudo congelado) y arma un CSV
+limpio con el origen geocodificado de cada pieza.
 
 Uso:
     python src/build_dataset.py
@@ -13,8 +12,8 @@ from pathlib import Path
 
 from geocode import MET_COORDS, resolve_origin
 
-RAW_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
-OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "objects.csv"
+RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "met_objects_raw.json"
+OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "met_objects.csv"
 
 FIELDS = [
     "objectID", "title", "objectName", "department", "culture", "period", "dynasty",
@@ -25,14 +24,9 @@ FIELDS = [
 
 
 def load_objects() -> list[dict]:
-    objects = []
-    for path in sorted(RAW_DIR.glob("*.json")):
-        raw = json.loads(path.read_text())
-        if isinstance(raw, list):
-            objects.extend(raw)
-        else:
-            objects.append(raw)
-    return objects
+    if not RAW_PATH.exists():
+        raise FileNotFoundError(f"No existe {RAW_PATH} — corré fetch_met.py primero")
+    return json.loads(RAW_PATH.read_text())
 
 
 def build_row(obj: dict) -> dict:

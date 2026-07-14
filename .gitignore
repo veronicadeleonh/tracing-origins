@@ -3,5 +3,6 @@ __pycache__/
 .venv/
 venv/
 data/raw/*.json
+!data/raw/met_objects_raw.json
 !data/raw/.gitkeep
 .DS_Store
