@@ -34,7 +34,11 @@ from pathlib import Path
 
 import folium
 
-JITTER_RADIUS_DEG = 0.6  # separación visual entre líneas que comparten origen, no altera geography.csv
+JITTER_RADIUS_DEG = 0.02  # ~2km — separación visual entre líneas que comparten origen, no altera geography.csv.
+# 0.6 (probado antes) equivale a ~66km: invisible a zoom mundial, pero a zoom
+# de ciudad el punto de arranque jitterado cae fuera de pantalla y la línea
+# se ve "sin punta", cruzando el mapa sin visible origen. Con ~2km el fan se
+# ve al hacer zoom a nivel de cluster sin salirse del punto real.
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 MET_OBJECTS_PATH = DATA_DIR / "processed" / "met_objects.csv"

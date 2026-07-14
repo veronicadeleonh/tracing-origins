@@ -26,11 +26,16 @@ al armar el mapa — ningún script pisa o modifica campos de otra capa.
 
 ```
 src/
- ├── fetch_met.py        descarga objetos de la API del Met
- ├── geocode.py          tabla de coordenadas + resolución de origen
- ├── build_dataset.py    layer 1 → met_objects.csv
- ├── build_geography.py  layer 2 → geography.csv
- └── make_map.py         junta las 3 capas y genera el mapa
+ ├── fetch_met.py         descarga objetos de la API del Met
+ ├── geocode.py           tabla de coordenadas + resolución de origen
+ ├── build_dataset.py     layer 1 → met_objects.csv
+ ├── build_geography.py   layer 2 → geography.csv
+ ├── make_map.py          junta las 3 capas, genera el mapa estático (Folium)
+ └── export_web_data.py   junta las 3 capas, genera web/src/data/objects.json
+
+web/                      app en React + Leaflet (panel lateral, timeline por
+                          pieza) — reemplaza de a poco a make_map.py como
+                          experiencia principal; ver web/README más abajo
 
 data/
  ├── raw/
@@ -85,15 +90,32 @@ investigación. `make_map.py` los lee de forma opcional: si una pieza no tiene
 fila en ninguno de los dos, la ficha se ve igual que siempre, solo con datos
 del Met.
 
-## Uso — pipeline completo
+## Uso — pipeline de datos
 
 ```bash
 pip install -r requirements.txt
 python src/fetch_met.py --department 10    # baja objetos y mergea en data/raw/met_objects_raw.json
 python src/build_dataset.py                 # layer 1 -> data/processed/met_objects.csv
 python src/build_geography.py               # layer 2 -> data/processed/geography.csv
-python src/make_map.py                      # junta las 3 capas -> maps/map_pilot.html
+python src/make_map.py                      # mapa estático (Folium) -> maps/map_pilot.html
+python src/export_web_data.py               # junta las 3 capas -> web/src/data/objects.json
 ```
+
+## Uso — app web (React + Leaflet)
+
+Mapa interactivo con panel lateral (en construcción). Requiere haber corrido
+`export_web_data.py` al menos una vez para tener `web/src/data/objects.json`.
+
+```bash
+cd web
+npm install
+npm run dev      # servidor local con hot reload
+npm run build    # build de producción en web/dist
+```
+
+`objects.json` no se regenera solo — cada vez que cambie algo en `data/processed/`
+o `data/enrichment/`, hay que correr `python src/export_web_data.py` de nuevo
+desde la raíz del repo antes de ver los cambios en la app.
 
 ## Estado
 
@@ -107,6 +129,10 @@ python src/make_map.py                      # junta las 3 capas -> maps/map_pilo
 - [ ] Poblar `provenance_events.csv` / `context.csv` con investigación real (hoy están vacíos, solo headers)
 - [ ] Bajar los departamentos completos (no solo la muestra piloto) y ampliar la tabla de coordenadas a medida que aparecen nuevos países/regiones
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
+- [x] Scaffold de la app en React (`web/`): Vite + React + react-leaflet, mapa base con los 161 puntos y una línea por pieza (jitter determinístico portado de `make_map.py`, ver `web/src/geo.ts`). Sin panel lateral todavía.
+- [ ] Panel lateral: estado cluster (lista de piezas) ↔ estado detalle (timeline de la pieza), con flecha de "volver"
+- [ ] Landing / framing antes del mapa
+- [ ] Estado de "sin investigar" (2 nodos: origen → ahora) en el panel de detalle
 
 ### Nota sobre Asian Art y Greek and Roman Art
 
