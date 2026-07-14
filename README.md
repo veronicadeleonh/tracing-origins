@@ -47,10 +47,13 @@ python src/make_map.py                     # genera maps/map_pilot.html
 - [x] Script de descarga de la API del Met
 - [x] Muestreo de calidad de campos geográficos
 - [x] Geocodificación (tabla propia de coordenadas, sin Nominatim en bulk)
-- [x] Mapa piloto (93 objetos de 3 departamentos: Egyptian Art, Arts of Africa/Oceania/Americas, Ancient West Asian Art — 88 geocodificados, `maps/map_pilot.html`)
+- [x] Mapa piloto (143 objetos de los 6 departamentos prioritarios: Egyptian Art, Arts of Africa/Oceania/Americas, Ancient West Asian Art, Asian Art, Islamic Art — 137 geocodificados, `maps/map_pilot.html`)
 - [ ] Bajar los departamentos completos (no solo la muestra piloto) y ampliar la tabla de coordenadas a medida que aparecen nuevos países/regiones
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
-- [ ] Sumar Asian Art e Islamic Art para cubrir más regiones
+
+### Nota sobre Asian Art
+
+A diferencia de los otros departamentos, Asian Art casi nunca completa `country`/`region`/`subregion` — el único dato geográfico confiable es el campo `culture` (texto libre: "China", "India (Tamil Nadu)", "Northeastern Thailand"). `geocode.py` tiene un fallback (`resolve_from_culture`) que busca nombres de país conocidos dentro de ese texto. Es menos preciso que el resto (nivel país, no sitio) y hay que revisarlo si aparecen culturas ambiguas nuevas.
 
 ## Pendiente de decidir (no bloquea el trabajo de datos)
 

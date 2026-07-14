@@ -34,6 +34,8 @@ COUNTRY_COORDS = {
     "Ethiopia": (9.1450, 40.4897),
     "Syria": (34.8021, 38.9968),
     "Cyprus": (35.1264, 33.4299),
+    "present-day Uzbekistan": (41.3775, 64.5853),
+    "probably Iran": (32.4279, 53.6880),
     "Indonesia": (-0.7893, 113.9213),
     "Ghana": (7.9465, -1.0232),
     "Côte d'Ivoire": (7.5400, -5.5471),
@@ -65,6 +67,7 @@ REGION_COORDS = {
     "Mesopotamia or Iran": (33.5000, 45.5000),
     "Mesoamerica": (19.0000, -99.0000),
     "central Côte d'Ivoire": (7.5400, -5.5471),
+    "Middle East": (30.0000, 40.0000),
 }
 
 # Sitios / subregiones puntuales (lo más preciso que da la API del Met)
@@ -90,6 +93,38 @@ SUBREGION_COORDS = {
 }
 
 
+# Fallback para departamentos donde country/region/subregion vienen casi
+# siempre vacíos y el único dato geográfico real está en el campo `culture`
+# (texto libre, ej. "China", "India (Tamil Nadu)", "Northeastern Thailand").
+# Esto es lo que pasa con Asian Art: NO se puede usar el mismo pipeline que
+# Egyptian Art. Match por substring, en orden (el primero que aparece gana).
+CULTURE_KEYWORDS = [
+    ("China", (35.8617, 104.1954)),
+    ("Japan", (36.2048, 138.2529)),
+    ("Korea", (35.9078, 127.7669)),
+    ("Mongolia", (46.8625, 103.8467)),
+    ("Tibet", (31.6927, 88.0924)),
+    ("Nepal", (28.3949, 84.1240)),
+    ("Sri Lanka", (7.8731, 80.7718)),
+    ("Pakistan", (30.3753, 69.3451)),
+    ("Afghanistan", (33.9391, 67.7100)),
+    ("Myanmar", (21.9162, 95.9560)),
+    ("Burma", (21.9162, 95.9560)),
+    ("Thailand", (15.8700, 100.9925)),
+    ("Cambodia", (12.5657, 104.9910)),
+    ("Vietnam", (14.0583, 108.2772)),
+    ("Indonesia", (-0.7893, 113.9213)),
+    ("India", (20.5937, 78.9629)),
+]
+
+
+def resolve_from_culture(culture: str) -> dict | None:
+    for keyword, (lat, lon) in CULTURE_KEYWORDS:
+        if keyword.lower() in culture.lower():
+            return {"label": culture, "precision": "culture", "lat": lat, "lon": lon}
+    return None
+
+
 def resolve_origin(obj: dict) -> dict:
     """
     Devuelve {"label": str, "precision": str, "lat": float, "lon": float}
@@ -112,5 +147,11 @@ def resolve_origin(obj: dict) -> dict:
         lat, lon = COUNTRY_COORDS[country]
         return {"label": country, "precision": "country", "lat": lat, "lon": lon}
 
-    raw_label = subregion or region or country or ""
+    culture = (obj.get("culture") or "").strip()
+    if culture:
+        from_culture = resolve_from_culture(culture)
+        if from_culture:
+            return from_culture
+
+    raw_label = subregion or region or country or culture or ""
     return {"label": raw_label, "precision": "unresolved", "lat": None, "lon": None}
