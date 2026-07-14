@@ -51,3 +51,8 @@ python src/make_map.py                     # genera maps/map_pilot.html
 - [ ] Bajar los departamentos completos (no solo la muestra piloto) y ampliar la tabla de coordenadas a medida que aparecen nuevos países/regiones
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
 - [ ] Sumar Asian Art e Islamic Art para cubrir más regiones
+
+## Pendiente de decidir (no bloquea el trabajo de datos)
+
+- **Enfoque narrativo**: ¿el mapa va a limitarse a mostrar origen→museo, o vamos a sumar contexto histórico por pieza/cluster (bajo qué régimen o circunstancia salió) y/o marcar visualmente las piezas con proveniencia disputada (saqueo documentado, ej. Bronces de Benín)? Charlado el 14/07, decidimos posponerlo.
+- **Basemap y fronteras políticas**: el tile actual (CartoDB Positron) trae sus propias convenciones de rotulado de países/fronteras (ej. muestra "Israel" sin "Palestina"). Evaluar basemaps más neutros u ocultar el rotulado de países cuando retomemos el enfoque narrativo — es relevante porque el proyecto trata justamente de visibilizar colonización, y las fronteras políticas modernas no son neutras para muchas de las regiones que vamos a mapear (Cisjordania, Kurdistán, Sahara Occidental, etc.).
