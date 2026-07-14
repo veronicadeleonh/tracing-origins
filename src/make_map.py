@@ -1,6 +1,9 @@
 """
-Genera un mapa interactivo (Leaflet, via folium) con una línea desde el Met
-hasta el lugar de origen de cada pieza.
+Genera un mapa interactivo (Leaflet, via folium) con una línea por pieza,
+desde el Met hasta su lugar de origen. Cuando varias piezas comparten origen,
+sus líneas se reparten con un jitter visual determinístico (ver
+jittered_point) para que cada una siga siendo distinguible — el punto
+geográfico real (geography.csv) no se toca, el jitter es solo de dibujo.
 
 Este es el único script que junta las 3 capas del modelo de datos:
   - data/processed/met_objects.csv   (layer 1: metadata del Met, sin tocar)
@@ -25,10 +28,13 @@ Uso:
 
 import csv
 import html
+import math
 from collections import defaultdict
 from pathlib import Path
 
 import folium
+
+JITTER_RADIUS_DEG = 0.6  # separación visual entre líneas que comparten origen, no altera geography.csv
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 MET_OBJECTS_PATH = DATA_DIR / "processed" / "met_objects.csv"
@@ -78,6 +84,21 @@ def load_events() -> dict[str, list[dict]]:
     for object_id, events in events_by_object.items():
         events.sort(key=lambda e: int(e.get("event_order") or 0))
     return events_by_object
+
+
+def jittered_point(lat: float, lon: float, index: int, count: int) -> tuple[float, float]:
+    """Offset puramente visual: reparte `count` líneas que comparten el mismo
+    origen en un círculo chico y determinístico alrededor del punto real
+    (mismo objeto -> mismo offset siempre, no depende de orden de carga).
+    No toca origin_lat/origin_lon en geography.csv, solo el punto de arranque
+    de la línea dibujada."""
+    if count <= 1:
+        return lat, lon
+    angle = 2 * math.pi * index / count
+    dlat = JITTER_RADIUS_DEG * math.sin(angle)
+    lon_scale = math.cos(math.radians(lat)) or 1.0
+    dlon = (JITTER_RADIUS_DEG * math.cos(angle)) / lon_scale
+    return lat + dlat, lon + dlon
 
 
 def esc(value: str | None) -> str:
@@ -198,13 +219,22 @@ def main() -> None:
         grouped[key].append(r)
 
     for (lat, lon, label), items in grouped.items():
-        weight = min(1 + len(items) * 0.6, 8)
-        folium.PolyLine(
-            locations=[[met_lat, met_lon], [lat, lon]],
-            color=LINE_COLOR,
-            weight=weight,
-            opacity=0.7,
-        ).add_to(m)
+        items_sorted = sorted(items, key=lambda r: int(r["objectID"]))
+        count = len(items_sorted)
+
+        # Una línea por objeto (no una línea gruesa por cluster). El origen de
+        # cada línea se reparte con jitter determinístico alrededor del punto
+        # real; el destino (el Met) queda exacto para todas — así los puntos
+        # de origen se ven como lo que son, distintos lugares, y convergen en
+        # el mismo museo.
+        for i, item in enumerate(items_sorted):
+            j_lat, j_lon = jittered_point(lat, lon, i, count)
+            folium.PolyLine(
+                locations=[[j_lat, j_lon], [met_lat, met_lon]],
+                color=LINE_COLOR,
+                weight=1.4,
+                opacity=0.55,
+            ).add_to(m)
 
         folium.CircleMarker(
             location=[lat, lon],
