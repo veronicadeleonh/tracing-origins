@@ -17,7 +17,7 @@ RAW_DIR = Path(__file__).resolve().parent.parent / "data" / "raw"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "objects.csv"
 
 FIELDS = [
-    "objectID", "title", "objectName", "department", "period", "dynasty",
+    "objectID", "title", "objectName", "department", "culture", "period", "dynasty",
     "objectDate", "medium", "creditLine", "accessionYear", "excavation",
     "geographyType", "origin_label", "origin_precision", "origin_lat", "origin_lon",
     "met_lat", "met_lon", "primaryImage", "objectURL", "objectWikidata_URL",
@@ -43,6 +43,7 @@ def build_row(obj: dict) -> dict:
         "title": obj.get("title"),
         "objectName": obj.get("objectName"),
         "department": obj.get("department"),
+        "culture": obj.get("culture"),
         "period": obj.get("period"),
         "dynasty": obj.get("dynasty"),
         "objectDate": obj.get("objectDate"),

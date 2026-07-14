@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_4c84f24b930f09cf539a0feaa3cb3e1e {
+                #map_ebb6a30ab828acc363121ea02c2f7a1f {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -54,14 +54,14 @@
 <body>
     
     
-            <div class="folium-map" id="map_4c84f24b930f09cf539a0feaa3cb3e1e" ></div>
+            <div class="folium-map" id="map_ebb6a30ab828acc363121ea02c2f7a1f" ></div>
         
 </body>
 <script>
     
     
-            var map_4c84f24b930f09cf539a0feaa3cb3e1e = L.map(
-                "map_4c84f24b930f09cf539a0feaa3cb3e1e",
+            var map_ebb6a30ab828acc363121ea02c2f7a1f = L.map(
+                "map_ebb6a30ab828acc363121ea02c2f7a1f",
                 {
                     center: [20.0, 10.0],
                     crs: L.CRS.EPSG3857,
@@ -78,7 +78,7 @@
 
         
     
-            var tile_layer_92e311cf330c9c14f3470c173e4c46af = L.tileLayer(
+            var tile_layer_322c5a83f9db9dcafd13e4577ba88e28 = L.tileLayer(
                 "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                 {
   "minZoom": 0,
@@ -95,1103 +95,1483 @@
             );
         
     
-            tile_layer_92e311cf330c9c14f3470c173e4c46af.addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            tile_layer_322c5a83f9db9dcafd13e4577ba88e28.addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_addd2656f07d1a129c4be8c6c899c3c5 = L.circleMarker(
+            var circle_marker_1d1c1f03e57d86f3bd817eeb3ec651bb = L.circleMarker(
                 [40.7794, -73.9632],
                 {"bubblingMouseEvents": true, "color": "#b23a48", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b23a48", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_075bcfb2ea78165d966baa2cbeb9c70e = L.popup({
-  "maxWidth": "100%",
+        var popup_56c315590e68094b4522e48274dd1922 = L.popup({
+  "maxWidth": 250,
 });
 
         
             
-                var html_9e5077170b6bd0f9c8ab421826207301 = $(`<div id="html_9e5077170b6bd0f9c8ab421826207301" style="width: 100.0%; height: 100.0%;">The Metropolitan Museum of Art (Nueva York)</div>`)[0];
-                popup_075bcfb2ea78165d966baa2cbeb9c70e.setContent(html_9e5077170b6bd0f9c8ab421826207301);
+                var html_3c4d8630b22075d2475dec8202f36dc2 = $(`<div id="html_3c4d8630b22075d2475dec8202f36dc2" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;"><b>The Metropolitan Museum of Art</b><br>Nueva York, Estados Unidos</div></div>`)[0];
+                popup_56c315590e68094b4522e48274dd1922.setContent(html_3c4d8630b22075d2475dec8202f36dc2);
             
         
 
-        circle_marker_addd2656f07d1a129c4be8c6c899c3c5.bindPopup(popup_075bcfb2ea78165d966baa2cbeb9c70e)
+        circle_marker_1d1c1f03e57d86f3bd817eeb3ec651bb.bindPopup(popup_56c315590e68094b4522e48274dd1922)
         ;
 
         
     
     
-            var poly_line_d8a1899051b3975cae21841d1dce3cdc = L.polyline(
+            circle_marker_1d1c1f03e57d86f3bd817eeb3ec651bb.bindTooltip(
+                `<div>
+                     The Metropolitan Museum of Art (Nueva York)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_37ec3c89c78ac971fff992ce695518e1 = L.polyline(
                 [[40.7794, -73.9632], [15.784, -90.231]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.2}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_08f9c309f2a0572337d6f8e25a864ec3 = L.circleMarker(
+            var circle_marker_e908003dd861ffc79617ff3de6d04537 = L.circleMarker(
                 [15.784, -90.231],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_c59d47b8400f6eb792e740bc04ebc86a = L.popup({
+        var popup_620791ff85b6f00ccfa3df10304ea8fc = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_f5dd3c6aaf837b54446a13ac310d42fe = $(`<div id="html_f5dd3c6aaf837b54446a13ac310d42fe" style="width: 100.0%; height: 100.0%;"><b>Guatemala</b> — 2 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/89985' target='_blank'>Headscarf</a> (20th century)<br><a href='https://www.metmuseum.org/art/collection/search/123386' target='_blank'>Shirt</a> (1800–1939)<br></div>`)[0];
-                popup_c59d47b8400f6eb792e740bc04ebc86a.setContent(html_f5dd3c6aaf837b54446a13ac310d42fe);
+                var html_8d9e0b9915f66c30342e69ea2d99c475 = $(`<div id="html_8d9e0b9915f66c30342e69ea2d99c475" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Guatemala — 2 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/89985" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Headscarf</a><br>         <span style="font-size:11px;color:#555;">Guatemalan · 20th century</span><br>         <span style="font-size:11px;color:#777;">cotton</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Dr. and Mrs. Emile Gordon Stoloff, 1951</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/123386" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Shirt</a><br>         <span style="font-size:11px;color:#555;">Guatemala · 1800–1939</span><br>         <span style="font-size:11px;color:#777;">cotton</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Miss Alice de La Mar, 1939</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_620791ff85b6f00ccfa3df10304ea8fc.setContent(html_8d9e0b9915f66c30342e69ea2d99c475);
             
         
 
-        circle_marker_08f9c309f2a0572337d6f8e25a864ec3.bindPopup(popup_c59d47b8400f6eb792e740bc04ebc86a)
+        circle_marker_e908003dd861ffc79617ff3de6d04537.bindPopup(popup_620791ff85b6f00ccfa3df10304ea8fc)
         ;
 
         
     
     
-            var poly_line_6c796bdee133df2c40d96e83b5e94d4d = L.polyline(
+            circle_marker_e908003dd861ffc79617ff3de6d04537.bindTooltip(
+                `<div>
+                     Guatemala — 2 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ae3e24583173658357d39d4dfdc3d10c = L.polyline(
                 [[40.7794, -73.9632], [-9.19, -75.015]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.2}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_ef1c84487133068a88074add72e1d3ff = L.circleMarker(
+            var circle_marker_6e59066a35c1b464c0338e809850aebd = L.circleMarker(
                 [-9.19, -75.015],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_1e68e1d9be280555da435946e5c05815 = L.popup({
+        var popup_6ceb32784a4e9090af40bc0c6e6d5909 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_22b2efc5cfee154b6fc6c921cae53da7 = $(`<div id="html_22b2efc5cfee154b6fc6c921cae53da7" style="width: 100.0%; height: 100.0%;"><b>Peru</b> — 7 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/90277' target='_blank'>Brooch</a> (first quarter 20th century)<br><a href='https://www.metmuseum.org/art/collection/search/309028' target='_blank'>Hammered Copper Half Dome</a> (8th–mid-16th century)<br><a href='https://www.metmuseum.org/art/collection/search/309032' target='_blank'>Hammered Silver Miniature Crown</a> (11th–mid-16th century)<br><a href='https://www.metmuseum.org/art/collection/search/309036' target='_blank'>Hammered Silver Miniature Crown</a> (11th–mid-16th century)<br><a href='https://www.metmuseum.org/art/collection/search/309040' target='_blank'>Hammered Silver Miniature Crown</a> (11th–mid-16th century)<br><a href='https://www.metmuseum.org/art/collection/search/316716' target='_blank'>Whistle</a> (1200–500 BCE)<br><a href='https://www.metmuseum.org/art/collection/search/316720' target='_blank'>Stirrup Spout Bottle: Frog</a> (2nd–5th century)<br></div>`)[0];
-                popup_1e68e1d9be280555da435946e5c05815.setContent(html_22b2efc5cfee154b6fc6c921cae53da7);
+                var html_9c32875d446166fdf05fcc9aafbd3e97 = $(`<div id="html_9c32875d446166fdf05fcc9aafbd3e97" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Peru — 7 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/90277" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Brooch</a><br>         <span style="font-size:11px;color:#555;">Peruvian · first quarter 20th century</span><br>         <span style="font-size:11px;color:#777;">metal, glass</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Hilary Knight, in memory of Katharine Sturges Knight, 1984</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/vs64_228_517.JPG" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/309028" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Hammered Copper Half Dome</a><br>         <span style="font-size:11px;color:#555;">Peru; north coast (?) · 8th–mid-16th century</span><br>         <span style="font-size:11px;color:#777;">Copper (hammered), gilt</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mr. and Mrs. Nathan Cummings, 1964</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/vs64_228_521.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/309032" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Hammered Silver Miniature Crown</a><br>         <span style="font-size:11px;color:#555;">Peru; north or central coast (?) · 11th–mid-16th century</span><br>         <span style="font-size:11px;color:#777;">Silver (hammered), gilt</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mr. and Mrs. Nathan Cummings, 1964</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/vs64_228_525.JPG" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/309036" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Hammered Silver Miniature Crown</a><br>         <span style="font-size:11px;color:#555;">Peru; north or central coast (?) · 11th–mid-16th century</span><br>         <span style="font-size:11px;color:#777;">Silver (hammered), gilt</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mr. and Mrs. Nathan Cummings, 1964</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/vs64_228_527_9.JPG" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/309040" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Hammered Silver Miniature Crown</a><br>         <span style="font-size:11px;color:#555;">Peru; north or central coast (?) · 11th–mid-16th century</span><br>         <span style="font-size:11px;color:#777;">Silver (hammered), gilt</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mr. and Mrs. Nathan Cummings, 1964</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/DP-24270-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/316716" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Whistle</a><br>         <span style="font-size:11px;color:#555;">Cupisnique · 1200–500 BCE</span><br>         <span style="font-size:11px;color:#777;">Ceramic</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Conny and Fred Landmann, 1992</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/316720" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Stirrup Spout Bottle: Frog</a><br>         <span style="font-size:11px;color:#555;">Moche · 2nd–5th century</span><br>         <span style="font-size:11px;color:#777;">Ceramic</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Conny and Fred Landmann, 1992</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_6ceb32784a4e9090af40bc0c6e6d5909.setContent(html_9c32875d446166fdf05fcc9aafbd3e97);
             
         
 
-        circle_marker_ef1c84487133068a88074add72e1d3ff.bindPopup(popup_1e68e1d9be280555da435946e5c05815)
+        circle_marker_6e59066a35c1b464c0338e809850aebd.bindPopup(popup_6ceb32784a4e9090af40bc0c6e6d5909)
         ;
 
         
     
     
-            var poly_line_5d7d35235df2f68a80656839793b910a = L.polyline(
+            circle_marker_6e59066a35c1b464c0338e809850aebd.bindTooltip(
+                `<div>
+                     Peru — 7 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b6f8cc5cb02088e812418f6a0fed3813 = L.polyline(
                 [[40.7794, -73.9632], [-4.038, 21.759]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_d170c0216ba5a588551a241472037adb = L.circleMarker(
+            var circle_marker_d2aab20b2b445b991c5468c10fbd640a = L.circleMarker(
                 [-4.038, 21.759],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_eb823a97546f4a21e9c581e8ad93420c = L.popup({
+        var popup_aed6b4810c86b2a7e177de8565994db5 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_90ac602b849508a97846d05bc8e74d12 = $(`<div id="html_90ac602b849508a97846d05bc8e74d12" style="width: 100.0%; height: 100.0%;"><b>Democratic Republic of the Congo</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/96404' target='_blank'>Woman's Embroidered Wrapper (Ntshakokot)</a> (early 20th century)<br></div>`)[0];
-                popup_eb823a97546f4a21e9c581e8ad93420c.setContent(html_90ac602b849508a97846d05bc8e74d12);
+                var html_0da1d5101edf3eb97c315ed4ef593067 = $(`<div id="html_0da1d5101edf3eb97c315ed4ef593067" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Democratic Republic of the Congo — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/96404" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Woman&#x27;s Embroidered Wrapper (Ntshakokot)</a><br>         <span style="font-size:11px;color:#555;">Kuba peoples · early 20th century</span><br>         <span style="font-size:11px;color:#777;">Raffia, reed</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Various Donors by Exchange, 1991</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_aed6b4810c86b2a7e177de8565994db5.setContent(html_0da1d5101edf3eb97c315ed4ef593067);
             
         
 
-        circle_marker_d170c0216ba5a588551a241472037adb.bindPopup(popup_eb823a97546f4a21e9c581e8ad93420c)
+        circle_marker_d2aab20b2b445b991c5468c10fbd640a.bindPopup(popup_aed6b4810c86b2a7e177de8565994db5)
         ;
 
         
     
     
-            var poly_line_a8ee8980671e5174d8a62a974a2d666e = L.polyline(
+            circle_marker_d2aab20b2b445b991c5468c10fbd640a.bindTooltip(
+                `<div>
+                     Democratic Republic of the Congo — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4a33a37a97fde9cc1fca7f9584afb8b6 = L.polyline(
                 [[40.7794, -73.9632], [39.828, -98.579]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_4e952f0454e513e274ba479f33ca4136 = L.circleMarker(
+            var circle_marker_353342321202d36234816483d29d5cea = L.circleMarker(
                 [39.828, -98.579],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_063aea375e72418039f8f78e4afdf389 = L.popup({
+        var popup_841ab956541dc6c8394228a6e98b1a41 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_48cfa2ada810e250b20497b1714d4c79 = $(`<div id="html_48cfa2ada810e250b20497b1714d4c79" style="width: 100.0%; height: 100.0%;"><b>United States</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/105510' target='_blank'>Shoes</a> (1830–40)<br></div>`)[0];
-                popup_063aea375e72418039f8f78e4afdf389.setContent(html_48cfa2ada810e250b20497b1714d4c79);
+                var html_a64dfc8a4fbdd3887ae38bae7ba81bc6 = $(`<div id="html_a64dfc8a4fbdd3887ae38bae7ba81bc6" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">United States — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/CI37.1.3ab_F.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/105510" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Shoes</a><br>         <span style="font-size:11px;color:#555;">Huron · 1830–40</span><br>         <span style="font-size:11px;color:#777;">Wool, silk, moosehair</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mrs. Harry R. Radin, 1937</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_841ab956541dc6c8394228a6e98b1a41.setContent(html_a64dfc8a4fbdd3887ae38bae7ba81bc6);
             
         
 
-        circle_marker_4e952f0454e513e274ba479f33ca4136.bindPopup(popup_063aea375e72418039f8f78e4afdf389)
+        circle_marker_353342321202d36234816483d29d5cea.bindPopup(popup_841ab956541dc6c8394228a6e98b1a41)
         ;
 
         
     
     
-            var poly_line_21592ae2a7d63782a02354e747bf681f = L.polyline(
+            circle_marker_353342321202d36234816483d29d5cea.bindTooltip(
+                `<div>
+                     United States — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ab83bf3581501bf9c7d272452f71599d = L.polyline(
                 [[40.7794, -73.9632], [4.571, -74.297]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.8}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_55e2cd793f956e074b198e99fc676d62 = L.circleMarker(
+            var circle_marker_89c7c887f13f247bfe4c0639b5ff1c1e = L.circleMarker(
                 [4.571, -74.297],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_8772e7fe53ebb343af5ecb9b8232538b = L.popup({
+        var popup_bab298f5e6d6aaf0181a3dd5cce6d6fb = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_2fae32b404d78fe95e0eab240b312a34 = $(`<div id="html_2fae32b404d78fe95e0eab240b312a34" style="width: 100.0%; height: 100.0%;"><b>Colombia</b> — 3 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/307438' target='_blank'>Nose ornament</a> (13th–16th century)<br><a href='https://www.metmuseum.org/art/collection/search/316724' target='_blank'>Serpent (tunjo)</a> (10th–16th century)<br><a href='https://www.metmuseum.org/art/collection/search/316728' target='_blank'>Bird Pendant</a> (10th–16th century)<br></div>`)[0];
-                popup_8772e7fe53ebb343af5ecb9b8232538b.setContent(html_2fae32b404d78fe95e0eab240b312a34);
+                var html_2e9e1121d45a8cf8957a2a71e006066d = $(`<div id="html_2e9e1121d45a8cf8957a2a71e006066d" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Colombia — 3 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/307438" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Nose ornament</a><br>         <span style="font-size:11px;color:#555;">Colombia · 13th–16th century</span><br>         <span style="font-size:11px;color:#777;">Gold</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Museum Purchase, 1891</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/DP-32945-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/316724" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Serpent (tunjo)</a><br>         <span style="font-size:11px;color:#555;">Muisca · 10th–16th century</span><br>         <span style="font-size:11px;color:#777;">Gold</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Jan Mitchell and Sons Collection, Gift of Jan Mitchell, 1992</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/DT6877.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/316728" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Bird Pendant</a><br>         <span style="font-size:11px;color:#555;">Muisca · 10th–16th century</span><br>         <span style="font-size:11px;color:#777;">Gold (cast)</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Gifts in memory of Alice K. Bache, and Rogers Fund, 1992</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_bab298f5e6d6aaf0181a3dd5cce6d6fb.setContent(html_2e9e1121d45a8cf8957a2a71e006066d);
             
         
 
-        circle_marker_55e2cd793f956e074b198e99fc676d62.bindPopup(popup_8772e7fe53ebb343af5ecb9b8232538b)
+        circle_marker_89c7c887f13f247bfe4c0639b5ff1c1e.bindPopup(popup_bab298f5e6d6aaf0181a3dd5cce6d6fb)
         ;
 
         
     
     
-            var poly_line_3e47a35685ba60e5ef0096dd32eaa575 = L.polyline(
+            circle_marker_89c7c887f13f247bfe4c0639b5ff1c1e.bindTooltip(
+                `<div>
+                     Colombia — 3 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b926f5b1ebe63e57aec131882dd42e66 = L.polyline(
                 [[40.7794, -73.9632], [19.0, -99.0]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_6760bfe310e10bd25aa8638495ff0e18 = L.circleMarker(
+            var circle_marker_f08822f38051f8aee52b0f65cacac2d6 = L.circleMarker(
                 [19.0, -99.0],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_321236cf24e41fcc337fc43c8224ce87 = L.popup({
+        var popup_eb9d50e61c9e78e207f2e3fef6fab3a3 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_18aa13f99e4c20b886891d84281d0142 = $(`<div id="html_18aa13f99e4c20b886891d84281d0142" style="width: 100.0%; height: 100.0%;"><b>Mesoamerica</b> — 4 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/307726' target='_blank'>Spindle Whorl</a> (10th–early 16th century)<br><a href='https://www.metmuseum.org/art/collection/search/307730' target='_blank'>Necklace of stone beads</a> (10th–early 16th century)<br><a href='https://www.metmuseum.org/art/collection/search/307734' target='_blank'>Disk</a> (600–900 CE)<br><a href='https://www.metmuseum.org/art/collection/search/307738' target='_blank'>Mold for Female Figure</a> (10th–13th century)<br></div>`)[0];
-                popup_321236cf24e41fcc337fc43c8224ce87.setContent(html_18aa13f99e4c20b886891d84281d0142);
+                var html_da221baee20e88fbb7bc1d80d3ce4250 = $(`<div id="html_da221baee20e88fbb7bc1d80d3ce4250" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Mesoamerica — 4 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/00.5.927.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/307726" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Spindle Whorl</a><br>         <span style="font-size:11px;color:#555;">Mexican · 10th–early 16th century</span><br>         <span style="font-size:11px;color:#777;">Ceramic</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Museum Purchase, 1900</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/vs00_5_955.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/307730" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Necklace of stone beads</a><br>         <span style="font-size:11px;color:#555;">Guerrero · 10th–early 16th century</span><br>         <span style="font-size:11px;color:#777;">Stone</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Museum Purchase, 1900</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/DT11605.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/307734" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Disk</a><br>         <span style="font-size:11px;color:#555;">Classic Veracruz · 600–900 CE</span><br>         <span style="font-size:11px;color:#777;">Slate, cinnabar</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Museum Purchase, 1900</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/ao/original/00.5.1148_b.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/307738" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Mold for Female Figure</a><br>         <span style="font-size:11px;color:#555;">Toltec (?) · 10th–13th century</span><br>         <span style="font-size:11px;color:#777;">Ceramic</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Museum Purchase, 1900</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_eb9d50e61c9e78e207f2e3fef6fab3a3.setContent(html_da221baee20e88fbb7bc1d80d3ce4250);
             
         
 
-        circle_marker_6760bfe310e10bd25aa8638495ff0e18.bindPopup(popup_321236cf24e41fcc337fc43c8224ce87)
+        circle_marker_f08822f38051f8aee52b0f65cacac2d6.bindPopup(popup_eb9d50e61c9e78e207f2e3fef6fab3a3)
         ;
 
         
     
     
-            var poly_line_f0010481567160e18d515eab62748b42 = L.polyline(
+            circle_marker_f08822f38051f8aee52b0f65cacac2d6.bindTooltip(
+                `<div>
+                     Mesoamerica — 4 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_87debabb34e0c87df6b11e667618e6a2 = L.polyline(
                 [[40.7794, -73.9632], [-0.789, 113.921]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_bc180122ab62b1767e158dd9b7083c0a = L.circleMarker(
+            var circle_marker_8064f8f8219e809e75400fef95f202af = L.circleMarker(
                 [-0.789, 113.921],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_27adfd0f9b1ff032076568c81554efc8 = L.popup({
+        var popup_66e7220ebda8ba56136dca49bc6c315c = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_2f332f9811566068e257c51486251c80 = $(`<div id="html_2f332f9811566068e257c51486251c80" style="width: 100.0%; height: 100.0%;"><b>Indonesia</b> — 4 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/311551' target='_blank'>Spear</a> (mid-20th century)<br><a href='https://www.metmuseum.org/art/collection/search/311555' target='_blank'>Spear</a> (mid-20th century)<br><a href='https://www.metmuseum.org/art/collection/search/311559' target='_blank'>Spear</a> (mid-20th century)<br><a href='https://www.metmuseum.org/art/collection/search/311563' target='_blank'>Canoe Prow</a> (mid-20th century)<br></div>`)[0];
-                popup_27adfd0f9b1ff032076568c81554efc8.setContent(html_2f332f9811566068e257c51486251c80);
+                var html_5a1cc11c4fca24974334a2d0c74dfa57 = $(`<div id="html_5a1cc11c4fca24974334a2d0c74dfa57" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Indonesia — 4 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/311551" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Spear</a><br>         <span style="font-size:11px;color:#555;">Asmat people · mid-20th century</span><br>         <span style="font-size:11px;color:#777;">Wood, cassowary claw, fiber, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">The Michael C. Rockefeller Memorial Collection; Gift of Nelson A. Rockefeller and Mrs. Mary C. Rockefeller, 1965</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/311555" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Spear</a><br>         <span style="font-size:11px;color:#555;">Asmat people · mid-20th century</span><br>         <span style="font-size:11px;color:#777;">Wood, fiber, bamboo</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">The Michael C. Rockefeller Memorial Collection; Gift of Nelson A. Rockefeller and Mrs. Mary C. Rockefeller, 1965</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/311559" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Spear</a><br>         <span style="font-size:11px;color:#555;">Asmat people · mid-20th century</span><br>         <span style="font-size:11px;color:#777;">Wood</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">The Michael C. Rockefeller Memorial Collection; Gift of Nelson A. Rockefeller and Mrs. Mary C. Rockefeller, 1965</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/311563" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Canoe Prow</a><br>         <span style="font-size:11px;color:#555;">Asmat people · mid-20th century</span><br>         <span style="font-size:11px;color:#777;">Wood, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">The Michael C. Rockefeller Memorial Collection; Gift of Nelson A. Rockefeller and Mrs. Mary C. Rockefeller, 1965</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_66e7220ebda8ba56136dca49bc6c315c.setContent(html_5a1cc11c4fca24974334a2d0c74dfa57);
             
         
 
-        circle_marker_bc180122ab62b1767e158dd9b7083c0a.bindPopup(popup_27adfd0f9b1ff032076568c81554efc8)
+        circle_marker_8064f8f8219e809e75400fef95f202af.bindPopup(popup_66e7220ebda8ba56136dca49bc6c315c)
         ;
 
         
     
     
-            var poly_line_055eca2752f4f1268482e42679376788 = L.polyline(
+            circle_marker_8064f8f8219e809e75400fef95f202af.bindTooltip(
+                `<div>
+                     Indonesia — 4 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ba54def300947d2e7c1e8c20a84169f7 = L.polyline(
                 [[40.7794, -73.9632], [9.082, 8.675]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_e1498ac015bf05f8653fd6c06b2f8117 = L.circleMarker(
+            var circle_marker_a972dad37ea44a410c98df45825544db = L.circleMarker(
                 [9.082, 8.675],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_5e63da4b4c6bc412d22b448f400332e9 = L.popup({
+        var popup_825a29555b6feb27e1641a0475ec219c = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_e0fb1c27fd0828ed1caa50b48e1e1d19 = $(`<div id="html_e0fb1c27fd0828ed1caa50b48e1e1d19" style="width: 100.0%; height: 100.0%;"><b>Nigeria</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/314262' target='_blank'>Twin Figure: Female (Ibeji)</a> (19th–20th century)<br></div>`)[0];
-                popup_5e63da4b4c6bc412d22b448f400332e9.setContent(html_e0fb1c27fd0828ed1caa50b48e1e1d19);
+                var html_8d251982a23f58fc837ddc2bf718c0f4 = $(`<div id="html_8d251982a23f58fc837ddc2bf718c0f4" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Nigeria — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/314262" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Twin Figure: Female (Ibeji)</a><br>         <span style="font-size:11px;color:#555;">Yoruba peoples · 19th–20th century</span><br>         <span style="font-size:11px;color:#777;">Wood, beads, camwood powder</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Dr. Jeffrey S. Hammer, 1980</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_825a29555b6feb27e1641a0475ec219c.setContent(html_8d251982a23f58fc837ddc2bf718c0f4);
             
         
 
-        circle_marker_e1498ac015bf05f8653fd6c06b2f8117.bindPopup(popup_5e63da4b4c6bc412d22b448f400332e9)
+        circle_marker_a972dad37ea44a410c98df45825544db.bindPopup(popup_825a29555b6feb27e1641a0475ec219c)
         ;
 
         
     
     
-            var poly_line_45cdb234ee3e223a8ed6ee553c94c0fd = L.polyline(
+            circle_marker_a972dad37ea44a410c98df45825544db.bindTooltip(
+                `<div>
+                     Nigeria — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c947880eabd6a061d94a0c79e328795d = L.polyline(
                 [[40.7794, -73.9632], [7.947, -1.023]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_42747957e26e42043296331f70f221cc = L.circleMarker(
+            var circle_marker_9a7bc3bc9fd370b9bf3e85b246944b31 = L.circleMarker(
                 [7.947, -1.023],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_e59fcd01db5fd5c3e73bb70d52cd1e67 = L.popup({
+        var popup_a30fea1964c473022b4e1a65efe2c43c = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_a96ea4b1a4b993ad31bd22bb659f3529 = $(`<div id="html_a96ea4b1a4b993ad31bd22bb659f3529" style="width: 100.0%; height: 100.0%;"><b>Ghana</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/314266' target='_blank'>Heddle Pulley: Female Figure</a> (19th–20th century)<br></div>`)[0];
-                popup_e59fcd01db5fd5c3e73bb70d52cd1e67.setContent(html_a96ea4b1a4b993ad31bd22bb659f3529);
+                var html_4419a648e8cda6b9dbd0218bc5c1dc14 = $(`<div id="html_4419a648e8cda6b9dbd0218bc5c1dc14" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Ghana — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/314266" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Heddle Pulley: Female Figure</a><br>         <span style="font-size:11px;color:#555;">Asante · 19th–20th century</span><br>         <span style="font-size:11px;color:#777;">Wood</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mr. and Mrs. Robert S. Gilliam Jr., 1980</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_a30fea1964c473022b4e1a65efe2c43c.setContent(html_4419a648e8cda6b9dbd0218bc5c1dc14);
             
         
 
-        circle_marker_42747957e26e42043296331f70f221cc.bindPopup(popup_e59fcd01db5fd5c3e73bb70d52cd1e67)
+        circle_marker_9a7bc3bc9fd370b9bf3e85b246944b31.bindPopup(popup_a30fea1964c473022b4e1a65efe2c43c)
         ;
 
         
     
     
-            var poly_line_3fd46a7b5cf7b29680f29315a29cd194 = L.polyline(
+            circle_marker_9a7bc3bc9fd370b9bf3e85b246944b31.bindTooltip(
+                `<div>
+                     Ghana — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a1b679e4e56a0cac53eaf5173652b68a = L.polyline(
                 [[40.7794, -73.9632], [7.54, -5.547]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.2}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_751fad5d62dc2944d870adc7e9ea82f0 = L.circleMarker(
+            var circle_marker_eb69ebbb0a2199a781213e9d1e5c98fb = L.circleMarker(
                 [7.54, -5.547],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_c205da7637f12be6f7116bc1fe10155b = L.popup({
+        var popup_48468fbb4b2977768a0ce2b613404378 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_1d53ec5137c172271bbe6f33236c49b0 = $(`<div id="html_1d53ec5137c172271bbe6f33236c49b0" style="width: 100.0%; height: 100.0%;"><b>central Côte d'Ivoire</b> — 2 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/314270' target='_blank'>Heddle Pulley with Figure</a> (19th–20th century)<br><a href='https://www.metmuseum.org/art/collection/search/314274' target='_blank'>Heddle Pulley with Figure</a> (19th–mid-20th century)<br></div>`)[0];
-                popup_c205da7637f12be6f7116bc1fe10155b.setContent(html_1d53ec5137c172271bbe6f33236c49b0);
+                var html_8bf92c2745d4c472591267e79b413744 = $(`<div id="html_8bf92c2745d4c472591267e79b413744" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">central Côte d&#x27;Ivoire — 2 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/314270" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Heddle Pulley with Figure</a><br>         <span style="font-size:11px;color:#555;">Baule peoples · 19th–20th century</span><br>         <span style="font-size:11px;color:#777;">Wood</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mr. and Mrs. Robert S. Gilliam Jr., 1980</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/314274" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Heddle Pulley with Figure</a><br>         <span style="font-size:11px;color:#555;">Baule peoples · 19th–mid-20th century</span><br>         <span style="font-size:11px;color:#777;">Wood, iron</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mr. and Mrs. Robert S. Gilliam Jr., 1980</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_48468fbb4b2977768a0ce2b613404378.setContent(html_8bf92c2745d4c472591267e79b413744);
             
         
 
-        circle_marker_751fad5d62dc2944d870adc7e9ea82f0.bindPopup(popup_c205da7637f12be6f7116bc1fe10155b)
+        circle_marker_eb69ebbb0a2199a781213e9d1e5c98fb.bindPopup(popup_48468fbb4b2977768a0ce2b613404378)
         ;
 
         
     
     
-            var poly_line_f8076f57176c0f3122c8f71a384639dd = L.polyline(
+            circle_marker_eb69ebbb0a2199a781213e9d1e5c98fb.bindTooltip(
+                `<div>
+                     central Côte d'Ivoire — 2 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_59cc5b2318b77919c9d82baad4f3d9b9 = L.polyline(
                 [[40.7794, -73.9632], [37.0, 39.0]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_65825aab876a45b33897968c9746d8a9 = L.circleMarker(
+            var circle_marker_10c4835da1ae9804114d2523cea674f3 = L.circleMarker(
                 [37.0, 39.0],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_9f9da8a027990f7056a97bd5459b4ab4 = L.popup({
+        var popup_cfd50bf2b5d697b856e7bad882de90e2 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_15e30aae5fde28d91664bcf9843495ef = $(`<div id="html_15e30aae5fde28d91664bcf9843495ef" style="width: 100.0%; height: 100.0%;"><b>Northern Syria or eastern Anatolia</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/321470' target='_blank'>Stamp seal (scaraboid) with monster</a> (late 8th–7th century BCE)<br></div>`)[0];
-                popup_9f9da8a027990f7056a97bd5459b4ab4.setContent(html_15e30aae5fde28d91664bcf9843495ef);
+                var html_f6d0ca8500a1981f8de4c4a2fa3a62d3 = $(`<div id="html_f6d0ca8500a1981f8de4c4a2fa3a62d3" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Northern Syria or eastern Anatolia — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/ss74_51_4390gp.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/321470" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Stamp seal (scaraboid) with monster</a><br>         <span style="font-size:11px;color:#555;">Assyrian · Neo-Assyrian · late 8th–7th century BCE</span><br>         <span style="font-size:11px;color:#777;">Mottled black and brown Limestone</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">The Cesnola Collection, Purchased by subscription, 1874–76</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_cfd50bf2b5d697b856e7bad882de90e2.setContent(html_f6d0ca8500a1981f8de4c4a2fa3a62d3);
             
         
 
-        circle_marker_65825aab876a45b33897968c9746d8a9.bindPopup(popup_9f9da8a027990f7056a97bd5459b4ab4)
+        circle_marker_10c4835da1ae9804114d2523cea674f3.bindPopup(popup_cfd50bf2b5d697b856e7bad882de90e2)
         ;
 
         
     
     
-            var poly_line_f2674ec4d0803c2dfc070a0397cd2408 = L.polyline(
+            circle_marker_10c4835da1ae9804114d2523cea674f3.bindTooltip(
+                `<div>
+                     Northern Syria or eastern Anatolia — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c8315b7035a9f16f92329fcc7cf00899 = L.polyline(
                 [[40.7794, -73.9632], [33.0, 44.0]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_a4866415f4a9d71b5873756c2b11e013 = L.circleMarker(
+            var circle_marker_e6eed8502ee6a0719b24768cdd2d866a = L.circleMarker(
                 [33.0, 44.0],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_bc3f2b4400a3984c002a1364d6b030a7 = L.popup({
+        var popup_6336a036d77ed296999b482d71499fb4 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_7dc9336fbe2e8e7895d15c130825dcf2 = $(`<div id="html_7dc9336fbe2e8e7895d15c130825dcf2" style="width: 100.0%; height: 100.0%;"><b>Mesopotamia</b> — 4 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/322066' target='_blank'>Cuneiform tablet: fragment of the witness list of a contract (?)</a> (ca. 7th–4th century BCE)<br><a href='https://www.metmuseum.org/art/collection/search/322624' target='_blank'>Relief: procession of captives</a> (ca. 704–681 BCE)<br><a href='https://www.metmuseum.org/art/collection/search/324116' target='_blank'>Female head with elaborate hairstyle</a> (ca. 2600–2500 BCE)<br><a href='https://www.metmuseum.org/art/collection/search/329067' target='_blank'>Foundation figure of Ur-Namma holding a basket</a> (ca. 2112–2095 BCE)<br></div>`)[0];
-                popup_bc3f2b4400a3984c002a1364d6b030a7.setContent(html_7dc9336fbe2e8e7895d15c130825dcf2);
+                var html_86635504ef9a2169011d4eb621efcf13 = $(`<div id="html_86635504ef9a2169011d4eb621efcf13" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Mesopotamia — 4 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/vs86.11.508.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/322066" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Cuneiform tablet: fragment of the witness list of a contract (?)</a><br>         <span style="font-size:11px;color:#555;">Babylonian or Achaemenid · Neo-Babylonian or Achaemenid · ca. 7th–4th century BCE</span><br>         <span style="font-size:11px;color:#777;">Clay</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, 1886</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-13006-007.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/322624" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Relief: procession of captives</a><br>         <span style="font-size:11px;color:#555;">Assyrian · Neo-Assyrian · ca. 704–681 BCE</span><br>         <span style="font-size:11px;color:#777;">Gypsum alabaster</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of John D. Rockefeller Jr., 1932</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-32540-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/324116" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Female head with elaborate hairstyle</a><br>         <span style="font-size:11px;color:#555;">Early Dynastic IIIa · ca. 2600–2500 BCE</span><br>         <span style="font-size:11px;color:#777;">Gypsum alabaster</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund and Gifts of Lucy W. Drexel, Theodore M. Davis, Helen Miller Gould, Albert Gallatin, Egypt Exploration Fund and Egyptian Research Account, by exchange, 1950</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP375097.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/329067" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Foundation figure of Ur-Namma holding a basket</a><br>         <span style="font-size:11px;color:#555;">Neo-Sumerian · Ur III · ca. 2112–2095 BCE</span><br>         <span style="font-size:11px;color:#777;">Copper alloy</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mrs. William H. Moore, 1947</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_6336a036d77ed296999b482d71499fb4.setContent(html_86635504ef9a2169011d4eb621efcf13);
             
         
 
-        circle_marker_a4866415f4a9d71b5873756c2b11e013.bindPopup(popup_bc3f2b4400a3984c002a1364d6b030a7)
+        circle_marker_e6eed8502ee6a0719b24768cdd2d866a.bindPopup(popup_6336a036d77ed296999b482d71499fb4)
         ;
 
         
     
     
-            var poly_line_6a76adbeb594b167d3d567f8a52b49e5 = L.polyline(
+            circle_marker_e6eed8502ee6a0719b24768cdd2d866a.bindTooltip(
+                `<div>
+                     Mesopotamia — 4 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_45860276d7554889fb3c16da9284b4d4 = L.polyline(
                 [[40.7794, -73.9632], [33.5, 36.0]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_c19beb2b7d8b6c6f3ebcd7401ebf5b6f = L.circleMarker(
+            var circle_marker_d20fb3185b52b2e8b744395d8768c277 = L.circleMarker(
                 [33.5, 36.0],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_51d5554cae52a9bbf6a235e3c05f4f26 = L.popup({
+        var popup_198ee9c63ce1ee21bb0cf971fcb8d116 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_4355d755d03b0a0630bc03407fd1b3c7 = $(`<div id="html_4355d755d03b0a0630bc03407fd1b3c7" style="width: 100.0%; height: 100.0%;"><b>Levant</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/323174' target='_blank'>Lamp</a> (ca. late 8th–7th century BCE)<br></div>`)[0];
-                popup_51d5554cae52a9bbf6a235e3c05f4f26.setContent(html_4355d755d03b0a0630bc03407fd1b3c7);
+                var html_6f2b3e5d5781006b95fbc5fe9517115f = $(`<div id="html_6f2b3e5d5781006b95fbc5fe9517115f" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Levant — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/me34_126_64.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/323174" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Lamp</a><br>         <span style="font-size:11px;color:#555;">Israelite · Iron Age II · ca. late 8th–7th century BCE</span><br>         <span style="font-size:11px;color:#777;">Ceramic</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Harris D. and H. Dunscombe Colt, 1934</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_198ee9c63ce1ee21bb0cf971fcb8d116.setContent(html_6f2b3e5d5781006b95fbc5fe9517115f);
             
         
 
-        circle_marker_c19beb2b7d8b6c6f3ebcd7401ebf5b6f.bindPopup(popup_51d5554cae52a9bbf6a235e3c05f4f26)
+        circle_marker_d20fb3185b52b2e8b744395d8768c277.bindPopup(popup_198ee9c63ce1ee21bb0cf971fcb8d116)
         ;
 
         
     
     
-            var poly_line_7b218c196a9b346937643dd1e921d506 = L.polyline(
+            circle_marker_d20fb3185b52b2e8b744395d8768c277.bindTooltip(
+                `<div>
+                     Levant — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_cc3098fa06ffab7f6cb80574ac8f313f = L.polyline(
                 [[40.7794, -73.9632], [38.19, 34.17]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_d3b4c83deefe70e931322186fd6a9f81 = L.circleMarker(
+            var circle_marker_ee683cec6c53e9b148ddcf62b227a4e0 = L.circleMarker(
                 [38.19, 34.17],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_25fd3c31039ed5f41bc4db547c9b67c1 = L.popup({
+        var popup_c673d25b41584372cab7301a8b2be4e0 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_e3de58b96f11db52ddea265991a97c2e = $(`<div id="html_e3de58b96f11db52ddea265991a97c2e" style="width: 100.0%; height: 100.0%;"><b>probably from Acemhöyük</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/323610' target='_blank'>Plaque fragment</a> (ca. 18th century BCE)<br></div>`)[0];
-                popup_25fd3c31039ed5f41bc4db547c9b67c1.setContent(html_e3de58b96f11db52ddea265991a97c2e);
+                var html_b0b01613a60f2d8fe9794aa1622205b9 = $(`<div id="html_b0b01613a60f2d8fe9794aa1622205b9" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">probably from Acemhöyük — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP110518.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/323610" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Plaque fragment</a><br>         <span style="font-size:11px;color:#555;">Old Assyrian Trading Colony · Middle Bronze Age–Old Assyrian Trading Colony · ca. 18th century BCE</span><br>         <span style="font-size:11px;color:#777;">Ivory</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mrs. George D. Pratt, in memory of George D. Pratt, 1937</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_c673d25b41584372cab7301a8b2be4e0.setContent(html_b0b01613a60f2d8fe9794aa1622205b9);
             
         
 
-        circle_marker_d3b4c83deefe70e931322186fd6a9f81.bindPopup(popup_25fd3c31039ed5f41bc4db547c9b67c1)
+        circle_marker_ee683cec6c53e9b148ddcf62b227a4e0.bindPopup(popup_c673d25b41584372cab7301a8b2be4e0)
         ;
 
         
     
     
-            var poly_line_03b4035329103c185b8492891a1d2377 = L.polyline(
+            circle_marker_ee683cec6c53e9b148ddcf62b227a4e0.bindTooltip(
+                `<div>
+                     probably from Acemhöyük — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5ab23ff9ff713ff2afe3e8bf7d5c5d29 = L.polyline(
                 [[40.7794, -73.9632], [32.13, 45.24]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_7adb692cc24dc02e449b61f399d3bda3 = L.circleMarker(
+            var circle_marker_ac2224cd9f38787a9c9afb8ba4db5e40 = L.circleMarker(
                 [32.13, 45.24],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_a60f6eba7942d20957891a5b3480d599 = L.popup({
+        var popup_542f417ada4818791f335750fe246e04 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_10bccb5d7d4cf67f466eacc9997496a3 = $(`<div id="html_10bccb5d7d4cf67f466eacc9997496a3" style="width: 100.0%; height: 100.0%;"><b>Nippur</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/325417' target='_blank'>Jar</a> (ca. 2600–2500 BCE)<br></div>`)[0];
-                popup_a60f6eba7942d20957891a5b3480d599.setContent(html_10bccb5d7d4cf67f466eacc9997496a3);
+                var html_09bea1a94f99070ec84bfa4acb9c934e = $(`<div id="html_09bea1a94f99070ec84bfa4acb9c934e" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Nippur — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-15117-010.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/325417" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Jar</a><br>         <span style="font-size:11px;color:#555;">Sumerian · Early Dynastic IIIa · ca. 2600–2500 BCE</span><br>         <span style="font-size:11px;color:#777;">Gypsum alabaster</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1962</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_542f417ada4818791f335750fe246e04.setContent(html_09bea1a94f99070ec84bfa4acb9c934e);
             
         
 
-        circle_marker_7adb692cc24dc02e449b61f399d3bda3.bindPopup(popup_a60f6eba7942d20957891a5b3480d599)
+        circle_marker_ac2224cd9f38787a9c9afb8ba4db5e40.bindPopup(popup_542f417ada4818791f335750fe246e04)
         ;
 
         
     
     
-            var poly_line_9c6ad911e1035d544b019deba761c9bd = L.polyline(
+            circle_marker_ac2224cd9f38787a9c9afb8ba4db5e40.bindTooltip(
+                `<div>
+                     Nippur — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d6723cc8cbce6dc26cb9b2771097772e = L.polyline(
                 [[40.7794, -73.9632], [36.4, 42.0]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_7ee6e48b09f60393701066f8886ee5e9 = L.circleMarker(
+            var circle_marker_06e08fb3f9c6983b15e144c7b252dc91 = L.circleMarker(
                 [36.4, 42.0],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_a1cfb40457a4703999c060e101721542 = L.popup({
+        var popup_273534e39dfb067751eb3a8646d31f93 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_b22621fe65c6efb58df18ddb39bd4fa9 = $(`<div id="html_b22621fe65c6efb58df18ddb39bd4fa9" style="width: 100.0%; height: 100.0%;"><b>Tell Taya</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/326082' target='_blank'>Ornament</a> (ca. late 3rd millennium BCE)<br></div>`)[0];
-                popup_a1cfb40457a4703999c060e101721542.setContent(html_b22621fe65c6efb58df18ddb39bd4fa9);
+                var html_8f019c9f448ed9586f65ee84eb17566b = $(`<div id="html_8f019c9f448ed9586f65ee84eb17566b" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Tell Taya — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-40342-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/326082" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Ornament</a><br>         <span style="font-size:11px;color:#555;">Early Bronze Age · ca. late 3rd millennium BCE</span><br>         <span style="font-size:11px;color:#777;">Faience</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1972</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_273534e39dfb067751eb3a8646d31f93.setContent(html_8f019c9f448ed9586f65ee84eb17566b);
             
         
 
-        circle_marker_7ee6e48b09f60393701066f8886ee5e9.bindPopup(popup_a1cfb40457a4703999c060e101721542)
+        circle_marker_06e08fb3f9c6983b15e144c7b252dc91.bindPopup(popup_273534e39dfb067751eb3a8646d31f93)
         ;
 
         
     
     
-            var poly_line_32e6e0a985ae43afe41cd44af2bf3277 = L.polyline(
+            circle_marker_06e08fb3f9c6983b15e144c7b252dc91.bindTooltip(
+                `<div>
+                     Tell Taya — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_447264108769dd427dee90e58d78b8eb = L.polyline(
                 [[40.7794, -73.9632], [38.85, 35.62]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_2f08bbd635e7b7fd6e7c43e93f1765b9 = L.circleMarker(
+            var circle_marker_c5a649fd89968bf751d328bf0b54f217 = L.circleMarker(
                 [38.85, 35.62],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_9dc125839a3472bec5ce092f052683a6 = L.popup({
+        var popup_ab07d9daa4ad4dd4ec22c2021d3b1f0e = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_2f1196cc3fafd6f2c3479074902b584b = $(`<div id="html_2f1196cc3fafd6f2c3479074902b584b" style="width: 100.0%; height: 100.0%;"><b>probably from Kültepe (Karum Kanesh)</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/326373' target='_blank'>Cuneiform tablet case impressed with cylinder seal in Anatolian style</a> (ca. 20th–19th century BCE)<br></div>`)[0];
-                popup_9dc125839a3472bec5ce092f052683a6.setContent(html_2f1196cc3fafd6f2c3479074902b584b);
+                var html_52cc809e1ed612ac2e40e1a264277f65 = $(`<div id="html_52cc809e1ed612ac2e40e1a264277f65" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">probably from Kültepe (Karum Kanesh) — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/me 1977_371.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/326373" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Cuneiform tablet case impressed with cylinder seal in Anatolian style</a><br>         <span style="font-size:11px;color:#555;">Old Assyrian Trading Colony · Middle Bronze Age–Old Assyrian Trading Colony · ca. 20th–19th century BCE</span><br>         <span style="font-size:11px;color:#777;">Clay</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Mrs. Peter Oliver Gift, 1977</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_ab07d9daa4ad4dd4ec22c2021d3b1f0e.setContent(html_52cc809e1ed612ac2e40e1a264277f65);
             
         
 
-        circle_marker_2f08bbd635e7b7fd6e7c43e93f1765b9.bindPopup(popup_9dc125839a3472bec5ce092f052683a6)
+        circle_marker_c5a649fd89968bf751d328bf0b54f217.bindPopup(popup_ab07d9daa4ad4dd4ec22c2021d3b1f0e)
         ;
 
         
     
     
-            var poly_line_4aa94f0ab8e218580492e9500ea940ec = L.polyline(
+            circle_marker_c5a649fd89968bf751d328bf0b54f217.bindTooltip(
+                `<div>
+                     probably from Kültepe (Karum Kanesh) — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ca30708055c85d21aff81c11fc9b634a = L.polyline(
                 [[40.7794, -73.9632], [34.802, 38.997]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.8}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_f20adcb4e3999804817c14535af30a9a = L.circleMarker(
+            var circle_marker_0e1e45ae22f7471967b1cf20c3f35fd8 = L.circleMarker(
                 [34.802, 38.997],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_710e3418d05455d3e0db140302168c49 = L.popup({
+        var popup_ee1220a20d592c7e35b3fb4652ba003a = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_54ca646258df4a9582c069c3267c2db3 = $(`<div id="html_54ca646258df4a9582c069c3267c2db3" style="width: 100.0%; height: 100.0%;"><b>Syria</b> — 3 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/327079' target='_blank'>Cylinder seal</a> (ca. 18th–17th century BCE)<br><a href='https://www.metmuseum.org/art/collection/search/328095' target='_blank'>Silver drachm</a> (ca. 145–141 BCE)<br><a href='https://www.metmuseum.org/art/collection/search/327754' target='_blank'>Cylinder seal</a> (ca. 1820–1730 BCE)<br></div>`)[0];
-                popup_710e3418d05455d3e0db140302168c49.setContent(html_54ca646258df4a9582c069c3267c2db3);
+                var html_1f41c49de7db6c240190d3cb07cc9729 = $(`<div id="html_1f41c49de7db6c240190d3cb07cc9729" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Syria — 3 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/ss1985_192_10.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/327079" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Cylinder seal</a><br>         <span style="font-size:11px;color:#555;">Syrian · Middle Bronze Age · ca. 18th–17th century BCE</span><br>         <span style="font-size:11px;color:#777;">Hematite, black</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Martin and Sarah Cherkasky, 1985</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-40315-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/328095" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Silver drachm</a><br>         <span style="font-size:11px;color:#555;">Seleucid · Seleucid · ca. 145–141 BCE</span><br>         <span style="font-size:11px;color:#777;">Silver</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Bequest of Charles K. Wilkinson, 1986</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-38142-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/327754" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Cylinder seal</a><br>         <span style="font-size:11px;color:#555;">Old Syrian · ca. 1820–1730 BCE</span><br>         <span style="font-size:11px;color:#777;">Hematite</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Nanette B. Kelekian, in memory of Charles Dikran and Beatrice Kelekian, 1999</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_ee1220a20d592c7e35b3fb4652ba003a.setContent(html_1f41c49de7db6c240190d3cb07cc9729);
             
         
 
-        circle_marker_f20adcb4e3999804817c14535af30a9a.bindPopup(popup_710e3418d05455d3e0db140302168c49)
+        circle_marker_0e1e45ae22f7471967b1cf20c3f35fd8.bindPopup(popup_ee1220a20d592c7e35b3fb4652ba003a)
         ;
 
         
     
     
-            var poly_line_69118f56261154b3b01cfc88d39e439d = L.polyline(
+            circle_marker_0e1e45ae22f7471967b1cf20c3f35fd8.bindTooltip(
+                `<div>
+                     Syria — 3 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_77423e04def45be8bd9c5aa1af86395c = L.polyline(
                 [[40.7794, -73.9632], [40.0, -4.0]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_c5c5876885f80f51e189dd0bd70cca45 = L.circleMarker(
+            var circle_marker_c4c29ac0764e3cdc2a8c3c6b84c5d416 = L.circleMarker(
                 [40.0, -4.0],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_4f7101749b8817a7c9e53bd95bef430a = L.popup({
+        var popup_fdb32931eb1082caa50a2badaef427f8 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_2e6c46c251009dc8f000dd587b624eab = $(`<div id="html_2e6c46c251009dc8f000dd587b624eab" style="width: 100.0%; height: 100.0%;"><b>Iberian Peninsula</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/327547' target='_blank'>Harness or bridle fitting (?) in the form of a mistress of animals and waterbirds</a> (ca. 7th–6th century BCE)<br></div>`)[0];
-                popup_4f7101749b8817a7c9e53bd95bef430a.setContent(html_2e6c46c251009dc8f000dd587b624eab);
+                var html_5dcbf5350dcf0e4f2ca7ec351bf664c2 = $(`<div id="html_5dcbf5350dcf0e4f2ca7ec351bf664c2" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Iberian Peninsula — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-37951-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/327547" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Harness or bridle fitting (?) in the form of a mistress of animals and waterbirds</a><br>         <span style="font-size:11px;color:#555;">Iron Age · ca. 7th–6th century BCE</span><br>         <span style="font-size:11px;color:#777;">Bronze</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Raymond and Beverly Sackler Gift, 1999</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_fdb32931eb1082caa50a2badaef427f8.setContent(html_5dcbf5350dcf0e4f2ca7ec351bf664c2);
             
         
 
-        circle_marker_c5c5876885f80f51e189dd0bd70cca45.bindPopup(popup_4f7101749b8817a7c9e53bd95bef430a)
+        circle_marker_c4c29ac0764e3cdc2a8c3c6b84c5d416.bindPopup(popup_fdb32931eb1082caa50a2badaef427f8)
         ;
 
         
     
     
-            var poly_line_dff140f6273b113e1ea310c76b3a31a4 = L.polyline(
+            circle_marker_c4c29ac0764e3cdc2a8c3c6b84c5d416.bindTooltip(
+                `<div>
+                     Iberian Peninsula — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_06ecf73799e5d869b361410a331f9bd7 = L.polyline(
                 [[40.7794, -73.9632], [36.0, 62.0]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_9cb4a9d7b9327f5ff3034bf9e3f8cd1c = L.circleMarker(
+            var circle_marker_4ee3b942c18814495293566194b24773 = L.circleMarker(
                 [36.0, 62.0],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_4534124277b69efe7d4f6e668df10672 = L.popup({
+        var popup_c10143962486d0778b423a2857349ee5 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_0a0a33614afef8898a6f2cef4074ceea = $(`<div id="html_0a0a33614afef8898a6f2cef4074ceea" style="width: 100.0%; height: 100.0%;"><b>Bactria-Margiana or eastern Iran</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/328593' target='_blank'>Monstrous male figure</a> (ca. late 3rd–early 2nd millennium BCE)<br></div>`)[0];
-                popup_4534124277b69efe7d4f6e668df10672.setContent(html_0a0a33614afef8898a6f2cef4074ceea);
+                var html_f850af516348250feff28a03b4d7407c = $(`<div id="html_f850af516348250feff28a03b4d7407c" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Bactria-Margiana or eastern Iran — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/dp22227.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/328593" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Monstrous male figure</a><br>         <span style="font-size:11px;color:#555;">Bactria-Margiana Archaeological Complex · Bronze Age · ca. late 3rd–early 2nd millennium BCE</span><br>         <span style="font-size:11px;color:#777;">Chlorite, calcite, gold, iron</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, 2009 Benefit Fund, Friends of Inanna Gifts, and Mr. and Mrs. Horiuchi Gift, 2010</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_c10143962486d0778b423a2857349ee5.setContent(html_f850af516348250feff28a03b4d7407c);
             
         
 
-        circle_marker_9cb4a9d7b9327f5ff3034bf9e3f8cd1c.bindPopup(popup_4534124277b69efe7d4f6e668df10672)
+        circle_marker_4ee3b942c18814495293566194b24773.bindPopup(popup_c10143962486d0778b423a2857349ee5)
         ;
 
         
     
     
-            var poly_line_a27a20e68363e244687dd8d29722d2f8 = L.polyline(
+            circle_marker_4ee3b942c18814495293566194b24773.bindTooltip(
+                `<div>
+                     Bactria-Margiana or eastern Iran — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1293cd81d2af97be3c60701d6840b707 = L.polyline(
                 [[40.7794, -73.9632], [30.963, 46.104]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_4c24bac24f7d26c16132550bd2193162 = L.circleMarker(
+            var circle_marker_9ee2a17d7867b780264d2ec84462d754 = L.circleMarker(
                 [30.963, 46.104],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_7b46e6e2747ef8aa7d0fab144fa59b6c = L.popup({
+        var popup_a45ab01f25244ef3001ea5120aae8e8d = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_62497433e89fc3a43af017dee82838df = $(`<div id="html_62497433e89fc3a43af017dee82838df" style="width: 100.0%; height: 100.0%;"><b>Ur (modern Tell al-Muqayyar)</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/322910' target='_blank'>Necklace beads</a> (ca. 2600–2500 BCE)<br></div>`)[0];
-                popup_7b46e6e2747ef8aa7d0fab144fa59b6c.setContent(html_62497433e89fc3a43af017dee82838df);
+                var html_43e4542daa9016373a6dec8f782bca37 = $(`<div id="html_43e4542daa9016373a6dec8f782bca37" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Ur (modern Tell al-Muqayyar) — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-23659-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/322910" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Necklace beads</a><br>         <span style="font-size:11px;color:#555;">Sumerian · Early Dynastic IIIa · ca. 2600–2500 BCE</span><br>         <span style="font-size:11px;color:#777;">Gold, lapis lazuli</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Dodge Fund, 1933</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_a45ab01f25244ef3001ea5120aae8e8d.setContent(html_43e4542daa9016373a6dec8f782bca37);
             
         
 
-        circle_marker_4c24bac24f7d26c16132550bd2193162.bindPopup(popup_7b46e6e2747ef8aa7d0fab144fa59b6c)
+        circle_marker_9ee2a17d7867b780264d2ec84462d754.bindPopup(popup_a45ab01f25244ef3001ea5120aae8e8d)
         ;
 
         
     
     
-            var poly_line_5192a42128ef7dc9e494ed415a8f926e = L.polyline(
+            circle_marker_9ee2a17d7867b780264d2ec84462d754.bindTooltip(
+                `<div>
+                     Ur (modern Tell al-Muqayyar) — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9630f7288d7bcbe60ff5ad1f09b2d6d4 = L.polyline(
                 [[40.7794, -73.9632], [33.5, 47.5]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_37e616eb817c1ce193c7a4c1ea7ff9c3 = L.circleMarker(
+            var circle_marker_b8350916152792d83017423a3c4317b6 = L.circleMarker(
                 [33.5, 47.5],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_fcf5b4a4f3acd5f39589f2114379d1dc = L.popup({
+        var popup_70402f2434b460a1aefd1863c8bf5dfb = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_7d67d694f7c19c9d7080d1dc3551059e = $(`<div id="html_7d67d694f7c19c9d7080d1dc3551059e" style="width: 100.0%; height: 100.0%;"><b>Kamterlan II</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/323950' target='_blank'>Tripod bowl</a> (ca. 2000–1600 BCE)<br></div>`)[0];
-                popup_fcf5b4a4f3acd5f39589f2114379d1dc.setContent(html_7d67d694f7c19c9d7080d1dc3551059e);
+                var html_5e6ad6d818471c5246c9435c97cac1ed = $(`<div id="html_5e6ad6d818471c5246c9435c97cac1ed" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Kamterlan II — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/ME43_89_8.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/323950" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Tripod bowl</a><br>         <span style="font-size:11px;color:#555;">Iran · Middle Bronze Age · ca. 2000–1600 BCE</span><br>         <span style="font-size:11px;color:#777;">Ceramic</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1943</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_70402f2434b460a1aefd1863c8bf5dfb.setContent(html_5e6ad6d818471c5246c9435c97cac1ed);
             
         
 
-        circle_marker_37e616eb817c1ce193c7a4c1ea7ff9c3.bindPopup(popup_fcf5b4a4f3acd5f39589f2114379d1dc)
+        circle_marker_b8350916152792d83017423a3c4317b6.bindPopup(popup_70402f2434b460a1aefd1863c8bf5dfb)
         ;
 
         
     
     
-            var poly_line_22f8504dfd5c084e3a4d497630923949 = L.polyline(
+            circle_marker_b8350916152792d83017423a3c4317b6.bindTooltip(
+                `<div>
+                     Kamterlan II — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f06dc44a5483d1aed15255bc407dce3b = L.polyline(
                 [[40.7794, -73.9632], [36.05, 47.3]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_91c68da439bd42ccd28db5a696c1e492 = L.circleMarker(
+            var circle_marker_256b926157b77d2384ca84c362d03a5e = L.circleMarker(
                 [36.05, 47.3],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_0112f99bcc56f3df640902ada553e359 = L.popup({
+        var popup_2064da1b0131fbe94bf11512128083e7 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_3f950987a29cd14b894a72a9ff5a1acd = $(`<div id="html_3f950987a29cd14b894a72a9ff5a1acd" style="width: 100.0%; height: 100.0%;"><b>said to be from Ziwiye</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/324797' target='_blank'>Section of a band with felines and heads of birds</a> (ca. 7th century BCE)<br></div>`)[0];
-                popup_0112f99bcc56f3df640902ada553e359.setContent(html_3f950987a29cd14b894a72a9ff5a1acd);
+                var html_2752953e25bc415bcb9516340c2fb50a = $(`<div id="html_2752953e25bc415bcb9516340c2fb50a" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">said to be from Ziwiye — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-26515-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/324797" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Section of a band with felines and heads of birds</a><br>         <span style="font-size:11px;color:#555;">Iran · Iron Age, Scythian · ca. 7th century BCE</span><br>         <span style="font-size:11px;color:#777;">Gold, glass paste</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Funds from various donors, 1958</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_2064da1b0131fbe94bf11512128083e7.setContent(html_2752953e25bc415bcb9516340c2fb50a);
             
         
 
-        circle_marker_91c68da439bd42ccd28db5a696c1e492.bindPopup(popup_0112f99bcc56f3df640902ada553e359)
+        circle_marker_256b926157b77d2384ca84c362d03a5e.bindPopup(popup_2064da1b0131fbe94bf11512128083e7)
         ;
 
         
     
     
-            var poly_line_94967bd5f8739e0342e56825b48bb9ae = L.polyline(
+            circle_marker_256b926157b77d2384ca84c362d03a5e.bindTooltip(
+                `<div>
+                     said to be from Ziwiye — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4928efd546d4981ab70bead7f1c10ebd = L.polyline(
                 [[40.7794, -73.9632], [36.099, 43.325]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_3999b52de37ebca8a3cc35c6e2136db8 = L.circleMarker(
+            var circle_marker_78574ed2d506a1189e5ad6836cc9cdd2 = L.circleMarker(
                 [36.099, 43.325],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_17ba77baf3672f2656b36f1651f52575 = L.popup({
+        var popup_c109309be0326cb034d163b7c111e28c = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_59e55770d5e355a936f5cb8b67eb5aff = $(`<div id="html_59e55770d5e355a936f5cb8b67eb5aff" style="width: 100.0%; height: 100.0%;"><b>Nimrud (ancient Kalhu)</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/325572' target='_blank'>Ivory fragment</a> (ca. 9th–7th century BCE)<br></div>`)[0];
-                popup_17ba77baf3672f2656b36f1651f52575.setContent(html_59e55770d5e355a936f5cb8b67eb5aff);
+                var html_395b2f168db5b7ecf3c5dcd83c66c9ec = $(`<div id="html_395b2f168db5b7ecf3c5dcd83c66c9ec" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Nimrud (ancient Kalhu) — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP110697.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/325572" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Ivory fragment</a><br>         <span style="font-size:11px;color:#555;">Assyrian · Neo-Assyrian · ca. 9th–7th century BCE</span><br>         <span style="font-size:11px;color:#777;">Ivory</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1962</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_c109309be0326cb034d163b7c111e28c.setContent(html_395b2f168db5b7ecf3c5dcd83c66c9ec);
             
         
 
-        circle_marker_3999b52de37ebca8a3cc35c6e2136db8.bindPopup(popup_17ba77baf3672f2656b36f1651f52575)
+        circle_marker_78574ed2d506a1189e5ad6836cc9cdd2.bindPopup(popup_c109309be0326cb034d163b7c111e28c)
         ;
 
         
     
     
-            var poly_line_a2b88271f45c7a9d436f9b42d55ac31d = L.polyline(
+            circle_marker_78574ed2d506a1189e5ad6836cc9cdd2.bindTooltip(
+                `<div>
+                     Nimrud (ancient Kalhu) — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9819b65855f2ddd7f9e925b68e52a296 = L.polyline(
                 [[40.7794, -73.9632], [35.95, 54.38]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_a85b703caa0f61c14abf4d0628ac414b = L.circleMarker(
+            var circle_marker_86dec723f701c572feb3e5a1b89b2ade = L.circleMarker(
                 [35.95, 54.38],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_784618f8eb7764bcc1f5a8c702edd744 = L.popup({
+        var popup_54410129d4a07250555273c43f9a2e07 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_c88da356136f93530525dd12f9e8999b = $(`<div id="html_c88da356136f93530525dd12f9e8999b" style="width: 100.0%; height: 100.0%;"><b>Shahr-i Qumis (ancient Hecatompylos)</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/326466' target='_blank'>Bead</a> (ca. 1st century BCE–1st century CE)<br></div>`)[0];
-                popup_784618f8eb7764bcc1f5a8c702edd744.setContent(html_c88da356136f93530525dd12f9e8999b);
+                var html_b479833ae7196d62f4943af183736fbc = $(`<div id="html_b479833ae7196d62f4943af183736fbc" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Shahr-i Qumis (ancient Hecatompylos) — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-40313-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/326466" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Bead</a><br>         <span style="font-size:11px;color:#555;">Parthian · Parthian · ca. 1st century BCE–1st century CE</span><br>         <span style="font-size:11px;color:#777;">Glass</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, H. Dunscombe Colt Gift, 1978</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_54410129d4a07250555273c43f9a2e07.setContent(html_b479833ae7196d62f4943af183736fbc);
             
         
 
-        circle_marker_a85b703caa0f61c14abf4d0628ac414b.bindPopup(popup_784618f8eb7764bcc1f5a8c702edd744)
+        circle_marker_86dec723f701c572feb3e5a1b89b2ade.bindPopup(popup_54410129d4a07250555273c43f9a2e07)
         ;
 
         
     
     
-            var poly_line_cba380f49afe94493602faa1b4bb679c = L.polyline(
+            circle_marker_86dec723f701c572feb3e5a1b89b2ade.bindTooltip(
+                `<div>
+                     Shahr-i Qumis (ancient Hecatompylos) — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3d9f54f21df37f047713a61f4109b3bc = L.polyline(
                 [[40.7794, -73.9632], [33.5, 45.5]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_727bfd56e7c88e82ff9ab6c1190f7b05 = L.circleMarker(
+            var circle_marker_c832c2d1406e47d25e313494dbf89e97 = L.circleMarker(
                 [33.5, 45.5],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_1502306651b177a65507d55f58126303 = L.popup({
+        var popup_ba98a16b338431e14e9968a4e50ce40a = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_9afa49bed3dfeb71bb9dee93b4ff48ae = $(`<div id="html_9afa49bed3dfeb71bb9dee93b4ff48ae" style="width: 100.0%; height: 100.0%;"><b>Mesopotamia or Iran</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/328744' target='_blank'>Earring</a> (ca. 1st–2nd century)<br></div>`)[0];
-                popup_1502306651b177a65507d55f58126303.setContent(html_9afa49bed3dfeb71bb9dee93b4ff48ae);
+                var html_50c0faf264ffdd2ba4c7aa5e753ef56d = $(`<div id="html_50c0faf264ffdd2ba4c7aa5e753ef56d" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Mesopotamia or Iran — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/DP-1115-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/328744" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Earring</a><br>         <span style="font-size:11px;color:#555;">Parthian · Parthian · ca. 1st–2nd century</span><br>         <span style="font-size:11px;color:#777;">Gold</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Museum Accession</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_ba98a16b338431e14e9968a4e50ce40a.setContent(html_50c0faf264ffdd2ba4c7aa5e753ef56d);
             
         
 
-        circle_marker_727bfd56e7c88e82ff9ab6c1190f7b05.bindPopup(popup_1502306651b177a65507d55f58126303)
+        circle_marker_c832c2d1406e47d25e313494dbf89e97.bindPopup(popup_ba98a16b338431e14e9968a4e50ce40a)
         ;
 
         
     
     
-            var poly_line_26c1be642d0480949e1bcbb226bb3543 = L.polyline(
+            circle_marker_c832c2d1406e47d25e313494dbf89e97.bindTooltip(
+                `<div>
+                     Mesopotamia or Iran — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_88de3231fc140b87a9bedcfaeef7068c = L.polyline(
                 [[40.7794, -73.9632], [32.428, 53.688]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_f291d57693f828b0060fa84a796b8bb7 = L.circleMarker(
+            var circle_marker_fd703000a3d55b0048b7b9006e836c59 = L.circleMarker(
                 [32.428, 53.688],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_09a84c3e70ae9f4379fc7c7a3a4d9c4b = L.popup({
+        var popup_0ec2ffd762f9b27d77c8a9d83a891228 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_311726db498d4ffd4811092b730d9e24 = $(`<div id="html_311726db498d4ffd4811092b730d9e24" style="width: 100.0%; height: 100.0%;"><b>Iran</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/781871' target='_blank'>Persian Travelogue: A Diary of a Journey through the region of Fars</a> (1838 CE)<br></div>`)[0];
-                popup_09a84c3e70ae9f4379fc7c7a3a4d9c4b.setContent(html_311726db498d4ffd4811092b730d9e24);
+                var html_00d1f254c1f01f2af993ad8cae38340a = $(`<div id="html_00d1f254c1f01f2af993ad8cae38340a" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Iran — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/an/original/TR_18774E.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/781871" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Persian Travelogue: A Diary of a Journey through the region of Fars</a><br>         <span style="font-size:11px;color:#555;">Qajar · 1838 CE</span><br>         <span style="font-size:11px;color:#777;">Black ink on paper; blue velvet binding with a flap, tight back case binding sewn onto two cotton/hemp cords (laced in), with marbled paper doublures</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Friends of Ancient Near Eastern Art and The Ishtar Society Gifts, 2019</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_0ec2ffd762f9b27d77c8a9d83a891228.setContent(html_00d1f254c1f01f2af993ad8cae38340a);
             
         
 
-        circle_marker_f291d57693f828b0060fa84a796b8bb7.bindPopup(popup_09a84c3e70ae9f4379fc7c7a3a4d9c4b)
+        circle_marker_fd703000a3d55b0048b7b9006e836c59.bindPopup(popup_0ec2ffd762f9b27d77c8a9d83a891228)
         ;
 
         
     
     
-            var poly_line_761c89a723d20713d3e64e6658177792 = L.polyline(
+            circle_marker_fd703000a3d55b0048b7b9006e836c59.bindTooltip(
+                `<div>
+                     Iran — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ae8d410593ace4284f0efc9f7eebe7b7 = L.polyline(
                 [[40.7794, -73.9632], [26.14, 32.67]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_c2684e0ca6ee6489015a24899f65cd7e = L.circleMarker(
+            var circle_marker_b51268b019c101d31a444705c95ec8f7 = L.circleMarker(
                 [26.14, 32.67],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_1dcbe5ea08ce408caaf0978d5ae39095 = L.popup({
+        var popup_f7ba6eba04d2ae4abed4504fbbee34f6 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_46332ff36a44a78d08801e77e689f5d2 = $(`<div id="html_46332ff36a44a78d08801e77e689f5d2" style="width: 100.0%; height: 100.0%;"><b>Dendera area</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543863' target='_blank'>False Door of the Royal Sealer Neferiu</a> (ca. 2150–2010 B.C.)<br></div>`)[0];
-                popup_1dcbe5ea08ce408caaf0978d5ae39095.setContent(html_46332ff36a44a78d08801e77e689f5d2);
+                var html_46e3760bfa46f5fab34a1614b5bd5f99 = $(`<div id="html_46e3760bfa46f5fab34a1614b5bd5f99" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Dendera area — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DP351531.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543863" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">False Door of the Royal Sealer Neferiu</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom–First Intermediate Period · ca. 2150–2010 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of J. Pierpont Morgan, 1912</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_f7ba6eba04d2ae4abed4504fbbee34f6.setContent(html_46e3760bfa46f5fab34a1614b5bd5f99);
             
         
 
-        circle_marker_c2684e0ca6ee6489015a24899f65cd7e.bindPopup(popup_1dcbe5ea08ce408caaf0978d5ae39095)
+        circle_marker_b51268b019c101d31a444705c95ec8f7.bindPopup(popup_f7ba6eba04d2ae4abed4504fbbee34f6)
         ;
 
         
     
     
-            var poly_line_6531474443273364d8e3976bc7055401 = L.polyline(
+            circle_marker_b51268b019c101d31a444705c95ec8f7.bindTooltip(
+                `<div>
+                     Dendera area — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e5829a39faceeefc3410f5e4492a0820 = L.polyline(
                 [[40.7794, -73.9632], [26.821, 30.802]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.8}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_b0bf22a633d09e7e5a7e1c85e47d4385 = L.circleMarker(
+            var circle_marker_3616c1feb79133a13f9735604dde2e53 = L.circleMarker(
                 [26.821, 30.802],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_5393490e172747c1ba9ccae95e4eab31 = L.popup({
+        var popup_3faa27e3b10f524d75f3899c6983a34e = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_b8088c1d2c8993a7ec1a936dcd660db6 = $(`<div id="html_b8088c1d2c8993a7ec1a936dcd660db6" style="width: 100.0%; height: 100.0%;"><b>Egypt</b> — 8 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543866' target='_blank'>Libation Dish Depicting Ka-Arms Presenting an Ankh-Sign</a> (ca. 3100–2900 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543881' target='_blank'>Weight equal to five deben</a> (ca. 2649–2100 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543898' target='_blank'>Vase in the Shape of Mother Monkey with Her Young</a> (ca. 2255–2246 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543908' target='_blank'>Vase in the Shape of a Mother Monkey with Her Offspring</a> (ca. 2289–2255 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543920' target='_blank'>Model of the "Opening of the Mouth" ritual equipment</a> (ca. 2465–2150 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543926' target='_blank'>Wine or beer jar</a> (ca. 2649–2100 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543927' target='_blank'>Jar</a> (ca. 2323–2150 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543928' target='_blank'>Miniature "nw" pot</a> (ca. 2465–2150 B.C.)<br></div>`)[0];
-                popup_5393490e172747c1ba9ccae95e4eab31.setContent(html_b8088c1d2c8993a7ec1a936dcd660db6);
+                var html_0a60d414af7314c329932f5f6533cbe9 = $(`<div id="html_0a60d414af7314c329932f5f6533cbe9" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Egypt — 8 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DP249937.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543866" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Libation Dish Depicting Ka-Arms Presenting an Ankh-Sign</a><br>         <span style="font-size:11px;color:#555;">Early Dynastic Period · ca. 3100–2900 B.C.</span><br>         <span style="font-size:11px;color:#777;">Greywacke</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1919</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT259187.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543881" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Weight equal to five deben</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2649–2100 B.C.</span><br>         <span style="font-size:11px;color:#777;">Yellow jasper or opal</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Edward S. Harkness, 1935</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT8834.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543898" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Vase in the Shape of Mother Monkey with Her Young</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2255–2246 B.C.</span><br>         <span style="font-size:11px;color:#777;">Travertine (Egyptian alabaster), paint, resin and pigment</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Theodore M. Davis Collection, Bequest of Theodore M. Davis, 1915</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT6931.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543908" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Vase in the Shape of a Mother Monkey with Her Offspring</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2289–2255 B.C.</span><br>         <span style="font-size:11px;color:#777;">Travertine (Egyptian alabaster), paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Joseph Pulitzer Bequest, Fletcher Fund, and other gifts, 1992</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DP112576.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543920" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Model of the &quot;Opening of the Mouth&quot; ritual equipment</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2465–2150 B.C.</span><br>         <span style="font-size:11px;color:#777;">Tray: limestone; vessels: Travertine, greywacke</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1907</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543926" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Wine or beer jar</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2649–2100 B.C.</span><br>         <span style="font-size:11px;color:#777;">Travertine (Egyptian alabaster)</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1944</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543927" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Jar</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2150 B.C.</span><br>         <span style="font-size:11px;color:#777;">Travertine (Egyptian alabaster)</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1907</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543928" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Miniature &quot;nw&quot; pot</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2465–2150 B.C.</span><br>         <span style="font-size:11px;color:#777;">Gneiss</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1907</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_3faa27e3b10f524d75f3899c6983a34e.setContent(html_0a60d414af7314c329932f5f6533cbe9);
             
         
 
-        circle_marker_b0bf22a633d09e7e5a7e1c85e47d4385.bindPopup(popup_5393490e172747c1ba9ccae95e4eab31)
+        circle_marker_3616c1feb79133a13f9735604dde2e53.bindPopup(popup_3faa27e3b10f524d75f3899c6983a34e)
         ;
 
         
     
     
-            var poly_line_3e71f48275c59f4e9243ea433b6c298e = L.polyline(
+            circle_marker_3616c1feb79133a13f9735604dde2e53.bindTooltip(
+                `<div>
+                     Egypt — 8 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_196184c42dd715ead800d3b0745bdaf0 = L.polyline(
                 [[40.7794, -73.9632], [29.871, 31.216]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 8}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_56747742782ac96cb42a3fa8f68e67e7 = L.circleMarker(
+            var circle_marker_0a1b816e7b00c0a19cf0d2c5adbf2be2 = L.circleMarker(
                 [29.871, 31.216],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_9d75f696f08899af6866d85d575c0e42 = L.popup({
+        var popup_42fb6399c251c2ea62ab537e54b50a75 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_86daaa8a13b241dbe12a5708442c2456 = $(`<div id="html_86daaa8a13b241dbe12a5708442c2456" style="width: 100.0%; height: 100.0%;"><b>Saqqara</b> — 15 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543870' target='_blank'>Figure of a male beer-maker</a> (ca. 2649–2100 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543875' target='_blank'>Standing statue of Mitry's wife</a> (ca. 2381–2323 B.C. probably)<br><a href='https://www.metmuseum.org/art/collection/search/543900' target='_blank'>Nikare as a scribe</a> (ca. 2420–2389 B.C. or later)<br><a href='https://www.metmuseum.org/art/collection/search/543901' target='_blank'>Nikare with his Wife and Daughter</a> (ca. 2420–2389 B.C. or later)<br><a href='https://www.metmuseum.org/art/collection/search/543904' target='_blank'>Wall tiles from the funerary apartments of king Djoser</a> (ca. 2630–2611 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543906' target='_blank'>Kneeling captive</a> (ca. 2246–2152 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543907' target='_blank'>False door from the tomb of Metjetji</a> (ca. 2353–2323 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543912' target='_blank'>Corner of niche from the tomb of Akhtihotep</a> (ca. 2575–2551 B.C.)<br>... y 7 más</div>`)[0];
-                popup_9d75f696f08899af6866d85d575c0e42.setContent(html_86daaa8a13b241dbe12a5708442c2456);
+                var html_376dc2f6b135697fd2ade5971c610aa1 = $(`<div id="html_376dc2f6b135697fd2ade5971c610aa1" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Saqqara — 15 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/20.2.1.JPG" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543870" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Figure of a male beer-maker</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2649–2100 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1920</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DP-45463-001.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543875" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Standing statue of Mitry&#x27;s wife</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2381–2323 B.C. probably</span><br>         <span style="font-size:11px;color:#777;">Acacia, gesso, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Egyptian Antiquities Service excavations</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DP240451.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543900" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Nikare as a scribe</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2420–2389 B.C. or later</span><br>         <span style="font-size:11px;color:#777;">Granite, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1948</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT242488.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543901" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Nikare with his Wife and Daughter</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2420–2389 B.C. or later</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1952</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT258569.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543904" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Wall tiles from the funerary apartments of king Djoser</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2630–2611 B.C.</span><br>         <span style="font-size:11px;color:#777;">faience</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, by exchange, 1948</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/LC-64_260_EGDP029712.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543906" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Kneeling captive</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2246–2152 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Louis V. Bell Fund, 1964</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543907" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">False door from the tomb of Metjetji</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2353–2323 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint traces</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Gift of Mr. and Mrs. J. J. Klejman, 1964</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543912" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Corner of niche from the tomb of Akhtihotep</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2575–2551 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Funds from Various Donors, and by exchange, 1958</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543914" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">West wall of the chapel of Nikauhor and Sekhemhathor</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2465–2389 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Egyptian Antiquities Service excavations</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543915" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Statue of Tjeteti as a young man</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2200–2152 B.C.</span><br>         <span style="font-size:11px;color:#777;">Wood</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Egyptian Antiquities Service excavations</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543916" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Statue of Tjeteti in middle age</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2200–2152 B.C.</span><br>         <span style="font-size:11px;color:#777;">Wood</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Egyptian Antiquities Service excavations</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543921" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Ewer</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2150 B.C.</span><br>         <span style="font-size:11px;color:#777;">Copper</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Egyptian Antiquities Service excavations, 1920–21</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543922" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Ewer</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2649–2100 B.C.</span><br>         <span style="font-size:11px;color:#777;">Copper</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Egyptian Antiquities Service excavations, 1920–21</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543923" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Basin</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2150 B.C.</span><br>         <span style="font-size:11px;color:#777;">Copper</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Egyptian Antiquities Service excavations, 1920–21</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543924" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Basin</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2150 B.C.</span><br>         <span style="font-size:11px;color:#777;">Copper</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Egyptian Antiquities Service excavations, 1920–21</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_42fb6399c251c2ea62ab537e54b50a75.setContent(html_376dc2f6b135697fd2ade5971c610aa1);
             
         
 
-        circle_marker_56747742782ac96cb42a3fa8f68e67e7.bindPopup(popup_9d75f696f08899af6866d85d575c0e42)
+        circle_marker_0a1b816e7b00c0a19cf0d2c5adbf2be2.bindPopup(popup_42fb6399c251c2ea62ab537e54b50a75)
         ;
 
         
     
     
-            var poly_line_1b601941ae41391606688ea9d84a1da6 = L.polyline(
+            circle_marker_0a1b816e7b00c0a19cf0d2c5adbf2be2.bindTooltip(
+                `<div>
+                     Saqqara — 15 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_bf94dda7c9c8cfe24cd42578ff16f94e = L.polyline(
                 [[40.7794, -73.9632], [29.567, 31.217]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.8}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_b4a0b4be6db5e5eca496779e09bece13 = L.circleMarker(
+            var circle_marker_0499d0ca970c878ce99454558990f85f = L.circleMarker(
                 [29.567, 31.217],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_9e528aa5bad7e343d77654b0ef07fba8 = L.popup({
+        var popup_2b0fd1e02b646e311dfad14da1c07f54 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_a6228f404966ab697a60b67aa19bdbc0 = $(`<div id="html_a6228f404966ab697a60b67aa19bdbc0" style="width: 100.0%; height: 100.0%;"><b>Lisht North</b> — 3 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543890' target='_blank'>Relief fragment with king Khufu's cattle</a> (ca. 2551–2528 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543894' target='_blank'>Relief Fragment with a Ship Under Sail</a> (ca. 2465–2458 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543911' target='_blank'>Offering table</a> (ca. 1981–1640 B.C.)<br></div>`)[0];
-                popup_9e528aa5bad7e343d77654b0ef07fba8.setContent(html_a6228f404966ab697a60b67aa19bdbc0);
+                var html_61710878189fead7f3074f605227554e = $(`<div id="html_61710878189fead7f3074f605227554e" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Lisht North — 3 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT244362.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543890" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Relief fragment with king Khufu&#x27;s cattle</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2551–2528 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">MMA excavations, 1920–22</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT256967.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543894" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Relief Fragment with a Ship Under Sail</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2465–2458 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint traces</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">MMA excavations, 1920–22</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543911" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Offering table</a><br>         <span style="font-size:11px;color:#555;">Middle Kingdom · ca. 1981–1640 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">MMA excavations, 1930–31</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_2b0fd1e02b646e311dfad14da1c07f54.setContent(html_61710878189fead7f3074f605227554e);
             
         
 
-        circle_marker_b4a0b4be6db5e5eca496779e09bece13.bindPopup(popup_9e528aa5bad7e343d77654b0ef07fba8)
+        circle_marker_0499d0ca970c878ce99454558990f85f.bindPopup(popup_2b0fd1e02b646e311dfad14da1c07f54)
         ;
 
         
     
     
-            var poly_line_f2033ec1b9325688184c0fb29fc67714 = L.polyline(
+            circle_marker_0499d0ca970c878ce99454558990f85f.bindTooltip(
+                `<div>
+                     Lisht North — 3 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3f56d8e8dc4524e1652af3b9b84cba76 = L.polyline(
                 [[40.7794, -73.9632], [29.977, 31.131]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.8}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_04929eeca3f4044aa76a43773713cc1c = L.circleMarker(
+            var circle_marker_09bc9842c57ce77857607b9bbf88bf5e = L.circleMarker(
                 [29.977, 31.131],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_522080cf1fd5b1111c1516b530c3b0cd = L.popup({
+        var popup_de98b1cf3c0bb7b40b431ef3acf99049 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_d9bbdb4dd97a96fd676e55bf85ae5553 = $(`<div id="html_d9bbdb4dd97a96fd676e55bf85ae5553" style="width: 100.0%; height: 100.0%;"><b>Giza</b> — 8 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543895' target='_blank'>Archers</a> (ca. 2551–2494 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543896' target='_blank'>Fragmentary Face of King Khafre</a> (ca. 2520–2494 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543899' target='_blank'>The King's Acquaintances Memi and Sabu</a> (ca. 2575–2465 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543905' target='_blank'>Nursing woman</a> (ca. 2420–2389 B.C. or later)<br><a href='https://www.metmuseum.org/art/collection/search/543909' target='_blank'>Reserve head</a> (ca. 2551–2528 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543917' target='_blank'>Mummified leg of beef case</a> (ca. 2323–2255 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543918' target='_blank'>Mummified goose case</a> (ca. 2323–2255 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543919' target='_blank'>Mummified duck case</a> (ca. 2323–2255 B.C.)<br></div>`)[0];
-                popup_522080cf1fd5b1111c1516b530c3b0cd.setContent(html_d9bbdb4dd97a96fd676e55bf85ae5553);
+                var html_9468946f2d9d33ac0fd6292079af5a0f = $(`<div id="html_9468946f2d9d33ac0fd6292079af5a0f" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Giza — 8 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT259178.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543895" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Archers</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2551–2494 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund and Edward S. Harkness Gift, 1922</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT11751.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543896" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Fragmentary Face of King Khafre</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2520–2494 B.C.</span><br>         <span style="font-size:11px;color:#777;">Travertine (Egyptian alabaster)</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Edward S. Harkness Gift, 1926</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT8836.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543899" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">The King&#x27;s Acquaintances Memi and Sabu</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2575–2465 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1948</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT259182.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543905" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Nursing woman</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2420–2389 B.C. or later</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint traces</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Edward S. Harkness Gift, 1926</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/48.156(1).JPG" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543909" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Reserve head</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2551–2528 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Harvard-Boston MFA excavations, 1936</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/37.6.5 AB.JPG" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543917" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Mummified leg of beef case</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2255 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Harvard-Boston MFA excavations, 1912</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543918" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Mummified goose case</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2255 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Harvard-Boston MFA excavations, 1912</span>       </div>     </div>          <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543919" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Mummified duck case</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2255 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Harvard-Boston MFA excavations, 1912</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_de98b1cf3c0bb7b40b431ef3acf99049.setContent(html_9468946f2d9d33ac0fd6292079af5a0f);
             
         
 
-        circle_marker_04929eeca3f4044aa76a43773713cc1c.bindPopup(popup_522080cf1fd5b1111c1516b530c3b0cd)
+        circle_marker_09bc9842c57ce77857607b9bbf88bf5e.bindPopup(popup_de98b1cf3c0bb7b40b431ef3acf99049)
         ;
 
         
     
     
-            var poly_line_f0f7930100458dee2d5ad224d5743e78 = L.polyline(
+            circle_marker_09bc9842c57ce77857607b9bbf88bf5e.bindTooltip(
+                `<div>
+                     Giza — 8 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_cd02ff3e8e71092f30ca4f4e53fdd554 = L.polyline(
                 [[40.7794, -73.9632], [29.848, 31.25]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_29429471e44ac145301ae870a80c9089 = L.circleMarker(
+            var circle_marker_811435959f5692b0d4a2138a01fa06db = L.circleMarker(
                 [29.848, 31.25],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_475eeb06cd14522f74627a2e7722584a = L.popup({
+        var popup_d7626697367e5b966a21e8b4dabc31e9 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_85c06069d8e635ac15abb454001f536f = $(`<div id="html_85c06069d8e635ac15abb454001f536f" style="width: 100.0%; height: 100.0%;"><b>Memphis (Mit Rahina)</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543897' target='_blank'>Sistrum Inscribed with the Names of King Teti</a> (ca. 2323–2291 B.C.)<br></div>`)[0];
-                popup_475eeb06cd14522f74627a2e7722584a.setContent(html_85c06069d8e635ac15abb454001f536f);
+                var html_7c794d972568980200707c1bb7ae4121 = $(`<div id="html_7c794d972568980200707c1bb7ae4121" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Memphis (Mit Rahina) — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT259185.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543897" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Sistrum Inscribed with the Names of King Teti</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2291 B.C.</span><br>         <span style="font-size:11px;color:#777;">Travertine (Egyptian alabaster), pigment, resin</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Purchase, Edward S. Harkness Gift, 1926</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_d7626697367e5b966a21e8b4dabc31e9.setContent(html_7c794d972568980200707c1bb7ae4121);
             
         
 
-        circle_marker_29429471e44ac145301ae870a80c9089.bindPopup(popup_475eeb06cd14522f74627a2e7722584a)
+        circle_marker_811435959f5692b0d4a2138a01fa06db.bindPopup(popup_d7626697367e5b966a21e8b4dabc31e9)
         ;
 
         
     
     
-            var poly_line_761473149c133286277b9c01f96dfb48 = L.polyline(
+            circle_marker_811435959f5692b0d4a2138a01fa06db.bindTooltip(
+                `<div>
+                     Memphis (Mit Rahina) — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d273f403cb61a364a44c338851f3119f = L.polyline(
                 [[40.7794, -73.9632], [29.924, 31.174]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_ca9381ac4745f3e8244756dc70ce99a8 = L.circleMarker(
+            var circle_marker_cb728f75a5de0e1beb33dedd0c215644 = L.circleMarker(
                 [29.924, 31.174],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_b38204eed8a4dc8176f3f8a46621154e = L.popup({
+        var popup_8004f612c796b13309ed9a794b56cd37 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_6b3e6ab72784a77239249a38bece5d52 = $(`<div id="html_6b3e6ab72784a77239249a38bece5d52" style="width: 100.0%; height: 100.0%;"><b>Giza or Saqqara</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543902' target='_blank'>Statue of Demedji and Hennutsen</a> (ca. 2465–2438 B.C.)<br></div>`)[0];
-                popup_b38204eed8a4dc8176f3f8a46621154e.setContent(html_6b3e6ab72784a77239249a38bece5d52);
+                var html_2b226adff03f05d7aeb0f9b27247d802 = $(`<div id="html_2b226adff03f05d7aeb0f9b27247d802" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Giza or Saqqara — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT521.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543902" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Statue of Demedji and Hennutsen</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2465–2438 B.C.</span><br>         <span style="font-size:11px;color:#777;">Limestone, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1951</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_8004f612c796b13309ed9a794b56cd37.setContent(html_2b226adff03f05d7aeb0f9b27247d802);
             
         
 
-        circle_marker_ca9381ac4745f3e8244756dc70ce99a8.bindPopup(popup_b38204eed8a4dc8176f3f8a46621154e)
+        circle_marker_cb728f75a5de0e1beb33dedd0c215644.bindPopup(popup_8004f612c796b13309ed9a794b56cd37)
         ;
 
         
     
     
-            var poly_line_2a9ac6641606934669c3dedef4a90997 = L.polyline(
+            circle_marker_cb728f75a5de0e1beb33dedd0c215644.bindTooltip(
+                `<div>
+                     Giza or Saqqara — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_cec50d9317872619a64cf5f356cca70d = L.polyline(
                 [[40.7794, -73.9632], [25.117, 32.8]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_5e7cd885b1a7d2fedb4a33251718abad = L.circleMarker(
+            var circle_marker_b91c99dbf8a75d03c8be64655cdaf532 = L.circleMarker(
                 [25.117, 32.8],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_c9d79b13b43f2ee8ccd10a2096ac59b5 = L.popup({
+        var popup_8b5a1cd1a9795a7947d5174ffb8891e8 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_7055b91636d62d363b3474d301352b28 = $(`<div id="html_7055b91636d62d363b3474d301352b28" style="width: 100.0%; height: 100.0%;"><b>Elkab</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543903' target='_blank'>Striding Figure</a> (ca. 2575–2465 B.C.)<br></div>`)[0];
-                popup_c9d79b13b43f2ee8ccd10a2096ac59b5.setContent(html_7055b91636d62d363b3474d301352b28);
+                var html_2579c03accd0996569f216f92032ba9a = $(`<div id="html_2579c03accd0996569f216f92032ba9a" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Elkab — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/DT206639.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543903" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Striding Figure</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2575–2465 B.C.</span><br>         <span style="font-size:11px;color:#777;">Quartzite, paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Harris Brisbane Dick Fund, 1962</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_8b5a1cd1a9795a7947d5174ffb8891e8.setContent(html_2579c03accd0996569f216f92032ba9a);
             
         
 
-        circle_marker_5e7cd885b1a7d2fedb4a33251718abad.bindPopup(popup_c9d79b13b43f2ee8ccd10a2096ac59b5)
+        circle_marker_b91c99dbf8a75d03c8be64655cdaf532.bindPopup(popup_8b5a1cd1a9795a7947d5174ffb8891e8)
         ;
 
         
     
     
-            var poly_line_971215848d62687d0a81f5347df4a314 = L.polyline(
+            circle_marker_b91c99dbf8a75d03c8be64655cdaf532.bindTooltip(
+                `<div>
+                     Elkab — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_734d4f43807a44f298f044e988113935 = L.polyline(
                 [[40.7794, -73.9632], [30.65, 31.65]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_9d067916f16912d86cdc0188cb20a284 = L.circleMarker(
+            var circle_marker_b3382edcf179d29f5f11ae6b207e0655 = L.circleMarker(
                 [30.65, 31.65],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_2592295ff7dd06ec27c5c6ad71d7c7a4 = L.popup({
+        var popup_3db7f63d656af6e5d0a9cf77bde14480 = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_5910ff61bc5877ddd044f6e012fa8be4 = $(`<div id="html_5910ff61bc5877ddd044f6e012fa8be4" style="width: 100.0%; height: 100.0%;"><b>Hurbeit (Pharbaethos)</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543910' target='_blank'>Stand for an Offering Basin with the Name of King Khafre</a> (ca. 2520–2494 B.C.)<br></div>`)[0];
-                popup_2592295ff7dd06ec27c5c6ad71d7c7a4.setContent(html_5910ff61bc5877ddd044f6e012fa8be4);
+                var html_c18fa8f0f5790aa925eb3810af037465 = $(`<div id="html_c18fa8f0f5790aa925eb3810af037465" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Hurbeit (Pharbaethos) — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">       <img src="https://images.metmuseum.org/CRDImages/eg/original/2833.jpg" loading="lazy" style="width:56px;height:56px;object-fit:cover;border-radius:4px;flex-shrink:0;">       <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543910" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Stand for an Offering Basin with the Name of King Khafre</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2520–2494 B.C.</span><br>         <span style="font-size:11px;color:#777;">Gneiss</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Rogers Fund, 1907</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_3db7f63d656af6e5d0a9cf77bde14480.setContent(html_c18fa8f0f5790aa925eb3810af037465);
             
         
 
-        circle_marker_9d067916f16912d86cdc0188cb20a284.bindPopup(popup_2592295ff7dd06ec27c5c6ad71d7c7a4)
+        circle_marker_b3382edcf179d29f5f11ae6b207e0655.bindPopup(popup_3db7f63d656af6e5d0a9cf77bde14480)
         ;
 
         
     
     
-            var poly_line_013e80a736b1032fa32e08da9a56d581 = L.polyline(
+            circle_marker_b3382edcf179d29f5f11ae6b207e0655.bindTooltip(
+                `<div>
+                     Hurbeit (Pharbaethos) — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5966a8c6d7974cde3666d5e9ebedff14 = L.polyline(
                 [[40.7794, -73.9632], [26.183, 31.919]],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-            var circle_marker_a24a0d5c07782fc4c676ca6b8f68c6ad = L.circleMarker(
+            var circle_marker_6426b16b066c6e1aaf8d58ac1d63e786 = L.circleMarker(
                 [26.183, 31.919],
                 {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
-            ).addTo(map_4c84f24b930f09cf539a0feaa3cb3e1e);
+            ).addTo(map_ebb6a30ab828acc363121ea02c2f7a1f);
         
     
-        var popup_89de24c9be1c3272f188f631ef1e3213 = L.popup({
+        var popup_44e2502702db347b141beeb3f369a23e = L.popup({
   "maxWidth": 320,
 });
 
         
             
-                var html_79128ff1a208a457d99118d3cfc3d3c7 = $(`<div id="html_79128ff1a208a457d99118d3cfc3d3c7" style="width: 100.0%; height: 100.0%;"><b>Abydos</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543925' target='_blank'>Wine or beer jar</a> (ca. 2323–2100 BC)<br></div>`)[0];
-                popup_89de24c9be1c3272f188f631ef1e3213.setContent(html_79128ff1a208a457d99118d3cfc3d3c7);
+                var html_092d80bb5697f94d149e12b921b0583e = $(`<div id="html_092d80bb5697f94d149e12b921b0583e" style="width: 100.0%; height: 100.0%;"><div style="font-family:system-ui,sans-serif;width:300px;"><div style="font-weight:700;font-size:13px;margin-bottom:4px;">Abydos — 1 pieza(s)</div><div style="max-height:320px;overflow-y:auto;padding-right:4px;">     <div style="display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #eee;">              <div style="min-width:0;">         <a href="https://www.metmuseum.org/art/collection/search/543925" target="_blank" style="font-weight:600;color:#1a1a1a;text-decoration:none;">Wine or beer jar</a><br>         <span style="font-size:11px;color:#555;">Old Kingdom · ca. 2323–2100 BC</span><br>         <span style="font-size:11px;color:#777;">Travertine (Egyptian alabaster), paint</span><br>         <span style="font-size:11px;color:#999;font-style:italic;">Anonymous Gift, 1931</span>       </div>     </div>     </div></div></div>`)[0];
+                popup_44e2502702db347b141beeb3f369a23e.setContent(html_092d80bb5697f94d149e12b921b0583e);
             
         
 
-        circle_marker_a24a0d5c07782fc4c676ca6b8f68c6ad.bindPopup(popup_89de24c9be1c3272f188f631ef1e3213)
+        circle_marker_6426b16b066c6e1aaf8d58ac1d63e786.bindPopup(popup_44e2502702db347b141beeb3f369a23e)
         ;
 
         
     
+    
+            circle_marker_6426b16b066c6e1aaf8d58ac1d63e786.bindTooltip(
+                `<div>
+                     Abydos — 1 pieza(s) (click para el detalle)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
 </script>
 </html>
