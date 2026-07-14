@@ -32,11 +32,22 @@ pip install -r requirements.txt
 python src/fetch_met.py --department 10 --limit 50
 ```
 
+## Uso — pipeline completo
+
+```bash
+pip install -r requirements.txt
+python src/fetch_met.py --department 10   # baja objetos a data/raw/
+python src/build_dataset.py                # geocodifica -> data/processed/objects.csv
+python src/make_map.py                     # genera maps/map_pilot.html
+```
+
 ## Estado
 
 - [x] Estructura del repo
 - [x] Script de descarga de la API del Met
-- [ ] Muestreo de calidad de campos geográficos
-- [ ] Geocodificación (tabla propia de coordenadas, sin Nominatim en bulk)
-- [ ] Cruce con Wikidata para piezas en disputa
-- [ ] Mapa interactivo (Leaflet)
+- [x] Muestreo de calidad de campos geográficos
+- [x] Geocodificación (tabla propia de coordenadas, sin Nominatim en bulk)
+- [x] Mapa piloto (41 objetos de Egyptian Art, 40 geocodificados, `maps/map_pilot.html`)
+- [ ] Bajar el departamento completo de Egyptian Art (27.968 objetos) y ampliar la tabla de coordenadas
+- [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
+- [ ] Sumar otros departamentos (Arts of Africa/Oceania/Americas, Ancient West Asian Art)

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d1b346dff259e0247af214769980e531 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_d1b346dff259e0247af214769980e531" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d1b346dff259e0247af214769980e531 = L.map(
+                "map_d1b346dff259e0247af214769980e531",
+                {
+                    center: [20.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 2,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_9ec77fb55523f6c48a24a36bcc170f6d = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_9ec77fb55523f6c48a24a36bcc170f6d.addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_d57b58c057239ea86c5a52013e389bcc = L.circleMarker(
+                [40.7794, -73.9632],
+                {"bubblingMouseEvents": true, "color": "#b23a48", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b23a48", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_e7c6a6af6f7b9a5b3452120e1b6a05e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_77cba4e4341ea0fac49445d63e52fe70 = $(`<div id="html_77cba4e4341ea0fac49445d63e52fe70" style="width: 100.0%; height: 100.0%;">The Metropolitan Museum of Art (Nueva York)</div>`)[0];
+                popup_e7c6a6af6f7b9a5b3452120e1b6a05e7.setContent(html_77cba4e4341ea0fac49445d63e52fe70);
+            
+        
+
+        circle_marker_d57b58c057239ea86c5a52013e389bcc.bindPopup(popup_e7c6a6af6f7b9a5b3452120e1b6a05e7)
+        ;
+
+        
+    
+    
+            var poly_line_57475c0e866a9a2bd200f2a27fae9abf = L.polyline(
+                [[40.7794, -73.9632], [26.14, 32.67]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_c996466254c6ad571be22312955ad40a = L.circleMarker(
+                [26.14, 32.67],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_5ac0bbe29e85707d1afbcfb9f4837926 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ce83ed41f4cba37a13e4e6ca3ea4d716 = $(`<div id="html_ce83ed41f4cba37a13e4e6ca3ea4d716" style="width: 100.0%; height: 100.0%;"><b>Dendera area</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543863' target='_blank'>False Door of the Royal Sealer Neferiu</a> (ca. 2150–2010 B.C.)<br></div>`)[0];
+                popup_5ac0bbe29e85707d1afbcfb9f4837926.setContent(html_ce83ed41f4cba37a13e4e6ca3ea4d716);
+            
+        
+
+        circle_marker_c996466254c6ad571be22312955ad40a.bindPopup(popup_5ac0bbe29e85707d1afbcfb9f4837926)
+        ;
+
+        
+    
+    
+            var poly_line_9f7436563087cd911af8097b621d4f79 = L.polyline(
+                [[40.7794, -73.9632], [26.821, 30.802]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.8}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_f3cf362dc33672e14d74e3355e68604a = L.circleMarker(
+                [26.821, 30.802],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_ee3613fb4c6faf538da4b448f5638d4a = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bde87b6bdf5b0dff1547c132d5cbbb9d = $(`<div id="html_bde87b6bdf5b0dff1547c132d5cbbb9d" style="width: 100.0%; height: 100.0%;"><b>Egypt</b> — 8 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543866' target='_blank'>Libation Dish Depicting Ka-Arms Presenting an Ankh-Sign</a> (ca. 3100–2900 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543881' target='_blank'>Weight equal to five deben</a> (ca. 2649–2100 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543898' target='_blank'>Vase in the Shape of Mother Monkey with Her Young</a> (ca. 2255–2246 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543908' target='_blank'>Vase in the Shape of a Mother Monkey with Her Offspring</a> (ca. 2289–2255 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543920' target='_blank'>Model of the "Opening of the Mouth" ritual equipment</a> (ca. 2465–2150 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543926' target='_blank'>Wine or beer jar</a> (ca. 2649–2100 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543927' target='_blank'>Jar</a> (ca. 2323–2150 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543928' target='_blank'>Miniature "nw" pot</a> (ca. 2465–2150 B.C.)<br></div>`)[0];
+                popup_ee3613fb4c6faf538da4b448f5638d4a.setContent(html_bde87b6bdf5b0dff1547c132d5cbbb9d);
+            
+        
+
+        circle_marker_f3cf362dc33672e14d74e3355e68604a.bindPopup(popup_ee3613fb4c6faf538da4b448f5638d4a)
+        ;
+
+        
+    
+    
+            var poly_line_53850ccf6dc5a2258e08c9c06be3693b = L.polyline(
+                [[40.7794, -73.9632], [29.871, 31.216]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 8}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_0307825bf4daa887a41dab1ba58ba530 = L.circleMarker(
+                [29.871, 31.216],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_afe4dfc0f3b5c340d5c59a5866b0f189 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2390da62aa737b78a2fee1920c09f155 = $(`<div id="html_2390da62aa737b78a2fee1920c09f155" style="width: 100.0%; height: 100.0%;"><b>Saqqara</b> — 15 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543870' target='_blank'>Figure of a male beer-maker</a> (ca. 2649–2100 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543875' target='_blank'>Standing statue of Mitry's wife</a> (ca. 2381–2323 B.C. probably)<br><a href='https://www.metmuseum.org/art/collection/search/543900' target='_blank'>Nikare as a scribe</a> (ca. 2420–2389 B.C. or later)<br><a href='https://www.metmuseum.org/art/collection/search/543901' target='_blank'>Nikare with his Wife and Daughter</a> (ca. 2420–2389 B.C. or later)<br><a href='https://www.metmuseum.org/art/collection/search/543904' target='_blank'>Wall tiles from the funerary apartments of king Djoser</a> (ca. 2630–2611 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543906' target='_blank'>Kneeling captive</a> (ca. 2246–2152 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543907' target='_blank'>False door from the tomb of Metjetji</a> (ca. 2353–2323 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543912' target='_blank'>Corner of niche from the tomb of Akhtihotep</a> (ca. 2575–2551 B.C.)<br>... y 7 más</div>`)[0];
+                popup_afe4dfc0f3b5c340d5c59a5866b0f189.setContent(html_2390da62aa737b78a2fee1920c09f155);
+            
+        
+
+        circle_marker_0307825bf4daa887a41dab1ba58ba530.bindPopup(popup_afe4dfc0f3b5c340d5c59a5866b0f189)
+        ;
+
+        
+    
+    
+            var poly_line_45bb43b368b91279d4f2098bdd7ff2a5 = L.polyline(
+                [[40.7794, -73.9632], [29.567, 31.217]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 2.8}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_46854ff16f20e7d751bd50f334f28f52 = L.circleMarker(
+                [29.567, 31.217],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_8649b328d5d4c92d83671059074d77d3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_63ec58a3a59d68e079273414e76fa861 = $(`<div id="html_63ec58a3a59d68e079273414e76fa861" style="width: 100.0%; height: 100.0%;"><b>Lisht North</b> — 3 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543890' target='_blank'>Relief fragment with king Khufu's cattle</a> (ca. 2551–2528 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543894' target='_blank'>Relief Fragment with a Ship Under Sail</a> (ca. 2465–2458 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543911' target='_blank'>Offering table</a> (ca. 1981–1640 B.C.)<br></div>`)[0];
+                popup_8649b328d5d4c92d83671059074d77d3.setContent(html_63ec58a3a59d68e079273414e76fa861);
+            
+        
+
+        circle_marker_46854ff16f20e7d751bd50f334f28f52.bindPopup(popup_8649b328d5d4c92d83671059074d77d3)
+        ;
+
+        
+    
+    
+            var poly_line_0bc14c4963df0f1a53227f2a0d31ecb2 = L.polyline(
+                [[40.7794, -73.9632], [29.977, 31.131]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.8}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_58a09d1d06acb459028e94ce90b619cf = L.circleMarker(
+                [29.977, 31.131],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_6e3f026d2245e5c3e0f7497080b85aeb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c4277dfaefa854eb8eddd7531de4b668 = $(`<div id="html_c4277dfaefa854eb8eddd7531de4b668" style="width: 100.0%; height: 100.0%;"><b>Giza</b> — 8 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543895' target='_blank'>Archers</a> (ca. 2551–2494 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543896' target='_blank'>Fragmentary Face of King Khafre</a> (ca. 2520–2494 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543899' target='_blank'>The King's Acquaintances Memi and Sabu</a> (ca. 2575–2465 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543905' target='_blank'>Nursing woman</a> (ca. 2420–2389 B.C. or later)<br><a href='https://www.metmuseum.org/art/collection/search/543909' target='_blank'>Reserve head</a> (ca. 2551–2528 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543917' target='_blank'>Mummified leg of beef case</a> (ca. 2323–2255 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543918' target='_blank'>Mummified goose case</a> (ca. 2323–2255 B.C.)<br><a href='https://www.metmuseum.org/art/collection/search/543919' target='_blank'>Mummified duck case</a> (ca. 2323–2255 B.C.)<br></div>`)[0];
+                popup_6e3f026d2245e5c3e0f7497080b85aeb.setContent(html_c4277dfaefa854eb8eddd7531de4b668);
+            
+        
+
+        circle_marker_58a09d1d06acb459028e94ce90b619cf.bindPopup(popup_6e3f026d2245e5c3e0f7497080b85aeb)
+        ;
+
+        
+    
+    
+            var poly_line_9496c70757184e1cc97dd3641fbb4d92 = L.polyline(
+                [[40.7794, -73.9632], [29.848, 31.25]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_843469896b3a9fcab6026590b0ba34c7 = L.circleMarker(
+                [29.848, 31.25],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_2c8be35b8dfd34071f80f552691caa69 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_845e9732d1e1df30b0c24d460f74142c = $(`<div id="html_845e9732d1e1df30b0c24d460f74142c" style="width: 100.0%; height: 100.0%;"><b>Memphis (Mit Rahina)</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543897' target='_blank'>Sistrum Inscribed with the Names of King Teti</a> (ca. 2323–2291 B.C.)<br></div>`)[0];
+                popup_2c8be35b8dfd34071f80f552691caa69.setContent(html_845e9732d1e1df30b0c24d460f74142c);
+            
+        
+
+        circle_marker_843469896b3a9fcab6026590b0ba34c7.bindPopup(popup_2c8be35b8dfd34071f80f552691caa69)
+        ;
+
+        
+    
+    
+            var poly_line_a85cec422e953daf847181558f107e2a = L.polyline(
+                [[40.7794, -73.9632], [29.924, 31.174]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_07bd74054775b09f22144f8927d06d0d = L.circleMarker(
+                [29.924, 31.174],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_51475c73adca8c8a8ad78db0b51c5841 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_441682d68c8c2ad43ab2ce3797ac6687 = $(`<div id="html_441682d68c8c2ad43ab2ce3797ac6687" style="width: 100.0%; height: 100.0%;"><b>Giza or Saqqara</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543902' target='_blank'>Statue of Demedji and Hennutsen</a> (ca. 2465–2438 B.C.)<br></div>`)[0];
+                popup_51475c73adca8c8a8ad78db0b51c5841.setContent(html_441682d68c8c2ad43ab2ce3797ac6687);
+            
+        
+
+        circle_marker_07bd74054775b09f22144f8927d06d0d.bindPopup(popup_51475c73adca8c8a8ad78db0b51c5841)
+        ;
+
+        
+    
+    
+            var poly_line_f1e5d6483a2160548d5a425fbcb3ff64 = L.polyline(
+                [[40.7794, -73.9632], [25.117, 32.8]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_fb64c274b3295f2d2c9c873f98b82e6d = L.circleMarker(
+                [25.117, 32.8],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_dc9aac54eb4348eec2a3378de1d065f3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f4eca28cc427bab8409fbd8420190f34 = $(`<div id="html_f4eca28cc427bab8409fbd8420190f34" style="width: 100.0%; height: 100.0%;"><b>Elkab</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543903' target='_blank'>Striding Figure</a> (ca. 2575–2465 B.C.)<br></div>`)[0];
+                popup_dc9aac54eb4348eec2a3378de1d065f3.setContent(html_f4eca28cc427bab8409fbd8420190f34);
+            
+        
+
+        circle_marker_fb64c274b3295f2d2c9c873f98b82e6d.bindPopup(popup_dc9aac54eb4348eec2a3378de1d065f3)
+        ;
+
+        
+    
+    
+            var poly_line_a600ba866b82d019aca462b208c46583 = L.polyline(
+                [[40.7794, -73.9632], [30.65, 31.65]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_ed926a0c20080a20ca7bd4ac468ff12b = L.circleMarker(
+                [30.65, 31.65],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_f1789c32c21fd8acf41ae707c5ba82ad = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_51b54e8b41e65957d7389bf5988aca34 = $(`<div id="html_51b54e8b41e65957d7389bf5988aca34" style="width: 100.0%; height: 100.0%;"><b>Hurbeit (Pharbaethos)</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543910' target='_blank'>Stand for an Offering Basin with the Name of King Khafre</a> (ca. 2520–2494 B.C.)<br></div>`)[0];
+                popup_f1789c32c21fd8acf41ae707c5ba82ad.setContent(html_51b54e8b41e65957d7389bf5988aca34);
+            
+        
+
+        circle_marker_ed926a0c20080a20ca7bd4ac468ff12b.bindPopup(popup_f1789c32c21fd8acf41ae707c5ba82ad)
+        ;
+
+        
+    
+    
+            var poly_line_eaa9121832614f538a642ad88e7a6a64 = L.polyline(
+                [[40.7794, -73.9632], [26.183, 31.919]],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#c9a227", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 1.6}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+            var circle_marker_ddee1eec65f9de477b679b2f20859684 = L.circleMarker(
+                [26.183, 31.919],
+                {"bubblingMouseEvents": true, "color": "#c9a227", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c9a227", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 3}
+            ).addTo(map_d1b346dff259e0247af214769980e531);
+        
+    
+        var popup_16853966163e130b5941c487f7bc8d76 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b6739bdfe1156119f5b463404ec13608 = $(`<div id="html_b6739bdfe1156119f5b463404ec13608" style="width: 100.0%; height: 100.0%;"><b>Abydos</b> — 1 pieza(s)<br><a href='https://www.metmuseum.org/art/collection/search/543925' target='_blank'>Wine or beer jar</a> (ca. 2323–2100 BC)<br></div>`)[0];
+                popup_16853966163e130b5941c487f7bc8d76.setContent(html_b6739bdfe1156119f5b463404ec13608);
+            
+        
+
+        circle_marker_ddee1eec65f9de477b679b2f20859684.bindPopup(popup_16853966163e130b5941c487f7bc8d76)
+        ;
+
+        
+    
+</script>
+</html>
