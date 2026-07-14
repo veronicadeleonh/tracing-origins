@@ -99,6 +99,17 @@ SUBREGION_COORDS = {
 # Esto es lo que pasa con Asian Art: NO se puede usar el mismo pipeline que
 # Egyptian Art. Match por substring, en orden (el primero que aparece gana).
 CULTURE_KEYWORDS = [
+    # Greek and Roman Art: mismo problema que Asian Art, country/region/subregion
+    # casi siempre vacíos. Órden importa: lo más específico primero (ej. una
+    # pieza "Roman, Cypriot" tiene que resolver a Chipre, no a Italia).
+    ("Cypriot", (35.1264, 33.4299)),
+    ("Etruscan", (42.8000, 11.5000)),
+    ("Corinthian", (37.9061, 22.9327)),
+    ("Argive", (37.6333, 22.7167)),
+    ("Attic", (38.0000, 23.7000)),
+    ("South Italian", (40.5000, 16.5000)),
+    ("Greek", (39.0742, 21.8243)),
+    ("Roman", (41.8719, 12.5674)),
     ("China", (35.8617, 104.1954)),
     ("Japan", (36.2048, 138.2529)),
     ("Korea", (35.9078, 127.7669)),

@@ -47,13 +47,13 @@ python src/make_map.py                     # genera maps/map_pilot.html
 - [x] Script de descarga de la API del Met
 - [x] Muestreo de calidad de campos geográficos
 - [x] Geocodificación (tabla propia de coordenadas, sin Nominatim en bulk)
-- [x] Mapa piloto (143 objetos de los 6 departamentos prioritarios: Egyptian Art, Arts of Africa/Oceania/Americas, Ancient West Asian Art, Asian Art, Islamic Art — 137 geocodificados, `maps/map_pilot.html`)
+- [x] Mapa piloto (168 objetos de los 6 departamentos prioritarios completos: Egyptian Art, Arts of Africa/Oceania/Americas, Ancient West Asian Art, Asian Art, Islamic Art, Greek and Roman Art — 161 geocodificados, `maps/map_pilot.html`)
 - [ ] Bajar los departamentos completos (no solo la muestra piloto) y ampliar la tabla de coordenadas a medida que aparecen nuevos países/regiones
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
 
-### Nota sobre Asian Art
+### Nota sobre Asian Art y Greek and Roman Art
 
-A diferencia de los otros departamentos, Asian Art casi nunca completa `country`/`region`/`subregion` — el único dato geográfico confiable es el campo `culture` (texto libre: "China", "India (Tamil Nadu)", "Northeastern Thailand"). `geocode.py` tiene un fallback (`resolve_from_culture`) que busca nombres de país conocidos dentro de ese texto. Es menos preciso que el resto (nivel país, no sitio) y hay que revisarlo si aparecen culturas ambiguas nuevas.
+Estos dos departamentos casi nunca completan `country`/`region`/`subregion` — el único dato geográfico confiable es el campo `culture` (texto libre: "China", "India (Tamil Nadu)", "Cypriot", "Greek, Attic", "Roman, Cypriot"). `geocode.py` tiene un fallback (`resolve_from_culture`) que busca nombres de país/región conocidos dentro de ese texto, con el más específico primero (ej. "Cypriot" antes que "Roman", para que una pieza "Roman, Cypriot" resuelva a Chipre y no a Italia). Es menos preciso que el resto (nivel país o región amplia, no sitio) y hay que revisarlo si aparecen culturas ambiguas nuevas.
 
 ## Pendiente de decidir (no bloquea el trabajo de datos)
 
