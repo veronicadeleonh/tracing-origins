@@ -47,7 +47,7 @@ python src/make_map.py                     # genera maps/map_pilot.html
 - [x] Script de descarga de la API del Met
 - [x] Muestreo de calidad de campos geográficos
 - [x] Geocodificación (tabla propia de coordenadas, sin Nominatim en bulk)
-- [x] Mapa piloto (41 objetos de Egyptian Art, 40 geocodificados, `maps/map_pilot.html`)
-- [ ] Bajar el departamento completo de Egyptian Art (27.968 objetos) y ampliar la tabla de coordenadas
+- [x] Mapa piloto (93 objetos de 3 departamentos: Egyptian Art, Arts of Africa/Oceania/Americas, Ancient West Asian Art — 88 geocodificados, `maps/map_pilot.html`)
+- [ ] Bajar los departamentos completos (no solo la muestra piloto) y ampliar la tabla de coordenadas a medida que aparecen nuevos países/regiones
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
-- [ ] Sumar otros departamentos (Arts of Africa/Oceania/Americas, Ancient West Asian Art)
+- [ ] Sumar Asian Art e Islamic Art para cubrir más regiones
