@@ -4,9 +4,7 @@ import type { OriginCluster } from "../geo";
 interface ClusterPanelProps {
   cluster: OriginCluster;
   onClose: () => void;
-  // TODO(siguiente paso): wire esto al estado "object" del panel para pasar
-  // al detalle/timeline de la pieza. Por ahora las filas todavía no navegan.
-  onSelectObject?: (object: MuseumObject) => void;
+  onSelectObject: (object: MuseumObject) => void;
 }
 
 export function ClusterPanel({ cluster, onClose, onSelectObject }: ClusterPanelProps) {
@@ -30,7 +28,7 @@ export function ClusterPanel({ cluster, onClose, onSelectObject }: ClusterPanelP
             key={obj.objectID}
             type="button"
             className="piece-row"
-            onClick={() => onSelectObject?.(obj)}
+            onClick={() => onSelectObject(obj)}
           >
             <div
               className="piece-thumb"

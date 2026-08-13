@@ -2,9 +2,10 @@ import { useState } from "react";
 import { CircleMarker, MapContainer, Polyline, TileLayer, Tooltip } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import data from "./data/objects.json";
-import type { DataBundle } from "./types";
+import type { DataBundle, MuseumObject } from "./types";
 import { groupByOrigin, jitteredPoint, type OriginCluster } from "./geo";
 import { ClusterPanel } from "./components/ClusterPanel";
+import { ObjectDetail } from "./components/ObjectDetail";
 import { ResizeHandler } from "./components/ResizeHandler";
 import "./App.css";
 
@@ -13,9 +14,14 @@ const bundle = data as DataBundle;
 const MET_COLOR = "#b23a48";
 const LINE_COLOR = "#c9a227";
 
+type PanelState =
+  | { view: "cluster"; cluster: OriginCluster }
+  | { view: "object"; cluster: OriginCluster; object: MuseumObject }
+  | null;
+
 function App() {
   const clusters = groupByOrigin(bundle.objects);
-  const [selectedCluster, setSelectedCluster] = useState<OriginCluster | null>(null);
+  const [panel, setPanel] = useState<PanelState>(null);
 
   return (
     <div className="app-layout">
@@ -27,7 +33,7 @@ function App() {
           worldCopyJump
           style={{ height: "100%", width: "100%" }}
         >
-          <ResizeHandler trigger={selectedCluster} />
+          <ResizeHandler trigger={panel !== null} />
 
           <TileLayer
             url="https://cartodb-basemaps-a.global.ssl.fastly.net/light_all/{z}/{x}/{y}{r}.png"
@@ -66,7 +72,7 @@ function App() {
                   center={[cluster.lat, cluster.lon]}
                   radius={4 + Math.min(cluster.objects.length, 10)}
                   pathOptions={{ color: LINE_COLOR, fillColor: LINE_COLOR, fillOpacity: 0.85 }}
-                  eventHandlers={{ click: () => setSelectedCluster(cluster) }}
+                  eventHandlers={{ click: () => setPanel({ view: "cluster", cluster }) }}
                 >
                   <Tooltip>
                     {cluster.label} — {cluster.objects.length} pieza(s) (click para el detalle)
@@ -78,8 +84,20 @@ function App() {
         </MapContainer>
       </div>
 
-      {selectedCluster && (
-        <ClusterPanel cluster={selectedCluster} onClose={() => setSelectedCluster(null)} />
+      {panel?.view === "cluster" && (
+        <ClusterPanel
+          cluster={panel.cluster}
+          onClose={() => setPanel(null)}
+          onSelectObject={(object) => setPanel({ view: "object", cluster: panel.cluster, object })}
+        />
+      )}
+
+      {panel?.view === "object" && (
+        <ObjectDetail
+          object={panel.object}
+          onBack={() => setPanel({ view: "cluster", cluster: panel.cluster })}
+          onClose={() => setPanel(null)}
+        />
       )}
     </div>
   );
