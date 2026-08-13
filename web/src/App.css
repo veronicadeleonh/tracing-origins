@@ -1,8 +1,120 @@
-.map-shell {
+.app-layout {
+  display: flex;
   width: 100%;
   height: 100vh;
 }
 
+.map-pane {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .leaflet-container {
   background: #fdfcf9;
+}
+
+.side-panel {
+  flex: 0 0 380px;
+  border-left: 1px solid #e5e2da;
+  background: #fbfaf7;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid #e5e2da;
+}
+
+.panel-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.panel-subtitle {
+  font-size: 12px;
+  color: #77726a;
+  margin-top: 2px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: #77726a;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.icon-btn:hover {
+  background: #efece4;
+  color: #1a1a1a;
+}
+
+.piece-list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+
+.piece-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.piece-row:hover {
+  background: #f0ede4;
+}
+
+.piece-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: #e5e2da center/cover no-repeat;
+  flex-shrink: 0;
+}
+
+.piece-info {
+  min-width: 0;
+  flex: 1;
+}
+
+.piece-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.piece-sub {
+  font-size: 11px;
+  color: #928d82;
+  margin-top: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  color: #c9a227;
+  font-size: 16px;
+  flex-shrink: 0;
 }
