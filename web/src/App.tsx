@@ -11,7 +11,7 @@ import "./App.css";
 
 const bundle = data as DataBundle;
 
-const MET_COLOR = "#b23a48";
+const MUSEUM_COLOR = "#b23a48";
 const LINE_COLOR = "#c9a227";
 
 type PanelState =
@@ -26,6 +26,10 @@ function App() {
   return (
     <div className="app-layout">
       <div className="map-pane">
+        <div className="curated-note">
+          Muestra curada — no representa la colección completa de cada museo. Muchas piezas quedan fuera.
+        </div>
+
         <MapContainer
           center={[20, 10]}
           zoom={2}
@@ -40,15 +44,18 @@ function App() {
             attribution="&copy; OpenStreetMap contributors &copy; CARTO"
           />
 
-          <CircleMarker
-            center={[bundle.met.lat, bundle.met.lon]}
-            radius={9}
-            pathOptions={{ color: MET_COLOR, fillColor: MET_COLOR, fillOpacity: 1 }}
-          >
-            <Tooltip>
-              {bundle.met.name} ({bundle.met.city})
-            </Tooltip>
-          </CircleMarker>
+          {Object.entries(bundle.museums).map(([museumId, museum]) => (
+            <CircleMarker
+              key={museumId}
+              center={[museum.lat, museum.lon]}
+              radius={9}
+              pathOptions={{ color: MUSEUM_COLOR, fillColor: MUSEUM_COLOR, fillOpacity: 1 }}
+            >
+              <Tooltip>
+                {museum.name} ({museum.city})
+              </Tooltip>
+            </CircleMarker>
+          ))}
 
           {clusters.map((cluster) => {
             const key = `${cluster.lat}|${cluster.lon}|${cluster.label}`;
@@ -56,12 +63,14 @@ function App() {
               <div key={key}>
                 {cluster.objects.map((obj, i) => {
                   const [jLat, jLon] = jitteredPoint(cluster.lat, cluster.lon, i, cluster.objects.length);
+                  const dest = obj.sourceMuseum ? bundle.museums[obj.sourceMuseum] : undefined;
+                  if (!dest) return null;
                   return (
                     <Polyline
                       key={obj.objectID}
                       positions={[
                         [jLat, jLon],
-                        [bundle.met.lat, bundle.met.lon],
+                        [dest.lat, dest.lon],
                       ]}
                       pathOptions={{ color: LINE_COLOR, weight: 1.4, opacity: 0.55 }}
                     />

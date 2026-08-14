@@ -1,10 +1,10 @@
 # colonial-museum-routes
 
-Mapa que conecta obras de museos con su lugar de origen, para visualizar patrones de expropiación y colonización en las colecciones.
+Mapa que conecta obras de museos con su lugar de origen, para visualizar patrones de expropiación y colonización en las colecciones. El foco son tres museos "de prestigio" en países que colonizaron: The Metropolitan Museum of Art (Nueva York), Musée du Louvre (París) y British Museum (Londres). Es un proyecto curado, no exhaustivo — no busca representar cada museo completo, sino armar un conjunto manejable y bien documentado por institución (ver "Escala" en Estado).
 
 ## Fase 1 — datos (The Met)
 
-Empezamos con el Metropolitan Museum of Art (Open Access API, CC0, sin API key). En fases siguientes se suma Wikidata como puente para cruzar otros museos (ej. British Museum, que no tiene API pública confiable).
+Empezamos con el Metropolitan Museum of Art (Open Access API, CC0, sin API key). Ya evaluamos las otras dos fuentes: el Louvre tiene una API JSON pública real (`collections.louvre.fr`, agregar `.json` a cualquier ficha), con campos que ya modelan buena parte de lo que armamos a mano para el Met (`placeOfCreation`, `placeOfDiscovery`, `previousOwner`, `acquisitionDetails.mode` — cuyo propio ejemplo en la documentación es `"partage après fouilles"`). El British Museum no tiene API pública activa, pero sí es raspable (confirmado por un proyecto de terceros, ver abajo) — va a necesitar un scraper propio, no un cliente de API limpio como el Met o el Louvre.
 
 Departamentos priorizados por relevancia colonial/arqueológica:
 
@@ -16,6 +16,10 @@ Departamentos priorizados por relevancia colonial/arqueológica:
 | 10 | Egyptian Art |
 | 13 | Greek and Roman Art |
 | 14 | Islamic Art |
+
+## Multi-museo: namespacing de IDs
+
+`objectID` ya no es el id crudo del museo — es `"<museo>:<id-nativo>"` (`met:96404`, y en el futuro `louvre:cl010277627`, `bm:...`), porque el id crudo no es único entre museos. Ver `src/museum_id.py`. `met_objects.csv` guarda además `sourceMuseum` y `sourceObjectID` (el id nativo, sin prefijo) para no perder trazabilidad hacia `met_objects_raw.json`. `data/raw/*.json` no se toca — el namespacing se aplica recién al construir layer 1, nunca en el snapshot crudo. `geography.csv` pasó de `met_lat`/`met_lon` a `museum_lat`/`museum_lon` por el mismo motivo: ya no es Met-específico.
 
 ## Modelo de datos — 3 capas
 
@@ -85,10 +89,12 @@ por los que las piezas entraron a la colección, no emitir un veredicto.
   separados por `;`, ej. `colonial_administration;expedition`),
   `associated_communities_or_states`, `notes`.
 
-Ambos archivos están vacíos (solo headers) — recién arranca el trabajo de
-investigación. `make_map.py` los lee de forma opcional: si una pieza no tiene
-fila en ninguno de los dos, la ficha se ve igual que siempre, solo con datos
-del Met.
+`make_map.py`/`export_web_data.py` los leen de forma opcional: si una pieza
+no tiene fila en ninguno de los dos, la ficha se ve igual que siempre, solo
+con datos del Met — ese es el estado por defecto para la gran mayoría de las
+piezas, no una excepción. Hay 5 piezas piloto ya investigadas a fondo
+(excavaciones egipcias con partage documentado, ver commit correspondiente)
+para probar que el timeline con eventos reales funciona de punta a punta.
 
 ## Uso — pipeline de datos
 
@@ -126,13 +132,30 @@ desde la raíz del repo antes de ver los cambios en la app.
 - [x] Mapa piloto (168 objetos de los 6 departamentos prioritarios completos: Egyptian Art, Arts of Africa/Oceania/Americas, Ancient West Asian Art, Asian Art, Islamic Art, Greek and Roman Art — 161 geocodificados, `maps/map_pilot.html`)
 - [x] Reorganización del modelo de datos: raw congelado en `met_objects_raw.json`
 - [x] Modelo de 3 capas: `met_objects.csv` (Met) / `geography.csv` (nuestra geocodificación) / `context.csv` + `provenance_events.csv` (nuestra investigación histórica, sin clasificar piezas como robadas/no robadas — documenta el recorrido, no un veredicto)
-- [ ] Poblar `provenance_events.csv` / `context.csv` con investigación real (hoy están vacíos, solo headers)
-- [ ] Bajar los departamentos completos (no solo la muestra piloto) y ampliar la tabla de coordenadas a medida que aparecen nuevos países/regiones
-- [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
-- [x] Scaffold de la app en React (`web/`): Vite + React + react-leaflet, mapa base con los 161 puntos y una línea por pieza (jitter determinístico portado de `make_map.py`, ver `web/src/geo.ts`). Sin panel lateral todavía.
-- [ ] Panel lateral: estado cluster (lista de piezas) ↔ estado detalle (timeline de la pieza), con flecha de "volver"
+- [x] Piloto de investigación profunda: 5 piezas egipcias (partage / compra directa al gobierno egipcio, con fuentes citadas del propio Met + contexto institucional)
+- [ ] Bajar los departamentos completos del Met (no solo la muestra piloto) — de momento no es prioridad, ver "Escala" abajo
+- [x] Scaffold de la app en React (`web/`): Vite + React + react-leaflet, mapa base con los 161 puntos y una línea por pieza (jitter determinístico portado de `make_map.py`, ver `web/src/geo.ts`).
+- [x] Panel lateral: estado cluster (lista de piezas) ↔ estado detalle (timeline de la pieza), con flecha de "volver" (`web/src/components/ClusterPanel.tsx`, `ObjectDetail.tsx`)
+- [x] Estado de "sin investigar" (2 nodos: origen → ahora) en el panel de detalle
+- [x] Namespacing de objectID por museo (`met:`, listo para sumar `louvre:`/`bm:`)
 - [ ] Landing / framing antes del mapa
-- [ ] Estado de "sin investigar" (2 nodos: origen → ahora) en el panel de detalle
+- [ ] Pipeline del Louvre (API JSON real, ver arriba)
+- [ ] Scraper del British Museum
+- [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
+
+### Escala (definido 14/08)
+
+Proyecto curado para portfolio personal, no un dataset exhaustivo. Objetivo:
+~150-250 piezas por museo (~500-700 en total, mismo orden de magnitud que el
+Met ahora), con una capa básica pareja para todas (el dato que cada museo ya
+publica) y un subconjunto chico y deliberado de piezas "bandera"
+(15-30 en total, 5-10 por museo) con investigación profunda tipo la del
+piloto egipcio. No se persigue bajar departamentos completos ni el 100% de
+cada colección.
+
+### Proyectos relacionados (referencia, no fuente de datos)
+
+Al buscar cómo otros abordaron esto: [heritage-vault](https://github.com/mente123/heritage-vault) mapea objetos africanos del British Museum agrupados por país (sin líneas de ruta, más simple que lo nuestro), y confirma que el sitio del BM es raspable sin API formal. Ese proyecto está a su vez inspirado en uno de un estudiante de MIT construyendo un mapa de patrimonio a escala global (no localizado, no verificado en detalle). No competimos en cobertura — el diferencial de este proyecto es la ruta por pieza individual y el modelo de 3 capas con investigación citada.
 
 ### Nota sobre Asian Art y Greek and Roman Art
 

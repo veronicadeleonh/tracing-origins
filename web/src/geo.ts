@@ -46,7 +46,9 @@ export function groupByOrigin(objects: MuseumObject[]): OriginCluster[] {
   }
 
   for (const cluster of groups.values()) {
-    cluster.objects.sort((a, b) => Number(a.objectID) - Number(b.objectID));
+    // objectID ahora es "met:96404" etc. (namespaceado por museo) — orden
+    // lexicográfico alcanza, lo único que importa es que sea determinístico.
+    cluster.objects.sort((a, b) => a.objectID.localeCompare(b.objectID));
   }
 
   return [...groups.values()];

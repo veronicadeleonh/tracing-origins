@@ -19,6 +19,7 @@ export interface ObjectContext {
 
 export interface MuseumObject {
   objectID: string;
+  sourceMuseum: string | null;
   title: string | null;
   objectName: string | null;
   department: string | null;
@@ -43,7 +44,14 @@ export interface MuseumObject {
   events: ProvenanceEvent[];
 }
 
+export interface MuseumDestination {
+  lat: number;
+  lon: number;
+  name: string;
+  city: string;
+}
+
 export interface DataBundle {
-  met: { lat: number; lon: number; name: string; city: string };
+  museums: Record<string, MuseumDestination>;
   objects: MuseumObject[];
 }

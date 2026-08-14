@@ -1,13 +1,16 @@
 {
-  "met": {
-    "lat": 40.7794,
-    "lon": -73.9632,
-    "name": "The Metropolitan Museum of Art",
-    "city": "New York"
+  "museums": {
+    "met": {
+      "lat": 40.7794,
+      "lon": -73.9632,
+      "name": "The Metropolitan Museum of Art",
+      "city": "New York"
+    }
   },
   "objects": [
     {
-      "objectID": "36203",
+      "objectID": "met:36203",
+      "sourceMuseum": "met",
       "title": "Cultivating Longevity",
       "objectName": "Hanging scroll",
       "department": "Asian Art",
@@ -32,7 +35,8 @@
       "events": []
     },
     {
-      "objectID": "36204",
+      "objectID": "met:36204",
+      "sourceMuseum": "met",
       "title": "Chanting on Donkey-back",
       "objectName": "Folding fan mounted as an album leaf",
       "department": "Asian Art",
@@ -57,7 +61,8 @@
       "events": []
     },
     {
-      "objectID": "36205",
+      "objectID": "met:36205",
+      "sourceMuseum": "met",
       "title": "Hezhang Peak",
       "objectName": "Folding fan mounted as an album leaf",
       "department": "Asian Art",
@@ -82,7 +87,8 @@
       "events": []
     },
     {
-      "objectID": "36207",
+      "objectID": "met:36207",
+      "sourceMuseum": "met",
       "title": "Ouyang Xiu Reading at Midnight",
       "objectName": "Hanging scroll",
       "department": "Asian Art",
@@ -107,7 +113,8 @@
       "events": []
     },
     {
-      "objectID": "36209",
+      "objectID": "met:36209",
+      "sourceMuseum": "met",
       "title": "Orchid in a Vase",
       "objectName": "Hanging scroll",
       "department": "Asian Art",
@@ -132,7 +139,8 @@
       "events": []
     },
     {
-      "objectID": "38945",
+      "objectID": "met:38945",
+      "sourceMuseum": "met",
       "title": "Hanuman Conversing",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -157,7 +165,8 @@
       "events": []
     },
     {
-      "objectID": "38947",
+      "objectID": "met:38947",
+      "sourceMuseum": "met",
       "title": "Standing Shiva",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -182,7 +191,8 @@
       "events": []
     },
     {
-      "objectID": "38948",
+      "objectID": "met:38948",
+      "sourceMuseum": "met",
       "title": "Seated Buddha",
       "objectName": "Figurine",
       "department": "Asian Art",
@@ -207,7 +217,8 @@
       "events": []
     },
     {
-      "objectID": "38949",
+      "objectID": "met:38949",
+      "sourceMuseum": "met",
       "title": "Bodhisattva, possibly Maitreya",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -232,7 +243,8 @@
       "events": []
     },
     {
-      "objectID": "38951",
+      "objectID": "met:38951",
+      "sourceMuseum": "met",
       "title": "Buddha Preaching",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -257,7 +269,8 @@
       "events": []
     },
     {
-      "objectID": "41772",
+      "objectID": "met:41772",
+      "sourceMuseum": "met",
       "title": "Ink Tablet with Tang Mirror Design",
       "objectName": "Ink tablet",
       "department": "Asian Art",
@@ -282,7 +295,8 @@
       "events": []
     },
     {
-      "objectID": "41774",
+      "objectID": "met:41774",
+      "sourceMuseum": "met",
       "title": "Child Lying Down",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -307,7 +321,8 @@
       "events": []
     },
     {
-      "objectID": "41775",
+      "objectID": "met:41775",
+      "sourceMuseum": "met",
       "title": "Ink stick",
       "objectName": "Ink stick",
       "department": "Asian Art",
@@ -332,7 +347,8 @@
       "events": []
     },
     {
-      "objectID": "41776",
+      "objectID": "met:41776",
+      "sourceMuseum": "met",
       "title": "Ink Tablet with Peach Tree",
       "objectName": "Ink tablet",
       "department": "Asian Art",
@@ -357,7 +373,8 @@
       "events": []
     },
     {
-      "objectID": "41778",
+      "objectID": "met:41778",
+      "sourceMuseum": "met",
       "title": "Ink Tablet with Two Phoenixes Design",
       "objectName": "Ink tablet",
       "department": "Asian Art",
@@ -382,7 +399,8 @@
       "events": []
     },
     {
-      "objectID": "44396",
+      "objectID": "met:44396",
+      "sourceMuseum": "met",
       "title": "Pig in Recumbent Position",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -407,7 +425,8 @@
       "events": []
     },
     {
-      "objectID": "44398",
+      "objectID": "met:44398",
+      "sourceMuseum": "met",
       "title": "Spearhead",
       "objectName": "Spearhead",
       "department": "Asian Art",
@@ -432,7 +451,8 @@
       "events": []
     },
     {
-      "objectID": "44399",
+      "objectID": "met:44399",
+      "sourceMuseum": "met",
       "title": "Roof-Tile End with Auspicious Inscription",
       "objectName": "Tile",
       "department": "Asian Art",
@@ -457,7 +477,8 @@
       "events": []
     },
     {
-      "objectID": "44400",
+      "objectID": "met:44400",
+      "sourceMuseum": "met",
       "title": "Pair of Octagonal Sticks",
       "objectName": "Sticks",
       "department": "Asian Art",
@@ -482,7 +503,8 @@
       "events": []
     },
     {
-      "objectID": "44402",
+      "objectID": "met:44402",
+      "sourceMuseum": "met",
       "title": "Pair of Turquoise-Blue Plugs",
       "objectName": "Plugs",
       "department": "Asian Art",
@@ -507,7 +529,8 @@
       "events": []
     },
     {
-      "objectID": "45836",
+      "objectID": "met:45836",
+      "sourceMuseum": "met",
       "title": "Seated Figure of Amida",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -532,7 +555,8 @@
       "events": []
     },
     {
-      "objectID": "45838",
+      "objectID": "met:45838",
+      "sourceMuseum": "met",
       "title": "Vase with cover",
       "objectName": "Vase with cover",
       "department": "Asian Art",
@@ -557,7 +581,8 @@
       "events": []
     },
     {
-      "objectID": "45839",
+      "objectID": "met:45839",
+      "sourceMuseum": "met",
       "title": "Vase with cover",
       "objectName": "Vase with cover",
       "department": "Asian Art",
@@ -582,7 +607,8 @@
       "events": []
     },
     {
-      "objectID": "45840",
+      "objectID": "met:45840",
+      "sourceMuseum": "met",
       "title": "Figure of a civil official",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -607,7 +633,8 @@
       "events": []
     },
     {
-      "objectID": "45842",
+      "objectID": "met:45842",
+      "sourceMuseum": "met",
       "title": "White-Robed Guanyin",
       "objectName": "Figure",
       "department": "Asian Art",
@@ -632,7 +659,8 @@
       "events": []
     },
     {
-      "objectID": "76035",
+      "objectID": "met:76035",
+      "sourceMuseum": "met",
       "title": "Prince A'zam Shah Enters Ahmedabad",
       "objectName": "Illustrated single work",
       "department": "Islamic Art",
@@ -657,7 +685,8 @@
       "events": []
     },
     {
-      "objectID": "80390",
+      "objectID": "met:80390",
+      "sourceMuseum": "met",
       "title": "Woman's Cape",
       "objectName": "Cape",
       "department": "Islamic Art",
@@ -682,7 +711,8 @@
       "events": []
     },
     {
-      "objectID": "85498",
+      "objectID": "met:85498",
+      "sourceMuseum": "met",
       "title": "Coat",
       "objectName": "Coat",
       "department": "Islamic Art",
@@ -707,7 +737,8 @@
       "events": []
     },
     {
-      "objectID": "85500",
+      "objectID": "met:85500",
+      "sourceMuseum": "met",
       "title": "Coat",
       "objectName": "Coat",
       "department": "Islamic Art",
@@ -732,7 +763,8 @@
       "events": []
     },
     {
-      "objectID": "85501",
+      "objectID": "met:85501",
+      "sourceMuseum": "met",
       "title": "Kaftan",
       "objectName": "Kaftan",
       "department": "Islamic Art",
@@ -757,7 +789,8 @@
       "events": []
     },
     {
-      "objectID": "85503",
+      "objectID": "met:85503",
+      "sourceMuseum": "met",
       "title": "Robe",
       "objectName": "Robe",
       "department": "Islamic Art",
@@ -782,7 +815,8 @@
       "events": []
     },
     {
-      "objectID": "85505",
+      "objectID": "met:85505",
+      "sourceMuseum": "met",
       "title": "Dress",
       "objectName": "Dress",
       "department": "Islamic Art",
@@ -807,7 +841,8 @@
       "events": []
     },
     {
-      "objectID": "89985",
+      "objectID": "met:89985",
+      "sourceMuseum": "met",
       "title": "Headscarf",
       "objectName": "Headscarf",
       "department": "The Michael C. Rockefeller Wing",
@@ -832,7 +867,8 @@
       "events": []
     },
     {
-      "objectID": "90277",
+      "objectID": "met:90277",
+      "sourceMuseum": "met",
       "title": "Brooch",
       "objectName": "Brooch",
       "department": "The Michael C. Rockefeller Wing",
@@ -857,7 +893,8 @@
       "events": []
     },
     {
-      "objectID": "96404",
+      "objectID": "met:96404",
+      "sourceMuseum": "met",
       "title": "Woman's Embroidered Wrapper (Ntshakokot)",
       "objectName": "Skirt",
       "department": "The Michael C. Rockefeller Wing",
@@ -882,7 +919,8 @@
       "events": []
     },
     {
-      "objectID": "105510",
+      "objectID": "met:105510",
+      "sourceMuseum": "met",
       "title": "Shoes",
       "objectName": "Shoes",
       "department": "The Michael C. Rockefeller Wing",
@@ -907,7 +945,8 @@
       "events": []
     },
     {
-      "objectID": "123386",
+      "objectID": "met:123386",
+      "sourceMuseum": "met",
       "title": "Shirt",
       "objectName": "Shirt(?)",
       "department": "The Michael C. Rockefeller Wing",
@@ -932,7 +971,8 @@
       "events": []
     },
     {
-      "objectID": "240028",
+      "objectID": "met:240028",
+      "sourceMuseum": "met",
       "title": "Amphora",
       "objectName": "Amphora",
       "department": "Greek and Roman Art",
@@ -957,7 +997,8 @@
       "events": []
     },
     {
-      "objectID": "240029",
+      "objectID": "met:240029",
+      "sourceMuseum": "met",
       "title": "Jug",
       "objectName": "Jug",
       "department": "Greek and Roman Art",
@@ -982,7 +1023,8 @@
       "events": []
     },
     {
-      "objectID": "240032",
+      "objectID": "met:240032",
+      "sourceMuseum": "met",
       "title": "Terracotta jug",
       "objectName": "Jug",
       "department": "Greek and Roman Art",
@@ -1007,7 +1049,8 @@
       "events": []
     },
     {
-      "objectID": "240033",
+      "objectID": "met:240033",
+      "sourceMuseum": "met",
       "title": "Jug",
       "objectName": "Jug",
       "department": "Greek and Roman Art",
@@ -1032,7 +1075,8 @@
       "events": []
     },
     {
-      "objectID": "240036",
+      "objectID": "met:240036",
+      "sourceMuseum": "met",
       "title": "Terracotta juglet",
       "objectName": "Juglet",
       "department": "Greek and Roman Art",
@@ -1057,7 +1101,8 @@
       "events": []
     },
     {
-      "objectID": "241666",
+      "objectID": "met:241666",
+      "sourceMuseum": "met",
       "title": "Terracotta oil lamp",
       "objectName": "Lamp",
       "department": "Greek and Roman Art",
@@ -1082,7 +1127,8 @@
       "events": []
     },
     {
-      "objectID": "241667",
+      "objectID": "met:241667",
+      "sourceMuseum": "met",
       "title": "Terracotta oil lamp",
       "objectName": "Lamp",
       "department": "Greek and Roman Art",
@@ -1107,7 +1153,8 @@
       "events": []
     },
     {
-      "objectID": "241670",
+      "objectID": "met:241670",
+      "sourceMuseum": "met",
       "title": "Terracotta oil lamp",
       "objectName": "Lamp",
       "department": "Greek and Roman Art",
@@ -1132,7 +1179,8 @@
       "events": []
     },
     {
-      "objectID": "241671",
+      "objectID": "met:241671",
+      "sourceMuseum": "met",
       "title": "Terracotta oil lamp",
       "objectName": "Lamp",
       "department": "Greek and Roman Art",
@@ -1157,7 +1205,8 @@
       "events": []
     },
     {
-      "objectID": "241674",
+      "objectID": "met:241674",
+      "sourceMuseum": "met",
       "title": "Terracotta oil lamp",
       "objectName": "Lamp",
       "department": "Greek and Roman Art",
@@ -1182,7 +1231,8 @@
       "events": []
     },
     {
-      "objectID": "244348",
+      "objectID": "met:244348",
+      "sourceMuseum": "met",
       "title": "Strigil blade",
       "objectName": "Strigil blade",
       "department": "Greek and Roman Art",
@@ -1207,7 +1257,8 @@
       "events": []
     },
     {
-      "objectID": "244349",
+      "objectID": "met:244349",
+      "sourceMuseum": "met",
       "title": "Strigil",
       "objectName": "Strigil",
       "department": "Greek and Roman Art",
@@ -1232,7 +1283,8 @@
       "events": []
     },
     {
-      "objectID": "244352",
+      "objectID": "met:244352",
+      "sourceMuseum": "met",
       "title": "Ring",
       "objectName": "Ring",
       "department": "Greek and Roman Art",
@@ -1257,7 +1309,8 @@
       "events": []
     },
     {
-      "objectID": "244353",
+      "objectID": "met:244353",
+      "sourceMuseum": "met",
       "title": "Bracelet",
       "objectName": "Bracelet",
       "department": "Greek and Roman Art",
@@ -1282,7 +1335,8 @@
       "events": []
     },
     {
-      "objectID": "244355",
+      "objectID": "met:244355",
+      "sourceMuseum": "met",
       "title": "Bracelet",
       "objectName": "Bracelet",
       "department": "Greek and Roman Art",
@@ -1307,7 +1361,8 @@
       "events": []
     },
     {
-      "objectID": "246740",
+      "objectID": "met:246740",
+      "sourceMuseum": "met",
       "title": "Terracotta relief plaque with head of Medusa",
       "objectName": "Head of Medusa",
       "department": "Greek and Roman Art",
@@ -1332,7 +1387,8 @@
       "events": []
     },
     {
-      "objectID": "246741",
+      "objectID": "met:246741",
+      "sourceMuseum": "met",
       "title": "Terracotta relief plaque with head of Medusa",
       "objectName": "Head of Medusa",
       "department": "Greek and Roman Art",
@@ -1357,7 +1413,8 @@
       "events": []
     },
     {
-      "objectID": "246744",
+      "objectID": "met:246744",
+      "sourceMuseum": "met",
       "title": "Terracotta Megarian bowl",
       "objectName": "Bowl",
       "department": "Greek and Roman Art",
@@ -1382,7 +1439,8 @@
       "events": []
     },
     {
-      "objectID": "246748",
+      "objectID": "met:246748",
+      "sourceMuseum": "met",
       "title": "Head of a woman",
       "objectName": "Head of a woman",
       "department": "Greek and Roman Art",
@@ -1407,7 +1465,8 @@
       "events": []
     },
     {
-      "objectID": "247913",
+      "objectID": "met:247913",
+      "sourceMuseum": "met",
       "title": "Terracotta skyphos (deep drinking cup)",
       "objectName": "Skyphos, glaux",
       "department": "Greek and Roman Art",
@@ -1432,7 +1491,8 @@
       "events": []
     },
     {
-      "objectID": "247914",
+      "objectID": "met:247914",
+      "sourceMuseum": "met",
       "title": "Terracotta oinochoe: olpe (jug)",
       "objectName": "Olpe",
       "department": "Greek and Roman Art",
@@ -1457,7 +1517,8 @@
       "events": []
     },
     {
-      "objectID": "247917",
+      "objectID": "met:247917",
+      "sourceMuseum": "met",
       "title": "Terracotta aryballos (perfume vase)",
       "objectName": "Aryballos",
       "department": "Greek and Roman Art",
@@ -1482,7 +1543,8 @@
       "events": []
     },
     {
-      "objectID": "247918",
+      "objectID": "met:247918",
+      "sourceMuseum": "met",
       "title": "Terracotta aryballos (perfume vase)",
       "objectName": "Aryballos",
       "department": "Greek and Roman Art",
@@ -1507,7 +1569,8 @@
       "events": []
     },
     {
-      "objectID": "247921",
+      "objectID": "met:247921",
+      "sourceMuseum": "met",
       "title": "Terracotta lekythos (oil flask)",
       "objectName": "Lekythos",
       "department": "Greek and Roman Art",
@@ -1532,7 +1595,8 @@
       "events": []
     },
     {
-      "objectID": "307438",
+      "objectID": "met:307438",
+      "sourceMuseum": "met",
       "title": "Nose ornament",
       "objectName": "Nose ornament",
       "department": "The Michael C. Rockefeller Wing",
@@ -1557,7 +1621,8 @@
       "events": []
     },
     {
-      "objectID": "307726",
+      "objectID": "met:307726",
+      "sourceMuseum": "met",
       "title": "Spindle Whorl",
       "objectName": "Spindle whorl",
       "department": "The Michael C. Rockefeller Wing",
@@ -1582,7 +1647,8 @@
       "events": []
     },
     {
-      "objectID": "307730",
+      "objectID": "met:307730",
+      "sourceMuseum": "met",
       "title": "Necklace of stone beads",
       "objectName": "Necklace",
       "department": "The Michael C. Rockefeller Wing",
@@ -1607,7 +1673,8 @@
       "events": []
     },
     {
-      "objectID": "307734",
+      "objectID": "met:307734",
+      "sourceMuseum": "met",
       "title": "Disk",
       "objectName": "Disk",
       "department": "The Michael C. Rockefeller Wing",
@@ -1632,7 +1699,8 @@
       "events": []
     },
     {
-      "objectID": "307738",
+      "objectID": "met:307738",
+      "sourceMuseum": "met",
       "title": "Mold for Female Figure",
       "objectName": "Mold",
       "department": "The Michael C. Rockefeller Wing",
@@ -1657,7 +1725,8 @@
       "events": []
     },
     {
-      "objectID": "309028",
+      "objectID": "met:309028",
+      "sourceMuseum": "met",
       "title": "Hammered Copper Half Dome",
       "objectName": "Dome",
       "department": "The Michael C. Rockefeller Wing",
@@ -1682,7 +1751,8 @@
       "events": []
     },
     {
-      "objectID": "309032",
+      "objectID": "met:309032",
+      "sourceMuseum": "met",
       "title": "Hammered Silver Miniature Crown",
       "objectName": "Crown",
       "department": "The Michael C. Rockefeller Wing",
@@ -1707,7 +1777,8 @@
       "events": []
     },
     {
-      "objectID": "309036",
+      "objectID": "met:309036",
+      "sourceMuseum": "met",
       "title": "Hammered Silver Miniature Crown",
       "objectName": "Crown",
       "department": "The Michael C. Rockefeller Wing",
@@ -1732,7 +1803,8 @@
       "events": []
     },
     {
-      "objectID": "309040",
+      "objectID": "met:309040",
+      "sourceMuseum": "met",
       "title": "Hammered Silver Miniature Crown",
       "objectName": "Crown",
       "department": "The Michael C. Rockefeller Wing",
@@ -1757,7 +1829,8 @@
       "events": []
     },
     {
-      "objectID": "311551",
+      "objectID": "met:311551",
+      "sourceMuseum": "met",
       "title": "Spear",
       "objectName": "Spear",
       "department": "The Michael C. Rockefeller Wing",
@@ -1782,7 +1855,8 @@
       "events": []
     },
     {
-      "objectID": "311555",
+      "objectID": "met:311555",
+      "sourceMuseum": "met",
       "title": "Spear",
       "objectName": "Spear",
       "department": "The Michael C. Rockefeller Wing",
@@ -1807,7 +1881,8 @@
       "events": []
     },
     {
-      "objectID": "311559",
+      "objectID": "met:311559",
+      "sourceMuseum": "met",
       "title": "Spear",
       "objectName": "Spear",
       "department": "The Michael C. Rockefeller Wing",
@@ -1832,7 +1907,8 @@
       "events": []
     },
     {
-      "objectID": "311563",
+      "objectID": "met:311563",
+      "sourceMuseum": "met",
       "title": "Canoe Prow",
       "objectName": "Canoe prow",
       "department": "The Michael C. Rockefeller Wing",
@@ -1857,7 +1933,8 @@
       "events": []
     },
     {
-      "objectID": "314262",
+      "objectID": "met:314262",
+      "sourceMuseum": "met",
       "title": "Twin Figure: Female (Ibeji)",
       "objectName": "Twin figure",
       "department": "The Michael C. Rockefeller Wing",
@@ -1882,7 +1959,8 @@
       "events": []
     },
     {
-      "objectID": "314266",
+      "objectID": "met:314266",
+      "sourceMuseum": "met",
       "title": "Heddle Pulley: Female Figure",
       "objectName": "Heddle pulley",
       "department": "The Michael C. Rockefeller Wing",
@@ -1907,7 +1985,8 @@
       "events": []
     },
     {
-      "objectID": "314270",
+      "objectID": "met:314270",
+      "sourceMuseum": "met",
       "title": "Heddle Pulley with Figure",
       "objectName": "Heddle pulley",
       "department": "The Michael C. Rockefeller Wing",
@@ -1932,7 +2011,8 @@
       "events": []
     },
     {
-      "objectID": "314274",
+      "objectID": "met:314274",
+      "sourceMuseum": "met",
       "title": "Heddle Pulley with Figure",
       "objectName": "Heddle pulley",
       "department": "The Michael C. Rockefeller Wing",
@@ -1957,7 +2037,8 @@
       "events": []
     },
     {
-      "objectID": "316716",
+      "objectID": "met:316716",
+      "sourceMuseum": "met",
       "title": "Whistle",
       "objectName": "Whistle",
       "department": "The Michael C. Rockefeller Wing",
@@ -1982,7 +2063,8 @@
       "events": []
     },
     {
-      "objectID": "316720",
+      "objectID": "met:316720",
+      "sourceMuseum": "met",
       "title": "Stirrup Spout Bottle: Frog",
       "objectName": "Bottle",
       "department": "The Michael C. Rockefeller Wing",
@@ -2007,7 +2089,8 @@
       "events": []
     },
     {
-      "objectID": "316724",
+      "objectID": "met:316724",
+      "sourceMuseum": "met",
       "title": "Serpent (tunjo)",
       "objectName": "Figure",
       "department": "The Michael C. Rockefeller Wing",
@@ -2032,7 +2115,8 @@
       "events": []
     },
     {
-      "objectID": "316728",
+      "objectID": "met:316728",
+      "sourceMuseum": "met",
       "title": "Bird Pendant",
       "objectName": "Pendant",
       "department": "The Michael C. Rockefeller Wing",
@@ -2057,7 +2141,8 @@
       "events": []
     },
     {
-      "objectID": "321470",
+      "objectID": "met:321470",
+      "sourceMuseum": "met",
       "title": "Stamp seal (scaraboid) with monster",
       "objectName": "Stamp seal",
       "department": "Ancient West Asian Art",
@@ -2082,7 +2167,8 @@
       "events": []
     },
     {
-      "objectID": "322066",
+      "objectID": "met:322066",
+      "sourceMuseum": "met",
       "title": "Cuneiform tablet: fragment of the witness list of a contract (?)",
       "objectName": "Cuneiform tablet",
       "department": "Ancient West Asian Art",
@@ -2107,7 +2193,8 @@
       "events": []
     },
     {
-      "objectID": "322624",
+      "objectID": "met:322624",
+      "sourceMuseum": "met",
       "title": "Relief: procession of captives",
       "objectName": "Relief",
       "department": "Ancient West Asian Art",
@@ -2132,7 +2219,8 @@
       "events": []
     },
     {
-      "objectID": "322910",
+      "objectID": "met:322910",
+      "sourceMuseum": "met",
       "title": "Necklace beads",
       "objectName": "Beads",
       "department": "Ancient West Asian Art",
@@ -2157,7 +2245,8 @@
       "events": []
     },
     {
-      "objectID": "323174",
+      "objectID": "met:323174",
+      "sourceMuseum": "met",
       "title": "Lamp",
       "objectName": "Lamp",
       "department": "Ancient West Asian Art",
@@ -2182,7 +2271,8 @@
       "events": []
     },
     {
-      "objectID": "323610",
+      "objectID": "met:323610",
+      "sourceMuseum": "met",
       "title": "Plaque fragment",
       "objectName": "Relief",
       "department": "Ancient West Asian Art",
@@ -2207,7 +2297,8 @@
       "events": []
     },
     {
-      "objectID": "323950",
+      "objectID": "met:323950",
+      "sourceMuseum": "met",
       "title": "Tripod bowl",
       "objectName": "Bowl",
       "department": "Ancient West Asian Art",
@@ -2232,7 +2323,8 @@
       "events": []
     },
     {
-      "objectID": "324116",
+      "objectID": "met:324116",
+      "sourceMuseum": "met",
       "title": "Female head with elaborate hairstyle",
       "objectName": "Sculpture",
       "department": "Ancient West Asian Art",
@@ -2257,7 +2349,8 @@
       "events": []
     },
     {
-      "objectID": "324797",
+      "objectID": "met:324797",
+      "sourceMuseum": "met",
       "title": "Section of a band with felines and heads of birds",
       "objectName": "Relief",
       "department": "Ancient West Asian Art",
@@ -2282,7 +2375,8 @@
       "events": []
     },
     {
-      "objectID": "325417",
+      "objectID": "met:325417",
+      "sourceMuseum": "met",
       "title": "Jar",
       "objectName": "Jar",
       "department": "Ancient West Asian Art",
@@ -2307,7 +2401,8 @@
       "events": []
     },
     {
-      "objectID": "325572",
+      "objectID": "met:325572",
+      "sourceMuseum": "met",
       "title": "Ivory fragment",
       "objectName": "Relief",
       "department": "Ancient West Asian Art",
@@ -2332,7 +2427,8 @@
       "events": []
     },
     {
-      "objectID": "326082",
+      "objectID": "met:326082",
+      "sourceMuseum": "met",
       "title": "Ornament",
       "objectName": "Ornament",
       "department": "Ancient West Asian Art",
@@ -2357,7 +2453,8 @@
       "events": []
     },
     {
-      "objectID": "326373",
+      "objectID": "met:326373",
+      "sourceMuseum": "met",
       "title": "Cuneiform tablet case impressed with cylinder seal in Anatolian style",
       "objectName": "Cuneiform tablet case",
       "department": "Ancient West Asian Art",
@@ -2382,7 +2479,8 @@
       "events": []
     },
     {
-      "objectID": "326466",
+      "objectID": "met:326466",
+      "sourceMuseum": "met",
       "title": "Bead",
       "objectName": "Bead",
       "department": "Ancient West Asian Art",
@@ -2407,7 +2505,8 @@
       "events": []
     },
     {
-      "objectID": "327079",
+      "objectID": "met:327079",
+      "sourceMuseum": "met",
       "title": "Cylinder seal",
       "objectName": "Cylinder seal",
       "department": "Ancient West Asian Art",
@@ -2432,7 +2531,8 @@
       "events": []
     },
     {
-      "objectID": "327547",
+      "objectID": "met:327547",
+      "sourceMuseum": "met",
       "title": "Harness or bridle fitting (?) in the form of a mistress of animals and waterbirds",
       "objectName": "Harness or bridle fitting (?)",
       "department": "Ancient West Asian Art",
@@ -2457,7 +2557,8 @@
       "events": []
     },
     {
-      "objectID": "327754",
+      "objectID": "met:327754",
+      "sourceMuseum": "met",
       "title": "Cylinder seal",
       "objectName": "Cylinder seal",
       "department": "Ancient West Asian Art",
@@ -2482,7 +2583,8 @@
       "events": []
     },
     {
-      "objectID": "328095",
+      "objectID": "met:328095",
+      "sourceMuseum": "met",
       "title": "Silver drachm",
       "objectName": null,
       "department": "Ancient West Asian Art",
@@ -2507,7 +2609,8 @@
       "events": []
     },
     {
-      "objectID": "328593",
+      "objectID": "met:328593",
+      "sourceMuseum": "met",
       "title": "Monstrous male figure",
       "objectName": "Sculpture",
       "department": "Ancient West Asian Art",
@@ -2532,7 +2635,8 @@
       "events": []
     },
     {
-      "objectID": "328744",
+      "objectID": "met:328744",
+      "sourceMuseum": "met",
       "title": "Earring",
       "objectName": "Earring",
       "department": "Ancient West Asian Art",
@@ -2557,7 +2661,8 @@
       "events": []
     },
     {
-      "objectID": "329067",
+      "objectID": "met:329067",
+      "sourceMuseum": "met",
       "title": "Foundation figure of Ur-Namma holding a basket",
       "objectName": "Foundation figure",
       "department": "Ancient West Asian Art",
@@ -2582,7 +2687,8 @@
       "events": []
     },
     {
-      "objectID": "445491",
+      "objectID": "met:445491",
+      "sourceMuseum": "met",
       "title": "Ceramic Fragment",
       "objectName": "Fragment",
       "department": "Islamic Art",
@@ -2607,7 +2713,8 @@
       "events": []
     },
     {
-      "objectID": "445493",
+      "objectID": "met:445493",
+      "sourceMuseum": "met",
       "title": "Ceramic Fragment",
       "objectName": "Fragment",
       "department": "Islamic Art",
@@ -2632,7 +2739,8 @@
       "events": []
     },
     {
-      "objectID": "445495",
+      "objectID": "met:445495",
+      "sourceMuseum": "met",
       "title": "Ceramic Fragment",
       "objectName": "Fragment",
       "department": "Islamic Art",
@@ -2657,7 +2765,8 @@
       "events": []
     },
     {
-      "objectID": "445497",
+      "objectID": "met:445497",
+      "sourceMuseum": "met",
       "title": "Ceramic Fragment",
       "objectName": "Fragment",
       "department": "Islamic Art",
@@ -2682,7 +2791,8 @@
       "events": []
     },
     {
-      "objectID": "446966",
+      "objectID": "met:446966",
+      "sourceMuseum": "met",
       "title": "Scarf",
       "objectName": "Scarf",
       "department": "Islamic Art",
@@ -2707,7 +2817,8 @@
       "events": []
     },
     {
-      "objectID": "446968",
+      "objectID": "met:446968",
+      "sourceMuseum": "met",
       "title": "Hanging",
       "objectName": "Hanging",
       "department": "Islamic Art",
@@ -2732,7 +2843,8 @@
       "events": []
     },
     {
-      "objectID": "446970",
+      "objectID": "met:446970",
+      "sourceMuseum": "met",
       "title": "Textile Fragment",
       "objectName": "Textile fragment",
       "department": "Islamic Art",
@@ -2757,7 +2869,8 @@
       "events": []
     },
     {
-      "objectID": "446973",
+      "objectID": "met:446973",
+      "sourceMuseum": "met",
       "title": "Tile",
       "objectName": "Tile",
       "department": "Islamic Art",
@@ -2782,7 +2895,8 @@
       "events": []
     },
     {
-      "objectID": "448266",
+      "objectID": "met:448266",
+      "sourceMuseum": "met",
       "title": "Dish with Carved Arabic Inscription in Floriated Kufic Reading \"al-'izz\" (\"Glory\")",
       "objectName": "Dish",
       "department": "Islamic Art",
@@ -2807,7 +2921,8 @@
       "events": []
     },
     {
-      "objectID": "448268",
+      "objectID": "met:448268",
+      "sourceMuseum": "met",
       "title": "Bowl",
       "objectName": "Bowl",
       "department": "Islamic Art",
@@ -2832,7 +2947,8 @@
       "events": []
     },
     {
-      "objectID": "448270",
+      "objectID": "met:448270",
+      "sourceMuseum": "met",
       "title": "Bowl",
       "objectName": "Bowl",
       "department": "Islamic Art",
@@ -2857,7 +2973,8 @@
       "events": []
     },
     {
-      "objectID": "448273",
+      "objectID": "met:448273",
+      "sourceMuseum": "met",
       "title": "Bowl",
       "objectName": "Bowl",
       "department": "Islamic Art",
@@ -2882,7 +2999,8 @@
       "events": []
     },
     {
-      "objectID": "448735",
+      "objectID": "met:448735",
+      "sourceMuseum": "met",
       "title": "Bottom of a Cup",
       "objectName": "Fragment of a cup",
       "department": "Islamic Art",
@@ -2907,7 +3025,8 @@
       "events": []
     },
     {
-      "objectID": "448737",
+      "objectID": "met:448737",
+      "sourceMuseum": "met",
       "title": "Glass Fragment",
       "objectName": "Fragment",
       "department": "Islamic Art",
@@ -2932,7 +3051,8 @@
       "events": []
     },
     {
-      "objectID": "448739",
+      "objectID": "met:448739",
+      "sourceMuseum": "met",
       "title": "Ceramic Fragment",
       "objectName": "Fragment",
       "department": "Islamic Art",
@@ -2957,7 +3077,8 @@
       "events": []
     },
     {
-      "objectID": "448741",
+      "objectID": "met:448741",
+      "sourceMuseum": "met",
       "title": "Glass Fragment",
       "objectName": "Fragment",
       "department": "Islamic Art",
@@ -2982,7 +3103,8 @@
       "events": []
     },
     {
-      "objectID": "448742",
+      "objectID": "met:448742",
+      "sourceMuseum": "met",
       "title": "Handle",
       "objectName": "Handle",
       "department": "Islamic Art",
@@ -3007,7 +3129,8 @@
       "events": []
     },
     {
-      "objectID": "543863",
+      "objectID": "met:543863",
+      "sourceMuseum": "met",
       "title": "False Door of the Royal Sealer Neferiu",
       "objectName": "False door, Neferiu, Wedjebet",
       "department": "Egyptian Art",
@@ -3032,7 +3155,8 @@
       "events": []
     },
     {
-      "objectID": "543866",
+      "objectID": "met:543866",
+      "sourceMuseum": "met",
       "title": "Libation Dish Depicting Ka-Arms Presenting an Ankh-Sign",
       "objectName": "Dish, libation",
       "department": "Egyptian Art",
@@ -3057,7 +3181,8 @@
       "events": []
     },
     {
-      "objectID": "543870",
+      "objectID": "met:543870",
+      "sourceMuseum": "met",
       "title": "Figure of a male beer-maker",
       "objectName": "Statuette, male beer-maker",
       "department": "Egyptian Art",
@@ -3082,7 +3207,8 @@
       "events": []
     },
     {
-      "objectID": "543875",
+      "objectID": "met:543875",
+      "sourceMuseum": "met",
       "title": "Standing statue of Mitry's wife",
       "objectName": "Statue, Merti's wife, standing, Mitry",
       "department": "Egyptian Art",
@@ -3103,11 +3229,54 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "state_sale"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Excavado/asignado bajo el Servicio de Antiguedades Egipcio, dirigido por el frances Pierre Lacau (1914-1936), bajo administracion fuertemente influida por Gran Bretana incluso tras la independencia nominal de Egipto en 1922. Ver ensayo del Met sobre su propia expedicion: https://www.metmuseum.org/essays/the-egyptian-expedition-1906-1936"
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2381-2323 BCE probably",
+          "actor_or_institution": null,
+          "location": "Saqqara, Egypt",
+          "description": "Wooden statue from the tomb of Merti at Saqqara.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543875",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": null,
+          "actor_or_institution": "Egyptian Antiquities Service",
+          "location": "Saqqara, Tomb of Merti",
+          "description": "Excavated by the Egyptian government's antiquities service.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543875",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1926",
+          "actor_or_institution": "Egyptian Government",
+          "location": null,
+          "description": "Purchased directly from the Egyptian Government by the Metropolitan Museum of Art.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543875",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
-      "objectID": "543881",
+      "objectID": "met:543881",
+      "sourceMuseum": "met",
       "title": "Weight equal to five deben",
       "objectName": "Weight, 5 deben",
       "department": "Egyptian Art",
@@ -3132,7 +3301,8 @@
       "events": []
     },
     {
-      "objectID": "543890",
+      "objectID": "met:543890",
+      "sourceMuseum": "met",
       "title": "Relief fragment with king Khufu's cattle",
       "objectName": "Relief, king Khufu's cattle",
       "department": "Egyptian Art",
@@ -3153,11 +3323,54 @@
       "originPrecision": "subregion",
       "originLat": 29.5667,
       "originLon": 31.2167,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "partage"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Excavado/asignado bajo el Servicio de Antiguedades Egipcio, dirigido por el frances Pierre Lacau (1914-1936), bajo administracion fuertemente influida por Gran Bretana incluso tras la independencia nominal de Egipto en 1922. Ver ensayo del Met sobre su propia expedicion: https://www.metmuseum.org/essays/the-egyptian-expedition-1906-1936"
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2551-2528 BCE",
+          "actor_or_institution": null,
+          "location": "Memphite Region, Egypt",
+          "description": "Carved during the reign of Khufu (Dynasty 4); later found reused as building material in the foundation of a Middle Kingdom mastaba near the pyramid of Amenemhat I at Lisht North.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543890",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1920-1922",
+          "actor_or_institution": "Egyptian Expedition of the Metropolitan Museum of Art",
+          "location": "Lisht North, Egypt",
+          "description": "Excavated by the Met's own Egyptian Expedition (active in Egypt 1906-1936).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543890",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1922",
+          "actor_or_institution": "Egyptian Antiquities Service",
+          "location": "Cairo, Egypt",
+          "description": "Allotted to the Metropolitan Museum in the division of finds (partage) at the close of the excavation season; the Antiquities Service retained first choice before foreign missions could export their share.",
+          "source_url": "https://www.metmuseum.org/essays/the-egyptian-expedition-1906-1936",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
-      "objectID": "543894",
+      "objectID": "met:543894",
+      "sourceMuseum": "met",
       "title": "Relief Fragment with a Ship Under Sail",
       "objectName": "Relief, ship under sail",
       "department": "Egyptian Art",
@@ -3182,7 +3395,8 @@
       "events": []
     },
     {
-      "objectID": "543895",
+      "objectID": "met:543895",
+      "sourceMuseum": "met",
       "title": "Archers",
       "objectName": "Relief, archers",
       "department": "Egyptian Art",
@@ -3207,7 +3421,8 @@
       "events": []
     },
     {
-      "objectID": "543896",
+      "objectID": "met:543896",
+      "sourceMuseum": "met",
       "title": "Fragmentary Face of King Khafre",
       "objectName": "Head fragment, King Khafre",
       "department": "Egyptian Art",
@@ -3232,7 +3447,8 @@
       "events": []
     },
     {
-      "objectID": "543897",
+      "objectID": "met:543897",
+      "sourceMuseum": "met",
       "title": "Sistrum Inscribed with the Names of King Teti",
       "objectName": "Music, sistrum, Teti, papyrus, falcon",
       "department": "Egyptian Art",
@@ -3257,7 +3473,8 @@
       "events": []
     },
     {
-      "objectID": "543898",
+      "objectID": "met:543898",
+      "sourceMuseum": "met",
       "title": "Vase in the Shape of Mother Monkey with Her Young",
       "objectName": "Vase, monkey, baby",
       "department": "Egyptian Art",
@@ -3282,7 +3499,8 @@
       "events": []
     },
     {
-      "objectID": "543899",
+      "objectID": "met:543899",
+      "sourceMuseum": "met",
       "title": "The King's Acquaintances Memi and Sabu",
       "objectName": "Statue, standing pair, Memi, Sabu",
       "department": "Egyptian Art",
@@ -3307,7 +3525,8 @@
       "events": []
     },
     {
-      "objectID": "543900",
+      "objectID": "met:543900",
+      "sourceMuseum": "met",
       "title": "Nikare as a scribe",
       "objectName": "Statue, Nikare, scribe",
       "department": "Egyptian Art",
@@ -3332,7 +3551,8 @@
       "events": []
     },
     {
-      "objectID": "543901",
+      "objectID": "met:543901",
+      "sourceMuseum": "met",
       "title": "Nikare with his Wife and Daughter",
       "objectName": "Statue group, Nikare, wife, daughter",
       "department": "Egyptian Art",
@@ -3357,7 +3577,8 @@
       "events": []
     },
     {
-      "objectID": "543902",
+      "objectID": "met:543902",
+      "sourceMuseum": "met",
       "title": "Statue of Demedji and Hennutsen",
       "objectName": "Statue, seated pair, Demedji, Hennutsen",
       "department": "Egyptian Art",
@@ -3382,7 +3603,8 @@
       "events": []
     },
     {
-      "objectID": "543903",
+      "objectID": "met:543903",
+      "sourceMuseum": "met",
       "title": "Striding Figure",
       "objectName": "Statue, striding man",
       "department": "Egyptian Art",
@@ -3407,7 +3629,8 @@
       "events": []
     },
     {
-      "objectID": "543904",
+      "objectID": "met:543904",
+      "sourceMuseum": "met",
       "title": "Wall tiles from the funerary apartments of king Djoser",
       "objectName": "Tile, apartments of King Djoser",
       "department": "Egyptian Art",
@@ -3432,7 +3655,8 @@
       "events": []
     },
     {
-      "objectID": "543905",
+      "objectID": "met:543905",
+      "sourceMuseum": "met",
       "title": "Nursing woman",
       "objectName": "Statuette, woman and child",
       "department": "Egyptian Art",
@@ -3457,7 +3681,8 @@
       "events": []
     },
     {
-      "objectID": "543906",
+      "objectID": "met:543906",
+      "sourceMuseum": "met",
       "title": "Kneeling captive",
       "objectName": "Statue, kneeling captive",
       "department": "Egyptian Art",
@@ -3482,7 +3707,8 @@
       "events": []
     },
     {
-      "objectID": "543907",
+      "objectID": "met:543907",
+      "sourceMuseum": "met",
       "title": "False door from the tomb of Metjetji",
       "objectName": "False door, tomb of Metjetji",
       "department": "Egyptian Art",
@@ -3507,7 +3733,8 @@
       "events": []
     },
     {
-      "objectID": "543908",
+      "objectID": "met:543908",
+      "sourceMuseum": "met",
       "title": "Vase in the Shape of a Mother Monkey with Her Offspring",
       "objectName": "Vase, monkey, baby",
       "department": "Egyptian Art",
@@ -3532,7 +3759,8 @@
       "events": []
     },
     {
-      "objectID": "543909",
+      "objectID": "met:543909",
+      "sourceMuseum": "met",
       "title": "Reserve head",
       "objectName": "Head, reserve",
       "department": "Egyptian Art",
@@ -3553,11 +3781,65 @@
       "originPrecision": "subregion",
       "originLat": 29.9765,
       "originLon": 31.1313,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "partage"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Excavado/asignado bajo el Servicio de Antiguedades Egipcio, dirigido por el frances Pierre Lacau (1914-1936), bajo administracion fuertemente influida por Gran Bretana incluso tras la independencia nominal de Egipto en 1922. Ver ensayo del Met sobre su propia expedicion: https://www.metmuseum.org/essays/the-egyptian-expedition-1906-1936"
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2551-2528 BCE",
+          "actor_or_institution": null,
+          "location": "Giza, Egypt",
+          "description": "Carved during the reign of Khufu or Khafre (Dynasty 4); placed in the burial shaft of tomb G7560 as a 'reserve head.'",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543909",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1936",
+          "actor_or_institution": "Harvard University-Museum of Fine Arts Boston Expedition (George Reisner)",
+          "location": "Giza, Eastern Cemetery, Mastaba G7560",
+          "description": "Excavated during the Harvard-MFA mission's work at the Giza necropolis.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543909",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1936",
+          "actor_or_institution": "Egyptian Antiquities Service",
+          "location": "Cairo, Egypt",
+          "description": "Received by the Museum of Fine Arts, Boston in the division of finds (partage).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543909",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "1948",
+          "actor_or_institution": "Museum of Fine Arts, Boston",
+          "location": null,
+          "description": "Purchased by the Metropolitan Museum of Art from the MFA Boston, twelve years after the MFA received it in the division of finds.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543909",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
-      "objectID": "543910",
+      "objectID": "met:543910",
+      "sourceMuseum": "met",
       "title": "Stand for an Offering Basin with the Name of King Khafre",
       "objectName": "Offering stand, king Khafre",
       "department": "Egyptian Art",
@@ -3582,7 +3864,8 @@
       "events": []
     },
     {
-      "objectID": "543911",
+      "objectID": "met:543911",
+      "sourceMuseum": "met",
       "title": "Offering table",
       "objectName": "Offering table",
       "department": "Egyptian Art",
@@ -3607,7 +3890,8 @@
       "events": []
     },
     {
-      "objectID": "543912",
+      "objectID": "met:543912",
+      "sourceMuseum": "met",
       "title": "Corner of niche from the tomb of Akhtihotep",
       "objectName": "False Door Niche block, Akhtihotep, corner",
       "department": "Egyptian Art",
@@ -3632,7 +3916,8 @@
       "events": []
     },
     {
-      "objectID": "543914",
+      "objectID": "met:543914",
+      "sourceMuseum": "met",
       "title": "West wall of the chapel of Nikauhor and Sekhemhathor",
       "objectName": "Relief, Chapel of Nikauhor and Sekhemhathor",
       "department": "Egyptian Art",
@@ -3657,7 +3942,8 @@
       "events": []
     },
     {
-      "objectID": "543915",
+      "objectID": "met:543915",
+      "sourceMuseum": "met",
       "title": "Statue of Tjeteti as a young man",
       "objectName": "Statue, Tjeteti, young man",
       "department": "Egyptian Art",
@@ -3682,7 +3968,8 @@
       "events": []
     },
     {
-      "objectID": "543916",
+      "objectID": "met:543916",
+      "sourceMuseum": "met",
       "title": "Statue of Tjeteti in middle age",
       "objectName": "Statue, Tjeteti, middle age",
       "department": "Egyptian Art",
@@ -3707,7 +3994,8 @@
       "events": []
     },
     {
-      "objectID": "543917",
+      "objectID": "met:543917",
+      "sourceMuseum": "met",
       "title": "Mummified leg of beef case",
       "objectName": "Mummified leg of beef case",
       "department": "Egyptian Art",
@@ -3728,11 +4016,65 @@
       "originPrecision": "subregion",
       "originLat": 29.9765,
       "originLon": 31.1313,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "partage"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Excavado/asignado bajo el Servicio de Antiguedades Egipcio, dirigido por el frances Pierre Lacau (1914-1936), bajo administracion fuertemente influida por Gran Bretana incluso tras la independencia nominal de Egipto en 1922. Ver ensayo del Met sobre su propia expedicion: https://www.metmuseum.org/essays/the-egyptian-expedition-1906-1936"
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2323-2255 BCE",
+          "actor_or_institution": null,
+          "location": "Giza, Egypt",
+          "description": "Made to hold a mummified offering of beef for the tomb owner's afterlife sustenance.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543917",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1912",
+          "actor_or_institution": "Harvard University-Museum of Fine Arts Boston Expedition (George Reisner)",
+          "location": "Giza, Western Cemetery, Mastaba G2374",
+          "description": "Found as debris in a burial shaft during the Harvard-MFA mission's excavations at Giza.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543917",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1912",
+          "actor_or_institution": "Egyptian Government / Egyptian Antiquities Service",
+          "location": null,
+          "description": "Allotted to the Museum of Fine Arts, Boston by the Egyptian government in the division of finds.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543917",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "1937",
+          "actor_or_institution": "Museum of Fine Arts, Boston",
+          "location": null,
+          "description": "Purchased by the Metropolitan Museum of Art from the MFA Boston, twenty-five years after excavation.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543917",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
-      "objectID": "543918",
+      "objectID": "met:543918",
+      "sourceMuseum": "met",
       "title": "Mummified goose case",
       "objectName": "Mummified goose case",
       "department": "Egyptian Art",
@@ -3757,7 +4099,8 @@
       "events": []
     },
     {
-      "objectID": "543919",
+      "objectID": "met:543919",
+      "sourceMuseum": "met",
       "title": "Mummified duck case",
       "objectName": "Mummified duck case",
       "department": "Egyptian Art",
@@ -3782,7 +4125,8 @@
       "events": []
     },
     {
-      "objectID": "543920",
+      "objectID": "met:543920",
+      "sourceMuseum": "met",
       "title": "Model of the \"Opening of the Mouth\" ritual equipment",
       "objectName": "Model, \"Opening of the Mouth\" ritual equipment",
       "department": "Egyptian Art",
@@ -3807,7 +4151,8 @@
       "events": []
     },
     {
-      "objectID": "543921",
+      "objectID": "met:543921",
+      "sourceMuseum": "met",
       "title": "Ewer",
       "objectName": "Ewer",
       "department": "Egyptian Art",
@@ -3828,11 +4173,54 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "state_sale"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Excavado/asignado bajo el Servicio de Antiguedades Egipcio, dirigido por el frances Pierre Lacau (1914-1936), bajo administracion fuertemente influida por Gran Bretana incluso tras la independencia nominal de Egipto en 1922. Ver ensayo del Met sobre su propia expedicion: https://www.metmuseum.org/essays/the-egyptian-expedition-1906-1936"
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2323-2150 BCE",
+          "actor_or_institution": null,
+          "location": "Saqqara, Egypt",
+          "description": "Copper ewer placed in the tomb of Tjetji at the Teti Pyramid Cemetery.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543921",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1920-1921",
+          "actor_or_institution": "Egyptian Antiquities Service (SAE)",
+          "location": "Saqqara, Teti Pyramid Cemetery, Tomb of Tjetji",
+          "description": "Excavated directly by the Egyptian government's own antiquities service, rather than a foreign concession-holding mission.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543921",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1926",
+          "actor_or_institution": "Egyptian Government",
+          "location": null,
+          "description": "Purchased directly from the Egyptian Government by the Metropolitan Museum of Art -- a different mechanism from partage: the state itself sold excavated material rather than allotting a share to a foreign excavator.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543921",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
-      "objectID": "543922",
+      "objectID": "met:543922",
+      "sourceMuseum": "met",
       "title": "Ewer",
       "objectName": "Vessel, Ewer",
       "department": "Egyptian Art",
@@ -3857,7 +4245,8 @@
       "events": []
     },
     {
-      "objectID": "543923",
+      "objectID": "met:543923",
+      "sourceMuseum": "met",
       "title": "Basin",
       "objectName": "Basin",
       "department": "Egyptian Art",
@@ -3882,7 +4271,8 @@
       "events": []
     },
     {
-      "objectID": "543924",
+      "objectID": "met:543924",
+      "sourceMuseum": "met",
       "title": "Basin",
       "objectName": "Basin",
       "department": "Egyptian Art",
@@ -3907,7 +4297,8 @@
       "events": []
     },
     {
-      "objectID": "543925",
+      "objectID": "met:543925",
+      "sourceMuseum": "met",
       "title": "Wine or beer jar",
       "objectName": "Jar, wine or beer",
       "department": "Egyptian Art",
@@ -3932,7 +4323,8 @@
       "events": []
     },
     {
-      "objectID": "543926",
+      "objectID": "met:543926",
+      "sourceMuseum": "met",
       "title": "Wine or beer jar",
       "objectName": "Jar, wine or beer",
       "department": "Egyptian Art",
@@ -3957,7 +4349,8 @@
       "events": []
     },
     {
-      "objectID": "543927",
+      "objectID": "met:543927",
+      "sourceMuseum": "met",
       "title": "Jar",
       "objectName": "Jar",
       "department": "Egyptian Art",
@@ -3982,7 +4375,8 @@
       "events": []
     },
     {
-      "objectID": "543928",
+      "objectID": "met:543928",
+      "sourceMuseum": "met",
       "title": "Miniature \"nw\" pot",
       "objectName": "Pot, \"nw\" pot, miniature",
       "department": "Egyptian Art",
@@ -4007,7 +4401,8 @@
       "events": []
     },
     {
-      "objectID": "781871",
+      "objectID": "met:781871",
+      "sourceMuseum": "met",
       "title": "Persian Travelogue: A Diary of a Journey through the region of Fars",
       "objectName": "Persian Travelogue",
       "department": "Ancient West Asian Art",

@@ -20,6 +20,15 @@ EVENTS_PATH = DATA_DIR / "enrichment" / "provenance_events.csv"
 
 OUT_PATH = Path(__file__).resolve().parent.parent / "web" / "src" / "data" / "objects.json"
 
+# Metadata de despliegue por museo (nombre/ciudad para mostrar). Las
+# coordenadas se toman de geography.csv (museum_lat/museum_lon), no de acá —
+# esto es solo lo que no viene en el CSV por fila.
+MUSEUM_META = {
+    "met": {"name": "The Metropolitan Museum of Art", "city": "New York"},
+    "louvre": {"name": "Musée du Louvre", "city": "Paris"},
+    "bm": {"name": "British Museum", "city": "London"},
+}
+
 
 def read_csv(path: Path) -> list[dict]:
     if not path.exists():
@@ -86,6 +95,7 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
 
     return {
         "objectID": object_id,
+        "sourceMuseum": row.get("sourceMuseum") or None,
         "title": row.get("title") or None,
         "objectName": row.get("objectName") or None,
         "department": row.get("department") or None,
@@ -119,13 +129,24 @@ def main() -> None:
     context = load_context()
     events = load_events()
 
-    met_lat, met_lon = float(rows[0]["met_lat"]), float(rows[0]["met_lon"])
     objects = [build_object(r, context, events) for r in rows]
 
-    bundle = {
-        "met": {"lat": met_lat, "lon": met_lon, "name": "The Metropolitan Museum of Art", "city": "New York"},
-        "objects": objects,
-    }
+    # Un museo (destino) por sourceMuseum, tomando lat/lon de la primera fila
+    # que aparece de cada uno — todas las filas de un mismo museo comparten
+    # el mismo museum_lat/museum_lon.
+    museums = {}
+    for r in rows:
+        source = r.get("sourceMuseum")
+        if source and source not in museums:
+            meta = MUSEUM_META.get(source, {"name": source, "city": ""})
+            museums[source] = {
+                "lat": float(r["museum_lat"]),
+                "lon": float(r["museum_lon"]),
+                "name": meta["name"],
+                "city": meta["city"],
+            }
+
+    bundle = {"museums": museums, "objects": objects}
 
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(json.dumps(bundle, ensure_ascii=False, indent=2))

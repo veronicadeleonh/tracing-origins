@@ -7,6 +7,23 @@
 .map-pane {
   flex: 1 1 auto;
   min-width: 0;
+  position: relative;
+}
+
+.curated-note {
+  position: absolute;
+  z-index: 1000;
+  bottom: 12px;
+  left: 12px;
+  max-width: 320px;
+  background: rgba(251, 250, 247, 0.92);
+  border: 1px solid #e5e2da;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: #77726a;
+  line-height: 1.4;
+  pointer-events: none;
 }
 
 .leaflet-container {

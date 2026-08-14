@@ -15,6 +15,8 @@ import csv
 import json
 from pathlib import Path
 
+from museum_id import MET, namespaced_id
+
 RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "met_objects_raw.json"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "met_objects.csv"
 
@@ -22,10 +24,15 @@ OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "met_
 # calculado ni interpretado por nosotros. country/region/subregion se
 # preservan tal cual (aunque geocode.py los usa como insumo en layer 2) para
 # que layer 1 sea trazable de forma independiente.
+#
+# objectID acá NO es el id crudo del Met — es "met:<id>", namespaceado para
+# no colisionar con los IDs de otros museos (ver museum_id.py). El id nativo
+# del Met se conserva aparte en sourceObjectID por si hace falta reconstruir
+# la URL de la API o cruzar con met_objects_raw.json directamente.
 FIELDS = [
-    "objectID", "title", "objectName", "department", "culture", "period", "dynasty",
-    "objectDate", "medium", "creditLine", "accessionYear", "excavation",
-    "geographyType", "country", "region", "subregion", "primaryImage",
+    "objectID", "sourceMuseum", "sourceObjectID", "title", "objectName", "department",
+    "culture", "period", "dynasty", "objectDate", "medium", "creditLine", "accessionYear",
+    "excavation", "geographyType", "country", "region", "subregion", "primaryImage",
     "objectURL", "objectWikidata_URL",
 ]
 
@@ -37,7 +44,11 @@ def load_objects() -> list[dict]:
 
 
 def build_row(obj: dict) -> dict:
-    return {field: obj.get(field) for field in FIELDS}
+    row = {field: obj.get(field) for field in FIELDS}
+    row["objectID"] = namespaced_id(MET, obj.get("objectID"))
+    row["sourceMuseum"] = MET
+    row["sourceObjectID"] = obj.get("objectID")
+    return row
 
 
 def main() -> None:

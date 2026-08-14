@@ -197,7 +197,7 @@ def main() -> None:
     context = load_context()
     events = load_events()
 
-    met_lat, met_lon = float(rows[0]["met_lat"]), float(rows[0]["met_lon"])
+    met_lat, met_lon = float(rows[0]["museum_lat"]), float(rows[0]["museum_lon"])
 
     m = folium.Map(location=[20, 10], zoom_start=2, tiles="CartoDB positron")
 
@@ -223,7 +223,7 @@ def main() -> None:
         grouped[key].append(r)
 
     for (lat, lon, label), items in grouped.items():
-        items_sorted = sorted(items, key=lambda r: int(r["objectID"]))
+        items_sorted = sorted(items, key=lambda r: r["objectID"])
         count = len(items_sorted)
 
         # Una línea por objeto (no una línea gruesa por cluster). El origen de

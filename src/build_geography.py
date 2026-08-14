@@ -17,11 +17,16 @@ import json
 from pathlib import Path
 
 from geocode import MET_COORDS, resolve_origin
+from museum_id import MET, namespaced_id
 
 RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "met_objects_raw.json"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "geography.csv"
 
-FIELDS = ["objectID", "origin_label", "origin_precision", "origin_lat", "origin_lon", "met_lat", "met_lon"]
+# museum_lat/museum_lon son las coordenadas del museo actual (destino de la
+# línea) — se llamaban met_lat/met_lon, renombradas porque geography.csv ya
+# no es Met-específico: cuando sumemos Louvre/British Museum sus filas van
+# acá también, con sus propias coordenadas de destino.
+FIELDS = ["objectID", "origin_label", "origin_precision", "origin_lat", "origin_lon", "museum_lat", "museum_lon"]
 
 
 def load_objects() -> list[dict]:
@@ -32,15 +37,15 @@ def load_objects() -> list[dict]:
 
 def build_row(obj: dict) -> dict:
     origin = resolve_origin(obj)
-    met_lat, met_lon = MET_COORDS
+    museum_lat, museum_lon = MET_COORDS
     return {
-        "objectID": obj.get("objectID"),
+        "objectID": namespaced_id(MET, obj.get("objectID")),
         "origin_label": origin["label"],
         "origin_precision": origin["precision"],
         "origin_lat": origin["lat"],
         "origin_lon": origin["lon"],
-        "met_lat": met_lat,
-        "met_lon": met_lon,
+        "museum_lat": museum_lat,
+        "museum_lon": museum_lon,
     }
 
 
