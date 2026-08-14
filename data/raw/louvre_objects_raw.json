@@ -1,0 +1,3920 @@
+[
+  {
+    "arkId": "cl010002360",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010002360",
+    "title": "Statue de Tiy et Amenhotep III",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue de couple (fragment)"
+      },
+      {
+        "type": "Titre",
+        "value": "Statue de Tiy et Amenhotep III"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Amenhotep III (inscription/dédicace/signature) (-1388 - -1349)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : stéatite\r\nTechnique : ronde-bosse, glaçurage, martelage\r\nCouleur : vert",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat et don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1826",
+            "startYear": 1826,
+            "endYear": 1826
+          },
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1962",
+            "startYear": 1962,
+            "endYear": 1962
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000002360/0000060849_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000002360/0000060849_OG.JPG",
+        "copyright": "© 2005 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010006343",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010006343",
+    "title": "Triade d'Osorkon",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Triade d'Osorkon"
+      },
+      {
+        "type": "Dénomination",
+        "value": "pendentif"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Ousermaâtrê Osorkon II (inscription/dédicace/signature) (-865 - -830)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : or\r\nMatériau secondaire : lapis-lazuli (colonnette sur laquelle est assis Osiris)\r\nTechnique : ronde-bosse, incrustation",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Karnak (Thèbes Est->Thèbes->région thébaine) (d'après Chrysikopoulos 2018)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "21/11/1872",
+            "startYear": 1872,
+            "endYear": 1872
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "05/12/1872",
+            "startYear": 1872,
+            "endYear": 1872
+          },
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "19/12/1872",
+            "startYear": 1872,
+            "endYear": 1872
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000006343/0001296529_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000006343/0001296529_OG.JPG",
+        "copyright": "© 2024 GrandPalaisRmn (musée du Louvre) / Mathieu Rabeau",
+        "type": "face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010006582",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010006582",
+    "title": "Le scribe accroupi",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Le scribe accroupi"
+      },
+      {
+        "type": "Dénomination",
+        "value": "statue de scribe assis en tailleur"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : IVe dynastie (attribution d'après style) (-2675 - -2545)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : calcaire\r\nMatériau secondaire : albâtre égyptien (sclérotique), cristal de roche (iris), cuivre (contour des yeux)\r\nTechnique : ronde-bosse, peinture, incrustation (yeux)",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "19 novembre 1850",
+    "placeOfDiscovery": "Saqqara-Nord (Saqqara->Nécropole memphite->Région memphite) (\"Dans un puits situé au nord du Sérapéum\" : registre des fouilles, Archives natinales 20150162/227)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "16/12/1854",
+            "startYear": 1854,
+            "endYear": 1854
+          },
+          {
+            "type": "date de l'arrêté/décision",
+            "value": "22/12/1854",
+            "startYear": 1854,
+            "endYear": 1854
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000006582/0000388426_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000006582/0000388426_OG.JPG",
+        "copyright": "© 2015 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010006825",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010006825",
+    "title": "Palette au taureau",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Palette au taureau"
+      },
+      {
+        "type": "Dénomination",
+        "value": "palette à fard (fragment)"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Nagada III A-B (attribution d'après style) (-3200 - -3100)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : grauwacke\r\nTechnique : bas-relief saillant",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "25/01/1912",
+            "startYear": 1912,
+            "endYear": 1912
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000006825/0000064411_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000006825/0000064411_OG.JPG",
+        "copyright": "© 2003 Musée du Louvre, Dist. GrandPalaisRmn / Georges Poncet",
+        "type": "face A, face 1",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010007230",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010007230",
+    "title": "Tête de Djedefrê",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue (fragment)"
+      },
+      {
+        "type": "Titre",
+        "value": "Tête de Djedefrê"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Djedefrê (contexte de fouilles) (-2605 - -2597)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : grès silicifié\r\nTechnique : ronde-bosse, peinture\r\nCouleur : rouge-traces",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1900-1901",
+    "placeOfDiscovery": "complexe funéraire de Djedefrê (Abou Rawach->Nécropole memphite->Région memphite)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "autres dates",
+            "value": "20/08/1907",
+            "startYear": 1907,
+            "endYear": 1907
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "28/11/1907",
+            "startYear": 1907,
+            "endYear": 1907
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "12/12/1907",
+            "startYear": 1907,
+            "endYear": 1907
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000007230/0001280181_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000007230/0001280181_OG.JPG",
+        "copyright": "© 2024 GrandPalaisRmn (musée du Louvre) / Stéphane Maréchalle",
+        "type": "face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010007343",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010007343",
+    "title": "Palette aux quatre canidés",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "palette à fard"
+      },
+      {
+        "type": "Titre",
+        "value": "Palette aux quatre canidés"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Nagada III A-B (attribution d'après style) (-3200 - -3100)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : grauwacke\r\nTechnique : bas-relief saillant",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "04/02/1904",
+            "startYear": 1904,
+            "endYear": 1904
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000007343/0000058656_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000007343/0000058656_OG.JPG",
+        "copyright": "© 2002 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010007467",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010007467",
+    "title": "Couteau du Gebel el-Arak",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Couteau du Gebel el-Arak"
+      },
+      {
+        "type": "Dénomination",
+        "value": "couteau"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Nagada II C-D (attribution d'après style) (-3600 - -3200)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : ivoire d'hippopotame (manche), silex (lame)\r\nTechnique : bas-relief saillant",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Gebel el-Arak (Haute Égypte->Égypte->Afrique du Nord) (d'après vendeur)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "12/03/1914",
+            "startYear": 1914,
+            "endYear": 1914
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "26/03/1914",
+            "startYear": 1914,
+            "endYear": 1914
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "30/04/1914",
+            "startYear": 1914,
+            "endYear": 1914
+          },
+          {
+            "type": "date du conseil",
+            "value": "04/05/1914",
+            "startYear": 1914,
+            "endYear": 1914
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000007467/0000058659_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000007467/0000058659_OG.JPG",
+        "copyright": "© 2002 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010007975",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010007975",
+    "title": "Statue de Karomama",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Statue de Karomama"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Ousermaâtrê Osorkon II ; Hedjkheperrê Takélot II (mention de personnage) (-865 - -809)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : bronze\r\nMatériau secondaire : or\r\nTechnique : ronde-bosse, incrustation",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Thèbes (région thébaine->Haute Égypte->Égypte)",
+    "acquisitionDetails": [
+      {
+        "mode": "acquisition en mission",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "1830",
+            "startYear": 1830,
+            "endYear": 1830
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000007975/0000569639_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000007975/0000569639_OG.JPG",
+        "copyright": "© 2016 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010008108",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010008108",
+    "title": "figurine ; élément de meuble ; serrure",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "figurine ; élément de meuble (?) ; serrure (?)"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Thoutmosis III (inscription/dédicace/signature) (-1479 - -1425)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : bronze\r\nMatériau secondaire : or\r\nTechnique : incrustation, ronde-bosse",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "17/01/1901",
+            "startYear": 1901,
+            "endYear": 1901
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "14/02/1901",
+            "startYear": 1901,
+            "endYear": 1901
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "28/02/1901",
+            "startYear": 1901,
+            "endYear": 1901
+          },
+          {
+            "type": "date du conseil",
+            "value": "18/03/1901",
+            "startYear": 1901,
+            "endYear": 1901
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000008108/0001292746_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000008108/0001292746_OG.JPG",
+        "copyright": "© 2021 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "trois quarts face",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010008693",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010008693",
+    "title": "statue de couple",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue de couple"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Ve dynastie (attribution d'après style) (-2545 - -2413)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : calcaire\r\nTechnique : peinture, ronde-bosse\r\nCouleur : ocre jaune-rouge-bleu turquoise-bleu",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1902",
+    "placeOfDiscovery": "",
+    "provenance": "Giza (Région memphite->Nécropole memphite) (d'après inventaire)",
+    "acquisitionDetails": [
+      {
+        "mode": "donation sous réserve d'usufruit",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de donation",
+            "value": "07/04/1938",
+            "startYear": 1938,
+            "endYear": 1938
+          },
+          {
+            "type": "date du conseil",
+            "value": "08/11/1938",
+            "startYear": 1938,
+            "endYear": 1938
+          },
+          {
+            "type": "date du décret",
+            "value": "23/01/1939",
+            "startYear": 1939,
+            "endYear": 1939
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000008693/0000059092_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000008693/0000059092_OG.JPG",
+        "copyright": "© 2002 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010009270",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010009270",
+    "title": "statue",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : époque ptolémaïque (attribution d'après style) (-332 - -30)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : basalte\r\nTechnique : ronde-bosse",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "villa Albani (Italie->Rome)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1816",
+            "startYear": 1816,
+            "endYear": 1816
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000009270/0000857252_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000009270/0000857252_OG.JPG",
+        "copyright": "© 2018 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010010062",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010010062",
+    "title": "Sphinx de Tanis",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Sphinx de Tanis"
+      },
+      {
+        "type": "Dénomination",
+        "value": "statue colossale"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Noubkaourê Amenemhat II (d'après B. Fay) (mention de règne) et IVe dynastie (?) (d'après N. Cherpion) (-1900 - -1865 et -2675 - -2545)\r\nDate de réutilisation : Âaouserrê/Âaqenenrê Apophis (?) (d'après Th. Devéria) (mention de règne) et Mérenptah (mention de règne) et Hedjkheperrê Chéchonq I (mention de règne) (-1580 - -1540 et -1213 - -1203 et -943 - -922)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : granite rose\r\nTechnique : ronde-bosse",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1801-1802",
+    "placeOfDiscovery": "Tanis (Delta oriental->Basse Égypte->Égypte)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1826",
+            "startYear": 1826,
+            "endYear": 1826
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000010062/0000074502_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000010062/0000074502_OG.JPG",
+        "copyright": "© 2010 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010010873",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010010873",
+    "title": "Naos des décades",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Naos des décades"
+      },
+      {
+        "type": "Dénomination",
+        "value": "naos (fragment)"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Kheperkarê Nectanébo I (mention de règne) (-379 - -361)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : diorite",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "13 novembre 1777",
+    "placeOfDiscovery": "Aboukir (Delta occidental->Basse Égypte->Égypte)",
+    "provenance": "Saft el-Henneh (Delta oriental->Basse Égypte->Égypte) (d'après texte)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1818",
+            "startYear": 1818,
+            "endYear": 1818
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000010873/0000126710_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000010873/0000126710_OG.JPG",
+        "copyright": "© 2011 Musée du Louvre, Dist. GrandPalaisRmn / Georges Poncet",
+        "type": "vue d'ensemble ; vue avec montage ; trois quarts gauche",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010011417",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010011417",
+    "title": "Bague aux chevaux",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Bague aux chevaux"
+      },
+      {
+        "type": "Dénomination",
+        "value": "chevalière à chaton renflé"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : fin XVIIIe dynastie (?) ; époque ramesside (?) (-1330 - -1069)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : or\r\nMatériau secondaire : cornaline\r\nTechnique : grenetis, incrustation cloisonnée",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "25/07/1827",
+            "startYear": 1827,
+            "endYear": 1827
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000011417/0000387405_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000011417/0000387405_OG.JPG",
+        "copyright": "© 2014 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "trois quarts",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010019286",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010019286",
+    "title": "stèle cintrée",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "stèle cintrée"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Âakheperrê Chéchonq V (an 37) (mention de règne) (-769 - -731)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : calcaire\r\nTechnique : bas-relief creux = sculpture en creux, peinture\r\nCouleur : rouge-noir",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "26 février 1852",
+    "placeOfDiscovery": "petits souterrains (Sérapéum de Memphis->Saqqara-Nord->Saqqara) (extrémité nord des petits souterrains)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1852",
+            "startYear": 1852,
+            "endYear": 1852
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000019286/0000070117_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000019286/0000070117_OG.JPG",
+        "copyright": "© 2005 Musée du Louvre, Dist. GrandPalaisRmn / Georges Poncet",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010028871",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010028871",
+    "title": "Zodiaque de Dendéra",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Zodiaque de Dendéra"
+      },
+      {
+        "type": "Dénomination",
+        "value": "plafond ; relief mural"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Cléopâtre VII Philopator ; Ptolémée XIII Philopator (juin-août 50 av. J.-C.) (bibliographie/travail de référence) (-50 - -50)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : grès\r\nTechnique : bas-relief saillant",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "24 janvier 1799 (An VII, 5 pluviôse)",
+    "placeOfDiscovery": "temple d'Hathor (Dendéra->Haute Égypte->Égypte) (Chapelle Est d'Osiris sur le toit ; moitié ouest du plafond de la pièce centrale)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "affecté au Louvre",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "29/06/1822",
+            "startYear": 1822,
+            "endYear": 1822
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "25/04/1918",
+            "startYear": 1918,
+            "endYear": 1918
+          },
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "10/04/1919",
+            "startYear": 1919,
+            "endYear": 1919
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000028871/0000068579_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000028871/0000068579_OG.JPG",
+        "copyright": "© 2008 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010029360",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010029360",
+    "title": "Stèle du Bannissement",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Stèle du Bannissement"
+      },
+      {
+        "type": "Dénomination",
+        "value": "stèle cintrée ; stèle à un registre"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Pinedjem I (?) ; Ousermaâtrê Amenemopé (?) ; Âakheperrê Psousennès I (?) (an 25) (inscription/dédicace/signature) (-1064 - -980)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : diorite\r\nTechnique : bas-relief creux = sculpture en creux, gravure",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "février 1860",
+    "placeOfDiscovery": "Karnak (Thèbes Est->Thèbes->région thébaine)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1884",
+            "startYear": 1884,
+            "endYear": 1884
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000029360/0000072910_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000029360/0000072910_OG.JPG",
+        "copyright": "© 2010 Musée du Louvre, Dist. GrandPalaisRmn / Georges Poncet",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010029573",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010029573",
+    "title": "Stèle de Bakhtan",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Stèle de Bakhtan"
+      },
+      {
+        "type": "Dénomination",
+        "value": "stèle cintrée ; stèle à un registre"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : XXIe dynastie (la stèle est datée de Ramsés II mais probablement plus tardive, souvent placée à l'époque perse ou ptolémaïque) (attribution d'après style) (-1069 - -943)",
+    "collection": "Département des Antiquités égyptiennes",
+    "materialsAndTechniques": "Matériau : grès\r\nTechnique : bas-relief creux = sculpture en creux",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Petit temple de Khonsou (Karnak Est->Karnak->Thèbes Est)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "affecté au Louvre",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1907",
+            "startYear": 1907,
+            "endYear": 1907
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "28/11/1907",
+            "startYear": 1907,
+            "endYear": 1907
+          },
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "04/1919",
+            "startYear": 1919,
+            "endYear": 1919
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000029573/0000126712_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000029573/0000126712_OG.JPG",
+        "copyright": "© 2011 Musée du Louvre, Dist. GrandPalaisRmn / Georges Poncet",
+        "type": "vue d'ensemble ; face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010046595",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010046595",
+    "title": "parchemin",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "parchemin"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : époque byzantine (395 - 641)",
+    "collection": "Département des Arts de Byzance et des chrétientés en Orient",
+    "materialsAndTechniques": "Matériau : parchemin\r\nMatériau secondaire : encre\r\nTechnique : écriture",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "12/05/1881",
+            "startYear": 1881,
+            "endYear": 1881
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000046595/0000959284_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000046595/0000959284_OG.JPG",
+        "copyright": "© 2019 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+        "type": "face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010048163",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010048163",
+    "title": "Le Christ et l'abbé Ména",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Le Christ et l'abbé Ména"
+      },
+      {
+        "type": "Dénomination",
+        "value": "icône"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Omeyyades ; Abbasides (contexte de fouilles) (attribution d'après style) (mention de personnage) (700 - 799 et 700 - 799 et 700 - 799)",
+    "collection": "Département des Arts de Byzance et des chrétientés en Orient",
+    "materialsAndTechniques": "Matériau : figuier sycomore (Ficus sycomorus L.)\r\nTechnique : peinture à l'encaustique (cire d'abeille), peinture à la détrempe (pigments blancs : carbonate et sulfate de calcium ; jaune : jarosite et natrojarosite ; bruns et ocres : terres ferrugineuses ; orangé : minium ; vert : pas de malachite, contient un peu de cuivre et de plomb.)\r\nCouleur : pigments blancs : carbonate et sulfate de calcium ; jaune : jarosite et natrojarosite ; bruns et ocres : terres ferrugineuses ; orangé : minium ; vert : pas de malachite, contient un peu de cuivre et de plomb.",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1902",
+    "placeOfDiscovery": "Baouit (Égypte->Moyenne Égypte) (église de l'Archange-Michel, autrefois église nord)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "07/02/1918",
+            "startYear": 1918,
+            "endYear": 1918
+          },
+          {
+            "type": "date du conseil",
+            "value": "04/03/1918",
+            "startYear": 1918,
+            "endYear": 1918
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000048163/0000083047_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000048163/0000083047_OG.JPG",
+        "copyright": "© 2006 Musée du Louvre, Dist. GrandPalaisRmn / Georges Poncet",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "egyptian"
+  },
+  {
+    "arkId": "cl010113444",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010113444",
+    "title": "Aiguière en cristal de roche du trésor de Saint-Denis",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Aiguière en cristal de roche du trésor de Saint-Denis"
+      },
+      {
+        "type": "Autre titre",
+        "value": "Aiguière à décor d'oiseaux affrontés"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : Fatimides (Islam->époque islamique->époque islamique 1 (641-1171)) ; roman (Occident->moyen âge)\r\n\r\nDate de création/fabrication : 985 - 1015 (vase) et 1000 - 1100 (couvercle)",
+    "collection": "Département des Objets d'art du Moyen Age, de la Renaissance et des temps modernes",
+    "materialsAndTechniques": "Matériau/Technique : Cristal de roche (vase) ; or, filigranes (couvercle)\r\nMatériau : cristal de roche\r\nMatériau : or\r\nTechnique : filigrané = filigrane (techniques verre/vitrail/plastique)",
+    "placeOfCreation": "Italie du sud = sud de l'Italie (Europe) (couvercle) ; Le Caire (Afrique->Egypte) (vase (art fatimide))",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "saisie",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "05/12/1793",
+            "startYear": 1793,
+            "endYear": 1793
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/original/0000000021/0000113444/0001116677_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000113444/0001116677_OG.JPG",
+        "copyright": "© 2012 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010120339",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010120339",
+    "title": "Stèle de Mesha",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "stèle"
+      },
+      {
+        "type": "Titre",
+        "value": "Stèle de Mesha"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : IXe s. av. J.-C. (Epoque de Mesha vers 830-805) (-830 - -805)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : basalte\r\nTechnique : ronde-bosse",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Diban",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1873",
+            "startYear": 1873,
+            "endYear": 1873
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000120339/0000341988_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000120339/0000341988_OG.JPG",
+        "copyright": "© 2014 GrandPalaisRmn (musée du Louvre) / Mathieu Rabeau",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010120348",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010120348",
+    "title": "Statue d'Osorkon Ier",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue (fragment)"
+      },
+      {
+        "type": "Titre",
+        "value": "Statue d'Osorkon Ier"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 3ème période intermédiaire : Osorkon I (XXIIe dynastie égyptienne 924-889) (-924 - -889)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : quartzite (\"Grès rougeâtre type quartzite de Mokattam (Égypte)\")\r\nTechnique : ronde-bosse",
+    "placeOfCreation": "Égypte",
+    "dateOfDiscovery": "XIXe siècle",
+    "placeOfDiscovery": "Byblos temple de la Ba'alat Goubal",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "29/01/1925",
+            "startYear": 1925,
+            "endYear": 1925
+          },
+          {
+            "type": "date de l'arrêté",
+            "value": "26/02/1925",
+            "startYear": 1925,
+            "endYear": 1925
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000120348/0001132204_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000120348/0001132204_OG.JPG",
+        "copyright": "© 2008 GrandPalaisRmn (musée du Louvre) / Franck Raux",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010120353",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010120353",
+    "title": "Stèle de Zakkur",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "stèle (fragment)"
+      },
+      {
+        "type": "Titre",
+        "value": "Stèle de Zakkur"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : IXe s. av. J.-C. (-900 - -800)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : basalte (?), grès (?)\r\nTechnique : bas-relief",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Afis",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "24/11/1921",
+            "startYear": 1921,
+            "endYear": 1921
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "29/12/1921",
+            "startYear": 1921,
+            "endYear": 1921
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "12/01/1922",
+            "startYear": 1922,
+            "endYear": 1922
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "26/01/1922",
+            "startYear": 1922,
+            "endYear": 1922
+          },
+          {
+            "type": "date de l'arrêté",
+            "value": "27/03/1922",
+            "startYear": 1922,
+            "endYear": 1922
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000120353/0000224715_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000120353/0000224715_OG.JPG",
+        "copyright": "© 2004 GrandPalaisRmn (musée du Louvre) / Franck Raux",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010120357",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010120357",
+    "title": "Sarcophage d'Eshmunazor",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "sarcophage"
+      },
+      {
+        "type": "Titre",
+        "value": "Sarcophage d'Eshmunazor"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Achéménide (Premier quart du Ve siècle avant J.-C.) et Achéménide (bibliographie/travail de référence) (-500 - -475 et vers -525)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : basalte (Amphibolite noire = basalte des carrières de la vallée de Hammamat, Égypte.)\r\nTechnique : bas-relief",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1855",
+    "placeOfDiscovery": "Saïda Magharat Tabloun = Saïda nécropole (Nécropole de Magharat Tablun (caverne d'Apollon), Saïda, ancienne Sidon (Liban))",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1855",
+            "startYear": 1855,
+            "endYear": 1855
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000120357/0000969057_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000120357/0000969057_OG.JPG",
+        "copyright": "© 2019 Musée du Louvre, Dist. GrandPalaisRmn / Raphaël Chipault",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010120528",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010120528",
+    "title": "Nu-banda Ebih-Il",
+    "denominationTitle": [
+      {
+        "type": "Ancien titre",
+        "value": "Statue de l'intendant Ebih-Il"
+      },
+      {
+        "type": "Titre",
+        "value": "Nu-banda Ebih-Il"
+      },
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Dynastique archaïque IIIB (Vers 2400 av. J. - C.) (-2500 - -2340)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : albâtre\r\nMatériau secondaire : coquillage = coquille, lapis lazuli, bitume\r\nTechnique : ronde-bosse, incrusté",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "23 janvier 1934",
+    "placeOfDiscovery": "Mari temple d'Ishtar cour 20",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1934",
+            "startYear": 1934,
+            "endYear": 1934
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000120528/0000326137_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000120528/0000326137_OG.JPG",
+        "copyright": "© 2014 Musée du Louvre, Dist. GrandPalaisRmn / Raphaël Chipault",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010120557",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010120557",
+    "title": "statue",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2e moitié IIIe mill av. J.-C. (Epoque des Shakkanakku, vers 2090 av. J.-C.) (-2100 - -2000)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : stéatite\r\nTechnique : ronde-bosse",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "30 décembre 1936",
+    "placeOfDiscovery": "Mari palais de Zimri-Lim cour 136 (en surface : morceau avec l'inscription) ; Mari palais de Zimri-Lim cour 148 (sur le dallage du grand portail 148-210 : autre fragment)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1937",
+            "startYear": 1937,
+            "endYear": 1937
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000120557/0001136166_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000120557/0001136166_OG.JPG",
+        "copyright": "© 2022 Musée du Louvre, Dist. GrandPalaisRmn / Raphaël Chipault",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010120558",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010120558",
+    "title": "Lion de Mari",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Lion de Mari"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Dynastique archaïque IIIB (?) (L'attribution à l'époque de Zimri Lim anciennement reconnue pour ce temple est sujette à controverse : milieu IIIe mill ; début IIe mill) et Dynasties amorites : Zimri-Lim (?) (-2500 - -2340 et -1782 - -1759)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : cuivre\r\nMatériau secondaire : calcaire, stéatite\r\nTechnique : martelé, riveté, incrusté",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "8 février 1937",
+    "placeOfDiscovery": "Mari temple de Dagan (Lion gardien, à l'intérieur du \" temple aux lions \" (appelé temple de Dagan par le fouilleur))",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1937",
+            "startYear": 1937,
+            "endYear": 1937
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000120558/0001023509_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000120558/0001023509_OG.JPG",
+        "copyright": "© 2020 Musée du Louvre, Dist. GrandPalaisRmn / Raphaël Chipault",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010120706",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010120706",
+    "title": "Vase d'Enmetena",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "vase (objet votif)"
+      },
+      {
+        "type": "Titre",
+        "value": "Vase d'Enmetena"
+      },
+      {
+        "type": "Ancien titre",
+        "value": "Vase d'Entemena"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Dynastique archaïque IIIB : Enmetena (Vers 2400 av. J. - C.) (-2420 - -2400)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : argent\r\nMatériau secondaire : cuivre\r\nTechnique : martelé, coulé fondu, gravé (décor)",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1888",
+    "placeOfDiscovery": "Girsu = Tello",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don après fouilles",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "11/03/1896",
+            "startYear": 1896,
+            "endYear": 1896
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000120706/0000570101_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000120706/0000570101_OG.JPG",
+        "copyright": "© 2016 Musée du Louvre, Dist. GrandPalaisRmn / Chipault - Soligny",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010121494",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010121494",
+    "title": "Tête royale dite \"tête de Hammurabi\"",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue (tête)"
+      },
+      {
+        "type": "Titre",
+        "value": "Tête royale dite \"tête de Hammurabi\""
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 1ère dynastie de Babylone : Hammurabi (?) (-1792 - -1750)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : gabbro\r\nTechnique : ronde-bosse",
+    "placeOfCreation": "Babylonie = Sumer",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Suse",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": []
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000121494/0000230918_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000121494/0000230918_OG.JPG",
+        "copyright": "© 2012 Musée du Louvre, Dist. GrandPalaisRmn / Raphaël Chipault",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010121794",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010121794",
+    "title": "Stèle des vautours",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "stèle (fragment : 7)"
+      },
+      {
+        "type": "Titre",
+        "value": "Stèle des vautours"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Dynastique archaïque IIIB : Eannatum (Vers 2450 av. J. - C.) (-2450 - -2425)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : calcaire\r\nTechnique : bas-relief",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Girsu = Tello (Les fragments (A), et (C) de AO 50 ont été découverts au pied du tell K, dans le vallon entre I et I' ; ( B) au Palais en réemploi évident ; AO 2346 (F) , 2647 (D) ; 2348 (E) non loin de la construction dite d'Ur-Nanshe ; (G) acquis par le BM)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don après fouilles",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1881",
+            "startYear": 1881,
+            "endYear": 1881
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000121794/0001307742_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000121794/0001307742_OG.JPG",
+        "copyright": "© 2024 Musée du Louvre, Dist. GrandPalaisRmn / Stéphane Maréchalle",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010122992",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010122992",
+    "title": "pendeloque",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "pendeloque"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Suse II (-3800 - -3100)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : or\r\nTechnique : gravé (décor)",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1939",
+    "placeOfDiscovery": "Suse 2ème sondage de l'acropole = Suse acropole sondage Sud (cote + 16,50/17 m)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": []
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000122992/0001003765_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000122992/0001003765_OG.JPG",
+        "copyright": "© 2020 GrandPalaisRmn (musée du Louvre) / Mathieu Rabeau",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010123278",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010123278",
+    "title": "Linteau d'Imru' al-Qays",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Linteau d'Imru' al-Qays"
+      },
+      {
+        "type": "Dénomination",
+        "value": "élément architectural"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 1e moitié Ie mill ap. J.-C. (332 ap JC) (daté sur l'oeuvre) et 1e moitié Ie mill ap. J.-C. (328 ap JC) (1 - 500 et 320 - 330)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : basalte\r\nTechnique : bas-relief, gravé (décor)",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1901",
+    "placeOfDiscovery": "En Nemara",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1903",
+            "startYear": 1903,
+            "endYear": 1903
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000123278/0000222393_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000123278/0000222393_OG.JPG",
+        "copyright": "© 1990 GrandPalaisRmn (musée du Louvre) / Christian Larrieu",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010123450",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010123450",
+    "title": "Stèle de Naram-Sin",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "stèle"
+      },
+      {
+        "type": "Titre",
+        "value": "Stèle de Naram-Sin"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Akkad : Naram-sin (Vers 2250 av. J. - C.) (-2254 - -2218)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : calcaire (rose et beige)\r\nTechnique : bas-relief",
+    "placeOfCreation": "Sippar",
+    "dateOfDiscovery": "6 avril 1898",
+    "placeOfDiscovery": "Suse acropole (Apportée de la ville de Sippar à Suse butin de guerre par Shutruk-Nahhunte au XIIe siècle avant J.-C.)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": []
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000123450/0000229069_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000123450/0000229069_OG.JPG",
+        "copyright": "© 2009 GrandPalaisRmn (musée du Louvre) / Franck Raux",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010123454",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010123454",
+    "title": "Obélisque de Manishtusu",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "stèle"
+      },
+      {
+        "type": "Titre",
+        "value": "Obélisque de Manishtusu"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Akkad (Vers 2270 av. J. - C. ; rapportée à Suse par Shutruk-Nahhunte (XIIe s av. J. - C.)) (-2340 - -2200)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : gabbro (d'après analyse)\r\nTechnique : gravé (décor)",
+    "placeOfCreation": "Babylonie = Sumer",
+    "dateOfDiscovery": "1897-1898",
+    "placeOfDiscovery": "Suse acropole (?)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": []
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000123454/0000397792_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000123454/0000397792_OG.JPG",
+        "copyright": "© 2015 Musée du Louvre, Dist. GrandPalaisRmn / Thierry Ollivier",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010140480",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010140480",
+    "title": "L'Adorant de Larsa",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "figurine"
+      },
+      {
+        "type": "Titre",
+        "value": "L'Adorant de Larsa"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 1ère dynastie de Babylone : Hammurabi (-1792 - -1750)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : cuivre\r\nMatériau secondaire : or\r\nTechnique : coulé fondu, plaqué (doré)",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Larsa = Senkereh",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1931",
+            "startYear": 1931,
+            "endYear": 1931
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000140480/0000214964_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000140480/0000214964_OG.JPG",
+        "copyright": "© 2007 GrandPalaisRmn (musée du Louvre) / Franck Raux",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010141456",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010141456",
+    "title": "Vase d'Ishtar",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "vase"
+      },
+      {
+        "type": "Titre",
+        "value": "Vase d'Ishtar"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Larsa (-2025 - -1763)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : terre cuite\r\nTechnique : incisé (décor), polychromie (Traces de peinture noire, blanche et rouge), modelé",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1933",
+    "placeOfDiscovery": "Larsa tombe 15",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": []
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000141456/0000572123_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000141456/0000572123_OG.JPG",
+        "copyright": "© 2016 GrandPalaisRmn (musée du Louvre) / Mathieu Rabeau",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010144553",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010144553",
+    "title": "Peinture de \"l'Investiture\"",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "peinture murale"
+      },
+      {
+        "type": "Titre",
+        "value": "Peinture de \"l'Investiture\""
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Dynasties amorites (début IIe mill) (-2000 - -1800)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : argile\r\nTechnique : peint",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1935-1936",
+    "placeOfDiscovery": "Mari palais de Zimri-Lim cour 106",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": []
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000144553/0000217097_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000144553/0000217097_OG.JPG",
+        "copyright": "© 2006 GrandPalaisRmn (musée du Louvre) / Franck Raux",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010151190",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010151190",
+    "title": "Lance colossale inscrite au nom d'un roi de Kish",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "lance"
+      },
+      {
+        "type": "Titre",
+        "value": "Lance colossale inscrite au nom d'un roi de Kish"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Dynastique archaïque II (Vers 2600 av. J. - C.) (-2700 - -2600)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : cuivre",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Girsu = Tello",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don après fouilles",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1896",
+            "startYear": 1896,
+            "endYear": 1896
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000151190/0000220344_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000151190/0000220344_OG.JPG",
+        "copyright": "© 2005 GrandPalaisRmn (musée du Louvre) / Franck Raux",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010174452",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010174452",
+    "title": "Kudurru de Meli-Shipak",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "kudurru"
+      },
+      {
+        "type": "Titre",
+        "value": "Kudurru de Meli-Shipak"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Kassite : Melishipak = Kassite : Melishihu (-1186 - -1172)\r\nDate de réutilisation : Médio-élamite (-1500 - -1100)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : calcaire\r\nTechnique : bas-relief, gravé",
+    "placeOfCreation": "Babylonie = Sumer",
+    "dateOfDiscovery": "1898",
+    "placeOfDiscovery": "Suse acropole (Tranchée 7α. Apporté de Babylonie à Suse en butin de guerre au XIIe s. av. J.-C.)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": []
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000174452/0000227378_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000174452/0000227378_OG.JPG",
+        "copyright": "© 2007 GrandPalaisRmn (musée du Louvre) / René-Gabriel Ojéda",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010186847",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010186847",
+    "title": "vase",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "vase"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : Suse I (-4000 - -3500)",
+    "collection": "Département des Antiquités orientales",
+    "materialsAndTechniques": "Matériau : terre cuite\r\nTechnique : modelé, peint (décor)",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "1898-1908",
+    "placeOfDiscovery": "Suse acropole nécropole",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "partage après fouilles",
+        "doubt": "",
+        "dates": []
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000186847/0000226727_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000186847/0000226727_OG.JPG",
+        "copyright": "© 2005 GrandPalaisRmn (musée du Louvre) / Franck Raux",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "near_eastern"
+  },
+  {
+    "arkId": "cl010250571",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010250571",
+    "title": "Hermaphrodite endormi",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Hermaphrodite endormi"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial\r\n\r\nDate de création/fabrication : 1e moitié IIe s. ap. J.-C. (100 - 150)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre (marbre de Carrare ?)\r\nTechnique : ronde-bosse (sculpture)",
+    "placeOfCreation": "Rome",
+    "dateOfDiscovery": "1618",
+    "placeOfDiscovery": "Rome - 1618 (thermes de Dioclétien)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1807",
+            "startYear": 1807,
+            "endYear": 1807
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000250571/0000625259_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000250571/0000625259_OG.JPG",
+        "copyright": "© 2011 Musée du Louvre, Dist. GrandPalaisRmn / Thierry Ollivier",
+        "type": "profil droit",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010252531",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010252531",
+    "title": "Victoire de Samothrace",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue ; base de statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Victoire de Samothrace"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : hellénistique\r\n\r\nDate de création/fabrication : 1e quart IIe s. av. J.-C. (-200 - -175)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre de Paros (statue), marbre de Lartos (navire, socle)\r\nTechnique : ronde-bosse (sculpture) (Le buste et les ailes de la statue ont été travaillés à part et rapportés. Des pans de draperie à l'arrière et sur le sol ont été également rapportés. Présence de surfaces de joint au bras droit, au mollet gauche, au pied droit, à l'avant de la draperie. La base est constituée de 16 blocs répartis sur trois assises. Le socle est constitué de 6 dalles juxtaposées.), taillé",
+    "placeOfCreation": "Rhodes (?)",
+    "dateOfDiscovery": "1863",
+    "placeOfDiscovery": "Samothrace Paléopolis - 1863 (Cabirion)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "affecté au Louvre",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "1864",
+            "startYear": 1864,
+            "endYear": 1864
+          },
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "1879",
+            "startYear": 1879,
+            "endYear": 1879
+          },
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "1891",
+            "startYear": 1891,
+            "endYear": 1891
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000252531/0000632582_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000252531/0000632582_OG.JPG",
+        "copyright": "© 2014 Musée du Louvre, Dist. GrandPalaisRmn / Philippe Fuzeau",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010256592",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010256592",
+    "title": "tiare de Saitapharnes",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "casque"
+      },
+      {
+        "type": "Titre",
+        "value": "tiare de Saitapharnes"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : époque contemporaine\r\n\r\nDate de création/fabrication : XIXe s. ap. J.-C. (œuvre de Rouchomowsky à la fin du XIXe s. ap. J.-C.) (1800 - 1900)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : or\r\nTechnique : feuilles (mise en forme), martelage = martelé (métal) (mise en forme), soudé = soudure (métal) (mise en forme), repoussé (métal) (décor), ciselé = ciselure (décor)",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Inconnu",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1896",
+            "startYear": 1896,
+            "endYear": 1896
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/original/0000000021/0000256592/0000754999_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/original/0000000021/0000256592/0000754999_OG.JPG",
+        "copyright": "© 1996 GrandPalaisRmn (musée du Louvre) / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010257735",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010257735",
+    "title": "Apollon de Piombino",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Apollon de Piombino"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain ; style archaïsant\r\n\r\nDate de création/fabrication : 4e quart IIe s. av. J.-C. (datation incertaine) (-125 - -100)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : bronze\r\nMatériau secondaire : argent (inscription), cuivre (sourcils, lèvres, mamelons)\r\nTechnique : fonte en creux (coulé = fondu = fonte), incrustation = incrusté (traces dans les yeux), gravé = gravure (mèches)\r\nPrécision technique : fonte en plusieurs morceaux ; trace des attributs rapportés dans les mains",
+    "placeOfCreation": "Rhodes",
+    "dateOfDiscovery": "1832",
+    "placeOfDiscovery": "Piombino - 1832 (dans la mer)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'arrêté/décision",
+            "value": "1834",
+            "startYear": 1834,
+            "endYear": 1834
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000257735/0000633059_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000257735/0000633059_OG.JPG",
+        "copyright": "© 2014 GrandPalaisRmn (musée du Louvre) / Stéphane Maréchalle",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010268234",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010268234",
+    "title": "cratère d'Eurytios",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "cratère"
+      },
+      {
+        "type": "Titre",
+        "value": "cratère d'Eurytios"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : archaïque ; corinthien ancien (?) ; corinthien moyen (?)\r\n\r\nDate de création/fabrication : 1e quart VIe s. av. J.-C. (vers -600 - -590)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : argile\r\nTechnique : peinture brillante (peinture), incisé = incision, rehaut rouge (peinture->rehaut), rehaut blanc (peinture->rehaut), dessin au trait, figures noires (céramique)",
+    "placeOfCreation": "Corinthe",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Cerveteri = Caeré (d'après Cataloghi Campana)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1861",
+            "startYear": 1861,
+            "endYear": 1861
+          },
+          {
+            "type": "date d'affectation",
+            "value": "1862",
+            "startYear": 1862,
+            "endYear": 1862
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000268234/0000809691_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000268234/0000809691_OG.JPG",
+        "copyright": "© 2018 GrandPalaisRmn (musée du Louvre) / Stéphane Maréchalle",
+        "type": "face A, face 1",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010275362",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010275362",
+    "title": "Antinous Mondragone",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue (fragment, tête)"
+      },
+      {
+        "type": "Titre",
+        "value": "Antinous Mondragone"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial\r\n\r\nDate de création/fabrication : 2e quart IIe s. ap. J.-C. (130 - 138)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre\r\nTechnique : ronde-bosse (sculpture) (un bouchon d'encastrement est présent. Une mortaise au sommet de la tête, quatre gros trous et plusieurs petits pour fixation d'une couronne métallique sont visibles.), incrustation = incrusté (les yeux évidés étaient incrustés.)",
+    "placeOfCreation": "Italie",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Monte Porzio Catone = Tusculum (villa Mondragone)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1807",
+            "startYear": 1807,
+            "endYear": 1807
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000275362/0000618370_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000275362/0000618370_OG.JPG",
+        "copyright": "© 1970 Musée du Louvre, Dist. GrandPalaisRmn / Maurice et Pierre Chuzeville",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010275491",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010275491",
+    "title": "statue",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial\r\n\r\nDate de création/fabrication : Ie s. ap. J.-C. ; IIe s. ap. J.-C. (d'après Gregarek) (1 - 200)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : basanite\r\nTechnique : ronde-bosse (sculpture)",
+    "placeOfCreation": "Italie (?)",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Italie",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "saisie napoléonienne",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1803",
+            "startYear": 1803,
+            "endYear": 1803
+          },
+          {
+            "type": "date",
+            "value": "1815",
+            "startYear": 1815,
+            "endYear": 1815
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/original/0000000021/0000275491/0000639614_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000275491/0000639614_OG.JPG",
+        "copyright": "© 2005 GrandPalaisRmn (musée du Louvre) / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010276874",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010276874",
+    "title": "Dame d'Auxerre",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statuette"
+      },
+      {
+        "type": "Titre",
+        "value": "Dame d'Auxerre"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : orientalisant ; dédalique\r\n\r\nDate de création/fabrication : (-640 - -620)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : calcaire\r\nTechnique : ronde-bosse (sculpture), gravé = gravure, peinture\r\nPrécision technique : gravé(décor de la robe)-peinture rouge(traces sur le buste)",
+    "placeOfCreation": "Éleutherne (?)",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "échange",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1909",
+            "startYear": 1909,
+            "endYear": 1909
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000276874/0001296200_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000276874/0001296200_OG.JPG",
+        "copyright": "© 2024 Musée du Louvre, Dist. GrandPalaisRmn / Tony Querrec",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010277053",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010277053",
+    "title": "Aphrodite du type de la Vénus du Capitole",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "groupe statuaire"
+      },
+      {
+        "type": "Titre",
+        "value": "Aphrodite du type de la Vénus du Capitole"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial\r\n\r\nDate de création/fabrication : 3e quart IIe s. ap. J.-C. (époque antonine d'après Muthmann) (vers 160)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre (marbre grec (?) ; tête et corps de marbres différents)\r\nTechnique : ronde-bosse (sculpture), trépan (sculpture) (cheveux)",
+    "placeOfCreation": "Italie",
+    "dateOfDiscovery": "1758",
+    "placeOfDiscovery": "Frascati = Tusculum - 1758 (Monte Compatri)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1807",
+            "startYear": 1807,
+            "endYear": 1807
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000277053/0000621326_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000277053/0000621326_OG.JPG",
+        "copyright": "© 2006 Musée du Louvre, Dist. GrandPalaisRmn / Daniel Lebée/Carine Deambrosis",
+        "type": "face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010277627",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010277627",
+    "title": "Vénus de Milo",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Vénus de Milo"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : hellénistique\r\n\r\nDate de création/fabrication : 3e quart IIe s. av. J.-C. (-150 - -125)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre de Paros (lychnites)\r\nTechnique : ronde-bosse (sculpture) (Elle est composée de deux éléments joints au niveau des hanches. Le bras gauche était rapporté (présence d'une mortaise). Des éléments en bronze étaient rapportés : présence de trous pour un diadème, et un bracelet au bras droit.)",
+    "placeOfCreation": "Mélos = Milo (?)",
+    "dateOfDiscovery": "1820",
+    "placeOfDiscovery": "Mélos (Milo) - 1820",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "1821",
+            "startYear": 1821,
+            "endYear": 1821
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000277627/0000625031_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000277627/0000625031_OG.JPG",
+        "copyright": "© 2011 Musée du Louvre, Dist. GrandPalaisRmn / Thierry Ollivier",
+        "type": "trois quarts",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010277986",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010277986",
+    "title": "Vénus d'Arles",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Vénus d'Arles"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial\r\n\r\nDate de création/fabrication : 4e quart Ie s. av. J.-C. (?) (d'après Vierneisel-Schloerb) (-25 - 0)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre de l'Hymette\r\nTechnique : ronde-bosse (sculpture) (des traces sur le devant du ruban laissent supposer la présence d'un élément rapporté sans certitude cependant)",
+    "placeOfCreation": "Gaule narbonnaise (?)",
+    "dateOfDiscovery": "1651",
+    "placeOfDiscovery": "Arles = Arelatum - 1651 (théâtre)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "saisie révolutionnaire",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "1798",
+            "startYear": 1798,
+            "endYear": 1798
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000277986/0000621357_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000277986/0000621357_OG.JPG",
+        "copyright": "© 2006 Musée du Louvre, Dist. GrandPalaisRmn / Daniel Lebée/Carine Deambrosis",
+        "type": "face, recto, avers, avant",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010278203",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010278203",
+    "title": "Pallas de Velletri",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Pallas de Velletri"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial\r\n\r\nDate de création/fabrication : Ie s. ap. J.-C. (d'après Mathiopoulos) (1 - 100)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre de Thasos ((pour les parties antiques, marbre de Carrare pour les restitutions))\r\nTechnique : ronde-bosse (sculpture), peinture (traces de peinture rouge sur les yeux et les lèvres)\r\nPrécision technique : éléments rapportés (la tête et le cou, le bras droit et l'avant bras gauche)",
+    "placeOfCreation": "Italie",
+    "dateOfDiscovery": "1797",
+    "placeOfDiscovery": "Velletri - 1797 (Troncavia)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1803",
+            "startYear": 1803,
+            "endYear": 1803
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000278203/0001129451_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000278203/0001129451_OG.JPG",
+        "copyright": "© 2022 Musée du Louvre, Dist. GrandPalaisRmn / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010278706",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010278706",
+    "title": "Gladiateur Borghèse",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Gladiateur Borghèse"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : hellénistique\r\n\r\nDate de création/fabrication : 4e quart IIe s. av. J.-C. ; 1e quart Ie s. av. J.-C. (fin ; debut) (vers -100)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre du Pentélique\r\nTechnique : ronde-bosse (sculpture) (monolithe)",
+    "placeOfCreation": "Grèce (?)",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Anzio = Antium",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1807",
+            "startYear": 1807,
+            "endYear": 1807
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000278706/0000755582_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000278706/0000755582_OG.JPG",
+        "copyright": "© 2017 Musée du Louvre, Dist. GrandPalaisRmn / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010278726",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010278726",
+    "title": "Diane de Gabies",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Diane de Gabies"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre de Paros\r\nTechnique : ronde-bosse (sculpture)",
+    "placeOfCreation": "Italie",
+    "dateOfDiscovery": "1792",
+    "placeOfDiscovery": "Gabies - 1792",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1807",
+            "startYear": 1807,
+            "endYear": 1807
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000278726/0001303335_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000278726/0001303335_OG.JPG",
+        "copyright": "© 2024 Musée du Louvre, Dist. GrandPalaisRmn / Raphaël Chipault",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010278930",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010278930",
+    "title": "Diane de Versailles",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Diane de Versailles"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial\r\n\r\nDate de création/fabrication : 2e quart IIe s. ap. J.-C. (?) (époque d'Hadrien ?) (125 - 150)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre (marbre grec(?))\r\nTechnique : ronde-bosse (sculpture), trépan (sculpture) (cheveux)",
+    "placeOfCreation": "Italie",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "saisie révolutionnaire",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date d'arrivée au Musée",
+            "value": "1798",
+            "startYear": 1798,
+            "endYear": 1798
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000278930/0000625391_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000278930/0000625391_OG.JPG",
+        "copyright": "© 2011 Musée du Louvre, Dist. GrandPalaisRmn / Thierry Ollivier",
+        "type": "trois quarts",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010279000",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010279000",
+    "title": "Korè de Samos",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Korè de Samos"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : archaïque\r\n\r\nDate de création/fabrication : 2e quart VIe s. av. J.-C. (vers -570 - -560)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre\r\nTechnique : ronde-bosse (sculpture)",
+    "placeOfCreation": "Samos",
+    "dateOfDiscovery": "1875",
+    "placeOfDiscovery": "Samos - 1875 (héraion)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "1881",
+            "startYear": 1881,
+            "endYear": 1881
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000279000/0001351963_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000279000/0001351963_OG.JPG",
+        "copyright": "© 2025 Musée du Louvre, Dist. GrandPalaisRmn / Tony Querrec",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010279157",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010279157",
+    "title": "Cratère Borghèse",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "cratère"
+      },
+      {
+        "type": "Titre",
+        "value": "Cratère Borghèse"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : hellénistique\r\n\r\nDate de création/fabrication : 3e quart Ie s. av. J.-C. (vers -40 - -30)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre du Pentélique\r\nTechnique : bas-relief (sculpture), haut-relief (sculpture)",
+    "placeOfCreation": "Athènes (?)",
+    "dateOfDiscovery": "1569",
+    "placeOfDiscovery": "Rome - 1569 (jardins de Salluste)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1807",
+            "startYear": 1807,
+            "endYear": 1807
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000279157/0000624779_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000279157/0000624779_OG.JPG",
+        "copyright": "© 1992 GrandPalaisRmn (musée du Louvre) / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010279164",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010279164",
+    "title": "Arès Borghèse",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "statue"
+      },
+      {
+        "type": "Titre",
+        "value": "Arès Borghèse"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain impérial\r\n\r\nDate de création/fabrication : 1e quart Ie s. av. J.-C. ; 2e quart Ie s. ap. J.-C. (-100 - 50)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre\r\nTechnique : ronde-bosse (sculpture), bas-relief (sculpture) (décor du casque)",
+    "placeOfCreation": "Rome (?)",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Rome (?) (au XVIe s.)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1807",
+            "startYear": 1807,
+            "endYear": 1807
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000279164/0000628074_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000279164/0000628074_OG.JPG",
+        "copyright": "© 2013 Musée du Louvre, Dist. GrandPalaisRmn / Thierry Ollivier",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010298047",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010298047",
+    "title": "Sarcophage des époux",
+    "denominationTitle": [
+      {
+        "type": "Titre",
+        "value": "Sarcophage des époux"
+      },
+      {
+        "type": "Dénomination",
+        "value": "couvercle de sarcophage (?) ; couvercle d'urne (?)"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : archaïque\r\n\r\nDate de création/fabrication : 4e quart VIe s. av. J.-C. (vers -520 - -510)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : argile (argile rouge)\r\nTechnique : moulé, modelé, peinture (homme (chairs rouges, yeux rose clair, sourcils, barbe, moustache noirs, chevelure en engobe jaune clair, ongles blancs, draperie orange) ; 2 trous au revers du coussin ; femme (chairs blanches, yeux blancs, chevelure noire, décor du bonnet rouge à contour noir, traces de rouge au revers de la tête, tunique orange à bordures brunes, chaussures rouges et bord de semelles blanc, collier orange) ; 2 trous sur les oreilles ; peinture rouge foncé (coussins rouge) ; peinture brun foncé (bandes de la couverture)), engobe\r\nPrécision technique : fait en 2 parties ; revers sommairement traité",
+    "placeOfCreation": "Caeré = Cerveteri",
+    "dateOfDiscovery": "1845_1846",
+    "placeOfDiscovery": "Cerveteri = Caeré - 1845_1846 (nécropole de la Banditaccia)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1861",
+            "startYear": 1861,
+            "endYear": 1861
+          },
+          {
+            "type": "date d'affectation",
+            "value": "1862",
+            "startYear": 1862,
+            "endYear": 1862
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000298047/0000627421_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000298047/0000627421_OG.JPG",
+        "copyright": "© 2012 Musée du Louvre, Dist. GrandPalaisRmn / Philippe Fuzeau",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010304645",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010304645",
+    "title": "Autel de Domitius Ahenobarbus",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "relief architectural"
+      },
+      {
+        "type": "Titre",
+        "value": "Autel de Domitius Ahenobarbus"
+      },
+      {
+        "type": "Autre titre",
+        "value": "relief de Domitius Ahenobarbus"
+      }
+    ],
+    "displayDateCreated": "Epoque / période : romain républicain\r\n\r\nDate de création/fabrication : 2e moitié IIe s. av. J.-C. (vers -150 - -100)",
+    "collection": "Département des Antiquités grecques, étrusques et romaines",
+    "materialsAndTechniques": "Matériau : marbre de Paros (Lychnites, panneaux 1 et 3 - Chorodaki, panneau 2)\r\nTechnique : bas-relief (sculpture), haut-relief (sculpture)",
+    "placeOfCreation": "Rome",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Rome (champ de Mars, autel de Domitius Ahenobarbus)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1824",
+            "startYear": 1824,
+            "endYear": 1824
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000304645/0000624733_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000304645/0000624733_OG.JPG",
+        "copyright": "© 2010 GrandPalaisRmn (musée du Louvre) / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "greek_etruscan_roman"
+  },
+  {
+    "arkId": "cl010315035",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010315035",
+    "title": "Vantail à décor de polygones",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Vantail (Élément d'architecture, décor intérieur et extérieur, huisserie->Élément d'architecture->Porte)"
+      },
+      {
+        "type": "Titre",
+        "value": "Vantail à décor de polygones"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2ème moitié du XVe siècle ; XVIe siècle (1450 - 1600)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Bois\r\nMatériau/Technique : Bois (noyer = juglans regia), décor peint et doré sur enduit",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Espagne (Europe occidentale)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date du conseil",
+            "value": "05/07/1938",
+            "startYear": 1938,
+            "endYear": 1938
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000315035/0001163701_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000315035/0001163701_OG.JPG",
+        "copyright": "© 2022 Musée du Louvre, Dist. GrandPalaisRmn / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010315397",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010315397",
+    "title": "Plat à inscription rayonnante",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Plat (Vase, récipient)"
+      },
+      {
+        "type": "Titre",
+        "value": "Plat à inscription rayonnante"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 4ème quart du Xe siècle (975 - 1000)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Céramique\r\nMatériau/Technique : Céramique (pâte argileuse), décor d'engobe sur engobe sous glaçure transparente",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Samarcande (Monde iranien - Caucase->Ouzbékistan)",
+    "acquisitionDetails": [
+      {
+        "mode": "don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "28/02/1935",
+            "startYear": 1935,
+            "endYear": 1935
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000315397/0000661084_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000315397/0000661084_OG.JPG",
+        "copyright": "© 2010 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010318774",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010318774",
+    "title": "Bassin dit \"Baptistère de Saint Louis\"",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Bassin (Vase, récipient)"
+      },
+      {
+        "type": "Titre",
+        "value": "Bassin dit \"Baptistère de Saint Louis\""
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2ème quart du XIVe siècle (1325 - 1340)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Métal\r\nMatériau/Technique : Métal (laiton) martelé, décor gravé, incrusté d'argent regravé et d'or",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Égypte (Proche-Orient arabe) (?) ; Syrie (Proche-Orient arabe) (?)",
+    "acquisitionDetails": [
+      {
+        "mode": "versement",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "26/01/1793",
+            "startYear": 1793,
+            "endYear": 1793
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000318774/0000660923_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000318774/0000660923_OG.JPG",
+        "copyright": "© 2009 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010319015",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010319015",
+    "title": "Coffre à décor floral",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Coffre (Mobilier) ; Coffret (Accessoire personnel, boîte, étui)"
+      },
+      {
+        "type": "Titre",
+        "value": "Coffre à décor floral"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2ème moitié du XVIIe siècle (1650 - 1700)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Ébène (Bois), Teck (Bois), Ivoire (Matériau d'origine animale) (probablement ivoire de morse \"Odobenus rosmarus\" et ivoire d'éléphant \"Elephantidae\"pour les boutons des tiroirs, 2025), Os (Matériau d'origine animale) (probablement espèce domestique \"Camelus dromedarius\", 2025)\r\nMatériau/Technique : âme de bois, placage de teck, d'ébène et d'ivoire gravé, mastic, serrure et clef modernes",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Gujarat (état) (Sous-continent indien->Inde) (?) ; Sind (province) (Sous-continent indien->Pakistan) (?)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "18/01/1996",
+            "startYear": 1996,
+            "endYear": 1996
+          },
+          {
+            "type": "date du conseil",
+            "value": "25/01/1996",
+            "startYear": 1996,
+            "endYear": 1996
+          },
+          {
+            "type": "date de l'arrêté",
+            "value": "05/02/1996",
+            "startYear": 1996,
+            "endYear": 1996
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000319015/0000661025_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000319015/0000661025_OG.JPG",
+        "copyright": "© 2010 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010320160",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010320160",
+    "title": "Aiguière à tête de coq",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Aiguière / Aquamanile (Vase, récipient->Verseuse)"
+      },
+      {
+        "type": "Titre",
+        "value": "Aiguière à tête de coq"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : XIIIe siècle (1200 - 1300)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Céramique\r\nMatériau/Technique : Céramique (pâte siliceuse), décor ajouré, gravé et peint sous glaçure transparente colorée",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Iran (Monde iranien - Caucase)",
+    "acquisitionDetails": [
+      {
+        "mode": "don",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1970",
+            "startYear": 1970,
+            "endYear": 1970
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000320160/0000660985_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000320160/0000660985_OG.JPG",
+        "copyright": "© 2010 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010321317",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010321317",
+    "title": "Coupe",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Coupe (Vase, récipient)"
+      },
+      {
+        "type": "Titre",
+        "value": "Coupe"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : XVe siècle (1400 - 1500)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Céramique\r\nMatériau/Technique : Céramique (pâte siliceuse), décor d'engobe gravé sous glaçure transparente colorée",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Iran (Monde iranien - Caucase)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1981",
+            "startYear": 1981,
+            "endYear": 1981
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000321317/0000666949_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000321317/0000666949_OG.JPG",
+        "copyright": "© 2004 GrandPalaisRmn (musée du Louvre) / René-Gabriel Ojéda",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010321683",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010321683",
+    "title": "Globe céleste",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Globe céleste (Instrument scientifique)"
+      },
+      {
+        "type": "Titre",
+        "value": "Globe céleste"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2ème quart du XIIe siècle (daté sur l'oeuvre) (1144 ; Hégire : 540)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Laiton (Métal)\r\nMatériau/Technique : Laiton coulé, décor gravé et incrusté d'argent",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Isfahan (Monde iranien - Caucase->Iran) (?)",
+    "acquisitionDetails": [
+      {
+        "mode": "dation",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "13/12/1985",
+            "startYear": 1985,
+            "endYear": 1985
+          },
+          {
+            "type": "date du conseil",
+            "value": "18/12/1985",
+            "startYear": 1985,
+            "endYear": 1985
+          },
+          {
+            "type": "date de l'arrêté",
+            "value": "17/11/1987",
+            "startYear": 1987,
+            "endYear": 1987
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000321683/0000666155_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000321683/0000666155_OG.JPG",
+        "copyright": "© 2015 Musée du Louvre, Dist. GrandPalaisRmn / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010327537",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010327537",
+    "title": "Portrait de l'empereur Jahangir tenant dans ses mains celui de son père, l'empereur Akbar (page d'album)",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Album (= Muraqqa) (Art du livre)"
+      },
+      {
+        "type": "Titre",
+        "value": "Portrait de l'empereur Jahangir tenant dans ses mains celui de son père, l'empereur Akbar (page d'album)"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 1er quart du XVIIe siècle (1600 - 1615)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Papier\r\nMatériau/Technique : Encre, couleurs et or sur papier, Or sur papier coloré (marge et encadrement)",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Inde (Sous-continent indien)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "24/05/1894",
+            "startYear": 1894,
+            "endYear": 1894
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000327537/0000614390_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000327537/0000614390_OG.JPG",
+        "copyright": "© 2016 GrandPalaisRmn (musée du Louvre) / Mathieu Rabeau",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010329109",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010329109",
+    "title": "Pyxide au nom d'al-Mughira",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Pyxide (Accessoire personnel, boîte, étui->Boîte) ; Tabletterie"
+      },
+      {
+        "type": "Titre",
+        "value": "Pyxide au nom d'al-Mughira"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 3ème quart du Xe siècle (daté sur l'oeuvre) (968 ; Hégire : 357)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Ivoire (Matériau d'origine animale)\r\nMatériau/Technique : Ivoire (éléphant), décor sculpté et gravé",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Madinat al-Zahra (Europe occidentale->Espagne)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "24/10/1898",
+            "startYear": 1898,
+            "endYear": 1898
+          },
+          {
+            "type": "date de comité/commission",
+            "value": "10/11/1898",
+            "startYear": 1898,
+            "endYear": 1898
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000329109/0000660837_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000329109/0000660837_OG.JPG",
+        "copyright": "© 2009 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010329343",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010329343",
+    "title": "Chandelier aux canards",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Chandelier (Instrument d'éclairage)"
+      },
+      {
+        "type": "Titre",
+        "value": "Chandelier aux canards"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2ème moitié du XIIe siècle (1150 - 1200)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Laiton (Métal)\r\nMatériau/Technique : Métal (laiton) martelé, décor repoussé, ciselé, champlevé, incrusté d'argent, de cuivre et de pâte noire",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Herat (Monde iranien - Caucase->Afghanistan)",
+    "acquisitionDetails": [
+      {
+        "mode": "legs",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date du legs",
+            "value": "1909",
+            "startYear": 1909,
+            "endYear": 1909
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000329343/0000661108_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000329343/0000661108_OG.JPG",
+        "copyright": "© 2010 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010329405",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010329405",
+    "title": "Tapis à décor de jardin de paradis, dit \"de Mantes\"",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Tapis"
+      },
+      {
+        "type": "Titre",
+        "value": "Tapis à décor de jardin de paradis, dit \"de Mantes\""
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2ème quart du XVIe siècle (1530 - 1550)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Textile\r\nMatériau/Technique : Chaîne, trame : coton, poil : laine, noeud asymétrique",
+    "placeOfCreation": "Monde iranien - Caucase (Iran nord occidental (=nord-ouest))",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date de comité/commission",
+            "value": "23/05/1912",
+            "startYear": 1912,
+            "endYear": 1912
+          },
+          {
+            "type": "date de l'arrêté",
+            "value": "12/08/1912",
+            "startYear": 1912,
+            "endYear": 1912
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000329405/0001114396_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000329405/0001114396_OG.JPG",
+        "copyright": "© 2021 Musée du Louvre / Département des Arts de l'Islam",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010329960",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010329960",
+    "title": "Suaire de Saint-Josse",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Textile divers"
+      },
+      {
+        "type": "Titre",
+        "value": "Suaire de Saint-Josse"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2ème moitié du Xe siècle ; 4ème quart du Xe siècle (950 - 1000)\r\nAncienne datation : Xe siècle (avant 961)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Textile\r\nMatériau/Technique : Soie (samit)",
+    "placeOfCreation": "Asie Mineure et Europe orientale (?) ; Monde iranien - Caucase (Ancienne attribution : Khurasan) ; Proche-Orient arabe (?)",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "France (Europe occidentale) (Pas-de-Calais, ancienne abbaye de Saint-Josse)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date du conseil artistique des musées nationaux",
+            "value": "07/11/1921",
+            "startYear": 1921,
+            "endYear": 1921
+          },
+          {
+            "type": "date de l'inscription sur l'inventaire",
+            "value": "1922",
+            "startYear": 1922,
+            "endYear": 1922
+          },
+          {
+            "type": "date de l'arrêté",
+            "value": "1922",
+            "startYear": 1922,
+            "endYear": 1922
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000329960/0001090856_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000329960/0001090856_OG.JPG",
+        "copyright": "© 2021 Musée du Louvre, Dist. GrandPalaisRmn / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010330266",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010330266",
+    "title": "Lion dit \"de Monzon\"",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Sculpture"
+      },
+      {
+        "type": "Titre",
+        "value": "Lion dit \"de Monzon\""
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 4ème quart du Xe siècle ; XIe siècle (attribution d'après style) (vers 975 - 1100)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Métal\r\nMatériau/Technique : Métal (bronze) coulé, décor gravé",
+    "placeOfCreation": "Cordoue (Europe occidentale->Espagne) (?)",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "Monzón de Campos (Espagne->Europe occidentale) (Trouvé en 1849 dans les ruines du Castellon (château situé hors de la cité).)",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "legs",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date du conseil",
+            "value": "05/07/1926",
+            "startYear": 1926,
+            "endYear": 1926
+          },
+          {
+            "type": "date du décret",
+            "value": "09/05/1927",
+            "startYear": 1927,
+            "endYear": 1927
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000330266/0001090965_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000330266/0001090965_OG.JPG",
+        "copyright": "© 2021 GrandPalaisRmn (musée du Louvre) / Mathieu Rabeau",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010330497",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010330497",
+    "title": "Coupe aux phénix en vol",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Coupe (Vase, récipient)"
+      },
+      {
+        "type": "Titre",
+        "value": "Coupe aux phénix en vol"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 1ère moitié du XIVe siècle (1300 - 1350)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Céramique\r\nMatériau/Technique : Céramique (pâte siliceuse), décor d'engobe et peint sur engobe sous glaçure transparente",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Iran (Monde iranien - Caucase)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat en vente publique",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date du conseil",
+            "value": "01/12/1930",
+            "startYear": 1930,
+            "endYear": 1930
+          },
+          {
+            "type": "date",
+            "value": "1931",
+            "startYear": 1931,
+            "endYear": 1931
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000330497/0000661094_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000330497/0000661094_OG.JPG",
+        "copyright": "© 2010 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010331081",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010331081",
+    "title": "Coupe aux nuages \"tchi\"",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Coupe (Vase, récipient)"
+      },
+      {
+        "type": "Titre",
+        "value": "Coupe aux nuages \"tchi\""
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : XVe siècle (1400 - 1500)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Céramique\r\nMatériau/Technique : Céramique (pâte siliceuse), décor peint sous glaçure",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Tabriz (Monde iranien - Caucase->Iran) (?)",
+    "acquisitionDetails": [
+      {
+        "mode": "don manuel",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "27/03/1907",
+            "startYear": 1907,
+            "endYear": 1907
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000331081/0001090987_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000331081/0001090987_OG.JPG",
+        "copyright": "© 2021 GrandPalaisRmn (musée du Louvre) / Mathieu Rabeau",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010332054",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010332054",
+    "title": "Plat à la grue en vol et nuages \"tchi\"",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Plat (Vase, récipient)"
+      },
+      {
+        "type": "Titre",
+        "value": "Plat à la grue en vol et nuages \"tchi\""
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 2ème moitié du XVe siècle (1450 - 1500)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Céramique\r\nMatériau/Technique : Céramique (pâte siliceuse), décor peint sous glaçure transparente colorée",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Tabriz (Monde iranien - Caucase->Iran) (?)",
+    "acquisitionDetails": [
+      {
+        "mode": "legs",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "14/04/1931",
+            "startYear": 1931,
+            "endYear": 1931
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000332054/0000645402_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000332054/0000645402_OG.JPG",
+        "copyright": "© 2007 Musée du Louvre, Dist. GrandPalaisRmn / Etienne Revault",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010332079",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010332079",
+    "title": "Plat aux capridés riant",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Plat (Vase, récipient)"
+      },
+      {
+        "type": "Titre",
+        "value": "Plat aux capridés riant "
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : 4ème quart du XVe siècle (1485 - 1500)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Céramique\r\nMatériau/Technique : Céramique (pâte siliceuse), décor moulé et peint sous glaçure transparente incolore",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Iran (Monde iranien - Caucase)",
+    "acquisitionDetails": [
+      {
+        "mode": "legs",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "14/04/1931",
+            "startYear": 1931,
+            "endYear": 1931
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000332079/0000658760_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000332079/0000658760_OG.JPG",
+        "copyright": "© 2009 Musée du Louvre, Dist. GrandPalaisRmn / Raphaël Chipault",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010333267",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010333267",
+    "title": "Porche d'une demeure mamlouke au Caire (Qasr Rumi)",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Élément d'architecture (Élément d'architecture, décor intérieur et extérieur, huisserie)"
+      },
+      {
+        "type": "Ancien titre",
+        "value": "Grand élément architectural en pierre : partie haute d'un porche\r\n"
+      },
+      {
+        "type": "Titre",
+        "value": "Porche d'une demeure mamlouke au Caire (Qasr Rumi)"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : XVe siècle (1400 - 1500)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Calcaire (Pierre), Fer (Métal), Bois\r\nMatériau/Technique : Calcaires jaune et blanc sculptés, grilles modernes en fer forgé et cadre en châtaignier",
+    "placeOfCreation": "Le Caire (Proche-Orient arabe->Égypte)",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "",
+    "acquisitionDetails": [
+      {
+        "mode": "mode d'acquisition inconnu",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "1889",
+            "startYear": 1889,
+            "endYear": 1889
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000333267/0000664950_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000333267/0000664950_OG.JPG",
+        "copyright": "© 2012 Musée du Louvre, Dist. GrandPalaisRmn / Hervé Lewandowski",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  },
+  {
+    "arkId": "cl010333443",
+    "url": "https://collections.louvre.fr/ark:/53355/cl010333443",
+    "title": "Vantail de porte de sacristie faisant partie d'une paire",
+    "denominationTitle": [
+      {
+        "type": "Dénomination",
+        "value": "Vantail (Élément d'architecture, décor intérieur et extérieur, huisserie->Élément d'architecture->Porte) ; Mobilier"
+      },
+      {
+        "type": "Titre",
+        "value": "Vantail de porte de sacristie faisant partie d'une paire"
+      }
+    ],
+    "displayDateCreated": "Date de création/fabrication : XVe siècle ; XVIe siècle (1400 - 1600)",
+    "collection": "Département des Arts de l'Islam",
+    "materialsAndTechniques": "Matériau : Bois\r\nMatériau/Technique : Bois, décor sculpté",
+    "placeOfCreation": "",
+    "dateOfDiscovery": "",
+    "placeOfDiscovery": "",
+    "provenance": "Espagne (Europe occidentale)",
+    "acquisitionDetails": [
+      {
+        "mode": "achat",
+        "doubt": "",
+        "dates": [
+          {
+            "type": "date",
+            "value": "29/04/1893",
+            "startYear": 1893,
+            "endYear": 1893
+          }
+        ]
+      }
+    ],
+    "image": [
+      {
+        "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000333443/0000661189_OG.JPG",
+        "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000333443/0000661189_OG.JPG",
+        "copyright": "© 2010 Musée du Louvre, Dist. GrandPalaisRmn / Hughes Dubois",
+        "type": "",
+        "position": 0
+      }
+    ],
+    "isMuseesNationauxRecuperation": false,
+    "_wikidataDepartmentKey": "islamic"
+  }
+]

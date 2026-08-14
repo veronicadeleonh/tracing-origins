@@ -8,8 +8,9 @@ Prioridad de resolución: subregion > region > country.
 
 from __future__ import annotations
 
-# Coordenadas del propio museo (Met = Nueva York)
+# Coordenadas del propio museo (destino de las líneas)
 MET_COORDS = (40.7794, -73.9632)
+LOUVRE_COORDS = (48.8606, 2.3376)
 
 # Países modernos (centroides aproximados, suficiente para un mapa de rutas)
 COUNTRY_COORDS = {
@@ -166,3 +167,134 @@ def resolve_origin(obj: dict) -> dict:
 
     raw_label = subregion or region or country or culture or ""
     return {"label": raw_label, "precision": "unresolved", "lat": None, "lon": None}
+
+
+# ---------------------------------------------------------------------------
+# Louvre: los campos geográficos vienen en texto libre en francés, con un
+# formato jerárquico tipo "Sitio (Región -> País)" o "País (Región)", muy
+# distinto del country/region/subregion estructurado del Met. En vez de
+# tratar de parsear esa jerarquía en general, matcheamos por substring contra
+# dos listas (sitio arqueológico primero, más específico; país/región
+# genérico después), igual que resolve_from_culture. A expandir con cada
+# corrida de build_geography_louvre.py — imprime las etiquetas sin resolver.
+
+LOUVRE_SITE_COORDS = [
+    # Antigüedades egipcias
+    ("Saqqara", (29.8714, 31.2164)),
+    ("Deir el-Médineh", (25.7280, 32.6014)),
+    ("Thèbes", (25.7188, 32.6081)),
+    ("Karnak", (25.7188, 32.6573)),
+    ("Louxor", (25.6872, 32.6396)),
+    ("Assiout", (27.1809, 31.1837)),
+    ("Assouan", (24.0889, 32.8998)),
+    ("Éléphantine", (24.0833, 32.8833)),
+    ("Médamoud", (25.7500, 32.6333)),
+    ("Tôd", (25.6167, 32.5333)),
+    ("Kôm Ombo", (24.4514, 32.9283)),
+    ("Abou Roach", (30.1167, 31.2167)),
+    ("Abou Rawach", (30.1167, 31.2167)),
+    ("Giza", (29.9765, 31.1313)),
+    ("Méroé", (16.9333, 33.7500)),
+    # Antigüedades orientales (Cercano Oriente)
+    ("Suse", (32.1881, 48.2578)),
+    ("Persépolis", (29.9354, 52.8916)),
+    ("Mari", (34.5514, 40.8908)),
+    ("Khorsabad", (36.5117, 43.2278)),
+    ("Ninive", (36.3600, 43.1500)),
+    ("Nimroud", (36.0994, 43.3250)),
+    ("Babylone", (32.5425, 44.4213)),
+    ("Larsa", (31.2400, 45.8583)),
+    ("Girsu", (31.5900, 46.1500)),
+    ("Tello", (31.5900, 46.1500)),
+    ("Lagash", (31.4342, 46.5342)),
+    ("Ur", (30.9626, 46.1039)),
+    ("Uruk", (31.3225, 45.6367)),
+    ("Mari sur l'Euphrate", (34.5514, 40.8908)),
+    ("Ras Shamra", (35.6017, 35.7822)),
+    ("Ougarit", (35.6017, 35.7822)),
+    ("Byblos", (34.1208, 35.6478)),
+    ("Megiddo", (32.5850, 35.1836)),
+    ("Mégiddo", (32.5850, 35.1836)),
+    ("Palmyre", (34.5514, 38.2792)),
+    ("Arslan Tash", (36.7500, 38.8667)),
+    ("Til Barsib", (36.5000, 38.0500)),
+    ("Kultépé", (39.7833, 35.7500)),
+    ("Bactres", (36.7500, 66.9000)),
+    # Antigüedades griegas, etruscas y romanas
+    ("Délos", (37.3964, 25.2686)),
+    ("Samothrace", (40.4708, 25.5228)),
+    ("Delphes", (38.4824, 22.5010)),
+    ("Olympie", (37.6383, 21.6300)),
+    ("Cnide", (36.6833, 27.3667)),
+    ("Rhodes", (36.4341, 28.2176)),
+    ("Cervéteri", (41.9950, 12.1030)),
+    ("Vulci", (42.4200, 11.6250)),
+    ("Tarquinia", (42.2500, 11.7500)),
+    ("Herculanum", (40.8058, 14.3487)),
+    ("Pompéi", (40.7461, 14.4989)),
+    ("Antioche", (36.2021, 36.1603)),
+    ("Cervéteri", (41.9950, 12.1030)),
+    ("Cerveteri", (41.9950, 12.1030)),
+    ("Rome", (41.9028, 12.4964)),
+    ("Arles", (43.6763, 4.6280)),
+    ("Samos", (37.7500, 26.8000)),
+    ("Mélos", (36.6900, 24.4300)),
+    ("Diban", (31.5000, 35.7833)),
+    ("Afis", (35.8500, 36.7500)),
+]
+
+LOUVRE_COUNTRY_KEYWORDS = [
+    # Exónimos franceses -> mismas coordenadas que COUNTRY_COORDS/REGION_COORDS,
+    # más los que faltan para los departamentos que estamos sumando ahora.
+    ("Chypre", (35.1264, 33.4299)),
+    ("Égypte", (26.8206, 30.8025)),
+    ("Egypte", (26.8206, 30.8025)),
+    ("Iran", (32.4279, 53.6880)),
+    ("Irak", (33.2232, 43.6793)),
+    ("Turquie", (38.9637, 35.2433)),
+    ("Grèce", (39.0742, 21.8243)),
+    ("Etrurie", (42.8000, 11.5000)),
+    ("Étrurie", (42.8000, 11.5000)),
+    ("Italie", (41.8719, 12.5674)),
+    ("Syrie", (34.8021, 38.9968)),
+    ("Espagne", (40.4637, -3.7492)),
+    ("Maroc", (31.7917, -7.0926)),
+    ("Liban", (33.8547, 35.8623)),
+    ("Afghanistan", (33.9391, 67.7100)),
+    ("Ouzbékistan", (41.3775, 64.5853)),
+    ("Inde", (20.5937, 78.9629)),
+    ("Indonésie", (-0.7893, 113.9213)),
+    ("Anatolie", (39.0000, 35.0000)),
+    ("Mésopotamie", (33.0000, 44.0000)),
+    ("Proche-Orient", (30.0000, 40.0000)),
+    ("Levant", (33.5000, 36.0000)),
+    ("Perse", (32.4279, 53.6880)),
+    ("Elam", (32.1881, 48.2578)),
+]
+
+
+def resolve_origin_louvre(obj: dict) -> dict:
+    """
+    Igual idea que resolve_origin() pero para el shape de datos del Louvre:
+    no hay country/region/subregion estructurado, así que buscamos en texto
+    libre (placeOfDiscovery > placeOfCreation > provenance, en ese orden de
+    prioridad porque el sitio de excavación es el dato más específico que da
+    la API) contra sitios arqueológicos primero y país/región genérico
+    después.
+    """
+    place_of_discovery = (obj.get("placeOfDiscovery") or "").strip()
+    place_of_creation = (obj.get("placeOfCreation") or "").strip()
+    provenance = (obj.get("provenance") or "").strip()
+
+    label = place_of_discovery or place_of_creation or provenance
+    haystack = " | ".join([place_of_discovery, place_of_creation, provenance])
+
+    for site, (lat, lon) in LOUVRE_SITE_COORDS:
+        if site.lower() in haystack.lower():
+            return {"label": label or site, "precision": "site", "lat": lat, "lon": lon}
+
+    for country, (lat, lon) in LOUVRE_COUNTRY_KEYWORDS:
+        if country.lower() in haystack.lower():
+            return {"label": label or country, "precision": "country", "lat": lat, "lon": lon}
+
+    return {"label": label, "precision": "unresolved", "lat": None, "lon": None}

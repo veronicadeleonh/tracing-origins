@@ -4,7 +4,19 @@ Mapa que conecta obras de museos con su lugar de origen, para visualizar patrone
 
 ## Fase 1 — datos (The Met)
 
-Empezamos con el Metropolitan Museum of Art (Open Access API, CC0, sin API key). Ya evaluamos las otras dos fuentes: el Louvre tiene una API JSON pública real (`collections.louvre.fr`, agregar `.json` a cualquier ficha), con campos que ya modelan buena parte de lo que armamos a mano para el Met (`placeOfCreation`, `placeOfDiscovery`, `previousOwner`, `acquisitionDetails.mode` — cuyo propio ejemplo en la documentación es `"partage après fouilles"`). El British Museum no tiene API pública activa, pero sí es raspable (confirmado por un proyecto de terceros, ver abajo) — va a necesitar un scraper propio, no un cliente de API limpio como el Met o el Louvre.
+Empezamos con el Metropolitan Museum of Art (Open Access API, CC0, sin API key). El British Museum no tiene API pública activa, pero sí es raspable (confirmado por un proyecto de terceros, ver abajo) — va a necesitar un scraper propio, no un cliente de API limpio como el Met o el Louvre.
+
+## Fase 2 — datos (Louvre)
+
+El Louvre sí tiene una API JSON real por objeto: agregando `.json` a la URL de cualquier ficha (`collections.louvre.fr/en/ark:/53355/<arkId>.json`) se obtiene el registro completo, con campos que ya modelan buena parte de lo que armamos a mano para el Met (`placeOfCreation`, `placeOfDiscovery`, `previousOwner`, `acquisitionDetails.mode` — cuyo propio ejemplo en la documentación es `"partage après fouilles"`). Documentación completa: `collections.louvre.fr/en/page/documentationJSON`.
+
+Lo que **no** existe es una forma automatizada de listar "todos los objetos del departamento X": el `robots.txt` del sitio bloquea explícitamente `/search/export` (el endpoint de descarga masiva) para todos los user-agents, y la búsqueda interactiva (`/en/recherche-avancee`) está detrás de un CAPTCHA. Ninguna de las dos es una vía que debamos o podamos usar.
+
+La solución: Wikidata tiene una propiedad dedicada, **P9394 ("Louvre Museum ARK ID")**, con ~480k registros (casi 1:1 con la colección completa). Cruzando `P9394` con `P195` (colección = departamento curatorial del Louvre como entidad Wikidata) se consiguen listas de `arkId` por departamento vía SPARQL público — sin tocar el endpoint bloqueado ni la búsqueda con CAPTCHA. Ver `src/fetch_louvre.py`.
+
+Los IDs se piden ordenados por `wikibase:sitelinks` descendente (más artículos de Wikipedia enlazados primero), lo que de paso prioriza piezas conocidas/documentadas — calza bien con la idea de "piezas bandera" del proyecto. El piloto (20 piezas por departamento, 80 en total, en `data/raw/louvre_objects_raw.json`) trajo así la Vénus de Milo, la Victoire de Samothrace, Le Scribe accroupi, el Code de Hammurabi... piezas de alto perfil, varias con historias de adquisición documentadas (partage, saisie révolutionnaire, saisie napoléonienne, achat directo).
+
+Geocodificación del Louvre: texto libre en francés (`placeOfDiscovery` > `placeOfCreation` > `provenance`, en ese orden de prioridad), sin country/region/subregion estructurado como en el Met. Ver `resolve_origin_louvre()` en `geocode.py` — 89% de resolución en el piloto (71/80).
 
 Departamentos priorizados por relevancia colonial/arqueológica:
 
@@ -139,7 +151,8 @@ desde la raíz del repo antes de ver los cambios en la app.
 - [x] Estado de "sin investigar" (2 nodos: origen → ahora) en el panel de detalle
 - [x] Namespacing de objectID por museo (`met:`, listo para sumar `louvre:`/`bm:`)
 - [ ] Landing / framing antes del mapa
-- [ ] Pipeline del Louvre (API JSON real, ver arriba)
+- [x] Pipeline del Louvre: descubrimiento de arkIds vía Wikidata (P9394 + P195, ver "Fase 2" arriba) + fetch por objeto + layer 1/2 propios (`fetch_louvre.py`, `build_dataset_louvre.py`, `build_geography_louvre.py`) — piloto de 80 piezas (20 por departamento prioritario), 71 geocodificadas
+- [ ] Ampliar el piloto del Louvre de 80 a ~150-250 piezas
 - [ ] Scraper del British Museum
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
 

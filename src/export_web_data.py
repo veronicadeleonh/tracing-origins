@@ -13,10 +13,18 @@ from collections import defaultdict
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
-MET_OBJECTS_PATH = DATA_DIR / "processed" / "met_objects.csv"
-GEOGRAPHY_PATH = DATA_DIR / "processed" / "geography.csv"
 CONTEXT_PATH = DATA_DIR / "enrichment" / "context.csv"
 EVENTS_PATH = DATA_DIR / "enrichment" / "provenance_events.csv"
+
+# Un (objects_csv, geography_csv) por museo — cada builder de layer 1/2 vive
+# en su propio par de scripts (build_dataset.py/build_geography.py para el
+# Met, build_dataset_louvre.py/build_geography_louvre.py para el Louvre,
+# etc.), pero acá se juntan todos antes de cruzar con layer 3. Si un par de
+# archivos no existe todavía (museo sin pipeline corrido aún) se lo salta.
+MUSEUM_SOURCES = [
+    (DATA_DIR / "processed" / "met_objects.csv", DATA_DIR / "processed" / "geography.csv"),
+    (DATA_DIR / "processed" / "louvre_objects.csv", DATA_DIR / "processed" / "geography_louvre.csv"),
+]
 
 OUT_PATH = Path(__file__).resolve().parent.parent / "web" / "src" / "data" / "objects.json"
 
@@ -38,17 +46,18 @@ def read_csv(path: Path) -> list[dict]:
 
 
 def load_rows() -> list[dict]:
-    """Layer 1 + layer 2, joined por objectID. Solo devuelve piezas con
-    coordenadas de origen resueltas — igual criterio que make_map.py."""
-    met_objects = {r["objectID"]: r for r in read_csv(MET_OBJECTS_PATH)}
-    geography = {r["objectID"]: r for r in read_csv(GEOGRAPHY_PATH)}
-
+    """Layer 1 + layer 2, joined por objectID, para todos los museos en
+    MUSEUM_SOURCES. Solo devuelve piezas con coordenadas de origen resueltas
+    — igual criterio que make_map.py."""
     rows = []
-    for object_id, geo in geography.items():
-        if not (geo.get("origin_lat") and geo.get("origin_lon")):
-            continue
-        met = met_objects.get(object_id, {})
-        rows.append({**met, **geo})
+    for objects_path, geography_path in MUSEUM_SOURCES:
+        objects_by_id = {r["objectID"]: r for r in read_csv(objects_path)}
+        geography = {r["objectID"]: r for r in read_csv(geography_path)}
+        for object_id, geo in geography.items():
+            if not (geo.get("origin_lat") and geo.get("origin_lon")):
+                continue
+            obj = objects_by_id.get(object_id, {})
+            rows.append({**obj, **geo})
     return rows
 
 

@@ -4,5 +4,6 @@ __pycache__/
 venv/
 data/raw/*.json
 !data/raw/met_objects_raw.json
+!data/raw/louvre_objects_raw.json
 !data/raw/.gitkeep
 .DS_Store
