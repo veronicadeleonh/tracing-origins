@@ -26,10 +26,6 @@
   pointer-events: none;
 }
 
-.leaflet-container {
-  background: #fdfcf9;
-}
-
 .side-panel {
   flex: 0 0 380px;
   border-left: 1px solid #e5e2da;
