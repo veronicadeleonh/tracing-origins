@@ -24,6 +24,7 @@ EVENTS_PATH = DATA_DIR / "enrichment" / "provenance_events.csv"
 MUSEUM_SOURCES = [
     (DATA_DIR / "processed" / "met_objects.csv", DATA_DIR / "processed" / "geography.csv"),
     (DATA_DIR / "processed" / "louvre_objects.csv", DATA_DIR / "processed" / "geography_louvre.csv"),
+    (DATA_DIR / "processed" / "bm_objects.csv", DATA_DIR / "processed" / "geography_bm.csv"),
 ]
 
 OUT_PATH = Path(__file__).resolve().parent.parent / "web" / "src" / "data" / "objects.json"

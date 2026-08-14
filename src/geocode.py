@@ -11,6 +11,7 @@ from __future__ import annotations
 # Coordenadas del propio museo (destino de las líneas)
 MET_COORDS = (40.7794, -73.9632)
 LOUVRE_COORDS = (48.8606, 2.3376)
+BM_COORDS = (51.5194, -0.1270)
 
 # Países modernos (centroides aproximados, suficiente para un mapa de rutas)
 COUNTRY_COORDS = {
@@ -294,6 +295,60 @@ def resolve_origin_louvre(obj: dict) -> dict:
             return {"label": label or site, "precision": "site", "lat": lat, "lon": lon}
 
     for country, (lat, lon) in LOUVRE_COUNTRY_KEYWORDS:
+        if country.lower() in haystack.lower():
+            return {"label": label or country, "precision": "country", "lat": lat, "lon": lon}
+
+    return {"label": label, "precision": "unresolved", "lat": None, "lon": None}
+
+
+# ---------------------------------------------------------------------------
+# British Museum: findspot/productionPlace vienen en inglés, con un prefijo
+# de etiqueta ("Excavated/Findspot:", "Found/Acquired:", "Made in:") seguido
+# de un nombre de sitio en texto libre — más simple que el francés del
+# Louvre, pero igual necesita su propia lista (nombres de sitio en inglés,
+# no siempre los mismos que ya tenemos para otros museos).
+
+BM_SITE_COORDS = [
+    ("Fort Saint Julien", (31.4022, 30.4181)),  # Rosetta / el-Rashid, Egipto
+    ("Kawa", (19.0800, 30.3600)),  # Nubia, Sudán
+    ("Nimrud", (36.0994, 43.3250)),
+    ("Trincomalee", (8.5711, 81.2335)),
+    ("Benin City", (6.3350, 5.6037)),
+]
+
+BM_COUNTRY_KEYWORDS = [
+    ("Sudan", (12.8628, 30.2176)),
+    ("Egypt", (26.8206, 30.8025)),
+    ("Sri Lanka", (7.8731, 80.7718)),
+    ("Nigeria", (9.0820, 8.6753)),
+    ("Iraq", (33.2232, 43.6793)),
+    ("Iran", (32.4279, 53.6880)),
+    ("Ethiopia", (9.1450, 40.4897)),
+    ("Ghana", (7.9465, -1.0232)),
+    ("Greece", (39.0742, 21.8243)),
+    ("Turkey", (38.9637, 35.2433)),
+    ("China", (35.8617, 104.1954)),
+    ("India", (20.5937, 78.9629)),
+]
+
+
+def resolve_origin_bm(obj: dict) -> dict:
+    """
+    Igual idea que resolve_origin_louvre() pero para el BM: preferimos
+    findspot (excavación/hallazgo, más específico) sobre productionPlace
+    (dónde se hizo la pieza, que puede no ser donde se encontró/tomó).
+    """
+    findspot = (obj.get("findspot") or "").strip()
+    production_place = (obj.get("productionPlace") or "").strip()
+
+    label = findspot or production_place
+    haystack = " | ".join([findspot, production_place])
+
+    for site, (lat, lon) in BM_SITE_COORDS:
+        if site.lower() in haystack.lower():
+            return {"label": label or site, "precision": "site", "lat": lat, "lon": lon}
+
+    for country, (lat, lon) in BM_COUNTRY_KEYWORDS:
         if country.lower() in haystack.lower():
             return {"label": label or country, "precision": "country", "lat": lat, "lon": lon}
 

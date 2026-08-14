@@ -18,6 +18,14 @@ Los IDs se piden ordenados por `wikibase:sitelinks` descendente (más artículos
 
 Geocodificación del Louvre: texto libre en francés (`placeOfDiscovery` > `placeOfCreation` > `provenance`, en ese orden de prioridad), sin country/region/subregion estructurado como en el Met. Ver `resolve_origin_louvre()` en `geocode.py` — 89% de resolución en el piloto (71/80).
 
+## Fase 3 — datos (British Museum)
+
+El British Museum no tiene API pública ni un puente limpio por Wikidata como el Louvre: la propiedad `P8565` ("British Museum object ID") tiene pocos objetos con el departamento curatorial cargado (`P195`), y varios de sus valores vienen sin el prefijo de letra que la URL real necesita (ej. el valor crudo de Wikidata para el moái Hoa Hakananai'a tira 404 tal cual). Así que acá sí raspamos directamente: `collection.britishmuseum.org` → `britishmuseum.org/collection/object/<id>`, permitido por `robots.txt` (solo bloquea `/search*`, `/admin/`, etc. — la ficha de objeto no), pero con una condición explícita: **`Crawl-delay: 20`** (20 segundos entre requests). La respetamos a rajatabla, así que incluso un piloto chico tarda varios minutos en bajar.
+
+Sin un puente automatizado de descubrimiento, `src/fetch_bm.py` usa por ahora una lista curada a mano (`SEED_OBJECT_IDS`) de piezas verificadas navegando el sitio, ancladas en la propia página oficial de ["piezas disputadas"](https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection) del Museo (Benin Bronzes, Asante Gold Regalia, Maqdala collection, Moai, Parthenon Sculptures). El piloto actual (9 piezas: Rosetta Stone, Sphinx of Taharqo, Black Obelisk of Shalmaneser III, Statue of Tara, 5 placas de Benin) sale 100% geocodificado — findspot/productionPlace del BM vienen en inglés y son más simples de parsear que el francés del Louvre. Ver `resolve_origin_bm()` en `geocode.py`.
+
+La ficha del BM ya trae, en su propio HTML (`div.object-detail__data-item`, pares `dt`/`dd`), varios de los campos que antes armábamos a mano por investigación externa: `Excavator/field collector`, `Findspot`, `Acquisition name`, `Acquisition date`, y comentarios de curador con texto narrativo completo (sin recortar, pese a que la interfaz visual lo trunca con "View more" — el HTML trae el texto entero). Ejemplo: la ficha de las placas de Benin ya documenta en su propio "Curator's comments" el contexto de la expedición punitiva británica de 1897, y la del Rosetta Stone menciona el Tratado de Alejandría de 1801. Buen insumo directo para layer 3, sin necesitar tanta investigación externa adicional como con el Met.
+
 Departamentos priorizados por relevancia colonial/arqueológica:
 
 | ID | Departamento |
@@ -150,10 +158,11 @@ desde la raíz del repo antes de ver los cambios en la app.
 - [x] Panel lateral: estado cluster (lista de piezas) ↔ estado detalle (timeline de la pieza), con flecha de "volver" (`web/src/components/ClusterPanel.tsx`, `ObjectDetail.tsx`)
 - [x] Estado de "sin investigar" (2 nodos: origen → ahora) en el panel de detalle
 - [x] Namespacing de objectID por museo (`met:`, listo para sumar `louvre:`/`bm:`)
-- [ ] Landing / framing antes del mapa
 - [x] Pipeline del Louvre: descubrimiento de arkIds vía Wikidata (P9394 + P195, ver "Fase 2" arriba) + fetch por objeto + layer 1/2 propios (`fetch_louvre.py`, `build_dataset_louvre.py`, `build_geography_louvre.py`) — piloto de 80 piezas (20 por departamento prioritario), 71 geocodificadas
+- [x] Scraper del British Museum: sin API ni puente confiable por Wikidata, raspado directo de `/collection/object/<id>` respetando `Crawl-delay: 20` del robots.txt (`fetch_bm.py`, `build_dataset_bm.py`, `build_geography_bm.py`) — piloto de 9 piezas curadas a mano desde la página oficial de "contested objects", 100% geocodificadas
 - [ ] Ampliar el piloto del Louvre de 80 a ~150-250 piezas
-- [ ] Scraper del British Museum
+- [ ] Ampliar el piloto del BM (lista curada a mano, ver "Fase 3" arriba — sin descubrimiento automatizado todavía)
+- [ ] Modal de información/instrucciones para el visitante (reemplaza la idea de landing page — ver "Pendiente de decidir")
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación
 
 ### Escala (definido 14/08)
