@@ -40,9 +40,11 @@ npm run build    # build de producción en web/dist
 
 - [x] The Met: pipeline completo, 161 piezas geocodificadas (6 departamentos prioritarios)
 - [x] Louvre: pipeline completo, piloto de 80 piezas (71 geocodificadas) vía puente Wikidata
-- [x] British Museum: scraper propio, piloto de 9 piezas curadas a mano
+- [x] British Museum: scraper propio, ~41 piezas curadas a mano en distintas regiones del mundo
 - [x] Modelo de 3 capas (metadata / geografía / investigación histórica)
 - [x] App web con globo interactivo (Mapbox GL), panel lateral con timeline por pieza
+- [x] Toggles por museo con contador de piezas visibles
+- [x] Capa de contexto: territorios coloniales de UK/Francia circa 1920 (Cliopatria, CC-BY 4.0)
 - [x] Piloto de investigación profunda: 5 piezas egipcias del Met con fuentes citadas
 - [ ] Ampliar Louvre y BM a ~150-250 piezas por museo
 - [ ] Modal de información/instrucciones para el visitante

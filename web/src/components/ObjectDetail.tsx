@@ -1,7 +1,8 @@
-import type { MuseumObject, ProvenanceEvent } from "../types";
+import type { MuseumDestination, MuseumObject, ProvenanceEvent } from "../types";
 
 interface ObjectDetailProps {
   object: MuseumObject;
+  museums: Record<string, MuseumDestination>;
   onBack: () => void;
   onClose: () => void;
 }
@@ -25,11 +26,12 @@ function eventLabel(event: ProvenanceEvent): string {
   return EVENT_TYPE_LABELS[event.event_type] ?? event.event_type;
 }
 
-export function ObjectDetail({ object, onBack, onClose }: ObjectDetailProps) {
+export function ObjectDetail({ object, museums, onBack, onClose }: ObjectDetailProps) {
   const events = object.events;
   const flags = object.context?.context_flags ?? [];
   const notes = object.context?.notes;
   const hasResearch = events.length > 0 || flags.length > 0 || !!notes;
+  const destMuseum = object.sourceMuseum ? museums[object.sourceMuseum] : undefined;
 
   const subtitle = [object.culture, object.period, object.objectDate].filter(Boolean).join(" · ");
   const museumFields = [
@@ -93,7 +95,9 @@ export function ObjectDetail({ object, onBack, onClose }: ObjectDetailProps) {
         <div className="timeline-node">
           <span className="timeline-dot timeline-dot-met" aria-hidden="true" />
           <div className="timeline-date">Ahora</div>
-          <div className="timeline-label">The Metropolitan Museum of Art, Nueva York</div>
+          <div className="timeline-label">
+            {destMuseum ? `${destMuseum.name}, ${destMuseum.city}` : "Museo desconocido"}
+          </div>
         </div>
       </div>
 
@@ -107,7 +111,7 @@ export function ObjectDetail({ object, onBack, onClose }: ObjectDetailProps) {
           ))}
           {object.objectURL && (
             <a className="met-link" href={object.objectURL} target="_blank" rel="noreferrer">
-              Ver en el sitio del Met ↗
+              Ver en {destMuseum?.name ?? "el sitio del museo"} ↗
             </a>
           )}
         </div>

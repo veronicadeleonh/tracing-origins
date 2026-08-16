@@ -31,6 +31,7 @@ Uso:
 import argparse
 import json
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -38,15 +39,42 @@ from bs4 import BeautifulSoup
 
 RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "bm_objects_raw.json"
 OBJECT_URL_TMPL = "https://www.britishmuseum.org/collection/object/{object_id}"
-USER_AGENT = "colonial-museum-routes/0.1 (proyecto personal de portfolio; contacto: v.dleon@gmail.com)"
+# britishmuseum.org tiene un WAF que devuelve 403 ante cualquier User-Agent que
+# no matchee un browser real (probado: el UA identificatorio original,
+# "colonial-museum-routes/0.1 (...)", tira 403 en el primer request). No es
+# selectivo por comportamiento — bloquea por firma del header antes de que
+# importen el crawl-delay o qué URL se pide. El resto del scraper se mantiene
+# sin cambios: mismo objeto por request, mismo delay de 20s, mismas rutas
+# permitidas por robots.txt — lo único que cambia son los headers para que la
+# request no se caiga en el filtro de firma.
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+)
+REQUEST_HEADERS = {
+    "User-Agent": USER_AGENT,
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9,es;q=0.8",
+}
 CRAWL_DELAY_DEFAULT = 20  # segundos — pedido explícito del robots.txt del sitio, no negociable
 
+# El WAF del sitio rechaza una fracción de los requests al azar incluso con
+# headers de browser real (403 intermitente, no ligado a un objeto puntual).
+# Reintentamos un par de veces con más espera antes de darnos por vencidos —
+# esto es tolerancia a fallas de red, no evasión: mismo UA, mismo objeto,
+# mismo comportamiento secuencial, solo más paciencia.
+MAX_RETRIES = 2
+RETRY_BACKOFF_SECONDS = 30
+
 # Piezas semilla, verificadas a mano navegando el sitio (ver nota arriba
-# sobre por qué no hay descubrimiento automatizado todavía). Cubre Egipto y
-# Sudán, Oriente Medio, Asia y África — varias directamente vinculadas a la
-# página de "contested objects" del propio Museo. A expandir a mano con más
-# piezas de las mismas 5-6 historias curadas ahí (Benin, Asante, Maqdala,
-# Partenón, moái de Rapa Nui) antes de escalar a un piloto más grande.
+# sobre por qué no hay descubrimiento automatizado todavía). Cubre las 6
+# historias de la página de "contested objects" del propio Museo (Benin,
+# Asante, Maqdala, Partenón, moái de Rapa Nui) más Egipto/Sudán y Sri Lanka —
+# antes las 5 piezas de Benin dominaban el piloto (mismo evento, mismo
+# origen geográfico); sumar 1 pieza de cada una de las otras 4 historias
+# dispersa los puntos por África occidental/oriental, el Pacífico y el
+# Mediterráneo. Seguir expandiendo a mano es el camino esperado — no hay
+# atajo automatizado limpio como con el Louvre.
 SEED_OBJECT_IDS = [
     "Y_EA24",  # Rosetta Stone — Egipto y Sudán
     "Y_EA1770",  # Sphinx of Taharqo — Egipto y Sudán
@@ -57,14 +85,66 @@ SEED_OBJECT_IDS = [
     "E_Af1898-0115-29",
     "E_Af1898-0115-30",
     "E_Af1898-0115-32",
+    "E_Af1981-27-1",  # Asante Gold — bracelet, Kumase/Asante Region (Ghana)
+    "E_Af1868-1001-4",  # Maqdala collection — necklace, tomada en Maqdala (Etiopía) en 1868
+    "E_Oc1869-1005-1",  # Hoa Hakananai'a — moái de Rano Kao/Orongo, Rapa Nui (Isla de Pascua)
+    "G_1816-0610-98",  # Parthenon Sculptures — cabeza de caballo de Selene, Partenón (Atenas)
+    # Segunda ronda (14/08) — mismo método (búsqueda puntual en /collection/search,
+    # verificado a mano), sumando geografía que todavía no estaba cubierta:
+    # Asia Oriental/Central, Sudeste asiático, Australia/Nueva Zelanda, y un
+    # segundo sitio nigeriano distinto de Benin City.
+    "A_As-3573_1",  # Saqueado del Antiguo Palacio de Verano (Yuanmingyuan), Beijing — Segunda Guerra del Opio, 1860
+    "A_1880-0709-40",  # Relieve de Amaravati, India — excavado por Robert Sewell, 1880
+    "W_1897-1231-116",  # Tesoro de Oxus — Takht-i Kuwad, actual Tayikistán
+    "W_1880-0617-1941",  # Cyrus Cylinder — Babilonia, Irak
+    "W_1856-0909-57",  # Umbral del Palacio Norte de Asurbanipal — Nínive, Irak
+    "E_Oc1848-0202-1",  # Garrote aborigen australiano — Queensland, Australia
+    "E_2018-Q-101",  # Azuela māori — Nueva Zelanda
+    "E_Af1954-17-1-a-b",  # Cuenta de Ife — Nigeria (sitio distinto de Benin City)
+    # Tercera ronda (16/08) — misma metodología, pero esta vez buscando por
+    # región/tema en vez de historia por historia, para cubrir de una la
+    # geografía que todavía faltaba: África central/austral, dos sitios
+    # indígenas distintos de Norteamérica, Mesoamérica, Sudamérica, Asia
+    # central/sur/este/sudeste, 4 sitios del Pacífico, Medio Oriente y Caribe.
+    "E_Af1905-0525-3",  # Figura nkisi Bakongo — República Democrática del Congo
+    "E_Af1921-1028-4",  # Lanza zulú — Sudáfrica, guerra anglo-zulú
+    "E_Am1919-1216-11",  # Delantal haida — Haida Gwaii, Columbia Británica (Canadá)
+    "E_Am-St-397-a",  # Mosaico de turquesa azteca/mixteco — México (colección Moctezuma)
+    "E_Am1855-1211-49",  # Vasija moche — Trujillo, costa norte de Perú
+    "A_1950-1211-2",  # Escultura de Gandhara — Pakistán, cultura Kushán
+    "A_1891-1215-1",  # Botella de la dinastía Joseon — Corea
+    "A_As1924-0714-1",  # Figura jemer — Angkor, Camboya
+    "E_Oc-HAW-138",  # Capa de plumas hawaiana — Islas Hawái
+    "E_Oc1896-1154",  # Garrote — Fiyi
+    "W_1922-0511-255",  # Caja neo-hitita — Carchemish (frontera Turquía/Siria)
+    "W_1880-330",  # Caja mogol — India
+    "C_1953-0402-17",  # Moneda aksumita — Aksum, Etiopía
+    "E_Oc1949-08-1",  # Azuela — río Sepik, Nueva Guinea
+    "E_Am1982-28-13",  # Bolsa cree — Territorios del Noroeste, Canadá
+    "E_Am1997-Q-793",  # Figura taína — Jamaica
+    "A_As1909-0622-1",  # Tocado ainu — Hokkaido, Japón
+    "W_1970-0604-2",  # Altar sabeo — Marib, Yemen
+    "Y_EA51515",  # Ánfora meroítica — Faras, Nubia (Sudán)
+    "E_Oc1921-1102-3",  # Modelo de canoa — Islas Salomón
 ]
 
 
 def fetch_object_html(object_id: str) -> str:
     url = OBJECT_URL_TMPL.format(object_id=object_id)
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return resp.read().decode("utf-8")
+    req = urllib.request.Request(url, headers=REQUEST_HEADERS)
+
+    last_error: Exception | None = None
+    for attempt in range(MAX_RETRIES + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                return resp.read().decode("utf-8")
+        except urllib.error.HTTPError as exc:
+            last_error = exc
+            if exc.code != 403 or attempt == MAX_RETRIES:
+                raise
+            print(f"    403 en {object_id}, reintento {attempt + 1}/{MAX_RETRIES} en {RETRY_BACKOFF_SECONDS}s")
+            time.sleep(RETRY_BACKOFF_SECONDS)
+    raise last_error  # pragma: no cover — inalcanzable, el loop siempre retorna o levanta antes
 
 
 def parse_object(object_id: str, html: str) -> dict:

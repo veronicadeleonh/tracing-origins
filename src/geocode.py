@@ -314,6 +314,32 @@ BM_SITE_COORDS = [
     ("Nimrud", (36.0994, 43.3250)),
     ("Trincomalee", (8.5711, 81.2335)),
     ("Benin City", (6.3350, 5.6037)),
+    ("Orongo", (-27.1836, -109.4306)),  # Rapa Nui / Isla de Pascua — sitio ceremonial, Hoa Hakananai'a
+    ("Rano Kao", (-27.1667, -109.4333)),  # Rapa Nui / Isla de Pascua
+    ("Parthenon", (37.9715, 23.7267)),  # Acrópolis, Atenas
+    ("Maqdala", (11.8000, 39.7000)),  # Amba Mariam, Etiopía — colección Maqdala (1868)
+    ("Kumase", (6.6885, -1.6244)),  # Kumasi, capital histórica del reino Asante
+    ("Asante Region", (6.7500, -1.5000)),  # Ghana
+    ("Yuanmingyuan", (40.0084, 116.2966)),  # Antiguo Palacio de Verano, Beijing
+    ("Amaravati", (16.5730, 80.3567)),  # Andhra Pradesh, India
+    ("Takht-i Kuwad", (37.1500, 68.3667)),  # Tesoro de Oxus, actual Tayikistán
+    ("Babylon", (32.5425, 44.4213)),  # Irak
+    ("Nineveh", (36.3600, 43.1500)),  # Irak
+    ("Queensland", (-22.5752, 144.0848)),
+    ("Ife", (7.4905, 4.5521)),  # Nigeria, distinto de Benin City
+    ("Haida Gwaii", (53.2500, -132.0000)),  # Columbia Británica, Canadá
+    ("Trujillo", (-8.1116, -79.0290)),  # costa norte de Perú, cultura moche
+    ("Gandhara", (34.0000, 71.5000)),  # actual Pakistán
+    ("Angkor", (13.4125, 103.8670)),  # Camboya
+    ("Carchemish", (36.8167, 38.0167)),  # frontera Turquía/Siria
+    ("Aksum", (14.1211, 38.7167)),  # Etiopía
+    ("Sepik River", (-4.1000, 143.9000)),  # Nueva Guinea
+    ("Marib", (15.4300, 45.3286)),  # Yemen, antigua capital sabea
+    ("Faras", (22.1833, 31.9000)),  # Nubia, Sudán
+    ("Hawaiian Islands", (19.8968, -155.5828)),
+    ("Hawaii", (19.8968, -155.5828)),
+    ("Northwest Territories", (64.8255, -124.8457)),  # Canadá
+    ("Hokkaido", (43.2203, 142.8635)),  # Japón — territorio ainu
 ]
 
 BM_COUNTRY_KEYWORDS = [
@@ -329,6 +355,24 @@ BM_COUNTRY_KEYWORDS = [
     ("Turkey", (38.9637, 35.2433)),
     ("China", (35.8617, 104.1954)),
     ("India", (20.5937, 78.9629)),
+    ("Easter Island", (-27.1127, -109.3497)),
+    ("New Zealand", (-40.9006, 174.8860)),
+    ("Tajikistan", (38.8610, 71.2761)),
+    ("Australia", (-25.2744, 133.7751)),
+    ("Democratic Republic of Congo", (-4.0383, 21.7587)),
+    ("South Africa", (-30.5595, 22.9375)),
+    ("Mexico", (23.6345, -102.5528)),
+    ("Korea", (35.9078, 127.7669)),
+    ("Cambodia", (12.5657, 104.9910)),
+    ("Jamaica", (18.1096, -77.2975)),
+    ("Japan", (36.2048, 138.2529)),
+    ("Pakistan", (30.3753, 69.3451)),
+    ("Yemen", (15.5527, 48.5164)),
+    ("Papua New Guinea", (-6.3149, 143.9555)),
+    ("New Guinea", (-6.3149, 143.9555)),
+    ("Fiji", (-17.7134, 178.0650)),
+    ("Solomon Islands", (-9.6457, 160.1562)),
+    ("Canada", (56.1304, -106.3468)),
 ]
 
 
