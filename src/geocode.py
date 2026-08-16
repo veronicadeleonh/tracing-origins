@@ -363,6 +363,8 @@ BM_SITE_COORDS = [
     ("Amathus", (34.7167, 33.1333)),  # Chipre
     ("Cartagena", (10.3910, -75.4794)),  # Colombia
     ("Rajshahi", (24.3745, 88.6042)),  # Bangladés
+    ("Santa Marta", (11.2408, -74.1990)),  # Colombia
+    ("Mandalay", (21.9588, 96.0891)),  # Birmania (Myanmar)
 ]
 
 BM_COUNTRY_KEYWORDS = [

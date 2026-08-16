@@ -6,11 +6,12 @@ bm:A_1950-1211-2,Found/Acquired: Takht-i-Bahi,site,34.0,71.5,51.5194,-0.127
 bm:A_1959-1012-1,Found/Acquired: Rajshahi (town),site,24.3745,88.6042,51.5194,-0.127
 bm:A_As-3573_1,Found/Acquired: Yuanmingyuan,site,40.0084,116.2966,51.5194,-0.127
 bm:A_As1909-0622-1,Made in: Hokkaido,site,43.2203,142.8635,51.5194,-0.127
-bm:A_As1919-1230-3,Found/Acquired: Mandalay Region,unresolved,,,51.5194,-0.127
+bm:A_As1919-1230-3,Found/Acquired: Mandalay Region,site,21.9588,96.0891,51.5194,-0.127
 bm:A_As1924-0714-1,Found/Acquired: Angkor,site,13.4125,103.867,51.5194,-0.127
 bm:C_1953-0402-17,Minted in: Aksum (town),site,14.1211,38.7167,51.5194,-0.127
 bm:E_2018-Q-101,Found/Acquired: New Zealand,country,-40.9006,174.886,51.5194,-0.127
 bm:E_Af1868-1001-4,Found/Acquired: Maqdala,site,11.8,39.7,51.5194,-0.127
+bm:E_Af1887-1211-51,Found/Acquired: Zanzibar (island),site,-6.1659,39.2026,51.5194,-0.127
 bm:E_Af1898-0115-27,Found/Acquired: Benin City,site,6.335,5.6037,51.5194,-0.127
 bm:E_Af1898-0115-28,Found/Acquired: Benin City,site,6.335,5.6037,51.5194,-0.127
 bm:E_Af1898-0115-29,Found/Acquired: Benin City,site,6.335,5.6037,51.5194,-0.127
@@ -26,7 +27,7 @@ bm:E_Af1981-27-1,Made in: Asante Region,site,6.75,-1.5,51.5194,-0.127
 bm:E_Am-St-397-a,Made in: Mexico,country,23.6345,-102.5528,51.5194,-0.127
 bm:E_Am1855-1211-49,"Excavated/Findspot: Trujillo (Peru) , tomb",site,-8.1116,-79.029,51.5194,-0.127
 bm:E_Am1919-1216-11,"Excavated/Findspot: Haida Gwaii , grave",site,53.25,-132.0,51.5194,-0.127
-bm:E_Am1928-0516-2,Excavated/Findspot: Santa Marta (Valle de Cauca) (?),unresolved,,,51.5194,-0.127
+bm:E_Am1928-0516-2,Excavated/Findspot: Santa Marta (Valle de Cauca) (?),site,11.2408,-74.199,51.5194,-0.127
 bm:E_Am1982-28-13,Found/Acquired: Northwest Territories,site,64.8255,-124.8457,51.5194,-0.127
 bm:E_Am1997-Q-793,Found/Acquired: Jamaica,country,18.1096,-77.2975,51.5194,-0.127
 bm:E_Oc-HAW-138,Found/Acquired: Hawaii,site,19.8968,-155.5828,51.5194,-0.127

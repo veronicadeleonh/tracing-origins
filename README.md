@@ -40,7 +40,7 @@ npm run build    # build de producción en web/dist
 
 - [x] The Met: pipeline completo, 161 piezas geocodificadas (6 departamentos prioritarios)
 - [x] Louvre: pipeline completo, 239 piezas (215 geocodificadas) vía puente Wikidata — dentro de la meta ~150-250
-- [x] British Museum: scraper propio, ~41 piezas curadas a mano en distintas regiones del mundo
+- [x] British Museum: scraper propio, 49 piezas curadas a mano en distintas regiones del mundo
 - [x] Modelo de 3 capas (metadata / geografía / investigación histórica)
 - [x] App web con globo interactivo (Mapbox GL), panel lateral con timeline por pieza
 - [x] Toggles por museo con contador de piezas visibles
@@ -48,12 +48,14 @@ npm run build    # build de producción en web/dist
 - [x] Piloto de investigación profunda: 5 piezas egipcias del Met con fuentes citadas
 - [x] Investigación profunda (layer 3) en el Louvre: 8 piezas con timeline citado (mecanismos documentados: partage bajo Mandato Francés y bajo autorización otomana, venta Borghese-Napoleón, excavación privada, mercado de arte) — meta 5-10 por museo cumplida
 - [x] Investigación profunda (layer 3) en el British Museum: 8 piezas con timeline citado (Roseta bajo Tratado de Alejandría 1801, Placas de Benín tras la Expedición Punitiva de 1897, excavaciones en Mesopotamia otomana financiadas por el museo, pieza de Amaravati vía India Museum, y casos de contraste sin mecanismo colonial documentado) — meta 5-10 por museo cumplida
-- [ ] Ampliar BM a ~150-250 piezas (hoy: Met 161, Louvre 215, BM 41 — 417 de ~500-700)
-- [ ] Modal de información/instrucciones para el visitante
+- [ ] Ampliar BM a ~150-250 piezas (hoy: Met 161, Louvre 215, BM 49 — 425 de ~500-700)
+- [x] Nota por museo en la UI (botón "i" junto a cada toggle) explicando la lógica de extracción particular de cada uno
+- [ ] Modal de información/instrucciones del proyecto y nota por capa de contexto — resto de los 3 niveles de "notas de contexto en la UI" (ver `CLAUDE.md`)
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación documentado
 - [ ] Decidir tratamiento narrativo una vez haya más `context_flags` cargadas (¿resaltar piezas en el mapa? ¿filtro por tipo de evento?)
 - [ ] Revisar rotulado de fronteras políticas del basemap de Mapbox en zonas disputadas (Cisjordania, Kurdistán, Sahara Occidental)
 - [ ] Evaluar Musée du Quai Branly como 4ta fuente — el Louvre no tiene departamento de África Subsahariana/América (fondo transferido a Quai Branly en 2006), así que no puede cubrir el ángulo Francia↔África/Caribe
+- [ ] Evaluar capa de rutas de navegantes 1700-1900 (dataset candidato: CLIWOC, bitácoras de barcos holandeses/ingleses/franceses/españoles 1750-1850, financiado por la UE, espejado por la Library of Congress) — deja a EEUU/Met afuera igual que la capa colonial, pero suma una capa de curiosidad/exploración interesante, sobre todo mientras el recorrido exacto de cada pieza siga siendo lento de investigar a mano. Licencia todavía sin confirmar del todo (a diferencia de Cliopatria, no encontré un tag CC explícito) — revisar antes de bajar nada
 - [ ] Test suite / linter (no configurado todavía)
 
 Nota: la investigación profunda (layer 3) queda como una línea de trabajo abierta e indefinida para los 3 museos, no una tarea que se cierra al llegar a 5-10 piezas por museo — Met, Louvre y BM ya cumplieron la meta mínima pero pueden seguir sumando piezas bandera en cualquier momento.

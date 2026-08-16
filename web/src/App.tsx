@@ -36,6 +36,15 @@ const COLONIAL_POWER_COLORS: Record<string, string> = {
   fr: MUSEUM_COLORS.louvre,
 };
 
+// Nota por museo (nivel 2 de las "notas de contexto en la UI", ver CLAUDE.md
+// "Pendiente de decidir"): cada museo tiene una lógica de extracción distinta
+// y una nota genérica para los tres perdería justo esa diferencia.
+const MUSEUM_NOTES: Record<string, string> = {
+  met: "El Met no adquirió estas piezas porque EEUU controlara territorialmente sus lugares de origen. Llegaron por el mercado internacional de antigüedades, misiones de excavación autorizadas por la potencia colonial de turno y donantes ricos — poder económico y político ganado en años recientes, no expansión territorial.",
+  louvre: "Los 4 departamentos del Louvre representados acá (Antigüedades Egipcias, Orientales, Griegas-Etruscas-Romanas, Arte Islámico) cubren sobre todo Egipto, Medio Oriente y el Mediterráneo. El fondo de África Subsahariana y América no está en el Louvre: se transfirió al Musée du Quai Branly cuando abrió en 2006.",
+  bm: "El caso más directo de administración colonial territorial de los tres museos, con mecanismos que van desde la conquista militar (la Piedra de Rosetta, las Placas de Benín) hasta excavaciones bajo permiso del gobierno otomano.",
+};
+
 type PanelState =
   | { view: "cluster"; cluster: OriginCluster }
   | { view: "object"; cluster: OriginCluster; object: MuseumObject }
@@ -52,6 +61,7 @@ function App() {
   const [cursor, setCursor] = useState("grab");
   const [timelineYear, setTimelineYear] = useState(TIMELINE_DEFAULT_YEAR);
   const [timelineOpen, setTimelineOpen] = useState(false);
+  const [museumNoteOpen, setMuseumNoteOpen] = useState<string | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- geojson global type no está disponible, ver nota de colonialOverlay más arriba
   const [colonialOverlay, setColonialOverlay] = useState<any>(null);
 
@@ -146,18 +156,34 @@ function App() {
       <div className="map-pane">
         <div className="museum-toggles">
           {Object.entries(bundle.museums).map(([id, m]) => (
-            <button
+            <div
               key={id}
-              type="button"
-              className={`museum-toggle${visibleMuseums[id] ? " active" : " inactive"}`}
-              onClick={() => toggleMuseum(id)}
+              className={`museum-toggle-wrap${visibleMuseums[id] ? " active" : " inactive"}`}
             >
-              <span
-                className="museum-toggle-dot"
-                style={{ background: MUSEUM_COLORS[id] ?? DEFAULT_COLOR }}
-              />
-              {m.name}
-            </button>
+              <button
+                type="button"
+                className="museum-toggle"
+                onClick={() => toggleMuseum(id)}
+              >
+                <span
+                  className="museum-toggle-dot"
+                  style={{ background: MUSEUM_COLORS[id] ?? DEFAULT_COLOR }}
+                />
+                {m.name}
+              </button>
+              <button
+                type="button"
+                className={`museum-info-btn${museumNoteOpen === id ? " open" : ""}`}
+                aria-label={`Sobre la procedencia de las piezas de ${m.name}`}
+                aria-expanded={museumNoteOpen === id}
+                onClick={() => setMuseumNoteOpen((cur) => (cur === id ? null : id))}
+              >
+                i
+              </button>
+              {museumNoteOpen === id && (
+                <div className="museum-note">{MUSEUM_NOTES[id]}</div>
+              )}
+            </div>
           ))}
           <div className="piece-counter">
             {visibleObjects.length === bundle.objects.length
