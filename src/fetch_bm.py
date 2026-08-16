@@ -60,11 +60,13 @@ CRAWL_DELAY_DEFAULT = 20  # segundos — pedido explícito del robots.txt del si
 
 # El WAF del sitio rechaza una fracción de los requests al azar incluso con
 # headers de browser real (403 intermitente, no ligado a un objeto puntual).
-# Reintentamos un par de veces con más espera antes de darnos por vencidos —
-# esto es tolerancia a fallas de red, no evasión: mismo UA, mismo objeto,
-# mismo comportamiento secuencial, solo más paciencia.
-MAX_RETRIES = 2
-RETRY_BACKOFF_SECONDS = 30
+# Reintentamos con más espera antes de darnos por vencidos — esto es
+# tolerancia a fallas de red, no evasión: mismo UA, mismo objeto, mismo
+# comportamiento secuencial, solo más paciencia. Subido de 2 a 4 reintentos
+# (16/08) tras ver una corrida con rachas de 3 403 seguidos por objeto,
+# más agresivo que lo visto en rondas anteriores.
+MAX_RETRIES = 4
+RETRY_BACKOFF_SECONDS = 40
 
 # Piezas semilla, verificadas a mano navegando el sitio (ver nota arriba
 # sobre por qué no hay descubrimiento automatizado todavía). Cubre las 6
@@ -126,6 +128,22 @@ SEED_OBJECT_IDS = [
     "W_1970-0604-2",  # Altar sabeo — Marib, Yemen
     "Y_EA51515",  # Ánfora meroítica — Faras, Nubia (Sudán)
     "E_Oc1921-1102-3",  # Modelo de canoa — Islas Salomón
+    # Cuarta ronda (16/08) — verificado a mano vía navegador (búsqueda puntual
+    # en /collection/search, respetando el mismo método que las rondas
+    # anteriores; el sitio bloquea /search* en robots.txt para scrapers
+    # automatizados, no para navegación interactiva). Prioriza países/regiones
+    # todavía no cubiertos: África austral y oriental, Sudamérica, Pacífico
+    # melanesio, Sudeste asiático, Mediterráneo oriental, África central,
+    # Asia del Sur.
+    "E_Af1900-55",  # Brazalete herero — Namibia (entonces África del Sudoeste Alemana)
+    "E_Af1887-1211-51",  # Flecha "tomada de un dhow esclavista" — Zanzíbar, Tanzania
+    "E_Am1928-0516-2",  # Cascabel de oro quimbaya — Colombia
+    "E_Oc1889-0208-13",  # Máscara ceremonial — Ambrym, Vanuatu
+    "E_Af1904-110-d-g",  # Plumas de avestruz masái — Kenia
+    "A_As1919-1230-3",  # Bolso kachin — región de Mandalay, Birmania (Myanmar)
+    "G_1894-1101-213",  # Alabastrón de vidrio — excavación británica en Amathus, Chipre
+    "E_Af1954-23-2641-a-b",  # Daga bamum — Camerún
+    "A_1959-1012-1",  # Figura de Párvatí y Shivá — Rajshahi, Bangladés
 ]
 
 

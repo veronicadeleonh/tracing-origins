@@ -58,7 +58,15 @@ def sparql_arks(qid: str, limit: int) -> list[str]:
     req = urllib.request.Request(url, headers={"Accept": "application/sparql-results+json", "User-Agent": USER_AGENT})
     with urllib.request.urlopen(req, timeout=30) as resp:
         data = json.load(resp)
-    return [b["ark"]["value"] for b in data["results"]["bindings"]]
+    # P9394 (Louvre Museum ARK ID) está cargado de forma inconsistente en
+    # Wikidata: la mayoría de los valores incluyen el prefijo "cl" que es
+    # parte real del ark (ej. "cl010277627"), pero algunos ediciones lo
+    # cargaron sin él ("010277627"). Sin normalizar esto, esos casos:
+    # (a) tiran 404 al armar la URL porque el ark real necesita el "cl", y
+    # (b) no deduplican contra el cache existente (que sí tiene el "cl"),
+    # así que se reintentan como "nuevos" en cada corrida.
+    raw_arks = [b["ark"]["value"].strip() for b in data["results"]["bindings"]]
+    return [a if a.startswith("cl") else f"cl{a}" for a in raw_arks]
 
 
 def fetch_object(ark: str) -> dict:

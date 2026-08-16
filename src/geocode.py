@@ -242,6 +242,20 @@ LOUVRE_SITE_COORDS = [
     ("Mélos", (36.6900, 24.4300)),
     ("Diban", (31.5000, 35.7833)),
     ("Afis", (35.8500, 36.7500)),
+    ("Nemara", (32.7500, 36.7500)),  # an-Namara, Siria (inscripción nabatea)
+    ("Éleutherne", (35.3200, 24.7500)),  # Creta, Grecia
+    ("Amarna", (27.6453, 30.9017)),  # Tell el-Amarna, Egipto
+    ("Argos", (37.6333, 22.7333)),  # Grecia, Peloponeso
+    ("Benghazi", (32.1167, 20.0667)),  # Bengasi/antigua Berenice, Libia
+    ("Kerman", (30.2839, 57.0834)),  # Irán
+    ("Neirab", (36.1833, 37.2333)),  # cerca de Alepo, Siria
+    ("Paros", (37.0853, 25.1488)),  # isla griega
+    ("Pharsale", (39.2975, 22.3961)),  # Farsala, Tesalia, Grecia
+    ("Tanagra", (38.3167, 23.5333)),  # Beocia, Grecia
+    ("Thasos", (40.7833, 24.7000)),  # isla griega
+    ("Tlemcen", (34.8828, -1.3167)),  # Argelia
+    ("Tyr", (33.2704, 35.2038)),  # Tiro, Líbano
+    ("Alcalá de los Gazules", (36.4667, -5.7167)),  # Cádiz, España
 ]
 
 LOUVRE_COUNTRY_KEYWORDS = [
@@ -271,6 +285,10 @@ LOUVRE_COUNTRY_KEYWORDS = [
     ("Levant", (33.5000, 36.0000)),
     ("Perse", (32.4279, 53.6880)),
     ("Elam", (32.1881, 48.2578)),
+    ("Babylonie", (33.0000, 44.0000)),  # región, distinto de la ciudad "Babylone" ya listada arriba
+    ("Sumer", (31.0000, 45.6000)),
+    ("Tunisie", (33.8869, 9.5375)),
+    ("Sicile", (37.5000, 14.0000)),
 ]
 
 
@@ -340,6 +358,11 @@ BM_SITE_COORDS = [
     ("Hawaii", (19.8968, -155.5828)),
     ("Northwest Territories", (64.8255, -124.8457)),  # Canadá
     ("Hokkaido", (43.2203, 142.8635)),  # Japón — territorio ainu
+    ("Zanzibar", (-6.1659, 39.2026)),  # Tanzania
+    ("Ambrym", (-16.2500, 168.1167)),  # Vanuatu
+    ("Amathus", (34.7167, 33.1333)),  # Chipre
+    ("Cartagena", (10.3910, -75.4794)),  # Colombia
+    ("Rajshahi", (24.3745, 88.6042)),  # Bangladés
 ]
 
 BM_COUNTRY_KEYWORDS = [
@@ -373,6 +396,11 @@ BM_COUNTRY_KEYWORDS = [
     ("Fiji", (-17.7134, 178.0650)),
     ("Solomon Islands", (-9.6457, 160.1562)),
     ("Canada", (56.1304, -106.3468)),
+    ("Namibia", (-22.9576, 18.4904)),
+    ("Kenya", (-0.0236, 37.9062)),
+    ("Cyprus", (35.1264, 33.4299)),
+    ("Cameroon", (7.3697, 12.3547)),
+    ("Bangladesh", (23.6850, 90.3563)),
 ]
 
 

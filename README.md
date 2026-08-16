@@ -39,16 +39,24 @@ npm run build    # build de producción en web/dist
 ## Estado
 
 - [x] The Met: pipeline completo, 161 piezas geocodificadas (6 departamentos prioritarios)
-- [x] Louvre: pipeline completo, piloto de 80 piezas (71 geocodificadas) vía puente Wikidata
+- [x] Louvre: pipeline completo, 239 piezas (215 geocodificadas) vía puente Wikidata — dentro de la meta ~150-250
 - [x] British Museum: scraper propio, ~41 piezas curadas a mano en distintas regiones del mundo
 - [x] Modelo de 3 capas (metadata / geografía / investigación histórica)
 - [x] App web con globo interactivo (Mapbox GL), panel lateral con timeline por pieza
 - [x] Toggles por museo con contador de piezas visibles
-- [x] Capa de contexto: territorios coloniales de UK/Francia circa 1920 (Cliopatria, CC-BY 4.0)
+- [x] Capa de contexto: territorios coloniales de UK/Francia, timeline interactivo 1700-2020 (Cliopatria, CC-BY 4.0), opcional vía toggle con leyenda
 - [x] Piloto de investigación profunda: 5 piezas egipcias del Met con fuentes citadas
-- [ ] Ampliar Louvre y BM a ~150-250 piezas por museo
+- [x] Investigación profunda (layer 3) en el Louvre: 8 piezas con timeline citado (mecanismos documentados: partage bajo Mandato Francés y bajo autorización otomana, venta Borghese-Napoleón, excavación privada, mercado de arte) — meta 5-10 por museo cumplida
+- [x] Investigación profunda (layer 3) en el British Museum: 8 piezas con timeline citado (Roseta bajo Tratado de Alejandría 1801, Placas de Benín tras la Expedición Punitiva de 1897, excavaciones en Mesopotamia otomana financiadas por el museo, pieza de Amaravati vía India Museum, y casos de contraste sin mecanismo colonial documentado) — meta 5-10 por museo cumplida
+- [ ] Ampliar BM a ~150-250 piezas (hoy: Met 161, Louvre 215, BM 41 — 417 de ~500-700)
 - [ ] Modal de información/instrucciones para el visitante
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación documentado
+- [ ] Decidir tratamiento narrativo una vez haya más `context_flags` cargadas (¿resaltar piezas en el mapa? ¿filtro por tipo de evento?)
+- [ ] Revisar rotulado de fronteras políticas del basemap de Mapbox en zonas disputadas (Cisjordania, Kurdistán, Sahara Occidental)
+- [ ] Evaluar Musée du Quai Branly como 4ta fuente — el Louvre no tiene departamento de África Subsahariana/América (fondo transferido a Quai Branly en 2006), así que no puede cubrir el ángulo Francia↔África/Caribe
+- [ ] Test suite / linter (no configurado todavía)
+
+Nota: la investigación profunda (layer 3) queda como una línea de trabajo abierta e indefinida para los 3 museos, no una tarea que se cierra al llegar a 5-10 piezas por museo — Met, Louvre y BM ya cumplieron la meta mínima pero pueden seguir sumando piezas bandera en cualquier momento.
 
 ## Proyectos relacionados
 

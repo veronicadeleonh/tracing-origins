@@ -3,8 +3,10 @@ bm:A_1830-0612-4,Found/Acquired: Trincomalee (near),site,8.5711,81.2335,51.5194,
 bm:A_1880-0709-40,Found/Acquired: Amaravati,site,16.573,80.3567,51.5194,-0.127
 bm:A_1891-1215-1,Found/Acquired: Korea,country,35.9078,127.7669,51.5194,-0.127
 bm:A_1950-1211-2,Found/Acquired: Takht-i-Bahi,site,34.0,71.5,51.5194,-0.127
+bm:A_1959-1012-1,Found/Acquired: Rajshahi (town),site,24.3745,88.6042,51.5194,-0.127
 bm:A_As-3573_1,Found/Acquired: Yuanmingyuan,site,40.0084,116.2966,51.5194,-0.127
 bm:A_As1909-0622-1,Made in: Hokkaido,site,43.2203,142.8635,51.5194,-0.127
+bm:A_As1919-1230-3,Found/Acquired: Mandalay Region,unresolved,,,51.5194,-0.127
 bm:A_As1924-0714-1,Found/Acquired: Angkor,site,13.4125,103.867,51.5194,-0.127
 bm:C_1953-0402-17,Minted in: Aksum (town),site,14.1211,38.7167,51.5194,-0.127
 bm:E_2018-Q-101,Found/Acquired: New Zealand,country,-40.9006,174.886,51.5194,-0.127
@@ -14,22 +16,28 @@ bm:E_Af1898-0115-28,Found/Acquired: Benin City,site,6.335,5.6037,51.5194,-0.127
 bm:E_Af1898-0115-29,Found/Acquired: Benin City,site,6.335,5.6037,51.5194,-0.127
 bm:E_Af1898-0115-30,Found/Acquired: Benin City,site,6.335,5.6037,51.5194,-0.127
 bm:E_Af1898-0115-32,Found/Acquired: Benin City,site,6.335,5.6037,51.5194,-0.127
+bm:E_Af1900-55,Found/Acquired: Namibia,country,-22.9576,18.4904,51.5194,-0.127
+bm:E_Af1904-110-d-g,Found/Acquired: Kenya,country,-0.0236,37.9062,51.5194,-0.127
 bm:E_Af1905-0525-3,Found/Acquired: Congo (historic),country,-4.0383,21.7587,51.5194,-0.127
 bm:E_Af1921-1028-4,Found/Acquired: South Africa,country,-30.5595,22.9375,51.5194,-0.127
 bm:E_Af1954-17-1-a-b,Found/Acquired: Ife,site,7.4905,4.5521,51.5194,-0.127
+bm:E_Af1954-23-2641-a-b,Made in: Cameroon,country,7.3697,12.3547,51.5194,-0.127
 bm:E_Af1981-27-1,Made in: Asante Region,site,6.75,-1.5,51.5194,-0.127
 bm:E_Am-St-397-a,Made in: Mexico,country,23.6345,-102.5528,51.5194,-0.127
 bm:E_Am1855-1211-49,"Excavated/Findspot: Trujillo (Peru) , tomb",site,-8.1116,-79.029,51.5194,-0.127
 bm:E_Am1919-1216-11,"Excavated/Findspot: Haida Gwaii , grave",site,53.25,-132.0,51.5194,-0.127
+bm:E_Am1928-0516-2,Excavated/Findspot: Santa Marta (Valle de Cauca) (?),unresolved,,,51.5194,-0.127
 bm:E_Am1982-28-13,Found/Acquired: Northwest Territories,site,64.8255,-124.8457,51.5194,-0.127
 bm:E_Am1997-Q-793,Found/Acquired: Jamaica,country,18.1096,-77.2975,51.5194,-0.127
 bm:E_Oc-HAW-138,Found/Acquired: Hawaii,site,19.8968,-155.5828,51.5194,-0.127
 bm:E_Oc1848-0202-1,Found/Acquired: Queensland (50 miles NE of St George),site,-22.5752,144.0848,51.5194,-0.127
 bm:E_Oc1869-1005-1,"Found/Acquired: Orongo, ceremonial centre",site,-27.1836,-109.4306,51.5194,-0.127
+bm:E_Oc1889-0208-13,Found/Acquired: Ambrym,site,-16.25,168.1167,51.5194,-0.127
 bm:E_Oc1896-1154,Found/Acquired: Fiji,country,-17.7134,178.065,51.5194,-0.127
 bm:E_Oc1921-1102-3,"Found/Acquired: Solomon Islands (possibly Isabel, by style)",country,-9.6457,160.1562,51.5194,-0.127
 bm:E_Oc1949-08-1,Found/Acquired: Ramu River,country,-6.3149,143.9555,51.5194,-0.127
 bm:G_1816-0610-98,Excavated/Findspot: Parthenon,site,37.9715,23.7267,51.5194,-0.127
+bm:G_1894-1101-213,"Excavated/Findspot: Amathus (historic) , Site E, tomb 83",site,34.7167,33.1333,51.5194,-0.127
 bm:W_1848-1104-1,Excavated/Findspot: Nimrud,site,36.0994,43.325,51.5194,-0.127
 bm:W_1856-0909-57,"Excavated/Findspot: North Palace (Nineveh) , Room 1
 Door C",site,36.36,43.15,51.5194,-0.127

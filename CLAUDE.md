@@ -94,13 +94,16 @@ Se corrió como los demás `fetch_*.py`: en la máquina real del usuario, no des
 
 ## Filosofía / alcance del proyecto
 
-Proyecto curado para portfolio personal, no un dataset exhaustivo ni un intento de competir en cobertura con proyectos tipo [heritage-vault](https://github.com/mente123/heritage-vault). Objetivo de escala: ~150-250 piezas por museo (~500-700 total), con una capa básica pareja para todas (lo que cada museo ya publica) y un subconjunto chico de piezas "bandera" (15-30 en total, 5-10 por museo) con investigación profunda tipo la de las 5 piezas egipcias del Met (`data/enrichment/`). No se persigue bajar departamentos completos ni el 100% de ninguna colección — la app deja esto explícito con un aviso de "muestra curada" en el mapa.
+Proyecto curado para portfolio personal, no un dataset exhaustivo ni un intento de competir en cobertura con proyectos tipo [heritage-vault](https://github.com/mente123/heritage-vault). Objetivo de escala: ~150-250 piezas por museo (~500-700 total), con una capa básica pareja para todas (lo que cada museo ya publica) y un subconjunto chico de piezas "bandera" (15-30 en total, 5-10 por museo como piso, no techo) con investigación profunda tipo la de las 5 piezas egipcias del Met y las 8 del Louvre (`data/enrichment/`). No se persigue bajar departamentos completos ni el 100% de ninguna colección — la app deja esto explícito con un aviso de "muestra curada" en el mapa.
+
+La investigación profunda (layer 3) es una línea de trabajo abierta e indefinida para los 3 museos — no se cierra al llegar al mínimo de 5-10 piezas por museo, queda disponible para seguir sumando piezas bandera en cualquier sesión futura, en cualquiera de los tres.
 
 ## Pendiente de decidir
 
 - **Modal de información/instrucciones**: reemplaza la idea original de una landing page — mostrar contexto y alcance del proyecto al visitante sin agregar una pantalla previa al mapa. No implementado todavía.
 - **Enfoque narrativo una vez haya más investigación cargada**: ¿resaltar visualmente los puntos con `context_flags` pobladas? ¿filtro por tipo de evento? Se decide cuando haya suficiente data real para probarlo.
 - **Basemap y fronteras políticas**: evaluar si el basemap de Mapbox necesita ajustes de rotulado de países — relevante porque el proyecto visibiliza colonización y las fronteras políticas modernas no son neutras para varias regiones mapeadas (Cisjordania, Kurdistán, Sahara Occidental, etc.).
+- **Cuarta fuente: Musée du Quai Branly**: evaluar sumarlo para cubrir el ángulo Francia↔África/Caribe que el Louvre no puede mostrar (ver "Hallazgo estructural" más arriba — no tiene departamento de África Subsahariana ni América, ese fondo se transfirió a Quai Branly en 2006). Implicaría un pipeline nuevo completo (`fetch_quaibranly.py` / `build_dataset_quaibranly.py` / `build_geography_quaibranly.py`, mismo patrón que los otros tres museos) — confirmado con el usuario el 16/08 que se quiere anotar para evaluar más adelante, no arrancado todavía.
 
 ## Notas del entorno de desarrollo (Cowork sandbox)
 
