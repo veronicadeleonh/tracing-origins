@@ -1,4 +1,4 @@
-# colonial-museum-routes
+# 🏛️ Tracing Origins
 
 Mapa interactivo que conecta obras de museos con su lugar de origen, para visualizar patrones de expropiación y colonización en las colecciones. El foco son tres museos "de prestigio" en países que colonizaron: **The Metropolitan Museum of Art** (Nueva York), **Musée du Louvre** (París) y **British Museum** (Londres).
 
