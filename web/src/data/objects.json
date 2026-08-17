@@ -2312,8 +2312,84 @@
       "originPrecision": "region",
       "originLat": 33.0,
       "originLon": 44.0,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "ottoman_authorization",
+          "art_market",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Irak",
+        "notes": "Relieve de procesion de cautivos (Neoasirio, ca. 704-681 a.C.), del palacio de Nimrud (la antigua Kalju). Excavado por Austen Henry Layard entre 1847 y 1849 bajo autorizacion de las autoridades otomanas (Mesopotamia era entonces territorio otomano, antes del Mandato Britanico de Irak). Layard regalo este relieve a Lady Charlotte Guest para su residencia de Canford Manor, Inglaterra, en 1849 -la misma casa donde se instalaron varios de los relieves de Nimrud que Layard trajo de regreso. En 1919 el marchante Dikran Kelekian lo compro a Ivor Churchill Guest, primer Vizconde de Wimborne; en 1927 lo compro John D. Rockefeller Jr. a Kelekian. Rockefeller lo adquirio para el Met en 1930 (accesionado formalmente en 1932), junto con la mayoria de los relieves asirios del museo.",
+        "notesEn": "Relief showing a procession of captives (Neo-Assyrian, ca. 704-681 BCE), from the palace at Nimrud (ancient Kalhu). Excavated by Austen Henry Layard between 1847 and 1849 under authorization from Ottoman authorities (Mesopotamia was then Ottoman territory, before the British Mandate for Iraq). Layard gave this relief to Lady Charlotte Guest for her Canford Manor residence in England in 1849 -the same house where several of the Nimrud reliefs Layard brought back were installed. In 1919 dealer Dikran Kelekian bought it from Ivor Churchill Guest, 1st Viscount Wimborne; in 1927 John D. Rockefeller Jr. bought it from Kelekian. Rockefeller acquired it for the Met in 1930 (formally accessioned in 1932), along with most of the museum's Assyrian reliefs."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "excavation",
+          "event_date": "1847-1849",
+          "actor_or_institution": "Austen Henry Layard, con autorizacion otomana",
+          "location": "Nimrud (Kalju), Mesopotamia otomana",
+          "description": "Relieve excavado por Austen Henry Layard en el palacio de Nimrud (la antigua Kalju), bajo autorizacion de las autoridades otomanas -Mesopotamia era entonces territorio otomano, decadas antes del Mandato Britanico de Irak.",
+          "descriptionEs": "Relieve excavado por Austen Henry Layard en el palacio de Nimrud (la antigua Kalju), bajo autorizacion de las autoridades otomanas -Mesopotamia era entonces territorio otomano, decadas antes del Mandato Britanico de Irak.",
+          "descriptionEn": "Relief excavated by Austen Henry Layard at the palace of Nimrud (ancient Kalhu), under authorization from Ottoman authorities -Mesopotamia was then Ottoman territory, decades before the British Mandate for Iraq.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/322624",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "gift",
+          "event_date": "1849",
+          "actor_or_institution": "Austen Henry Layard, a Lady Charlotte Guest",
+          "location": "Canford Manor, Dorset, Inglaterra",
+          "description": "Layard regalo este relieve a Lady Charlotte Guest para su residencia de Canford Manor, la misma casa donde se instalaron varios de los relieves de Nimrud que trajo de regreso.",
+          "descriptionEs": "Layard regalo este relieve a Lady Charlotte Guest para su residencia de Canford Manor, la misma casa donde se instalaron varios de los relieves de Nimrud que trajo de regreso.",
+          "descriptionEn": "Layard gave this relief to Lady Charlotte Guest for her Canford Manor residence, the same house where several of the Nimrud reliefs he brought back were installed.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/322624",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1919",
+          "actor_or_institution": "Dikran Kelekian, marchante",
+          "location": "Reino Unido / Estados Unidos",
+          "description": "El marchante Dikran Kelekian compro el relieve a Ivor Churchill Guest, primer Vizconde de Wimborne (hijo de Lady Charlotte Guest).",
+          "descriptionEs": "El marchante Dikran Kelekian compro el relieve a Ivor Churchill Guest, primer Vizconde de Wimborne (hijo de Lady Charlotte Guest).",
+          "descriptionEn": "Dealer Dikran Kelekian bought the relief from Ivor Churchill Guest, 1st Viscount Wimborne (Lady Charlotte Guest's son).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/322624",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "1927",
+          "actor_or_institution": "John D. Rockefeller Jr.",
+          "location": "Estados Unidos",
+          "description": "John D. Rockefeller Jr. compro el relieve al marchante Dikran Kelekian.",
+          "descriptionEs": "John D. Rockefeller Jr. compro el relieve al marchante Dikran Kelekian.",
+          "descriptionEn": "John D. Rockefeller Jr. bought the relief from dealer Dikran Kelekian.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/322624",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 5,
+          "event_type": "acquisition",
+          "event_date": "1930 (accesionado en 1932)",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "Rockefeller lo adquirio para el Met en 1930, junto con la mayoria de los relieves asirios de Nimrud del museo; se accesiono formalmente en 1932.",
+          "descriptionEs": "Rockefeller lo adquirio para el Met en 1930, junto con la mayoria de los relieves asirios de Nimrud del museo; se accesiono formalmente en 1932.",
+          "descriptionEn": "Rockefeller acquired it for the Met in 1930, along with most of the museum's Assyrian reliefs from Nimrud; it was formally accessioned in 1932.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/322624",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:322910",
@@ -2798,8 +2874,58 @@
       "originPrecision": "region",
       "originLat": 33.0,
       "originLon": 44.0,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "art_market",
+          "private_collection",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Irak",
+        "notes": "Figura de fundacion con la imagen del rey Ur-Namma cargando un cesto (Neosumerio, periodo Ur III, ca. 2112-2095 a.C.), depositada originalmente en el cimiento de un templo dedicado a Inanna. La ficha del Met no consigna sitio de hallazgo -a diferencia de otras piezas mesopotamicas del museo con procedencia de excavacion documentada (como Ur, excavada por Leonard Woolley entre 1922 y 1934), esta figura aparece ya en la coleccion privada neoyorquina de la Sra. William H. Moore sin cadena de custodia documentada hacia atras. Investigacion parcial: no logramos confirmar si paso por el mercado de antiguedades o por que via especifica llego a esa coleccion antes de ser donada al Met en 1947.",
+        "notesEn": "Foundation figure depicting King Ur-Namma carrying a basket (Neo-Sumerian, Ur III period, ca. 2112-2095 BCE), originally deposited in the foundation of a temple dedicated to Inanna. The Met's record does not list a findspot -unlike other Mesopotamian pieces at the museum with documented excavation provenance (such as Ur, excavated by Leonard Woolley between 1922 and 1934), this figure already appears in the private New York collection of Mrs. William H. Moore with no documented chain of custody before that. Partial research: we could not confirm whether it passed through the antiquities market or by what specific route it reached that collection before being donated to the Met in 1947."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2112-2095 a.C.",
+          "actor_or_institution": "Reinado de Ur-Namma",
+          "location": "Sumer, Mesopotamia (sitio no especificado en el registro del Met)",
+          "description": "Figurilla de fundacion con la imagen del rey Ur-Namma cargando un cesto, depositada originalmente en el cimiento de un templo dedicado a Inanna que el rey restauro o construyo, segun su inscripcion cuneiforme.",
+          "descriptionEs": "Figurilla de fundacion con la imagen del rey Ur-Namma cargando un cesto, depositada originalmente en el cimiento de un templo dedicado a Inanna que el rey restauro o construyo, segun su inscripcion cuneiforme.",
+          "descriptionEn": "Foundation figurine depicting King Ur-Namma carrying a basket, originally deposited in the foundation of a temple dedicated to Inanna that the king restored or built, according to its cuneiform inscription.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/329067",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Sra. William H. Moore",
+          "location": "Nueva York, Estados Unidos",
+          "description": "A diferencia de otras piezas mesopotamicas del Met con procedencia de excavacion documentada, esta figura aparece ya en la coleccion privada neoyorquina de la Sra. William H. Moore sin cadena de custodia documentada hacia atras -no se pudo confirmar si paso por el mercado de antiguedades.",
+          "descriptionEs": "A diferencia de otras piezas mesopotamicas del Met con procedencia de excavacion documentada, esta figura aparece ya en la coleccion privada neoyorquina de la Sra. William H. Moore sin cadena de custodia documentada hacia atras -no se pudo confirmar si paso por el mercado de antiguedades.",
+          "descriptionEn": "Unlike other Mesopotamian pieces at the Met with documented excavation provenance, this figure already appears in the private New York collection of Mrs. William H. Moore with no documented chain of custody before that -we could not confirm whether it passed through the antiquities market.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/329067",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1947",
+          "actor_or_institution": "Sra. William H. Moore",
+          "location": "Nueva York, Estados Unidos",
+          "description": "Donada al Met por la Sra. William H. Moore en 1947.",
+          "descriptionEs": "Donada al Met por la Sra. William H. Moore en 1947.",
+          "descriptionEn": "Donated to the Met by Mrs. William H. Moore in 1947.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/329067",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:445491",
@@ -3598,8 +3724,71 @@
       "originPrecision": "subregion",
       "originLat": 29.9765,
       "originLon": 31.1313,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "private_collection",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Egipto",
+        "notes": "Fragmento de rostro del rey Kafre (Dinastia 4, ca. 2520-2494 a.C.), hallado en Guiza. No hay excavador ni fecha de hallazgo documentados publicamente: la pieza aparece ya dentro de la coleccion privada del reverendo William MacGregor, uno de los grandes coleccionistas de egiptologia de fines del siglo XIX, formada mayormente por compra en el mercado de antiguedades. Se vendio en el remate de la coleccion MacGregor (Sotheby's, Londres, 1922, lote 255), comprada alli por Lord Carnarvon -el mismo mecenas que financio la excavacion de la tumba de Tutankamon un año despues-. El Met compro la coleccion Carnarvon completa a su viuda, Almina, Condesa de Carnarvon, en 1926.",
+        "notesEn": "Fragmentary face of King Khafre (Dynasty 4, ca. 2520-2494 BCE), found at Giza. No excavator or find date is publicly documented: the piece surfaces already inside the private collection of Rev. William MacGregor, one of the major Egyptology collectors of the late 19th century, built mostly through purchase on the antiquities market. It sold at the MacGregor collection sale (Sotheby's, London, 1922, lot 255), bought there by Lord Carnarvon -the same patron who funded the excavation of Tutankhamun's tomb the following year. The Met bought the entire Carnarvon collection from his widow, Almina, Countess of Carnarvon, in 1926."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2520-2494 a.C.",
+          "actor_or_institution": "Talleres reales egipcios",
+          "location": "Guiza, Egipto",
+          "description": "Fragmento de rostro real tallado en travertino (alabastro egipcio), identificado como retrato del rey Kafre por su parecido con estatuas del complejo funerario del rey.",
+          "descriptionEs": "Fragmento de rostro real tallado en travertino (alabastro egipcio), identificado como retrato del rey Kafre por su parecido con estatuas del complejo funerario del rey.",
+          "descriptionEn": "Royal face fragment carved in travertine (Egyptian alabaster), identified as a portrait of King Khafre by its resemblance to statues from the king's funerary complex.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543896",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Reverendo William MacGregor",
+          "location": "Guiza, Egipto",
+          "description": "Sin excavador ni fecha de hallazgo documentados: la pieza aparece ya dentro de la coleccion privada del reverendo William MacGregor, formada mayormente por compra en el mercado de antiguedades.",
+          "descriptionEs": "Sin excavador ni fecha de hallazgo documentados: la pieza aparece ya dentro de la coleccion privada del reverendo William MacGregor, formada mayormente por compra en el mercado de antiguedades.",
+          "descriptionEn": "No excavator or find date documented: the piece already appears within the private collection of Rev. William MacGregor, built mostly through purchase on the antiquities market.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543896",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1922",
+          "actor_or_institution": "Lord Carnarvon (Sotheby's, Londres, lote 255)",
+          "location": "Londres, Reino Unido",
+          "description": "Vendida en el remate de la coleccion MacGregor (Sotheby's, 1922, lote 255); comprada alli por Lord Carnarvon, el mismo mecenas que financiaria la excavacion de la tumba de Tutankamon al año siguiente.",
+          "descriptionEs": "Vendida en el remate de la coleccion MacGregor (Sotheby's, 1922, lote 255); comprada alli por Lord Carnarvon, el mismo mecenas que financiaria la excavacion de la tumba de Tutankamon al año siguiente.",
+          "descriptionEn": "Sold at the MacGregor collection sale (Sotheby's, 1922, lot 255); bought there by Lord Carnarvon, the same patron who would fund the excavation of Tutankhamun's tomb the following year.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543896",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1926",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met compro la coleccion Carnarvon completa a Almina, Condesa de Carnarvon (viuda de Lord Carnarvon), con fondos de Edward S. Harkness.",
+          "descriptionEs": "El Met compro la coleccion Carnarvon completa a Almina, Condesa de Carnarvon (viuda de Lord Carnarvon), con fondos de Edward S. Harkness.",
+          "descriptionEn": "The Met bought the entire Carnarvon collection from Almina, Countess of Carnarvon (Lord Carnarvon's widow), with funds from Edward S. Harkness.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543896",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543897",
@@ -3814,8 +4003,56 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Egipto",
+        "notes": "Azulejos de las galerias subterraneas bajo la Piramide Escalonada de Dyoser (Dinastia 3, ca. 2630-2611 a.C.), Saqqara. Esas galerias fueron excavadas a partir de 1924 por Cecil Firth para el Servicio de Antiguedades de Egipto (entonces bajo direccion francesa, con reparto -partage- de hallazgos entre el Servicio y la mision excavadora, practica habitual de la epoca aunque ya en retroceso). La ficha del Met dice \"Rogers Fund, by exchange, 1948\" -es decir, la pieza llego via canje con otra institucion, no directo de la excavacion- pero no encontramos publicamente identificado con que institucion se hizo ese canje, asi que la cadena entre la excavacion de 1924 y la llegada al Met en 1948 queda sin documentar. Investigacion parcial: falta esa pieza intermedia.",
+        "notesEn": "Tiles from the underground galleries beneath Djoser's Step Pyramid (Dynasty 3, ca. 2630-2611 BCE), Saqqara. Those galleries were excavated starting in 1924 by Cecil Firth for the Egyptian Antiquities Service (then under French directorship, with partage of finds between the Service and the excavating mission, standard practice at the time though already tightening). The Met's record reads \"Rogers Fund, by exchange, 1948\" -meaning the piece arrived via an exchange with another institution rather than directly from the excavation- but we could not find that exchange partner publicly identified, so the chain between the 1924 excavation and the 1948 arrival at the Met remains undocumented. Partial research: that intermediate link is missing."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2630-2611 a.C.",
+          "actor_or_institution": "Talleres reales egipcios, reinado de Dyoser",
+          "location": "Saqqara, Egipto",
+          "description": "Azulejos de fayenza que decoraban las galerias subterraneas bajo la Piramide Escalonada de Dyoser y un edificio de su complejo llamado la Tumba Sur, imitando el esterillado de caña de su palacio.",
+          "descriptionEs": "Azulejos de fayenza que decoraban las galerias subterraneas bajo la Piramide Escalonada de Dyoser y un edificio de su complejo llamado la Tumba Sur, imitando el esterillado de caña de su palacio.",
+          "descriptionEn": "Faience tiles that decorated the underground galleries beneath Djoser's Step Pyramid and a building in his complex called the Southern Tomb, imitating the reed matting of his palace.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543904",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "desde 1924",
+          "actor_or_institution": "Cecil Firth, para el Servicio de Antiguedades de Egipto",
+          "location": "Saqqara, Egipto",
+          "description": "Las galerias bajo la Piramide Escalonada fueron excavadas a partir de 1924 por Cecil Firth para el Servicio de Antiguedades de Egipto, entonces bajo direccion francesa, con reparto (partage) de hallazgos entre el Servicio y la mision excavadora segun la practica de la epoca.",
+          "descriptionEs": "Las galerias bajo la Piramide Escalonada fueron excavadas a partir de 1924 por Cecil Firth para el Servicio de Antiguedades de Egipto, entonces bajo direccion francesa, con reparto (partage) de hallazgos entre el Servicio y la mision excavadora segun la practica de la epoca.",
+          "descriptionEn": "The galleries beneath the Step Pyramid were excavated starting in 1924 by Cecil Firth for the Egyptian Antiquities Service, then under French directorship, with partage of finds between the Service and the excavating mission per the practice of the era.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543904",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "exchange",
+          "event_date": "1948",
+          "actor_or_institution": "The Metropolitan Museum of Art (Rogers Fund, by exchange)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met adquirio la pieza en 1948 via canje con otra institucion (no identificada en fuentes publicas) en vez de directamente de la excavacion: la cadena entre 1924 y 1948 queda sin documentar.",
+          "descriptionEs": "El Met adquirio la pieza en 1948 via canje con otra institucion (no identificada en fuentes publicas) en vez de directamente de la excavacion: la cadena entre 1924 y 1948 queda sin documentar.",
+          "descriptionEn": "The Met acquired the piece in 1948 via exchange with another institution (not identified in public sources) rather than directly from the excavation: the chain between 1924 and 1948 remains undocumented.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543904",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "met:543905",
@@ -3895,8 +4132,57 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Egipto",
+        "notes": "Falsa puerta de la tumba de Metyetyi (Dinastias 5-6, ca. 2353-2323 a.C.), Saqqara. No hay registro publico de cuando ni por quien fue retirada de la tumba -llega documentada recien al aparecer en manos del marchante J. J. Klejman, de Madison Avenue, Nueva York. Klejman es una figura controvertida en la historia del coleccionismo del Met: es el mismo marchante que, entre 1966 y 1968, le vendio al museo varias piezas del llamado \"Tesoro de Lidia\" (Lydian Hoard), que Turquia demostro judicialmente en 1993 que habian sido sacadas ilegalmente del pais -el Met las devolvio ese mismo año. Esta puerta se dono en 1964, antes de ese escandalo, como regalo de J. J. y su esposa.",
+        "notesEn": "False door from the tomb of Metjetji (Dynasties 5-6, ca. 2353-2323 BCE), Saqqara. There is no public record of when or by whom it was removed from the tomb -it only becomes documented once it surfaces in the hands of dealer J. J. Klejman, of Madison Avenue, New York. Klejman is a controversial figure in the Met's collecting history: he is the same dealer who, between 1966 and 1968, sold the museum several pieces of the so-called Lydian Hoard, which Turkey proved in court in 1993 had been illegally removed from the country -the Met returned them that same year. This door was donated in 1964, before that scandal, as a gift from J. J. and his wife."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2353-2323 a.C.",
+          "actor_or_institution": "Talleres funerarios de Metyetyi",
+          "location": "Saqqara, Egipto",
+          "description": "Falsa puerta tallada en caliza para la tumba del funcionario Metyetyi, quien se hizo representar ocho veces distintas en ella.",
+          "descriptionEs": "Falsa puerta tallada en caliza para la tumba del funcionario Metyetyi, quien se hizo representar ocho veces distintas en ella.",
+          "descriptionEn": "False door carved in limestone for the tomb of the official Metjetji, who had himself depicted on it no fewer than eight times.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543907",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Mercado internacional de antiguedades",
+          "location": "Saqqara, Egipto / desconocido",
+          "description": "No hay registro publico de cuando ni por quien fue retirada de la tumba de Metyetyi: recien queda documentada al aparecer en manos del marchante J. J. Klejman, de Madison Avenue, Nueva York.",
+          "descriptionEs": "No hay registro publico de cuando ni por quien fue retirada de la tumba de Metyetyi: recien queda documentada al aparecer en manos del marchante J. J. Klejman, de Madison Avenue, Nueva York.",
+          "descriptionEn": "There is no public record of when or by whom it was removed from Metjetji's tomb: it only becomes documented once it surfaces in the hands of dealer J. J. Klejman, of Madison Avenue, New York.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543907",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1964",
+          "actor_or_institution": "Sr. y Sra. J. J. Klejman",
+          "location": "Nueva York, Estados Unidos",
+          "description": "Donada al Met por J. J. Klejman y su esposa en 1964. Klejman es una figura controvertida en la historia del coleccionismo del museo: el mismo marchante le vendio al Met, entre 1966 y 1968, piezas del \"Tesoro de Lidia\" que Turquia probo judicialmente en 1993 que habian salido ilegalmente del pais, y que el Met devolvio ese mismo año.",
+          "descriptionEs": "Donada al Met por J. J. Klejman y su esposa en 1964. Klejman es una figura controvertida en la historia del coleccionismo del museo: el mismo marchante le vendio al Met, entre 1966 y 1968, piezas del \"Tesoro de Lidia\" que Turquia probo judicialmente en 1993 que habian salido ilegalmente del pais, y que el Met devolvio ese mismo año.",
+          "descriptionEn": "Donated to the Met by J. J. Klejman and his wife in 1964. Klejman is a controversial figure in the museum's collecting history: the same dealer sold the Met, between 1966 and 1968, pieces of the Lydian Hoard that Turkey proved in court in 1993 had left the country illegally, and which the Met returned that same year.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543907",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "met:543908",
@@ -13118,8 +13404,56 @@
       "originPrecision": "site",
       "originLat": 0.2667,
       "originLon": 32.65,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration"
+        ],
+        "associated_communities_or_states": "Uganda",
+        "notes": "Escultura de terracota, una de las obras figurativas mas antiguas conocidas del Africa subsahariana (finales del primer milenio d.C.). Excavada en 1929 por Edward James Wayland, geologo del gobierno colonial britanico y director del Servicio Geologico de Uganda desde 1920, durante la construccion de una prision en Luzira, en la costa del lago Victoria cerca de Kampala -- un hallazgo casual de una obra de la administracion colonial, no de una mision arqueologica dedicada. Donada por el propio Wayland al British Museum en 1931. Autoridades y comentaristas ugandeses la han reclamado como patrimonio de Uganda, y la prensa local discute activamente su estatus.",
+        "notesEn": "Terracotta sculpture, one of the oldest known figurative works from sub-Saharan Africa (end of the first millennium CE). Excavated in 1929 by Edward James Wayland, a British colonial government geologist and director of the Uganda Geological Survey since 1920, during the construction of a prison at Luzira, on the shore of Lake Victoria near Kampala -- a chance find made by colonial administration infrastructure work, not a dedicated archaeological mission. Donated by Wayland himself to the British Museum in 1931. Ugandan authorities and commentators have claimed it as Uganda's heritage, and local press actively discusses its status."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "finales del primer milenio CE",
+          "actor_or_institution": null,
+          "location": "Luzira, cerca de Kampala, Uganda",
+          "description": "Escultura de terracota, una de las obras figurativas mas antiguas conocidas del Africa subsahariana.",
+          "descriptionEs": "Escultura de terracota, una de las obras figurativas mas antiguas conocidas del Africa subsahariana.",
+          "descriptionEn": "Terracotta sculpture, one of the oldest known figurative works from sub-Saharan Africa.",
+          "source_url": "https://en.wikipedia.org/wiki/Luzira_Head",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1929",
+          "actor_or_institution": "Edward James Wayland (geologo del gobierno colonial britanico)",
+          "location": "Luzira, costa del lago Victoria, Protectorado de Uganda",
+          "description": "Hallada por Wayland, director del Servicio Geologico de Uganda, durante la construccion de una prision en Luzira -- un hallazgo casual de una obra de infraestructura colonial, no de una mision arqueologica dedicada.",
+          "descriptionEs": "Hallada por Wayland, director del Servicio Geologico de Uganda, durante la construccion de una prision en Luzira -- un hallazgo casual de una obra de infraestructura colonial, no de una mision arqueologica dedicada.",
+          "descriptionEn": "Found by Wayland, director of the Uganda Geological Survey, during the construction of a prison at Luzira -- a chance find from colonial infrastructure work, not a dedicated archaeological mission.",
+          "source_url": "https://en.wikipedia.org/wiki/Luzira_Head",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1931",
+          "actor_or_institution": "Edward James Wayland",
+          "location": "Uganda -> Londres",
+          "description": "Donada por Wayland al British Museum.",
+          "descriptionEs": "Donada por Wayland al British Museum.",
+          "descriptionEn": "Donated by Wayland to the British Museum.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1931-0105-14",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1933-1206-70",
@@ -13334,8 +13668,56 @@
       "originPrecision": "site",
       "originLat": 6.75,
       "originLon": -1.5,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "art_market"
+        ],
+        "associated_communities_or_states": "Ghana",
+        "notes": "Pieza de la regalia real asante, catalogada dentro de la serie 'Asante Gold' del museo. El registro propio del British Museum la lista como comprada a un notable asante, 'Nana Akwesi Afrane' -- la fecha y circunstancias exactas de esa compra puntual no estan documentadas en las fuentes disponibles, y no se asume aqui que haya sido botin de guerra directo sin una fuente que lo confirme para esta pieza en particular. Es importante distinguir esto del contexto general: buena parte de las mas de 200 piezas de regalia asante que tiene el British Museum sí provienen documentadamente del saqueo britanico durante las guerras anglo-asante de 1873-74 y 1895-96, parte como pago de indemnizacion forzada al Asantehene. En abril de 2024 el British Museum y el V&A acordaron prestar piezas de oro asante a Ghana (Museo del Palacio Manhyia, Kumasi) por un plazo inicial renovable de 3 anos -- no una devolucion permanente, ya que la ley britanica de 1963 que rige al museo le prohibe desprenderse definitivamente de piezas de su coleccion; el prestamo fue en si mismo un arreglo parcial y discutido frente al pedido ganes de restitucion permanente.",
+        "notesEn": "A piece of Asante royal regalia, catalogued within the museum's 'Asante Gold' series. The British Museum's own record lists it as purchased from a named Asante notable, 'Nana Akwesi Afrane' -- the exact date and circumstances of that specific purchase are not documented in the sources available, and it is not assumed here to have been direct war loot without a source confirming that for this particular piece. It's worth distinguishing this from the broader context: a good portion of the British Museum's 200-plus pieces of Asante regalia are documented as stemming from British looting during the Anglo-Asante Wars of 1873-74 and 1895-96, some as forced indemnity payment from the Asantehene. In April 2024 the British Museum and the V&A agreed to loan Asante gold pieces to Ghana (Manhyia Palace Museum, Kumasi) for an initial renewable 3-year term -- not a permanent return, since the 1963 UK law governing the museum bars it from permanently deaccessioning pieces from its collection; the loan was itself a partial, debated arrangement against Ghana's request for permanent restitution."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "sin fecha exacta",
+          "actor_or_institution": null,
+          "location": "Region Asante (actual Ghana)",
+          "description": "Pieza de la regalia real asante, catalogada dentro de la serie 'Asante Gold' del museo.",
+          "descriptionEs": "Pieza de la regalia real asante, catalogada dentro de la serie 'Asante Gold' del museo.",
+          "descriptionEn": "Piece of Asante royal regalia, catalogued within the museum's 'Asante Gold' series.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1981-27-1",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1981 (fecha de registro; compra puntual sin fecha exacta documentada)",
+          "actor_or_institution": "Nana Akwesi Afrane (vendedor, notable asante)",
+          "location": "Ghana -> Londres",
+          "description": "Comprada a un notable asante segun el propio registro del museo; fecha y circunstancias exactas de la transaccion no documentadas en las fuentes disponibles -- no se asume que haya sido botin de guerra directo sin una fuente que lo confirme para esta pieza en particular.",
+          "descriptionEs": "Comprada a un notable asante segun el propio registro del museo; fecha y circunstancias exactas de la transaccion no documentadas en las fuentes disponibles -- no se asume que haya sido botin de guerra directo sin una fuente que lo confirme para esta pieza en particular.",
+          "descriptionEn": "Purchased from an Asante notable according to the museum's own record; exact date and circumstances of the transaction are not documented in the sources available -- it is not assumed to have been direct war loot without a source confirming that for this particular piece.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1981-27-1",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "loan",
+          "event_date": "2024-04",
+          "actor_or_institution": "British Museum; Victoria and Albert Museum",
+          "location": "Londres -> Museo del Palacio Manhyia, Kumasi, Ghana",
+          "description": "El British Museum y el V&A acordaron prestar piezas de oro asante a Ghana por un plazo inicial renovable de 3 anos -- no una devolucion permanente, dado que la ley britanica de 1963 que rige al museo le prohibe desprenderse definitivamente de piezas de su coleccion.",
+          "descriptionEs": "El British Museum y el V&A acordaron prestar piezas de oro asante a Ghana por un plazo inicial renovable de 3 anos -- no una devolucion permanente, dado que la ley britanica de 1963 que rige al museo le prohibe desprenderse definitivamente de piezas de su coleccion.",
+          "descriptionEn": "The British Museum and the V&A agreed to loan Asante gold pieces to Ghana for an initial renewable 3-year term -- not a permanent return, since the 1963 UK law governing the museum bars it from permanently deaccessioning pieces from its collection.",
+          "source_url": "https://www.museumsassociation.org/museums-journal/news/2024/01/va-and-british-museum-to-loan-asante-gold-to-ghana/",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1990-04-18",
@@ -13415,8 +13797,57 @@
       "originPrecision": "country",
       "originLat": 23.6345,
       "originLon": -102.5528,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "undocumented_early_chain",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Mexico",
+        "notes": "Mosaico de turquesa mixteca/azteca, pieza de anterior a la conquista espanola (s. XV - inicios del XVI), Mexico. Como y cuando este tipo de mosaicos salio de Mexico tras la conquista (1519-1521) no esta documentado con precision en las fuentes consultadas -- se cree que varios llegaron a Europa como regalos diplomaticos o botin enviado a Espana en el siglo XVI, dispersos despues entre generaciones de coleccionistas europeos, aunque la cadena especifica de esta pieza no es rastreable tan atras. El registro propio del museo lista esta pieza como comprada a 'William Adams'; otros mosaicos de turquesa relacionados en la coleccion del museo llegaron via el legado de Henry Christy (1865), coleccionista britanico con interes particular en Mexico tras viajar alli con Edward Tylor en 1856 -- no esta confirmado si esta pieza puntual paso por ese mismo circuito antes de su compra a Adams.",
+        "notesEn": "Mixtec/Aztec turquoise mosaic, a pre-Spanish-conquest piece (15th - early 16th century), Mexico. How and when this type of mosaic left Mexico after the conquest (1519-1521) is not precisely documented in the sources consulted -- several are believed to have reached Europe as diplomatic gifts or spoils sent to Spain in the 16th century, later dispersed among generations of European collectors, though this piece's specific chain isn't traceable that far back. The museum's own record lists this piece as purchased from 'William Adams'; other related turquoise mosaics in the museum's collection arrived via the bequest of Henry Christy (1865), a British collector with a particular interest in Mexico after traveling there with Edward Tylor in 1856 -- it's not confirmed whether this particular piece passed through that same circuit before its purchase from Adams."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. XV - inicios s. XVI",
+          "actor_or_institution": null,
+          "location": "Mexico (cultura mixteca/azteca)",
+          "description": "Mosaico de turquesa, pieza anterior a la conquista espanola.",
+          "descriptionEs": "Mosaico de turquesa, pieza anterior a la conquista espanola.",
+          "descriptionEn": "Turquoise mosaic, a pre-Spanish-conquest piece.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am-St-397-a",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "s. XVI-XIX (sin fecha exacta)",
+          "actor_or_institution": null,
+          "location": "Mexico -> Europa",
+          "description": "Como y cuando este tipo de mosaicos salio de Mexico tras la conquista (1519-1521) no esta documentado con precision en las fuentes consultadas -- se cree que varios llegaron a Europa como regalos diplomaticos o botin enviado a Espana en el siglo XVI, dispersos despues entre generaciones de coleccionistas europeos.",
+          "descriptionEs": "Como y cuando este tipo de mosaicos salio de Mexico tras la conquista (1519-1521) no esta documentado con precision en las fuentes consultadas -- se cree que varios llegaron a Europa como regalos diplomaticos o botin enviado a Espana en el siglo XVI, dispersos despues entre generaciones de coleccionistas europeos.",
+          "descriptionEn": "How and when this type of mosaic left Mexico after the conquest (1519-1521) is not precisely documented in the sources consulted -- several are believed to have reached Europe as diplomatic gifts or spoils sent to Spain in the 16th century, later dispersed among generations of European collectors.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am-St-397-a",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "sin fecha exacta",
+          "actor_or_institution": "William Adams (vendedor)",
+          "location": "Londres, Reino Unido",
+          "description": "Comprada por el British Museum a William Adams, segun el propio registro del museo; no confirmado si paso antes por el circuito de coleccionistas britanicos del siglo XIX (ej. legado de Henry Christy, 1865) que trajo otros mosaicos de turquesa relacionados a la coleccion.",
+          "descriptionEs": "Comprada por el British Museum a William Adams, segun el propio registro del museo; no confirmado si paso antes por el circuito de coleccionistas britanicos del siglo XIX (ej. legado de Henry Christy, 1865) que trajo otros mosaicos de turquesa relacionados a la coleccion.",
+          "descriptionEn": "Purchased by the British Museum from William Adams, according to the museum's own record; not confirmed whether it passed earlier through the 19th-century British collector circuit (e.g. the Henry Christy bequest, 1865) that brought other related turquoise mosaics into the collection.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am-St-397-a",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Am-St-809-A",
@@ -13653,8 +14084,71 @@
       "originPrecision": "site",
       "originLat": 15.4045,
       "originLon": -91.1502,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "private_collection",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Guatemala",
+        "notes": "Vasija maya policromada (600-800 d.C.) con escritura jeroglifica, hallada en 1904 en Nebaj, altiplano de Guatemala. No fue recuperada mediante una excavacion estratigrafica documentada -- en ese momento ninguna vasija maya lo habia sido -- y Nebaj sufrio saqueo intenso en este periodo; existen otras vasijas de estilo similar en el mercado ilicito de antiguedades, posiblemente del mismo pintor, lo que sugiere un contexto de saqueo mas amplio en el sitio. Adquirida por Charles Fenton (nacido Charles Ludwig Fleischmann en Alemania, 1867), quien junto a su hermano Hugo compro tres plantaciones de cafe en Guatemala en 1893 y armo una coleccion personal de antiguedades mayas sin ser arqueologo ni anticuario -- cambio su apellido de Fleischmann a Fenton durante la Primera Guerra Mundial. El British Museum se la compro en 1930, con apoyo del National Art Collections Fund.",
+        "notesEn": "Polychrome Maya vase (600-800 CE) with hieroglyphic script, found in 1904 at Nebaj, in the Guatemalan highlands. It was not recovered through a documented stratigraphic excavation -- no Maya vase had been at that point -- and Nebaj suffered intense looting during this period; other similarly styled vases exist on the illicit antiquities market, possibly by the same painter, suggesting a wider looting context at the site. Acquired by Charles Fenton (born Charles Ludwig Fleischmann in Germany, 1867), who together with his brother Hugo bought three coffee plantations in Guatemala in 1893 and built a personal collection of Maya antiquities without being an archaeologist or antiquarian -- he changed his surname from Fleischmann to Fenton during World War I. The British Museum purchased it from him in 1930, with support from the National Art Collections Fund."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "600-800 CE",
+          "actor_or_institution": null,
+          "location": "Nebaj, altiplano de Guatemala (cultura maya)",
+          "description": "Vasija policromada con escritura jeroglifica maya, que registra una escena de tributo a un senor entronizado.",
+          "descriptionEs": "Vasija policromada con escritura jeroglifica maya, que registra una escena de tributo a un senor entronizado.",
+          "descriptionEn": "Polychrome vase with Maya hieroglyphic script, recording a tribute scene to an enthroned lord.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1930-F-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1904",
+          "actor_or_institution": null,
+          "location": "Nebaj, Guatemala",
+          "description": "Hallada sin excavacion estratigrafica documentada -- ninguna vasija maya lo habia sido hasta ese momento. Nebaj sufrio saqueo intenso en este periodo; existen vasijas de estilo similar en el mercado ilicito, posiblemente del mismo pintor.",
+          "descriptionEs": "Hallada sin excavacion estratigrafica documentada -- ninguna vasija maya lo habia sido hasta ese momento. Nebaj sufrio saqueo intenso en este periodo; existen vasijas de estilo similar en el mercado ilicito, posiblemente del mismo pintor.",
+          "descriptionEn": "Found with no documented stratigraphic excavation -- no Maya vase had been at that point. Nebaj suffered intense looting during this period; similarly styled vases exist on the illicit market, possibly by the same painter.",
+          "source_url": "https://en.wikipedia.org/wiki/Fenton_Vase",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "antes de 1930",
+          "actor_or_institution": "Charles Fenton (coleccionista privado)",
+          "location": "Guatemala",
+          "description": "Adquirida por Charles Fenton, plantador de cafe aleman-guatemalteco (nacido Fleischmann) sin formacion arqueologica, para su coleccion personal de antiguedades mayas.",
+          "descriptionEs": "Adquirida por Charles Fenton, plantador de cafe aleman-guatemalteco (nacido Fleischmann) sin formacion arqueologica, para su coleccion personal de antiguedades mayas.",
+          "descriptionEn": "Acquired by Charles Fenton, a German-Guatemalan coffee planter (born Fleischmann) with no archaeological training, for his personal collection of Maya antiquities.",
+          "source_url": "https://en.wikipedia.org/wiki/Fenton_Vase",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "1930",
+          "actor_or_institution": "Charles Fenton; National Art Collections Fund",
+          "location": "Guatemala -> Londres",
+          "description": "Comprada por el British Museum a Fenton, con apoyo del National Art Collections Fund.",
+          "descriptionEs": "Comprada por el British Museum a Fenton, con apoyo del National Art Collections Fund.",
+          "descriptionEn": "Purchased by the British Museum from Fenton, with support from the National Art Collections Fund.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1930-F-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Am1953-02-1",
@@ -13923,8 +14417,57 @@
       "originPrecision": "site",
       "originLat": -27.1836,
       "originLon": -109.4306,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "military_seizure",
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Chile",
+        "notes": "Moai tallado en basalto en Rano Kau, Rapa Nui (Isla de Pascua). En 1868, la tripulacion del HMS Topaze, al mando del comodoro Richard Ashmore Powell, lo hallo dentro de una casa ceremonial de piedra en Orongo -- desarmaron la estructura y lo arrastraron hasta la costa con ayuda de un jefe rapanui y hombres locales, antes de trasladarlo al barco. Ofrecido al Almirantazgo britanico y de ahi a la Reina Victoria a la vuelta del Topaze a Plymouth en 1869; la reina lo dono al British Museum ese mismo ano. Su nombre rapanui, Hoa Hakananai'a ('amigo perdido, escondido o robado'), es anterior a su retiro pero resuena con el -- persisten pedidos activos de repatriacion desde Rapa Nui, aunque las fuentes documentan que la opinion en la isla esta dividida al respecto, no es unanime.",
+        "notesEn": "Moai carved from basalt at Rano Kau, Rapa Nui (Easter Island). In 1868, the crew of HMS Topaze, under Commodore Richard Ashmore Powell, found it inside a stone ceremonial house at Orongo -- they dismantled the structure and dragged it to the coast with the help of a Rapa Nui chief and local men, before transporting it to the ship. Offered to the British Admiralty and from there to Queen Victoria upon the Topaze's return to Plymouth in 1869; the Queen donated it to the British Museum that same year. Its Rapa Nui name, Hoa Hakananai'a ('lost, hidden, or stolen friend'), predates its removal but resonates with it -- there are ongoing active calls for repatriation from Rapa Nui, though sources document that opinion on the island is divided on the matter, not unanimous."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "sin fecha exacta",
+          "actor_or_institution": null,
+          "location": "Rano Kau, Rapa Nui (Isla de Pascua)",
+          "description": "Moai tallado en basalto, integrado a una casa ceremonial de piedra en Orongo.",
+          "descriptionEs": "Moai tallado en basalto, integrado a una casa ceremonial de piedra en Orongo.",
+          "descriptionEn": "Moai carved from basalt, built into a stone ceremonial house at Orongo.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc1869-1005-1",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1868",
+          "actor_or_institution": "Comodoro Richard Ashmore Powell (HMS Topaze)",
+          "location": "Orongo, Rapa Nui",
+          "description": "La tripulacion del HMS Topaze lo hallo dentro de la casa ceremonial de Orongo; desarmaron la estructura y lo arrastraron hasta la costa con ayuda de un jefe rapanui y hombres locales, antes de trasladarlo al barco.",
+          "descriptionEs": "La tripulacion del HMS Topaze lo hallo dentro de la casa ceremonial de Orongo; desarmaron la estructura y lo arrastraron hasta la costa con ayuda de un jefe rapanui y hombres locales, antes de trasladarlo al barco.",
+          "descriptionEn": "The crew of HMS Topaze found it inside the ceremonial house at Orongo; they dismantled the structure and dragged it to the coast with the help of a Rapa Nui chief and local men, before transporting it to the ship.",
+          "source_url": "https://en.wikipedia.org/wiki/Hoa_Hakananai%27a",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1869",
+          "actor_or_institution": "Reina Victoria",
+          "location": "Plymouth, Reino Unido -> Londres",
+          "description": "Ofrecido al Almirantazgo britanico a la vuelta del Topaze, y de ahi a la Reina Victoria, quien lo dono al British Museum -- su llegada se reporto formalmente a los fideicomisarios del museo el 6 de octubre de 1869.",
+          "descriptionEs": "Ofrecido al Almirantazgo britanico a la vuelta del Topaze, y de ahi a la Reina Victoria, quien lo dono al British Museum -- su llegada se reporto formalmente a los fideicomisarios del museo el 6 de octubre de 1869.",
+          "descriptionEn": "Offered to the British Admiralty upon the Topaze's return, and from there to Queen Victoria, who donated it to the British Museum -- its arrival was formally reported to the museum's trustees on 6 October 1869.",
+          "source_url": "https://en.wikipedia.org/wiki/Hoa_Hakananai%27a",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Oc1889-0208-13",
@@ -14058,8 +14601,57 @@
       "originPrecision": "site",
       "originLat": 37.9715,
       "originLon": 23.7267,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "ottoman_authorization",
+          "state_sale"
+        ],
+        "associated_communities_or_states": "Greece;Ottoman Empire",
+        "notes": "Esculturas del friso, metopas y frontones del Partenon, tallados bajo supervision de Fidias en el siglo V a.C. Retiradas de la Acropolis de Atenas entre 1801 y 1812 por Thomas Bruce, 7mo Conde de Elgin, entonces embajador britanico ante el Imperio Otomano (que gobernaba Grecia en ese momento). Elgin invoco un firman (permiso oficial) otomano cuyo texto original en turco nunca se encontro -- solo se conserva una traduccion italiana, y su alcance es objeto de disputa academica: muchos especialistas sostienen que autorizaba solo dibujar y hacer moldes, no retirar las esculturas fisicamente. Vendidas al gobierno britanico en 1816 por 35.000 libras tras un comite parlamentario que exculpo a Elgin. Es, probablemente, el caso de restitucion mas conocido del British Museum -- Grecia reclama su devolucion de forma activa y continua.",
+        "notesEn": "Sculptures from the Parthenon's frieze, metopes, and pediments, carved under the supervision of Phidias in the 5th century BCE. Removed from the Acropolis of Athens between 1801 and 1812 by Thomas Bruce, 7th Earl of Elgin, then British ambassador to the Ottoman Empire (which governed Greece at the time). Elgin invoked an Ottoman firman (official permit) whose original Turkish text was never found -- only an Italian translation survives, and its scope is disputed among scholars: many argue it authorized only drawing and casting, not physical removal. Sold to the British government in 1816 for £35,000 after a parliamentary committee cleared Elgin of wrongdoing. It is probably the most well-known restitution case at the British Museum -- Greece actively and continuously seeks their return."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "447-432 BCE",
+          "actor_or_institution": "Fidias (supervision)",
+          "location": "Atenas, Grecia clasica",
+          "description": "Esculturas del friso, metopas y frontones del templo del Partenon en la Acropolis de Atenas, talladas bajo supervision de Fidias.",
+          "descriptionEs": "Esculturas del friso, metopas y frontones del templo del Partenon en la Acropolis de Atenas, talladas bajo supervision de Fidias.",
+          "descriptionEn": "Sculptures from the frieze, metopes, and pediments of the Parthenon temple on the Acropolis of Athens, carved under the supervision of Phidias.",
+          "source_url": "https://www.britishmuseum.org/collection/object/G_1816-0610-98",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1801-1812",
+          "actor_or_institution": "Thomas Bruce, 7mo Conde de Elgin (embajador britanico ante el Imperio Otomano)",
+          "location": "Acropolis de Atenas, Imperio Otomano (actual Grecia)",
+          "description": "Elgin retiro cerca de la mitad de las esculturas sobrevivientes, invocando un firman otomano cuyo texto original en turco nunca se encontro -- solo se conserva una traduccion italiana, y su alcance es objeto de disputa academica: muchos especialistas sostienen que autorizaba solo dibujar y hacer moldes, no retirar las esculturas fisicamente.",
+          "descriptionEs": "Elgin retiro cerca de la mitad de las esculturas sobrevivientes, invocando un firman otomano cuyo texto original en turco nunca se encontro -- solo se conserva una traduccion italiana, y su alcance es objeto de disputa academica: muchos especialistas sostienen que autorizaba solo dibujar y hacer moldes, no retirar las esculturas fisicamente.",
+          "descriptionEn": "Elgin removed roughly half of the surviving sculptures, invoking an Ottoman firman whose original Turkish text was never found -- only an Italian translation survives, and its scope is disputed among scholars: many argue it authorized only drawing and casting, not physical removal.",
+          "source_url": "https://www.britishmuseum.org/collection/object/G_1816-0610-98",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1816-06-07",
+          "actor_or_institution": "Parlamento britanico",
+          "location": "Londres, Reino Unido",
+          "description": "La Camara de los Comunes voto comprarle las esculturas a Elgin por 35.000 libras, tras un comite parlamentario que lo exculpo de haber actuado indebidamente; pasaron al British Museum.",
+          "descriptionEs": "La Camara de los Comunes voto comprarle las esculturas a Elgin por 35.000 libras, tras un comite parlamentario que lo exculpo de haber actuado indebidamente; pasaron al British Museum.",
+          "descriptionEn": "The House of Commons voted to purchase the sculptures from Elgin for £35,000, after a parliamentary committee cleared him of wrongdoing; they passed to the British Museum.",
+          "source_url": "https://www.britishmuseum.org/collection/object/G_1816-0610-98",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:G_1894-1101-213",
@@ -14112,8 +14704,56 @@
       "originPrecision": "site",
       "originLat": 29.9354,
       "originLon": 52.8916,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Bloque en relieve de la fachada norte del Apadana (sala de audiencias) de Persepolis, capital ceremonial aquemenida. Excavado en julio de 1811 por Robert Gordon, parte de una mision diplomatica britanica a Persia encabezada por Sir Gore Ouseley, embajador britanico ante Persia entre 1811 y 1814. Otras piezas del mismo sitio fueron donadas al British Museum por el Conde de Aberdeen en 1818; esta fue donada por el propio Ouseley en 1825.",
+        "notesEn": "Relief block from the north facade of the Apadana (audience hall) at Persepolis, the Achaemenid ceremonial capital. Excavated in July 1811 by Robert Gordon, part of a British diplomatic mission to Persia led by Sir Gore Ouseley, British ambassador to Persia from 1811 to 1814. Other pieces from the same site were donated to the British Museum by the Earl of Aberdeen in 1818; this one was donated by Ouseley himself in 1825."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. V a.C.",
+          "actor_or_institution": null,
+          "location": "Persepolis, Imperio aquemenida (actual Iran)",
+          "description": "Bloque en relieve de la fachada norte del Apadana (sala de audiencias) de Persepolis.",
+          "descriptionEs": "Bloque en relieve de la fachada norte del Apadana (sala de audiencias) de Persepolis.",
+          "descriptionEn": "Relief block from the north facade of the Apadana (audience hall) at Persepolis.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1825-0421-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1811-07",
+          "actor_or_institution": "Robert Gordon (mision diplomatica britanica, Sir Gore Ouseley)",
+          "location": "Persepolis, Persia Qajar (actual Iran)",
+          "description": "Excavado por Robert Gordon, parte de una mision diplomatica britanica a Persia encabezada por Sir Gore Ouseley, embajador britanico ante Persia entre 1811 y 1814.",
+          "descriptionEs": "Excavado por Robert Gordon, parte de una mision diplomatica britanica a Persia encabezada por Sir Gore Ouseley, embajador britanico ante Persia entre 1811 y 1814.",
+          "descriptionEn": "Excavated by Robert Gordon, part of a British diplomatic mission to Persia led by Sir Gore Ouseley, British ambassador to Persia from 1811 to 1814.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1825-0421-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1825",
+          "actor_or_institution": "Sir Gore Ouseley",
+          "location": "Londres, Reino Unido",
+          "description": "Donado al British Museum por Ouseley; otras piezas del mismo sitio habian sido donadas antes por el Conde de Aberdeen en 1818.",
+          "descriptionEs": "Donado al British Museum por Ouseley; otras piezas del mismo sitio habian sido donadas antes por el Conde de Aberdeen en 1818.",
+          "descriptionEn": "Donated to the British Museum by Ouseley; other pieces from the same site had earlier been donated by the Earl of Aberdeen in 1818.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1825-0421-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:W_1848-1104-1",
@@ -14215,8 +14855,43 @@
       "originPrecision": "site",
       "originLat": 36.36,
       "originLon": 43.15,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "museum_funded_excavation"
+        ],
+        "associated_communities_or_states": "Iraq",
+        "notes": "Umbral de puerta del Palacio Norte de Asurbanipal en Nineveh, imperio neoasirio (s. VII a.C.). Excavado en diciembre de 1853 por Hormuzd Rassam, sucesor de Austen Henry Layard como excavador principal del British Museum en Mesopotamia -- Rassam era cristiano asirio, nacido en Mosul, que habia empezado como asistente local de Layard antes de dirigir el trabajo de campo el mismo (con Henry Rawlinson nominalmente a cargo desde Bagdad). En esa misma campana Rassam encontro la biblioteca real de Asurbanipal, con miles de tablillas cuneiformes que incluyen buena parte de la Epopeya de Gilgamesh -- uno de los hallazgos mas significativos de la arqueologia mesopotamica del siglo XIX.",
+        "notesEn": "Door-sill from the North Palace of Ashurbanipal at Nineveh, Neo-Assyrian empire (7th century BCE). Excavated in December 1853 by Hormuzd Rassam, successor to Austen Henry Layard as the British Museum's chief excavator in Mesopotamia -- Rassam was an Assyrian Christian, born in Mosul, who had started as Layard's local assistant before directing the fieldwork himself (with Henry Rawlinson nominally in charge from Baghdad). In that same campaign Rassam found Ashurbanipal's royal library, with thousands of cuneiform tablets that include much of the Epic of Gilgamesh -- one of the most significant finds in 19th-century Mesopotamian archaeology."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. VII a.C. (reinado de Asurbanipal)",
+          "actor_or_institution": null,
+          "location": "Nineveh, imperio neoasirio (actual Irak)",
+          "description": "Umbral de puerta del Palacio Norte de Asurbanipal.",
+          "descriptionEs": "Umbral de puerta del Palacio Norte de Asurbanipal.",
+          "descriptionEn": "Door-sill from the North Palace of Ashurbanipal.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1856-0909-57",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1853-12",
+          "actor_or_institution": "Hormuzd Rassam (sucesor de Layard, financiado por el British Museum)",
+          "location": "Palacio Norte, Nineveh, Imperio Otomano (actual Irak)",
+          "description": "Excavado por Hormuzd Rassam, cristiano asirio nacido en Mosul que habia empezado como asistente local de Austen Henry Layard antes de dirigir el trabajo de campo el mismo (con Henry Rawlinson nominalmente a cargo desde Bagdad). En esa misma campana encontro la biblioteca real de Asurbanipal, con miles de tablillas cuneiformes que incluyen buena parte de la Epopeya de Gilgamesh.",
+          "descriptionEs": "Excavado por Hormuzd Rassam, cristiano asirio nacido en Mosul que habia empezado como asistente local de Austen Henry Layard antes de dirigir el trabajo de campo el mismo (con Henry Rawlinson nominalmente a cargo desde Bagdad). En esa misma campana encontro la biblioteca real de Asurbanipal, con miles de tablillas cuneiformes que incluyen buena parte de la Epopeya de Gilgamesh.",
+          "descriptionEn": "Excavated by Hormuzd Rassam, an Assyrian Christian born in Mosul who had started as Austen Henry Layard's local assistant before directing the fieldwork himself (with Henry Rawlinson nominally in charge from Baghdad). In that same campaign he found Ashurbanipal's royal library, with thousands of cuneiform tablets that include much of the Epic of Gilgamesh.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1856-0909-57",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:W_1880-0617-1941",
@@ -14345,8 +15020,70 @@
       "originPrecision": "site",
       "originLat": 37.15,
       "originLon": 68.3667,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Tajikistan",
+        "notes": "Coleccion de unos 180 objetos de oro y plata aquemenidas (joyeria, placas, ornamentos, monedas), hallada entre 1876 y 1880 (fecha mas citada: 1877) en la orilla norte del rio Amu Daria (Oxus), cerca de Takht-i Kuwad, actual Tayikistan. Los halladores originales la vendieron a mercaderes indios, quienes fueron asaltados en el camino -- el oficial britanico Francis Charles Burton, apostado en la zona, persiguio a los asaltantes y recupero la mayor parte del tesoro, devolviendoselo a los mercaderes, quienes en agradecimiento le vendieron un brazalete de oro. Ese brazalete atrajo la atencion de las autoridades britanicas: el curador del British Museum Sir Augustus Wollaston Franks y el arqueologo Sir Alexander Cunningham pasaron anos recorriendo bazares y marchantes del norte de India y el actual Pakistan para localizar y reunir las piezas dispersas. El grueso de la coleccion asi reconstituida entro al museo por legado de Franks en 1897. Como llegaron las piezas originales de manos de los halladores al mercado sigue sin documentarse con precision en las fuentes disponibles.",
+        "notesEn": "A collection of some 180 Achaemenid gold and silver objects (jewelry, plaques, ornaments, coins), found between 1876 and 1880 (1877 is the most commonly cited date) on the north bank of the Amu Darya (Oxus) river, near Takht-i Kuwad, modern Tajikistan. The original finders sold it to Indian merchants, who were robbed along the way -- British officer Francis Charles Burton, stationed in the region, pursued the robbers and recovered most of the treasure, returning it to the merchants, who in gratitude sold him one gold armlet. That armlet brought the find to British official attention: British Museum curator Sir Augustus Wollaston Franks and archaeologist Sir Alexander Cunningham spent years combing bazaars and dealers across northern India and modern Pakistan to locate and reassemble the scattered pieces. The bulk of the reconstituted collection entered the museum through Franks' bequest in 1897. Exactly how the original pieces moved from the finders into the market is still not precisely documented in the sources available."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 550-330 BCE",
+          "actor_or_institution": null,
+          "location": "Asia Central (Imperio aquemenida)",
+          "description": "Coleccion de unos 180 objetos de oro y plata aquemenidas: joyeria, placas, ornamentos y monedas.",
+          "descriptionEs": "Coleccion de unos 180 objetos de oro y plata aquemenidas: joyeria, placas, ornamentos y monedas.",
+          "descriptionEn": "Collection of some 180 Achaemenid gold and silver objects: jewelry, plaques, ornaments, and coins.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1897-1231-116",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1876-1880 (usualmente citado 1877)",
+          "actor_or_institution": null,
+          "location": "Takht-i Kuwad, orilla del rio Amu Daria (actual Tayikistan)",
+          "description": "Hallado por buscadores locales, quienes lo vendieron a mercaderes indios; estos fueron asaltados en el camino. El oficial britanico Francis Charles Burton persiguio a los asaltantes y recupero la mayor parte del tesoro, devolviendoselo a los mercaderes, quienes le vendieron un brazalete de oro en agradecimiento.",
+          "descriptionEs": "Hallado por buscadores locales, quienes lo vendieron a mercaderes indios; estos fueron asaltados en el camino. El oficial britanico Francis Charles Burton persiguio a los asaltantes y recupero la mayor parte del tesoro, devolviendoselo a los mercaderes, quienes le vendieron un brazalete de oro en agradecimiento.",
+          "descriptionEn": "Found by local treasure hunters, who sold it to Indian merchants; the merchants were robbed along the way. British officer Francis Charles Burton pursued the robbers and recovered most of the treasure, returning it to the merchants, who sold him a gold armlet in gratitude.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1897-1231-116",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "decada de 1880-1890",
+          "actor_or_institution": "Sir Augustus Wollaston Franks; Sir Alexander Cunningham",
+          "location": "Bazares del norte de India y el actual Pakistan",
+          "description": "El brazalete atrajo la atencion de las autoridades britanicas: Franks (curador del British Museum) y Cunningham (arqueologo) pasaron anos recorriendo bazares y marchantes para localizar y reunir las piezas dispersas del tesoro.",
+          "descriptionEs": "El brazalete atrajo la atencion de las autoridades britanicas: Franks (curador del British Museum) y Cunningham (arqueologo) pasaron anos recorriendo bazares y marchantes para localizar y reunir las piezas dispersas del tesoro.",
+          "descriptionEn": "The armlet brought the find to British official attention: Franks (British Museum curator) and Cunningham (archaeologist) spent years combing bazaars and dealers to locate and reassemble the hoard's scattered pieces.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1897-1231-116",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "bequest",
+          "event_date": "1897",
+          "actor_or_institution": "Sir Augustus Wollaston Franks",
+          "location": "Londres, Reino Unido",
+          "description": "El grueso de la coleccion reconstituida entro al British Museum por legado de Franks.",
+          "descriptionEs": "El grueso de la coleccion reconstituida entro al British Museum por legado de Franks.",
+          "descriptionEn": "The bulk of the reconstituted collection entered the British Museum through Franks' bequest.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1897-1231-116",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:W_1922-0511-255",

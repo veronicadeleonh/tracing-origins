@@ -26,13 +26,18 @@ See `CLAUDE.md` for the full architecture and per-museum methodology.
 The screenshot above shows the main globe view. A few more are planned to round out the picture — drop matching files into `docs/` and uncomment the lines below to add them:
 
 ![Object detail panel with a researched provenance timeline](docs/screenshot-object-detail.png)
+_Object detail panel: a cited provenance timeline showing each documented step in the object's journey, from creation to museum acquisition._
+
 ![Colonial-context timeline: empires and naval routes toggled on](docs/screenshot-colonial-context.png)
+_Colonial-context layer: former British and French territories and naval trade routes overlaid on the globe, scrubbable from 1700 to 2020._
+
 ![Cluster panel listing every object that shares an origin point](docs/screenshot-cluster-panel.png)
+_Cluster panel: all objects sharing the same origin point, with thumbnail, title, and culture at a glance._
 
 ## Data at a glance
 
 - **466 objects** on the map (Met 161 · Louvre 215 · British Museum 90 — all geocoded)
-- **38 flagship pieces** with a fully cited provenance timeline (Met 5 · Louvre 25 · British Museum 8), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, and the Benin Bronzes
+- **53 flagship pieces** with a fully cited provenance timeline (Met 11 · Louvre 25 · British Museum 17), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, the Parthenon Sculptures, and the Benin Bronzes
 - **Two optional context layers**: former British/French colonial territories (1700–2020, [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), CC-BY 4.0) and curated British/French naval routes (1700–1900, [CLIWOC](https://www.pangaea.de/), CC-BY 3.0), both on a shared, scrubbable timeline
 - **Bilingual interface** (Spanish/English), including the researched provenance text itself, not just UI chrome
 
