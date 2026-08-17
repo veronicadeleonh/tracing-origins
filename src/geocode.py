@@ -8,10 +8,31 @@ Prioridad de resolución: subregion > region > country.
 
 from __future__ import annotations
 
+import re
+
 # Coordenadas del propio museo (destino de las líneas)
 MET_COORDS = (40.7794, -73.9632)
 LOUVRE_COORDS = (48.8606, 2.3376)
 BM_COORDS = (51.5194, -0.1270)
+
+
+def _keyword_matches(keyword: str, haystack: str) -> bool:
+    """
+    Match de keyword contra texto libre, con límites de palabra (\\b) en vez
+    de simple substring `in`. Encontrado el 17/08 al investigar el Zodiaque
+    de Dendéra (louvre:cl010028871): con substring plano, la keyword "Ur"
+    (Mesopotamia) matcheaba dentro de "sur" (francés, "sobre") en el texto
+    crudo del placeOfDiscovery, mandando la pieza a Irak en vez de Egipto —
+    y el mismo bug afectaba a cualquier pieza real de Uruk, porque "Ur"
+    aparece antes que "Uruk" en LOUVRE_SITE_COORDS y "ur" es substring de
+    "uruk" también. Con keywords cortas (Ur, Tyr, Mari, Ife, Java, Peru,
+    Iran...) el riesgo de falso positivo dentro de otra palabra es real en
+    cualquiera de las 5 listas de keywords (Met CULTURE_KEYWORDS, Louvre
+    SITE/COUNTRY, BM SITE/COUNTRY) — \\b corta ese problema para todas sin
+    afectar el matching legítimo de keywords multi-palabra.
+    """
+    pattern = r"\b" + re.escape(keyword) + r"\b"
+    return re.search(pattern, haystack, re.IGNORECASE) is not None
 
 # ---------------------------------------------------------------------------
 # Traducción al español para lo que se muestra en la ficha de cada pieza
@@ -120,6 +141,13 @@ ES_NAMES: dict[str, str] = {
     "Hawaii": "Hawái",
     "Northwest Territories": "Territorios del Noroeste",
     "Thèbes": "Tebas",
+    "Dendéra": "Dendera",
+    "Denderah": "Dendera",
+    "Athènes": "Atenas",
+    "Assur": "Asur",
+    "Baalbeck": "Baalbek",
+    "Assyrie": "Asiria",
+    "Luristan": "Luristán",
     "Louxor": "Luxor",
     "Assiout": "Asiut",
     "Assouan": "Asuán",
@@ -205,6 +233,11 @@ EN_NAMES: dict[str, str] = {
     # Sitios del Louvre con ortografía francesa distinta de la inglesa
     "Deir el-Médineh": "Deir el-Medina",
     "Thèbes": "Thebes",
+    "Dendéra": "Dendera",
+    "Denderah": "Dendera",
+    "Athènes": "Athens",
+    "Baalbeck": "Baalbek",
+    "Assyrie": "Assyria",
     "Louxor": "Luxor",
     "Assiout": "Asyut",
     "Assouan": "Aswan",
@@ -369,7 +402,7 @@ CULTURE_KEYWORDS = [
 
 def resolve_from_culture(culture: str) -> dict | None:
     for keyword, (lat, lon) in CULTURE_KEYWORDS:
-        if keyword.lower() in culture.lower():
+        if _keyword_matches(keyword, culture):
             return {"label": culture, "label_en": culture, "precision": "culture", "lat": lat, "lon": lon}
     return None
 
@@ -418,6 +451,8 @@ def resolve_origin(obj: dict) -> dict:
 LOUVRE_SITE_COORDS = [
     # Antigüedades egipcias
     ("Saqqara", (29.8714, 31.2164)),
+    ("Dendéra", (26.1417, 32.6706)),  # templo de Hathor -- faltaba, ver bug de _keyword_matches
+    ("Denderah", (26.1417, 32.6706)),
     ("Deir el-Médineh", (25.7280, 32.6014)),
     ("Thèbes", (25.7188, 32.6081)),
     ("Karnak", (25.7188, 32.6573)),
@@ -433,6 +468,8 @@ LOUVRE_SITE_COORDS = [
     ("Giza", (29.9765, 31.1313)),
     ("Méroé", (16.9333, 33.7500)),
     # Antigüedades orientales (Cercano Oriente)
+    ("Assur", (35.4553, 43.2588)),  # Qalaat Shergat, Irak -- antes se perdía por matchear "Ur" como substring
+    ("Baalbeck", (34.0059, 36.2042)),  # Líbano
     ("Suse", (32.1881, 48.2578)),
     ("Persépolis", (29.9354, 52.8916)),
     ("Mari", (34.5514, 40.8908)),
@@ -458,6 +495,7 @@ LOUVRE_SITE_COORDS = [
     ("Kultépé", (39.7833, 35.7500)),
     ("Bactres", (36.7500, 66.9000)),
     # Antigüedades griegas, etruscas y romanas
+    ("Athènes", (37.9838, 23.7275)),
     ("Délos", (37.3964, 25.2686)),
     ("Samothrace", (40.4708, 25.5228)),
     ("Delphes", (38.4824, 22.5010)),
@@ -504,6 +542,8 @@ LOUVRE_COUNTRY_KEYWORDS = [
     ("Irak", (33.2232, 43.6793)),
     ("Turquie", (38.9637, 35.2433)),
     ("Grèce", (39.0742, 21.8243)),
+    ("Luristan", (33.5000, 47.5000)),  # región del oeste de Irán, mismas coords que "Iran, Luristan" en CULTURE_KEYWORDS
+    ("Assyrie", (36.3350, 43.1189)),  # región/civilización, corazón asirio cerca de Mosul, Irak
     ("Etrurie", (42.8000, 11.5000)),
     ("Étrurie", (42.8000, 11.5000)),
     ("Italie", (41.8719, 12.5674)),
@@ -545,11 +585,11 @@ def resolve_origin_louvre(obj: dict) -> dict:
     haystack = " | ".join([place_of_discovery, place_of_creation, provenance])
 
     for site, (lat, lon) in LOUVRE_SITE_COORDS:
-        if site.lower() in haystack.lower():
+        if _keyword_matches(site, haystack):
             return {"label": es_label(site), "label_en": en_label(site), "precision": "site", "lat": lat, "lon": lon}
 
     for country, (lat, lon) in LOUVRE_COUNTRY_KEYWORDS:
-        if country.lower() in haystack.lower():
+        if _keyword_matches(country, haystack):
             return {"label": es_label(country), "label_en": en_label(country), "precision": "country", "lat": lat, "lon": lon}
 
     return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None}
@@ -731,11 +771,11 @@ def resolve_origin_bm(obj: dict) -> dict:
     haystack = " | ".join([findspot, production_place])
 
     for site, display_es, display_en, (lat, lon) in BM_SITE_COORDS:
-        if site.lower() in haystack.lower():
+        if _keyword_matches(site, haystack):
             return {"label": display_es, "label_en": display_en, "precision": "site", "lat": lat, "lon": lon}
 
     for country, display_es, display_en, (lat, lon) in BM_COUNTRY_KEYWORDS:
-        if country.lower() in haystack.lower():
+        if _keyword_matches(country, haystack):
             return {"label": display_es, "label_en": display_en, "precision": "country", "lat": lat, "lon": lon}
 
     return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None}
