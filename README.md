@@ -55,12 +55,13 @@ npm run build    # build de producción en web/dist
 - [x] Nota por museo en la UI (botón "i" junto a cada toggle) explicando la lógica de extracción particular de cada uno
 - [x] Nota por capa de contexto en la UI (botón "i" en "Imperios"/"Rutas navales" del timeline) — explica qué muestra y qué no cada capa
 - [x] Traducción al español de los `origin_label` que ve el usuario en la ficha de cada pieza (`ES_NAMES`/`es_label()` en `geocode.py`) — antes Louvre/BM mostraban el texto crudo scrapeado (findspot en inglés con prefijos tipo "Excavated/Findspot:", o texto libre francés sin resolver); ahora las tres fuentes muestran el sitio/país ya matcheado y, cuando hay exónimo cargado, en español
-- [ ] Modal de información/instrucciones del proyecto (nivel 1 de "notas de contexto en la UI", ver `CLAUDE.md`) — todavía no implementado
+- [x] Modal de información/instrucciones del proyecto (nivel 1 de "notas de contexto en la UI", ver `CLAUDE.md`) — auto-abre en la primera visita (localStorage), después accesible vía botón "?" persistente; welcome + cómo usar + modelo de 3 capas + fe de datos, sin reemplazar el popover chico "Muestra curada" que ya existía
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación documentado
 - [ ] Decidir tratamiento narrativo una vez haya más `context_flags` cargadas (¿resaltar piezas en el mapa? ¿filtro por tipo de evento?)
 - [ ] Revisar rotulado de fronteras políticas del basemap de Mapbox en zonas disputadas (Cisjordania, Kurdistán, Sahara Occidental)
 - [ ] Evaluar Musée du Quai Branly como 4ta fuente — el Louvre no tiene departamento de África Subsahariana/América (fondo transferido a Quai Branly en 2006), así que no puede cubrir el ángulo Francia↔África/Caribe
-- [ ] Toggle de idioma (inglés) en la UI — hoy la app está solo en español, no arrancado todavía
+- [x] Toggle de idioma ES/EN en la UI (botón junto al "?" de bienvenida) — primera vuelta, solo texto de interfaz nuestro (botones, notas, modal, disclaimers, panel lateral); la metadata cruda de cada pieza sigue tal cual la da cada museo (inglés Met/BM, francés Louvre) y `originLabel` sigue solo en español, sin importar el toggle
+- [ ] Ampliar el toggle ES/EN a la investigación propia (layer 3, ~21 piezas bandera) y/o a la metadata cruda del Louvre (traducción francés→inglés) — evaluado con el usuario el 17/08, se arrancó a propósito solo con la interfaz
 - [ ] Test suite / linter (no configurado todavía)
 
 Nota: la investigación profunda (layer 3) queda como una línea de trabajo abierta e indefinida para los 3 museos, no una tarea que se cierra al llegar a 5-10 piezas por museo — Met, Louvre y BM ya cumplieron la meta mínima pero pueden seguir sumando piezas bandera en cualquier momento.

@@ -8,8 +8,18 @@ import { groupByOrigin, jitteredPoint, type OriginCluster } from "./geo";
 import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
 import { Timeline } from "./components/Timeline";
+import { WelcomeModal } from "./components/WelcomeModal";
 import { HISTORICAL_EVENTS } from "./data/historicalEvents";
+import { STRINGS, type Lang } from "./i18n";
 import "./App.css";
+
+// Nivel 1 de "notas de contexto en la UI" (ver CLAUDE.md) — se abre solo en
+// la primera visita, después queda accesible vía el botón "?" persistente.
+const WELCOME_SEEN_KEY = "tracing-origins-welcome-seen";
+// Toggle ES/EN (17/08) — alcance acordado con el usuario: solo texto de
+// interfaz (ver i18n.ts). Persistido igual que WELCOME_SEEN_KEY, mismo
+// patrón de localStorage + useEffect al montar.
+const LANG_KEY = "tracing-origins-lang";
 
 const TIMELINE_MIN_YEAR = 1700;
 const TIMELINE_MAX_YEAR = 2020;
@@ -80,23 +90,6 @@ const ROUTES_TOGGLE_ICON = (
   </svg>
 );
 
-// Nota por museo (nivel 2 de las "notas de contexto en la UI", ver CLAUDE.md
-// "Pendiente de decidir"): cada museo tiene una lógica de extracción distinta
-// y una nota genérica para los tres perdería justo esa diferencia.
-const MUSEUM_NOTES: Record<string, string> = {
-  met: "El Met no adquirió estas piezas porque EEUU controlara territorialmente sus lugares de origen. Llegaron por el mercado internacional de antigüedades, misiones de excavación autorizadas por la potencia colonial de turno y donantes ricos — poder económico y político ganado en años recientes, no expansión territorial.",
-  louvre: "Los 4 departamentos del Louvre representados acá (Antigüedades Egipcias, Orientales, Griegas-Etruscas-Romanas, Arte Islámico) cubren sobre todo Egipto, Medio Oriente y el Mediterráneo. El fondo de África Subsahariana y América no está en el Louvre: se transfirió al Musée du Quai Branly cuando abrió en 2006.",
-  bm: "El caso más directo de administración colonial territorial de los tres museos, con mecanismos que van desde la conquista militar (la Piedra de Rosetta, las Placas de Benín) hasta excavaciones bajo permiso del gobierno otomano.",
-};
-
-// Nota por capa (nivel 3 de las "notas de contexto en la UI"): qué muestra y
-// qué NO muestra cada capa de contexto histórico — mismo criterio que
-// MUSEUM_NOTES, adaptado a las 2 capas del timeline en vez de a los museos.
-const LAYER_NOTES: Record<string, string> = {
-  territories: "Sombrea las regiones que fueron territorio colonial de UK o Francia en el año seleccionado (Cliopatria, Seshat Global History Databank). EEUU no aparece — el Met no adquirió piezas por control territorial, ver la nota del Met arriba. Los mandatos británicos de Irak y Palestina (1920-1932) tampoco están: la fuente no los modela como entidad propia.",
-  routes: "50 rutas curadas de barcos británicos y franceses entre 1700-1900, de un archivo real de bitácoras de navegación (CLIWOC/PANGAEA). No son las únicas rutas de la época ni viajes de exploradores famosos (Cook, Bougainville, etc. no están en este dataset) — es una muestra priorizada por nación y densidad de datos registrados.",
-};
-
 type PanelState =
   | { view: "cluster"; cluster: OriginCluster }
   | { view: "object"; cluster: OriginCluster; object: MuseumObject }
@@ -128,6 +121,31 @@ function App() {
   // de bienvenida (nivel 1 de "notas de contexto en la UI", ver CLAUDE.md)
   // cuando se implemente — por ahora es un popover simple.
   const [curatedNoteOpen, setCuratedNoteOpen] = useState(false);
+  // Auto-abre en la primera visita (localStorage), después solo vía el botón
+  // "?" — decidido con el usuario el 17/08 (no molestar en visitas siguientes).
+  const [welcomeOpen, setWelcomeOpen] = useState(false);
+  useEffect(() => {
+    if (!localStorage.getItem(WELCOME_SEEN_KEY)) setWelcomeOpen(true);
+  }, []);
+  const closeWelcome = useCallback(() => {
+    localStorage.setItem(WELCOME_SEEN_KEY, "1");
+    setWelcomeOpen(false);
+  }, []);
+  const [lang, setLang] = useState<Lang>(() => (localStorage.getItem(LANG_KEY) === "en" ? "en" : "es"));
+  const s = STRINGS[lang];
+  const toggleLang = useCallback(() => {
+    setLang((prev) => {
+      const next = prev === "es" ? "en" : "es";
+      localStorage.setItem(LANG_KEY, next);
+      return next;
+    });
+  }, []);
+  // HISTORICAL_EVENTS trae year/color fijos (no cambian por idioma); el label
+  // se toma de i18n.ts por índice — mismo orden que el array de datos.
+  const localizedEvents = useMemo(
+    () => HISTORICAL_EVENTS.map((ev, i) => ({ ...ev, label: s.historicalEvents[i] ?? ev.label })),
+    [s],
+  );
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- tipo de MapRef de react-map-gl no vale la pena importar solo para esto
   const mapRef = useRef<any>(null);
 
@@ -228,7 +246,7 @@ function App() {
       const f = e.features[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> };
       const properties = f.properties ?? {};
       const text = f.layer?.id === "origins"
-        ? `${properties.label} — ${properties.count} pieza(s) (click para el detalle)`
+        ? s.tooltipOrigin(String(properties.label), Number(properties.count))
         : `${properties.name} (${properties.city})`;
       setTooltip({ longitude: e.lngLat.lng, latitude: e.lngLat.lat, text });
       setCursor("pointer");
@@ -236,11 +254,28 @@ function App() {
       setTooltip(null);
       setCursor("grab");
     }
-  }, []);
+  }, [s]);
 
   return (
     <div className="app-layout">
       <div className="map-pane">
+        <button
+          type="button"
+          className="welcome-trigger-btn"
+          aria-label={s.welcomeTriggerAria}
+          onClick={() => setWelcomeOpen(true)}
+        >
+          ?
+        </button>
+        <button
+          type="button"
+          className="lang-toggle-btn"
+          aria-label={s.langToggleAria}
+          onClick={toggleLang}
+        >
+          {s.langToggleLabel}
+        </button>
+        {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
         <div className="museum-toggles">
           {Object.entries(bundle.museums).map(([id, m]) => (
             <div
@@ -261,27 +296,27 @@ function App() {
               <button
                 type="button"
                 className={`museum-info-btn${museumNoteOpen === id ? " open" : ""}`}
-                aria-label={`Sobre la procedencia de las piezas de ${m.name}`}
+                aria-label={s.museumInfoAria(m.name)}
                 aria-expanded={museumNoteOpen === id}
                 onClick={() => setMuseumNoteOpen((cur) => (cur === id ? null : id))}
               >
                 i
               </button>
               {museumNoteOpen === id && (
-                <div className="museum-note">{MUSEUM_NOTES[id]}</div>
+                <div className="museum-note">{s.museumNotes[id]}</div>
               )}
             </div>
           ))}
           <div className="piece-counter">
             {visibleObjects.length === bundle.objects.length
-              ? `${visibleObjects.length} piezas`
-              : `${visibleObjects.length} de ${bundle.objects.length} piezas`}
+              ? s.pieceCounterAll(visibleObjects.length)
+              : s.pieceCounterFiltered(visibleObjects.length, bundle.objects.length)}
           </div>
           <div className="curated-note-wrap">
             <button
               type="button"
               className={`curated-note-btn${curatedNoteOpen ? " open" : ""}`}
-              aria-label="Sobre esta muestra"
+              aria-label={s.curatedNoteBtnAria}
               aria-expanded={curatedNoteOpen}
               onClick={() => setCuratedNoteOpen((v) => !v)}
             >
@@ -289,21 +324,21 @@ function App() {
             </button>
             {curatedNoteOpen && (
               <div className="curated-note">
-                Muestra curada — no representa la colección completa de cada museo. Muchas piezas quedan fuera.
+                {s.curatedNoteText}
                 {timelineOpen && showTerritories && (
                   <>
-                    {" "}Territorios coloniales: Seshat Global History Databank —{" "}
+                    {" "}{s.curatedNoteTerritoriesPrefix}{" "}
                     <a href="https://github.com/Seshat-Global-History-Databank/cliopatria" target="_blank" rel="noreferrer">
                       Cliopatria
-                    </a>{" "}(CC-BY 4.0).
+                    </a>{" "}{s.curatedNoteTerritoriesLicense}
                   </>
                 )}
                 {timelineOpen && showRoutes && (
                   <>
-                    {" "}Rutas navales: Jones et al. (2007),{" "}
+                    {" "}{s.curatedNoteRoutesPrefix}{" "}
                     <a href="https://doi.org/10.1594/PANGAEA.611088" target="_blank" rel="noreferrer">
                       CLIWOC
-                    </a>{" "}(CC-BY 3.0) — muestra curada de 50 cruceros, no todas las rutas del período.
+                    </a>{" "}{s.curatedNoteRoutesSuffix}
                   </>
                 )}
               </div>
@@ -425,7 +460,7 @@ function App() {
             aria-expanded={timelineOpen}
           >
             <span className={`year-timeline-handle-arrow${timelineOpen ? " open" : ""}`}>▲</span>
-            Contexto histórico
+            {s.contextDockLabel}
           </button>
           {timelineOpen && (
             <Timeline
@@ -434,18 +469,19 @@ function App() {
               year={timelineYear}
               onChange={setTimelineYear}
               legend={[
-                { label: "Reino Unido", color: COLONIAL_POWER_COLORS.uk },
-                { label: "Francia", color: COLONIAL_POWER_COLORS.fr },
+                { label: s.legendUK, color: COLONIAL_POWER_COLORS.uk },
+                { label: s.legendFR, color: COLONIAL_POWER_COLORS.fr },
               ]}
               layerToggles={[
-                { id: "territories", label: "Imperios", active: showTerritories, note: LAYER_NOTES.territories },
-                { id: "routes", label: "Rutas navales", active: showRoutes, icon: ROUTES_TOGGLE_ICON, note: LAYER_NOTES.routes },
+                { id: "territories", label: s.layerToggleTerritories, active: showTerritories, note: s.layerNotes.territories },
+                { id: "routes", label: s.layerToggleRoutes, active: showRoutes, icon: ROUTES_TOGGLE_ICON, note: s.layerNotes.routes },
               ]}
               onToggleLayer={(id) => {
                 if (id === "territories") setShowTerritories((v) => !v);
                 if (id === "routes") setShowRoutes((v) => !v);
               }}
-              events={HISTORICAL_EVENTS}
+              events={localizedEvents}
+              lang={lang}
             />
           )}
         </div>
@@ -454,6 +490,7 @@ function App() {
       {panel?.view === "cluster" && (
         <ClusterPanel
           cluster={panel.cluster}
+          lang={lang}
           onClose={() => setPanel(null)}
           onSelectObject={(object) => setPanel({ view: "object", cluster: panel.cluster, object })}
         />
@@ -462,6 +499,7 @@ function App() {
         <ObjectDetail
           object={panel.object}
           museums={bundle.museums}
+          lang={lang}
           onBack={() => setPanel({ view: "cluster", cluster: panel.cluster })}
           onClose={() => setPanel(null)}
         />

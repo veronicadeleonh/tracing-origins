@@ -1,23 +1,24 @@
 import type { MuseumObject } from "../types";
 import type { OriginCluster } from "../geo";
+import { STRINGS, type Lang } from "../i18n";
 
 interface ClusterPanelProps {
   cluster: OriginCluster;
+  lang: Lang;
   onClose: () => void;
   onSelectObject: (object: MuseumObject) => void;
 }
 
-export function ClusterPanel({ cluster, onClose, onSelectObject }: ClusterPanelProps) {
+export function ClusterPanel({ cluster, lang, onClose, onSelectObject }: ClusterPanelProps) {
+  const s = STRINGS[lang];
   return (
     <aside className="side-panel">
       <div className="panel-header">
         <div>
-          <div className="panel-title">{cluster.label || "Origen sin identificar"}</div>
-          <div className="panel-subtitle">
-            {cluster.objects.length} pieza{cluster.objects.length === 1 ? "" : "s"} de este lugar
-          </div>
+          <div className="panel-title">{cluster.label || s.clusterUnknownOrigin}</div>
+          <div className="panel-subtitle">{s.clusterPieceCount(cluster.objects.length)}</div>
         </div>
-        <button className="icon-btn" onClick={onClose} aria-label="Cerrar panel">
+        <button className="icon-btn" onClick={onClose} aria-label={s.closePanelAria}>
           ×
         </button>
       </div>
@@ -35,7 +36,7 @@ export function ClusterPanel({ cluster, onClose, onSelectObject }: ClusterPanelP
               style={obj.primaryImage ? { backgroundImage: `url(${obj.primaryImage})` } : undefined}
             />
             <div className="piece-info">
-              <div className="piece-title">{obj.title || "(sin título)"}</div>
+              <div className="piece-title">{obj.title || s.untitled}</div>
               <div className="piece-sub">
                 {[obj.culture, obj.period, obj.objectDate].filter(Boolean).join(" · ")}
               </div>

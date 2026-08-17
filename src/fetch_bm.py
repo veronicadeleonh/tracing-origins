@@ -179,6 +179,20 @@ SEED_OBJECT_IDS = [
     "A_1890-0208-1",  # Azuela neolítica — Samrong Sen, Camboya
     "A_1859-1228-121",  # Campana — Kedu, Java (colección Raffles, ingresada 1859)
     "A_As1859-1228-195-l-m",  # Soporte de gong — Java (colección Raffles, 1800)
+    # Sexta ronda (17/08) — misma metodología (búsqueda por país/región en
+    # /collection/search vía fetch directo). Prioriza geografía todavía sin
+    # cobertura: Sudamérica más allá de Perú/Colombia (Ecuador, Bolivia,
+    # Venezuela, Brasil), Norte de África (Marruecos), Sudeste asiático más
+    # allá de Camboya/Java (Vietnam), Himalaya (Nepal) y Pacífico más allá de
+    # Australia/Nueva Zelanda/Hawái/Fiyi/Salomón (Tonga).
+    "E_Am-WG-2242",  # Azuela — excavada en Cuenca, Ecuador (colección William Bollaert, s. XIX)
+    "E_Am1983-12-35",  # Cinturón de danza — Aroma, Bolivia (1900-1950)
+    "E_Am1983-Q-37",  # Artefacto del pueblo jirajara — Venezuela
+    "E_Am1953-02-1",  # Vasija-adorno, cultura Tapajó — río Amazonas, Brasil
+    "E_Af-5913",  # Azuela/azadón — Montañas del Atlas, Marruecos (1888)
+    "A_1958-1112-1",  # Hacha neolítica — Oc-eo, Vietnam
+    "A_1927-0613-1",  # Retablo — Nepal (s. XVIII-XIX)
+    "E_Oc-6509",  # Azuela — Vava'u, Tonga
 ]
 
 

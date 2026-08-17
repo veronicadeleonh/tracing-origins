@@ -183,6 +183,262 @@
   text-decoration: underline;
 }
 
+/* Botón persistente para reabrir el modal de bienvenida (nivel 1) — se abre
+   solo en la primera visita (ver App.tsx), este botón es el único acceso
+   después de esa vez. Esquina opuesta a .museum-toggles/.curated-note-wrap
+   para no sumar otro elemento a esa fila ya cargada. */
+.welcome-trigger-btn {
+  position: absolute;
+  z-index: 1000;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #e5e2da;
+  background: rgba(251, 250, 247, 0.92);
+  color: #77726a;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.welcome-trigger-btn:hover {
+  background: #efece4;
+  color: #1a1a1a;
+  border-color: #c9c4b8;
+}
+
+/* Toggle ES/EN (17/08) — mismo tratamiento visual que .welcome-trigger-btn,
+   a su izquierda en la misma fila. Muestra el idioma AL QUE cambiarías al
+   click (si estás en español, dice "EN"), no el idioma actual. */
+.lang-toggle-btn {
+  position: absolute;
+  z-index: 1000;
+  top: 12px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 8px;
+  border-radius: 15px;
+  border: 1px solid #e5e2da;
+  background: rgba(251, 250, 247, 0.92);
+  color: #77726a;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.lang-toggle-btn:hover {
+  background: #efece4;
+  color: #1a1a1a;
+  border-color: #c9c4b8;
+}
+
+.welcome-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(20, 19, 17, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.welcome-modal {
+  width: 100%;
+  max-width: 440px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  background: #fbfaf7;
+  border-radius: 12px;
+  padding: 20px 22px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+  position: relative;
+}
+
+.welcome-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Mismo botón que .lang-toggle-btn (App.tsx) pero anclado adentro del modal
+   — el de afuera queda tapado por .welcome-modal-backdrop mientras el modal
+   está abierto, así que el onboarding necesita su propia copia. */
+.welcome-modal-lang-btn {
+  position: absolute;
+  top: 10px;
+  right: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  padding: 0 7px;
+  border-radius: 13px;
+  border: 1px solid #e5e2da;
+  background: transparent;
+  color: #77726a;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.welcome-modal-lang-btn:hover {
+  background: #efece4;
+  color: #1a1a1a;
+  border-color: #c9c4b8;
+}
+
+/* Altura fija (no mínima) y mismo alineado vertical (centrado) en las 4
+   slides — con min-height el modal "saltaba" de tamaño entre la bienvenida
+   (corta) y los pasos de uso (más largos); con height fijo todas las slides
+   comparten el mismo alto y el mismo punto de centrado, sea cual sea su
+   contenido. overflow-y como red de seguridad si algún texto no entra en
+   pantallas muy chicas. */
+.welcome-modal-body {
+  height: 250px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 6px;
+}
+
+/* Slide 1 — solo nombre + slogan, sin instrucciones todavía (reportado
+   como abrumador tener todo junto el 17/08). */
+.welcome-slide-hero {
+  text-align: center;
+  padding: 10px 8px 4px;
+}
+
+.welcome-slide-emoji {
+  font-size: 34px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.welcome-slide-appname {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 8px;
+}
+
+.welcome-slide-slogan {
+  font-size: 13px;
+  color: #77726a;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.welcome-modal-section {
+  padding: 0 2px;
+}
+
+.welcome-modal-heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 10px;
+}
+
+.welcome-modal-section p {
+  font-size: 12.5px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 8px;
+}
+
+.welcome-modal-section p:last-child {
+  margin-bottom: 0;
+}
+
+.welcome-steps {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.welcome-steps li {
+  font-size: 12.5px;
+  color: #555;
+  line-height: 1.55;
+}
+
+.welcome-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e2da;
+}
+
+.welcome-modal-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.welcome-modal-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e5e2da;
+}
+
+.welcome-modal-dot.active {
+  background: #1a1a1a;
+}
+
+.welcome-modal-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.welcome-modal-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.welcome-modal-btn-primary {
+  background: #1a1a1a;
+  color: #fbfaf7;
+}
+
+.welcome-modal-btn-primary:hover {
+  background: #2c2c2c;
+}
+
+.welcome-modal-btn-secondary {
+  background: none;
+  color: #77726a;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.welcome-modal-btn-secondary:hover {
+  color: #1a1a1a;
+}
+
 .year-timeline-dock {
   position: absolute;
   z-index: 999;
@@ -682,10 +938,16 @@
   position: relative;
 }
 
+/* left: 15.25px centra la línea sobre .timeline-dot (30px de padding del
+   contenedor - 18px de offset del dot + mitad de sus 8px = centro en x=16,
+   menos la mitad del propio ancho de línea) — antes estaba en 33px, 17px a
+   la derecha del centro real de los puntos, así que la línea corría pegada
+   al texto en vez de atravesar los círculos (reportado por el usuario el
+   17/08 con una captura de la ficha de una pieza sin investigación). */
 .timeline::before {
   content: "";
   position: absolute;
-  left: 33px;
+  left: 15.25px;
   top: 6px;
   bottom: 16px;
   width: 1.5px;

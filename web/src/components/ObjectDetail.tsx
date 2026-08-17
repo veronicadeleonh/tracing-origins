@@ -1,32 +1,21 @@
 import type { MuseumDestination, MuseumObject, ProvenanceEvent } from "../types";
+import { STRINGS, type Lang } from "../i18n";
 
 interface ObjectDetailProps {
   object: MuseumObject;
   museums: Record<string, MuseumDestination>;
+  lang: Lang;
   onBack: () => void;
   onClose: () => void;
 }
 
-const EVENT_TYPE_LABELS: Record<string, string> = {
-  creation: "Creación",
-  excavation: "Excavación",
-  transfer: "Transferencia",
-  sale: "Venta",
-  gift: "Donación",
-  bequest: "Legado",
-  exchange: "Intercambio",
-  acquisition: "Adquisición",
-  loan: "Préstamo",
-  restitution: "Restitución",
-  other: "Otro",
-};
-
-function eventLabel(event: ProvenanceEvent): string {
-  if (!event.event_type) return "Evento";
-  return EVENT_TYPE_LABELS[event.event_type] ?? event.event_type;
+function eventLabel(event: ProvenanceEvent, s: (typeof STRINGS)["es"]): string {
+  if (!event.event_type) return s.eventFallback;
+  return s.eventTypeLabels[event.event_type] ?? event.event_type;
 }
 
-export function ObjectDetail({ object, museums, onBack, onClose }: ObjectDetailProps) {
+export function ObjectDetail({ object, museums, lang, onBack, onClose }: ObjectDetailProps) {
+  const s = STRINGS[lang];
   const events = object.events;
   const flags = object.context?.context_flags ?? [];
   const notes = object.context?.notes;
@@ -35,33 +24,33 @@ export function ObjectDetail({ object, museums, onBack, onClose }: ObjectDetailP
 
   const subtitle = [object.culture, object.period, object.objectDate].filter(Boolean).join(" · ");
   const museumFields = [
-    object.medium ? `Medio: ${object.medium}` : null,
+    object.medium ? `${s.mediumPrefix}${object.medium}` : null,
     object.creditLine,
-    object.accessionYear ? `Año de ingreso: ${object.accessionYear}` : null,
+    object.accessionYear ? `${s.accessionYearPrefix}${object.accessionYear}` : null,
   ].filter(Boolean) as string[];
 
   return (
     <aside className="side-panel">
       <div className="panel-header">
-        <button className="icon-btn" onClick={onBack} aria-label="Volver a la lista">
+        <button className="icon-btn" onClick={onBack} aria-label={s.backAria}>
           ‹
         </button>
-        <button className="icon-btn" onClick={onClose} aria-label="Cerrar panel">
+        <button className="icon-btn" onClick={onClose} aria-label={s.closePanelAria}>
           ×
         </button>
       </div>
 
       <div className="object-header">
         {object.primaryImage && <img className="object-image" src={object.primaryImage} alt="" />}
-        <div className="object-title">{object.title || "(sin título)"}</div>
+        <div className="object-title">{object.title || s.untitled}</div>
         {subtitle && <div className="object-subtitle">{subtitle}</div>}
       </div>
 
       <div className="timeline">
         <div className="timeline-node">
           <span className="timeline-dot timeline-dot-muted" aria-hidden="true" />
-          <div className="timeline-date">{object.objectDate || "Origen"}</div>
-          <div className="timeline-label">Hecho en {object.originLabel || "lugar desconocido"}</div>
+          <div className="timeline-date">{object.objectDate || s.originFallbackDate}</div>
+          <div className="timeline-label">{s.madeIn(object.originLabel || s.unknownPlace)}</div>
         </div>
 
         {hasResearch ? (
@@ -80,7 +69,7 @@ export function ObjectDetail({ object, museums, onBack, onClose }: ObjectDetailP
               <div className="timeline-node" key={i}>
                 <span className="timeline-dot timeline-dot-accent" aria-hidden="true" />
                 <div className="timeline-date">{event.event_date || ""}</div>
-                <div className="timeline-label">{eventLabel(event)}</div>
+                <div className="timeline-label">{eventLabel(event, s)}</div>
                 {event.description && <div className="timeline-desc">{event.description}</div>}
               </div>
             ))}
@@ -88,22 +77,22 @@ export function ObjectDetail({ object, museums, onBack, onClose }: ObjectDetailP
         ) : (
           <div className="timeline-note">
             <span className="timeline-note-dot" aria-hidden="true" />
-            Recorrido no investigado todavía
+            {s.noResearch}
           </div>
         )}
 
         <div className="timeline-node">
           <span className="timeline-dot timeline-dot-met" aria-hidden="true" />
-          <div className="timeline-date">Ahora</div>
+          <div className="timeline-date">{s.now}</div>
           <div className="timeline-label">
-            {destMuseum ? `${destMuseum.name}, ${destMuseum.city}` : "Museo desconocido"}
+            {destMuseum ? `${destMuseum.name}, ${destMuseum.city}` : s.unknownMuseum}
           </div>
         </div>
       </div>
 
       {(museumFields.length > 0 || object.objectURL) && (
         <div className="museum-record">
-          <div className="museum-record-label">Registro del museo</div>
+          <div className="museum-record-label">{s.museumRecordLabel}</div>
           {museumFields.map((field, i) => (
             <div className="museum-record-field" key={i}>
               {field}
@@ -111,7 +100,7 @@ export function ObjectDetail({ object, museums, onBack, onClose }: ObjectDetailP
           ))}
           {object.objectURL && (
             <a className="met-link" href={object.objectURL} target="_blank" rel="noreferrer">
-              Ver en {destMuseum?.name ?? "el sitio del museo"} ↗
+              {s.viewAt(destMuseum?.name ?? s.theMuseumWebsite)}
             </a>
           )}
         </div>

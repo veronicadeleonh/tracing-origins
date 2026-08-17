@@ -1,5 +1,6 @@
 import { useState, type ReactNode } from "react";
 import type { HistoricalEvent } from "../data/historicalEvents";
+import { STRINGS, type Lang } from "../i18n";
 
 interface LegendItem {
   label: string;
@@ -23,6 +24,7 @@ interface TimelineProps {
   layerToggles: LayerToggle[];
   onToggleLayer: (id: string) => void;
   events: HistoricalEvent[];
+  lang: Lang;
 }
 
 // Décadas marcadas en la barra, con año visible solo cada 50 para no
@@ -36,7 +38,9 @@ export function Timeline({
   layerToggles,
   onToggleLayer,
   events,
+  lang,
 }: TimelineProps) {
+  const s = STRINGS[lang];
   const span = maxYear - minYear;
   const firstDecade = Math.ceil(minYear / 10) * 10;
   const decades: number[] = [];
@@ -84,7 +88,7 @@ export function Timeline({
                 <button
                   type="button"
                   className={`year-timeline-note-btn${openNote === toggle.id ? " open" : ""}`}
-                  aria-label={`Sobre la capa de ${toggle.label}`}
+                  aria-label={s.timelineNoteAria(toggle.label)}
                   aria-expanded={openNote === toggle.id}
                   onClick={() => setOpenNote((cur) => (cur === toggle.id ? null : toggle.id))}
                 >
@@ -146,12 +150,10 @@ export function Timeline({
           step={1}
           value={year}
           onChange={(e) => onChange(Number(e.target.value))}
-          aria-label="Año del mapa de territorios coloniales"
+          aria-label={s.timelineSliderAria}
         />
       </div>
-      <div className="year-timeline-caption">
-        Estas capas cambian con el año. Las líneas pieza→museo no: son fijas, no representan un momento puntual.
-      </div>
+      <div className="year-timeline-caption">{s.timelineCaption}</div>
     </div>
   );
 }
