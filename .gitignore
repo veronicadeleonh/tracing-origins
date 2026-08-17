@@ -9,7 +9,12 @@ data/raw/*.json
 !data/raw/.gitkeep
 # cache local de fetch_colonial_overlay.py — 165MB sin comprimir, nunca se
 # commitea; lo único que se commitea es el geojson chico ya filtrado en
-# web/src/data/colonial_overlay.geojson
+# web/public/colonial_overlay.geojson
 data/raw/cliopatria.geojson
 data/raw/cliopatria.geojson.zip
+# cache local de fetch_navigator_routes.py (CLIWOC/PANGAEA, 5468 archivos,
+# pesado) — nunca se commitea; lo único que se commitea es el geojson chico
+# ya filtrado en web/public/navigator_routes.geojson
+data/raw/cliwoc_pangaea.zip
+data/raw/cliwoc_pangaea/
 .DS_Store

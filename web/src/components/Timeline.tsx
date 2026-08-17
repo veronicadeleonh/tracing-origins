@@ -3,17 +3,25 @@ interface LegendItem {
   color: string;
 }
 
+interface LayerToggle {
+  id: string;
+  label: string;
+  active: boolean;
+}
+
 interface TimelineProps {
   minYear: number;
   maxYear: number;
   year: number;
   onChange: (year: number) => void;
   legend: LegendItem[];
+  layerToggles: LayerToggle[];
+  onToggleLayer: (id: string) => void;
 }
 
 // Décadas marcadas en la barra, con año visible solo cada 50 para no
 // amontonar texto — el resto son ticks mudos, solo de referencia visual.
-export function Timeline({ minYear, maxYear, year, onChange, legend }: TimelineProps) {
+export function Timeline({ minYear, maxYear, year, onChange, legend, layerToggles, onToggleLayer }: TimelineProps) {
   const span = maxYear - minYear;
   const firstDecade = Math.ceil(minYear / 10) * 10;
   const decades: number[] = [];
@@ -21,6 +29,19 @@ export function Timeline({ minYear, maxYear, year, onChange, legend }: TimelineP
 
   return (
     <div className="year-timeline">
+      <div className="year-timeline-layers">
+        {layerToggles.map((toggle) => (
+          <button
+            key={toggle.id}
+            type="button"
+            className={`year-timeline-layer-toggle${toggle.active ? " active" : ""}`}
+            aria-pressed={toggle.active}
+            onClick={() => onToggleLayer(toggle.id)}
+          >
+            {toggle.label}
+          </button>
+        ))}
+      </div>
       <div className="year-timeline-header">
         <div className="year-timeline-legend">
           {legend.map((item) => (

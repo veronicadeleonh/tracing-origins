@@ -126,9 +126,9 @@
 .curated-note {
   position: absolute;
   z-index: 1000;
-  bottom: 92px;
-  left: 12px;
-  max-width: 320px;
+  top: 12px;
+  right: 12px;
+  max-width: 280px;
   background: rgba(251, 250, 247, 0.92);
   border: 1px solid #e5e2da;
   border-radius: 6px;
@@ -193,6 +193,35 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
+}
+
+.year-timeline-layers {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.year-timeline-layer-toggle {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.55);
+  font: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.year-timeline-layer-toggle:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.year-timeline-layer-toggle.active {
+  background: rgba(255, 255, 255, 0.92);
+  color: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.92);
 }
 
 .year-timeline-header {
