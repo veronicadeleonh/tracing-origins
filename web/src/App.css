@@ -1096,3 +1096,39 @@
 .met-link:hover {
   text-decoration: underline;
 }
+
+.piece-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 18px 18px;
+  border-top: 1px solid #e5e2da;
+  margin-top: auto;
+}
+
+.piece-nav-btn {
+  background: none;
+  border: 1px solid #e5e2da;
+  border-radius: 6px;
+  color: #55504a;
+  font-size: 12px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.piece-nav-btn:hover:not(:disabled) {
+  background: #efece4;
+  color: #1a1a1a;
+}
+
+.piece-nav-btn:disabled {
+  color: #c9c5bb;
+  cursor: default;
+}
+
+.piece-nav-position {
+  font-size: 11px;
+  color: #928d82;
+  flex-shrink: 0;
+}

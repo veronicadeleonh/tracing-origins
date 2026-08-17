@@ -1,7 +1,7 @@
 # 🏛️ Tracing Origins
 
 ![Tracing Origins — interactive globe view](docs/project-tracing-origins.png)
-*The main view: a 3D globe with lines connecting museum objects to their place of origin, a side panel with per-object detail, and a colonial-context timeline along the bottom.*
+_The main view: a 3D globe with lines connecting museum objects to their place of origin, a side panel with per-object detail, and a colonial-context timeline along the bottom._
 
 **[Live demo →](https://tracing-origins-lac.vercel.app)**
 
@@ -25,14 +25,14 @@ See `CLAUDE.md` for the full architecture and per-museum methodology.
 
 The screenshot above shows the main globe view. A few more are planned to round out the picture — drop matching files into `docs/` and uncomment the lines below to add them:
 
-<!-- ![Object detail panel with a researched provenance timeline](docs/screenshot-object-detail.png) -->
-<!-- ![Colonial-context timeline: empires and naval routes toggled on](docs/screenshot-colonial-context.png) -->
-<!-- ![Cluster panel listing every object that shares an origin point](docs/screenshot-cluster-panel.png) -->
+![Object detail panel with a researched provenance timeline](docs/screenshot-object-detail.png)
+![Colonial-context timeline: empires and naval routes toggled on](docs/screenshot-colonial-context.png)
+![Cluster panel listing every object that shares an origin point](docs/screenshot-cluster-panel.png)
 
 ## Data at a glance
 
 - **466 objects** on the map (Met 161 · Louvre 215 · British Museum 90 — all geocoded)
-- **33 flagship pieces** with a fully cited provenance timeline (Met 5 · Louvre 20 · British Museum 8), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, and the Benin Bronzes
+- **38 flagship pieces** with a fully cited provenance timeline (Met 5 · Louvre 25 · British Museum 8), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, and the Benin Bronzes
 - **Two optional context layers**: former British/French colonial territories (1700–2020, [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), CC-BY 4.0) and curated British/French naval routes (1700–1900, [CLIWOC](https://www.pangaea.de/), CC-BY 3.0), both on a shared, scrubbable timeline
 - **Bilingual interface** (Spanish/English), including the researched provenance text itself, not just UI chrome
 

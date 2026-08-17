@@ -4927,8 +4927,57 @@
       "originPrecision": "site",
       "originLat": 30.1167,
       "originLon": 31.2167,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "colonial_administration"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Fragmento de estatua real de Djedefre (IV dinastia). Excavado por Emile Chassinat para el Instituto Frances de Arqueologia Oriental (IFAO) de El Cairo entre 1900 y 1901, en el complejo funerario de Djedefre en Abu Rawash -- entonces bajo administracion britanica de facto, aunque el Servicio de Antiguedades egipcio seguia dirigido por franceses (una condicion semicolonial particular de este periodo, distinta del Mandato o del protectorado formal). Chassinat hallo varios fragmentos de estatuas del rey, entre ellas al menos cuatro cabezas, hoy repartidas entre el Louvre, el Museo Egipcio de Munich y el Museo de El Cairo. Asignada al Louvre por partage el 20 de agosto de 1907.",
+        "notesEn": "Fragment of a royal statue of Djedefre (4th dynasty). Excavated by Emile Chassinat for the French Institute of Oriental Archaeology (IFAO) in Cairo between 1900 and 1901, at Djedefre's funerary complex at Abu Rawash -- then under de facto British administration, although the Egyptian Antiquities Service was still run by French directors (a particular semi-colonial condition of this period, distinct from a Mandate or a formal protectorate). Chassinat found several fragments of statues of the king, including at least four heads, now split between the Louvre, the Egyptian Museum in Munich, and the Cairo Museum. Allotted to the Louvre by partage on 20 August 1907."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2605-2597 BCE",
+          "actor_or_institution": "Djedefre (rey)",
+          "location": "Abu Rawash, Egipto",
+          "description": "Fragmento de estatua real del rey Djedefre, IV dinastia, en gres silicificado con restos de pintura roja.",
+          "descriptionEs": "Fragmento de estatua real del rey Djedefre, IV dinastia, en gres silicificado con restos de pintura roja.",
+          "descriptionEn": "Fragment of a royal statue of King Djedefre, 4th dynasty, in silicified sandstone with traces of red paint.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010007230",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1900-1901",
+          "actor_or_institution": "Emile Chassinat (Instituto Frances de Arqueologia Oriental, El Cairo)",
+          "location": "Complejo funerario de Djedefre, Abu Rawash, Egipto",
+          "description": "Chassinat excavo el complejo funerario de Djedefre para el IFAO, hallando varios fragmentos de estatuas del rey, entre ellas al menos cuatro cabezas -- hoy repartidas entre el Louvre, el Museo Egipcio de Munich y el Museo de El Cairo.",
+          "descriptionEs": "Chassinat excavo el complejo funerario de Djedefre para el IFAO, hallando varios fragmentos de estatuas del rey, entre ellas al menos cuatro cabezas -- hoy repartidas entre el Louvre, el Museo Egipcio de Munich y el Museo de El Cairo.",
+          "descriptionEn": "Chassinat excavated Djedefre's funerary complex for the IFAO, finding several fragments of statues of the king, including at least four heads -- now split between the Louvre, the Egyptian Museum in Munich, and the Cairo Museum.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010007230",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1907-08-20",
+          "actor_or_institution": null,
+          "location": "Abu Rawash -> Paris",
+          "description": "Asignada al Louvre mediante partage despues de las excavaciones.",
+          "descriptionEs": "Asignada al Louvre mediante partage despues de las excavaciones.",
+          "descriptionEn": "Allotted to the Louvre through partage after the excavations.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010007230",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010007467",
@@ -4954,8 +5003,44 @@
       "originPrecision": "country",
       "originLat": 26.8206,
       "originLon": 30.8025,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Cuchillo predinastico de marfil de hipopotamo (mango, con relieves) y silex (hoja). Comprado en 1914 por el egiptologo Georges Benedite, en nombre del Louvre, al anticuario privado Maurice Nahman en El Cairo -- Benedite lo adquirio en dos piezas separadas (mango y hoja). El vendedor afirmo que provenia de Gebel el-Arak, en el Alto Egipto, pero investigaciones posteriores sugieren que en realidad proviene de Abidos. Al tratarse de una compra de mercado sin excavacion documentada, la procedencia arqueologica exacta de la pieza sigue sin poder confirmarse.",
+        "notesEn": "Predynastic knife of hippopotamus ivory (handle, with reliefs) and flint (blade). Purchased in 1914 by Egyptologist Georges Benedite, on the Louvre's behalf, from private antiquities dealer Maurice Nahman in Cairo -- Benedite acquired it in two separate pieces (handle and blade). The seller claimed it came from Gebel el-Arak in Upper Egypt, but later research suggests it actually comes from Abydos. Since it was a market purchase with no documented excavation, the piece's exact archaeological provenance remains unconfirmed."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 3450-3200 BCE",
+          "actor_or_institution": null,
+          "location": "Alto Egipto (procedencia exacta incierta)",
+          "description": "Cuchillo de marfil de hipopotamo (mango, con relieves) y silex (hoja), del periodo Nagada II.",
+          "descriptionEs": "Cuchillo de marfil de hipopotamo (mango, con relieves) y silex (hoja), del periodo Nagada II.",
+          "descriptionEn": "Knife of hippopotamus ivory (handle, with reliefs) and flint (blade), from the Naqada II period.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010007467",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1914-02/03",
+          "actor_or_institution": "Georges Benedite (comprador); Maurice Nahman (anticuario privado)",
+          "location": "El Cairo, Egipto -> Paris, Francia",
+          "description": "Benedite lo compro para el Louvre, en dos piezas separadas (mango y hoja), al anticuario privado Maurice Nahman en El Cairo. El vendedor afirmo que provenia de Gebel el-Arak, pero investigaciones posteriores sugieren que en realidad proviene de Abidos -- procedencia arqueologica exacta sin confirmar por tratarse de una compra de mercado.",
+          "descriptionEs": "Benedite lo compro para el Louvre, en dos piezas separadas (mango y hoja), al anticuario privado Maurice Nahman en El Cairo. El vendedor afirmo que provenia de Gebel el-Arak, pero investigaciones posteriores sugieren que en realidad proviene de Abidos -- procedencia arqueologica exacta sin confirmar por tratarse de una compra de mercado.",
+          "descriptionEn": "Benedite purchased it for the Louvre, in two separate pieces (handle and blade), from private antiquities dealer Maurice Nahman in Cairo. The seller claimed it came from Gebel el-Arak, but later research suggests it actually comes from Abydos -- exact archaeological provenance unconfirmed since it was a market purchase.",
+          "source_url": "https://en.wikipedia.org/wiki/Gebel_el-Arak_Knife",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010007592",
@@ -5872,8 +5957,56 @@
       "originPrecision": "site",
       "originLat": 25.7188,
       "originLon": 32.6081,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "private_excavation"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estela con un decreto de amnistia, atribuida tentativamente en el propio registro del Louvre a los reinados de Pinedjem I, Amenemope o Psusenes I (todos marcados con signo de interrogacion); fuentes externas la asocian al Sumo Sacerdote de Amon Menkheperre, contemporaneo de Psusenes I -- ambas atribuciones son compatibles, no contradictorias. Hallada en Karnak en febrero de 1860 -- el mismo ano y lugar que otra pieza ya documentada en este proyecto (louvre:cl010008106), tambien en una excavacion aparentemente privada de un tal 'Victor Maunier' segun el registro del Louvre para esa otra pieza. Fuentes externas nombran al hallador de esta estela como 'Henri Maunier', vicecOnsul frances -- una posible discrepancia de nombre de pila entre fuentes, no resuelta aqui; no se asume que sea necesariamente la misma persona sin una fuente que lo confirme. Donada al Louvre en 1884.",
+        "notesEn": "Stela recording an amnesty decree, tentatively attributed in the Louvre's own record to the reigns of Pinedjem I, Amenemope, or Psusennes I (all marked with a question mark); external sources associate it with High Priest of Amun Menkheperre, a contemporary of Psusennes I -- both attributions are compatible, not contradictory. Found at Karnak in February 1860 -- the same year and place as another piece already documented in this project (louvre:cl010008106), also in an apparently private excavation by a 'Victor Maunier' according to the Louvre's record for that other piece. External sources name this stela's finder as 'Henri Maunier,' French vice-consul -- a possible first-name discrepancy between sources, not resolved here; it is not assumed to necessarily be the same person without a source confirming it. Donated to the Louvre in 1884."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 1064-980 BCE (tentativo)",
+          "actor_or_institution": null,
+          "location": "Karnak, Tebas, Egipto",
+          "description": "Estela con un decreto de amnistia, atribuida tentativamente en el registro del Louvre a los reinados de Pinedjem I, Amenemope o Psusenes I; fuentes externas la asocian al Sumo Sacerdote de Amon Menkheperre, contemporaneo de Psusenes I.",
+          "descriptionEs": "Estela con un decreto de amnistia, atribuida tentativamente en el registro del Louvre a los reinados de Pinedjem I, Amenemope o Psusenes I; fuentes externas la asocian al Sumo Sacerdote de Amon Menkheperre, contemporaneo de Psusenes I.",
+          "descriptionEn": "Stela recording an amnesty decree, tentatively attributed in the Louvre's record to the reigns of Pinedjem I, Amenemope, or Psusennes I; external sources associate it with High Priest of Amun Menkheperre, a contemporary of Psusennes I.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010029360",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1860-02",
+          "actor_or_institution": "Victor/Henri Maunier (nombre segun la fuente)",
+          "location": "Karnak, Egipto otomano",
+          "description": "Hallada en una excavacion aparentemente privada en Karnak -- el mismo ano y lugar que otra pieza ya documentada en este proyecto (louvre:cl010008106), tambien atribuida a un 'Victor Maunier' segun el registro del Louvre para esa pieza; fuentes externas nombran al hallador de esta estela como 'Henri Maunier', vicecOnsul frances. La discrepancia de nombre de pila entre fuentes no se resuelve aqui.",
+          "descriptionEs": "Hallada en una excavacion aparentemente privada en Karnak -- el mismo ano y lugar que otra pieza ya documentada en este proyecto (louvre:cl010008106), tambien atribuida a un 'Victor Maunier' segun el registro del Louvre para esa pieza; fuentes externas nombran al hallador de esta estela como 'Henri Maunier', vicecOnsul frances. La discrepancia de nombre de pila entre fuentes no se resuelve aqui.",
+          "descriptionEn": "Found in an apparently private excavation at Karnak -- the same year and place as another piece already documented in this project (louvre:cl010008106), also attributed to a 'Victor Maunier' according to the Louvre's record for that piece; external sources name this stela's finder as 'Henri Maunier,' French vice-consul. The first-name discrepancy between sources is not resolved here.",
+          "source_url": "https://en.wikipedia.org/wiki/Banishment_Stela",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1884",
+          "actor_or_institution": null,
+          "location": "Paris, Francia",
+          "description": "Donada al Louvre.",
+          "descriptionEs": "Donada al Louvre.",
+          "descriptionEn": "Donated to the Louvre.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010029360",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010029573",
@@ -6415,8 +6548,57 @@
       "originPrecision": "country",
       "originLat": 33.8547,
       "originLon": 35.8623,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Lebanon;Ottoman Empire",
+        "notes": "Sarcofago del rey Eshmunazor II de Sidon, en basalto egipcio reutilizado (canteras del valle de Hammamat); su larga inscripcion fenicia detalla su genealogia y construcciones de templos, y termina en una maldicion contra quien perturbe su descanso. Hallado el 19 de enero de 1855 en la necropolis de Magharat Tabloun ('cueva de Apolo'), Saida (antigua Sidon, Imperio Otomano, actual Libano), por Alphonse Durighello, agente contratado por Aime Peretie (canciller del consulado frances en Beirut), con financiamiento del duque de Luynes, aristocrata y coleccionista privado frances. El hallazgo permitio un avance decisivo en el conocimiento del fenicio: la inscripcion de la tapa fue, en su momento, el texto fenicio mas extenso y detallado jamas hallado en la propia Fenicia. Donado al Louvre por el duque de Luynes ese mismo ano.",
+        "notesEn": "Sarcophagus of King Eshmunazar II of Sidon, in reused Egyptian basalt (from the Hammamat valley quarries); its long Phoenician inscription details his genealogy and temple constructions, and ends with a curse against anyone who disturbs his rest. Found on 19 January 1855 in the necropolis of Magharat Tabloun ('Cave of Apollo'), Sidon (Ottoman Empire, modern Lebanon), by Alphonse Durighello, an agent hired by Aime Peretie (chancellor of the French consulate in Beirut), funded by the Duke of Luynes, a French aristocrat and private collector. The find enabled a decisive advance in the knowledge of Phoenician: the lid inscription was, at the time, the longest and most detailed Phoenician text ever found in Phoenicia itself. Donated to the Louvre by the Duke of Luynes that same year."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "primer cuarto del s. V a.C.",
+          "actor_or_institution": "Eshmunazor II, rey de Sidon",
+          "location": "Sidon, Fenicia bajo dominio persa (actual Libano)",
+          "description": "Sarcofago del rey Eshmunazor II de Sidon, en basalto egipcio reutilizado; su inscripcion fenicia detalla su genealogia y construcciones de templos, y termina en una maldicion contra quien perturbe su descanso.",
+          "descriptionEs": "Sarcofago del rey Eshmunazor II de Sidon, en basalto egipcio reutilizado; su inscripcion fenicia detalla su genealogia y construcciones de templos, y termina en una maldicion contra quien perturbe su descanso.",
+          "descriptionEn": "Sarcophagus of King Eshmunazar II of Sidon, in reused Egyptian basalt; its Phoenician inscription details his genealogy and temple constructions, ending in a curse against anyone who disturbs his rest.",
+          "source_url": "https://en.wikipedia.org/wiki/Sarcophagus_of_Eshmunazar_II",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1855-01-19",
+          "actor_or_institution": "Alphonse Durighello (agente); Aime Peretie (canciller consular frances); duque de Luynes (financista)",
+          "location": "Necropolis de Magharat Tabloun ('cueva de Apolo'), Saida (antigua Sidon), Imperio Otomano (actual Libano)",
+          "description": "Hallado por Durighello, agente contratado por Peretie (canciller del consulado frances en Beirut), con financiamiento del duque de Luynes, aristocrata y coleccionista privado frances. El hallazgo permitio un avance decisivo en el conocimiento del fenicio: la inscripcion fue, en su momento, el texto fenicio mas extenso y detallado jamas hallado en la propia Fenicia.",
+          "descriptionEs": "Hallado por Durighello, agente contratado por Peretie (canciller del consulado frances en Beirut), con financiamiento del duque de Luynes, aristocrata y coleccionista privado frances. El hallazgo permitio un avance decisivo en el conocimiento del fenicio: la inscripcion fue, en su momento, el texto fenicio mas extenso y detallado jamas hallado en la propia Fenicia.",
+          "descriptionEn": "Found by Durighello, an agent hired by Peretie (chancellor of the French consulate in Beirut), funded by the Duke of Luynes, a French aristocrat and private collector. The find enabled a decisive advance in the knowledge of Phoenician: the inscription was, at the time, the longest and most detailed Phoenician text ever found in Phoenicia itself.",
+          "source_url": "https://en.wikipedia.org/wiki/Sarcophagus_of_Eshmunazar_II",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1855",
+          "actor_or_institution": "Duque de Luynes",
+          "location": "Paris, Francia",
+          "description": "Donado al Louvre por el duque de Luynes ese mismo ano.",
+          "descriptionEs": "Donado al Louvre por el duque de Luynes ese mismo ano.",
+          "descriptionEn": "Donated to the Louvre by the Duke of Luynes that same year.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120357",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010120489",
@@ -9534,8 +9716,70 @@
       "originPrecision": "site",
       "originLat": 41.995,
       "originLon": 12.103,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "state_sale"
+        ],
+        "associated_communities_or_states": "Italy",
+        "notes": "Sarcofago-urna etrusco arcaico en terracota policromada, con una pareja recostada en un banquete funerario. Hallado en 1845-1846 en la necropolis de la Banditaccia, Cerveteri (antigua Caere, Estados Pontificios, actual Italia), por el propio Giovanni Pietro Campana, marques y director del Monte di Pieta (casa de empenos) de Roma, que financiaba excavaciones arqueologicas para alimentar su coleccion privada de unas 12.000 piezas. En 1857 Campana fue acusado y condenado por desviar fondos del Monte di Pieta para costear esa coleccion -- su condena inicial de 20 anos de prision (1858) se conmuto a destierro perpetuo con confiscacion de sus bienes (1859). La coleccion confiscada (unas 11.835 piezas) fue vendida al estado frances en 1861 por 4,36 millones de francos para recuperar parte de las perdidas del Monte di Pieta, y repartida entre el Louvre y varios museos regionales franceses (otra parte fue adquirida por el zar Alejandro II para el Hermitage). Mecanismo distinto a los de excavacion colonial o partage: un escandalo financiero italiano resuelto mediante la venta forzada de una coleccion privada a un estado extranjero.",
+        "notesEn": "Archaic Etruscan terracotta sarcophagus-urn, painted, depicting a married couple reclining at a funerary banquet. Found in 1845-1846 in the Banditaccia necropolis at Cerveteri (ancient Caere, Papal States, modern Italy), by Giovanni Pietro Campana himself, a marquis and director of Rome's Monte di Pieta (pawnbroking house), who funded archaeological excavations to feed his private collection of some 12,000 pieces. In 1857 Campana was accused and convicted of embezzling funds from the Monte di Pieta to finance that collection -- his initial 20-year prison sentence (1858) was commuted to permanent banishment with confiscation of his property (1859). The confiscated collection (some 11,835 pieces) was sold to the French state in 1861 for 4.36 million francs to recoup part of the Monte di Pieta's losses, and split between the Louvre and several French regional museums (another part was acquired by Tsar Alexander II for the Hermitage). A mechanism distinct from colonial excavation or partage: an Italian financial scandal resolved through the forced sale of a private collection to a foreign state."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 520-510 BCE",
+          "actor_or_institution": null,
+          "location": "Caere (Cerveteri), Etruria (actual Italia)",
+          "description": "Sarcofago-urna etrusco arcaico en terracota policromada, con una pareja recostada en un banquete funerario.",
+          "descriptionEs": "Sarcofago-urna etrusco arcaico en terracota policromada, con una pareja recostada en un banquete funerario.",
+          "descriptionEn": "Archaic Etruscan terracotta sarcophagus-urn, painted, depicting a married couple reclining at a funerary banquet.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010298047",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1845-1846",
+          "actor_or_institution": "Giovanni Pietro Campana (marques, coleccionista)",
+          "location": "Necropolis de la Banditaccia, Cerveteri (antigua Caere), Estados Pontificios (actual Italia)",
+          "description": "Hallado por el propio Campana, marques y director del Monte di Pieta (casa de empenos) de Roma, que financiaba excavaciones arqueologicas para alimentar su coleccion privada de unas 12.000 piezas.",
+          "descriptionEs": "Hallado por el propio Campana, marques y director del Monte di Pieta (casa de empenos) de Roma, que financiaba excavaciones arqueologicas para alimentar su coleccion privada de unas 12.000 piezas.",
+          "descriptionEn": "Found by Campana himself, a marquis and director of Rome's Monte di Pieta (pawnbroking house), who funded archaeological excavations to feed his private collection of some 12,000 pieces.",
+          "source_url": "https://en.wikipedia.org/wiki/Giampietro_Campana",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "1857-1859",
+          "actor_or_institution": "Estado pontificio",
+          "location": "Roma",
+          "description": "Campana fue acusado y condenado por desviar fondos del Monte di Pieta para costear su coleccion -- su condena inicial de 20 anos de prision (1858) se conmuto a destierro perpetuo con confiscacion de sus bienes (1859).",
+          "descriptionEs": "Campana fue acusado y condenado por desviar fondos del Monte di Pieta para costear su coleccion -- su condena inicial de 20 anos de prision (1858) se conmuto a destierro perpetuo con confiscacion de sus bienes (1859).",
+          "descriptionEn": "Campana was accused and convicted of embezzling funds from the Monte di Pieta to finance his collection -- his initial 20-year prison sentence (1858) was commuted to permanent banishment with confiscation of his property (1859).",
+          "source_url": "https://en.wikipedia.org/wiki/Giampietro_Campana",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "1861-05-20",
+          "actor_or_institution": "Napoleon III (estado frances)",
+          "location": "Roma -> Paris",
+          "description": "La coleccion Campana confiscada (unas 11.835 piezas) fue vendida al estado frances por 4,36 millones de francos para recuperar parte de las perdidas del Monte di Pieta, y repartida entre el Louvre y varios museos regionales franceses (otra parte fue adquirida por el zar Alejandro II para el Hermitage).",
+          "descriptionEs": "La coleccion Campana confiscada (unas 11.835 piezas) fue vendida al estado frances por 4,36 millones de francos para recuperar parte de las perdidas del Monte di Pieta, y repartida entre el Louvre y varios museos regionales franceses (otra parte fue adquirida por el zar Alejandro II para el Hermitage).",
+          "descriptionEn": "The confiscated Campana collection (some 11,835 pieces) was sold to the French state for 4.36 million francs to recoup part of the Monte di Pieta's losses, and split between the Louvre and several French regional museums (another part was acquired by Tsar Alexander II for the Hermitage).",
+          "source_url": "https://en.wikipedia.org/wiki/Giampietro_Campana",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010302825",

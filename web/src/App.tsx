@@ -241,6 +241,19 @@ function App() {
     }
   }, [clusters]);
 
+  // Navegación prev/next dentro de un cluster de origen (18/08) — update
+  // funcional para no depender de `panel` en las deps del callback (evita
+  // handlers con closures viejas si el usuario navega rápido). Sirve tanto
+  // para prev como para next: solo cambia qué índice le pasan los botones.
+  const selectClusterObject = useCallback((index: number) => {
+    setPanel((prev) => {
+      if (!prev) return prev;
+      const object = prev.cluster.objects[index];
+      if (!object) return prev;
+      return { view: "object", cluster: prev.cluster, object };
+    });
+  }, []);
+
   const handleMouseMove = useCallback((e: MapMouseEvent) => {
     if (e.features?.length) {
       const f = e.features[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> };
@@ -495,15 +508,23 @@ function App() {
           onSelectObject={(object) => setPanel({ view: "object", cluster: panel.cluster, object })}
         />
       )}
-      {panel?.view === "object" && (
-        <ObjectDetail
-          object={panel.object}
-          museums={bundle.museums}
-          lang={lang}
-          onBack={() => setPanel({ view: "cluster", cluster: panel.cluster })}
-          onClose={() => setPanel(null)}
-        />
-      )}
+      {panel?.view === "object" && (() => {
+        const objects = panel.cluster.objects;
+        const index = objects.findIndex((o) => o.objectID === panel.object.objectID);
+        const clusterPosition = index >= 0 ? { index: index + 1, total: objects.length } : undefined;
+        return (
+          <ObjectDetail
+            object={panel.object}
+            museums={bundle.museums}
+            lang={lang}
+            onBack={() => setPanel({ view: "cluster", cluster: panel.cluster })}
+            onClose={() => setPanel(null)}
+            clusterPosition={clusterPosition}
+            onPrev={index > 0 ? () => selectClusterObject(index - 1) : undefined}
+            onNext={index >= 0 && index < objects.length - 1 ? () => selectClusterObject(index + 1) : undefined}
+          />
+        );
+      })()}
     </div>
   );
 }

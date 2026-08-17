@@ -67,6 +67,12 @@ export interface I18nStrings {
 
   tooltipOrigin: (label: string, count: number) => string;
   langToggleLabel: string;
+
+  prevPieceAria: string;
+  nextPieceAria: string;
+  piecePosition: (index: number, total: number) => string;
+  piecePrevLabel: string;
+  pieceNextLabel: string;
 }
 
 export const STRINGS: Record<Lang, I18nStrings> = {
@@ -163,6 +169,12 @@ export const STRINGS: Record<Lang, I18nStrings> = {
 
     tooltipOrigin: (label, count) => `${label} — ${count} pieza(s) (click para el detalle)`,
     langToggleLabel: "EN",
+
+    prevPieceAria: "Pieza anterior de este lugar",
+    nextPieceAria: "Pieza siguiente de este lugar",
+    piecePosition: (index, total) => `${index} de ${total}`,
+    piecePrevLabel: "Anterior",
+    pieceNextLabel: "Siguiente",
   },
   en: {
     museumInfoAria: (name) => `About the provenance of ${name}'s pieces`,
@@ -257,5 +269,11 @@ export const STRINGS: Record<Lang, I18nStrings> = {
 
     tooltipOrigin: (label, count) => `${label} — ${count} piece(s) (click for details)`,
     langToggleLabel: "ES",
+
+    prevPieceAria: "Previous piece from this location",
+    nextPieceAria: "Next piece from this location",
+    piecePosition: (index, total) => `${index} of ${total}`,
+    piecePrevLabel: "Previous",
+    pieceNextLabel: "Next",
   },
 };

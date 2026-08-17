@@ -7,6 +7,15 @@ interface ObjectDetailProps {
   lang: Lang;
   onBack: () => void;
   onClose: () => void;
+  // Navegación entre piezas del mismo cluster de origen (18/08) — evita tener
+  // que volver al ClusterPanel para pasar a la siguiente pieza del lugar.
+  // Opcionales porque ObjectDetail no depende de tener un cluster para
+  // funcionar (en teoría podría reusarse desde otro punto de entrada) — sin
+  // ellos, o con clusterPosition.total <= 1, la barra de navegación no se
+  // muestra.
+  clusterPosition?: { index: number; total: number };
+  onPrev?: () => void;
+  onNext?: () => void;
 }
 
 function eventLabel(event: ProvenanceEvent, s: (typeof STRINGS)["es"]): string {
@@ -14,7 +23,16 @@ function eventLabel(event: ProvenanceEvent, s: (typeof STRINGS)["es"]): string {
   return s.eventTypeLabels[event.event_type] ?? event.event_type;
 }
 
-export function ObjectDetail({ object, museums, lang, onBack, onClose }: ObjectDetailProps) {
+export function ObjectDetail({
+  object,
+  museums,
+  lang,
+  onBack,
+  onClose,
+  clusterPosition,
+  onPrev,
+  onNext,
+}: ObjectDetailProps) {
   const s = STRINGS[lang];
   const events = object.events;
   const flags = object.context?.context_flags ?? [];
@@ -112,6 +130,32 @@ export function ObjectDetail({ object, museums, lang, onBack, onClose }: ObjectD
               {s.viewAt(destMuseum?.name ?? s.theMuseumWebsite)}
             </a>
           )}
+        </div>
+      )}
+
+      {clusterPosition && clusterPosition.total > 1 && (
+        <div className="piece-nav">
+          <button
+            type="button"
+            className="piece-nav-btn"
+            aria-label={s.prevPieceAria}
+            disabled={clusterPosition.index <= 1}
+            onClick={onPrev}
+          >
+            ‹ {s.piecePrevLabel}
+          </button>
+          <span className="piece-nav-position">
+            {s.piecePosition(clusterPosition.index, clusterPosition.total)}
+          </span>
+          <button
+            type="button"
+            className="piece-nav-btn"
+            aria-label={s.nextPieceAria}
+            disabled={clusterPosition.index >= clusterPosition.total}
+            onClick={onNext}
+          >
+            {s.pieceNextLabel} ›
+          </button>
         </div>
       )}
     </aside>
