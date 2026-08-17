@@ -29,4 +29,23 @@ export const HISTORICAL_EVENTS: HistoricalEvent[] = [
     label: "El Met arranca su propia Expedición Egipcia (hasta 1935) — pasa de financiar excavaciones ajenas (Egypt Exploration Fund, 1897-1906) a excavar directamente, bajo autorización del gobierno egipcio de la época. El núcleo de sus ~30.000 piezas egipcias viene de este período.",
     color: "#c9a227",
   },
+  // Agregado 17/08 a pedido del usuario: explica por qué el timeline arranca
+  // en 1920 por default (TIMELINE_DEFAULT_YEAR en App.tsx) — no es un año
+  // arbitrario, es el pico territorial de los dos imperios a la vez. A
+  // diferencia de los 3 hitos del Met, este no pertenece a un museo
+  // específico (aplica a UK y Francia por igual, o sea a BM y Louvre), así
+  // que usa DEFAULT_COLOR (#928d82, el mismo gris neutro que ya se usa en
+  // App.tsx para lo que no está ligado a un museo puntual) en vez del rojo
+  // del BM o el teal del Louvre — cualquiera de los dos hubiera sido
+  // engañoso. Fuentes: Statista/historia del Imperio Británico (13,71
+  // millones de mi², 24% de la superficie terrestre, ~413 millones de
+  // personas) y Wikipedia sobre el imperio colonial francés (12,5 millones
+  // de km² a julio de 1920) — ambos citan 1920 como el pico, por absorber
+  // los mandatos de la Sociedad de Naciones sobre territorio alemán y
+  // otomano derrotado.
+  {
+    year: 1920,
+    label: "Pico territorial simultáneo de ambos imperios coloniales — Reino Unido llega a ~13,7 millones de mi² (24% de la superficie terrestre) y Francia a ~12,5 millones de km², tras absorber los mandatos de la Sociedad de Naciones sobre territorio alemán y otomano (Irak, Palestina, Siria, Líbano, Camerún, Togo). Ambas potencias tenían asiento permanente en el Consejo de la Sociedad de Naciones recién fundada. Por esto el timeline arranca en este año por default.",
+    color: "#928d82",
+  },
 ];

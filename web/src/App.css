@@ -319,12 +319,11 @@
   padding-top: 6px;
 }
 
-/* Capturas reales de la app (no mockups) — object-fit: cover fuerza la
-   misma caja (ancho completo x 150px) sin importar que how-to-use.png
-   (paisaje, mapa) y data-model.png (retrato, ficha de pieza) tengan aspect
-   ratios de origen distintos; "recortarlos todos del mismo tamaño" pedido
-   por el usuario el 17/08, resuelto en CSS en vez de a mano en cada imagen
-   para no tener que volver a exportar si algún crop queda mal encuadrado. */
+/* Capturas reales de la app (no mockups) — misma caja (ancho completo x
+   150px) en las 4 slides sin importar el aspect ratio de origen; "recortarlos
+   todos del mismo tamaño" pedido por el usuario el 17/08. Default
+   object-fit:cover para fotos del globo (hero/how-to-use) donde perder el
+   borde no rompe nada. */
 .welcome-slide-image {
   width: 100%;
   height: 150px;
@@ -333,6 +332,17 @@
   border: 1px solid #e5e2da;
   margin-bottom: 12px;
   display: block;
+}
+
+/* Para capturas con texto (timeline de una pieza, lista de un cluster):
+   cover cortaba la imagen a la mitad de una oración y quedaba "mal
+   cuadrada, no ilustra nada" (reportado el 17/08). object-fit:contain
+   nunca corta contenido — fondo igual al de la tarjeta para que el
+   letterboxing lateral, si lo hay, sea invisible en vez de una barra vacía
+   que se note. */
+.welcome-slide-image--contain {
+  object-fit: contain;
+  background: #fbfaf7;
 }
 
 /* Slide 1 — solo nombre + slogan, sin instrucciones todavía (reportado

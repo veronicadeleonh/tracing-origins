@@ -18,9 +18,13 @@ export function ObjectDetail({ object, museums, lang, onBack, onClose }: ObjectD
   const s = STRINGS[lang];
   const events = object.events;
   const flags = object.context?.context_flags ?? [];
-  const notes = object.context?.notes;
+  // Layer 3 (investigación propia) ahora tiene traducción EN además de la
+  // ES original (17/08) — se elige según el toggle, con fallback al campo
+  // base por si algún registro viejo todavía no tiene su par traducido.
+  const notes = lang === "en" ? object.context?.notesEn || object.context?.notes : object.context?.notes;
   const hasResearch = events.length > 0 || flags.length > 0 || !!notes;
   const destMuseum = object.sourceMuseum ? museums[object.sourceMuseum] : undefined;
+  const originLabel = lang === "en" ? object.originLabelEn || object.originLabel : object.originLabel;
 
   const subtitle = [object.culture, object.period, object.objectDate].filter(Boolean).join(" · ");
   const museumFields = [
@@ -50,7 +54,7 @@ export function ObjectDetail({ object, museums, lang, onBack, onClose }: ObjectD
         <div className="timeline-node">
           <span className="timeline-dot timeline-dot-muted" aria-hidden="true" />
           <div className="timeline-date">{object.objectDate || s.originFallbackDate}</div>
-          <div className="timeline-label">{s.madeIn(object.originLabel || s.unknownPlace)}</div>
+          <div className="timeline-label">{s.madeIn(originLabel || s.unknownPlace)}</div>
         </div>
 
         {hasResearch ? (
@@ -65,14 +69,19 @@ export function ObjectDetail({ object, museums, lang, onBack, onClose }: ObjectD
               </div>
             )}
             {notes && <div className="context-notes">{notes}</div>}
-            {events.map((event, i) => (
-              <div className="timeline-node" key={i}>
-                <span className="timeline-dot timeline-dot-accent" aria-hidden="true" />
-                <div className="timeline-date">{event.event_date || ""}</div>
-                <div className="timeline-label">{eventLabel(event, s)}</div>
-                {event.description && <div className="timeline-desc">{event.description}</div>}
-              </div>
-            ))}
+            {events.map((event, i) => {
+              const description = lang === "en"
+                ? event.descriptionEn || event.descriptionEs || event.description
+                : event.descriptionEs || event.description;
+              return (
+                <div className="timeline-node" key={i}>
+                  <span className="timeline-dot timeline-dot-accent" aria-hidden="true" />
+                  <div className="timeline-date">{event.event_date || ""}</div>
+                  <div className="timeline-label">{eventLabel(event, s)}</div>
+                  {description && <div className="timeline-desc">{description}</div>}
+                </div>
+              );
+            })}
           </>
         ) : (
           <div className="timeline-note">

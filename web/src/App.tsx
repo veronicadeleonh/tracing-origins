@@ -187,7 +187,7 @@ function App() {
     [visibleMuseums],
   );
 
-  const clusters = useMemo(() => groupByOrigin(visibleObjects), [visibleObjects]);
+  const clusters = useMemo(() => groupByOrigin(visibleObjects, lang), [visibleObjects, lang]);
 
   const linesGeoJSON = useMemo(() => ({
     type: "FeatureCollection" as const,

@@ -1,4 +1,5 @@
 import type { MuseumObject } from "./types";
+import type { Lang } from "./i18n";
 
 // ~2km — mismo valor y misma lógica que jittered_point en src/make_map.py.
 // Puramente visual: nunca se escribe de vuelta a los datos, solo se usa para
@@ -29,15 +30,20 @@ export interface OriginCluster {
 
 /** Agrupa objetos por punto de origen (redondeado a 3 decimales, como en
  * make_map.py) para tener un único marker/click-target por lugar, aunque
- * cada objeto siga dibujando su propia línea. */
-export function groupByOrigin(objects: MuseumObject[]): OriginCluster[] {
+ * cada objeto siga dibujando su propia línea. `lang` (agregado 17/08, toggle
+ * ES/EN ampliado a originLabel) decide si el label del cluster usa
+ * originLabel o originLabelEn — la clave de agrupación sigue basada en
+ * originLabel (ES) a propósito, para que cambiar el idioma no reparta un
+ * mismo punto geográfico en dos clusters distintos. */
+export function groupByOrigin(objects: MuseumObject[], lang: Lang = "es"): OriginCluster[] {
   const groups = new Map<string, OriginCluster>();
 
   for (const obj of objects) {
     const lat = Math.round(obj.originLat * 1000) / 1000;
     const lon = Math.round(obj.originLon * 1000) / 1000;
-    const label = obj.originLabel ?? "";
-    const key = `${lat}|${lon}|${label}`;
+    const groupingLabel = obj.originLabel ?? "";
+    const label = (lang === "en" ? obj.originLabelEn || obj.originLabel : obj.originLabel) ?? "";
+    const key = `${lat}|${lon}|${groupingLabel}`;
 
     if (!groups.has(key)) {
       groups.set(key, { lat, lon, label, objects: [] });

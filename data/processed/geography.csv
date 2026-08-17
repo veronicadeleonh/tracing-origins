@@ -1,169 +1,169 @@
-objectID,origin_label,origin_precision,origin_lat,origin_lon,museum_lat,museum_lon
-met:36203,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:36204,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:36205,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:36207,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:36209,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:38945,India (Tamil Nadu),culture,20.5937,78.9629,40.7794,-73.9632
-met:38947,India (Kerala),culture,20.5937,78.9629,40.7794,-73.9632
-met:38948,Cambodia or Thailand,culture,15.87,100.9925,40.7794,-73.9632
-met:38949,Northeastern Thailand,culture,15.87,100.9925,40.7794,-73.9632
-met:38951,"Plai Bat II Temple, Lahan Sai District, Buriram Province, Thailand",culture,15.87,100.9925,40.7794,-73.9632
-met:41772,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:41774,Japan,culture,36.2048,138.2529,40.7794,-73.9632
-met:41775,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:41776,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:41778,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:44396,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:44398,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:44399,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:44400,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:44402,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:45836,Japan,culture,36.2048,138.2529,40.7794,-73.9632
-met:45838,Japan,culture,36.2048,138.2529,40.7794,-73.9632
-met:45839,Japan,culture,36.2048,138.2529,40.7794,-73.9632
-met:45840,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:45842,China,culture,35.8617,104.1954,40.7794,-73.9632
-met:76035,India,country,20.5937,78.9629,40.7794,-73.9632
-met:80390,Siria,country,34.8021,38.9968,40.7794,-73.9632
-met:80721,,unresolved,,,40.7794,-73.9632
-met:85498,Medio Oriente,region,30.0,40.0,40.7794,-73.9632
-met:85500,Uzbekistán,country,41.3775,64.5853,40.7794,-73.9632
-met:85501,Uzbekistán,country,41.3775,64.5853,40.7794,-73.9632
-met:85503,Uzbekistán,country,41.3775,64.5853,40.7794,-73.9632
-met:85505,Medio Oriente,region,30.0,40.0,40.7794,-73.9632
-met:89985,Guatemala,country,15.7835,-90.2308,40.7794,-73.9632
-met:90277,Peru,country,-9.19,-75.0152,40.7794,-73.9632
-met:96404,República Democrática del Congo,country,-4.0383,21.7587,40.7794,-73.9632
-met:105510,Estados Unidos,country,39.8283,-98.5795,40.7794,-73.9632
-met:123386,Guatemala,country,15.7835,-90.2308,40.7794,-73.9632
-met:240028,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:240029,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:240032,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:240033,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:240036,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:241666,"Roman, Cypriot",culture,35.1264,33.4299,40.7794,-73.9632
-met:241667,Roman,culture,41.8719,12.5674,40.7794,-73.9632
-met:241670,Roman,culture,41.8719,12.5674,40.7794,-73.9632
-met:241671,Roman,culture,41.8719,12.5674,40.7794,-73.9632
-met:241674,Roman,culture,41.8719,12.5674,40.7794,-73.9632
-met:244348,"Roman, Cypriot",culture,35.1264,33.4299,40.7794,-73.9632
-met:244349,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:244352,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:244353,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:244355,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
-met:246740,Greek,culture,39.0742,21.8243,40.7794,-73.9632
-met:246741,Greek,culture,39.0742,21.8243,40.7794,-73.9632
-met:246744,"Greek, Argive",culture,37.6333,22.7167,40.7794,-73.9632
-met:246745,,unresolved,,,40.7794,-73.9632
-met:246748,"Greek, South Italian",culture,40.5,16.5,40.7794,-73.9632
-met:247913,Etruscan,culture,42.8,11.5,40.7794,-73.9632
-met:247914,"Greek, Attic",culture,38.0,23.7,40.7794,-73.9632
-met:247917,"Greek, Corinthian",culture,37.9061,22.9327,40.7794,-73.9632
-met:247918,"Greek, Corinthian",culture,37.9061,22.9327,40.7794,-73.9632
-met:247921,"Greek, Attic",culture,38.0,23.7,40.7794,-73.9632
-met:307438,Colombia,country,4.5709,-74.2973,40.7794,-73.9632
-met:307726,Mesoamérica,region,19.0,-99.0,40.7794,-73.9632
-met:307730,Mesoamérica,region,19.0,-99.0,40.7794,-73.9632
-met:307734,Mesoamérica,region,19.0,-99.0,40.7794,-73.9632
-met:307738,Mesoamérica,region,19.0,-99.0,40.7794,-73.9632
-met:309028,Peru,country,-9.19,-75.0152,40.7794,-73.9632
-met:309032,Peru,country,-9.19,-75.0152,40.7794,-73.9632
-met:309036,Peru,country,-9.19,-75.0152,40.7794,-73.9632
-met:309040,Peru,country,-9.19,-75.0152,40.7794,-73.9632
-met:311551,Indonesia,country,-0.7893,113.9213,40.7794,-73.9632
-met:311555,Indonesia,country,-0.7893,113.9213,40.7794,-73.9632
-met:311559,Indonesia,country,-0.7893,113.9213,40.7794,-73.9632
-met:311563,Indonesia,country,-0.7893,113.9213,40.7794,-73.9632
-met:314262,Nigeria,country,9.082,8.6753,40.7794,-73.9632
-met:314266,Ghana,country,7.9465,-1.0232,40.7794,-73.9632
-met:314270,centro de Costa de Marfil,region,7.54,-5.5471,40.7794,-73.9632
-met:314274,centro de Costa de Marfil,region,7.54,-5.5471,40.7794,-73.9632
-met:316716,Peru,country,-9.19,-75.0152,40.7794,-73.9632
-met:316720,Peru,country,-9.19,-75.0152,40.7794,-73.9632
-met:316724,Colombia,country,4.5709,-74.2973,40.7794,-73.9632
-met:316728,Colombia,country,4.5709,-74.2973,40.7794,-73.9632
-met:321470,norte de Siria o este de Anatolia,region,37.0,39.0,40.7794,-73.9632
-met:322066,Mesopotamia,region,33.0,44.0,40.7794,-73.9632
-met:322624,Mesopotamia,region,33.0,44.0,40.7794,-73.9632
-met:322910,Ur (modern Tell al-Muqayyar),subregion,30.9626,46.1039,40.7794,-73.9632
-met:323174,Levante,region,33.5,36.0,40.7794,-73.9632
-met:323610,posiblemente de Acemhöyük,subregion,38.19,34.17,40.7794,-73.9632
-met:323950,Kamterlan II,subregion,33.5,47.5,40.7794,-73.9632
-met:324116,Mesopotamia,region,33.0,44.0,40.7794,-73.9632
-met:324797,presuntamente de Ziwiye,subregion,36.05,47.3,40.7794,-73.9632
-met:325417,Nippur,subregion,32.13,45.24,40.7794,-73.9632
-met:325572,Nimrud (ancient Kalhu),subregion,36.0994,43.325,40.7794,-73.9632
-met:326082,Tell Taya,subregion,36.4,42.0,40.7794,-73.9632
-met:326373,posiblemente de Kültepe (Karum Kanesh),subregion,38.85,35.62,40.7794,-73.9632
-met:326466,Shahr-i Qumis (ancient Hecatompylos),subregion,35.95,54.38,40.7794,-73.9632
-met:327079,Siria,region,34.8021,38.9968,40.7794,-73.9632
-met:327547,península ibérica,region,40.0,-4.0,40.7794,-73.9632
-met:327754,Siria,region,34.8021,38.9968,40.7794,-73.9632
-met:328095,Siria,region,34.8021,38.9968,40.7794,-73.9632
-met:328593,Bactriana-Margiana o este de Irán,region,36.0,62.0,40.7794,-73.9632
-met:328744,Mesopotamia o Irán,region,33.5,45.5,40.7794,-73.9632
-met:329067,Mesopotamia,region,33.0,44.0,40.7794,-73.9632
-met:445491,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:445493,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:445495,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:445497,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:446966,Irán (probable),country,32.4279,53.688,40.7794,-73.9632
-met:446968,Uzbekistán,country,41.3775,64.5853,40.7794,-73.9632
-met:446970,Uzbekistán,country,41.3775,64.5853,40.7794,-73.9632
-met:446973,Uzbekistán,country,41.3775,64.5853,40.7794,-73.9632
-met:448266,Irán,country,32.4279,53.688,40.7794,-73.9632
-met:448268,Siria,country,34.8021,38.9968,40.7794,-73.9632
-met:448270,Irán,country,32.4279,53.688,40.7794,-73.9632
-met:448273,Siria,country,34.8021,38.9968,40.7794,-73.9632
-met:448735,Irak,country,33.2232,43.6793,40.7794,-73.9632
-met:448737,Irak,country,33.2232,43.6793,40.7794,-73.9632
-met:448739,Irak,country,33.2232,43.6793,40.7794,-73.9632
-met:448741,Irak,country,33.2232,43.6793,40.7794,-73.9632
-met:448742,Irak,country,33.2232,43.6793,40.7794,-73.9632
-met:543863,área de Dendera,subregion,26.14,32.67,40.7794,-73.9632
-met:543866,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:543870,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543875,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543881,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:543890,Lisht North,subregion,29.5667,31.2167,40.7794,-73.9632
-met:543894,Lisht North,subregion,29.5667,31.2167,40.7794,-73.9632
-met:543895,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
-met:543896,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
-met:543897,Memphis (Mit Rahina),subregion,29.8483,31.25,40.7794,-73.9632
-met:543898,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:543899,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
-met:543900,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543901,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543902,Giza or Saqqara,subregion,29.924,31.1739,40.7794,-73.9632
-met:543903,Elkab,subregion,25.1167,32.8,40.7794,-73.9632
-met:543904,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543905,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
-met:543906,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543907,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543908,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:543909,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
-met:543910,Hurbeit (Pharbaethos),subregion,30.65,31.65,40.7794,-73.9632
-met:543911,Lisht North,subregion,29.5667,31.2167,40.7794,-73.9632
-met:543912,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543913,,unresolved,,,40.7794,-73.9632
-met:543914,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543915,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543916,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543917,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
-met:543918,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
-met:543919,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
-met:543920,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:543921,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543922,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543923,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543924,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
-met:543925,Abydos,subregion,26.1833,31.9192,40.7794,-73.9632
-met:543926,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:543927,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:543928,Egipto,country,26.8206,30.8025,40.7794,-73.9632
-met:781871,Irán,region,32.4279,53.688,40.7794,-73.9632
-met:820847,,unresolved,,,40.7794,-73.9632
-met:891607,French,unresolved,,,40.7794,-73.9632
-met:918237,British,unresolved,,,40.7794,-73.9632
-met:969159,,unresolved,,,40.7794,-73.9632
+objectID,origin_label,origin_label_en,origin_precision,origin_lat,origin_lon,museum_lat,museum_lon
+met:36203,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:36204,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:36205,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:36207,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:36209,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:38945,India (Tamil Nadu),India (Tamil Nadu),culture,20.5937,78.9629,40.7794,-73.9632
+met:38947,India (Kerala),India (Kerala),culture,20.5937,78.9629,40.7794,-73.9632
+met:38948,Cambodia or Thailand,Cambodia or Thailand,culture,15.87,100.9925,40.7794,-73.9632
+met:38949,Northeastern Thailand,Northeastern Thailand,culture,15.87,100.9925,40.7794,-73.9632
+met:38951,"Plai Bat II Temple, Lahan Sai District, Buriram Province, Thailand","Plai Bat II Temple, Lahan Sai District, Buriram Province, Thailand",culture,15.87,100.9925,40.7794,-73.9632
+met:41772,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:41774,Japan,Japan,culture,36.2048,138.2529,40.7794,-73.9632
+met:41775,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:41776,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:41778,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:44396,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:44398,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:44399,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:44400,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:44402,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:45836,Japan,Japan,culture,36.2048,138.2529,40.7794,-73.9632
+met:45838,Japan,Japan,culture,36.2048,138.2529,40.7794,-73.9632
+met:45839,Japan,Japan,culture,36.2048,138.2529,40.7794,-73.9632
+met:45840,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:45842,China,China,culture,35.8617,104.1954,40.7794,-73.9632
+met:76035,India,India,country,20.5937,78.9629,40.7794,-73.9632
+met:80390,Siria,Syria,country,34.8021,38.9968,40.7794,-73.9632
+met:80721,,,unresolved,,,40.7794,-73.9632
+met:85498,Medio Oriente,Middle East,region,30.0,40.0,40.7794,-73.9632
+met:85500,Uzbekistán,present-day Uzbekistan,country,41.3775,64.5853,40.7794,-73.9632
+met:85501,Uzbekistán,present-day Uzbekistan,country,41.3775,64.5853,40.7794,-73.9632
+met:85503,Uzbekistán,present-day Uzbekistan,country,41.3775,64.5853,40.7794,-73.9632
+met:85505,Medio Oriente,Middle East,region,30.0,40.0,40.7794,-73.9632
+met:89985,Guatemala,Guatemala,country,15.7835,-90.2308,40.7794,-73.9632
+met:90277,Peru,Peru,country,-9.19,-75.0152,40.7794,-73.9632
+met:96404,República Democrática del Congo,Democratic Republic of the Congo,country,-4.0383,21.7587,40.7794,-73.9632
+met:105510,Estados Unidos,United States,country,39.8283,-98.5795,40.7794,-73.9632
+met:123386,Guatemala,Guatemala,country,15.7835,-90.2308,40.7794,-73.9632
+met:240028,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:240029,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:240032,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:240033,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:240036,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:241666,"Roman, Cypriot","Roman, Cypriot",culture,35.1264,33.4299,40.7794,-73.9632
+met:241667,Roman,Roman,culture,41.8719,12.5674,40.7794,-73.9632
+met:241670,Roman,Roman,culture,41.8719,12.5674,40.7794,-73.9632
+met:241671,Roman,Roman,culture,41.8719,12.5674,40.7794,-73.9632
+met:241674,Roman,Roman,culture,41.8719,12.5674,40.7794,-73.9632
+met:244348,"Roman, Cypriot","Roman, Cypriot",culture,35.1264,33.4299,40.7794,-73.9632
+met:244349,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:244352,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:244353,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:244355,Cypriot,Cypriot,culture,35.1264,33.4299,40.7794,-73.9632
+met:246740,Greek,Greek,culture,39.0742,21.8243,40.7794,-73.9632
+met:246741,Greek,Greek,culture,39.0742,21.8243,40.7794,-73.9632
+met:246744,"Greek, Argive","Greek, Argive",culture,37.6333,22.7167,40.7794,-73.9632
+met:246745,,,unresolved,,,40.7794,-73.9632
+met:246748,"Greek, South Italian","Greek, South Italian",culture,40.5,16.5,40.7794,-73.9632
+met:247913,Etruscan,Etruscan,culture,42.8,11.5,40.7794,-73.9632
+met:247914,"Greek, Attic","Greek, Attic",culture,38.0,23.7,40.7794,-73.9632
+met:247917,"Greek, Corinthian","Greek, Corinthian",culture,37.9061,22.9327,40.7794,-73.9632
+met:247918,"Greek, Corinthian","Greek, Corinthian",culture,37.9061,22.9327,40.7794,-73.9632
+met:247921,"Greek, Attic","Greek, Attic",culture,38.0,23.7,40.7794,-73.9632
+met:307438,Colombia,Colombia,country,4.5709,-74.2973,40.7794,-73.9632
+met:307726,Mesoamérica,Mesoamerica,region,19.0,-99.0,40.7794,-73.9632
+met:307730,Mesoamérica,Mesoamerica,region,19.0,-99.0,40.7794,-73.9632
+met:307734,Mesoamérica,Mesoamerica,region,19.0,-99.0,40.7794,-73.9632
+met:307738,Mesoamérica,Mesoamerica,region,19.0,-99.0,40.7794,-73.9632
+met:309028,Peru,Peru,country,-9.19,-75.0152,40.7794,-73.9632
+met:309032,Peru,Peru,country,-9.19,-75.0152,40.7794,-73.9632
+met:309036,Peru,Peru,country,-9.19,-75.0152,40.7794,-73.9632
+met:309040,Peru,Peru,country,-9.19,-75.0152,40.7794,-73.9632
+met:311551,Indonesia,Indonesia,country,-0.7893,113.9213,40.7794,-73.9632
+met:311555,Indonesia,Indonesia,country,-0.7893,113.9213,40.7794,-73.9632
+met:311559,Indonesia,Indonesia,country,-0.7893,113.9213,40.7794,-73.9632
+met:311563,Indonesia,Indonesia,country,-0.7893,113.9213,40.7794,-73.9632
+met:314262,Nigeria,Nigeria,country,9.082,8.6753,40.7794,-73.9632
+met:314266,Ghana,Ghana,country,7.9465,-1.0232,40.7794,-73.9632
+met:314270,centro de Costa de Marfil,central Côte d'Ivoire,region,7.54,-5.5471,40.7794,-73.9632
+met:314274,centro de Costa de Marfil,central Côte d'Ivoire,region,7.54,-5.5471,40.7794,-73.9632
+met:316716,Peru,Peru,country,-9.19,-75.0152,40.7794,-73.9632
+met:316720,Peru,Peru,country,-9.19,-75.0152,40.7794,-73.9632
+met:316724,Colombia,Colombia,country,4.5709,-74.2973,40.7794,-73.9632
+met:316728,Colombia,Colombia,country,4.5709,-74.2973,40.7794,-73.9632
+met:321470,norte de Siria o este de Anatolia,Northern Syria or eastern Anatolia,region,37.0,39.0,40.7794,-73.9632
+met:322066,Mesopotamia,Mesopotamia,region,33.0,44.0,40.7794,-73.9632
+met:322624,Mesopotamia,Mesopotamia,region,33.0,44.0,40.7794,-73.9632
+met:322910,Ur (modern Tell al-Muqayyar),Ur (modern Tell al-Muqayyar),subregion,30.9626,46.1039,40.7794,-73.9632
+met:323174,Levante,Levant,region,33.5,36.0,40.7794,-73.9632
+met:323610,posiblemente de Acemhöyük,probably from Acemhöyük,subregion,38.19,34.17,40.7794,-73.9632
+met:323950,Kamterlan II,Kamterlan II,subregion,33.5,47.5,40.7794,-73.9632
+met:324116,Mesopotamia,Mesopotamia,region,33.0,44.0,40.7794,-73.9632
+met:324797,presuntamente de Ziwiye,said to be from Ziwiye,subregion,36.05,47.3,40.7794,-73.9632
+met:325417,Nippur,Nippur,subregion,32.13,45.24,40.7794,-73.9632
+met:325572,Nimrud (ancient Kalhu),Nimrud (ancient Kalhu),subregion,36.0994,43.325,40.7794,-73.9632
+met:326082,Tell Taya,Tell Taya,subregion,36.4,42.0,40.7794,-73.9632
+met:326373,posiblemente de Kültepe (Karum Kanesh),probably from Kültepe (Karum Kanesh),subregion,38.85,35.62,40.7794,-73.9632
+met:326466,Shahr-i Qumis (ancient Hecatompylos),Shahr-i Qumis (ancient Hecatompylos),subregion,35.95,54.38,40.7794,-73.9632
+met:327079,Siria,Syria,region,34.8021,38.9968,40.7794,-73.9632
+met:327547,península ibérica,Iberian Peninsula,region,40.0,-4.0,40.7794,-73.9632
+met:327754,Siria,Syria,region,34.8021,38.9968,40.7794,-73.9632
+met:328095,Siria,Syria,region,34.8021,38.9968,40.7794,-73.9632
+met:328593,Bactriana-Margiana o este de Irán,Bactria-Margiana or eastern Iran,region,36.0,62.0,40.7794,-73.9632
+met:328744,Mesopotamia o Irán,Mesopotamia or Iran,region,33.5,45.5,40.7794,-73.9632
+met:329067,Mesopotamia,Mesopotamia,region,33.0,44.0,40.7794,-73.9632
+met:445491,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:445493,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:445495,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:445497,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:446966,Irán (probable),probably Iran,country,32.4279,53.688,40.7794,-73.9632
+met:446968,Uzbekistán,present-day Uzbekistan,country,41.3775,64.5853,40.7794,-73.9632
+met:446970,Uzbekistán,present-day Uzbekistan,country,41.3775,64.5853,40.7794,-73.9632
+met:446973,Uzbekistán,present-day Uzbekistan,country,41.3775,64.5853,40.7794,-73.9632
+met:448266,Irán,Iran,country,32.4279,53.688,40.7794,-73.9632
+met:448268,Siria,Syria,country,34.8021,38.9968,40.7794,-73.9632
+met:448270,Irán,Iran,country,32.4279,53.688,40.7794,-73.9632
+met:448273,Siria,Syria,country,34.8021,38.9968,40.7794,-73.9632
+met:448735,Irak,Iraq,country,33.2232,43.6793,40.7794,-73.9632
+met:448737,Irak,Iraq,country,33.2232,43.6793,40.7794,-73.9632
+met:448739,Irak,Iraq,country,33.2232,43.6793,40.7794,-73.9632
+met:448741,Irak,Iraq,country,33.2232,43.6793,40.7794,-73.9632
+met:448742,Irak,Iraq,country,33.2232,43.6793,40.7794,-73.9632
+met:543863,área de Dendera,Dendera area,subregion,26.14,32.67,40.7794,-73.9632
+met:543866,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:543870,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543875,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543881,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:543890,Lisht North,Lisht North,subregion,29.5667,31.2167,40.7794,-73.9632
+met:543894,Lisht North,Lisht North,subregion,29.5667,31.2167,40.7794,-73.9632
+met:543895,Giza,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
+met:543896,Giza,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
+met:543897,Memphis (Mit Rahina),Memphis (Mit Rahina),subregion,29.8483,31.25,40.7794,-73.9632
+met:543898,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:543899,Giza,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
+met:543900,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543901,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543902,Giza or Saqqara,Giza or Saqqara,subregion,29.924,31.1739,40.7794,-73.9632
+met:543903,Elkab,Elkab,subregion,25.1167,32.8,40.7794,-73.9632
+met:543904,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543905,Giza,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
+met:543906,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543907,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543908,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:543909,Giza,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
+met:543910,Hurbeit (Pharbaethos),Hurbeit (Pharbaethos),subregion,30.65,31.65,40.7794,-73.9632
+met:543911,Lisht North,Lisht North,subregion,29.5667,31.2167,40.7794,-73.9632
+met:543912,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543913,,,unresolved,,,40.7794,-73.9632
+met:543914,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543915,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543916,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543917,Giza,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
+met:543918,Giza,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
+met:543919,Giza,Giza,subregion,29.9765,31.1313,40.7794,-73.9632
+met:543920,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:543921,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543922,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543923,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543924,Saqqara,Saqqara,subregion,29.8714,31.2164,40.7794,-73.9632
+met:543925,Abydos,Abydos,subregion,26.1833,31.9192,40.7794,-73.9632
+met:543926,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:543927,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:543928,Egipto,Egypt,country,26.8206,30.8025,40.7794,-73.9632
+met:781871,Irán,Iran,region,32.4279,53.688,40.7794,-73.9632
+met:820847,,,unresolved,,,40.7794,-73.9632
+met:891607,French,French,unresolved,,,40.7794,-73.9632
+met:918237,British,British,unresolved,,,40.7794,-73.9632
+met:969159,,,unresolved,,,40.7794,-73.9632

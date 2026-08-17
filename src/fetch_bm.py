@@ -193,6 +193,15 @@ SEED_OBJECT_IDS = [
     "A_1958-1112-1",  # Hacha neolítica — Oc-eo, Vietnam
     "A_1927-0613-1",  # Retablo — Nepal (s. XVIII-XIX)
     "E_Oc-6509",  # Azuela — Vava'u, Tonga
+    # Séptima ronda (17/08) — misma metodología. Prioriza países todavía sin
+    # cobertura: Chile (más allá de la genérica "Patagonia" ya cubierta vía
+    # Perú/Colombia), Senegal, Mali, Tailandia, Mongolia y Madagascar.
+    "E_Am-5786-a",  # Bolsa tejida — Arica, Chile (cultura arica/chinchorro costera)
+    "E_Af1990-04-18",  # Portabebé, pueblo bassari — Ethiolo Engop, Senegal (1990)
+    "E_Af1913-43",  # Azuela — excavada en Yelimané, Mali
+    "A_2004-0628-24",  # Altar, período Ratnakosin — Tailandia (s. XIX)
+    "A_As1903-1006-8",  # Gorro, pueblo khalka — Mongolia
+    "E_Af1900-0524-37",  # Brazalete, pueblo malgache — Madagascar (1896)
 ]
 
 

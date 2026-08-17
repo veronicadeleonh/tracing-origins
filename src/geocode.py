@@ -161,6 +161,94 @@ def es_label(raw: str) -> str:
     muestra al final en la ficha de la pieza."""
     return ES_NAMES.get(raw, raw)
 
+
+# ---------------------------------------------------------------------------
+# Traducción al inglés (toggle ES/EN, ampliado el 17/08 — ver CLAUDE.md,
+# "Pendiente de decidir"). Mismo mecanismo que ES_NAMES: el Met usa
+# subregion/region/country tal cual vienen de su API (ya en inglés), así que
+# la gran mayoría de sus labels no necesitan entrada acá — el fallback (raw
+# sin traducir) YA es inglés correcto. Lo que sí necesita traducción real es
+# el Louvre (sus claves son texto francés) — de ahí que EN_NAMES tenga casi
+# las mismas claves que el bloque francés de ES_NAMES, pero con destino
+# inglés en vez de español. El BM NO usa este diccionario en absoluto desde
+# el 17/08: sus tablas (BM_SITE_COORDS/BM_COUNTRY_KEYWORDS) pasaron a
+# 4-tuplas con display_es/display_en explícitos, porque sus "display" ya
+# venían mezclados (algunos en inglés crudo, otros ya traducidos a mano al
+# español en rondas anteriores) — meterlos en un diccionario compartido
+# hubiera requerido las mismas ~90 traducciones ad-hoc, así que se optó por
+# la fuente explícita en vez de una capa de indirección.
+EN_NAMES: dict[str, str] = {
+    # Países/regiones — formas en francés (Louvre)
+    "Chypre": "Cyprus",
+    "Égypte": "Egypt",
+    "Egypte": "Egypt",
+    "Irak": "Iraq",
+    "Turquie": "Turkey",
+    "Grèce": "Greece",
+    "Etrurie": "Etruria",
+    "Étrurie": "Etruria",
+    "Italie": "Italy",
+    "Syrie": "Syria",
+    "Espagne": "Spain",
+    "Maroc": "Morocco",
+    "Liban": "Lebanon",
+    "Ouzbékistan": "Uzbekistan",
+    "Inde": "India",
+    "Indonésie": "Indonesia",
+    "Anatolie": "Anatolia",
+    "Mésopotamie": "Mesopotamia",
+    "Proche-Orient": "Near East",
+    "Perse": "Persia",
+    "Babylonie": "Babylonia (region)",
+    "Tunisie": "Tunisia",
+    "Sicile": "Sicily",
+    # Sitios del Louvre con ortografía francesa distinta de la inglesa
+    "Deir el-Médineh": "Deir el-Medina",
+    "Thèbes": "Thebes",
+    "Louxor": "Luxor",
+    "Assiout": "Asyut",
+    "Assouan": "Aswan",
+    "Éléphantine": "Elephantine",
+    "Médamoud": "Medamud",
+    "Tôd": "Tod",
+    "Kôm Ombo": "Kom Ombo",
+    "Abou Roach": "Abu Rawash",
+    "Abou Rawach": "Abu Rawash",
+    "Méroé": "Meroe",
+    "Suse": "Susa",
+    "Persépolis": "Persepolis",
+    "Ninive": "Nineveh",
+    "Nimroud": "Nimrud",
+    "Babylone": "Babylon",
+    "Mari sur l'Euphrate": "Mari, on the Euphrates",
+    "Ougarit": "Ugarit",
+    "Mégiddo": "Megiddo",
+    "Palmyre": "Palmyra",
+    "Kultépé": "Kültepe",
+    "Bactres": "Bactra",
+    "Délos": "Delos",
+    "Delphes": "Delphi",
+    "Olympie": "Olympia",
+    "Cnide": "Cnidus",
+    "Cervéteri": "Cerveteri",
+    "Herculanum": "Herculaneum",
+    "Pompéi": "Pompeii",
+    "Antioche": "Antioch",
+    "Mélos": "Melos",
+    "Diban": "Dhiban",
+    "Éleutherne": "Eleutherna",
+    "Pharsale": "Pharsalus",
+    "Tyr": "Tyre",
+}
+
+
+def en_label(raw: str) -> str:
+    """Equivalente en inglés de es_label() — mismo criterio: si no hay
+    traducción cargada, se devuelve el texto crudo tal cual (para el Met
+    esto casi siempre ya es inglés correcto, así que el diccionario queda
+    corto a propósito)."""
+    return EN_NAMES.get(raw, raw)
+
 # Países modernos (centroides aproximados, suficiente para un mapa de rutas)
 COUNTRY_COORDS = {
     "Egypt": (26.8206, 30.8025),
@@ -282,7 +370,7 @@ CULTURE_KEYWORDS = [
 def resolve_from_culture(culture: str) -> dict | None:
     for keyword, (lat, lon) in CULTURE_KEYWORDS:
         if keyword.lower() in culture.lower():
-            return {"label": culture, "precision": "culture", "lat": lat, "lon": lon}
+            return {"label": culture, "label_en": culture, "precision": "culture", "lat": lat, "lon": lon}
     return None
 
 
@@ -298,15 +386,15 @@ def resolve_origin(obj: dict) -> dict:
 
     if subregion in SUBREGION_COORDS:
         lat, lon = SUBREGION_COORDS[subregion]
-        return {"label": es_label(subregion), "precision": "subregion", "lat": lat, "lon": lon}
+        return {"label": es_label(subregion), "label_en": en_label(subregion), "precision": "subregion", "lat": lat, "lon": lon}
 
     if region in REGION_COORDS:
         lat, lon = REGION_COORDS[region]
-        return {"label": es_label(region), "precision": "region", "lat": lat, "lon": lon}
+        return {"label": es_label(region), "label_en": en_label(region), "precision": "region", "lat": lat, "lon": lon}
 
     if country in COUNTRY_COORDS:
         lat, lon = COUNTRY_COORDS[country]
-        return {"label": es_label(country), "precision": "country", "lat": lat, "lon": lon}
+        return {"label": es_label(country), "label_en": en_label(country), "precision": "country", "lat": lat, "lon": lon}
 
     culture = (obj.get("culture") or "").strip()
     if culture:
@@ -315,7 +403,7 @@ def resolve_origin(obj: dict) -> dict:
             return from_culture
 
     raw_label = subregion or region or country or culture or ""
-    return {"label": raw_label, "precision": "unresolved", "lat": None, "lon": None}
+    return {"label": raw_label, "label_en": raw_label, "precision": "unresolved", "lat": None, "lon": None}
 
 
 # ---------------------------------------------------------------------------
@@ -458,13 +546,13 @@ def resolve_origin_louvre(obj: dict) -> dict:
 
     for site, (lat, lon) in LOUVRE_SITE_COORDS:
         if site.lower() in haystack.lower():
-            return {"label": es_label(site), "precision": "site", "lat": lat, "lon": lon}
+            return {"label": es_label(site), "label_en": en_label(site), "precision": "site", "lat": lat, "lon": lon}
 
     for country, (lat, lon) in LOUVRE_COUNTRY_KEYWORDS:
         if country.lower() in haystack.lower():
-            return {"label": es_label(country), "precision": "country", "lat": lat, "lon": lon}
+            return {"label": es_label(country), "label_en": en_label(country), "precision": "country", "lat": lat, "lon": lon}
 
-    return {"label": label, "precision": "unresolved", "lat": None, "lon": None}
+    return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None}
 
 
 # ---------------------------------------------------------------------------
@@ -486,117 +574,139 @@ def resolve_origin_louvre(obj: dict) -> dict:
 # visitante. Las entradas viejas (antes de la quinta ronda) mantienen el
 # nombre en inglés como display por ahora — limpiarlas todas es una mejora
 # incremental pendiente, no bloqueante.
+# Restructurado el 17/08 (ver "originLabel EN" en CLAUDE.md) de 3-tuplas
+# (keyword, display, coords) a 4-tuplas (keyword, display_es, display_en,
+# coords): a diferencia de Met/Louvre, los "display" del BM no eran una
+# clave de diccionario reutilizable — eran texto final ad-hoc, a veces
+# inglés crudo, a veces ya traducido a mano al español en rondas anteriores.
+# Meterlos en ES_NAMES/EN_NAMES hubiera requerido las mismas ~90 entradas
+# ad-hoc que ya vivían acá, sin ninguna ventaja real. display_es reproduce
+# exactamente lo que ya mostraba la app antes de este cambio (incluye los
+# casos donde antes se dependía de un lookup en ES_NAMES, ej. "Parthenon" ->
+# "Partenón", "Kumase" -> "Kumasi" — ver git history si hace falta
+# reconstruir esa cadena).
 BM_SITE_COORDS = [
-    ("Fort Saint Julien", "Fort Saint Julien", (31.4022, 30.4181)),  # Rosetta / el-Rashid, Egipto
-    ("Kawa", "Kawa", (19.0800, 30.3600)),  # Nubia, Sudán
-    ("Nimrud", "Nimrud", (36.0994, 43.3250)),
-    ("Trincomalee", "Trincomalee", (8.5711, 81.2335)),
-    ("Benin City", "Benin City", (6.3350, 5.6037)),
-    ("Orongo", "Orongo", (-27.1836, -109.4306)),  # Rapa Nui / Isla de Pascua — sitio ceremonial, Hoa Hakananai'a
-    ("Rano Kao", "Rano Kao", (-27.1667, -109.4333)),  # Rapa Nui / Isla de Pascua
-    ("Parthenon", "Parthenon", (37.9715, 23.7267)),  # Acrópolis, Atenas
-    ("Maqdala", "Maqdala", (11.8000, 39.7000)),  # Amba Mariam, Etiopía — colección Maqdala (1868)
-    ("Kumase", "Kumase", (6.6885, -1.6244)),  # Kumasi, capital histórica del reino Asante
-    ("Asante Region", "Asante Region", (6.7500, -1.5000)),  # Ghana
-    ("Yuanmingyuan", "Yuanmingyuan", (40.0084, 116.2966)),  # Antiguo Palacio de Verano, Beijing
-    ("Amaravati", "Amaravati", (16.5730, 80.3567)),  # Andhra Pradesh, India
-    ("Takht-i Kuwad", "Takht-i Kuwad", (37.1500, 68.3667)),  # Tesoro de Oxus, actual Tayikistán
-    ("Babylon", "Babylon", (32.5425, 44.4213)),  # Irak
-    ("Nineveh", "Nineveh", (36.3600, 43.1500)),  # Irak
-    ("Queensland", "Queensland", (-22.5752, 144.0848)),
-    ("Ife", "Ife", (7.4905, 4.5521)),  # Nigeria, distinto de Benin City
-    ("Haida Gwaii", "Haida Gwaii", (53.2500, -132.0000)),  # Columbia Británica, Canadá
-    ("Trujillo", "Trujillo", (-8.1116, -79.0290)),  # costa norte de Perú, cultura moche
-    ("Gandhara", "Gandhara", (34.0000, 71.5000)),  # actual Pakistán
-    ("Angkor", "Angkor", (13.4125, 103.8670)),  # Camboya
-    ("Carchemish", "Carchemish", (36.8167, 38.0167)),  # frontera Turquía/Siria
-    ("Aksum", "Aksum", (14.1211, 38.7167)),  # Etiopía
-    ("Sepik River", "Sepik River", (-4.1000, 143.9000)),  # Nueva Guinea
-    ("Marib", "Marib", (15.4300, 45.3286)),  # Yemen, antigua capital sabea
-    ("Faras", "Faras", (22.1833, 31.9000)),  # Nubia, Sudán
-    ("Hawaiian Islands", "Hawaiian Islands", (19.8968, -155.5828)),
-    ("Hawaii", "Hawaii", (19.8968, -155.5828)),
-    ("Northwest Territories", "Northwest Territories", (64.8255, -124.8457)),  # Canadá
-    ("Hokkaido", "Hokkaido", (43.2203, 142.8635)),  # Japón — territorio ainu
-    ("Zanzibar", "Zanzibar", (-6.1659, 39.2026)),  # Tanzania
-    ("Ambrym", "Ambrym", (-16.2500, 168.1167)),  # Vanuatu
-    ("Amathus", "Amathus", (34.7167, 33.1333)),  # Chipre
-    ("Cartagena", "Cartagena", (10.3910, -75.4794)),  # Colombia
-    ("Rajshahi", "Rajshahi", (24.3745, 88.6042)),  # Bangladés
-    ("Santa Marta", "Santa Marta", (11.2408, -74.1990)),  # Colombia
-    ("Mandalay", "Mandalay", (21.9588, 96.0891)),  # Birmania (Myanmar)
+    ("Fort Saint Julien", "Fort Saint Julien", "Fort Saint Julien", (31.4022, 30.4181)),  # Rosetta / el-Rashid, Egipto
+    ("Kawa", "Kawa", "Kawa", (19.0800, 30.3600)),  # Nubia, Sudán
+    ("Nimrud", "Nimrud", "Nimrud", (36.0994, 43.3250)),
+    ("Trincomalee", "Trincomalee", "Trincomalee", (8.5711, 81.2335)),
+    ("Benin City", "Benin City", "Benin City", (6.3350, 5.6037)),
+    ("Orongo", "Orongo", "Orongo", (-27.1836, -109.4306)),  # Rapa Nui / Isla de Pascua — sitio ceremonial, Hoa Hakananai'a
+    ("Rano Kao", "Rano Kao", "Rano Kao", (-27.1667, -109.4333)),  # Rapa Nui / Isla de Pascua
+    ("Parthenon", "Partenón", "Parthenon", (37.9715, 23.7267)),  # Acrópolis, Atenas
+    ("Maqdala", "Maqdala", "Maqdala", (11.8000, 39.7000)),  # Amba Mariam, Etiopía — colección Maqdala (1868)
+    ("Kumase", "Kumasi", "Kumasi", (6.6885, -1.6244)),  # capital histórica del reino Asante
+    ("Asante Region", "Región Asante", "Asante Region", (6.7500, -1.5000)),  # Ghana
+    ("Yuanmingyuan", "Yuanmingyuan", "Yuanmingyuan", (40.0084, 116.2966)),  # Antiguo Palacio de Verano, Beijing
+    ("Amaravati", "Amaravati", "Amaravati", (16.5730, 80.3567)),  # Andhra Pradesh, India
+    ("Takht-i Kuwad", "Takht-i Kuwad", "Takht-i Kuwad", (37.1500, 68.3667)),  # Tesoro de Oxus, actual Tayikistán
+    ("Babylon", "Babilonia", "Babylon", (32.5425, 44.4213)),  # Irak
+    ("Nineveh", "Nínive", "Nineveh", (36.3600, 43.1500)),  # Irak
+    ("Queensland", "Queensland", "Queensland", (-22.5752, 144.0848)),
+    ("Ife", "Ife", "Ife", (7.4905, 4.5521)),  # Nigeria, distinto de Benin City
+    ("Haida Gwaii", "Haida Gwaii", "Haida Gwaii", (53.2500, -132.0000)),  # Columbia Británica, Canadá
+    ("Trujillo", "Trujillo", "Trujillo", (-8.1116, -79.0290)),  # costa norte de Perú, cultura moche
+    ("Gandhara", "Gandhara", "Gandhara", (34.0000, 71.5000)),  # actual Pakistán
+    ("Angkor", "Angkor", "Angkor", (13.4125, 103.8670)),  # Camboya
+    ("Carchemish", "Carchemish", "Carchemish", (36.8167, 38.0167)),  # frontera Turquía/Siria
+    ("Aksum", "Aksum", "Aksum", (14.1211, 38.7167)),  # Etiopía
+    ("Sepik River", "Río Sepik", "Sepik River", (-4.1000, 143.9000)),  # Nueva Guinea
+    ("Marib", "Marib", "Marib", (15.4300, 45.3286)),  # Yemen, antigua capital sabea
+    ("Faras", "Faras", "Faras", (22.1833, 31.9000)),  # Nubia, Sudán
+    ("Hawaiian Islands", "Islas Hawái", "Hawaiian Islands", (19.8968, -155.5828)),
+    ("Hawaii", "Hawái", "Hawaii", (19.8968, -155.5828)),
+    ("Northwest Territories", "Territorios del Noroeste", "Northwest Territories", (64.8255, -124.8457)),  # Canadá
+    ("Hokkaido", "Hokkaido", "Hokkaido", (43.2203, 142.8635)),  # Japón — territorio ainu
+    ("Zanzibar", "Zanzibar", "Zanzibar", (-6.1659, 39.2026)),  # Tanzania
+    ("Ambrym", "Ambrym", "Ambrym", (-16.2500, 168.1167)),  # Vanuatu
+    ("Amathus", "Amathus", "Amathus", (34.7167, 33.1333)),  # Chipre
+    ("Cartagena", "Cartagena", "Cartagena", (10.3910, -75.4794)),  # Colombia
+    ("Rajshahi", "Rajshahi", "Rajshahi", (24.3745, 88.6042)),  # Bangladés
+    ("Santa Marta", "Santa Marta", "Santa Marta", (11.2408, -74.1990)),  # Colombia
+    ("Mandalay", "Mandalay", "Mandalay", (21.9588, 96.0891)),  # Birmania (Myanmar)
     # Quinta ronda de curación (17/08) — sitios nuevos sin cobertura previa.
-    ("Persepolis", "Persépolis", (29.9354, 52.8916)),  # Irán, capital aqueménida
-    ("Bimaran", "Bimaran, Afganistán", (34.4300, 70.4500)),  # cerca de Jalalabad — Estupa de Bimaran
-    ("Lhasa", "Lhasa, Tíbet", (29.6500, 91.1000)),
-    ("Great Zimbabwe", "Great Zimbabwe", (-20.2675, 30.9337)),  # Zimbabue
-    ("Luzira", "Luzira, Uganda", (0.2667, 32.6500)),  # cerca de Kampala
-    ("Bigo", "Bigo bya Mugenyi, Uganda", (-0.5333, 31.4167)),  # earthworks
-    ("Ophel", "Ophel, Jerusalén", (31.7745, 35.2354)),  # excavación bíblica
-    ("Jerusalem", "Jerusalén", (31.7683, 35.2137)),
-    ("Nebaj", "Nebaj, Guatemala", (15.4045, -91.1502)),  # tierras altas mayas
-    ("Java", "Java", (-7.5000, 110.0000)),  # Indonesia — coordenada central de la isla
+    ("Persepolis", "Persépolis", "Persepolis", (29.9354, 52.8916)),  # Irán, capital aqueménida
+    ("Bimaran", "Bimaran, Afganistán", "Bimaran, Afghanistan", (34.4300, 70.4500)),  # cerca de Jalalabad — Estupa de Bimaran
+    ("Lhasa", "Lhasa, Tíbet", "Lhasa, Tibet", (29.6500, 91.1000)),
+    ("Great Zimbabwe", "Great Zimbabwe", "Great Zimbabwe", (-20.2675, 30.9337)),  # Zimbabue
+    ("Luzira", "Luzira, Uganda", "Luzira, Uganda", (0.2667, 32.6500)),  # cerca de Kampala
+    ("Bigo", "Bigo bya Mugenyi, Uganda", "Bigo bya Mugenyi, Uganda", (-0.5333, 31.4167)),  # earthworks
+    ("Ophel", "Ophel, Jerusalén", "Ophel, Jerusalem", (31.7745, 35.2354)),  # excavación bíblica
+    ("Jerusalem", "Jerusalén", "Jerusalem", (31.7683, 35.2137)),
+    ("Nebaj", "Nebaj, Guatemala", "Nebaj, Guatemala", (15.4045, -91.1502)),  # tierras altas mayas
+    ("Java", "Java", "Java", (-7.5000, 110.0000)),  # Indonesia — coordenada central de la isla
     # Sexta ronda de curación (17/08) — sitios nuevos sin cobertura previa.
-    ("Cuenca", "Cuenca, Ecuador", (-2.9006, -79.0045)),  # colección William Bollaert, s. XIX
-    ("Aroma", "Aroma, Bolivia", (-17.6500, -67.9500)),  # provincia de La Paz
-    ("Atlas Mountains", "Montañas del Atlas, Marruecos", (31.0000, -7.9000)),
-    ("Oc-eo", "Óc Eo, Vietnam", (10.2167, 105.1333)),  # provincia de An Giang
-    ("Vava'u", "Vava'u, Tonga", (-18.6500, -173.9800)),
+    ("Cuenca", "Cuenca, Ecuador", "Cuenca, Ecuador", (-2.9006, -79.0045)),  # colección William Bollaert, s. XIX
+    ("Aroma", "Aroma, Bolivia", "Aroma, Bolivia", (-17.6500, -67.9500)),  # provincia de La Paz
+    ("Atlas Mountains", "Montañas del Atlas, Marruecos", "Atlas Mountains, Morocco", (31.0000, -7.9000)),
+    ("Oc-eo", "Óc Eo, Vietnam", "Óc Eo, Vietnam", (10.2167, 105.1333)),  # provincia de An Giang
+    ("Vava'u", "Vava'u, Tonga", "Vava'u, Tonga", (-18.6500, -173.9800)),
+    # Séptima ronda de curación (17/08) — sitios nuevos sin cobertura previa.
+    ("Arica", "Arica, Chile", "Arica, Chile", (-18.4783, -70.3126)),  # bahía del norte de Chile, cultura chinchorro/arica
+    ("Yelimané", "Yelimané, Malí", "Yelimané, Mali", (15.1167, -10.5667)),  # cercle de Yelimané, región de Kayes
 ]
 
 BM_COUNTRY_KEYWORDS = [
-    ("Sudan", "Sudan", (12.8628, 30.2176)),
-    ("Egypt", "Egypt", (26.8206, 30.8025)),
-    ("Sri Lanka", "Sri Lanka", (7.8731, 80.7718)),
-    ("Nigeria", "Nigeria", (9.0820, 8.6753)),
-    ("Iraq", "Iraq", (33.2232, 43.6793)),
-    ("Iran", "Iran", (32.4279, 53.6880)),
-    ("Ethiopia", "Ethiopia", (9.1450, 40.4897)),
-    ("Ghana", "Ghana", (7.9465, -1.0232)),
-    ("Greece", "Greece", (39.0742, 21.8243)),
-    ("Turkey", "Turkey", (38.9637, 35.2433)),
-    ("China", "China", (35.8617, 104.1954)),
-    ("India", "India", (20.5937, 78.9629)),
-    ("Easter Island", "Easter Island", (-27.1127, -109.3497)),
-    ("New Zealand", "New Zealand", (-40.9006, 174.8860)),
-    ("Tajikistan", "Tajikistan", (38.8610, 71.2761)),
-    ("Australia", "Australia", (-25.2744, 133.7751)),
-    ("Democratic Republic of Congo", "Democratic Republic of Congo", (-4.0383, 21.7587)),
-    ("South Africa", "South Africa", (-30.5595, 22.9375)),
-    ("Mexico", "Mexico", (23.6345, -102.5528)),
-    ("Korea", "Korea", (35.9078, 127.7669)),
-    ("Cambodia", "Cambodia", (12.5657, 104.9910)),
-    ("Jamaica", "Jamaica", (18.1096, -77.2975)),
-    ("Japan", "Japan", (36.2048, 138.2529)),
-    ("Pakistan", "Pakistan", (30.3753, 69.3451)),
-    ("Yemen", "Yemen", (15.5527, 48.5164)),
-    ("Papua New Guinea", "Papua New Guinea", (-6.3149, 143.9555)),
-    ("New Guinea", "New Guinea", (-6.3149, 143.9555)),
-    ("Fiji", "Fiji", (-17.7134, 178.0650)),
-    ("Solomon Islands", "Solomon Islands", (-9.6457, 160.1562)),
-    ("Canada", "Canada", (56.1304, -106.3468)),
-    ("Namibia", "Namibia", (-22.9576, 18.4904)),
-    ("Kenya", "Kenya", (-0.0236, 37.9062)),
-    ("Cyprus", "Cyprus", (35.1264, 33.4299)),
-    ("Cameroon", "Cameroon", (7.3697, 12.3547)),
-    ("Bangladesh", "Bangladesh", (23.6850, 90.3563)),
+    ("Sudan", "Sudán", "Sudan", (12.8628, 30.2176)),
+    ("Egypt", "Egipto", "Egypt", (26.8206, 30.8025)),
+    ("Sri Lanka", "Sri Lanka", "Sri Lanka", (7.8731, 80.7718)),
+    ("Nigeria", "Nigeria", "Nigeria", (9.0820, 8.6753)),
+    ("Iraq", "Irak", "Iraq", (33.2232, 43.6793)),
+    ("Iran", "Irán", "Iran", (32.4279, 53.6880)),
+    ("Ethiopia", "Etiopía", "Ethiopia", (9.1450, 40.4897)),
+    ("Ghana", "Ghana", "Ghana", (7.9465, -1.0232)),
+    ("Greece", "Grecia", "Greece", (39.0742, 21.8243)),
+    ("Turkey", "Turquía", "Turkey", (38.9637, 35.2433)),
+    ("China", "China", "China", (35.8617, 104.1954)),
+    ("India", "India", "India", (20.5937, 78.9629)),
+    ("Easter Island", "Isla de Pascua", "Easter Island", (-27.1127, -109.3497)),
+    ("New Zealand", "Nueva Zelanda", "New Zealand", (-40.9006, 174.8860)),
+    ("Tajikistan", "Tayikistán", "Tajikistan", (38.8610, 71.2761)),
+    ("Australia", "Australia", "Australia", (-25.2744, 133.7751)),
+    ("Democratic Republic of Congo", "República Democrática del Congo", "Democratic Republic of Congo", (-4.0383, 21.7587)),
+    ("South Africa", "Sudáfrica", "South Africa", (-30.5595, 22.9375)),
+    ("Mexico", "México", "Mexico", (23.6345, -102.5528)),
+    ("Korea", "Corea", "Korea", (35.9078, 127.7669)),
+    ("Cambodia", "Camboya", "Cambodia", (12.5657, 104.9910)),
+    ("Jamaica", "Jamaica", "Jamaica", (18.1096, -77.2975)),
+    ("Japan", "Japón", "Japan", (36.2048, 138.2529)),
+    ("Pakistan", "Pakistán", "Pakistan", (30.3753, 69.3451)),
+    ("Yemen", "Yemen", "Yemen", (15.5527, 48.5164)),
+    ("Papua New Guinea", "Papúa Nueva Guinea", "Papua New Guinea", (-6.3149, 143.9555)),
+    ("New Guinea", "Nueva Guinea", "New Guinea", (-6.3149, 143.9555)),
+    ("Fiji", "Fiyi", "Fiji", (-17.7134, 178.0650)),
+    ("Solomon Islands", "Islas Salomón", "Solomon Islands", (-9.6457, 160.1562)),
+    ("Canada", "Canadá", "Canada", (56.1304, -106.3468)),
+    ("Namibia", "Namibia", "Namibia", (-22.9576, 18.4904)),
+    ("Kenya", "Kenia", "Kenya", (-0.0236, 37.9062)),
+    ("Cyprus", "Chipre", "Cyprus", (35.1264, 33.4299)),
+    ("Cameroon", "Camerún", "Cameroon", (7.3697, 12.3547)),
+    ("Bangladesh", "Bangladés", "Bangladesh", (23.6850, 90.3563)),
     # Quinta ronda de curación (17/08) — países nuevos sin cobertura previa.
-    ("Afghanistan", "Afganistán", (33.9391, 67.7100)),
-    ("Tibet", "Tíbet", (31.6927, 88.0924)),
-    ("Sierra Leone", "Sierra Leona", (8.4606, -11.7799)),
-    ("Uganda", "Uganda", (1.3733, 32.2903)),
-    ("Zimbabwe", "Zimbabue", (-19.0154, 29.1549)),
-    ("Palestine", "Palestina", (31.9522, 35.2332)),
-    ("Malawi", "Malaui", (-13.2543, 34.3015)),
-    ("Peru", "Perú", (-9.1900, -75.0152)),
-    ("Botswana", "Botsuana", (-22.3285, 24.6849)),
-    ("Zambia", "Zambia", (-13.1339, 27.8493)),
-    ("Trinidad", "Trinidad", (10.6918, -61.2225)),
-    ("Guyana", "Guyana", (4.8604, -58.9302)),
+    ("Afghanistan", "Afganistán", "Afghanistan", (33.9391, 67.7100)),
+    ("Tibet", "Tíbet", "Tibet", (31.6927, 88.0924)),
+    ("Sierra Leone", "Sierra Leona", "Sierra Leone", (8.4606, -11.7799)),
+    ("Uganda", "Uganda", "Uganda", (1.3733, 32.2903)),
+    ("Zimbabwe", "Zimbabue", "Zimbabwe", (-19.0154, 29.1549)),
+    ("Palestine", "Palestina", "Palestine", (31.9522, 35.2332)),
+    ("Malawi", "Malaui", "Malawi", (-13.2543, 34.3015)),
+    ("Peru", "Perú", "Peru", (-9.1900, -75.0152)),
+    ("Botswana", "Botsuana", "Botswana", (-22.3285, 24.6849)),
+    ("Zambia", "Zambia", "Zambia", (-13.1339, 27.8493)),
+    ("Trinidad", "Trinidad", "Trinidad", (10.6918, -61.2225)),
+    ("Guyana", "Guyana", "Guyana", (4.8604, -58.9302)),
     # Sexta ronda de curación (17/08) — países nuevos sin cobertura previa.
-    ("Venezuela", "Venezuela", (6.4238, -66.5897)),
-    ("Brazil", "Brasil", (-14.2350, -51.9253)),
-    ("Nepal", "Nepal", (28.3949, 84.1240)),
+    ("Venezuela", "Venezuela", "Venezuela", (6.4238, -66.5897)),
+    ("Brazil", "Brasil", "Brazil", (-14.2350, -51.9253)),
+    ("Nepal", "Nepal", "Nepal", (28.3949, 84.1240)),
+    # Séptima ronda de curación (17/08) — países nuevos sin cobertura previa.
+    # "Sénégal" con tilde a propósito: el texto crudo scrapeado del BM viene
+    # en francés para este país ("Made in:Sénégal"), no en inglés.
+    ("Sénégal", "Senegal", "Senegal", (14.4974, -14.4524)),
+    ("Mali", "Malí", "Mali", (17.5707, -3.9962)),
+    ("Thailand", "Tailandia", "Thailand", (15.8700, 100.9925)),
+    ("Mongolia", "Mongolia", "Mongolia", (46.8625, 103.8467)),
+    ("Madagascar", "Madagascar", "Madagascar", (-18.7669, 46.8691)),
 ]
 
 
@@ -620,12 +730,12 @@ def resolve_origin_bm(obj: dict) -> dict:
     label = findspot or production_place
     haystack = " | ".join([findspot, production_place])
 
-    for site, display, (lat, lon) in BM_SITE_COORDS:
+    for site, display_es, display_en, (lat, lon) in BM_SITE_COORDS:
         if site.lower() in haystack.lower():
-            return {"label": es_label(display), "precision": "site", "lat": lat, "lon": lon}
+            return {"label": display_es, "label_en": display_en, "precision": "site", "lat": lat, "lon": lon}
 
-    for country, display, (lat, lon) in BM_COUNTRY_KEYWORDS:
+    for country, display_es, display_en, (lat, lon) in BM_COUNTRY_KEYWORDS:
         if country.lower() in haystack.lower():
-            return {"label": es_label(display), "precision": "country", "lat": lat, "lon": lon}
+            return {"label": display_es, "label_en": display_en, "precision": "country", "lat": lat, "lon": lon}
 
-    return {"label": label, "precision": "unresolved", "lat": None, "lon": None}
+    return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None}

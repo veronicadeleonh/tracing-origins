@@ -5,6 +5,13 @@ export interface ProvenanceEvent {
   actor_or_institution: string | null;
   location: string | null;
   description: string | null;
+  // Traducciones agregadas el 17/08 (toggle ES/EN ampliado a layer 3, ver
+  // CLAUDE.md). descriptionEs siempre viene poblado (es el `description`
+  // original para las piezas del Louvre/BM, o su traducción para las del
+  // Met); descriptionEn es la contraparte en inglés. `description` se deja
+  // sin tocar por compatibilidad, pero la UI debería usar descriptionEs/En.
+  descriptionEs: string | null;
+  descriptionEn: string | null;
   source_url: string | null;
   source_type: string | null;
   confidence_level: string | null;
@@ -15,6 +22,7 @@ export interface ObjectContext {
   context_flags: string[];
   associated_communities_or_states: string | null;
   notes: string | null;
+  notesEn: string | null;
 }
 
 export interface MuseumObject {
@@ -37,6 +45,7 @@ export interface MuseumObject {
   primaryImage: string | null;
   objectURL: string | null;
   originLabel: string | null;
+  originLabelEn: string | null;
   originPrecision: string | null;
   originLat: number;
   originLon: number;

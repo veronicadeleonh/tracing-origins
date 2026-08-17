@@ -86,6 +86,7 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
             "context_flags": flags,
             "associated_communities_or_states": ctx.get("associated_communities_or_states") or None,
             "notes": ctx.get("notes") or None,
+            "notesEn": ctx.get("notes_en") or None,
         }
 
     obj_events = [
@@ -96,6 +97,8 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
             "actor_or_institution": e.get("actor_or_institution") or None,
             "location": e.get("location") or None,
             "description": e.get("description") or None,
+            "descriptionEs": e.get("description_es") or e.get("description") or None,
+            "descriptionEn": e.get("description_en") or None,
             "source_url": e.get("source_url") or None,
             "source_type": e.get("source_type") or None,
             "confidence_level": e.get("confidence_level") or None,
@@ -123,6 +126,7 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
         "primaryImage": row.get("primaryImage") or None,
         "objectURL": row.get("objectURL") or None,
         "originLabel": row.get("origin_label") or None,
+        "originLabelEn": row.get("origin_label_en") or row.get("origin_label") or None,
         "originPrecision": row.get("origin_precision") or None,
         "originLat": float(row["origin_lat"]),
         "originLon": float(row["origin_lon"]),

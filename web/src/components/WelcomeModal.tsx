@@ -27,11 +27,20 @@ type WelcomeModalProps = {
 //
 // Imágenes (17/08): capturas reales de la app (no mockups de Figma),
 // recortadas y redimensionadas a mano a partir de screenshots que sacó el
-// usuario — mapa sin panel lateral para "Cómo usar", el timeline de una
-// ficha real para "Modelo de datos". Viven en web/public/onboarding/ (mismo
-// patrón que colonial_overlay.geojson: assets estáticos servidos tal cual,
-// no bundleados). object-fit: cover en CSS recorta ambas al mismo tamaño de
-// caja sin importar que el aspect ratio de origen sea distinto.
+// usuario. Viven en web/public/onboarding/ (mismo patrón que
+// colonial_overlay.geojson: assets estáticos servidos tal cual, no
+// bundleados). Dos tratamientos de CSS distintos según el contenido:
+// - hero.png / how-to-use.png: fotos del globo, sin texto crítico —
+//   .welcome-slide-image con object-fit:cover, se puede recortar el borde
+//   sin perder sentido.
+// - data-model.png / piece-list.png: capturas de UI con texto (el timeline
+//   de una pieza, la lista de un cluster) — cover les cortaba contenido a
+//   la mitad de una oración (reportado por el usuario el 17/08 con el
+//   ejemplo de "Modelo de datos"). Llevan la clase extra
+//   welcome-slide-image--contain (object-fit:contain, mismo fondo que la
+//   tarjeta) para que se vean completas siempre, aunque quede algo de aire
+//   a los costados — la caja (.welcome-slide-image) mide lo mismo en las 4
+//   slides de cualquier forma.
 export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps) {
   const s = STRINGS[lang];
   const [slide, setSlide] = useState(0);
@@ -39,6 +48,7 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
   const slides = [
     (
       <div className="welcome-slide-hero" key="hero">
+        <img className="welcome-slide-image" src={`${import.meta.env.BASE_URL}onboarding/hero.png`} alt="" />
         <div className="welcome-slide-emoji">🏛️</div>
         <h1 className="welcome-slide-appname">Tracing Origins</h1>
         <p className="welcome-slide-slogan">{s.welcomeSlogan}</p>
@@ -62,7 +72,7 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
     (
       <section className="welcome-modal-section" key="model">
         <img
-          className="welcome-slide-image"
+          className="welcome-slide-image welcome-slide-image--contain"
           src={`${import.meta.env.BASE_URL}onboarding/data-model.png`}
           alt={s.welcomeDataModelHeading}
         />
@@ -77,6 +87,11 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
     ),
     (
       <section className="welcome-modal-section" key="about">
+        <img
+          className="welcome-slide-image welcome-slide-image--contain"
+          src={`${import.meta.env.BASE_URL}onboarding/piece-list.png`}
+          alt=""
+        />
         <h2 className="welcome-modal-heading">{s.welcomeAboutHeading}</h2>
         <p>{s.welcomeAboutP1}</p>
         <p>{s.welcomeAboutP2}</p>

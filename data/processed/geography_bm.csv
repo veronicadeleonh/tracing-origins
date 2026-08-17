@@ -1,85 +1,91 @@
-objectID,origin_label,origin_precision,origin_lat,origin_lon,museum_lat,museum_lon
-bm:A_1830-0612-4,Trincomalee,site,8.5711,81.2335,51.5194,-0.127
-bm:A_1859-1228-121,Java,site,-7.5,110.0,51.5194,-0.127
-bm:A_1880-0709-40,Amaravati,site,16.573,80.3567,51.5194,-0.127
-bm:A_1880-28,"Bimaran, Afganistán",site,34.43,70.45,51.5194,-0.127
-bm:A_1880-3633,Afganistán,country,33.9391,67.71,51.5194,-0.127
-bm:A_1890-0208-1,Camboya,country,12.5657,104.991,51.5194,-0.127
-bm:A_1891-1215-1,Corea,country,35.9078,127.7669,51.5194,-0.127
-bm:A_1927-0613-1,Nepal,country,28.3949,84.124,51.5194,-0.127
-bm:A_1950-1211-2,Gandhara,site,34.0,71.5,51.5194,-0.127
-bm:A_1958-1112-1,"Óc Eo, Vietnam",site,10.2167,105.1333,51.5194,-0.127
-bm:A_1959-1012-1,Rajshahi,site,24.3745,88.6042,51.5194,-0.127
-bm:A_As-3573_1,Yuanmingyuan,site,40.0084,116.2966,51.5194,-0.127
-bm:A_As1859-1228-195-l-m,Java,site,-7.5,110.0,51.5194,-0.127
-bm:A_As1905-0518-47,"Lhasa, Tíbet",site,29.65,91.1,51.5194,-0.127
-bm:A_As1909-0622-1,Hokkaido,site,43.2203,142.8635,51.5194,-0.127
-bm:A_As1919-1230-3,Mandalay,site,21.9588,96.0891,51.5194,-0.127
-bm:A_As1924-0714-1,Angkor,site,13.4125,103.867,51.5194,-0.127
-bm:C_1908-0110-4,Jerusalén,site,31.7683,35.2137,51.5194,-0.127
-bm:C_1953-0402-17,Aksum,site,14.1211,38.7167,51.5194,-0.127
-bm:E_2018-Q-101,Nueva Zelanda,country,-40.9006,174.886,51.5194,-0.127
-bm:E_Af-5913,"Montañas del Atlas, Marruecos",site,31.0,-7.9,51.5194,-0.127
-bm:E_Af1868-1001-4,Maqdala,site,11.8,39.7,51.5194,-0.127
-bm:E_Af1886-1126-2,Sierra Leona,country,8.4606,-11.7799,51.5194,-0.127
-bm:E_Af1887-1211-51,Zanzibar,site,-6.1659,39.2026,51.5194,-0.127
-bm:E_Af1893-0804-88,Malaui,country,-13.2543,34.3015,51.5194,-0.127
-bm:E_Af1898-0115-27,Benin City,site,6.335,5.6037,51.5194,-0.127
-bm:E_Af1898-0115-28,Benin City,site,6.335,5.6037,51.5194,-0.127
-bm:E_Af1898-0115-29,Benin City,site,6.335,5.6037,51.5194,-0.127
-bm:E_Af1898-0115-30,Benin City,site,6.335,5.6037,51.5194,-0.127
-bm:E_Af1898-0115-32,Benin City,site,6.335,5.6037,51.5194,-0.127
-bm:E_Af1900-55,Namibia,country,-22.9576,18.4904,51.5194,-0.127
-bm:E_Af1902-0513-5,Zambia,country,-13.1339,27.8493,51.5194,-0.127
-bm:E_Af1904-110-d-g,Kenia,country,-0.0236,37.9062,51.5194,-0.127
-bm:E_Af1905-0525-3,República Democrática del Congo,country,-4.0383,21.7587,51.5194,-0.127
-bm:E_Af1913-118,Sierra Leona,country,8.4606,-11.7799,51.5194,-0.127
-bm:E_Af1921-1028-4,Sudáfrica,country,-30.5595,22.9375,51.5194,-0.127
-bm:E_Af1923-1211-11-a-b,Great Zimbabwe,site,-20.2675,30.9337,51.5194,-0.127
-bm:E_Af1926-0410-1,Great Zimbabwe,site,-20.2675,30.9337,51.5194,-0.127
-bm:E_Af1931-0105-14,"Luzira, Uganda",site,0.2667,32.65,51.5194,-0.127
-bm:E_Af1933-1206-70,Zambia,country,-13.1339,27.8493,51.5194,-0.127
-bm:E_Af1937-0210-13,Botsuana,country,-22.3285,24.6849,51.5194,-0.127
-bm:E_Af1947-07-17,Zambia,country,-13.1339,27.8493,51.5194,-0.127
-bm:E_Af1947-30-1,Sierra Leona,country,8.4606,-11.7799,51.5194,-0.127
-bm:E_Af1954-17-1-a-b,Ife,site,7.4905,4.5521,51.5194,-0.127
-bm:E_Af1954-23-2641-a-b,Camerún,country,7.3697,12.3547,51.5194,-0.127
-bm:E_Af1955-01-1,"Bigo bya Mugenyi, Uganda",site,-0.5333,31.4167,51.5194,-0.127
-bm:E_Af1981-27-1,Región Asante,site,6.75,-1.5,51.5194,-0.127
-bm:E_Am-St-397-a,México,country,23.6345,-102.5528,51.5194,-0.127
-bm:E_Am-St-809-A,Trinidad,country,10.6918,-61.2225,51.5194,-0.127
-bm:E_Am-St-809-b,Guyana,country,4.8604,-58.9302,51.5194,-0.127
-bm:E_Am-WG-2242,"Cuenca, Ecuador",site,-2.9006,-79.0045,51.5194,-0.127
-bm:E_Am1855-1211-49,Trujillo,site,-8.1116,-79.029,51.5194,-0.127
-bm:E_Am1919-1216-11,Haida Gwaii,site,53.25,-132.0,51.5194,-0.127
-bm:E_Am1928-0516-2,Santa Marta,site,11.2408,-74.199,51.5194,-0.127
-bm:E_Am1930-F-1,"Nebaj, Guatemala",site,15.4045,-91.1502,51.5194,-0.127
-bm:E_Am1953-02-1,Brasil,country,-14.235,-51.9253,51.5194,-0.127
-bm:E_Am1982-28-13,Territorios del Noroeste,site,64.8255,-124.8457,51.5194,-0.127
-bm:E_Am1983-12-35,"Aroma, Bolivia",site,-17.65,-67.95,51.5194,-0.127
-bm:E_Am1983-Q-37,Venezuela,country,6.4238,-66.5897,51.5194,-0.127
-bm:E_Am1991-Q-4,Perú,country,-9.19,-75.0152,51.5194,-0.127
-bm:E_Am1997-Q-793,Jamaica,country,18.1096,-77.2975,51.5194,-0.127
-bm:E_Oc-6509,"Vava'u, Tonga",site,-18.65,-173.98,51.5194,-0.127
-bm:E_Oc-HAW-138,Islas Hawái,site,19.8968,-155.5828,51.5194,-0.127
-bm:E_Oc1848-0202-1,Queensland,site,-22.5752,144.0848,51.5194,-0.127
-bm:E_Oc1869-1005-1,Orongo,site,-27.1836,-109.4306,51.5194,-0.127
-bm:E_Oc1889-0208-13,Ambrym,site,-16.25,168.1167,51.5194,-0.127
-bm:E_Oc1896-1154,Fiyi,country,-17.7134,178.065,51.5194,-0.127
-bm:E_Oc1921-1102-3,Islas Salomón,country,-9.6457,160.1562,51.5194,-0.127
-bm:E_Oc1949-08-1,Nueva Guinea,country,-6.3149,143.9555,51.5194,-0.127
-bm:G_1816-0610-98,Partenón,site,37.9715,23.7267,51.5194,-0.127
-bm:G_1894-1101-213,Amathus,site,34.7167,33.1333,51.5194,-0.127
-bm:W_1825-0421-1,Persépolis,site,29.9354,52.8916,51.5194,-0.127
-bm:W_1848-1104-1,Nimrud,site,36.0994,43.325,51.5194,-0.127
-bm:W_1856-0909-57,Nínive,site,36.36,43.15,51.5194,-0.127
-bm:W_1880-0617-1941,Babilonia,site,32.5425,44.4213,51.5194,-0.127
-bm:W_1880-330,India,country,20.5937,78.9629,51.5194,-0.127
-bm:W_1897-1231-116,Takht-i Kuwad,site,37.15,68.3667,51.5194,-0.127
-bm:W_1922-0511-255,Carchemish,site,36.8167,38.0167,51.5194,-0.127
-bm:W_1970-0209-18,"Ophel, Jerusalén",site,31.7745,35.2354,51.5194,-0.127
-bm:W_1970-0604-2,Marib,site,15.43,45.3286,51.5194,-0.127
-bm:W_As1967-02-1,Palestina,country,31.9522,35.2332,51.5194,-0.127
-bm:Y_EA1770,Kawa,site,19.08,30.36,51.5194,-0.127
-bm:Y_EA24,Fort Saint Julien,site,31.4022,30.4181,51.5194,-0.127
-bm:Y_EA51515,Faras,site,22.1833,31.9,51.5194,-0.127
+objectID,origin_label,origin_label_en,origin_precision,origin_lat,origin_lon,museum_lat,museum_lon
+bm:A_1830-0612-4,Trincomalee,Trincomalee,site,8.5711,81.2335,51.5194,-0.127
+bm:A_1859-1228-121,Java,Java,site,-7.5,110.0,51.5194,-0.127
+bm:A_1880-0709-40,Amaravati,Amaravati,site,16.573,80.3567,51.5194,-0.127
+bm:A_1880-28,"Bimaran, Afganistán","Bimaran, Afghanistan",site,34.43,70.45,51.5194,-0.127
+bm:A_1880-3633,Afganistán,Afghanistan,country,33.9391,67.71,51.5194,-0.127
+bm:A_1890-0208-1,Camboya,Cambodia,country,12.5657,104.991,51.5194,-0.127
+bm:A_1891-1215-1,Corea,Korea,country,35.9078,127.7669,51.5194,-0.127
+bm:A_1927-0613-1,Nepal,Nepal,country,28.3949,84.124,51.5194,-0.127
+bm:A_1950-1211-2,Gandhara,Gandhara,site,34.0,71.5,51.5194,-0.127
+bm:A_1958-1112-1,"Óc Eo, Vietnam","Óc Eo, Vietnam",site,10.2167,105.1333,51.5194,-0.127
+bm:A_1959-1012-1,Rajshahi,Rajshahi,site,24.3745,88.6042,51.5194,-0.127
+bm:A_2004-0628-24,Tailandia,Thailand,country,15.87,100.9925,51.5194,-0.127
+bm:A_As-3573_1,Yuanmingyuan,Yuanmingyuan,site,40.0084,116.2966,51.5194,-0.127
+bm:A_As1859-1228-195-l-m,Java,Java,site,-7.5,110.0,51.5194,-0.127
+bm:A_As1903-1006-8,Mongolia,Mongolia,country,46.8625,103.8467,51.5194,-0.127
+bm:A_As1905-0518-47,"Lhasa, Tíbet","Lhasa, Tibet",site,29.65,91.1,51.5194,-0.127
+bm:A_As1909-0622-1,Hokkaido,Hokkaido,site,43.2203,142.8635,51.5194,-0.127
+bm:A_As1919-1230-3,Mandalay,Mandalay,site,21.9588,96.0891,51.5194,-0.127
+bm:A_As1924-0714-1,Angkor,Angkor,site,13.4125,103.867,51.5194,-0.127
+bm:C_1908-0110-4,Jerusalén,Jerusalem,site,31.7683,35.2137,51.5194,-0.127
+bm:C_1953-0402-17,Aksum,Aksum,site,14.1211,38.7167,51.5194,-0.127
+bm:E_2018-Q-101,Nueva Zelanda,New Zealand,country,-40.9006,174.886,51.5194,-0.127
+bm:E_Af-5913,"Montañas del Atlas, Marruecos","Atlas Mountains, Morocco",site,31.0,-7.9,51.5194,-0.127
+bm:E_Af1868-1001-4,Maqdala,Maqdala,site,11.8,39.7,51.5194,-0.127
+bm:E_Af1886-1126-2,Sierra Leona,Sierra Leone,country,8.4606,-11.7799,51.5194,-0.127
+bm:E_Af1887-1211-51,Zanzibar,Zanzibar,site,-6.1659,39.2026,51.5194,-0.127
+bm:E_Af1893-0804-88,Malaui,Malawi,country,-13.2543,34.3015,51.5194,-0.127
+bm:E_Af1898-0115-27,Benin City,Benin City,site,6.335,5.6037,51.5194,-0.127
+bm:E_Af1898-0115-28,Benin City,Benin City,site,6.335,5.6037,51.5194,-0.127
+bm:E_Af1898-0115-29,Benin City,Benin City,site,6.335,5.6037,51.5194,-0.127
+bm:E_Af1898-0115-30,Benin City,Benin City,site,6.335,5.6037,51.5194,-0.127
+bm:E_Af1898-0115-32,Benin City,Benin City,site,6.335,5.6037,51.5194,-0.127
+bm:E_Af1900-0524-37,Madagascar,Madagascar,country,-18.7669,46.8691,51.5194,-0.127
+bm:E_Af1900-55,Namibia,Namibia,country,-22.9576,18.4904,51.5194,-0.127
+bm:E_Af1902-0513-5,Zambia,Zambia,country,-13.1339,27.8493,51.5194,-0.127
+bm:E_Af1904-110-d-g,Kenia,Kenya,country,-0.0236,37.9062,51.5194,-0.127
+bm:E_Af1905-0525-3,República Democrática del Congo,Democratic Republic of Congo,country,-4.0383,21.7587,51.5194,-0.127
+bm:E_Af1913-118,Sierra Leona,Sierra Leone,country,8.4606,-11.7799,51.5194,-0.127
+bm:E_Af1913-43,"Yelimané, Malí","Yelimané, Mali",site,15.1167,-10.5667,51.5194,-0.127
+bm:E_Af1921-1028-4,Sudáfrica,South Africa,country,-30.5595,22.9375,51.5194,-0.127
+bm:E_Af1923-1211-11-a-b,Great Zimbabwe,Great Zimbabwe,site,-20.2675,30.9337,51.5194,-0.127
+bm:E_Af1926-0410-1,Great Zimbabwe,Great Zimbabwe,site,-20.2675,30.9337,51.5194,-0.127
+bm:E_Af1931-0105-14,"Luzira, Uganda","Luzira, Uganda",site,0.2667,32.65,51.5194,-0.127
+bm:E_Af1933-1206-70,Zambia,Zambia,country,-13.1339,27.8493,51.5194,-0.127
+bm:E_Af1937-0210-13,Botsuana,Botswana,country,-22.3285,24.6849,51.5194,-0.127
+bm:E_Af1947-07-17,Zambia,Zambia,country,-13.1339,27.8493,51.5194,-0.127
+bm:E_Af1947-30-1,Sierra Leona,Sierra Leone,country,8.4606,-11.7799,51.5194,-0.127
+bm:E_Af1954-17-1-a-b,Ife,Ife,site,7.4905,4.5521,51.5194,-0.127
+bm:E_Af1954-23-2641-a-b,Camerún,Cameroon,country,7.3697,12.3547,51.5194,-0.127
+bm:E_Af1955-01-1,"Bigo bya Mugenyi, Uganda","Bigo bya Mugenyi, Uganda",site,-0.5333,31.4167,51.5194,-0.127
+bm:E_Af1981-27-1,Región Asante,Asante Region,site,6.75,-1.5,51.5194,-0.127
+bm:E_Af1990-04-18,Senegal,Senegal,country,14.4974,-14.4524,51.5194,-0.127
+bm:E_Am-5786-a,"Arica, Chile","Arica, Chile",site,-18.4783,-70.3126,51.5194,-0.127
+bm:E_Am-St-397-a,México,Mexico,country,23.6345,-102.5528,51.5194,-0.127
+bm:E_Am-St-809-A,Trinidad,Trinidad,country,10.6918,-61.2225,51.5194,-0.127
+bm:E_Am-St-809-b,Guyana,Guyana,country,4.8604,-58.9302,51.5194,-0.127
+bm:E_Am-WG-2242,"Cuenca, Ecuador","Cuenca, Ecuador",site,-2.9006,-79.0045,51.5194,-0.127
+bm:E_Am1855-1211-49,Trujillo,Trujillo,site,-8.1116,-79.029,51.5194,-0.127
+bm:E_Am1919-1216-11,Haida Gwaii,Haida Gwaii,site,53.25,-132.0,51.5194,-0.127
+bm:E_Am1928-0516-2,Santa Marta,Santa Marta,site,11.2408,-74.199,51.5194,-0.127
+bm:E_Am1930-F-1,"Nebaj, Guatemala","Nebaj, Guatemala",site,15.4045,-91.1502,51.5194,-0.127
+bm:E_Am1953-02-1,Brasil,Brazil,country,-14.235,-51.9253,51.5194,-0.127
+bm:E_Am1982-28-13,Territorios del Noroeste,Northwest Territories,site,64.8255,-124.8457,51.5194,-0.127
+bm:E_Am1983-12-35,"Aroma, Bolivia","Aroma, Bolivia",site,-17.65,-67.95,51.5194,-0.127
+bm:E_Am1983-Q-37,Venezuela,Venezuela,country,6.4238,-66.5897,51.5194,-0.127
+bm:E_Am1991-Q-4,Perú,Peru,country,-9.19,-75.0152,51.5194,-0.127
+bm:E_Am1997-Q-793,Jamaica,Jamaica,country,18.1096,-77.2975,51.5194,-0.127
+bm:E_Oc-6509,"Vava'u, Tonga","Vava'u, Tonga",site,-18.65,-173.98,51.5194,-0.127
+bm:E_Oc-HAW-138,Islas Hawái,Hawaiian Islands,site,19.8968,-155.5828,51.5194,-0.127
+bm:E_Oc1848-0202-1,Queensland,Queensland,site,-22.5752,144.0848,51.5194,-0.127
+bm:E_Oc1869-1005-1,Orongo,Orongo,site,-27.1836,-109.4306,51.5194,-0.127
+bm:E_Oc1889-0208-13,Ambrym,Ambrym,site,-16.25,168.1167,51.5194,-0.127
+bm:E_Oc1896-1154,Fiyi,Fiji,country,-17.7134,178.065,51.5194,-0.127
+bm:E_Oc1921-1102-3,Islas Salomón,Solomon Islands,country,-9.6457,160.1562,51.5194,-0.127
+bm:E_Oc1949-08-1,Nueva Guinea,New Guinea,country,-6.3149,143.9555,51.5194,-0.127
+bm:G_1816-0610-98,Partenón,Parthenon,site,37.9715,23.7267,51.5194,-0.127
+bm:G_1894-1101-213,Amathus,Amathus,site,34.7167,33.1333,51.5194,-0.127
+bm:W_1825-0421-1,Persépolis,Persepolis,site,29.9354,52.8916,51.5194,-0.127
+bm:W_1848-1104-1,Nimrud,Nimrud,site,36.0994,43.325,51.5194,-0.127
+bm:W_1856-0909-57,Nínive,Nineveh,site,36.36,43.15,51.5194,-0.127
+bm:W_1880-0617-1941,Babilonia,Babylon,site,32.5425,44.4213,51.5194,-0.127
+bm:W_1880-330,India,India,country,20.5937,78.9629,51.5194,-0.127
+bm:W_1897-1231-116,Takht-i Kuwad,Takht-i Kuwad,site,37.15,68.3667,51.5194,-0.127
+bm:W_1922-0511-255,Carchemish,Carchemish,site,36.8167,38.0167,51.5194,-0.127
+bm:W_1970-0209-18,"Ophel, Jerusalén","Ophel, Jerusalem",site,31.7745,35.2354,51.5194,-0.127
+bm:W_1970-0604-2,Marib,Marib,site,15.43,45.3286,51.5194,-0.127
+bm:W_As1967-02-1,Palestina,Palestine,country,31.9522,35.2332,51.5194,-0.127
+bm:Y_EA1770,Kawa,Kawa,site,19.08,30.36,51.5194,-0.127
+bm:Y_EA24,Fort Saint Julien,Fort Saint Julien,site,31.4022,30.4181,51.5194,-0.127
+bm:Y_EA51515,Faras,Faras,site,22.1833,31.9,51.5194,-0.127
