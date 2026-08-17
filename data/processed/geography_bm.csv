@@ -6,9 +6,9 @@ bm:A_1880-28,"Bimaran, Afganistán",site,34.43,70.45,51.5194,-0.127
 bm:A_1880-3633,Afganistán,country,33.9391,67.71,51.5194,-0.127
 bm:A_1890-0208-1,Camboya,country,12.5657,104.991,51.5194,-0.127
 bm:A_1891-1215-1,Corea,country,35.9078,127.7669,51.5194,-0.127
-bm:A_1927-0613-1,Found/Acquired: Nepal,unresolved,,,51.5194,-0.127
+bm:A_1927-0613-1,Nepal,country,28.3949,84.124,51.5194,-0.127
 bm:A_1950-1211-2,Gandhara,site,34.0,71.5,51.5194,-0.127
-bm:A_1958-1112-1,Found/Acquired: Oc-eo,unresolved,,,51.5194,-0.127
+bm:A_1958-1112-1,"Óc Eo, Vietnam",site,10.2167,105.1333,51.5194,-0.127
 bm:A_1959-1012-1,Rajshahi,site,24.3745,88.6042,51.5194,-0.127
 bm:A_As-3573_1,Yuanmingyuan,site,40.0084,116.2966,51.5194,-0.127
 bm:A_As1859-1228-195-l-m,Java,site,-7.5,110.0,51.5194,-0.127
@@ -19,7 +19,7 @@ bm:A_As1924-0714-1,Angkor,site,13.4125,103.867,51.5194,-0.127
 bm:C_1908-0110-4,Jerusalén,site,31.7683,35.2137,51.5194,-0.127
 bm:C_1953-0402-17,Aksum,site,14.1211,38.7167,51.5194,-0.127
 bm:E_2018-Q-101,Nueva Zelanda,country,-40.9006,174.886,51.5194,-0.127
-bm:E_Af-5913,Found/Acquired: Atlas Mountains,unresolved,,,51.5194,-0.127
+bm:E_Af-5913,"Montañas del Atlas, Marruecos",site,31.0,-7.9,51.5194,-0.127
 bm:E_Af1868-1001-4,Maqdala,site,11.8,39.7,51.5194,-0.127
 bm:E_Af1886-1126-2,Sierra Leona,country,8.4606,-11.7799,51.5194,-0.127
 bm:E_Af1887-1211-51,Zanzibar,site,-6.1659,39.2026,51.5194,-0.127
@@ -49,18 +49,18 @@ bm:E_Af1981-27-1,Región Asante,site,6.75,-1.5,51.5194,-0.127
 bm:E_Am-St-397-a,México,country,23.6345,-102.5528,51.5194,-0.127
 bm:E_Am-St-809-A,Trinidad,country,10.6918,-61.2225,51.5194,-0.127
 bm:E_Am-St-809-b,Guyana,country,4.8604,-58.9302,51.5194,-0.127
-bm:E_Am-WG-2242,Excavated/Findspot: Cuenca (Ecuador),unresolved,,,51.5194,-0.127
+bm:E_Am-WG-2242,"Cuenca, Ecuador",site,-2.9006,-79.0045,51.5194,-0.127
 bm:E_Am1855-1211-49,Trujillo,site,-8.1116,-79.029,51.5194,-0.127
 bm:E_Am1919-1216-11,Haida Gwaii,site,53.25,-132.0,51.5194,-0.127
 bm:E_Am1928-0516-2,Santa Marta,site,11.2408,-74.199,51.5194,-0.127
 bm:E_Am1930-F-1,"Nebaj, Guatemala",site,15.4045,-91.1502,51.5194,-0.127
-bm:E_Am1953-02-1,Found/Acquired: Brazil (country),unresolved,,,51.5194,-0.127
+bm:E_Am1953-02-1,Brasil,country,-14.235,-51.9253,51.5194,-0.127
 bm:E_Am1982-28-13,Territorios del Noroeste,site,64.8255,-124.8457,51.5194,-0.127
-bm:E_Am1983-12-35,Found/Acquired: Aroma (Bolivia),unresolved,,,51.5194,-0.127
-bm:E_Am1983-Q-37,Found/Acquired: Venezuela,unresolved,,,51.5194,-0.127
+bm:E_Am1983-12-35,"Aroma, Bolivia",site,-17.65,-67.95,51.5194,-0.127
+bm:E_Am1983-Q-37,Venezuela,country,6.4238,-66.5897,51.5194,-0.127
 bm:E_Am1991-Q-4,Perú,country,-9.19,-75.0152,51.5194,-0.127
 bm:E_Am1997-Q-793,Jamaica,country,18.1096,-77.2975,51.5194,-0.127
-bm:E_Oc-6509,Found/Acquired: Vava'u,unresolved,,,51.5194,-0.127
+bm:E_Oc-6509,"Vava'u, Tonga",site,-18.65,-173.98,51.5194,-0.127
 bm:E_Oc-HAW-138,Islas Hawái,site,19.8968,-155.5828,51.5194,-0.127
 bm:E_Oc1848-0202-1,Queensland,site,-22.5752,144.0848,51.5194,-0.127
 bm:E_Oc1869-1005-1,Orongo,site,-27.1836,-109.4306,51.5194,-0.127

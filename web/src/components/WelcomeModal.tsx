@@ -24,6 +24,14 @@ type WelcomeModalProps = {
 // alto) mientras el modal está abierto, así que este modal necesita su
 // propio botón de idioma adentro (mismo onToggleLang que el de afuera,
 // no un estado propio) para que el onboarding en sí sea cambiable.
+//
+// Imágenes (17/08): capturas reales de la app (no mockups de Figma),
+// recortadas y redimensionadas a mano a partir de screenshots que sacó el
+// usuario — mapa sin panel lateral para "Cómo usar", el timeline de una
+// ficha real para "Modelo de datos". Viven en web/public/onboarding/ (mismo
+// patrón que colonial_overlay.geojson: assets estáticos servidos tal cual,
+// no bundleados). object-fit: cover en CSS recorta ambas al mismo tamaño de
+// caja sin importar que el aspect ratio de origen sea distinto.
 export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps) {
   const s = STRINGS[lang];
   const [slide, setSlide] = useState(0);
@@ -38,6 +46,11 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
     ),
     (
       <section className="welcome-modal-section" key="how">
+        <img
+          className="welcome-slide-image"
+          src={`${import.meta.env.BASE_URL}onboarding/how-to-use.png`}
+          alt={s.welcomeHowToUseHeading}
+        />
         <h2 className="welcome-modal-heading">{s.welcomeHowToUseHeading}</h2>
         <ol className="welcome-steps">
           {s.welcomeSteps.map((step, i) => (
@@ -48,6 +61,11 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
     ),
     (
       <section className="welcome-modal-section" key="model">
+        <img
+          className="welcome-slide-image"
+          src={`${import.meta.env.BASE_URL}onboarding/data-model.png`}
+          alt={s.welcomeDataModelHeading}
+        />
         <h2 className="welcome-modal-heading">{s.welcomeDataModelHeading}</h2>
         <p>{s.welcomeDataModelIntro}</p>
         <ol className="welcome-steps">

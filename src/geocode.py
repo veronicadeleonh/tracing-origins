@@ -536,6 +536,12 @@ BM_SITE_COORDS = [
     ("Jerusalem", "Jerusalén", (31.7683, 35.2137)),
     ("Nebaj", "Nebaj, Guatemala", (15.4045, -91.1502)),  # tierras altas mayas
     ("Java", "Java", (-7.5000, 110.0000)),  # Indonesia — coordenada central de la isla
+    # Sexta ronda de curación (17/08) — sitios nuevos sin cobertura previa.
+    ("Cuenca", "Cuenca, Ecuador", (-2.9006, -79.0045)),  # colección William Bollaert, s. XIX
+    ("Aroma", "Aroma, Bolivia", (-17.6500, -67.9500)),  # provincia de La Paz
+    ("Atlas Mountains", "Montañas del Atlas, Marruecos", (31.0000, -7.9000)),
+    ("Oc-eo", "Óc Eo, Vietnam", (10.2167, 105.1333)),  # provincia de An Giang
+    ("Vava'u", "Vava'u, Tonga", (-18.6500, -173.9800)),
 ]
 
 BM_COUNTRY_KEYWORDS = [
@@ -587,6 +593,10 @@ BM_COUNTRY_KEYWORDS = [
     ("Zambia", "Zambia", (-13.1339, 27.8493)),
     ("Trinidad", "Trinidad", (10.6918, -61.2225)),
     ("Guyana", "Guyana", (4.8604, -58.9302)),
+    # Sexta ronda de curación (17/08) — países nuevos sin cobertura previa.
+    ("Venezuela", "Venezuela", (6.4238, -66.5897)),
+    ("Brazil", "Brasil", (-14.2350, -51.9253)),
+    ("Nepal", "Nepal", (28.3949, 84.1240)),
 ]
 
 

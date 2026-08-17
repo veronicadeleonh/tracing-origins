@@ -304,15 +304,35 @@
    slides — con min-height el modal "saltaba" de tamaño entre la bienvenida
    (corta) y los pasos de uso (más largos); con height fijo todas las slides
    comparten el mismo alto y el mismo punto de centrado, sea cual sea su
-   contenido. overflow-y como red de seguridad si algún texto no entra en
-   pantallas muy chicas. */
+   contenido. Subido de 250px a 340px el 17/08 para hacerle lugar a
+   .welcome-slide-image en las 2 slides que tienen captura — las 2 que no
+   tienen (bienvenida, fe de datos) simplemente quedan con más aire arriba/
+   abajo del texto centrado, mismo alto para las 4 de cualquier forma.
+   overflow-y como red de seguridad si algún texto no entra en pantallas
+   muy chicas. */
 .welcome-modal-body {
-  height: 250px;
+  height: 340px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-top: 6px;
+}
+
+/* Capturas reales de la app (no mockups) — object-fit: cover fuerza la
+   misma caja (ancho completo x 150px) sin importar que how-to-use.png
+   (paisaje, mapa) y data-model.png (retrato, ficha de pieza) tengan aspect
+   ratios de origen distintos; "recortarlos todos del mismo tamaño" pedido
+   por el usuario el 17/08, resuelto en CSS en vez de a mano en cada imagen
+   para no tener que volver a exportar si algún crop queda mal encuadrado. */
+.welcome-slide-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #e5e2da;
+  margin-bottom: 12px;
+  display: block;
 }
 
 /* Slide 1 — solo nombre + slogan, sin instrucciones todavía (reportado
