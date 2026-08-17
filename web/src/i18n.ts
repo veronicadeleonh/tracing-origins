@@ -14,6 +14,7 @@ export interface I18nStrings {
   pieceCounterFiltered: (visible: number, total: number) => string;
   curatedNoteBtnAria: string;
   curatedNoteText: string;
+  curatedNoteBasemap: string;
   curatedNoteTerritoriesPrefix: string;
   curatedNoteTerritoriesLicense: string;
   curatedNoteRoutesPrefix: string;
@@ -87,6 +88,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     pieceCounterFiltered: (visible, total) => `${visible} de ${total} piezas`,
     curatedNoteBtnAria: "Sobre esta muestra",
     curatedNoteText: "Muestra curada — no representa la colección completa de cada museo. Muchas piezas quedan fuera.",
+    curatedNoteBasemap: "Los límites y nombres del mapa base son la convención por default de Mapbox, no una postura editorial de este proyecto.",
     curatedNoteTerritoriesPrefix: "Territorios coloniales: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
     curatedNoteRoutesPrefix: "Rutas navales: Jones et al. (2007),",
@@ -187,6 +189,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     pieceCounterFiltered: (visible, total) => `${visible} of ${total} pieces`,
     curatedNoteBtnAria: "About this sample",
     curatedNoteText: "Curated sample — doesn't represent each museum's full collection. Many pieces are left out.",
+    curatedNoteBasemap: "The basemap's borders and labels are Mapbox's default convention, not an editorial stance from this project.",
     curatedNoteTerritoriesPrefix: "Colonial territories: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
     curatedNoteRoutesPrefix: "Naval routes: Jones et al. (2007),",

@@ -337,7 +337,7 @@ function App() {
             </button>
             {curatedNoteOpen && (
               <div className="curated-note">
-                {s.curatedNoteText}
+                {s.curatedNoteText} {s.curatedNoteBasemap}
                 {timelineOpen && showTerritories && (
                   <>
                     {" "}{s.curatedNoteTerritoriesPrefix}{" "}
