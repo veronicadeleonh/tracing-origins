@@ -123,23 +123,63 @@
   font-variant-numeric: tabular-nums;
 }
 
+.curated-note-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.curated-note-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid #e5e2da;
+  background: rgba(251, 250, 247, 0.92);
+  color: #77726a;
+  font-size: 12px;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.curated-note-btn:hover {
+  background: #efece4;
+  color: #1a1a1a;
+  border-color: #c9c4b8;
+}
+
+.curated-note-btn.open {
+  background: #1a1a1a;
+  color: #fbfaf7;
+  border-color: #1a1a1a;
+}
+
+/* Anclado al botón "i" en vez de a una esquina fija del mapa — antes vivía
+   pegado al mapa (bottom-left, después top-right) y en las dos terminaba
+   tapado por otra cosa (el dock del timeline, el panel lateral). */
 .curated-note {
   position: absolute;
-  z-index: 1000;
-  top: 12px;
-  right: 12px;
-  max-width: 280px;
-  background: rgba(251, 250, 247, 0.92);
-  border: 1px solid #e5e2da;
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 11px;
-  color: #77726a;
-  line-height: 1.4;
+  z-index: 1001;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 280px;
+  background: #1a1a1a;
+  color: #fbfaf7;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 12px;
+  line-height: 1.5;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
 .curated-note a {
-  color: #77726a;
+  color: #fbfaf7;
   text-decoration: underline;
 }
 
@@ -192,36 +232,125 @@
   padding: 10px 28px 16px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  /* un poco más de aire que antes (era 6px) para que los marcadores de
+     hitos (year-timeline-event, flotan -14px arriba del track) no queden
+     pegados al renglón de arriba */
+  gap: 14px;
 }
 
 .year-timeline-layers {
   display: flex;
   gap: 6px;
-  margin-bottom: 2px;
+  margin-left: auto;
 }
 
-.year-timeline-layer-toggle {
+/* Píldora única (fondo+borde+radio viven acá, no en el botón de adentro) —
+   mismo patrón que .museum-toggle-wrap: el toggle y el botón "i" son 2
+   <button> hermanos dentro de un solo contenedor visual, en vez de 2 chips
+   separados uno al lado del otro. */
+.year-timeline-layer-toggle-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.55);
-  font: inherit;
-  font-size: 11px;
-  font-weight: 500;
-  padding: 3px 10px;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  border-radius: 14px;
+  padding: 3px 5px 3px 10px;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
-.year-timeline-layer-toggle:hover {
+.year-timeline-layer-toggle-wrap:hover {
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-.year-timeline-layer-toggle.active {
+.year-timeline-layer-toggle-wrap.active {
   background: rgba(255, 255, 255, 0.92);
-  color: #1a1a1a;
   border-color: rgba(255, 255, 255, 0.92);
+}
+
+.year-timeline-layer-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+
+.year-timeline-layer-toggle-wrap.active .year-timeline-layer-toggle {
+  color: #1a1a1a;
+}
+
+.year-timeline-layer-toggle-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* Nota por capa (nivel 3 de "notas de contexto en la UI") — mismo patrón
+   que .museum-info-btn/.museum-note, pero en la paleta oscura del timeline
+   en vez de la clara del resto de la app. Colores condicionales a
+   .active del wrap porque el fondo de la píldora cambia de oscuro a claro
+   según el estado del toggle. */
+.year-timeline-note-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 9px;
+  font-style: italic;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1;
+  padding: 0;
+  cursor: pointer;
+}
+
+.year-timeline-note-btn:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fbfaf7;
+}
+
+.year-timeline-layer-toggle-wrap.active .year-timeline-note-btn {
+  border-color: rgba(26, 26, 26, 0.35);
+  color: rgba(26, 26, 26, 0.6);
+}
+
+.year-timeline-layer-toggle-wrap.active .year-timeline-note-btn:hover {
+  border-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+.year-timeline-note-btn.open {
+  background: #fbfaf7;
+  color: #1a1a1a;
+  border-color: #fbfaf7;
+}
+
+.year-timeline-note {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 1002;
+  width: 240px;
+  background: #1a1a1a;
+  color: #fbfaf7;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 12px;
+  line-height: 1.5;
+  padding: 10px 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
 
 .year-timeline-header {
@@ -302,6 +431,66 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Hitos puntuales (ej. 1906 — Expedición Egipcia del Met) — arriba de la
+   fila de ticks de década, para que no se confundan con ellos. */
+.year-timeline-events {
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+.year-timeline-event-wrap {
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+/* Forma de rombo, no círculo — la perilla del slider (más abajo) ya es un
+   círculo dorado con borde blanco, y usar la misma forma para los hitos
+   hacía que se confundieran entre sí a simple vista (reportado por el
+   usuario el 17/08). Sin box-shadow tampoco, para que pese menos. */
+.year-timeline-event {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 2px;
+  transform: rotate(45deg);
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.year-timeline-event:hover,
+.year-timeline-event:focus-visible {
+  transform: rotate(45deg) scale(1.35);
+}
+
+.year-timeline-event-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  width: 220px;
+  background: #1a1a1a;
+  color: #fbfaf7;
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  z-index: 1002;
+  pointer-events: none;
+}
+
+.year-timeline-caption {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.4;
+}
+
 .year-timeline-slider {
   position: absolute;
   bottom: 0;
@@ -327,14 +516,19 @@
   border-radius: 2px;
 }
 
+/* Blanco/crema con borde oscuro — antes era dorado (#c9a227), el mismo
+   color que el Met en el resto de la app (toggle de museo, hitos del
+   timeline), lo que confundía "esto es del Met" con "esto es la perilla del
+   slider". Invertido a color neutro para que el dorado siga significando
+   siempre "Met" en toda la UI. */
 .year-timeline-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #c9a227;
-  border: 2px solid #fbfaf7;
+  background: #fbfaf7;
+  border: 2px solid #1a1a1a;
   margin-top: -5.5px;
   cursor: grab;
 }
@@ -343,8 +537,8 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #c9a227;
-  border: 2px solid #fbfaf7;
+  background: #fbfaf7;
+  border: 2px solid #1a1a1a;
   cursor: grab;
 }
 

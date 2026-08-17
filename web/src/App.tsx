@@ -8,6 +8,7 @@ import { groupByOrigin, jitteredPoint, type OriginCluster } from "./geo";
 import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
 import { Timeline } from "./components/Timeline";
+import { HISTORICAL_EVENTS } from "./data/historicalEvents";
 import "./App.css";
 
 const TIMELINE_MIN_YEAR = 1700;
@@ -48,23 +49,36 @@ const COLONIAL_POWER_COLORS: Record<string, string> = {
 // canvas en vez de cargar un asset externo, así el color exacto por potencia
 // (mismo COLONIAL_POWER_COLORS que ya se usa en el resto de esta capa) queda
 // resuelto sin necesitar 2 archivos SVG separados o un ícono SDF.
-function buildShipIcon(color: string, size = 18): { width: number; height: number; data: Uint8Array } {
+function buildShipIcon(color: string, size = 11): { width: number; height: number; data: Uint8Array } {
   const canvas = document.createElement("canvas");
   canvas.width = size;
   canvas.height = size;
   const ctx = canvas.getContext("2d")!;
   ctx.fillStyle = color;
   // Triángulo simple apuntando "al este" — Mapbox lo rota solo según la
-  // dirección de la línea en cada tramo (symbol-placement: "line").
+  // dirección de la línea en cada tramo (symbol-placement: "line"). Alto
+  // proporcional a `size` (no un offset fijo en px) para que reducir el
+  // tamaño no lo deforme.
+  const halfHeight = size * 0.32;
   ctx.beginPath();
-  ctx.moveTo(1, size / 2 - 5);
+  ctx.moveTo(1, size / 2 - halfHeight);
   ctx.lineTo(size - 1, size / 2);
-  ctx.lineTo(1, size / 2 + 5);
+  ctx.lineTo(1, size / 2 + halfHeight);
   ctx.closePath();
   ctx.fill();
   const { data } = ctx.getImageData(0, 0, size, size);
   return { width: size, height: size, data: new Uint8Array(data.buffer) };
 }
+
+// Mismo triángulo que buildShipIcon (arriba), como SVG en vez de canvas —
+// para el chip "Rutas navales" del timeline, así el ícono del toggle es
+// literalmente la misma forma que se ve repetida sobre las rutas en el mapa,
+// no un emoji de barco sin relación visual con lo que representa.
+const ROUTES_TOGGLE_ICON = (
+  <svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true">
+    <polygon points="1,2.16 11,6 1,9.84" fill="currentColor" />
+  </svg>
+);
 
 // Nota por museo (nivel 2 de las "notas de contexto en la UI", ver CLAUDE.md
 // "Pendiente de decidir"): cada museo tiene una lógica de extracción distinta
@@ -73,6 +87,14 @@ const MUSEUM_NOTES: Record<string, string> = {
   met: "El Met no adquirió estas piezas porque EEUU controlara territorialmente sus lugares de origen. Llegaron por el mercado internacional de antigüedades, misiones de excavación autorizadas por la potencia colonial de turno y donantes ricos — poder económico y político ganado en años recientes, no expansión territorial.",
   louvre: "Los 4 departamentos del Louvre representados acá (Antigüedades Egipcias, Orientales, Griegas-Etruscas-Romanas, Arte Islámico) cubren sobre todo Egipto, Medio Oriente y el Mediterráneo. El fondo de África Subsahariana y América no está en el Louvre: se transfirió al Musée du Quai Branly cuando abrió en 2006.",
   bm: "El caso más directo de administración colonial territorial de los tres museos, con mecanismos que van desde la conquista militar (la Piedra de Rosetta, las Placas de Benín) hasta excavaciones bajo permiso del gobierno otomano.",
+};
+
+// Nota por capa (nivel 3 de las "notas de contexto en la UI"): qué muestra y
+// qué NO muestra cada capa de contexto histórico — mismo criterio que
+// MUSEUM_NOTES, adaptado a las 2 capas del timeline en vez de a los museos.
+const LAYER_NOTES: Record<string, string> = {
+  territories: "Sombrea las regiones que fueron territorio colonial de UK o Francia en el año seleccionado (Cliopatria, Seshat Global History Databank). EEUU no aparece — el Met no adquirió piezas por control territorial, ver la nota del Met arriba. Los mandatos británicos de Irak y Palestina (1920-1932) tampoco están: la fuente no los modela como entidad propia.",
+  routes: "50 rutas curadas de barcos británicos y franceses entre 1700-1900, de un archivo real de bitácoras de navegación (CLIWOC/PANGAEA). No son las únicas rutas de la época ni viajes de exploradores famosos (Cook, Bougainville, etc. no están en este dataset) — es una muestra priorizada por nación y densidad de datos registrados.",
 };
 
 type PanelState =
@@ -98,6 +120,14 @@ function App() {
   const [showTerritories, setShowTerritories] = useState(true);
   const [showRoutes, setShowRoutes] = useState(true);
   const [museumNoteOpen, setMuseumNoteOpen] = useState<string | null>(null);
+  // La nota "muestra curada" vivía anclada en una esquina del mapa (primero
+  // bottom-left, después top-right) y en las dos terminaba tapada por algo
+  // (el dock del timeline, el panel lateral) — pasa a un botón "i" en la
+  // fila de arriba, mismo patrón que MUSEUM_NOTES, inmune a qué esté abierto
+  // en el resto de la pantalla. Mismo contenido que va a alimentar el modal
+  // de bienvenida (nivel 1 de "notas de contexto en la UI", ver CLAUDE.md)
+  // cuando se implemente — por ahora es un popover simple.
+  const [curatedNoteOpen, setCuratedNoteOpen] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- tipo de MapRef de react-map-gl no vale la pena importar solo para esto
   const mapRef = useRef<any>(null);
 
@@ -247,25 +277,38 @@ function App() {
               ? `${visibleObjects.length} piezas`
               : `${visibleObjects.length} de ${bundle.objects.length} piezas`}
           </div>
-        </div>
-        <div className="curated-note">
-          Muestra curada — no representa la colección completa de cada museo. Muchas piezas quedan fuera.
-          {timelineOpen && showTerritories && (
-            <>
-              {" "}Territorios coloniales: Seshat Global History Databank —{" "}
-              <a href="https://github.com/Seshat-Global-History-Databank/cliopatria" target="_blank" rel="noreferrer">
-                Cliopatria
-              </a>{" "}(CC-BY 4.0).
-            </>
-          )}
-          {timelineOpen && showRoutes && (
-            <>
-              {" "}Rutas navales: Jones et al. (2007),{" "}
-              <a href="https://doi.org/10.1594/PANGAEA.611088" target="_blank" rel="noreferrer">
-                CLIWOC
-              </a>{" "}(CC-BY 3.0) — muestra curada de 50 cruceros, no todas las rutas del período.
-            </>
-          )}
+          <div className="curated-note-wrap">
+            <button
+              type="button"
+              className={`curated-note-btn${curatedNoteOpen ? " open" : ""}`}
+              aria-label="Sobre esta muestra"
+              aria-expanded={curatedNoteOpen}
+              onClick={() => setCuratedNoteOpen((v) => !v)}
+            >
+              i
+            </button>
+            {curatedNoteOpen && (
+              <div className="curated-note">
+                Muestra curada — no representa la colección completa de cada museo. Muchas piezas quedan fuera.
+                {timelineOpen && showTerritories && (
+                  <>
+                    {" "}Territorios coloniales: Seshat Global History Databank —{" "}
+                    <a href="https://github.com/Seshat-Global-History-Databank/cliopatria" target="_blank" rel="noreferrer">
+                      Cliopatria
+                    </a>{" "}(CC-BY 4.0).
+                  </>
+                )}
+                {timelineOpen && showRoutes && (
+                  <>
+                    {" "}Rutas navales: Jones et al. (2007),{" "}
+                    <a href="https://doi.org/10.1594/PANGAEA.611088" target="_blank" rel="noreferrer">
+                      CLIWOC
+                    </a>{" "}(CC-BY 3.0) — muestra curada de 50 cruceros, no todas las rutas del período.
+                  </>
+                )}
+              </div>
+            )}
+          </div>
         </div>
         <Map
           ref={mapRef}
@@ -329,7 +372,7 @@ function App() {
                   "symbol-placement": "line",
                   "symbol-spacing": 160,
                   "icon-image": ["match", ["get", "power"], "uk", "ship-uk", "fr", "ship-fr", "ship-uk"],
-                  "icon-size": 0.9,
+                  "icon-size": 0.75,
                   "icon-rotation-alignment": "map",
                   "icon-allow-overlap": true,
                   "icon-ignore-placement": true,
@@ -382,7 +425,7 @@ function App() {
             aria-expanded={timelineOpen}
           >
             <span className={`year-timeline-handle-arrow${timelineOpen ? " open" : ""}`}>▲</span>
-            Contexto colonial
+            Contexto histórico
           </button>
           {timelineOpen && (
             <Timeline
@@ -395,13 +438,14 @@ function App() {
                 { label: "Francia", color: COLONIAL_POWER_COLORS.fr },
               ]}
               layerToggles={[
-                { id: "territories", label: "Imperios", active: showTerritories },
-                { id: "routes", label: "Rutas navales", active: showRoutes },
+                { id: "territories", label: "Imperios", active: showTerritories, note: LAYER_NOTES.territories },
+                { id: "routes", label: "Rutas navales", active: showRoutes, icon: ROUTES_TOGGLE_ICON, note: LAYER_NOTES.routes },
               ]}
               onToggleLayer={(id) => {
                 if (id === "territories") setShowTerritories((v) => !v);
                 if (id === "routes") setShowRoutes((v) => !v);
               }}
+              events={HISTORICAL_EVENTS}
             />
           )}
         </div>

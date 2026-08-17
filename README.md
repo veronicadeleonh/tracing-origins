@@ -46,12 +46,14 @@ npm run build    # build de producción en web/dist
 - [x] Toggles por museo con contador de piezas visibles
 - [x] Capa de contexto: territorios coloniales de UK/Francia, timeline interactivo 1700-2020 (Cliopatria, CC-BY 4.0), opcional vía toggle con leyenda
 - [x] Capa de contexto: rutas navales UK/Francia 1700-1900 (CLIWOC/PANGAEA, CC-BY 3.0, 50 rutas curadas), conectada al mismo timeline que los territorios coloniales, toggle independiente ("Imperios"/"Rutas navales")
+- [x] Hitos puntuales en el timeline (círculo + tooltip on hover) — 3 eventos institucionales del Met (1870 fundación, 1876 Colección Cesnola, 1906 arranca la Expedición Egipcia propia), extensible a BM/Louvre
 - [x] Piloto de investigación profunda: 5 piezas egipcias del Met con fuentes citadas
 - [x] Investigación profunda (layer 3) en el Louvre: 8 piezas con timeline citado (mecanismos documentados: partage bajo Mandato Francés y bajo autorización otomana, venta Borghese-Napoleón, excavación privada, mercado de arte) — meta 5-10 por museo cumplida
 - [x] Investigación profunda (layer 3) en el British Museum: 8 piezas con timeline citado (Roseta bajo Tratado de Alejandría 1801, Placas de Benín tras la Expedición Punitiva de 1897, excavaciones en Mesopotamia otomana financiadas por el museo, pieza de Amaravati vía India Museum, y casos de contraste sin mecanismo colonial documentado) — meta 5-10 por museo cumplida
 - [ ] Ampliar BM a ~150-250 piezas (hoy: Met 161, Louvre 215, BM 50 — 426 de ~500-700)
 - [x] Nota por museo en la UI (botón "i" junto a cada toggle) explicando la lógica de extracción particular de cada uno
-- [ ] Modal de información/instrucciones del proyecto y nota por capa de contexto — resto de los 3 niveles de "notas de contexto en la UI" (ver `CLAUDE.md`)
+- [x] Nota por capa de contexto en la UI (botón "i" en "Imperios"/"Rutas navales" del timeline) — explica qué muestra y qué no cada capa
+- [ ] Modal de información/instrucciones del proyecto (nivel 1 de "notas de contexto en la UI", ver `CLAUDE.md`) — todavía no implementado
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación documentado
 - [ ] Decidir tratamiento narrativo una vez haya más `context_flags` cargadas (¿resaltar piezas en el mapa? ¿filtro por tipo de evento?)
 - [ ] Revisar rotulado de fronteras políticas del basemap de Mapbox en zonas disputadas (Cisjordania, Kurdistán, Sahara Occidental)
