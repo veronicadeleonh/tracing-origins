@@ -144,6 +144,41 @@ SEED_OBJECT_IDS = [
     "G_1894-1101-213",  # Alabastrón de vidrio — excavación británica en Amathus, Chipre
     "E_Af1954-23-2641-a-b",  # Daga bamum — Camerún
     "A_1959-1012-1",  # Figura de Párvatí y Shivá — Rajshahi, Bangladés
+    # Quinta ronda (17/08) — misma metodología (búsqueda puntual en
+    # /collection/search, verificado a mano), pero esta vez usando el
+    # endpoint de búsqueda directo vía fetch en vez de navegación interactiva
+    # (devuelve resultados server-rendered, sin JS — se puede leer Findspot/
+    # Production place de la lista sin visitar cada ficha una por una).
+    # Prioriza países/regiones sin cobertura o con cobertura mínima: Irán,
+    # Afganistán, Tíbet, Sierra Leona, Uganda, Zimbabue, Palestina, Malaui,
+    # Guatemala, Perú, Botsuana, Zambia, Caribe (Trinidad/Guyana), Camboya,
+    # Java/Indonesia.
+    "W_1825-0421-1",  # Bloque en relieve del Apadana — Persépolis, Irán (aqueménida)
+    "A_1880-28",  # Cofre-relicario de Bimaran — excavado por Charles Masson en la Estupa 2 de Bimaran, Afganistán (1830s)
+    "A_1880-3633",  # Sello-anillo kushán — Begram/Kabul, Afganistán
+    "A_As1905-0518-47",  # Manto ritual budista — Lhasa, Tíbet (1905, tras la misión Younghusband)
+    "E_Af1947-30-1",  # Azuela excavada — Koinadugu, Sierra Leona
+    "E_Af1913-118",  # Brazalete mende — Mendeland, Sierra Leona
+    "E_Af1886-1126-2",  # Brazalete — río Sherbro, Sierra Leona (1886)
+    "E_Af1931-0105-14",  # "La Cabeza de Luzira" — excavada en Luzira, Uganda
+    "E_Af1955-01-1",  # Vasija con asa, cultura Bachwesi — Bigo bya Mugenyi, Uganda
+    "E_Af1923-1211-11-a-b",  # Cuentas/frasco excavados — Great Zimbabwe, Zimbabue
+    "E_Af1926-0410-1",  # Viga del Templo Occidental — Great Zimbabwe, Zimbabue
+    "W_1970-0209-18",  # Cuenco de la Edad del Hierro — excavación de Ophel, Jerusalén
+    "W_As1967-02-1",  # Capa/abayah beduina — Palestina/Siria
+    "C_1908-0110-4",  # Moneda de la Primera Revuelta Judía, acuñada en Jerusalén (66-67 d.C.)
+    "E_Af1893-0804-88",  # Tobillera ngoni — Angoniland, Malaui (1889-1893)
+    "E_Am1930-F-1",  # "El Vaso Fenton"/"El Vaso Nebaj" — maya clásico tardío, excavado en Nebaj, Guatemala
+    "E_Am1991-Q-4",  # Cuenco inca — excavado en Perú
+    "E_Af1937-0210-13",  # Objeto san — Bechuanaland (hoy Botsuana)
+    "E_Af1933-1206-70",  # Equipo de adivinación bemba — Zambia
+    "E_Af1947-07-17",  # Modelo de canoa lozi — Zambia
+    "E_Af1902-0513-5",  # Hacha luvale — Zambia (1891-1901)
+    "E_Am-St-809-A",  # Vasija — Trinidad (1862)
+    "E_Am-St-809-b",  # Botella de agua — río Essequibo, Guyana (1861)
+    "A_1890-0208-1",  # Azuela neolítica — Samrong Sen, Camboya
+    "A_1859-1228-121",  # Campana — Kedu, Java (colección Raffles, ingresada 1859)
+    "A_As1859-1228-195-l-m",  # Soporte de gong — Java (colección Raffles, 1800)
 ]
 
 

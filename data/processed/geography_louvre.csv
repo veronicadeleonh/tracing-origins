@@ -2,239 +2,239 @@ objectID,origin_label,origin_precision,origin_lat,origin_lon,museum_lat,museum_l
 louvre:cl010002359,,unresolved,,,48.8606,2.3376
 louvre:cl010002360,,unresolved,,,48.8606,2.3376
 louvre:cl010003518,,unresolved,,,48.8606,2.3376
-louvre:cl010003776,Temple d'Amenhotep IV Akhénathon (Karnak Est->Karnak->Thèbes Est),site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010003776,Tebas,site,25.7188,32.6081,48.8606,2.3376
 louvre:cl010004065,,unresolved,,,48.8606,2.3376
 louvre:cl010005241,,unresolved,,,48.8606,2.3376
-louvre:cl010005443,Hérakléopolis Magna (Moyenne Égypte->Égypte->Afrique du Nord) (d'après texte),country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010005798,complexe funéraire d'Ounas (Saqqara->Saqqara-Nord) (?) (chaussée d'Ounas ?),site,29.8714,31.2164,48.8606,2.3376
+louvre:cl010005443,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010005798,Saqqara,site,29.8714,31.2164,48.8606,2.3376
 louvre:cl010006164,,unresolved,,,48.8606,2.3376
-louvre:cl010006263,Saqqara (Nécropole memphite->Région memphite->Basse Égypte),site,29.8714,31.2164,48.8606,2.3376
-louvre:cl010006343,Karnak (Thèbes Est->Thèbes->région thébaine) (d'après Chrysikopoulos 2018),site,25.7188,32.6081,48.8606,2.3376
-louvre:cl010006354,"Saqqara-Nord (Saqqara->Nécropole memphite->Région memphite) (""Dans un puits situé au nord du Sérapéum"")",site,29.8714,31.2164,48.8606,2.3376
+louvre:cl010006263,Saqqara,site,29.8714,31.2164,48.8606,2.3376
+louvre:cl010006343,Tebas,site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010006354,Saqqara,site,29.8714,31.2164,48.8606,2.3376
 louvre:cl010006516,,unresolved,,,48.8606,2.3376
-louvre:cl010006582,"Saqqara-Nord (Saqqara->Nécropole memphite->Région memphite) (""Dans un puits situé au nord du Sérapéum"" : registre des fouilles, Archives natinales 20150162/227)",site,29.8714,31.2164,48.8606,2.3376
-louvre:cl010006725,Abydos (Haute Égypte->Égypte->Afrique du Nord) ; Thèbes Ouest (Thèbes->région thébaine->Haute Égypte),site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010006582,Saqqara,site,29.8714,31.2164,48.8606,2.3376
+louvre:cl010006725,Tebas,site,25.7188,32.6081,48.8606,2.3376
 louvre:cl010006825,,unresolved,,,48.8606,2.3376
 louvre:cl010007085,,unresolved,,,48.8606,2.3376
 louvre:cl010007229,,unresolved,,,48.8606,2.3376
-louvre:cl010007230,complexe funéraire de Djedefrê (Abou Rawach->Nécropole memphite->Région memphite),site,30.1167,31.2167,48.8606,2.3376
+louvre:cl010007230,Abu Rawash,site,30.1167,31.2167,48.8606,2.3376
 louvre:cl010007343,,unresolved,,,48.8606,2.3376
-louvre:cl010007467,Gebel el-Arak (Haute Égypte->Égypte->Afrique du Nord) (d'après vendeur),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010007592,Vallée des Rois (Thèbes Ouest->Thèbes->région thébaine),site,25.7188,32.6081,48.8606,2.3376
-louvre:cl010007858,Saqqara-Nord (Saqqara->Nécropole memphite->Région memphite),site,29.8714,31.2164,48.8606,2.3376
-louvre:cl010007975,Thèbes (région thébaine->Haute Égypte->Égypte),site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010007467,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010007592,Tebas,site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010007858,Saqqara,site,29.8714,31.2164,48.8606,2.3376
+louvre:cl010007975,Tebas,site,25.7188,32.6081,48.8606,2.3376
 louvre:cl010008001,,unresolved,,,48.8606,2.3376
-louvre:cl010008106,Cour du Moyen Empire (zone centale de Karnak->Temple d'Amon-Rê->Karnak) (sur la banquette qui bordait le mur d'enceinte du sanctuaire du Moyen Empire),site,25.7188,32.6573,48.8606,2.3376
+louvre:cl010008106,Karnak,site,25.7188,32.6573,48.8606,2.3376
 louvre:cl010008108,,unresolved,,,48.8606,2.3376
-louvre:cl010008248,Tell el-Amarna (Moyenne Égypte->Égypte->Afrique du Nord) (d'après inventaire),site,27.6453,30.9017,48.8606,2.3376
-louvre:cl010008693,Giza (Région memphite->Nécropole memphite) (d'après inventaire),site,29.9765,31.1313,48.8606,2.3376
-louvre:cl010008923,Fayoum (Afrique du Nord->Égypte) (?) (d'après mention de l'association de Snonais),country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010008248,Amarna,site,27.6453,30.9017,48.8606,2.3376
+louvre:cl010008693,Giza,site,29.9765,31.1313,48.8606,2.3376
+louvre:cl010008923,Egipto,country,26.8206,30.8025,48.8606,2.3376
 louvre:cl010009174,,unresolved,,,48.8606,2.3376
-louvre:cl010009270,villa Albani (Italie->Rome),site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010009338,villa Borghèse (Italie->Rome) (jardins),site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010009461,Thèbes (région thébaine->Haute Égypte->Égypte),site,25.7188,32.6081,48.8606,2.3376
-louvre:cl010009464,temple de Nectanébo (Sérapéum de Memphis->Saqqara-Nord->Saqqara) (Apiéum),site,29.8714,31.2164,48.8606,2.3376
-louvre:cl010009969,Temple d'Amon-Rê (Karnak->Thèbes Est->Thèbes),site,25.7188,32.6081,48.8606,2.3376
-louvre:cl010010049,tombe 7 de Nakhti (Assiout->Moyenne Égypte->Égypte) (chapelle),site,27.1809,31.1837,48.8606,2.3376
+louvre:cl010009270,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010009338,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010009461,Tebas,site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010009464,Saqqara,site,29.8714,31.2164,48.8606,2.3376
+louvre:cl010009969,Tebas,site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010010049,Asiut,site,27.1809,31.1837,48.8606,2.3376
 louvre:cl010010056,,unresolved,,,48.8606,2.3376
-louvre:cl010010062,Tanis (Delta oriental->Basse Égypte->Égypte),country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010010873,Aboukir (Delta occidental->Basse Égypte->Égypte),country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010010062,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010010873,Egipto,country,26.8206,30.8025,48.8606,2.3376
 louvre:cl010011417,,unresolved,,,48.8606,2.3376
-louvre:cl010011420,Tell el-Amarna (Égypte->Moyenne Égypte) (?),site,27.6453,30.9017,48.8606,2.3376
+louvre:cl010011420,Amarna,site,27.6453,30.9017,48.8606,2.3376
 louvre:cl010016137,,unresolved,,,48.8606,2.3376
 louvre:cl010017961,,unresolved,,,48.8606,2.3376
-louvre:cl010019286,petits souterrains (Sérapéum de Memphis->Saqqara-Nord->Saqqara) (extrémité nord des petits souterrains),site,29.8714,31.2164,48.8606,2.3376
-louvre:cl010022054,Akhmîm (Haute Égypte->Égypte->Afrique du Nord),country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010022918,Abydos (Haute Égypte->Égypte->Afrique du Nord),country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010024569,Cachette du temple de Satet (temple de Satet->Éléphantine->région d'Assouan),site,24.0889,32.8998,48.8606,2.3376
-louvre:cl010028871,temple d'Hathor (Dendéra->Haute Égypte->Égypte) (Chapelle Est d'Osiris sur le toit ; moitié ouest du plafond de la pièce centrale),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010029360,Karnak (Thèbes Est->Thèbes->région thébaine),site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010019286,Saqqara,site,29.8714,31.2164,48.8606,2.3376
+louvre:cl010022054,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010022918,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010024569,Asuán,site,24.0889,32.8998,48.8606,2.3376
+louvre:cl010028871,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010029360,Tebas,site,25.7188,32.6081,48.8606,2.3376
 louvre:cl010029549,,unresolved,,,48.8606,2.3376
-louvre:cl010029573,Petit temple de Khonsou (Karnak Est->Karnak->Thèbes Est),site,25.7188,32.6081,48.8606,2.3376
-louvre:cl010030030,Tell el-Amarna (Moyenne Égypte->Égypte->Afrique du Nord),site,27.6453,30.9017,48.8606,2.3376
+louvre:cl010029573,Tebas,site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010030030,Amarna,site,27.6453,30.9017,48.8606,2.3376
 louvre:cl010032664,,unresolved,,,48.8606,2.3376
-louvre:cl010034902,Leontopolis (Delta oriental->Basse Égypte->Égypte) (d'après titres),country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010034902,Egipto,country,26.8206,30.8025,48.8606,2.3376
 louvre:cl010037057,,unresolved,,,48.8606,2.3376
 louvre:cl010046595,,unresolved,,,48.8606,2.3376
-louvre:cl010048163,"Baouit (Égypte->Moyenne Égypte) (église de l'Archange-Michel, autrefois église nord)",country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010077681,mastaba d'Akhethetep (Saqqara-Nord->Saqqara->Nécropole memphite),site,29.8714,31.2164,48.8606,2.3376
-louvre:cl010113444,Italie du sud = sud de l'Italie (Europe) (couvercle) ; Le Caire (Afrique->Egypte) (vase (art fatimide)),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010119623,Tello tell des tablettes = Tello tell V (Tête trouvée par Sarzec au tell des tablettes ; corps trouvé par Cros à quelques mètres fouillés au sud de la tranchée C-E),site,31.59,46.15,48.8606,2.3376
-louvre:cl010119629,Tello tell de la nécropole = Tello tell de la tête au turban = Tello tell H (Tranchée III),site,31.59,46.15,48.8606,2.3376
-louvre:cl010119651,Girsu = Tello (?),site,31.59,46.15,48.8606,2.3376
+louvre:cl010048163,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010077681,Saqqara,site,29.8714,31.2164,48.8606,2.3376
+louvre:cl010113444,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010119623,Tello,site,31.59,46.15,48.8606,2.3376
+louvre:cl010119629,Tello,site,31.59,46.15,48.8606,2.3376
+louvre:cl010119651,Girsu,site,31.59,46.15,48.8606,2.3376
 louvre:cl010120339,Diban,site,31.5,35.7833,48.8606,2.3376
-louvre:cl010120340,Redjom el A'Abed (Entre Shihan et Diban),site,31.5,35.7833,48.8606,2.3376
+louvre:cl010120340,Diban,site,31.5,35.7833,48.8606,2.3376
 louvre:cl010120343,Neirab,site,36.1833,37.2333,48.8606,2.3376
-louvre:cl010120347,"Byblos = Jbail (Près de la tour des croisés, angle S. E., placée entre deux lions)",site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010120348,Byblos temple de la Ba'alat Goubal,site,34.1208,35.6478,48.8606,2.3376
+louvre:cl010120347,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010120348,Biblos,site,34.1208,35.6478,48.8606,2.3376
 louvre:cl010120353,Afis,site,35.85,36.75,48.8606,2.3376
-louvre:cl010120357,"Saïda Magharat Tabloun = Saïda nécropole (Nécropole de Magharat Tablun (caverne d'Apollon), Saïda, ancienne Sidon (Liban))",country,33.8547,35.8623,48.8606,2.3376
-louvre:cl010120489,Assyrie (?),country,34.8021,38.9968,48.8606,2.3376
-louvre:cl010120528,Mari temple d'Ishtar cour 20,site,34.5514,40.8908,48.8606,2.3376
-louvre:cl010120557,Mari palais de Zimri-Lim cour 136 (en surface : morceau avec l'inscription) ; Mari palais de Zimri-Lim cour 148 (sur le dallage du grand portail 148-210 : autre fragment),site,34.5514,40.8908,48.8606,2.3376
-louvre:cl010120558,"Mari temple de Dagan (Lion gardien, à l'intérieur du "" temple aux lions "" (appelé temple de Dagan par le fouilleur))",site,34.5514,40.8908,48.8606,2.3376
-louvre:cl010120706,Girsu = Tello,site,31.59,46.15,48.8606,2.3376
-louvre:cl010121494,Suse,site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010121794,"Girsu = Tello (Les fragments (A), et (C) de AO 50 ont été découverts au pied du tell K, dans le vallon entre I et I' ; ( B) au Palais en réemploi évident ; AO 2346 (F) , 2647 (D) ; 2348 (E) non loin de la construction dite d'Ur-Nanshe ; (G) acquis par le BM)",site,31.59,46.15,48.8606,2.3376
-louvre:cl010122992,"Suse 2ème sondage de l'acropole = Suse acropole sondage Sud (cote + 16,50/17 m)",site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010123247,Tyr,site,33.2704,35.2038,48.8606,2.3376
-louvre:cl010123278,En Nemara,site,32.75,36.75,48.8606,2.3376
-louvre:cl010123450,Suse acropole (Apportée de la ville de Sippar à Suse butin de guerre par Shutruk-Nahhunte au XIIe siècle avant J.-C.),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010123454,Suse acropole (?),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010123458,Doura Europos temple d'Artémis salle B (Chapelle d'Aphrodite),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010127854,"Palmyre = Tadmor (Wādī Miyah,non loin de Biʾr Wereb)",site,34.5514,38.2792,48.8606,2.3376
-louvre:cl010130455,Luristan,site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010136190,Arslan Tash Bâtiment aux ivoires salle 14 (à proximité du mur nord),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010136213,Arslan Tash Bâtiment aux ivoires salle 14 (à proximité immédiate des traces du cadre de « lit »),site,36.75,38.8667,48.8606,2.3376
-louvre:cl010138617,Luristan,site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010140480,Larsa = Senkereh,site,31.24,45.8583,48.8606,2.3376
-louvre:cl010140542,Ras Shamra acropole (à l'ouest du Temple de Baal),site,35.6017,35.7822,48.8606,2.3376
-louvre:cl010141456,Larsa tombe 15,site,31.24,45.8583,48.8606,2.3376
-louvre:cl010141459,"Giyan = Tepe Giyan (Village de Giyan près de Néhavend. Tombe 3, ""type Luristan"")",site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010144013,Assur = Qalaat Shergat = Qalaat Sherkat (?),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010144290,Baalbeck (Découvert à Baalbeck en plusieurs fragments ; le bras droit n'a pas été retrouvé),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010144553,Mari palais de Zimri-Lim cour 106,site,34.5514,40.8908,48.8606,2.3376
-louvre:cl010144705,Ras Shamra butte Nord Ouest du tell,site,35.6017,35.7822,48.8606,2.3376
-louvre:cl010144847,Babylonie = Sumer (Attribution d'après style),country,33.0,44.0,48.8606,2.3376
-louvre:cl010145111,Luristan,site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010148863,Phénicie (?) ; Syrie et Liban (?),country,34.8021,38.9968,48.8606,2.3376
-louvre:cl010149662,Luristan,site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010149663,Luristan,site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010149665,Luristan,site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010150476,Luristan,site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010151005,Iran (Iran du Nord),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010151190,Girsu = Tello,site,31.59,46.15,48.8606,2.3376
-louvre:cl010155677,Iran (Iran du nord. Localisation d'après style),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010156607,Henchir Alaouin (Tunisie actuelle),country,33.8869,9.5375,48.8606,2.3376
-louvre:cl010167793,Amarna = Tell el Amarna,site,27.6453,30.9017,48.8606,2.3376
-louvre:cl010167794,Amarna = Tell el Amarna,site,27.6453,30.9017,48.8606,2.3376
-louvre:cl010170853,Suse apadana palais de Darius,site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010174063,Kerman (environs),site,30.2839,57.0834,48.8606,2.3376
-louvre:cl010174445,Suse (Apporté de Babylonie à Suse en butin de guerre au XIIe s. av. J.-C),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010174451,Suse acropole (Tranchée 7α. Découvert à Suse où il avait été emporté en butin de guerre au XIIe siècle av. J.-C.),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010174452,Suse acropole (Tranchée 7α. Apporté de Babylonie à Suse en butin de guerre au XIIe s. av. J.-C.),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010174453,Suse (Apporté de Babylonie à Suse en butin de guerre au XIIe s. av. J.-C.),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010174456,Suse (Apporté de Babylonie à Suse en butin de guerre au XIIe s. av. J.-C.),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010174457,Suse (Apporté de Babylonie à Suse en butin de guerre au XIIe s. av. J.-C.),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010174482,Suse acropole,site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010176829,Suse acropole temple de Ninhursag,site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010186847,Suse acropole nécropole,site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010250162,Paros - 1902 (asclépéion),site,37.0853,25.1488,48.8606,2.3376
-louvre:cl010250164,Thasos - 1864 (passage des Théores),site,40.7833,24.7,48.8606,2.3376
-louvre:cl010250475,Vulci (Canino),site,42.42,11.625,48.8606,2.3376
-louvre:cl010250571,Rome - 1618 (thermes de Dioclétien),site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010252531,Samothrace Paléopolis - 1863 (Cabirion),site,40.4708,25.5228,48.8606,2.3376
+louvre:cl010120357,Líbano,country,33.8547,35.8623,48.8606,2.3376
+louvre:cl010120489,Siria,country,34.8021,38.9968,48.8606,2.3376
+louvre:cl010120528,Mari,site,34.5514,40.8908,48.8606,2.3376
+louvre:cl010120557,Mari,site,34.5514,40.8908,48.8606,2.3376
+louvre:cl010120558,Mari,site,34.5514,40.8908,48.8606,2.3376
+louvre:cl010120706,Girsu,site,31.59,46.15,48.8606,2.3376
+louvre:cl010121494,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010121794,Girsu,site,31.59,46.15,48.8606,2.3376
+louvre:cl010122992,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010123247,Tiro,site,33.2704,35.2038,48.8606,2.3376
+louvre:cl010123278,Nemara,site,32.75,36.75,48.8606,2.3376
+louvre:cl010123450,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010123454,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010123458,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010127854,Palmira,site,34.5514,38.2792,48.8606,2.3376
+louvre:cl010130455,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010136190,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010136213,Arslan Tash,site,36.75,38.8667,48.8606,2.3376
+louvre:cl010138617,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010140480,Larsa,site,31.24,45.8583,48.8606,2.3376
+louvre:cl010140542,Ras Shamra,site,35.6017,35.7822,48.8606,2.3376
+louvre:cl010141456,Larsa,site,31.24,45.8583,48.8606,2.3376
+louvre:cl010141459,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010144013,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010144290,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010144553,Mari,site,34.5514,40.8908,48.8606,2.3376
+louvre:cl010144705,Ras Shamra,site,35.6017,35.7822,48.8606,2.3376
+louvre:cl010144847,Babilonia (región),country,33.0,44.0,48.8606,2.3376
+louvre:cl010145111,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010148863,Siria,country,34.8021,38.9968,48.8606,2.3376
+louvre:cl010149662,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010149663,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010149665,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010150476,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010151005,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010151190,Girsu,site,31.59,46.15,48.8606,2.3376
+louvre:cl010155677,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010156607,Túnez,country,33.8869,9.5375,48.8606,2.3376
+louvre:cl010167793,Amarna,site,27.6453,30.9017,48.8606,2.3376
+louvre:cl010167794,Amarna,site,27.6453,30.9017,48.8606,2.3376
+louvre:cl010170853,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010174063,Kerman,site,30.2839,57.0834,48.8606,2.3376
+louvre:cl010174445,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010174451,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010174452,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010174453,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010174456,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010174457,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010174482,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010176829,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010186847,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010250162,Paros,site,37.0853,25.1488,48.8606,2.3376
+louvre:cl010250164,Thasos,site,40.7833,24.7,48.8606,2.3376
+louvre:cl010250475,Vulci,site,42.42,11.625,48.8606,2.3376
+louvre:cl010250571,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010252531,Samotracia,site,40.4708,25.5228,48.8606,2.3376
 louvre:cl010256592,Inconnu,unresolved,,,48.8606,2.3376
-louvre:cl010257735,Piombino - 1832 (dans la mer),site,36.4341,28.2176,48.8606,2.3376
-louvre:cl010258136,Alcalá de los Gazules - 1847,site,36.4667,-5.7167,48.8606,2.3376
+louvre:cl010257735,Rodas,site,36.4341,28.2176,48.8606,2.3376
+louvre:cl010258136,Alcalá de los Gazules,site,36.4667,-5.7167,48.8606,2.3376
 louvre:cl010258335,Argos,site,37.6333,22.7333,48.8606,2.3376
-louvre:cl010262830,Sicile,country,37.5,14.0,48.8606,2.3376
-louvre:cl010264064,Thèbes,site,25.7188,32.6081,48.8606,2.3376
-louvre:cl010268234,Cerveteri = Caeré (d'après Cataloghi Campana),site,41.995,12.103,48.8606,2.3376
-louvre:cl010268439,Cerveteri = Caeré (d'après les cataloghi Campana),site,41.995,12.103,48.8606,2.3376
-louvre:cl010269688,Italie centrale,country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010269994,Italie centrale (Etrurie),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010270005,Santa Maria di Capua (d'après registre MNB),site,34.5514,40.8908,48.8606,2.3376
+louvre:cl010262830,Sicilia,country,37.5,14.0,48.8606,2.3376
+louvre:cl010264064,Tebas,site,25.7188,32.6081,48.8606,2.3376
+louvre:cl010268234,Cerveteri,site,41.995,12.103,48.8606,2.3376
+louvre:cl010268439,Cerveteri,site,41.995,12.103,48.8606,2.3376
+louvre:cl010269688,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010269994,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010270005,Mari,site,34.5514,40.8908,48.8606,2.3376
 louvre:cl010271428,,unresolved,,,48.8606,2.3376
-louvre:cl010274864,Tanagra (?) (selon MNB),site,38.3167,23.5333,48.8606,2.3376
-louvre:cl010275212,"Rome (près de Santa Maria Maggiore, peu avant 1620)",site,34.5514,40.8908,48.8606,2.3376
-louvre:cl010275362,Monte Porzio Catone = Tusculum (villa Mondragone),country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010275364,"Rome (Esquilin, avant 1649)",site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010275490,Rome - 1594 (Esquilin),site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010275491,Italie,country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010276182,Tivoli = Tibur (villa Hadriana),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010276237,Italie (?),country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010276874,Éleutherne (?),site,35.32,24.75,48.8606,2.3376
-louvre:cl010277053,Frascati = Tusculum - 1758 (Monte Compatri),country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010277122,Fiano Romano - 1926,site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010277123,Antakya = Antioche sur Oronte - 1932 (maison de l'atrium),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010277325,Vulci (Canino) (?),site,42.42,11.625,48.8606,2.3376
-louvre:cl010277627,Mélos (Milo) - 1820,site,36.69,24.43,48.8606,2.3376
-louvre:cl010277962,Tivoli = Tibur - 1779 (villa des Pisons),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010277986,Arles = Arelatum - 1651 (théâtre),site,43.6763,4.628,48.8606,2.3376
-louvre:cl010277994,"Rome - 1704 (via Merulana, jardins de Mécène)",site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010278007,Italie (?),country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010278203,Velletri - 1797 (Troncavia),country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010278706,Anzio = Antium,country,39.0742,21.8243,48.8606,2.3376
-louvre:cl010278726,Gabies - 1792,country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010278738,Italie,country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010278930,Italie,country,41.8719,12.5674,48.8606,2.3376
-louvre:cl010279000,Samos - 1875 (héraion),site,37.75,26.8,48.8606,2.3376
-louvre:cl010279013,Pharsale,site,39.2975,22.3961,48.8606,2.3376
-louvre:cl010279027,Olympie - 1829 (temple de Zeus),site,37.6383,21.63,48.8606,2.3376
-louvre:cl010279145,Alexandrie (?),country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010279157,Rome - 1569 (jardins de Salluste),site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010279164,Rome (?) (au XVIe s.),site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010279835,Benghazi = Béreniké,site,32.1167,20.0667,48.8606,2.3376
-louvre:cl010279836,Benghazi = Béreniké,site,32.1167,20.0667,48.8606,2.3376
-louvre:cl010280589,Benghazi = Béreniké (?) ; Lesbos (?),site,32.1167,20.0667,48.8606,2.3376
-louvre:cl010281955,"Rome (via Appia, Capo di Bovo, avant 1613)",site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010298047,Cerveteri = Caeré - 1845_1846 (nécropole de la Banditaccia),site,41.995,12.103,48.8606,2.3376
-louvre:cl010302825,"Rome (Via Flamina, arc de Claude)",site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010303464,"Rome (mausolée des Anici près de la basilique Saint Pierre, au milieu du XVe s.)",site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010304569,Thasos - 1864 (passage des Théores),site,40.7833,24.7,48.8606,2.3376
-louvre:cl010304570,Thasos - 1864 (passage des Théores),site,40.7833,24.7,48.8606,2.3376
-louvre:cl010304580,Olympie - 1829 (temple de Zeus),site,37.6383,21.63,48.8606,2.3376
-louvre:cl010304581,Olympie - 1829 (temple de Zeus),site,37.6383,21.63,48.8606,2.3376
-louvre:cl010304582,Olympie - 1829 (temple de Zeus),site,37.6383,21.63,48.8606,2.3376
-louvre:cl010304645,"Rome (champ de Mars, autel de Domitius Ahenobarbus)",site,41.9028,12.4964,48.8606,2.3376
-louvre:cl010315030,Herat (Monde iranien - Caucase->Afghanistan),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010315035,Espagne (Europe occidentale),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010315397,Samarcande (Monde iranien - Caucase->Ouzbékistan),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010318669,Mossoul (Proche-Orient arabe->Irak) (Jezireh),country,33.2232,43.6793,48.8606,2.3376
-louvre:cl010318774,Égypte (Proche-Orient arabe) (?) ; Syrie (Proche-Orient arabe) (?),country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010318915,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010319015,Gujarat (état) (Sous-continent indien->Inde) (?) ; Sind (province) (Sous-continent indien->Pakistan) (?),country,20.5937,78.9629,48.8606,2.3376
-louvre:cl010319120,Afghanistan (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010319251,Iran (Monde iranien - Caucase) (Khurasan),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010320000,Turquie (Asie Mineure et Europe orientale) (?) (Anatolie),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010320064,Syrie (Proche-Orient arabe) (Zone nord),country,34.8021,38.9968,48.8606,2.3376
-louvre:cl010320094,Nishapur (Monde iranien - Caucase->Iran),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010320100,Iran (Monde iranien - Caucase) (Khurasan),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010320104,Iran (Monde iranien - Caucase) ;  (Khorasan),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010320125,Astara (Monde iranien - Caucase->Iran) (?) ; Iran (Monde iranien - Caucase) (Khurasan),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010320160,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010320677,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010320845,Iran (Monde iranien - Caucase) (Iran oriental) ;  (Rhorasan),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010321189,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010321192,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010321317,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010321378,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010321498,"Bamiyan, Shahr-i-Ghulgula (Monde iranien - Caucase->Afghanistan)",country,32.4279,53.688,48.8606,2.3376
-louvre:cl010321512,Kerman (Monde iranien - Caucase->Iran) (?),site,30.2839,57.0834,48.8606,2.3376
-louvre:cl010321537,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010321560,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010321683,Isfahan (Monde iranien - Caucase->Iran) (?),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010326520,Suse (=Shush) (Monde iranien - Caucase->Iran),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010326629,Suse (=Shush) (Monde iranien - Caucase->Iran) (Ville Royale (tumulus 2) tranchée L),site,32.1881,48.2578,48.8606,2.3376
-louvre:cl010327134,Turquie (Asie Mineure et Europe orientale),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010327414,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010327537,Inde (Sous-continent indien),country,20.5937,78.9629,48.8606,2.3376
-louvre:cl010329109,Madinat al-Zahra (Europe occidentale->Espagne),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010329119,Alep (Proche-Orient arabe->Syrie) (?) ; Damas (Proche-Orient arabe->Syrie) (?),country,34.8021,38.9968,48.8606,2.3376
-louvre:cl010329194,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010329312,"Orvieto (Europe occidentale->Italie) (sous l'autel de l'église, aujourd'hui disparue, de Santa Margherita)",site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010329343,Herat (Monde iranien - Caucase->Afghanistan),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010329405,Monde iranien - Caucase (Iran nord occidental (=nord-ouest)),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010329442,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010329960,Asie Mineure et Europe orientale (?) ; Monde iranien - Caucase (Ancienne attribution : Khurasan) ; Proche-Orient arabe (?),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010330142,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010330266,Monzón de Campos (Espagne->Europe occidentale) (Trouvé en 1849 dans les ruines du Castellon (château situé hors de la cité).),site,31.59,46.15,48.8606,2.3376
-louvre:cl010330328,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010330446,Iran (Monde iranien - Caucase) (Khurasan),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010330497,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010330715,Inde (Sous-continent indien),country,20.5937,78.9629,48.8606,2.3376
-louvre:cl010331081,Tabriz (Monde iranien - Caucase->Iran) (?),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010331963,Damas (Proche-Orient arabe->Syrie) (?),country,34.8021,38.9968,48.8606,2.3376
-louvre:cl010332054,Tabriz (Monde iranien - Caucase->Iran) (?),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010332079,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010332253,Damas (Proche-Orient arabe->Syrie) (?),country,34.8021,38.9968,48.8606,2.3376
-louvre:cl010332254,Damas (Proche-Orient arabe->Syrie) (?),country,34.8021,38.9968,48.8606,2.3376
-louvre:cl010332287,Iran (Monde iranien - Caucase),country,32.4279,53.688,48.8606,2.3376
-louvre:cl010332491,Madinat al-Zahra (Europe occidentale->Espagne),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010333267,Le Caire (Proche-Orient arabe->Égypte),country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010333341,Tlemcen (Maghreb->Algérie),site,34.8828,-1.3167,48.8606,2.3376
-louvre:cl010333443,Espagne (Europe occidentale),site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010333981,"Isfahan (Monde iranien - Caucase->Iran) (?) (Proviendrait d'Ispahan selon le vendeur (article de R. Koechlin, 1929))",site,30.9626,46.1039,48.8606,2.3376
-louvre:cl010336904,Antinoé (Moyenne Égypte->Égypte->Afrique du Nord),country,26.8206,30.8025,48.8606,2.3376
-louvre:cl010465641,Pompéi (?) (dans les environs),site,40.7461,14.4989,48.8606,2.3376
+louvre:cl010274864,Tanagra,site,38.3167,23.5333,48.8606,2.3376
+louvre:cl010275212,Mari,site,34.5514,40.8908,48.8606,2.3376
+louvre:cl010275362,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010275364,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010275490,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010275491,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010276182,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010276237,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010276874,Eleuterna,site,35.32,24.75,48.8606,2.3376
+louvre:cl010277053,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010277122,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010277123,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010277325,Vulci,site,42.42,11.625,48.8606,2.3376
+louvre:cl010277627,Melos,site,36.69,24.43,48.8606,2.3376
+louvre:cl010277962,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010277986,Arles,site,43.6763,4.628,48.8606,2.3376
+louvre:cl010277994,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010278007,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010278203,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010278706,Grecia,country,39.0742,21.8243,48.8606,2.3376
+louvre:cl010278726,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010278738,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010278930,Italia,country,41.8719,12.5674,48.8606,2.3376
+louvre:cl010279000,Samos,site,37.75,26.8,48.8606,2.3376
+louvre:cl010279013,Farsala,site,39.2975,22.3961,48.8606,2.3376
+louvre:cl010279027,Olimpia,site,37.6383,21.63,48.8606,2.3376
+louvre:cl010279145,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010279157,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010279164,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010279835,Bengasi,site,32.1167,20.0667,48.8606,2.3376
+louvre:cl010279836,Bengasi,site,32.1167,20.0667,48.8606,2.3376
+louvre:cl010280589,Bengasi,site,32.1167,20.0667,48.8606,2.3376
+louvre:cl010281955,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010298047,Cerveteri,site,41.995,12.103,48.8606,2.3376
+louvre:cl010302825,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010303464,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010304569,Thasos,site,40.7833,24.7,48.8606,2.3376
+louvre:cl010304570,Thasos,site,40.7833,24.7,48.8606,2.3376
+louvre:cl010304580,Olimpia,site,37.6383,21.63,48.8606,2.3376
+louvre:cl010304581,Olimpia,site,37.6383,21.63,48.8606,2.3376
+louvre:cl010304582,Olimpia,site,37.6383,21.63,48.8606,2.3376
+louvre:cl010304645,Roma,site,41.9028,12.4964,48.8606,2.3376
+louvre:cl010315030,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010315035,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010315397,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010318669,Irak,country,33.2232,43.6793,48.8606,2.3376
+louvre:cl010318774,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010318915,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010319015,India,country,20.5937,78.9629,48.8606,2.3376
+louvre:cl010319120,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010319251,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010320000,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010320064,Siria,country,34.8021,38.9968,48.8606,2.3376
+louvre:cl010320094,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010320100,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010320104,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010320125,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010320160,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010320677,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010320845,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010321189,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010321192,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010321317,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010321378,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010321498,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010321512,Kerman,site,30.2839,57.0834,48.8606,2.3376
+louvre:cl010321537,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010321560,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010321683,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010326520,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010326629,Susa,site,32.1881,48.2578,48.8606,2.3376
+louvre:cl010327134,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010327414,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010327537,India,country,20.5937,78.9629,48.8606,2.3376
+louvre:cl010329109,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010329119,Siria,country,34.8021,38.9968,48.8606,2.3376
+louvre:cl010329194,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010329312,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010329343,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010329405,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010329442,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010329960,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010330142,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010330266,Tello,site,31.59,46.15,48.8606,2.3376
+louvre:cl010330328,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010330446,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010330497,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010330715,India,country,20.5937,78.9629,48.8606,2.3376
+louvre:cl010331081,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010331963,Siria,country,34.8021,38.9968,48.8606,2.3376
+louvre:cl010332054,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010332079,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010332253,Siria,country,34.8021,38.9968,48.8606,2.3376
+louvre:cl010332254,Siria,country,34.8021,38.9968,48.8606,2.3376
+louvre:cl010332287,Irán,country,32.4279,53.688,48.8606,2.3376
+louvre:cl010332491,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010333267,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010333341,Tlemcen,site,34.8828,-1.3167,48.8606,2.3376
+louvre:cl010333443,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010333981,Ur,site,30.9626,46.1039,48.8606,2.3376
+louvre:cl010336904,Egipto,country,26.8206,30.8025,48.8606,2.3376
+louvre:cl010465641,Pompeya,site,40.7461,14.4989,48.8606,2.3376

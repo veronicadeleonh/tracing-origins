@@ -40,7 +40,8 @@ npm run build    # build de producción en web/dist
 
 - [x] The Met: pipeline completo, 161 piezas geocodificadas (6 departamentos prioritarios)
 - [x] Louvre: pipeline completo, 239 piezas (215 geocodificadas) vía puente Wikidata — dentro de la meta ~150-250
-- [x] British Museum: scraper propio, 50 piezas curadas a mano en distintas regiones del mundo
+- [x] British Museum: scraper propio, 76 piezas curadas a mano en distintas regiones del mundo, 100% geocodificadas (quinta ronda 17/08 sumó 26: Irán, Afganistán, Tíbet, Sierra Leona, Uganda, Zimbabue, Palestina, Malaui, Guatemala, Perú, Botsuana, Zambia, Trinidad/Guyana, Camboya y Java)
+- [x] 452 piezas totales en el mapa (Met 161 + Louvre 215 + BM 76)
 - [x] Modelo de 3 capas (metadata / geografía / investigación histórica)
 - [x] App web con globo interactivo (Mapbox GL), panel lateral con timeline por pieza
 - [x] Toggles por museo con contador de piezas visibles
@@ -50,9 +51,10 @@ npm run build    # build de producción en web/dist
 - [x] Piloto de investigación profunda: 5 piezas egipcias del Met con fuentes citadas
 - [x] Investigación profunda (layer 3) en el Louvre: 8 piezas con timeline citado (mecanismos documentados: partage bajo Mandato Francés y bajo autorización otomana, venta Borghese-Napoleón, excavación privada, mercado de arte) — meta 5-10 por museo cumplida
 - [x] Investigación profunda (layer 3) en el British Museum: 8 piezas con timeline citado (Roseta bajo Tratado de Alejandría 1801, Placas de Benín tras la Expedición Punitiva de 1897, excavaciones en Mesopotamia otomana financiadas por el museo, pieza de Amaravati vía India Museum, y casos de contraste sin mecanismo colonial documentado) — meta 5-10 por museo cumplida
-- [ ] Ampliar BM a ~150-250 piezas (hoy: Met 161, Louvre 215, BM 50 — 426 de ~500-700)
+- [ ] Ampliar BM a ~150-250 piezas (hoy 76 de ~150-250 — quinta ronda 17/08 ya bajada, geocodificada y en el mapa; faltan más rondas de curación manual)
 - [x] Nota por museo en la UI (botón "i" junto a cada toggle) explicando la lógica de extracción particular de cada uno
 - [x] Nota por capa de contexto en la UI (botón "i" en "Imperios"/"Rutas navales" del timeline) — explica qué muestra y qué no cada capa
+- [x] Traducción al español de los `origin_label` que ve el usuario en la ficha de cada pieza (`ES_NAMES`/`es_label()` en `geocode.py`) — antes Louvre/BM mostraban el texto crudo scrapeado (findspot en inglés con prefijos tipo "Excavated/Findspot:", o texto libre francés sin resolver); ahora las tres fuentes muestran el sitio/país ya matcheado y, cuando hay exónimo cargado, en español
 - [ ] Modal de información/instrucciones del proyecto (nivel 1 de "notas de contexto en la UI", ver `CLAUDE.md`) — todavía no implementado
 - [ ] Cruce con Wikidata para piezas en disputa / con historial de expropiación documentado
 - [ ] Decidir tratamiento narrativo una vez haya más `context_flags` cargadas (¿resaltar piezas en el mapa? ¿filtro por tipo de evento?)
