@@ -26,6 +26,7 @@
 
 .museum-toggles {
   display: flex;
+  align-items: center;
   gap: 6px;
   flex-wrap: wrap;
 }
@@ -36,7 +37,11 @@
   gap: 8px;
 }
 
-.research-filter-label {
+/* Label chico en mayúsculas al inicio de cada fila (18/08, mismo
+   tratamiento para "Museos:" y "Investigación:") — deja clara la
+   distinción entre los 2 ejes de filtrado sin depender solo de la
+   separación en filas. */
+.filter-row-label {
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;

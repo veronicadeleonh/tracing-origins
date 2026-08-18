@@ -313,6 +313,7 @@ function App() {
         {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
         <div className="top-controls">
         <div className="museum-toggles">
+          <span className="filter-row-label">{s.museumFilterRowLabel}</span>
           {Object.entries(bundle.museums).map(([id, m]) => (
             <div
               key={id}
@@ -382,7 +383,7 @@ function App() {
           </div>
         </div>
         <div className="research-filter-row">
-          <span className="research-filter-label">{s.researchFilterRowLabel}</span>
+          <span className="filter-row-label">{s.researchFilterRowLabel}</span>
           <div className="research-filter" role="group" aria-label={s.researchFilterAria}>
             {(["all", "with", "without"] as const).map((value) => (
               <button

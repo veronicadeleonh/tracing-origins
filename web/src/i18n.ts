@@ -37,6 +37,7 @@ export interface I18nStrings {
   clusterPieceCount: (n: number) => string;
   hasResearchBadgeAria: string;
   hasResearchLegend: string;
+  museumFilterRowLabel: string;
   researchFilterAria: string;
   researchFilterRowLabel: string;
   researchFilterLabels: Record<"all" | "with" | "without", string>;
@@ -125,6 +126,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     clusterPieceCount: (n) => `${n} pieza${n === 1 ? "" : "s"} de este lugar`,
     hasResearchBadgeAria: "Tiene recorrido investigado y citado",
     hasResearchLegend: "recorrido investigado y citado (color = museo)",
+    museumFilterRowLabel: "Museos:",
     researchFilterAria: "Filtrar por estado de investigación",
     researchFilterRowLabel: "Investigación:",
     researchFilterLabels: { all: "Todas", with: "Con investigación", without: "Sin investigación" },
@@ -232,6 +234,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     clusterPieceCount: (n) => `${n} piece${n === 1 ? "" : "s"} from this location`,
     hasResearchBadgeAria: "Has a researched, cited journey",
     hasResearchLegend: "researched, cited journey (colored by museum)",
+    museumFilterRowLabel: "Museums:",
     researchFilterAria: "Filter by research status",
     researchFilterRowLabel: "Research:",
     researchFilterLabels: { all: "All", with: "With research", without: "Without research" },
