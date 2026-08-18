@@ -37,7 +37,7 @@ _Cluster panel: all objects sharing the same origin point, with thumbnail, title
 ## Data at a glance
 
 - **466 objects** on the map (Met 161 · Louvre 215 · British Museum 90 — all geocoded)
-- **58 flagship pieces** with a fully cited provenance timeline (Met 14 · Louvre 25 · British Museum 19), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, the Parthenon Sculptures, and the Benin Bronzes
+- **64 flagship pieces** with a fully cited provenance timeline (Met 14 · Louvre 30 · British Museum 20), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, the Parthenon Sculptures, and the Benin Bronzes
 - **Two optional context layers**: former British/French colonial territories (1700–2020, [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), CC-BY 4.0) and curated British/French naval routes (1700–1900, [CLIWOC](https://www.pangaea.de/), CC-BY 3.0), both on a shared, scrubbable timeline
 - **Bilingual interface** (Spanish/English), including the researched provenance text itself, not just UI chrome
 
