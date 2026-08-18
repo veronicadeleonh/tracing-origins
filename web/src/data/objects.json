@@ -1043,8 +1043,57 @@
       "originPrecision": "culture",
       "originLat": 35.1264,
       "originLon": 33.4299,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "private_excavation",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Chipre",
+        "notes": "Anfora chipriota (Cipro-Arcaico I, 750-600 a.C.), parte de la Coleccion Cesnola. Luigi Palma di Cesnola, coronel italoestadounidense, fue consul de Estados Unidos en Larnaca, Chipre (entonces territorio otomano), entre 1865 y 1877. Usando su cargo diplomatico, excavo y reunio unas 35.000 antiguedades por toda la isla -en Chipre su actuacion todavia se considera saqueo. El Met compro la coleccion \"por suscripcion\" entre 1874 y 1876; Cesnola fue luego el primer director del museo (1879-1904). En 1880 un escandalo publico (New York Herald) lo acuso de restauraciones fraudulentas y fabricacion de piezas -un comite especial lo exculpo, pero la controversia sobre sus metodos sigue documentada academicamente.",
+        "notesEn": "Cypriot amphora (Cypro-Archaic I, 750-600 BCE), part of the Cesnola Collection. Luigi Palma di Cesnola, an Italian-American colonel, served as US consul at Larnaca, Cyprus (then Ottoman territory), from 1865 to 1877. Using his diplomatic post, he excavated and amassed roughly 35,000 antiquities across the island -in Cyprus his actions are still considered looting. The Met purchased the collection \"by subscription\" between 1874 and 1876; Cesnola later became the museum's first director (1879-1904). A 1880 public scandal (New York Herald) accused him of fraudulent restoration and fabricating pieces -a special committee cleared him, but the controversy over his methods remains academically documented."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "750-600 a.C.",
+          "actor_or_institution": "Alfareros chipriotas",
+          "location": "Chipre",
+          "description": "Anfora de terracota, periodo Cipro-Arcaico I, decorada con bandas negras y circulos concentricos.",
+          "descriptionEs": "Anfora de terracota, periodo Cipro-Arcaico I, decorada con bandas negras y circulos concentricos.",
+          "descriptionEn": "Terracotta amphora, Cypro-Archaic I period, decorated with black bands and concentric circles.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/240028",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1865-1877",
+          "actor_or_institution": "Luigi Palma di Cesnola, consul de EE.UU. en Larnaca",
+          "location": "Chipre (Imperio Otomano)",
+          "description": "Cesnola, usando su cargo diplomatico de consul de EE.UU., excavo y reunio unas 35.000 antiguedades por toda la isla; en Chipre su actuacion todavia se considera saqueo.",
+          "descriptionEs": "Cesnola, usando su cargo diplomatico de consul de EE.UU., excavo y reunio unas 35.000 antiguedades por toda la isla; en Chipre su actuacion todavia se considera saqueo.",
+          "descriptionEn": "Cesnola, using his diplomatic post as US consul, excavated and amassed roughly 35,000 antiquities across the island; in Cyprus his actions are still considered looting.",
+          "source_url": "https://en.wikipedia.org/wiki/Luigi_Palma_di_Cesnola",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1874-1876",
+          "actor_or_institution": "The Metropolitan Museum of Art (compra por suscripcion)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met compro la Coleccion Cesnola \"por suscripcion\" entre 1874 y 1876. Cesnola fue luego el primer director del museo (1879-1904); en 1880 un escandalo publico lo acuso de restauraciones fraudulentas, del que un comite especial lo exculpo.",
+          "descriptionEs": "El Met compro la Coleccion Cesnola \"por suscripcion\" entre 1874 y 1876. Cesnola fue luego el primer director del museo (1879-1904); en 1880 un escandalo publico lo acuso de restauraciones fraudulentas, del que un comite especial lo exculpo.",
+          "descriptionEn": "The Met purchased the Cesnola Collection \"by subscription\" between 1874 and 1876. Cesnola later became the museum's first director (1879-1904); a 1880 public scandal accused him of fraudulent restoration, of which a special committee cleared him.",
+          "source_url": "https://www.metmuseum.org/essays/the-cesnola-collection-at-the-metropolitan-museum-of-art",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:240029",
@@ -2015,8 +2064,83 @@
       "originPrecision": "country",
       "originLat": -0.7893,
       "originLon": 113.9213,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Pueblo asmat, Indonesia (Papúa Occidental)",
+        "notes": "Proa de canoa tallada por el pueblo asmat, aldea de Sauwa o Erma, rio Pomatsj (Nueva Guinea Holandesa, hoy Papua Occidental, Indonesia). Estuvo en la Mision Catolica de Agats hasta 1961, cuando la recolecto la Expedicion Michael C. Rockefeller -el mismo año en que Michael Rockefeller, hijo del gobernador Nelson Rockefeller, desaparecio frente a la costa tras volcarse su catamaran; nunca se encontro su cuerpo. La coleccion paso a Nelson A. y Mary C. Rockefeller en 1965, luego al Museum of Primitive Art de Nueva York, y en 1978 se integro al Met formando el ala Michael C. Rockefeller, dedicada a arte de Africa, Oceania y las Americas. La recoleccion ocurrio bajo administracion colonial holandesa de Nueva Guinea, con la mision catolica como intermediaria local.",
+        "notesEn": "Canoe prow carved by the Asmat people, Sauwa or Erma village, Pomatsj River (Dutch New Guinea, today West Papua, Indonesia). It was held at the Catholic Mission of Agats until 1961, when it was collected by the Michael C. Rockefeller Expedition -the same year Michael Rockefeller, son of Governor Nelson Rockefeller, disappeared off the coast after his catamaran capsized; his body was never found. The collection passed to Nelson A. and Mary C. Rockefeller in 1965, then to the Museum of Primitive Art in New York, and in 1978 was absorbed into the Met, forming the Michael C. Rockefeller Wing, devoted to the art of Africa, Oceania, and the Americas. The collecting took place under Dutch colonial administration of New Guinea, with the Catholic mission as local intermediary."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "mediados del siglo XX",
+          "actor_or_institution": "Artesanos asmat",
+          "location": "Sauwa o Erma, rio Pomatsj, Nueva Guinea Holandesa",
+          "description": "Proa de canoa tallada en madera y pintada por el pueblo asmat.",
+          "descriptionEs": "Proa de canoa tallada en madera y pintada por el pueblo asmat.",
+          "descriptionEn": "Canoe prow carved in wood and painted by the Asmat people.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311563",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "hasta 1961",
+          "actor_or_institution": "Mision Catolica de Agats",
+          "location": "Agats, Nueva Guinea Holandesa",
+          "description": "La pieza estuvo en la Mision Catolica de Agats, intermediaria local bajo la administracion colonial holandesa de Nueva Guinea, hasta 1961.",
+          "descriptionEs": "La pieza estuvo en la Mision Catolica de Agats, intermediaria local bajo la administracion colonial holandesa de Nueva Guinea, hasta 1961.",
+          "descriptionEn": "The piece was held at the Catholic Mission of Agats, a local intermediary under Dutch colonial administration of New Guinea, until 1961.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311563",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1961",
+          "actor_or_institution": "Expedicion Michael C. Rockefeller",
+          "location": "Nueva Guinea Holandesa",
+          "description": "Recolectada por la Expedicion Michael C. Rockefeller en 1961, el mismo año en que Michael Rockefeller desaparecio frente a la costa tras volcarse su catamaran; nunca se encontro su cuerpo.",
+          "descriptionEs": "Recolectada por la Expedicion Michael C. Rockefeller en 1961, el mismo año en que Michael Rockefeller desaparecio frente a la costa tras volcarse su catamaran; nunca se encontro su cuerpo.",
+          "descriptionEn": "Collected by the Michael C. Rockefeller Expedition in 1961, the same year Michael Rockefeller disappeared off the coast after his catamaran capsized; his body was never found.",
+          "source_url": "https://www.cbsnews.com/news/unraveling-the-disappearance-of-michael-rockefeller/",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "gift",
+          "event_date": "1965",
+          "actor_or_institution": "Nelson A. Rockefeller y Mary C. Rockefeller",
+          "location": "Nueva York, Estados Unidos",
+          "description": "La coleccion paso a Nelson A. y Mary C. Rockefeller en 1965, luego al Museum of Primitive Art de Nueva York.",
+          "descriptionEs": "La coleccion paso a Nelson A. y Mary C. Rockefeller en 1965, luego al Museum of Primitive Art de Nueva York.",
+          "descriptionEn": "The collection passed to Nelson A. and Mary C. Rockefeller in 1965, then to the Museum of Primitive Art in New York.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311563",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 5,
+          "event_type": "other",
+          "event_date": "1978",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Museum of Primitive Art se integro al Met en 1978, formando el ala Michael C. Rockefeller, dedicada a arte de Africa, Oceania y las Americas, en memoria de Michael Rockefeller.",
+          "descriptionEs": "El Museum of Primitive Art se integro al Met en 1978, formando el ala Michael C. Rockefeller, dedicada a arte de Africa, Oceania y las Americas, en memoria de Michael Rockefeller.",
+          "descriptionEn": "The Museum of Primitive Art was absorbed into the Met in 1978, forming the Michael C. Rockefeller Wing, devoted to the art of Africa, Oceania, and the Americas, in memory of Michael Rockefeller.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311563",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:314262",
@@ -14363,8 +14487,57 @@
       "originPrecision": "site",
       "originLat": 19.8968,
       "originLon": -155.5828,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "antiquarian_travel",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Hawái",
+        "notes": "Capa de plumas hawaiana (kipuka/ahu'ula), siglo XVIII, hecha con plumas de gallina y de aves nativas hoy extintas o en peligro (posiblemente 'o'o, ahora extinta, y 'apapane). Segun los propios registros de la BM, no se puede determinar con certeza si se recolecto durante el tercer viaje de James Cook (1776-80) o durante el viaje posterior de George Vancouver (1791-95) -en cualquiera de los dos casos, la pieza llego a la BM como donacion del naturalista Sir Joseph Banks, quien acompaño el primer viaje de Cook y luego heredo objetos de la expedicion de Charles Clerke (comandante del tercer viaje tras la muerte de Cook en Hawai en 1779, fallecido el mismo el año siguiente) por voluntad testamentaria de este. Es decir: la pieza esta bien documentada como parte del corpus de objetos hawaianos que llegaron a Gran Bretaña por los viajes de Cook, pero el evento puntual de adquisicion (¿regalo de un jefe hawaiano?, ¿compra?, ¿toma directa?) no esta identificado con precision, algo que la propia BM reconoce en sus notas curatoriales.",
+        "notesEn": "Hawaiian feather cape (kipuka/ahu'ula), 18th century, made with chicken feathers and feathers from native birds now extinct or endangered (possibly 'o'o, now extinct, and 'apapane). According to the BM's own records, it cannot be determined with certainty whether it was collected during James Cook's third voyage (1776-80) or during George Vancouver's later voyage (1791-95) -in either case, the piece reached the BM as a donation from naturalist Sir Joseph Banks, who accompanied Cook's first voyage and later inherited objects from Charles Clerke's expedition (commander of the third voyage after Cook's death in Hawaii in 1779, who himself died the following year) by the terms of Clerke's will. In other words: the piece is well documented as part of the body of Hawaiian objects that reached Britain through Cook's voyages, but the specific acquisition event (a gift from a Hawaiian chief? a purchase? taken directly?) is not precisely identified -something the BM's own curatorial notes acknowledge."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "siglo XVIII",
+          "actor_or_institution": "Artesanos hawaianos",
+          "location": "Islas Hawai",
+          "description": "Capa de plumas (kipuka/ahu'ula) hecha con plumas de gallina y de aves nativas hoy extintas o en peligro (posiblemente 'o'o y 'apapane).",
+          "descriptionEs": "Capa de plumas (kipuka/ahu'ula) hecha con plumas de gallina y de aves nativas hoy extintas o en peligro (posiblemente 'o'o y 'apapane).",
+          "descriptionEn": "Feather cape (kipuka/ahu'ula) made with chicken feathers and feathers from native birds now extinct or endangered (possibly 'o'o and 'apapane).",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc-HAW-138",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "1776-1795 (fecha exacta no identificada)",
+          "actor_or_institution": "Tercer viaje de James Cook o viaje de George Vancouver",
+          "location": "Islas Hawai",
+          "description": "Segun los propios registros de la BM, no se puede determinar con certeza si se recolecto durante el tercer viaje de Cook (1776-80) o el viaje posterior de Vancouver (1791-95); el evento puntual de adquisicion tampoco esta identificado con precision.",
+          "descriptionEs": "Segun los propios registros de la BM, no se puede determinar con certeza si se recolecto durante el tercer viaje de Cook (1776-80) o el viaje posterior de Vancouver (1791-95); el evento puntual de adquisicion tampoco esta identificado con precision.",
+          "descriptionEn": "According to the BM's own records, it cannot be determined with certainty whether it was collected during Cook's third voyage (1776-80) or the later Vancouver voyage (1791-95); the specific acquisition event is also not precisely identified.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc-HAW-138",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "sin fecha exacta documentada",
+          "actor_or_institution": "Sir Joseph Banks",
+          "location": "Londres, Reino Unido",
+          "description": "Llego a la BM como donacion de Sir Joseph Banks, quien acompaño el primer viaje de Cook y heredo objetos de la expedicion de Charles Clerke (comandante del tercer viaje tras la muerte de Cook, fallecido el año siguiente) por voluntad testamentaria de este.",
+          "descriptionEs": "Llego a la BM como donacion de Sir Joseph Banks, quien acompaño el primer viaje de Cook y heredo objetos de la expedicion de Charles Clerke (comandante del tercer viaje tras la muerte de Cook, fallecido el año siguiente) por voluntad testamentaria de este.",
+          "descriptionEn": "It reached the BM as a donation from Sir Joseph Banks, who accompanied Cook's first voyage and inherited objects from Charles Clerke's expedition (commander of the third voyage after Cook's death, who died the following year) by the terms of Clerke's will.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc-HAW-138",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Oc1848-0202-1",
@@ -14677,8 +14850,57 @@
       "originPrecision": "site",
       "originLat": 34.7167,
       "originLon": 33.1333,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "museum_funded_excavation"
+        ],
+        "associated_communities_or_states": "Chipre",
+        "notes": "Alabastron de vidrio nucleado (Cipro-Arcaico II/Cipro-Clasico, 550-375 a.C.), hallado en el sitio E, tumba 83, de Amatunte, Chipre. Excavado entre 1893 y 1894 por A. H. Smith y John Myres para la BM, financiados por un legado de 2000 libras de la coleccionista Emma Tourner Turner destinado especificamente a excavaciones en Grecia, Roma, Egipto o tierras biblicas. Chipre estaba entonces bajo administracion britanica (arrendada al Imperio Otomano desde 1878, anexada formalmente por Gran Bretaña en 1914). A diferencia de la Coleccion Cesnola del Met -reunida por un consul extranjero por fuera de cualquier marco institucional- esta pieza muestra el otro mecanismo tipico de extraccion de Chipre en la misma epoca: una excavacion financiada y ejecutada directamente por el propio museo britanico, ya bajo control colonial formal de la isla.",
+        "notesEn": "Core-formed glass alabastron (Cypro-Archaic II/Cypro-Classical, 550-375 BCE), found at Site E, tomb 83, at Amathus, Cyprus. Excavated between 1893 and 1894 by A. H. Smith and John Myres for the British Museum, funded by a £2,000 bequest from collector Emma Tourner Turner earmarked specifically for excavations in Greece, Rome, Egypt, or biblical lands. Cyprus was then under British administration (leased from the Ottoman Empire since 1878, formally annexed by Britain in 1914). Unlike the Met's Cesnola Collection -assembled by a foreign consul outside any institutional framework- this piece shows the other typical extraction mechanism from Cyprus in the same era: an excavation funded and carried out directly by the British museum itself, already under formal colonial control of the island."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "550-375 a.C.",
+          "actor_or_institution": "Artesanos del Mediterraneo oriental",
+          "location": "Chipre, Levante o Egipto (manufactura incierta)",
+          "description": "Alabastron de vidrio nucleado, tecnica de nucleo modelado con hilos de vidrio de colores.",
+          "descriptionEs": "Alabastron de vidrio nucleado, tecnica de nucleo modelado con hilos de vidrio de colores.",
+          "descriptionEn": "Core-formed glass alabastron, made with colored trailed-glass decoration over a core.",
+          "source_url": "https://www.britishmuseum.org/collection/object/G_1894-1101-213",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1893-1894",
+          "actor_or_institution": "A. H. Smith y John Myres, para la BM",
+          "location": "Amatunte, Sitio E, tumba 83, Chipre",
+          "description": "Excavado bajo el legado de Emma Tourner Turner (2000 libras destinadas a excavaciones en Grecia, Roma, Egipto o tierras biblicas), en una Chipre entonces administrada por Gran Bretaña (arrendada al Imperio Otomano desde 1878, anexada formalmente en 1914).",
+          "descriptionEs": "Excavado bajo el legado de Emma Tourner Turner (2000 libras destinadas a excavaciones en Grecia, Roma, Egipto o tierras biblicas), en una Chipre entonces administrada por Gran Bretaña (arrendada al Imperio Otomano desde 1878, anexada formalmente en 1914).",
+          "descriptionEn": "Excavated under Emma Tourner Turner's bequest (£2,000 earmarked for excavations in Greece, Rome, Egypt, or biblical lands), in a Cyprus then administered by Britain (leased from the Ottoman Empire since 1878, formally annexed in 1914).",
+          "source_url": "https://www.britishmuseum.org/collection/object/G_1894-1101-213",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1894",
+          "actor_or_institution": "The British Museum",
+          "location": "Londres, Reino Unido",
+          "description": "Registrada por la BM en 1894, el mismo año de la excavacion.",
+          "descriptionEs": "Registrada por la BM en 1894, el mismo año de la excavacion.",
+          "descriptionEn": "Registered by the BM in 1894, the same year as the excavation.",
+          "source_url": "https://www.britishmuseum.org/collection/object/G_1894-1101-213",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:W_1825-0421-1",
