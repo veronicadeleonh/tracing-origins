@@ -6960,8 +6960,8 @@
           "art_market"
         ],
         "associated_communities_or_states": "Iraq",
-        "notes": "Estatua de Gudea, principe de Lagash, dedicada a la diosa Geshtinanna, hallada en Tello (antigua Girsu). El sitio fue excavado por Ernest de Sarzec, vicecónsul frances en Basora, en una serie de campañas iniciadas en 1877 bajo autorizacion otomana -- las primeras excavaciones sistematicas de un sitio sumerio, que establecieron la reputacion arqueologica de Francia en Mesopotamia. Pero esta estatua en particular no aparece documentada como parte del reparto de esas campañas: llega al Louvre recien en 1967, comprada a un anticuario parisino, proveniente de la coleccion privada de Emile Sery. El registro del museo no explica como la pieza salio de Tello/Irak ni cuando -- una brecha de casi noventa años entre la excavacion del sitio y la aparicion documentada de la pieza en el mercado de arte.",
-        "notesEn": "Statue of Gudea, prince of Lagash, dedicated to the goddess Geshtinanna, found at Tello (ancient Girsu). The site was excavated by Ernest de Sarzec, French vice-consul in Basra, in a series of campaigns beginning in 1877 under Ottoman authorization -- the first systematic excavations of a Sumerian site, which established France's archaeological reputation in Mesopotamia. But this particular statue is not documented as part of the division of finds from those campaigns: it reaches the Louvre only in 1967, bought from a Paris dealer, from the private collection of Emile Sery. The museum's record does not explain how or when the piece left Tello/Iraq -- a gap of nearly ninety years between the site's excavation and the piece's documented appearance on the art market."
+        "notes": "Estatua de Gudea, principe de Lagash, dedicada a la diosa Geshtinanna, hallada en Tello (antigua Girsu). El sitio fue excavado por Ernest de Sarzec, vicecónsul frances en Basora, en una serie de campañas iniciadas en 1877 bajo autorizacion otomana -- las primeras excavaciones sistematicas de un sitio sumerio, que establecieron la reputacion arqueologica de Francia en Mesopotamia. El registro online del Louvre marca la pieza como comprada ('achat') en 1967 a un anticuario parisino (Feuardent), proveniente de la coleccion privada de Emile Sery -- pero una ficha de exposicion del Getty Museum ('Mesopotamia: Civilization Begins') describe el mismo evento de 1967 como una donacion de H. de Boisgelin, proveniente de la coleccion de Clercq (coleccion de antigüedades del Cercano Oriente armada por Louis de Clercq en el siglo XIX). Un articulo de Andre Parrot, 'La donation L. De Clercq - H. de Boisgelin' (1968, La Revue du Louvre), corrobora la version de donacion. Las dos fuentes no coinciden en el modo de adquisicion (compra vs. donacion) ni en el vendedor/donante inmediato (Feuardent vs. Boisgelin) -- se documentan ambas versiones sin forzar una resolucion. Lo que si parece confirmado: la pieza paso en algun momento por la coleccion de Clercq, lo cual llena parcialmente el hueco entre la excavacion de 1877 y su llegada al Louvre en 1967, aunque sin fecha exacta de esa etapa.",
+        "notesEn": "Statue of Gudea, prince of Lagash, dedicated to the goddess Geshtinanna, found at Tello (ancient Girsu). The site was excavated by Ernest de Sarzec, French vice-consul in Basra, in a series of campaigns beginning in 1877 under Ottoman authorization -- the first systematic excavations of a Sumerian site, which established France's archaeological reputation in Mesopotamia. The Louvre's own online record marks the piece as bought ('achat') in 1967 from a Paris dealer (Feuardent), from the private collection of Emile Sery -- but a Getty Museum exhibition caption ('Mesopotamia: Civilization Begins') describes the same 1967 event as a gift from H. de Boisgelin, from the de Clercq collection (a Near Eastern antiquities collection assembled by Louis de Clercq in the 19th century). An article by Andre Parrot, 'La donation L. De Clercq - H. de Boisgelin' (1968, La Revue du Louvre), corroborates the donation account. The two sources disagree on the mode of acquisition (purchase vs. donation) and on the immediate seller/donor (Feuardent vs. Boisgelin) -- both versions are documented without forcing a resolution. What does seem confirmed: the piece passed through the de Clercq collection at some point, which partially fills the gap between the 1877 excavation and its 1967 arrival at the Louvre, though without an exact date for that stage."
       },
       "events": [
         {
@@ -7005,16 +7005,29 @@
         },
         {
           "event_order": 4,
+          "event_type": "other",
+          "event_date": "sin fecha documentada, antes de 1967",
+          "actor_or_institution": "Coleccion de Clercq (Louis de Clercq, y su heredero/administrador H. de Boisgelin)",
+          "location": "Francia (privado)",
+          "description": "Segun una ficha de exposicion del Getty Museum y un articulo de Andre Parrot (1968, La Revue du Louvre), la pieza formo parte de la coleccion de antigüedades del Cercano Oriente armada por Louis de Clercq en el siglo XIX, antes de llegar al Louvre en 1967 via H. de Boisgelin. No hay fecha documentada de cuando entro a esta coleccion ni como se relaciona con el paso previo por la coleccion de Emile Sery (evento anterior) -- el registro propio del Louvre no menciona a de Clercq/Boisgelin en absoluto.",
+          "descriptionEs": "Segun una ficha de exposicion del Getty Museum y un articulo de Andre Parrot (1968, La Revue du Louvre), la pieza formo parte de la coleccion de antigüedades del Cercano Oriente armada por Louis de Clercq en el siglo XIX, antes de llegar al Louvre en 1967 via H. de Boisgelin. No hay fecha documentada de cuando entro a esta coleccion ni como se relaciona con el paso previo por la coleccion de Emile Sery (evento anterior) -- el registro propio del Louvre no menciona a de Clercq/Boisgelin en absoluto.",
+          "descriptionEn": "According to a Getty Museum exhibition caption and an article by Andre Parrot (1968, La Revue du Louvre), the piece was part of the Near Eastern antiquities collection assembled by Louis de Clercq in the 19th century, before reaching the Louvre in 1967 via H. de Boisgelin. There is no documented date for when it entered this collection, nor how it relates to the earlier stint in the Emile Sery collection (previous event) -- the Louvre's own record does not mention de Clercq/Boisgelin at all.",
+          "source_url": "https://www.getty.edu/art/mobile/villa/mesopotamia/stop.php?id=377998",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
           "event_type": "sale",
           "event_date": "1967",
           "actor_or_institution": "Felix-Bienaime Feuardent (marchante), Musee du Louvre",
           "location": "Paris",
-          "description": "Comprada por el Louvre en 1967 al anticuario Feuardent, herederos de Emile Sery.",
-          "descriptionEs": "Comprada por el Louvre en 1967 al anticuario Feuardent, herederos de Emile Sery.",
-          "descriptionEn": "Bought by the Louvre in 1967 from the dealer Feuardent, heirs of Emile Sery.",
+          "description": "El registro online del Louvre marca la adquisicion como una compra ('achat') a Feuardent, herederos de Emile Sery, en 1967 (con fechas de comite/consejo especificas: 02/03, 08/03 y 02/05/1967). Una ficha del Getty Museum y un articulo de Andre Parrot de 1968 ('La donation L. De Clercq - H. de Boisgelin') describen en cambio el mismo año como una donacion de H. de Boisgelin, proveniente de la coleccion de Clercq. Discrepancia entre fuentes, sin resolver -- ver evento anterior.",
+          "descriptionEs": "El registro online del Louvre marca la adquisicion como una compra ('achat') a Feuardent, herederos de Emile Sery, en 1967 (con fechas de comite/consejo especificas: 02/03, 08/03 y 02/05/1967). Una ficha del Getty Museum y un articulo de Andre Parrot de 1968 ('La donation L. De Clercq - H. de Boisgelin') describen en cambio el mismo año como una donacion de H. de Boisgelin, proveniente de la coleccion de Clercq. Discrepancia entre fuentes, sin resolver -- ver evento anterior.",
+          "descriptionEn": "The Louvre's online record marks the acquisition as a purchase ('achat') from Feuardent, heirs of Emile Sery, in 1967 (with specific committee/council dates: 02/03, 08/03 and 02/05/1967). A Getty Museum caption and a 1968 article by Andre Parrot ('La donation L. De Clercq - H. de Boisgelin') instead describe the same year as a gift from H. de Boisgelin, from the de Clercq collection. Discrepancy between sources, left unresolved -- see previous event.",
           "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010119651",
           "source_type": "museum_record",
-          "confidence_level": "high"
+          "confidence_level": "medium"
         }
       ]
     },
