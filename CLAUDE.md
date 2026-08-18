@@ -29,6 +29,10 @@ python src/make_map.py               # opcional: mapa estático Folium -> maps/m
 cd web
 npm run dev      # servidor local con hot reload — requiere objects.json ya generado
 npm run build    # tsc -b && vite build -> web/dist
+
+# Investigación de layer 3 (piezas bandera) — antes de fetchear una página en vivo
+python src/research_lookup.py louvre:cl010119651 bm:W_1970-0604-2  # busca en raw JSON ya bajado, sin red
+python src/web_research.py "query de búsqueda" --n 8               # DuckDuckGo/ddgs, corré en tu máquina, cachea en research_cache/
 ```
 
 `export_web_data.py` no se corre solo — cada vez que cambia algo en `data/processed/` o `data/enrichment/` hay que volver a correrlo antes de ver el cambio en la app. El pipeline de Python (`src/`) no tiene test suite ni linter configurado; el frontend (`web/`) sí tiene linter (`npm run lint` → `oxlint`, configurado en `web/.oxlintrc.json`), pero tampoco tiene test suite.
@@ -71,6 +75,42 @@ Cada build script imprime las etiquetas sin resolver al correr — expandir las 
 - **Louvre**: la API JSON por objeto es real (`collections.louvre.fr/en/ark:/53355/cl<id>.json`), pero el sitio **bloquea `/search/export`** en `robots.txt` y la búsqueda interactiva tiene **CAPTCHA** — no hay forma automatizada de listar objetos por departamento desde el sitio mismo. Solución: Wikidata tiene `P9394` ("Louvre Museum ARK ID", ~480k registros) cruzable con `P195` (colección = departamento curatorial, como entidad Wikidata) vía SPARQL público. Se piden ordenados por `wikibase:sitelinks` descendente para priorizar piezas documentadas/conocidas ("piezas bandera"). QIDs de departamento usados: Antigüedades Egipcias `Q3044749`, Antigüedades Orientales `Q3044751`, Antigüedades Griegas/Etruscas/Romanas `Q3044747`, Arte Islámico `Q3044748`.
 - **BM**: no tiene API pública, y el puente equivalente por Wikidata (`P8565`, "British Museum object ID") **no funciona bien** — casi ningún objeto tiene el departamento curatorial cargado en `P195`, y varios valores de `P8565` no traen el prefijo de letra que la URL real necesita (tiran 404 tal cual). Se raspa directo `/collection/object/<id>` (permitido por robots.txt, que solo bloquea `/search*`, `/admin/`, etc.), pero el robots.txt pide **`Crawl-delay: 20`** (20 segundos entre requests) — se respeta a rajatabla en `fetch_bm.py`, así que bajar piezas ahí es lento. Sin descubrimiento automatizado confiable, `SEED_OBJECT_IDS` en `fetch_bm.py` es una lista curada a mano, anclada en la página oficial de ["contested objects"](https://www.britishmuseum.org/about-us/british-museum-story/contested-objects-collection) del propio Museo (Benin Bronzes, Asante Gold Regalia, Maqdala, Moai, Parthenon Sculptures) — ampliarla es manual, no hay atajo.
   - **WAF por User-Agent**: `britishmuseum.org` devuelve 403 ante cualquier User-Agent que no matchee un browser real — el UA identificatorio original (`colonial-museum-routes/0.1 (...)`, siguiendo la convención educada de scrapers que se identifican) se cae en el filtro de firma antes de que importen el crawl-delay o la URL pedida. `fetch_bm.py` usa un User-Agent de Chrome real + headers `Accept`/`Accept-Language` estándar para esquivar ese filtro — el comportamiento (1 objeto por request, 20s de por medio, mismas rutas permitidas por robots.txt) no cambia, solo la firma del header.
+
+### Investigación de layer 3: lookup local antes que fetch en vivo (18/08)
+
+Durante varias sesiones de investigación de piezas bandera se re-pedían en
+vivo páginas del Louvre/BM para piezas que **ya estaban completas** en los
+raw JSON del repo — `fetch_louvre.py`/`fetch_bm.py` ya habían bajado esos
+239/90 objetos hace tiempo, con el campo de historia completo
+(`objectHistory`/`previousOwner`/`acquisitionDetails` en Louvre,
+`curatorComments`/`acquisitionName`/`findspot` en BM). El caso encontrado el
+18/08: las 5 piezas del Louvre y el altar sabeo del BM de esa ronda de
+investigación ya tenían esta data local — el fetch en vivo fue redundante,
+gastando tokens de la sesión de Claude en páginas completas (bibliografía de
+30+ referencias, galería de imágenes, menú, banner de cookies) para terminar
+usando 3 líneas de esa data.
+
+Dos scripts nuevos para separar esto de la conversación de Claude:
+
+- **`src/research_lookup.py`** — lee `data/raw/*_objects_raw.json` (sin red,
+  instantáneo) y devuelve solo los campos de procedencia relevantes por
+  museo, sin bibliografía/imágenes. Correr esto PRIMERO para cualquier pieza
+  que ya esté en el pipeline (la gran mayoría — Met 169, Louvre 239, BM 90).
+  Uso: `python src/research_lookup.py louvre:cl010119651 bm:W_1970-0604-2`.
+- **`src/web_research.py`** — búsqueda libre con `ddgs` (DuckDuckGo, sin API
+  key) para lo que el registro del museo no tiene (Wikipedia, prensa,
+  subastas) o para piezas nuevas que ningún raw JSON todavía tiene. Cachea
+  resultados en `research_cache/web/` (gitignored) para no repetir la misma
+  búsqueda entre sesiones. **Corre en la máquina del usuario, no en el
+  sandbox de Cowork** — mismo motivo que `fetch_louvre.py`/`fetch_bm.py`: la
+  red del sandbox está restringida y DuckDuckGo/Startpage no son alcanzables
+  desde ahí (confirmado el 18/08: `ddgs` se instala bien pero la búsqueda
+  tira `ConnectError`).
+
+El fetch de página completa en vivo (`WebFetch`/`web_fetch` desde la
+conversación) queda para casos genuinamente no cubiertos por ninguno de los
+dos scripts — ej. un objeto del Met recién adquirido que todavía no está en
+`met_objects_raw.json` (ver caso `met:910742` más abajo).
 
 ### Hallazgo estructural: el Louvre no tiene departamento de África/América
 

@@ -17,4 +17,8 @@ data/raw/cliopatria.geojson.zip
 # ya filtrado en web/public/navigator_routes.geojson
 data/raw/cliwoc_pangaea.zip
 data/raw/cliwoc_pangaea/
+# caché local de web_research.py (búsquedas DuckDuckGo/ddgs) -- resultados de
+# búsqueda cacheados para no repetir consultas entre sesiones, no es data del
+# proyecto ni parte del modelo de 3 capas, nunca se commitea.
+research_cache/
 .DS_Store

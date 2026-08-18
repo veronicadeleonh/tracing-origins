@@ -3,3 +3,4 @@ pandas>=2.0
 tqdm>=4.66
 folium>=0.16
 beautifulsoup4>=4.12
+ddgs>=9.0
