@@ -97,15 +97,19 @@ Dos scripts nuevos para separar esto de la conversación de Claude:
   museo, sin bibliografía/imágenes. Correr esto PRIMERO para cualquier pieza
   que ya esté en el pipeline (la gran mayoría — Met 169, Louvre 239, BM 90).
   Uso: `python src/research_lookup.py louvre:cl010119651 bm:W_1970-0604-2`.
-- **`src/web_research.py`** — búsqueda libre con `ddgs` (DuckDuckGo, sin API
-  key) para lo que el registro del museo no tiene (Wikipedia, prensa,
-  subastas) o para piezas nuevas que ningún raw JSON todavía tiene. Cachea
-  resultados en `research_cache/web/` (gitignored) para no repetir la misma
-  búsqueda entre sesiones. **Corre en la máquina del usuario, no en el
-  sandbox de Cowork** — mismo motivo que `fetch_louvre.py`/`fetch_bm.py`: la
-  red del sandbox está restringida y DuckDuckGo/Startpage no son alcanzables
-  desde ahí (confirmado el 18/08: `ddgs` se instala bien pero la búsqueda
-  tira `ConnectError`).
+- **`src/web_research.py`** — búsqueda libre para lo que el registro del
+  museo no tiene (Wikipedia, prensa, subastas) o para piezas nuevas que
+  ningún raw JSON todavía tiene. Dos backends: **Tavily** (preferido, pensado
+  para agentes/LLMs, devuelve contenido ya extraído de cada página en vez de
+  un snippet corto — requiere cuenta y `TAVILY_API_KEY` en el entorno, nunca
+  hardcodeada/commiteada) o **ddgs** (DuckDuckGo, sin API key, fallback
+  automático si no hay `TAVILY_API_KEY` seteada). Cachea resultados en
+  `research_cache/web/` (gitignored) para no repetir la misma búsqueda ni
+  gastar cuota de Tavily entre sesiones. **Corre en la máquina del usuario,
+  no en el sandbox de Cowork** — mismo motivo que
+  `fetch_louvre.py`/`fetch_bm.py`: la red del sandbox está restringida
+  (confirmado el 18/08 para ddgs: se instala bien pero la búsqueda tira
+  `ConnectError`; Tavily probablemente tampoco sea alcanzable desde ahí).
 
 El fetch de página completa en vivo (`WebFetch`/`web_fetch` desde la
 conversación) queda para casos genuinamente no cubiertos por ninguno de los
