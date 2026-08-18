@@ -106,7 +106,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     contextDockLabel: "Contexto histórico",
     legendUK: "Reino Unido",
     legendFR: "Francia",
-    layerToggleTerritories: "Imperios",
+    layerToggleTerritories: "Colonias",
     layerToggleRoutes: "Rutas navales",
     layerNotes: {
       territories: "Sombrea las regiones que fueron territorio colonial de UK o Francia en el año seleccionado (Cliopatria, Seshat Global History Databank). EEUU no aparece — el Met no adquirió piezas por control territorial, ver la nota del Met arriba. Los mandatos británicos de Irak y Palestina (1920-1932) tampoco están: la fuente no los modela como entidad propia.",
@@ -214,7 +214,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     contextDockLabel: "Historical context",
     legendUK: "United Kingdom",
     legendFR: "France",
-    layerToggleTerritories: "Empires",
+    layerToggleTerritories: "Colonies",
     layerToggleRoutes: "Naval routes",
     layerNotes: {
       territories: "Shades the regions that were UK or French colonial territory in the selected year (Cliopatria, Seshat Global History Databank). The US doesn't appear — the Met didn't acquire pieces through territorial control, see the Met's note above. The British mandates of Iraq and Palestine (1920-1932) aren't shown either: the source doesn't model them as their own entity.",
