@@ -5,6 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import data from "./data/objects.json";
 import type { DataBundle, MuseumObject } from "./types";
 import { groupByOrigin, jitteredPoint, objectHasResearch, type OriginCluster } from "./geo";
+import { MUSEUM_COLORS, DEFAULT_COLOR, ORIGIN_COLOR } from "./colors";
 import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
 import { Timeline } from "./components/Timeline";
@@ -38,22 +39,6 @@ const NAVIGATOR_ROUTES_URL = `${import.meta.env.BASE_URL}navigator_routes.geojso
 
 const bundle = data as DataBundle;
 
-const MUSEUM_COLORS: Record<string, string> = {
-  met: "#c9a227",
-  louvre: "#3d7a8c",
-  bm: "#b23a48",
-};
-const DEFAULT_COLOR = "#928d82";
-const ORIGIN_COLOR = "#8a8478";
-// Violeta, deliberadamente distinto de los 3 colores de museo (met #c9a227,
-// louvre #3d7a8c, bm #b23a48) — el dorado ya está reservado para "esto es
-// del Met" en toda la app (ver el comentario sobre el thumb del slider del
-// timeline en App.css, mismo problema encontrado antes). Reusado en
-// .research-badge y .timeline-dot-accent en App.css para que "recorrido
-// investigado" se lea igual en el mapa, en ClusterPanel y en ObjectDetail
-// (18/08, tratamiento narrativo de context_flags — feedback de la usuaria:
-// el dorado hacía clash con el color del Met).
-const RESEARCH_ACCENT_COLOR = "#6a4c93";
 // mismo color que cada museo, para reforzar la conexión territorio-colonial
 // -> museo que se benefició de él. UK = BM (rojo), Francia = Louvre (teal).
 const COLONIAL_POWER_COLORS: Record<string, string> = {
@@ -228,19 +213,32 @@ function App() {
 
   const originsGeoJSON = useMemo(() => ({
     type: "FeatureCollection" as const,
-    features: clusters.map((cluster) => ({
-      type: "Feature" as const,
-      geometry: { type: "Point" as const, coordinates: [cluster.lon, cluster.lat] },
-      properties: {
-        label: cluster.label,
-        count: cluster.objects.length,
-        clusterKey: `${cluster.lat}|${cluster.lon}|${cluster.label}`,
-        // Tratamiento narrativo de context_flags (18/08): true si al menos
-        // una pieza del cluster tiene layer 3 cargada — pinta un anillo
-        // dorado alrededor del punto (ver paint de "origins" más abajo).
-        hasResearch: cluster.objects.some(objectHasResearch),
-      },
-    })),
+    features: clusters.map((cluster) => {
+      // Tratamiento narrativo de context_flags, segunda vuelta (18/08,
+      // feedback de la usuaria sobre la primera versión): en vez de un
+      // color de acento genérico para "investigado", se rellena el punto
+      // con el color del museo dueño de la primera pieza investigada del
+      // cluster (orden determinístico, cluster.objects ya viene ordenado
+      // por objectID) — visualmente sugiere "sabemos el recorrido de acá
+      // hasta ese museo", reforzando el mismo lenguaje de color que ya usan
+      // las líneas origen->museo. Simplificación conocida: si un cluster
+      // tiene piezas investigadas de más de un museo, se muestra el color
+      // de la primera nomás — no se intenta partir el círculo.
+      const researched = cluster.objects.find(objectHasResearch);
+      const circleColor = researched
+        ? MUSEUM_COLORS[researched.sourceMuseum ?? ""] ?? ORIGIN_COLOR
+        : ORIGIN_COLOR;
+      return {
+        type: "Feature" as const,
+        geometry: { type: "Point" as const, coordinates: [cluster.lon, cluster.lat] },
+        properties: {
+          label: cluster.label,
+          count: cluster.objects.length,
+          clusterKey: `${cluster.lat}|${cluster.lon}|${cluster.label}`,
+          circleColor,
+        },
+      };
+    }),
   }), [clusters]);
 
   const museumsGeoJSON = useMemo(() => ({
@@ -313,6 +311,7 @@ function App() {
           {s.langToggleLabel}
         </button>
         {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
+        <div className="top-controls">
         <div className="museum-toggles">
           {Object.entries(bundle.museums).map(([id, m]) => (
             <div
@@ -344,19 +343,6 @@ function App() {
               )}
             </div>
           ))}
-          <div className="research-filter" role="group" aria-label={s.researchFilterAria}>
-            {(["all", "with", "without"] as const).map((value) => (
-              <button
-                key={value}
-                type="button"
-                className={`research-filter-btn${researchFilter === value ? " active" : ""}`}
-                aria-pressed={researchFilter === value}
-                onClick={() => setResearchFilter(value)}
-              >
-                {s.researchFilterLabels[value]}
-              </button>
-            ))}
-          </div>
           <div className="piece-counter">
             {visibleObjects.length === bundle.objects.length
               ? s.pieceCounterAll(visibleObjects.length)
@@ -394,6 +380,23 @@ function App() {
               </div>
             )}
           </div>
+        </div>
+        <div className="research-filter-row">
+          <span className="research-filter-label">{s.researchFilterRowLabel}</span>
+          <div className="research-filter" role="group" aria-label={s.researchFilterAria}>
+            {(["all", "with", "without"] as const).map((value) => (
+              <button
+                key={value}
+                type="button"
+                className={`research-filter-btn${researchFilter === value ? " active" : ""}`}
+                aria-pressed={researchFilter === value}
+                onClick={() => setResearchFilter(value)}
+              >
+                {s.researchFilterLabels[value]}
+              </button>
+            ))}
+          </div>
+        </div>
         </div>
         <Map
           ref={mapRef}
@@ -477,14 +480,17 @@ function App() {
               id="origins"
               type="circle"
               paint={{
-                // Relleno violeta para puntos con al menos una pieza
-                // investigada (layer 3), gris neutro para el resto — antes
-                // era un anillo/stroke, cambiado a fill el 18/08 por
-                // feedback de la usuaria (el stroke solo se notaba poco;
-                // rellenar el círculo es más notorio a simple vista). Mismo
-                // criterio que .research-badge/.timeline-dot-accent en
-                // App.css (ver geo.ts, objectHasResearch).
-                "circle-color": ["case", ["get", "hasResearch"], RESEARCH_ACCENT_COLOR, ORIGIN_COLOR],
+                // Relleno con el color del museo que investigó la pieza
+                // (o el primero, si hay más de uno en el cluster), gris
+                // neutro (ORIGIN_COLOR) para puntos sin ninguna pieza
+                // investigada — calculado por feature en originsGeoJSON,
+                // no acá, porque depende de qué museo es (ver comentario
+                // ahí). Antes era un anillo/stroke con un violeta genérico;
+                // cambiado el 18/08 dos veces por feedback de la usuaria:
+                // primero a fill (más notorio que un stroke), después a
+                // color-por-museo en vez de un acento nuevo (reusa el
+                // mismo lenguaje visual de las líneas origen->museo).
+                "circle-color": ["get", "circleColor"],
                 "circle-opacity": 0.85,
                 "circle-radius": ["interpolate", ["linear"], ["get", "count"], 1, 5, 10, 14],
                 "circle-stroke-color": "#fbfaf7",

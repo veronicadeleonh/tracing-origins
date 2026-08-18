@@ -1,4 +1,5 @@
 import type { MuseumDestination, MuseumObject, ProvenanceEvent } from "../types";
+import { museumColor } from "../colors";
 import { STRINGS, type Lang } from "../i18n";
 
 interface ObjectDetailProps {
@@ -42,6 +43,12 @@ export function ObjectDetail({
   const notes = lang === "en" ? object.context?.notesEn || object.context?.notes : object.context?.notes;
   const hasResearch = events.length > 0 || flags.length > 0 || !!notes;
   const destMuseum = object.sourceMuseum ? museums[object.sourceMuseum] : undefined;
+  // Tratamiento narrativo de context_flags (18/08, segunda vuelta): los
+  // puntos "evento investigado" y "ahora, en el museo" usan el color del
+  // museo dueño de la pieza (ver colors.ts) en vez de un acento genérico
+  // (violeta) o un rojo fijo que no correspondía al museo real — mismo
+  // lenguaje visual que el toggle de museo y las líneas del mapa.
+  const accentColor = museumColor(object.sourceMuseum);
   const originLabel = lang === "en" ? object.originLabelEn || object.originLabel : object.originLabel;
 
   const subtitle = [object.culture, object.period, object.objectDate].filter(Boolean).join(" · ");
@@ -93,7 +100,7 @@ export function ObjectDetail({
                 : event.descriptionEs || event.description;
               return (
                 <div className="timeline-node" key={i}>
-                  <span className="timeline-dot timeline-dot-accent" aria-hidden="true" />
+                  <span className="timeline-dot" style={{ background: accentColor }} aria-hidden="true" />
                   <div className="timeline-date">{event.event_date || ""}</div>
                   <div className="timeline-label">{eventLabel(event, s)}</div>
                   {description && <div className="timeline-desc">{description}</div>}
@@ -109,7 +116,7 @@ export function ObjectDetail({
         )}
 
         <div className="timeline-node">
-          <span className="timeline-dot timeline-dot-met" aria-hidden="true" />
+          <span className="timeline-dot" style={{ background: accentColor }} aria-hidden="true" />
           <div className="timeline-date">{s.now}</div>
           <div className="timeline-label">
             {destMuseum ? `${destMuseum.name}, ${destMuseum.city}` : s.unknownMuseum}

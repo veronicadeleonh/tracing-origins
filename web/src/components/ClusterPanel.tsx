@@ -1,5 +1,6 @@
 import type { MuseumObject } from "../types";
 import { objectHasResearch, type OriginCluster } from "../geo";
+import { MUSEUM_COLORS, DEFAULT_COLOR } from "../colors";
 import { STRINGS, type Lang } from "../i18n";
 
 interface ClusterPanelProps {
@@ -11,9 +12,14 @@ interface ClusterPanelProps {
 
 export function ClusterPanel({ cluster, lang, onClose, onSelectObject }: ClusterPanelProps) {
   const s = STRINGS[lang];
-  // Tratamiento narrativo de context_flags (18/08): la leyenda del punto
-  // dorado solo se muestra si al menos una pieza de este cluster lo tiene —
-  // si ninguna tiene investigación, explicar el marcador no aporta nada acá.
+  // Tratamiento narrativo de context_flags (18/08, segunda vuelta): la
+  // leyenda solo se muestra si al menos una pieza de este cluster tiene
+  // investigación — si ninguna la tiene, explicar el marcador no aporta
+  // nada acá. El badge ya no usa un color de acento fijo: reusa el color
+  // del museo dueño de cada pieza (ver colors.ts) para reforzar el mismo
+  // lenguaje visual que el toggle de museo y las líneas del mapa, en vez de
+  // competir con un color nuevo (feedback de la usuaria sobre la primera
+  // versión, que usaba un violeta genérico).
   const anyResearch = cluster.objects.some(objectHasResearch);
   return (
     <aside className="side-panel">
@@ -29,13 +35,14 @@ export function ClusterPanel({ cluster, lang, onClose, onSelectObject }: Cluster
 
       {anyResearch && (
         <div className="piece-list-legend">
-          <span className="research-badge" aria-hidden="true" /> {s.hasResearchLegend}
+          <span className="piece-list-legend-dot" aria-hidden="true">●</span> {s.hasResearchLegend}
         </div>
       )}
 
       <div className="piece-list">
         {cluster.objects.map((obj) => {
           const hasResearch = objectHasResearch(obj);
+          const badgeColor = MUSEUM_COLORS[obj.sourceMuseum ?? ""] ?? DEFAULT_COLOR;
           return (
             <button
               key={obj.objectID}
@@ -50,6 +57,7 @@ export function ClusterPanel({ cluster, lang, onClose, onSelectObject }: Cluster
                 {hasResearch && (
                   <span
                     className="research-badge research-badge-thumb"
+                    style={{ background: badgeColor }}
                     role="img"
                     aria-label={s.hasResearchBadgeAria}
                     title={s.hasResearchBadgeAria}

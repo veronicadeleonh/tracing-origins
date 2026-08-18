@@ -10,14 +10,38 @@
   position: relative;
 }
 
-.museum-toggles {
+/* Contenedor de las 2 filas de controles arriba a la izquierda: toggles de
+   museo (qué se ve) y filtro de investigación (18/08, otro eje de
+   filtrado, separado a pedido de la usuaria para que no lea como parte del
+   mismo grupo que los museos — ver .research-filter-row más abajo). */
+.top-controls {
   position: absolute;
   z-index: 1000;
   top: 12px;
   left: 12px;
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.museum-toggles {
+  display: flex;
   gap: 6px;
   flex-wrap: wrap;
+}
+
+.research-filter-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.research-filter-label {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #928d82;
 }
 
 .museum-toggle-wrap {
@@ -945,19 +969,18 @@
   flex-shrink: 0;
 }
 
-/* Tratamiento narrativo de context_flags (18/08): mismo violeta que
-   RESEARCH_ACCENT_COLOR en App.tsx / .timeline-dot-accent, para que el
-   marcador de "recorrido investigado" se lea igual en el mapa, en esta
-   lista y en el detalle de la pieza. No es dorado a propósito — el dorado
-   ya significa "esto es del Met" en toda la app (ver comentario en el
-   thumb del slider del timeline, más abajo), y reusarlo acá generaba
-   confusión (feedback de la usuaria, 18/08). */
+/* Tratamiento narrativo de context_flags (18/08, segunda vuelta): el color
+   ya no es un acento fijo — se pasa por `style` inline según el museo dueño
+   de la pieza (ver colors.ts/ClusterPanel.tsx), para reforzar el mismo
+   lenguaje visual que el toggle de museo y las líneas del mapa en vez de
+   competir con un color nuevo (la primera versión usaba un violeta
+   genérico, descartado por feedback de la usuaria). Esta clase solo pone
+   forma/tamaño/contorno. */
 .research-badge {
   display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #6a4c93;
   box-shadow: 0 0 0 1.5px #fff;
 }
 
@@ -965,6 +988,11 @@
   position: absolute;
   top: -2px;
   right: -2px;
+}
+
+.piece-list-legend-dot {
+  color: #928d82;
+  font-size: 10px;
 }
 
 .piece-list-legend {
@@ -1069,13 +1097,11 @@
   background: #928d82;
 }
 
-.timeline-dot-accent {
-  background: #6a4c93;
-}
-
-.timeline-dot-met {
-  background: #b23a48;
-}
+/* .timeline-dot-accent y .timeline-dot-met existían acá con colores fijos
+   (violeta y rojo) — removidas el 18/08: los puntos "evento investigado" y
+   "ahora, en el museo" pasan a colorearse inline según el museo dueño de la
+   pieza (museumColor() en colors.ts, usado desde ObjectDetail.tsx), para
+   que el color siempre corresponda al museo real en vez de un valor fijo. */
 
 .timeline-date {
   font-size: 11px;
