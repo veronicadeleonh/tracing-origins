@@ -123,6 +123,41 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* Filtro por estado de investigación (18/08, pedido explícito de la
+   usuaria) — mismo tratamiento de "pill" que .museum-toggle-wrap, 3
+   botones dentro de un solo contenedor en vez de toggles independientes
+   porque las 3 opciones son mutuamente excluyentes (todas/con/sin). */
+.research-filter {
+  display: flex;
+  gap: 2px;
+  background: rgba(251, 250, 247, 0.92);
+  border: 1px solid #e5e2da;
+  border-radius: 20px;
+  padding: 3px;
+}
+
+.research-filter-btn {
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  color: #77726a;
+  padding: 4px 10px;
+  border-radius: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.research-filter-btn:hover {
+  color: #1a1a1a;
+}
+
+.research-filter-btn.active {
+  background: #6a4c93;
+  color: #fbfaf7;
+  font-weight: 500;
+}
+
 .curated-note-wrap {
   position: relative;
   display: flex;
@@ -910,16 +945,19 @@
   flex-shrink: 0;
 }
 
-/* Tratamiento narrativo de context_flags (18/08): mismo dorado que
+/* Tratamiento narrativo de context_flags (18/08): mismo violeta que
    RESEARCH_ACCENT_COLOR en App.tsx / .timeline-dot-accent, para que el
    marcador de "recorrido investigado" se lea igual en el mapa, en esta
-   lista y en el detalle de la pieza. */
+   lista y en el detalle de la pieza. No es dorado a propósito — el dorado
+   ya significa "esto es del Met" en toda la app (ver comentario en el
+   thumb del slider del timeline, más abajo), y reusarlo acá generaba
+   confusión (feedback de la usuaria, 18/08). */
 .research-badge {
   display: inline-block;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #c9a227;
+  background: #6a4c93;
   box-shadow: 0 0 0 1.5px #fff;
 }
 
@@ -1032,7 +1070,7 @@
 }
 
 .timeline-dot-accent {
-  background: #c9a227;
+  background: #6a4c93;
 }
 
 .timeline-dot-met {

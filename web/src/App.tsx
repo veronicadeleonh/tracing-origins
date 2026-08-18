@@ -45,10 +45,15 @@ const MUSEUM_COLORS: Record<string, string> = {
 };
 const DEFAULT_COLOR = "#928d82";
 const ORIGIN_COLOR = "#8a8478";
-// Mismo dorado que .timeline-dot-accent en App.css (ObjectDetail) — marca
-// "esta pieza/origen tiene recorrido investigado" con un único color en
-// toda la app (18/08, tratamiento narrativo de context_flags).
-const RESEARCH_ACCENT_COLOR = "#c9a227";
+// Violeta, deliberadamente distinto de los 3 colores de museo (met #c9a227,
+// louvre #3d7a8c, bm #b23a48) — el dorado ya está reservado para "esto es
+// del Met" en toda la app (ver el comentario sobre el thumb del slider del
+// timeline en App.css, mismo problema encontrado antes). Reusado en
+// .research-badge y .timeline-dot-accent en App.css para que "recorrido
+// investigado" se lea igual en el mapa, en ClusterPanel y en ObjectDetail
+// (18/08, tratamiento narrativo de context_flags — feedback de la usuaria:
+// el dorado hacía clash con el color del Met).
+const RESEARCH_ACCENT_COLOR = "#6a4c93";
 // mismo color que cada museo, para reforzar la conexión territorio-colonial
 // -> museo que se benefició de él. UK = BM (rojo), Francia = Louvre (teal).
 const COLONIAL_POWER_COLORS: Record<string, string> = {
@@ -105,6 +110,11 @@ function App() {
   const [visibleMuseums, setVisibleMuseums] = useState<Record<string, boolean>>(
     () => Object.fromEntries(Object.keys(bundle.museums).map((id) => [id, true])),
   );
+  // Filtro por estado de investigación (18/08, pedido explícito de la
+  // usuaria junto con el tratamiento visual de context_flags): además de
+  // marcar qué piezas tienen layer 3, dejar ocultar/mostrar según eso.
+  // "all" es el default — no cambia el comportamiento previo.
+  const [researchFilter, setResearchFilter] = useState<"all" | "with" | "without">("all");
   const [panel, setPanel] = useState<PanelState>(null);
   const [tooltip, setTooltip] = useState<TooltipState>(null);
   const [cursor, setCursor] = useState("grab");
@@ -187,8 +197,14 @@ function App() {
   }, []);
 
   const visibleObjects = useMemo(
-    () => bundle.objects.filter((obj) => obj.sourceMuseum && visibleMuseums[obj.sourceMuseum]),
-    [visibleMuseums],
+    () =>
+      bundle.objects.filter((obj) => {
+        if (!obj.sourceMuseum || !visibleMuseums[obj.sourceMuseum]) return false;
+        if (researchFilter === "with") return objectHasResearch(obj);
+        if (researchFilter === "without") return !objectHasResearch(obj);
+        return true;
+      }),
+    [visibleMuseums, researchFilter],
   );
 
   const clusters = useMemo(() => groupByOrigin(visibleObjects, lang), [visibleObjects, lang]);
@@ -328,6 +344,19 @@ function App() {
               )}
             </div>
           ))}
+          <div className="research-filter" role="group" aria-label={s.researchFilterAria}>
+            {(["all", "with", "without"] as const).map((value) => (
+              <button
+                key={value}
+                type="button"
+                className={`research-filter-btn${researchFilter === value ? " active" : ""}`}
+                aria-pressed={researchFilter === value}
+                onClick={() => setResearchFilter(value)}
+              >
+                {s.researchFilterLabels[value]}
+              </button>
+            ))}
+          </div>
           <div className="piece-counter">
             {visibleObjects.length === bundle.objects.length
               ? s.pieceCounterAll(visibleObjects.length)
@@ -448,15 +477,18 @@ function App() {
               id="origins"
               type="circle"
               paint={{
-                "circle-color": ORIGIN_COLOR,
+                // Relleno violeta para puntos con al menos una pieza
+                // investigada (layer 3), gris neutro para el resto — antes
+                // era un anillo/stroke, cambiado a fill el 18/08 por
+                // feedback de la usuaria (el stroke solo se notaba poco;
+                // rellenar el círculo es más notorio a simple vista). Mismo
+                // criterio que .research-badge/.timeline-dot-accent en
+                // App.css (ver geo.ts, objectHasResearch).
+                "circle-color": ["case", ["get", "hasResearch"], RESEARCH_ACCENT_COLOR, ORIGIN_COLOR],
                 "circle-opacity": 0.85,
                 "circle-radius": ["interpolate", ["linear"], ["get", "count"], 1, 5, 10, 14],
-                // Anillo dorado para puntos con al menos una pieza investigada
-                // (layer 3) — mismo color que timeline-dot-accent en
-                // ObjectDetail, para que el marcador se lea como "documentado"
-                // en cualquier parte de la app (ver geo.ts, objectHasResearch).
-                "circle-stroke-color": RESEARCH_ACCENT_COLOR,
-                "circle-stroke-width": ["case", ["get", "hasResearch"], 2, 0],
+                "circle-stroke-color": "#fbfaf7",
+                "circle-stroke-width": 1,
               }}
             />
           </Source>
