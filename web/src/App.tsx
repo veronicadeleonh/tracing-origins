@@ -4,7 +4,7 @@ import type { MapMouseEvent } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import data from "./data/objects.json";
 import type { DataBundle, MuseumObject } from "./types";
-import { groupByOrigin, jitteredPoint, type OriginCluster } from "./geo";
+import { groupByOrigin, jitteredPoint, objectHasResearch, type OriginCluster } from "./geo";
 import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
 import { Timeline } from "./components/Timeline";
@@ -45,6 +45,10 @@ const MUSEUM_COLORS: Record<string, string> = {
 };
 const DEFAULT_COLOR = "#928d82";
 const ORIGIN_COLOR = "#8a8478";
+// Mismo dorado que .timeline-dot-accent en App.css (ObjectDetail) — marca
+// "esta pieza/origen tiene recorrido investigado" con un único color en
+// toda la app (18/08, tratamiento narrativo de context_flags).
+const RESEARCH_ACCENT_COLOR = "#c9a227";
 // mismo color que cada museo, para reforzar la conexión territorio-colonial
 // -> museo que se benefició de él. UK = BM (rojo), Francia = Louvre (teal).
 const COLONIAL_POWER_COLORS: Record<string, string> = {
@@ -215,6 +219,10 @@ function App() {
         label: cluster.label,
         count: cluster.objects.length,
         clusterKey: `${cluster.lat}|${cluster.lon}|${cluster.label}`,
+        // Tratamiento narrativo de context_flags (18/08): true si al menos
+        // una pieza del cluster tiene layer 3 cargada — pinta un anillo
+        // dorado alrededor del punto (ver paint de "origins" más abajo).
+        hasResearch: cluster.objects.some(objectHasResearch),
       },
     })),
   }), [clusters]);
@@ -443,6 +451,12 @@ function App() {
                 "circle-color": ORIGIN_COLOR,
                 "circle-opacity": 0.85,
                 "circle-radius": ["interpolate", ["linear"], ["get", "count"], 1, 5, 10, 14],
+                // Anillo dorado para puntos con al menos una pieza investigada
+                // (layer 3) — mismo color que timeline-dot-accent en
+                // ObjectDetail, para que el marcador se lea como "documentado"
+                // en cualquier parte de la app (ver geo.ts, objectHasResearch).
+                "circle-stroke-color": RESEARCH_ACCENT_COLOR,
+                "circle-stroke-width": ["case", ["get", "hasResearch"], 2, 0],
               }}
             />
           </Source>

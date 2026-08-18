@@ -35,6 +35,8 @@ export interface I18nStrings {
 
   clusterUnknownOrigin: string;
   clusterPieceCount: (n: number) => string;
+  hasResearchBadgeAria: string;
+  hasResearchLegend: string;
   closePanelAria: string;
   untitled: string;
 
@@ -89,7 +91,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     pieceCounterFiltered: (visible, total) => `${visible} de ${total} piezas`,
     curatedNoteBtnAria: "Sobre esta muestra",
     curatedNoteText: "Muestra curada — no representa la colección completa de cada museo. Muchas piezas quedan fuera.",
-    curatedNoteResearch: "El patrón origen→museo está completo para todas las piezas del mapa; el recorrido investigado y citado con fuentes existe solo para un subconjunto, no es un puntaje de qué tan controversial es cada una.",
+    curatedNoteResearch: "El patrón origen→museo está completo para todas las piezas del mapa; el recorrido investigado y citado con fuentes existe solo para un subconjunto, no es un puntaje de qué tan controversial es cada una. Los puntos con borde dorado tienen al menos una pieza con ese recorrido documentado.",
     curatedNoteBasemap: "Los límites y nombres del mapa base son la convención por default de Mapbox, no una postura editorial de este proyecto.",
     curatedNoteTerritoriesPrefix: "Territorios coloniales: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
@@ -118,6 +120,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
 
     clusterUnknownOrigin: "Origen sin identificar",
     clusterPieceCount: (n) => `${n} pieza${n === 1 ? "" : "s"} de este lugar`,
+    hasResearchBadgeAria: "Tiene recorrido investigado y citado",
+    hasResearchLegend: "recorrido investigado y citado",
     closePanelAria: "Cerrar panel",
     untitled: "(sin título)",
 
@@ -191,7 +195,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     pieceCounterFiltered: (visible, total) => `${visible} of ${total} pieces`,
     curatedNoteBtnAria: "About this sample",
     curatedNoteText: "Curated sample — doesn't represent each museum's full collection. Many pieces are left out.",
-    curatedNoteResearch: "The origin→museum pattern is complete for every piece on the map; the cited, sourced journey exists only for a subset — it isn't a score of how controversial each piece is.",
+    curatedNoteResearch: "The origin→museum pattern is complete for every piece on the map; the cited, sourced journey exists only for a subset — it isn't a score of how controversial each piece is. Points with a gold ring have at least one piece with that documented journey.",
     curatedNoteBasemap: "The basemap's borders and labels are Mapbox's default convention, not an editorial stance from this project.",
     curatedNoteTerritoriesPrefix: "Colonial territories: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
@@ -220,6 +224,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
 
     clusterUnknownOrigin: "Unidentified origin",
     clusterPieceCount: (n) => `${n} piece${n === 1 ? "" : "s"} from this location`,
+    hasResearchBadgeAria: "Has a researched, cited journey",
+    hasResearchLegend: "researched, cited journey",
     closePanelAria: "Close panel",
     untitled: "(untitled)",
 

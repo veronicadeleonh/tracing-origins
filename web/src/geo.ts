@@ -21,6 +21,19 @@ export function jitteredPoint(
   return [lat + dlat, lon + dlon];
 }
 
+// Tratamiento narrativo de context_flags (18/08, decidido con la usuaria):
+// en vez de mostrar la diferencia "patrón completo / detalle investigado
+// parcial" solo en texto (curated-note, welcome modal), se marca también
+// visualmente qué piezas tienen layer 3 cargada — un punto de origen en el
+// mapa con al menos una pieza así, y cada fila en ClusterPanel. Mismo
+// criterio que hasResearch en ObjectDetail.tsx (eventos citados, flags o
+// notas), pero simplificado a "tiene fila en context.csv o al menos un
+// evento" porque acá no depende del idioma (a diferencia de ObjectDetail,
+// que elige notes/notesEn según lang).
+export function objectHasResearch(obj: MuseumObject): boolean {
+  return !!obj.context || obj.events.length > 0;
+}
+
 export interface OriginCluster {
   lat: number;
   lon: number;

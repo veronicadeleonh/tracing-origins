@@ -902,11 +902,40 @@
 }
 
 .piece-thumb {
+  position: relative;
   width: 40px;
   height: 40px;
   border-radius: 6px;
   background: #e5e2da center/cover no-repeat;
   flex-shrink: 0;
+}
+
+/* Tratamiento narrativo de context_flags (18/08): mismo dorado que
+   RESEARCH_ACCENT_COLOR en App.tsx / .timeline-dot-accent, para que el
+   marcador de "recorrido investigado" se lea igual en el mapa, en esta
+   lista y en el detalle de la pieza. */
+.research-badge {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #c9a227;
+  box-shadow: 0 0 0 1.5px #fff;
+}
+
+.research-badge-thumb {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+}
+
+.piece-list-legend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px 8px;
+  font-size: 11px;
+  color: #928d82;
 }
 
 .piece-info {
