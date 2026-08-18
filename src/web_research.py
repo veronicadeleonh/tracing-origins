@@ -43,10 +43,36 @@ Wikipedia sobre una colección privada).
 Requiere: pip install ddgs tavily-python  (tavily-python solo hace falta si
 vas a usar ese backend; el script no rompe si falta y usás --backend ddgs)
 
+Cómo reducir ruido (18/08, después de una prueba real con la estatua de
+Gudea que trajo 2 de 3 resultados irrelevantes -- la misma página del Louvre
+que ya teníamos vía research_lookup.py, y un libro de una biblioteca de
+Boston de 1859 sin relación):
+  1. **Excluí los dominios de los 3 museos** -- ya los cubre
+     research_lookup.py sin gastar red, así que aparecer de nuevo acá es
+     puro ruido. Excluidos por default (`DEFAULT_EXCLUDE_DOMAINS`); pasá
+     `--exclude-domains ""` para desactivarlo si por algún motivo querés
+     ver también esas páginas.
+  2. **Frasealo como pregunta específica, no como lista de keywords.** Una
+     query tipo "Gudea statue Emile Sery Louvre 1967 provenance" es
+     básicamente una bolsa de palabras -- cualquier página que mencione 2-3
+     de esos términos sueltos matchea, aunque no tenga nada que ver. Mejor:
+     "Who was Emile Sery, the collector who owned the Louvre's Gudea statue
+     before 1967?" -- una pregunta acotada le da a Tavily/DuckDuckGo una
+     intención clara en vez de coincidencias de palabras sueltas.
+  3. **Mirá el campo `score` en los resultados de Tavily** (0-1, relevancia
+     según su propio ranking) -- con `--min-score 0.3` (default) se
+     descartan automáticamente los que Tavily mismo considera poco
+     relevantes, antes de que lleguen a la salida.
+  4. Si una pieza genuinamente no tiene nada más documentado en la web
+     (como pasó con la estatua de Gudea), CERO resultados relevantes es una
+     respuesta válida -- no hace falta forzar la búsqueda ni bajar el
+     `--min-score` para completar el hueco con algo.
+
 Uso:
-    python src/web_research.py "Gudea statue Emile Sery collection Louvre 1967"
+    python src/web_research.py "Who was Emile Sery, collector of the Louvre's Gudea statue before 1967?"
     python src/web_research.py "Tiara of Saitaphernes Rouchomovsky forgery" --n 8
-    python src/web_research.py "British Museum Yemen looted heritage Sabaean" --backend ddgs
+    python src/web_research.py "British Museum Yemen looted heritage Sabaean altar" --backend ddgs
+    python src/web_research.py "..." --exclude-domains "" --min-score 0
     python src/web_research.py "..." --no-cache
 """
 
@@ -61,6 +87,11 @@ from pathlib import Path
 
 CACHE_DIR = Path(__file__).resolve().parent.parent / "research_cache" / "web"
 ENV_PATH = Path(__file__).resolve().parent.parent / ".env"
+
+# Los 3 museos ya están cubiertos por research_lookup.py (local, sin red) --
+# que vuelvan a aparecer acá es ruido, no información nueva. Excluidos por
+# default; --exclude-domains "" los reincluye si hace falta.
+DEFAULT_EXCLUDE_DOMAINS = ["collections.louvre.fr", "britishmuseum.org", "metmuseum.org"]
 
 
 def _load_dotenv() -> None:
@@ -82,13 +113,14 @@ def _load_dotenv() -> None:
         os.environ.setdefault(key, value)
 
 
-def _cache_path(query: str, backend: str) -> Path:
+def _cache_path(query: str, backend: str, exclude_domains: list[str]) -> Path:
     slug = "".join(c if c.isalnum() else "_" for c in query.lower())[:60]
-    digest = hashlib.sha1(f"{backend}:{query}".encode("utf-8")).hexdigest()[:8]
+    cache_key = f"{backend}:{','.join(exclude_domains)}:{query}"
+    digest = hashlib.sha1(cache_key.encode("utf-8")).hexdigest()[:8]
     return CACHE_DIR / f"{slug}_{digest}.json"
 
 
-def _search_tavily(query: str, n: int) -> list[dict]:
+def _search_tavily(query: str, n: int, exclude_domains: list[str]) -> list[dict]:
     api_key = os.environ.get("TAVILY_API_KEY")
     if not api_key:
         print(
@@ -104,50 +136,76 @@ def _search_tavily(query: str, n: int) -> list[dict]:
         sys.exit(1)
 
     client = TavilyClient(api_key=api_key)
-    response = client.search(query, max_results=n, search_depth="advanced")
+    response = client.search(
+        query,
+        max_results=n,
+        search_depth="advanced",
+        exclude_domains=exclude_domains or None,
+    )
     return [
         {
             "title": r.get("title"),
             "url": r.get("url"),
             "snippet": (r.get("content") or "")[:800],
+            "score": r.get("score"),
         }
         for r in response.get("results", [])
     ]
 
 
-def _search_ddgs(query: str, n: int) -> list[dict]:
+def _search_ddgs(query: str, n: int, exclude_domains: list[str]) -> list[dict]:
     try:
         from ddgs import DDGS
     except ImportError:
         print("Falta la librería ddgs -- correr: pip install ddgs", file=sys.stderr)
         sys.exit(1)
 
-    raw_results = DDGS().text(query, max_results=n)
+    # ddgs no tiene un parámetro dedicado de exclusión de dominio -- usa el
+    # operador -site: de DuckDuckGo directo en el texto de la query.
+    full_query = query + "".join(f" -site:{d}" for d in exclude_domains)
+    raw_results = DDGS().text(full_query, max_results=n)
     return [
-        {"title": r.get("title"), "url": r.get("href"), "snippet": r.get("body")}
+        {"title": r.get("title"), "url": r.get("href"), "snippet": r.get("body"), "score": None}
         for r in raw_results
     ]
 
 
-def search(query: str, n: int = 5, use_cache: bool = True, backend: str = "auto") -> list[dict]:
+def search(
+    query: str,
+    n: int = 5,
+    use_cache: bool = True,
+    backend: str = "auto",
+    exclude_domains: list[str] | None = None,
+    min_score: float = 0.3,
+) -> list[dict]:
     if backend == "auto":
         backend = "tavily" if os.environ.get("TAVILY_API_KEY") else "ddgs"
+    exclude_domains = DEFAULT_EXCLUDE_DOMAINS if exclude_domains is None else exclude_domains
 
-    cache_path = _cache_path(query, backend)
+    cache_path = _cache_path(query, backend, exclude_domains)
     if use_cache and cache_path.exists():
         cached = json.loads(cache_path.read_text())
         print(f"(cacheado, backend={backend}: {cache_path.relative_to(cache_path.parent.parent.parent)})", file=sys.stderr)
-        return cached["results"]
-
-    results = _search_tavily(query, n) if backend == "tavily" else _search_ddgs(query, n)
-
-    if use_cache:
-        CACHE_DIR.mkdir(parents=True, exist_ok=True)
-        cache_path.write_text(
-            json.dumps({"query": query, "backend": backend, "results": results}, indent=2, ensure_ascii=False)
+        results = cached["results"]
+    else:
+        results = (
+            _search_tavily(query, n, exclude_domains)
+            if backend == "tavily"
+            else _search_ddgs(query, n, exclude_domains)
         )
+        if use_cache:
+            CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            cache_path.write_text(
+                json.dumps({"query": query, "backend": backend, "results": results}, indent=2, ensure_ascii=False)
+            )
 
-    return results
+    # Filtro de score: solo aplica a resultados con score real (Tavily) --
+    # ddgs no da score, así que sus resultados siempre pasan sin filtrar.
+    filtered = [r for r in results if r.get("score") is None or r["score"] >= min_score]
+    dropped = len(results) - len(filtered)
+    if dropped:
+        print(f"({dropped} resultado(s) descartados por score < {min_score})", file=sys.stderr)
+    return filtered
 
 
 def main() -> None:
@@ -161,13 +219,36 @@ def main() -> None:
         default="auto",
         help="auto = tavily si hay TAVILY_API_KEY en el entorno, si no ddgs (default: auto)",
     )
+    parser.add_argument(
+        "--exclude-domains",
+        default=",".join(DEFAULT_EXCLUDE_DOMAINS),
+        help=(
+            "Dominios a excluir, separados por coma (default: los 3 museos, "
+            "ya cubiertos por research_lookup.py). Pasar '' para no excluir nada."
+        ),
+    )
+    parser.add_argument(
+        "--min-score",
+        type=float,
+        default=0.3,
+        help="Descarta resultados de Tavily con score menor a esto (default 0.3; no aplica a ddgs)",
+    )
     parser.add_argument("--no-cache", action="store_true", help="Ignorar y no escribir caché")
     args = parser.parse_args()
 
-    results = search(args.query, n=args.n, use_cache=not args.no_cache, backend=args.backend)
+    exclude_domains = [d.strip() for d in args.exclude_domains.split(",") if d.strip()]
+    results = search(
+        args.query,
+        n=args.n,
+        use_cache=not args.no_cache,
+        backend=args.backend,
+        exclude_domains=exclude_domains,
+        min_score=args.min_score,
+    )
 
     for i, r in enumerate(results, 1):
-        print(f"{i}. {r['title']}")
+        score_note = f" (score {r['score']:.2f})" if r.get("score") is not None else ""
+        print(f"{i}. {r['title']}{score_note}")
         print(f"   {r['url']}")
         if r["snippet"]:
             print(f"   {r['snippet'][:300]}")
