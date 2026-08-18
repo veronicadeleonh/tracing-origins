@@ -51,11 +51,28 @@ OUT_PATH = Path(__file__).resolve().parent.parent / "web" / "public" / "colonial
 
 # Entidades "coloniales" (territorio de ultramar) en vez de las de "régimen"
 # (Kingdom of France, French Third Republic, etc. — esas representan la
-# metrópoli sola, no el imperio). Para UK alcanza con 2 entidades porque
-# "British Colonial Empire" ya cubre casi todo el rango 1706-1999; para
-# Francia no hay una entidad agregada así, se arma sumando cada colonia por
-# región (ver --explore para la lista completa de nombres disponibles).
-UK_COLONIAL_NAMES = ["British Colonial Empire", "British Raj"]
+# metrópoli sola, no el imperio).
+#
+# Bug encontrado el 18/08 (reportado por la usuaria: "las excolonias
+# inglesas en África no están marcadas en el mapa"): el comentario original
+# acá decía que para UK alcanzaba con 2 entidades porque "British Colonial
+# Empire" ya cubre casi todo el rango 1706-1999 — nunca se verificó esa
+# afirmación contra África específicamente, a diferencia del lado francés,
+# que sí se armó sumando cada colonia por región desde el principio.
+# Resultado: "British Colonial Empire" en Cliopatria NO incluye África
+# continental en absoluto (se verificó con --explore + inspección de bounding
+# boxes) — el mismo patrón que "French Africa" (ya incluida abajo) tiene su
+# equivalente británico en 3 entidades separadas que faltaban:
+#   - "British Africa" (1885-1960): el grueso del período colonial africano.
+#   - "British Cape Colony" (1796-1884): Sudáfrica antes de que "British
+#     Africa" empiece a cubrirla.
+#   - "British East Africa" (1961-1972): pese al nombre, no es la etapa
+#     "East Africa" clásica (Kenia/Uganda/Tanganica ya independientes para
+#     1964) — los polígonos corresponden a Suazilandia (hasta 1968) y
+#     Seychelles (hasta 1976), los últimos territorios británicos en la
+#     región tras la ola de independencias de 1960-64. Verificado por
+#     bounding box antes de incluirla, no por el nombre solo.
+UK_COLONIAL_NAMES = ["British Colonial Empire", "British Raj", "British Africa", "British Cape Colony", "British East Africa"]
 FR_COLONIAL_NAMES = [
     "French Africa",
     "French Indochina",
