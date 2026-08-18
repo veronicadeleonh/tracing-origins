@@ -14,6 +14,7 @@ export interface I18nStrings {
   pieceCounterFiltered: (visible: number, total: number) => string;
   curatedNoteBtnAria: string;
   curatedNoteText: string;
+  curatedNoteResearch: string;
   curatedNoteBasemap: string;
   curatedNoteTerritoriesPrefix: string;
   curatedNoteTerritoriesLicense: string;
@@ -88,6 +89,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     pieceCounterFiltered: (visible, total) => `${visible} de ${total} piezas`,
     curatedNoteBtnAria: "Sobre esta muestra",
     curatedNoteText: "Muestra curada — no representa la colección completa de cada museo. Muchas piezas quedan fuera.",
+    curatedNoteResearch: "El patrón origen→museo está completo para todas las piezas del mapa; el recorrido investigado y citado con fuentes existe solo para un subconjunto, no es un puntaje de qué tan controversial es cada una.",
     curatedNoteBasemap: "Los límites y nombres del mapa base son la convención por default de Mapbox, no una postura editorial de este proyecto.",
     curatedNoteTerritoriesPrefix: "Territorios coloniales: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
@@ -163,7 +165,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     ],
     welcomeAboutHeading: "Sobre esta muestra",
     welcomeAboutP1: "Proyecto curado para portfolio personal, no un dataset exhaustivo — no representa la colección completa de ningún museo.",
-    welcomeAboutP2: 'No clasifica piezas como "robadas" o "no robadas": documenta el recorrido con fuentes, no emite un veredicto. La mayoría de las piezas todavía no tiene esa investigación cargada — es el estado por defecto, no una excepción.',
+    welcomeAboutP2: 'El patrón del mapa —de dónde viene cada pieza, a qué museo llegó— está completo en las 466 piezas. El detalle investigado es distinto: existe solo para un subconjunto, y no clasifica piezas como "robadas"; documenta el recorrido con fuentes, sin veredicto. La mayoría todavía no tiene esa investigación — es el estado por defecto, no una excepción.',
     welcomeCloseAria: "Cerrar",
     welcomeBack: "Atrás",
     welcomeNext: "Siguiente",
@@ -189,6 +191,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     pieceCounterFiltered: (visible, total) => `${visible} of ${total} pieces`,
     curatedNoteBtnAria: "About this sample",
     curatedNoteText: "Curated sample — doesn't represent each museum's full collection. Many pieces are left out.",
+    curatedNoteResearch: "The origin→museum pattern is complete for every piece on the map; the cited, sourced journey exists only for a subset — it isn't a score of how controversial each piece is.",
     curatedNoteBasemap: "The basemap's borders and labels are Mapbox's default convention, not an editorial stance from this project.",
     curatedNoteTerritoriesPrefix: "Colonial territories: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
@@ -264,7 +267,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     ],
     welcomeAboutHeading: "About this sample",
     welcomeAboutP1: "A curated personal-portfolio project, not an exhaustive dataset — it doesn't represent any museum's full collection.",
-    welcomeAboutP2: 'It doesn\'t classify pieces as "stolen" or "not stolen": it documents the journey with sources, it doesn\'t issue a verdict. Most pieces don\'t have that research loaded yet — that\'s the default state, not an exception.',
+    welcomeAboutP2: 'The map\'s pattern —where each piece comes from, which museum it reached— is complete across all 466 pieces. The researched detail is different: it exists only for a subset, and doesn\'t classify pieces as "stolen"; it documents the journey with sources, no verdict. Most pieces don\'t have that research yet — that\'s the default state, not an exception.',
     welcomeCloseAria: "Close",
     welcomeBack: "Back",
     welcomeNext: "Next",
