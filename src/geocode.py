@@ -397,6 +397,14 @@ CULTURE_KEYWORDS = [
     ("Vietnam", (14.0583, 108.2772)),
     ("Indonesia", (-0.7893, 113.9213)),
     ("India", (20.5937, 78.9629)),
+    # Agregado 18/08 al resolver el hueco de piezas con layer 3 invisibles en
+    # el mapa (ver CLAUDE.md): met:918237 (toros alados victorianos,
+    # colección McCall) tiene culture="British" en la API del Met -- dato
+    # crudo real, no fabricado por nosotros, así que entra acá con el mismo
+    # mecanismo que "Roman"/"Greek" (coordenada aproximada, no un sitio
+    # arqueológico puntual). Precisión "culture", igual que el resto de esta
+    # lista.
+    ("British", (51.5074, -0.1278)),  # Londres, como aproximación de "hecho en Gran Bretaña"
 ]
 
 
@@ -405,6 +413,51 @@ def resolve_from_culture(culture: str) -> dict | None:
         if _keyword_matches(keyword, culture):
             return {"label": culture, "label_en": culture, "precision": "culture", "lat": lat, "lon": lon}
     return None
+
+
+# ---------------------------------------------------------------------------
+# Overrides editoriales (18/08) — un puñado de piezas bandera (layer 3) cuyos
+# campos crudos de layer 1 no tienen NADA matcheable: no es que falte una
+# keyword en las listas de arriba, es que el campo de origen en sí viene
+# vacío o "Inconnu"/"Unknown" en la fuente del museo. Forzar un match ahí
+# significaría inventar texto en layer 1 ("no se calcula ni interpreta nada
+# acá", ver CLAUDE.md) — en cambio, layer 2 es explícitamente "una inferencia
+# nuestra", así que un override puntual y documentado acá es coherente con el
+# modelo de datos, mientras se mantenga separado de layer 1 y visible como
+# decisión editorial (precision "editorial", no "site"/"country").
+#
+# Clave: objectID namespaceado completo (ej. "louvre:cl010256592"), no el id
+# nativo del museo, para que no haya ambigüedad entre fuentes.
+EDITORIAL_ORIGIN_OVERRIDES: dict[str, dict] = {
+    # "Drone Hits Great Ziggurat of Ur" (Hanaa Malallah, 2016) -- obra de arte
+    # contemporáneo sin ningún campo geográfico poblado en la API del Met
+    # (country/region/subregion/culture todos vacíos, es arte moderno no una
+    # antigüedad). El tema de la obra es explícitamente el zigurat de Ur, así
+    # que se usa esa ubicación como origen -- no es un hallazgo arqueológico
+    # de la pieza física (que se hizo en el estudio de la artista, no en
+    # Irak), sino la referencia geográfica central de la obra, documentada en
+    # notas/layer 3.
+    "met:910742": {
+        "label": "Ur, Irak (referencia temática de la obra)",
+        "label_en": "Ur, Iraq (the artwork's thematic reference)",
+        "precision": "editorial",
+        "lat": 30.9626,
+        "lon": 46.1039,
+    },
+    # Tiare de Saitapharnes -- falsificación moderna (ver context.csv). El
+    # registro del Louvre marca placeOfDiscovery como "Inconnu" a propósito
+    # (nunca fue una pieza antigua real). Layer 3 documenta que fue
+    # fabricada en 1894 en Odesa (Imperio ruso, actual Ucrania) por el
+    # orfebre Israel Rouchomovsky -- se usa ese punto como origen porque es
+    # el único lugar real y documentado asociado al objeto físico.
+    "louvre:cl010256592": {
+        "label": "Odesa, Ucrania (lugar de fabricación de la falsificación)",
+        "label_en": "Odesa, Ukraine (where the forgery was made)",
+        "precision": "editorial",
+        "lat": 46.4825,
+        "lon": 30.7233,
+    },
+}
 
 
 def resolve_origin(obj: dict) -> dict:

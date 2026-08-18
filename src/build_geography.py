@@ -16,7 +16,7 @@ import csv
 import json
 from pathlib import Path
 
-from geocode import MET_COORDS, resolve_origin
+from geocode import EDITORIAL_ORIGIN_OVERRIDES, MET_COORDS, resolve_origin
 from museum_id import MET, namespaced_id
 
 RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "met_objects_raw.json"
@@ -36,10 +36,14 @@ def load_objects() -> list[dict]:
 
 
 def build_row(obj: dict) -> dict:
-    origin = resolve_origin(obj)
+    object_id = namespaced_id(MET, obj.get("objectID"))
+    # Overrides editoriales (18/08, ver geocode.py) tienen prioridad sobre el
+    # matching automático -- solo existen para piezas cuyos campos crudos no
+    # tienen nada matcheable, así que si hay una entrada acá, gana.
+    origin = EDITORIAL_ORIGIN_OVERRIDES.get(object_id) or resolve_origin(obj)
     museum_lat, museum_lon = MET_COORDS
     return {
-        "objectID": namespaced_id(MET, obj.get("objectID")),
+        "objectID": object_id,
         "origin_label": origin["label"],
         "origin_label_en": origin.get("label_en") or origin["label"],
         "origin_precision": origin["precision"],

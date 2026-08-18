@@ -5049,6 +5049,143 @@
       "events": []
     },
     {
+      "objectID": "met:918237",
+      "sourceMuseum": "met",
+      "title": "Human-headed winged bulls",
+      "objectName": "Winged bull",
+      "department": "Ancient West Asian Art",
+      "culture": "British",
+      "period": "Victorian",
+      "dynasty": null,
+      "objectDate": "1850–1900",
+      "medium": "Bronze",
+      "creditLine": "Henrietta and Christopher McCall Collection, Purchase, Henrie Jo Barth Bequest, and Museum Acquisitions and Josephine Lois Berger-Nadler Endowment Funds, 2023",
+      "accessionYear": "2023",
+      "excavation": null,
+      "country": null,
+      "region": null,
+      "subregion": null,
+      "primaryImage": "https://images.metmuseum.org/CRDImages/an/original/DP-33300-001.jpg",
+      "objectURL": "https://www.metmuseum.org/art/collection/search/918237",
+      "originLabel": "British",
+      "originLabelEn": "British",
+      "originPrecision": "culture",
+      "originLat": 51.5074,
+      "originLon": -0.1278,
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Reino Unido",
+        "notes": "Pareja de toros alados con cabeza humana en bronce, Gran Bretaña, ca. 1850-1900 -no es una pieza antigua, sino un objeto decorativo victoriano. Se incluye como contraste, no como caso de expropiacion: documenta como las excavaciones asirias de mediados del siglo XIX (Layard en Nimrud, Botta en Jorsabad) generaron una moda de \"revival asirio\" en la decoracion britanica, alimentada por cobertura de prensa, libros populares y espectaculos publicos como la \"Corte de Nineve\" reconstruida en el Crystal Palace de Sydenham (1854). El diseño de estos toros remite especificamente a los lamassu de Jorsabad. No encontramos una atribucion de diseño a una persona puntual para esta pieza en particular (a diferencia de un broche relacionado de la misma coleccion McCall, que si se vincula a Austen Henry Layard); la evitamos por prudencia. Adquirida por el Met en 2023 como parte de la coleccion Henrietta y Christopher McCall.",
+        "notesEn": "Pair of bronze human-headed winged bulls, Britain, ca. 1850-1900 -not an ancient object, but a Victorian decorative piece. Included as a contrast case, not an expropriation case: it documents how mid-19th-century Assyrian excavations (Layard at Nimrud, Botta at Khorsabad) sparked an \"Assyrian revival\" fashion in British decorative arts, fed by press coverage, popular books, and public spectacles like the reconstructed 'Nineveh Court' at the Crystal Palace, Sydenham (1854). The design of these bulls specifically echoes the lamassu from Khorsabad. We did not find a design attribution to a specific person for this particular piece (unlike a related brooch from the same McCall collection, which is linked to Austen Henry Layard); we avoid asserting that link here out of caution. Acquired by the Met in 2023 as part of the Henrietta and Christopher McCall collection."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "other",
+          "event_date": "1845-1854",
+          "actor_or_institution": "Austen Henry Layard (Nimrud); Paul-Emile Botta (Jorsabad)",
+          "location": "Nimrud y Jorsabad, Mesopotamia otomana",
+          "description": "Contexto: las excavaciones asirias de Layard en Nimrud (desde 1845) y de Botta en Jorsabad, y su cobertura publica (prensa, libros, la \"Corte de Nineve\" del Crystal Palace en 1854), despertaron una moda de \"revival asirio\" en la decoracion britanica.",
+          "descriptionEs": "Contexto: las excavaciones asirias de Layard en Nimrud (desde 1845) y de Botta en Jorsabad, y su cobertura publica (prensa, libros, la \"Corte de Nineve\" del Crystal Palace en 1854), despertaron una moda de \"revival asirio\" en la decoracion britanica.",
+          "descriptionEn": "Context: Layard's Assyrian excavations at Nimrud (from 1845) and Botta's at Khorsabad, and their public coverage (press, books, the Crystal Palace's 'Nineveh Court' in 1854), sparked an 'Assyrian revival' fashion in British decorative arts.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/918237",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "creation",
+          "event_date": "1850-1900",
+          "actor_or_institution": "Fabricante britanico no identificado",
+          "location": "Gran Bretaña",
+          "description": "Par de toros alados con cabeza humana en bronce, objetos decorativos victorianos para el hogar inspirados en los lamassu de Jorsabad. No encontramos atribucion de diseño a una persona puntual para esta pieza (a diferencia de un broche relacionado de la misma coleccion, vinculado a Austen Henry Layard).",
+          "descriptionEs": "Par de toros alados con cabeza humana en bronce, objetos decorativos victorianos para el hogar inspirados en los lamassu de Jorsabad. No encontramos atribucion de diseño a una persona puntual para esta pieza (a diferencia de un broche relacionado de la misma coleccion, vinculado a Austen Henry Layard).",
+          "descriptionEn": "Pair of bronze human-headed winged bulls, Victorian decorative objects for the home inspired by the lamassu from Khorsabad. We found no design attribution to a specific person for this piece (unlike a related brooch from the same collection, linked to Austen Henry Layard).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/918237",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "2023",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "Adquirida por el Met en 2023 como parte de la coleccion Henrietta y Christopher McCall, junto con otras piezas de joyeria y decoracion victoriana de tema asirio.",
+          "descriptionEs": "Adquirida por el Met en 2023 como parte de la coleccion Henrietta y Christopher McCall, junto con otras piezas de joyeria y decoracion victoriana de tema asirio.",
+          "descriptionEn": "Acquired by the Met in 2023 as part of the Henrietta and Christopher McCall collection, along with other pieces of Victorian Assyrian-themed jewelry and decorative arts.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/918237",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
+    },
+    {
+      "objectID": "met:910742",
+      "sourceMuseum": "met",
+      "title": "Drone Hits Great Ziggurat of Ur",
+      "objectName": "Time-Based Media; Video; Animation; Drawings; \"Drone Hits Great Ziggurat of Ur\"",
+      "department": "Ancient West Asian Art",
+      "culture": null,
+      "period": "Modern",
+      "dynasty": null,
+      "objectDate": "2016",
+      "medium": "Digital video installation, color, sound, 3min., 37sec.; pencil, ink and watercolor on paper",
+      "creditLine": "Museum Acquisitions Fund, 2025",
+      "accessionYear": "2025",
+      "excavation": null,
+      "country": null,
+      "region": null,
+      "subregion": null,
+      "primaryImage": null,
+      "objectURL": "https://www.metmuseum.org/art/collection/search/910742",
+      "originLabel": "Ur, Irak (referencia temática de la obra)",
+      "originLabelEn": "Ur, Iraq (the artwork's thematic reference)",
+      "originPrecision": "editorial",
+      "originLat": 30.9626,
+      "originLon": 46.1039,
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Irak",
+        "notes": "\"Drone Hits Great Ziggurat of Ur\" (2016), de la artista iraqui-britanica Hanaa Malallah: dos videos y veintitres dibujos sobre el gran zigurat de Ur, en el sur de Irak. Se incluye como caso de contraste, no de expropiacion: es arte contemporaneo comprado directamente a una artista viva que reflexiona sobre su propio patrimonio, no una antiguedad retirada de su lugar de origen. El video, filmado con una camara montada en un drone, mezcla la imagen del zigurat milenario con el zumbido de la aeronave -una referencia deliberada al uso militar estadounidense de drones en Irak- para impedir cualquier fantasia de intemporalidad sobre el sitio. Adquirida por el Met en 2025.",
+        "notesEn": "\"Drone Hits Great Ziggurat of Ur\" (2016), by Iraqi-British artist Hanaa Malallah: two videos and twenty-three drawings about the great ziggurat at Ur, in southern Iraq. Included as a contrast case, not an expropriation case: it is contemporary art bought directly from a living artist reflecting on her own heritage, not an antiquity removed from its place of origin. The video, filmed with a drone-mounted camera, mixes the image of the millennia-old ziggurat with the aircraft's buzzing sound -a deliberate reference to US military drone use in Iraq- to block any fantasy of timelessness about the site. Acquired by the Met in 2025."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "2016",
+          "actor_or_institution": "Hanaa Malallah (Iraqi-British, n. 1958)",
+          "location": "Ur, sur de Irak (tema de la obra)",
+          "description": "Dos videos y veintitres dibujos sobre el gran zigurat de Ur; uno de los videos, filmado con una camara montada en un drone, mezcla la imagen del sitio milenario con el zumbido de la aeronave, en referencia deliberada al uso militar estadounidense de drones en Irak.",
+          "descriptionEs": "Dos videos y veintitres dibujos sobre el gran zigurat de Ur; uno de los videos, filmado con una camara montada en un drone, mezcla la imagen del sitio milenario con el zumbido de la aeronave, en referencia deliberada al uso militar estadounidense de drones en Irak.",
+          "descriptionEn": "Two videos and twenty-three drawings about the great ziggurat at Ur; one of the videos, filmed with a drone-mounted camera, mixes the image of the millennia-old site with the aircraft's buzzing sound, in deliberate reference to US military drone use in Iraq.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/910742",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "2025",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "Adquirida por el Met con el Museum Acquisitions Fund en 2025, directamente como obra de arte contemporaneo -no como antiguedad- de una artista iraqui-britanica viva.",
+          "descriptionEs": "Adquirida por el Met con el Museum Acquisitions Fund en 2025, directamente como obra de arte contemporaneo -no como antiguedad- de una artista iraqui-britanica viva.",
+          "descriptionEn": "Acquired by the Met with the Museum Acquisitions Fund in 2025, directly as a work of contemporary art -not an antiquity- from a living Iraqi-British artist.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/910742",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
+    },
+    {
       "objectID": "louvre:cl010003776",
       "sourceMuseum": "louvre",
       "title": "Buste d'Akhénaton",
@@ -9144,6 +9281,95 @@
           "source_url": "https://en.wikipedia.org/wiki/Winged_Victory_of_Samothrace",
           "source_type": "secondary_source",
           "confidence_level": "medium"
+        }
+      ]
+    },
+    {
+      "objectID": "louvre:cl010256592",
+      "sourceMuseum": "louvre",
+      "title": "tiare de Saitapharnes",
+      "objectName": "casque",
+      "department": "Département des Antiquités grecques, étrusques et romaines",
+      "culture": null,
+      "period": "Epoque / période : époque contemporaine\n\nDate de création/fabrication : XIXe s. ap. J.-C. (œuvre de Rouchomowsky à la fin du XIXe s. ap. J.-C.) (1800 - 1900)",
+      "dynasty": null,
+      "objectDate": "Epoque / période : époque contemporaine\n\nDate de création/fabrication : XIXe s. ap. J.-C. (œuvre de Rouchomowsky à la fin du XIXe s. ap. J.-C.) (1800 - 1900)",
+      "medium": "Matériau : or\nTechnique : feuilles (mise en forme), martelage = martelé (métal) (mise en forme), soudé = soudure (métal) (mise en forme), repoussé (métal) (décor), ciselé = ciselure (décor)",
+      "creditLine": "achat (1896)",
+      "accessionYear": "1896",
+      "excavation": "Inconnu",
+      "country": null,
+      "region": null,
+      "subregion": null,
+      "primaryImage": "https://collections.louvre.fr/media/cache/original/0000000021/0000256592/0000754999_OG.JPG",
+      "objectURL": "https://collections.louvre.fr/ark:/53355/cl010256592",
+      "originLabel": "Odesa, Ucrania (lugar de fabricación de la falsificación)",
+      "originLabelEn": "Odesa, Ukraine (where the forgery was made)",
+      "originPrecision": "editorial",
+      "originLat": 46.4825,
+      "originLon": 30.7233,
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Ukraine",
+        "notes": "Caso de contraste dentro de este proyecto: no es una pieza antigua con historia de expropiacion, sino una falsificacion moderna. Encargada en 1894 por dos comerciantes de antiguedades de Odesa (Imperio ruso, actual Ucrania) al orfebre Israel Rouchomovsky, quien fue enganado y llevado a creer que la pieza era un regalo para un amigo arqueologo. Vendida al Louvre en 1896 como una autentica tiara de oro escita del rey Saitapharnes (s. III a.C.), con una inscripcion griega fabricada que citaba a un rey historico real. Pese a dudas expresadas casi de inmediato por especialistas (Alexander Veselovsky, Adolf Furtwangler), el Louvre la exhibio seis anos antes de que un articulo periodistico de 1903 expusiera a Rouchomovsky como su verdadero autor -- quien viajo a Paris y demostro su autoria reproduciendo una parte de la pieza en vivo.",
+        "notesEn": "A contrast case within this project: not an ancient piece with a history of expropriation, but a modern forgery. Commissioned in 1894 by two antiquities dealers from Odesa (Russian Empire, modern Ukraine) from goldsmith Israel Rouchomovsky, who was deceived into believing the piece was a gift for an archaeologist friend. Sold to the Louvre in 1896 as an authentic gold Scythian tiara of King Saitapharnes (3rd century BCE), complete with a fabricated Greek inscription citing a real historical king. Despite doubts raised almost immediately by specialists (Alexander Veselovsky, Adolf Furtwangler), the Louvre displayed it for six years before a 1903 newspaper article exposed Rouchomovsky as its true maker -- who traveled to Paris and proved his authorship by reproducing part of the piece live."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "1894",
+          "actor_or_institution": "Israel Rouchomovsky (orfebre)",
+          "location": "Odesa, Imperio ruso (actual Ucrania)",
+          "description": "Pieza de orfebreria moderna en oro, en estilo antiguo, encargada por dos comerciantes de antiguedades (Schapschelle y Leiba Hochmann) al orfebre Israel Rouchomovsky, quien fue enganado y llevado a creer que era un regalo para un amigo arqueologo.",
+          "descriptionEs": "Pieza de orfebreria moderna en oro, en estilo antiguo, encargada por dos comerciantes de antiguedades (Schapschelle y Leiba Hochmann) al orfebre Israel Rouchomovsky, quien fue enganado y llevado a creer que era un regalo para un amigo arqueologo.",
+          "descriptionEn": "Modern goldsmith piece in gold, in an antique style, commissioned by two antiquities dealers (Schapschelle and Leiba Hochmann) from goldsmith Israel Rouchomovsky, who was deceived into believing it was a gift for an archaeologist friend.",
+          "source_url": "https://en.wikipedia.org/wiki/Tiara_of_Saitaferne",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1896",
+          "actor_or_institution": "Comerciantes Schapschelle y Leiba Hochmann",
+          "location": "Odesa -> Paris",
+          "description": "Vendida al Louvre por 200.000 francos de oro como una autentica tiara escita del rey Saitapharnes (s. III a.C.), con una inscripcion griega fabricada que citaba a un rey historico real.",
+          "descriptionEs": "Vendida al Louvre por 200.000 francos de oro como una autentica tiara escita del rey Saitapharnes (s. III a.C.), con una inscripcion griega fabricada que citaba a un rey historico real.",
+          "descriptionEn": "Sold to the Louvre for 200,000 gold francs as an authentic Scythian tiara of King Saitapharnes (3rd century BCE), with a fabricated Greek inscription citing a real historical king.",
+          "source_url": "https://en.wikipedia.org/wiki/Tiara_of_Saitaferne",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "1896-1903",
+          "actor_or_institution": "Alexander Veselovsky; Adolf Furtwangler (especialistas escepticos)",
+          "location": "Paris, Francia",
+          "description": "Especialistas expresaron dudas sobre su autenticidad casi de inmediato, pero el Louvre la exhibio durante seis anos pese a ellas.",
+          "descriptionEs": "Especialistas expresaron dudas sobre su autenticidad casi de inmediato, pero el Louvre la exhibio durante seis anos pese a ellas.",
+          "descriptionEn": "Specialists raised doubts about its authenticity almost immediately, but the Louvre displayed it for six years despite them.",
+          "source_url": "https://en.wikipedia.org/wiki/Tiara_of_Saitaferne",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "other",
+          "event_date": "1903",
+          "actor_or_institution": "Le Matin (periodico); Israel Rouchomovsky",
+          "location": "Paris, Francia",
+          "description": "Un articulo periodistico expuso a Rouchomovsky como el verdadero autor; el orfebre viajo a Paris y demostro su autoria reproduciendo en vivo una parte de la pieza ante los expertos del museo.",
+          "descriptionEs": "Un articulo periodistico expuso a Rouchomovsky como el verdadero autor; el orfebre viajo a Paris y demostro su autoria reproduciendo en vivo una parte de la pieza ante los expertos del museo.",
+          "descriptionEn": "A newspaper article exposed Rouchomovsky as the true maker; the goldsmith traveled to Paris and proved his authorship by reproducing part of the piece live before the museum's experts.",
+          "source_url": "https://en.wikipedia.org/wiki/Tiara_of_Saitaferne",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
         }
       ]
     },
