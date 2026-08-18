@@ -21,4 +21,7 @@ data/raw/cliwoc_pangaea/
 # búsqueda cacheados para no repetir consultas entre sesiones, no es data del
 # proyecto ni parte del modelo de 3 capas, nunca se commitea.
 research_cache/
+# API keys locales (TAVILY_API_KEY para web_research.py, ver CLAUDE.md) --
+# mismo patrón que web/.env para el token de Mapbox, nunca se commitea.
+.env
 .DS_Store

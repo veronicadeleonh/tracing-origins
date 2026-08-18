@@ -9,8 +9,13 @@ Dos backends:
     que scrapear un buscador. Requiere cuenta en tavily.com y `pip install
     tavily-python`. Se activa poniendo la key en la variable de entorno
     TAVILY_API_KEY -- NUNCA hardcodeada acá ni commiteada (este repo es
-    público). Ej.: `export TAVILY_API_KEY=tvly-...` antes de correr el
-    script, o anteponerlo al comando.
+    público). Dos formas de setearla:
+      1. `export TAVILY_API_KEY=tvly-...` antes de correr el script, o
+      2. un archivo `.env` en la raíz del repo (gitignored, mismo patrón que
+         `web/.env` para el token de Mapbox) con una línea
+         `TAVILY_API_KEY=tvly-...` -- este script lo lee solo, sin
+         dependencias nuevas (parser manual de `KEY=VALUE`, ver
+         `_load_dotenv()`). El `.env` NUNCA se commitea.
   - **ddgs** (fallback sin key): DuckDuckGo vía la librería `ddgs`, gratis,
     sin registro, resultados más pobres (solo snippet corto). Se usa
     automáticamente si no hay TAVILY_API_KEY en el entorno, o forzando
@@ -55,6 +60,26 @@ import sys
 from pathlib import Path
 
 CACHE_DIR = Path(__file__).resolve().parent.parent / "research_cache" / "web"
+ENV_PATH = Path(__file__).resolve().parent.parent / ".env"
+
+
+def _load_dotenv() -> None:
+    """
+    Parser manual de `.env` (KEY=VALUE por línea, `#` para comentarios) --
+    no agrega python-dotenv como dependencia nueva por algo tan chico. Solo
+    completa variables que no estén YA seteadas en el entorno, para que
+    `export TAVILY_API_KEY=...` en la shell siga ganando sobre el archivo si
+    ambos están presentes.
+    """
+    if not ENV_PATH.exists():
+        return
+    for line in ENV_PATH.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        key, value = key.strip(), value.strip().strip('"').strip("'")
+        os.environ.setdefault(key, value)
 
 
 def _cache_path(query: str, backend: str) -> Path:
@@ -126,6 +151,7 @@ def search(query: str, n: int = 5, use_cache: bool = True, backend: str = "auto"
 
 
 def main() -> None:
+    _load_dotenv()
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("query", help="Query de búsqueda")
     parser.add_argument("--n", type=int, default=5, help="Cantidad de resultados (default 5)")
