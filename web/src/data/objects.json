@@ -6735,8 +6735,57 @@
       "originPrecision": "site",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "state_sale"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Capilla decorada del mastaba de Akhethetep, alto funcionario del Reino Antiguo (dinastia V, h. 2490-2432 a.C.), hallada en la necropolis de Saqqara-Norte. Identificada/excavada por el egiptologo frances Georges Benedite, conservador del Louvre, el 28 de marzo de 1903. La capilla completa fue comprada a la Direccion de Museos de Egipto (Servicio de Antiguedades) y trasladada/remontada en Paris bajo supervision de Benedite -- 'conforme a la politica egipcia de la epoca', segun el propio Louvre, que permitia a las misiones extranjeras comprar y reubicar hallazgos completos. La compra ocurre en 1903, con Egipto bajo la administracion colonial britanica de facto (el 'protectorado velado' vigente desde 1882) -- aunque el propio Servicio de Antiguedades egipcio estaba dirigido por egiptologos franceses desde Mariette (1858), una particularidad del reparto de poder colonial en Egipto donde el control militar y financiero era britanico pero la administracion cultural/arqueologica seguia en manos francesas.",
+        "notesEn": "Decorated chapel from the mastaba of Akhethetep, a high Old Kingdom official (5th dynasty, c. 2490-2432 BC), found in the Saqqara North necropolis. Identified/excavated by French Egyptologist Georges Benedite, a Louvre curator, on 28 March 1903. The complete chapel was purchased from Egypt's Direction of Museums (Antiquities Service) and relocated/reassembled in Paris under Benedite's supervision -- 'in line with Egyptian policy at the time', per the Louvre's own account, which allowed foreign missions to buy and relocate complete finds. The purchase happens in 1903, with Egypt under de facto British colonial administration (the 'veiled protectorate' in place since 1882) -- though Egypt's own Antiquities Service had been run by French Egyptologists since Mariette (1858), a quirk of the colonial power-sharing in Egypt where military and financial control was British but cultural/archaeological administration stayed in French hands."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -2490 a -2432 (dinastia V)",
+          "actor_or_institution": "Akhethetep (funcionario)",
+          "location": "Saqqara-Norte, Egipto",
+          "description": "Capilla decorada del mastaba de Akhethetep, alto funcionario del Reino Antiguo.",
+          "descriptionEs": "Capilla decorada del mastaba de Akhethetep, alto funcionario del Reino Antiguo.",
+          "descriptionEn": "Decorated chapel from the mastaba of Akhethetep, a high Old Kingdom official.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010077681",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1903-03-28",
+          "actor_or_institution": "Georges Benedite (conservador del Louvre)",
+          "location": "Saqqara-Norte, Egipto",
+          "description": "Identificada/excavada por el egiptologo frances Georges Benedite, conservador del Louvre.",
+          "descriptionEs": "Identificada/excavada por el egiptologo frances Georges Benedite, conservador del Louvre.",
+          "descriptionEn": "Identified/excavated by French Egyptologist Georges Benedite, a Louvre curator.",
+          "source_url": "https://archeologie.culture.gouv.fr/proche-orient/en/mastaba-akhethetep-0",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1903 (comite 29/01, 20/05, 02/07)",
+          "actor_or_institution": "Direction des musees d'Egypte (Servicio de Antiguedades)",
+          "location": "Egipto -> Francia",
+          "description": "La capilla completa fue comprada a la Direccion de Museos de Egipto por Benedite y trasladada a Paris, conforme a la politica egipcia de la epoca que permitia a misiones extranjeras comprar y reubicar hallazgos completos -- Egipto estaba bajo administracion colonial britanica de facto desde 1882, aunque el Servicio de Antiguedades seguia dirigido por egiptologos franceses desde Mariette.",
+          "descriptionEs": "La capilla completa fue comprada a la Direccion de Museos de Egipto por Benedite y trasladada a Paris, conforme a la politica egipcia de la epoca que permitia a misiones extranjeras comprar y reubicar hallazgos completos -- Egipto estaba bajo administracion colonial britanica de facto desde 1882, aunque el Servicio de Antiguedades seguia dirigido por egiptologos franceses desde Mariette.",
+          "descriptionEn": "The complete chapel was purchased from Egypt's Direction of Museums by Benedite and relocated to Paris, in line with Egyptian policy at the time allowing foreign missions to buy and relocate complete finds -- Egypt was under de facto British colonial administration since 1882, though the Antiquities Service remained French-run since Mariette.",
+          "source_url": "https://www.louvre.fr/en/explore/the-palace/the-guardian-of-egyptian-art",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010113444",
@@ -9774,8 +9823,70 @@
       "originPrecision": "site",
       "originLat": 41.9028,
       "originLon": 12.4964,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Italy;France",
+        "notes": "Estatua funeraria/honorifica de Marcelo (sobrino y yerno de Augusto, muerto en el 23 a.C.), representado como Hermes Logios, firmada por el escultor griego Cleomenes el Ateniense (marmol griego, h. 20 a.C.). Se encontraba en la Villa Montalto-Negroni, en el Esquilino romano (villa del papa Sixto V), documentada alli desde antes de 1590. Paso despues al Palazzo Savelli, de donde el duque de Estrees, embajador de Luis XIV, negocio su compra en 1685 con el papa y el principe Savelli -- se instalo en la Galeria de los Espejos de Versalles. Confiscada como bien de la corona durante la Revolucion Francesa en 1798 e incorporada al Louvre. Es un caso de contraste: ningun tramo de este recorrido pasa por un mecanismo colonial -- es historia de coleccionismo privado italiano, diplomacia real francesa y confiscacion revolucionaria interna.",
+        "notesEn": "Funerary/honorific statue of Marcellus (nephew and son-in-law of Augustus, who died in 23 BC), shown as Hermes Logios, signed by the Greek sculptor Kleomenes the Athenian (Greek marble, c. 20 BC). It stood at the Villa Montalto-Negroni on Rome's Esquiline Hill (the villa of Pope Sixtus V), documented there since before 1590. It later passed to the Palazzo Savelli, from where the Duke of Estrees, ambassador of Louis XIV, negotiated its purchase in 1685 with the Pope and Prince Savelli -- it was installed in the Hall of Mirrors at Versailles. Seized as crown property during the French Revolution in 1798 and brought into the Louvre. This is a contrast case: no leg of this journey runs through a colonial mechanism -- it is a story of Italian private collecting, French royal diplomacy, and internal revolutionary confiscation."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "vers -20",
+          "actor_or_institution": "Cleomenes el Ateniense (escultor)",
+          "location": "Roma",
+          "description": "Estatua funeraria/honorifica de Marcelo, representado como Hermes Logios, firmada por el escultor griego Cleomenes el Ateniense.",
+          "descriptionEs": "Estatua funeraria/honorifica de Marcelo, representado como Hermes Logios, firmada por el escultor griego Cleomenes el Ateniense.",
+          "descriptionEn": "Funerary/honorific statue of Marcellus, shown as Hermes Logios, signed by the Greek sculptor Kleomenes the Athenian.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010275364",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "antes de 1590",
+          "actor_or_institution": "Villa Montalto-Negroni (Papa Sixto V)",
+          "location": "Esquilino, Roma",
+          "description": "Documentada en la Villa Montalto-Negroni, en el Esquilino romano, desde antes de 1590 -- sin excavador ni hallazgo documentado, ya en manos de una coleccion privada/papal para esa fecha.",
+          "descriptionEs": "Documentada en la Villa Montalto-Negroni, en el Esquilino romano, desde antes de 1590 -- sin excavador ni hallazgo documentado, ya en manos de una coleccion privada/papal para esa fecha.",
+          "descriptionEn": "Documented at the Villa Montalto-Negroni, on Rome's Esquiline Hill, since before 1590 -- no documented excavator or find event, already in a private/papal collection by that date.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010275364",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1685",
+          "actor_or_institution": "Duque de Estrees (embajador de Luis XIV) / Principe Savelli",
+          "location": "Palazzo Savelli, Roma -> Francia",
+          "description": "El duque de Estrees, embajador de Luis XIV, negocia la compra de la estatua (entonces en el Palazzo Savelli) con el papa y el principe Savelli; se instala en la Galeria de los Espejos de Versalles.",
+          "descriptionEs": "El duque de Estrees, embajador de Luis XIV, negocia la compra de la estatua (entonces en el Palazzo Savelli) con el papa y el principe Savelli; se instala en la Galeria de los Espejos de Versalles.",
+          "descriptionEn": "The Duke of Estrees, ambassador of Louis XIV, negotiates the statue's purchase (then at the Palazzo Savelli) with the Pope and Prince Savelli; it is installed in the Hall of Mirrors at Versailles.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010275364",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "1798",
+          "actor_or_institution": "Estado revolucionario frances",
+          "location": "Versalles -> Louvre, Paris",
+          "description": "Confiscada como bien de la corona durante la Revolucion Francesa e incorporada a las colecciones del Louvre -- confiscacion revolucionaria interna, no un mecanismo colonial.",
+          "descriptionEs": "Confiscada como bien de la corona durante la Revolucion Francesa e incorporada a las colecciones del Louvre -- confiscacion revolucionaria interna, no un mecanismo colonial.",
+          "descriptionEn": "Seized as crown property during the French Revolution and brought into the Louvre's collections -- an internal revolutionary confiscation, not a colonial mechanism.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010275364",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010275490",
@@ -10843,8 +10954,57 @@
       "originPrecision": "site",
       "originLat": 37.6383,
       "originLon": 21.63,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Greece;France",
+        "notes": "Fragmento de metopa (1 de 3, catalogado por separado) del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion (marmol, h. 460 a.C., parte de una serie de 12 metopas sobre los trabajos de Heracles). Descubiertos en mayo de 1829 durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Abel Blouet y Leon-Jean-Joseph Dubois, en una campana de seis semanas -- la primera excavacion documentada del templo. La mision se distinguio explicitamente por su rechazo al saqueo y a mutilar esculturas para llevarse fragmentos sueltos. Los tres fragmentos fueron donados en su totalidad al Louvre en 1830 por el gobierno griego de Ioannis Kapodistrias, primer gobernador de la Grecia recien independizada tras la Guerra de Independencia griega (1821-1830) -- un regalo diplomatico de un estado soberano en gratitud/alianza con Francia (que habia apoyado militarmente la independencia griega, ej. batalla de Navarino 1827), no una extraccion bajo dominio colonial.",
+        "notesEn": "Metope fragment (1 of 3, catalogued separately) from the Temple of Zeus at Olympia, showing Heracles fighting the triple-bodied Geryon (marble, c. 460 BC, part of a series of 12 metopes depicting the Labors of Heracles). Discovered in May 1829 during the French 'Expedition scientifique de Moree', an archaeological mission led by Abel Blouet and Leon-Jean-Joseph Dubois, over a six-week campaign -- the first documented excavation of the temple. The mission was explicitly noted for refusing to loot or mutilate sculptures to remove loose fragments. All three fragments were donated in full to the Louvre in 1830 by the Greek government of Ioannis Kapodistrias, first governor of newly independent Greece after the Greek War of Independence (1821-1830) -- a diplomatic gift from a sovereign state in gratitude/alliance with France (which had militarily supported Greek independence, e.g. the 1827 Battle of Navarino), not extraction under colonial rule."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "vers -460",
+          "actor_or_institution": "Escultor(es) anonimo(s) del templo de Zeus",
+          "location": "Olimpia, Grecia",
+          "description": "Metopa del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion; parte de una serie de 12 sobre los trabajos de Heracles.",
+          "descriptionEs": "Metopa del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion; parte de una serie de 12 sobre los trabajos de Heracles.",
+          "descriptionEn": "Metope from the Temple of Zeus at Olympia, showing Heracles fighting the triple-bodied Geryon; part of a series of 12 depicting the Labors of Heracles.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010304580",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1829-05 (campana de 6 semanas desde el 10/05)",
+          "actor_or_institution": "Abel Blouet y Leon-Jean-Joseph Dubois (Expedicion cientifica de Morea)",
+          "location": "Olimpia, Grecia",
+          "description": "Descubierta durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Blouet y Dubois -- primera excavacion documentada del templo, autorizada por el gobierno griego de Kapodistrias. La mision se distinguio por rechazar el saqueo y la mutilacion de esculturas.",
+          "descriptionEs": "Descubierta durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Blouet y Dubois -- primera excavacion documentada del templo, autorizada por el gobierno griego de Kapodistrias. La mision se distinguio por rechazar el saqueo y la mutilacion de esculturas.",
+          "descriptionEn": "Discovered during the French 'Expedition scientifique de Moree', an archaeological mission led by Blouet and Dubois -- the first documented excavation of the temple, authorized by the Greek government of Kapodistrias. The mission was noted for refusing looting and the mutilation of sculptures.",
+          "source_url": "https://en.wikipedia.org/wiki/Exp%C3%A9dition_scientifique_de_Mor%C3%A9e",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1830",
+          "actor_or_institution": "Gobierno griego de Ioannis Kapodistrias",
+          "location": "Grecia -> Francia",
+          "description": "Donada en su totalidad al Louvre por el gobierno de la Grecia recien independizada -- un regalo diplomatico de un estado soberano, no una extraccion bajo dominio colonial.",
+          "descriptionEs": "Donada en su totalidad al Louvre por el gobierno de la Grecia recien independizada -- un regalo diplomatico de un estado soberano, no una extraccion bajo dominio colonial.",
+          "descriptionEn": "Donated in full to the Louvre by the government of newly independent Greece -- a diplomatic gift from a sovereign state, not extraction under colonial rule.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010304580",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010304581",
@@ -10870,8 +11030,57 @@
       "originPrecision": "site",
       "originLat": 37.6383,
       "originLon": 21.63,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Greece;France",
+        "notes": "Fragmento de metopa (2 de 3, catalogado por separado) del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion (marmol, h. 460 a.C., parte de una serie de 12 metopas sobre los trabajos de Heracles). Descubiertos en mayo de 1829 durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Abel Blouet y Leon-Jean-Joseph Dubois, en una campana de seis semanas -- la primera excavacion documentada del templo. La mision se distinguio explicitamente por su rechazo al saqueo y a mutilar esculturas para llevarse fragmentos sueltos. Los tres fragmentos fueron donados en su totalidad al Louvre en 1830 por el gobierno griego de Ioannis Kapodistrias, primer gobernador de la Grecia recien independizada tras la Guerra de Independencia griega (1821-1830) -- un regalo diplomatico de un estado soberano en gratitud/alianza con Francia (que habia apoyado militarmente la independencia griega, ej. batalla de Navarino 1827), no una extraccion bajo dominio colonial.",
+        "notesEn": "Metope fragment (2 of 3, catalogued separately) from the Temple of Zeus at Olympia, showing Heracles fighting the triple-bodied Geryon (marble, c. 460 BC, part of a series of 12 metopes depicting the Labors of Heracles). Discovered in May 1829 during the French 'Expedition scientifique de Moree', an archaeological mission led by Abel Blouet and Leon-Jean-Joseph Dubois, over a six-week campaign -- the first documented excavation of the temple. The mission was explicitly noted for refusing to loot or mutilate sculptures to remove loose fragments. All three fragments were donated in full to the Louvre in 1830 by the Greek government of Ioannis Kapodistrias, first governor of newly independent Greece after the Greek War of Independence (1821-1830) -- a diplomatic gift from a sovereign state in gratitude/alliance with France (which had militarily supported Greek independence, e.g. the 1827 Battle of Navarino), not extraction under colonial rule."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "vers -460",
+          "actor_or_institution": "Escultor(es) anonimo(s) del templo de Zeus",
+          "location": "Olimpia, Grecia",
+          "description": "Metopa del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion; parte de una serie de 12 sobre los trabajos de Heracles.",
+          "descriptionEs": "Metopa del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion; parte de una serie de 12 sobre los trabajos de Heracles.",
+          "descriptionEn": "Metope from the Temple of Zeus at Olympia, showing Heracles fighting the triple-bodied Geryon; part of a series of 12 depicting the Labors of Heracles.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010304581",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1829-05 (campana de 6 semanas desde el 10/05)",
+          "actor_or_institution": "Abel Blouet y Leon-Jean-Joseph Dubois (Expedicion cientifica de Morea)",
+          "location": "Olimpia, Grecia",
+          "description": "Descubierta durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Blouet y Dubois -- primera excavacion documentada del templo, autorizada por el gobierno griego de Kapodistrias. La mision se distinguio por rechazar el saqueo y la mutilacion de esculturas.",
+          "descriptionEs": "Descubierta durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Blouet y Dubois -- primera excavacion documentada del templo, autorizada por el gobierno griego de Kapodistrias. La mision se distinguio por rechazar el saqueo y la mutilacion de esculturas.",
+          "descriptionEn": "Discovered during the French 'Expedition scientifique de Moree', an archaeological mission led by Blouet and Dubois -- the first documented excavation of the temple, authorized by the Greek government of Kapodistrias. The mission was noted for refusing looting and the mutilation of sculptures.",
+          "source_url": "https://en.wikipedia.org/wiki/Exp%C3%A9dition_scientifique_de_Mor%C3%A9e",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1830",
+          "actor_or_institution": "Gobierno griego de Ioannis Kapodistrias",
+          "location": "Grecia -> Francia",
+          "description": "Donada en su totalidad al Louvre por el gobierno de la Grecia recien independizada -- un regalo diplomatico de un estado soberano, no una extraccion bajo dominio colonial.",
+          "descriptionEs": "Donada en su totalidad al Louvre por el gobierno de la Grecia recien independizada -- un regalo diplomatico de un estado soberano, no una extraccion bajo dominio colonial.",
+          "descriptionEn": "Donated in full to the Louvre by the government of newly independent Greece -- a diplomatic gift from a sovereign state, not extraction under colonial rule.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010304581",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010304582",
@@ -10897,8 +11106,57 @@
       "originPrecision": "site",
       "originLat": 37.6383,
       "originLon": 21.63,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Greece;France",
+        "notes": "Fragmento de metopa (3 de 3, catalogado por separado) del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion (marmol, h. 460 a.C., parte de una serie de 12 metopas sobre los trabajos de Heracles). Descubiertos en mayo de 1829 durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Abel Blouet y Leon-Jean-Joseph Dubois, en una campana de seis semanas -- la primera excavacion documentada del templo. La mision se distinguio explicitamente por su rechazo al saqueo y a mutilar esculturas para llevarse fragmentos sueltos. Los tres fragmentos fueron donados en su totalidad al Louvre en 1830 por el gobierno griego de Ioannis Kapodistrias, primer gobernador de la Grecia recien independizada tras la Guerra de Independencia griega (1821-1830) -- un regalo diplomatico de un estado soberano en gratitud/alianza con Francia (que habia apoyado militarmente la independencia griega, ej. batalla de Navarino 1827), no una extraccion bajo dominio colonial.",
+        "notesEn": "Metope fragment (3 of 3, catalogued separately) from the Temple of Zeus at Olympia, showing Heracles fighting the triple-bodied Geryon (marble, c. 460 BC, part of a series of 12 metopes depicting the Labors of Heracles). Discovered in May 1829 during the French 'Expedition scientifique de Moree', an archaeological mission led by Abel Blouet and Leon-Jean-Joseph Dubois, over a six-week campaign -- the first documented excavation of the temple. The mission was explicitly noted for refusing to loot or mutilate sculptures to remove loose fragments. All three fragments were donated in full to the Louvre in 1830 by the Greek government of Ioannis Kapodistrias, first governor of newly independent Greece after the Greek War of Independence (1821-1830) -- a diplomatic gift from a sovereign state in gratitude/alliance with France (which had militarily supported Greek independence, e.g. the 1827 Battle of Navarino), not extraction under colonial rule."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "vers -460",
+          "actor_or_institution": "Escultor(es) anonimo(s) del templo de Zeus",
+          "location": "Olimpia, Grecia",
+          "description": "Metopa del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion; parte de una serie de 12 sobre los trabajos de Heracles.",
+          "descriptionEs": "Metopa del templo de Zeus en Olimpia, con Heracles luchando contra el triple Gerion; parte de una serie de 12 sobre los trabajos de Heracles.",
+          "descriptionEn": "Metope from the Temple of Zeus at Olympia, showing Heracles fighting the triple-bodied Geryon; part of a series of 12 depicting the Labors of Heracles.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010304582",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1829-05 (campana de 6 semanas desde el 10/05)",
+          "actor_or_institution": "Abel Blouet y Leon-Jean-Joseph Dubois (Expedicion cientifica de Morea)",
+          "location": "Olimpia, Grecia",
+          "description": "Descubierta durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Blouet y Dubois -- primera excavacion documentada del templo, autorizada por el gobierno griego de Kapodistrias. La mision se distinguio por rechazar el saqueo y la mutilacion de esculturas.",
+          "descriptionEs": "Descubierta durante la 'Expedicion cientifica de Morea', mision arqueologica francesa dirigida por Blouet y Dubois -- primera excavacion documentada del templo, autorizada por el gobierno griego de Kapodistrias. La mision se distinguio por rechazar el saqueo y la mutilacion de esculturas.",
+          "descriptionEn": "Discovered during the French 'Expedition scientifique de Moree', an archaeological mission led by Blouet and Dubois -- the first documented excavation of the temple, authorized by the Greek government of Kapodistrias. The mission was noted for refusing looting and the mutilation of sculptures.",
+          "source_url": "https://en.wikipedia.org/wiki/Exp%C3%A9dition_scientifique_de_Mor%C3%A9e",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1830",
+          "actor_or_institution": "Gobierno griego de Ioannis Kapodistrias",
+          "location": "Grecia -> Francia",
+          "description": "Donada en su totalidad al Louvre por el gobierno de la Grecia recien independizada -- un regalo diplomatico de un estado soberano, no una extraccion bajo dominio colonial.",
+          "descriptionEs": "Donada en su totalidad al Louvre por el gobierno de la Grecia recien independizada -- un regalo diplomatico de un estado soberano, no una extraccion bajo dominio colonial.",
+          "descriptionEn": "Donated in full to the Louvre by the government of newly independent Greece -- a diplomatic gift from a sovereign state, not extraction under colonial rule.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010304582",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010304645",
@@ -12745,8 +13003,57 @@
       "originPrecision": "site",
       "originLat": -7.5,
       "originLon": 110.0,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Indonesia",
+        "notes": "Campana de bronce fundido, posiblemente del s. XIV, hallada en el distrito de Kedu, Java -- aparece grabada en una lamina duplicada de 'The History of Java' de Raffles (1817), lo que confirma que ya formaba parte de su coleccion en esa fecha. Mismo mecanismo que el par de soportes de gong de la misma coleccion (ver bm:A_As1859-1228-195-l-m): recolectada durante el interregno britanico en Java (1811-1816), donada al British Museum en 1859 por el reverendo William Charles Raffles Flint, pariente de Raffles.",
+        "notesEn": "Cast bronze bell, possibly 14th century, found in the Kedu district of Java -- it appears engraved on a duplicate plate of Raffles' 'The History of Java' (1817), confirming it was already part of his collection by that date. Same mechanism as the pair of gong stands from the same collection (see bm:A_As1859-1228-195-l-m): collected during the British interregnum in Java (1811-1816), donated to the British Museum in 1859 by Rev William Charles Raffles Flint, a relative of Raffles."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. XIV (posiblemente)",
+          "actor_or_institution": "Desconocido",
+          "location": "Kedu, Java, Indonesia",
+          "description": "Campana de bronce fundido, ya documentada en 1817 en una lamina de 'The History of Java' de Raffles.",
+          "descriptionEs": "Campana de bronce fundido, ya documentada en 1817 en una lamina de 'The History of Java' de Raffles.",
+          "descriptionEn": "Cast bronze bell, already documented in 1817 on a plate from Raffles' 'The History of Java'.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1859-1228-121",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1811-1816",
+          "actor_or_institution": "Sir Thomas Stamford Raffles",
+          "location": "Kedu, Java, Indonesia",
+          "description": "Recolectada por Raffles durante su gobierno como teniente-gobernador britanico de Java (interregno britanico); mismo mecanismo que el par de soportes de gong de la misma coleccion (ver bm:A_As1859-1228-195-l-m).",
+          "descriptionEs": "Recolectada por Raffles durante su gobierno como teniente-gobernador britanico de Java (interregno britanico); mismo mecanismo que el par de soportes de gong de la misma coleccion (ver bm:A_As1859-1228-195-l-m).",
+          "descriptionEn": "Collected by Raffles during his tenure as British Lieutenant-Governor of Java (British interregnum); same mechanism as the pair of gong stands from the same collection (see bm:A_As1859-1228-195-l-m).",
+          "source_url": "https://www.britishmuseum.org/blog/sir-stamford-raffles-collecting-southeast-asia",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1859",
+          "actor_or_institution": "Rev. William Charles Raffles Flint",
+          "location": "Londres",
+          "description": "Donada al British Museum en 1859 por el reverendo William Charles Raffles Flint, pariente de Raffles.",
+          "descriptionEs": "Donada al British Museum en 1859 por el reverendo William Charles Raffles Flint, pariente de Raffles.",
+          "descriptionEn": "Donated to the British Museum in 1859 by Rev William Charles Raffles Flint, a relative of Raffles.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1859-1228-121",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:A_1880-0709-40",
@@ -12861,8 +13168,71 @@
       "originPrecision": "site",
       "originLat": 34.43,
       "originLon": 70.45,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_excavation",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Afghanistan;India",
+        "notes": "Relicario de esteatita, hallado por Charles Masson en la Estupa 5 de Bimaran (cerca de Jalalabad, Afganistan), en una celda cercana a la cima de la cupula -- documentado por un dibujo y notas manuscritas del propio Masson. Estaba rodeado de monedas de bronce del rey kushan Kujula Kadphises y contenia cenizas, una cuenta de oro hueca y una cuenta de coral quemado. Mismo mecanismo que el sello-anillo de la misma coleccion (ver bm:A_1880-3633): financiado por la Compania Britanica de las Indias Orientales a cambio de quedarse con los hallazgos (1833-38), enviado al India Museum, transferido al British Museum en 1880 tras el cierre de aquel.",
+        "notesEn": "Steatite reliquary, found by Charles Masson in Bimaran Stupa 5 (near Jalalabad, Afghanistan), in a cell near the top of the dome -- documented by a drawing and manuscript notes by Masson himself. It was surrounded by bronze coins of the Kushan king Kujula Kadphises and contained ashes, a small hollow gold bead and a burnt coral bead. Same mechanism as the signet-ring from the same collection (see bm:A_1880-3633): funded by the British East India Company in exchange for keeping the finds (1833-38), sent to the India Museum, transferred to the British Museum in 1880 after the India Museum closed."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. I (tardio) - II d.C.",
+          "actor_or_institution": "Desconocido",
+          "location": "Darunta / Estupa 5 de Bimaran, Afganistan",
+          "description": "Relicario de esteatita, hallado con monedas del rey kushan Kujula Kadphises; contenia cenizas y cuentas de oro y coral.",
+          "descriptionEs": "Relicario de esteatita, hallado con monedas del rey kushan Kujula Kadphises; contenia cenizas y cuentas de oro y coral.",
+          "descriptionEn": "Steatite reliquary, found with coins of the Kushan king Kujula Kadphises; contained ashes and gold and coral beads.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1880-28",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1833-1838",
+          "actor_or_institution": "Charles Masson",
+          "location": "Estupa 5 de Bimaran, cerca de Jalalabad, Afganistan",
+          "description": "Excavado por Charles Masson en una celda cercana a la cima de la cupula de la estupa, documentado por un dibujo y notas manuscritas del propio Masson; mismo financiamiento de la Compania de las Indias Orientales que el resto de su coleccion.",
+          "descriptionEs": "Excavado por Charles Masson en una celda cercana a la cima de la cupula de la estupa, documentado por un dibujo y notas manuscritas del propio Masson; mismo financiamiento de la Compania de las Indias Orientales que el resto de su coleccion.",
+          "descriptionEn": "Excavated by Charles Masson in a cell near the top of the stupa's dome, documented by a drawing and manuscript notes by Masson himself; same East India Company funding as the rest of his collection.",
+          "source_url": "https://www.academia.edu/35342787/Charles_Masson_and_the_Buddhist_Sites_of_Afghanistan_Explorations_Excavations_Collections_1832_1835_British_Museum_Research_Publication_215_London_2017",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XIX (antes de 1878-79)",
+          "actor_or_institution": "India Museum, Londres",
+          "location": "Afganistan -> Londres",
+          "description": "Enviado al India Museum de Londres junto con el resto de la coleccion de Masson.",
+          "descriptionEs": "Enviado al India Museum de Londres junto con el resto de la coleccion de Masson.",
+          "descriptionEn": "Sent to the India Museum in London along with the rest of the Masson collection.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1880-28",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1880",
+          "actor_or_institution": "British Museum",
+          "location": "Londres",
+          "description": "Tras el cierre del India Museum, transferido al British Museum en 1880.",
+          "descriptionEs": "Tras el cierre del India Museum, transferido al British Museum en 1880.",
+          "descriptionEn": "After the India Museum closed, transferred to the British Museum in 1880.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1880-28",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:A_1880-3633",
@@ -12888,8 +13258,71 @@
       "originPrecision": "country",
       "originLat": 33.9391,
       "originLon": 67.71,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_excavation",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Afghanistan;India",
+        "notes": "Sello-anillo de bronce con una figura sentada grabada en el biselado, de posible epoca kushan (s. III-IV), probablemente adquirido en el bazar de Kabul mas que excavado en Begram (la curaduria del BM nota la ausencia de restos de tierra tipicos de una pieza excavada). Recolectado por Charles Masson, seudonimo de James Lewis, un desertor del ejercito de la Compania Britanica de las Indias Orientales que huyo del servicio en 1827 y viajo por Afganistan, Baluchistan y el Punyab bajo una identidad falsa (se hizo pasar por estadounidense de Kentucky). Entre 1833 y 1838 la propia Compania financio sus exploraciones a cambio de quedarse con todos sus hallazgos. Las piezas fueron enviadas al India Museum de Londres y, cuando este cerro en 1878-79, la mayoria de los objetos arqueologicos paso al British Museum en 1880.",
+        "notesEn": "Bronze signet-ring with a seated figure engraved on the bevelled bezel, possibly Kushan-era (3rd-4th c.), likely bought in the Kabul bazaar rather than excavated at Begram (BM curatorial notes flag the lack of soil deposits typical of an excavated piece). Collected by Charles Masson, the alias of James Lewis, a deserter from the British East India Company's army who fled service in 1827 and traveled Afghanistan, Balochistan and the Punjab under a false identity (posing as an American from Kentucky). Between 1833 and 1838 the Company itself funded his explorations in exchange for keeping all his finds. The pieces were sent to the India Museum in London and, when it closed in 1878-79, most of the archaeological material passed to the British Museum in 1880."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. III-IV (circa)",
+          "actor_or_institution": "Desconocido",
+          "location": "Begram / bazar de Kabul, Afganistan",
+          "description": "Sello-anillo de bronce, posible epoca kushan; probablemente comprado en el bazar de Kabul mas que excavado (sin restos de tierra tipicos de una pieza excavada).",
+          "descriptionEs": "Sello-anillo de bronce, posible epoca kushan; probablemente comprado en el bazar de Kabul mas que excavado (sin restos de tierra tipicos de una pieza excavada).",
+          "descriptionEn": "Bronze signet-ring, possibly Kushan-era; likely bought in the Kabul bazaar rather than excavated (no soil deposits typical of an excavated piece).",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1880-3633",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1833-1838",
+          "actor_or_institution": "Charles Masson (alias de James Lewis)",
+          "location": "Afganistan",
+          "description": "Recolectado por Charles Masson, desertor del ejercito de la Compania Britanica de las Indias Orientales que exploro Afganistan bajo identidad falsa; desde 1833 la propia Compania financio sus exploraciones a cambio de quedarse con los hallazgos.",
+          "descriptionEs": "Recolectado por Charles Masson, desertor del ejercito de la Compania Britanica de las Indias Orientales que exploro Afganistan bajo identidad falsa; desde 1833 la propia Compania financio sus exploraciones a cambio de quedarse con los hallazgos.",
+          "descriptionEn": "Collected by Charles Masson, a deserter from the British East India Company's army who explored Afghanistan under a false identity; from 1833 the Company itself funded his explorations in exchange for keeping the finds.",
+          "source_url": "https://www.britishmuseumshoponline.org/books/academic-publications/charles-masson-collections-from-begram-and-kabul-bazaar.html",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XIX (antes de 1878-79)",
+          "actor_or_institution": "India Museum, Londres",
+          "location": "Afganistan -> Londres",
+          "description": "Los hallazgos de Masson, financiados por la Compania de las Indias Orientales, fueron enviados al India Museum de Londres.",
+          "descriptionEs": "Los hallazgos de Masson, financiados por la Compania de las Indias Orientales, fueron enviados al India Museum de Londres.",
+          "descriptionEn": "Masson's finds, funded by the East India Company, were sent to the India Museum in London.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1880-3633",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1880",
+          "actor_or_institution": "British Museum",
+          "location": "Londres",
+          "description": "Tras el cierre del India Museum (1878-79), la mayoria de los objetos arqueologicos paso al British Museum.",
+          "descriptionEs": "Tras el cierre del India Museum (1878-79), la mayoria de los objetos arqueologicos paso al British Museum.",
+          "descriptionEn": "After the India Museum closed (1878-79), most of the archaeological material passed to the British Museum.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1880-3633",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:A_1890-0208-1",
@@ -13131,8 +13564,57 @@
       "originPrecision": "site",
       "originLat": -7.5,
       "originLon": 110.0,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Indonesia",
+        "notes": "Par de soportes tallados, lacados y dorados para un gong ageng de gamelan, hecho en Java h. 1800. Recolectado por Sir Thomas Stamford Raffles, funcionario de la Compania Britanica de las Indias Orientales y teniente-gobernador britanico de Java entre 1811 y 1816 -- el 'interregno britanico', cuando Gran Bretana ocupo la Java holandesa para impedir que cayera bajo control de la Francia napoleonica. Raffles reunio una coleccion enorme (unas 30 toneladas de objetos en 200 cajas) que se llevo a Londres en 1816; su familia dono la mayor parte al British Museum en 1859 y 1939. Nota sin confirmar para esta pieza en particular: 1812, dentro del mismo periodo, es tambien el ano del llamado 'saqueo de Yogyakarta' -- el asalto britanico al kraton (palacio) del sultan, con Raffles como maximo funcionario civil, que produjo un saqueo documentado de instrumentos de gamelan, manuscritos y tesoros del palacio hoy repartidos en colecciones britanicas. El registro del BM para esta pieza puntual solo dice 'recoleccion de campo por Raffles', sin vincularla especificamente al asalto de 1812 -- se deja anotado como contexto documentado del periodo, no como un hecho verificado sobre esta pieza.",
+        "notesEn": "Pair of carved, lacquered and gilded stands for a gamelan gong ageng, made in Java c. 1800. Collected by Sir Thomas Stamford Raffles, an East India Company official and British Lieutenant-Governor of Java between 1811 and 1816 -- the 'British interregnum', when Britain occupied Dutch Java to keep it out of Napoleonic France's hands. Raffles amassed a huge collection (some 30 tons of objects in 200 boxes) shipped to London in 1816; his family donated most of it to the British Museum in 1859 and 1939. Unconfirmed note for this specific piece: 1812, within the same period, is also the year of the so-called 'Sack of Yogyakarta' -- the British assault on the sultan's kraton (palace), with Raffles as the senior civil official, which produced a documented looting of gamelan instruments, manuscripts and palace treasures now scattered across British collections. The BM's record for this particular piece only says 'field collection by Raffles', without linking it specifically to the 1812 raid -- left noted as documented context for the period, not a verified fact about this piece."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1800",
+          "actor_or_institution": "Desconocido",
+          "location": "Java, Indonesia",
+          "description": "Par de soportes tallados, lacados y dorados para un gong ageng de gamelan.",
+          "descriptionEs": "Par de soportes tallados, lacados y dorados para un gong ageng de gamelan.",
+          "descriptionEn": "Pair of carved, lacquered and gilded stands for a gamelan gong ageng.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_As1859-1228-195-l-m",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1811-1816",
+          "actor_or_institution": "Sir Thomas Stamford Raffles",
+          "location": "Java, Indonesia",
+          "description": "Recolectado por Raffles durante su gobierno como teniente-gobernador britanico de Java (interregno britanico, cuando Gran Bretana ocupo la Java holandesa para impedir su control por la Francia napoleonica). Nota sin confirmar: 1812, en el mismo periodo, es el ano del 'saqueo de Yogyakarta' (asalto britanico al palacio del sultan, con Raffles como funcionario civil, que produjo saqueo documentado de instrumentos de gamelan) -- el registro de esta pieza puntual no la vincula especificamente a ese episodio.",
+          "descriptionEs": "Recolectado por Raffles durante su gobierno como teniente-gobernador britanico de Java (interregno britanico, cuando Gran Bretana ocupo la Java holandesa para impedir su control por la Francia napoleonica). Nota sin confirmar: 1812, en el mismo periodo, es el ano del 'saqueo de Yogyakarta' (asalto britanico al palacio del sultan, con Raffles como funcionario civil, que produjo saqueo documentado de instrumentos de gamelan) -- el registro de esta pieza puntual no la vincula especificamente a ese episodio.",
+          "descriptionEn": "Collected by Raffles during his tenure as British Lieutenant-Governor of Java (the British interregnum, when Britain occupied Dutch Java to keep it from Napoleonic French control). Unconfirmed note: 1812, within the same period, is the year of the 'Sack of Yogyakarta' (a British assault on the sultan's palace, with Raffles as the senior civil official, which produced documented looting of gamelan instruments) -- the record for this specific piece does not link it specifically to that episode.",
+          "source_url": "https://www.britishmuseum.org/blog/sir-stamford-raffles-collecting-southeast-asia",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1816-1939 (familia Raffles, donaciones en 1859 y 1939)",
+          "actor_or_institution": "Familia Raffles",
+          "location": "Londres",
+          "description": "La familia Raffles dono la mayor parte de su coleccion javanesa al British Museum en 1859 y 1939.",
+          "descriptionEs": "La familia Raffles dono la mayor parte de su coleccion javanesa al British Museum en 1859 y 1939.",
+          "descriptionEn": "The Raffles family donated most of his Javanese collection to the British Museum in 1859 and 1939.",
+          "source_url": "https://www.britishmuseum.org/blog/sir-stamford-raffles-collecting-southeast-asia",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "bm:A_As1903-1006-8",
