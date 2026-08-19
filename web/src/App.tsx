@@ -130,7 +130,11 @@ function App() {
     localStorage.setItem(WELCOME_SEEN_KEY, "1");
     setWelcomeOpen(false);
   }, []);
-  const [lang, setLang] = useState<Lang>(() => (localStorage.getItem(LANG_KEY) === "en" ? "en" : "es"));
+  // Default inglés (19/08, pedido de la usuaria) — antes era español por
+  // default. localStorage sigue siendo la fuente de verdad si el visitante
+  // ya tocó el toggle antes; el fallback (primera visita, sin nada guardado
+  // todavía) es el único que cambió, de "es" a "en".
+  const [lang, setLang] = useState<Lang>(() => (localStorage.getItem(LANG_KEY) === "es" ? "es" : "en"));
   const s = STRINGS[lang];
   const toggleLang = useCallback(() => {
     setLang((prev) => {
