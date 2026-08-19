@@ -220,6 +220,20 @@ function App() {
     setVisibleMuseums((prev) => ({ ...prev, [id]: !prev[id] }));
   }, []);
 
+  // Apagar "Click en el mapa" con un resultado de país abierto (19/08,
+  // pedido de la usuaria): no alcanza con dejar de atenuar las líneas
+  // futuras -- si hay un panel de país abierto, se cierra entero (vuelve
+  // `null`), lo que a su vez limpia highlightedObjectIds y devuelve todas
+  // las líneas a opacidad normal. Un cluster de origen normal (kind
+  // indefinido) no se toca.
+  const toggleCountryClick = useCallback(() => {
+    setCountryClickEnabled((prev) => {
+      const next = !prev;
+      if (!next) setPanel((p) => (p && p.kind === "country" ? null : p));
+      return next;
+    });
+  }, []);
+
   const visibleObjects = useMemo(
     () =>
       bundle.objects.filter((obj) => {
@@ -501,7 +515,7 @@ function App() {
               className="country-click-toggle"
               aria-pressed={countryClickEnabled}
               aria-label={s.countryClickToggleAria}
-              onClick={() => setCountryClickEnabled((v) => !v)}
+              onClick={toggleCountryClick}
             >
               {s.countryClickToggleLabel}
             </button>
