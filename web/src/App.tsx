@@ -239,16 +239,23 @@ function App() {
   // CountryGroup correspondiente al país clickeado/hovereado.
   const countryGroups = useMemo(() => groupByCountry(bundle.objects, lang), [lang]);
 
-  // Búsqueda por país (19/08, segunda vuelta): mientras el panel abierto sea
-  // un resultado de país (kind === "country", ya sea por buscador o por
-  // click en el mapa), se atenúan todas las líneas pieza->museo salvo las
-  // que salen de ese país — "revela" el patrón de ese origen sin tocar el
-  // resto del modelo de datos. null cuando no hay país seleccionado (mismo
-  // comportamiento de siempre, todas las líneas a la misma opacidad).
+  // Búsqueda por país (19/08): mientras el panel abierto sea un resultado de
+  // país (kind === "country", por click en el mapa), se atenúan todas las
+  // líneas pieza->museo salvo las que salen de ese país — "revela" el
+  // patrón de ese origen sin tocar el resto del modelo de datos. Cuarta
+  // vuelta (19/08, mismo día, feedback de la usuaria: "no estoy segura de
+  // esta función, quizás debería atenuar todo apenas se activa, como hint
+  // de que algo se prendió"): mientras el toggle "Click en el mapa" está
+  // prendido pero todavía no se eligió ningún país, se atenúan TODAS las
+  // líneas (Set vacío — ninguna coincide, así que `dimmed` da true para
+  // todas) en vez de dejarlas como si nada hubiera cambiado; es la señal
+  // visual de "este modo está activo, clickeá un país". Apagar el toggle
+  // sin haber elegido país vuelve todo a la opacidad normal (null).
   const highlightedObjectIds = useMemo(() => {
-    if (!panel || panel.kind !== "country") return null;
-    return new Set(panel.cluster.objects.map((o) => o.objectID));
-  }, [panel]);
+    if (panel && panel.kind === "country") return new Set(panel.cluster.objects.map((o) => o.objectID));
+    if (countryClickEnabled) return new Set<string>();
+    return null;
+  }, [panel, countryClickEnabled]);
 
   const linesGeoJSON = useMemo(() => ({
     type: "FeatureCollection" as const,
