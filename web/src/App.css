@@ -687,9 +687,12 @@
   border-color: #fbfaf7;
 }
 
+/* Abre hacia arriba (19/08, pedido de la usuaria) -- el dock del timeline
+   vive pegado al borde inferior del mapa, así que un tooltip que abre hacia
+   abajo (top: 100%) queda cortado o se sale de la vista. */
 .year-timeline-note {
   position: absolute;
-  top: calc(100% + 8px);
+  bottom: calc(100% + 8px);
   right: 0;
   z-index: 1002;
   width: 240px;
@@ -1049,6 +1052,22 @@
   border-radius: 8px;
   margin-bottom: 10px;
   background: #e5e2da;
+  transition: aspect-ratio 0.2s ease;
+}
+
+/* Solo las imágenes que efectivamente se recortan (calculado en
+   ObjectDetail.tsx comparando naturalWidth/naturalHeight contra el marco
+   4:3) muestran el affordance de que se pueden expandir -- si la imagen ya
+   entra completa, se deja el cursor normal, sin cambiar nada más. */
+.object-image.croppable {
+  cursor: zoom-in;
+}
+
+.object-image.expanded {
+  aspect-ratio: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  cursor: zoom-out;
 }
 
 .object-title {
@@ -1195,6 +1214,15 @@
   text-decoration: underline;
 }
 
+/* Sticky al fondo del panel (19/08, pedido de la usuaria) -- .side-panel es
+   el contenedor que scrollea (overflow-y: auto), así que position: sticky
+   acá lo mantiene pegado al borde inferior de esa vista mientras se scrollea
+   el contenido de arriba, en vez de quedar accesible solo al llegar al final
+   del todo. margin-top: auto se mantiene para el caso sin scroll (contenido
+   más corto que el panel): empuja la barra al fondo igual, sin dejar hueco
+   en el medio. El fondo sólido + sombra hacia arriba es necesario porque,
+   al quedar pegada, el contenido sigue pasando por detrás mientras se
+   scrollea. */
 .piece-nav {
   display: flex;
   align-items: center;
@@ -1203,6 +1231,11 @@
   padding: 12px 18px 18px;
   border-top: 1px solid #e5e2da;
   margin-top: auto;
+  position: sticky;
+  bottom: 0;
+  background: #fbfaf7;
+  box-shadow: 0 -4px 10px rgba(26, 26, 26, 0.06);
+  z-index: 5;
 }
 
 .piece-nav-btn {

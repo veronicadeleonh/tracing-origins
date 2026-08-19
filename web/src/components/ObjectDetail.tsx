@@ -1,6 +1,16 @@
+import { useEffect, useState } from "react";
 import type { MuseumDestination, MuseumObject, ProvenanceEvent } from "../types";
 import { museumColor } from "../colors";
 import { STRINGS, type Lang } from "../i18n";
+
+// La imagen se muestra recortada por defecto (aspect-ratio 4/3, object-fit:
+// cover) para que la lista de piezas se vea pareja -- pero eso corta mucho
+// de las fotos verticales (estelas, estatuas). 19/08, pedido de la usuaria:
+// permitir expandir la imagen a su proporción real con un click, solo
+// cuando efectivamente hay algo recortado (si la imagen ya entra completa
+// en el marco 4/3, el click no hace nada -- no tiene sentido "expandir"
+// una imagen que ya se ve entera).
+const FRAME_ASPECT_RATIO = 4 / 3;
 
 interface ObjectDetailProps {
   object: MuseumObject;
@@ -35,6 +45,17 @@ export function ObjectDetail({
   onNext,
 }: ObjectDetailProps) {
   const s = STRINGS[lang];
+  const [imageExpanded, setImageExpanded] = useState(false);
+  const [imageCropped, setImageCropped] = useState(false);
+
+  // Reset al cambiar de pieza (navegación prev/next, o volver al cluster y
+  // entrar a otra) -- si no, una imagen expandida quedaría expandida al
+  // pasar a la siguiente pieza, con datos de recorte de la imagen anterior.
+  useEffect(() => {
+    setImageExpanded(false);
+    setImageCropped(false);
+  }, [object.objectID]);
+
   const events = object.events;
   const flags = object.context?.context_flags ?? [];
   // Layer 3 (investigación propia) ahora tiene traducción EN además de la
@@ -70,7 +91,22 @@ export function ObjectDetail({
       </div>
 
       <div className="object-header">
-        {object.primaryImage && <img className="object-image" src={object.primaryImage} alt="" />}
+        {object.primaryImage && (
+          <img
+            className={`object-image${imageExpanded ? " expanded" : ""}${imageCropped ? " croppable" : ""}`}
+            src={object.primaryImage}
+            alt=""
+            onLoad={(e) => {
+              const img = e.currentTarget;
+              if (!img.naturalWidth || !img.naturalHeight) return;
+              const naturalRatio = img.naturalWidth / img.naturalHeight;
+              // Un poco de margen (2%) para no marcar como "recortada" una
+              // imagen que ya es casi exactamente 4:3.
+              setImageCropped(Math.abs(naturalRatio - FRAME_ASPECT_RATIO) / FRAME_ASPECT_RATIO > 0.02);
+            }}
+            onClick={() => imageCropped && setImageExpanded((v) => !v)}
+          />
+        )}
         <div className="object-title">{object.title || s.untitled}</div>
         {subtitle && <div className="object-subtitle">{subtitle}</div>}
       </div>

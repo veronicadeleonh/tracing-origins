@@ -500,10 +500,30 @@ function App() {
             />
           </Source>
           <Source id="museums-src" type="geojson" data={museumsGeoJSON}>
+            {/* Diferenciar visualmente los puntos de museo de los de origen
+                (19/08, pedido de la usuaria — antes ambos eran círculos lisos
+                y se confundían a simple vista). El halo es puramente
+                decorativo: no entra en interactiveLayerIds, así que no
+                interfiere con clicks/hover, solo hace que el punto de museo
+                se lea como un "ancla" institucional (mancha suave + núcleo
+                sólido con borde grueso) en vez de un dato más entre los
+                puntos de origen (círculos lisos, radio variable, borde fino
+                de 1px). */}
+            <Layer
+              id="museums-halo"
+              type="circle"
+              paint={{ "circle-color": ["get", "color"], "circle-radius": 16, "circle-opacity": 0.22 }}
+            />
             <Layer
               id="museums"
               type="circle"
-              paint={{ "circle-color": ["get", "color"], "circle-radius": 9, "circle-opacity": 1 }}
+              paint={{
+                "circle-color": ["get", "color"],
+                "circle-radius": 9,
+                "circle-opacity": 1,
+                "circle-stroke-color": "#fbfaf7",
+                "circle-stroke-width": 2.5,
+              }}
             />
           </Source>
           {tooltip && (
