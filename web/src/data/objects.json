@@ -3794,8 +3794,57 @@
       "originPrecision": "subregion",
       "originLat": 29.5667,
       "originLon": 31.2167,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "museum_funded_excavation",
+          "partage"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Fragmento de relieve con un barco a vela, del Reino Antiguo (h. 2465-2458 a.C.) pero hallado reutilizado por constructores del Reino Medio dentro de la piramide de Amenemhat I en Lisht Norte -- lo encontro la propia Expedicion Egipcia del Met (1920-22, con Arthur C. Mace como director de campo), publicada en el boletin del museo. Es un ejemplo concreto, a nivel de pieza puntual, del hito ya documentado en el timeline general de la app (1906-1935, cuando el Met pasa de financiar excavaciones ajenas a excavar directamente bajo autorizacion del gobierno egipcio de la epoca).",
+        "notesEn": "Relief fragment with a ship under sail, Old Kingdom (c. 2465-2458 BC) but found reused by Middle Kingdom builders inside the pyramid of Amenemhat I at Lisht North -- found by the Met's own Egyptian Expedition (1920-22, with Arthur C. Mace as field director), published in the museum's bulletin. It's a concrete, piece-level example of the milestone already documented in the app's general timeline (1906-1935, when the Met moves from funding other institutions' excavations to excavating directly under authorization of the Egyptian government of the time)."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -2465 a -2458 (Reino Antiguo)",
+          "actor_or_institution": "Desconocido",
+          "location": "Egipto (reutilizado en Lisht Norte, Reino Medio)",
+          "description": "Relieve del Reino Antiguo, reutilizado por constructores del Reino Medio dentro de la piramide de Amenemhat I.",
+          "descriptionEs": "Relieve del Reino Antiguo, reutilizado por constructores del Reino Medio dentro de la piramide de Amenemhat I.",
+          "descriptionEn": "Old Kingdom relief, reused by Middle Kingdom builders inside the pyramid of Amenemhat I.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543894",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1920-1922",
+          "actor_or_institution": "Expedicion Egipcia del Met (Arthur C. Mace, director de campo)",
+          "location": "Lisht Norte, Egipto",
+          "description": "Hallada por la propia Expedicion Egipcia del Met dentro del nucleo de la piramide de Amenemhat I, publicada en el boletin del museo por Arthur C. Mace.",
+          "descriptionEs": "Hallada por la propia Expedicion Egipcia del Met dentro del nucleo de la piramide de Amenemhat I, publicada en el boletin del museo por Arthur C. Mace.",
+          "descriptionEn": "Found by the Met's own Egyptian Expedition inside the core of Amenemhat I's pyramid, published in the museum's bulletin by Arthur C. Mace.",
+          "source_url": "https://www.jstor.org/stable/3254484",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1922",
+          "actor_or_institution": "Metropolitan Museum (Expedicion Egipcia)",
+          "location": "Nueva York",
+          "description": "Adquirida por el Met como parte del reparto de su propia excavacion, autorizada por el gobierno egipcio de la epoca.",
+          "descriptionEs": "Adquirida por el Met como parte del reparto de su propia excavacion, autorizada por el gobierno egipcio de la epoca.",
+          "descriptionEn": "Acquired by the Met as part of the division of finds from its own excavation, authorized by the Egyptian government of the time.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543894",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543895",
@@ -4529,8 +4578,57 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "state_sale"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Pared oeste de la capilla del mastaba de Nikauhor y Sekhemhathor -- Nikauhor fue sacerdote y juez bajo Userkaf, primer rey de la dinastia V (h. 2450 a.C.), y su esposa Sekhemhathor, sacerdotisa de Hathor y Neit. La tumba (QS 915) forma parte de un grupo de mastabas al norte del complejo de Dyoser en Saqqara, excavado en 1907/08 por el egiptologo britanico James Quibell, trabajando para el Servicio de Antiguedades egipcio. El muro se vendio al Met el mismo año -- una de las primeras compras del museo al gobierno egipcio, en el Departamento Egipcio desde 1908.",
+        "notesEn": "West wall of the chapel of the mastaba of Nikauhor and Sekhemhathor -- Nikauhor was a priest and judge under Userkaf, first king of the 5th dynasty (c. 2450 BC), and his wife Sekhemhathor was a priestess of Hathor and Neith. The tomb (QS 915) is part of a group of mastabas north of the Djoser complex at Saqqara, excavated in 1907/08 by British Egyptologist James Quibell, working for the Egyptian Antiquities Service. The wall was sold to the Met the same year -- one of the Museum's earliest purchases from the Egyptian government, in the Egyptian Department since 1908."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -2450 (reinado de Userkaf, dinastia V)",
+          "actor_or_institution": "Nikauhor y Sekhemhathor",
+          "location": "Saqqara, Egipto",
+          "description": "Muro oeste de la capilla del mastaba de Nikauhor (sacerdote y juez bajo Userkaf) y su esposa Sekhemhathor (sacerdotisa de Hathor y Neit).",
+          "descriptionEs": "Muro oeste de la capilla del mastaba de Nikauhor (sacerdote y juez bajo Userkaf) y su esposa Sekhemhathor (sacerdotisa de Hathor y Neit).",
+          "descriptionEn": "West wall of the chapel of the mastaba of Nikauhor (priest and judge under Userkaf) and his wife Sekhemhathor (priestess of Hathor and Neith).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543914",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1907-1908",
+          "actor_or_institution": "James Quibell (para el Servicio de Antiguedades egipcio)",
+          "location": "Saqqara, Egipto",
+          "description": "Excavada por el egiptologo britanico James Quibell, trabajando para el Servicio de Antiguedades egipcio, como parte de un grupo de mastabas al norte del complejo de Dyoser.",
+          "descriptionEs": "Excavada por el egiptologo britanico James Quibell, trabajando para el Servicio de Antiguedades egipcio, como parte de un grupo de mastabas al norte del complejo de Dyoser.",
+          "descriptionEn": "Excavated by British Egyptologist James Quibell, working for the Egyptian Antiquities Service, as part of a group of mastabas north of the Djoser complex.",
+          "source_url": "https://www.jstor.org/stable/3254484",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1908",
+          "actor_or_institution": "Gobierno egipcio",
+          "location": "Egipto -> Nueva York",
+          "description": "Vendida al Metropolitan Museum por el gobierno egipcio -- una de las primeras compras del museo en el Departamento Egipcio.",
+          "descriptionEs": "Vendida al Metropolitan Museum por el gobierno egipcio -- una de las primeras compras del museo en el Departamento Egipcio.",
+          "descriptionEn": "Sold to the Metropolitan Museum by the Egyptian government -- one of the Museum's earliest purchases in the Egyptian Department.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543914",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543915",
@@ -4556,8 +4654,57 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "state_sale"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estatua de madera de Tjeteti como hombre joven, de la tumba 6001 en el Cementerio de la Piramide de Teti, Saqqara. Excavada en 1921-22 por Cecil Firth para el Gobierno egipcio -- el mismo excavador de los azulejos funerarios de Dyoser ya documentados en esta muestra (met:543909) -- y comprada por el Met al Gobierno egipcio en 1926. El Met tiene varias estatuas de madera de Tjeteti de la misma tumba (ver tambien met:543916, misma pieza como hombre maduro).",
+        "notesEn": "Wooden statue of Tjeteti as a young man, from tomb 6001 in the Teti Pyramid Cemetery, Saqqara. Excavated in 1921-22 by Cecil Firth for the Egyptian Government -- the same excavator as the Djoser funerary tiles already documented in this sample (met:543909) -- and purchased by the Met from the Egyptian Government in 1926. The Met holds several wooden statues of Tjeteti from the same tomb (see also met:543916, the same man depicted in middle age)."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dinastia VI, h. -2200 a -2152",
+          "actor_or_institution": "Desconocido",
+          "location": "Saqqara, Egipto",
+          "description": "Estatua de madera de Tjeteti, representado en edad joven.",
+          "descriptionEs": "Estatua de madera de Tjeteti, representado en edad joven.",
+          "descriptionEn": "Wooden statue of Tjeteti, shown in young man.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543915",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1921-1922",
+          "actor_or_institution": "Cecil Firth (para el Gobierno egipcio)",
+          "location": "Tumba 6001, Cementerio de la Pirámide de Teti, Saqqara",
+          "description": "Excavada por Cecil Firth para el Gobierno egipcio -- el mismo excavador de los azulejos funerarios de Dyoser ya documentados en esta muestra (met:543909).",
+          "descriptionEs": "Excavada por Cecil Firth para el Gobierno egipcio -- el mismo excavador de los azulejos funerarios de Dyoser ya documentados en esta muestra (met:543909).",
+          "descriptionEn": "Excavated by Cecil Firth for the Egyptian Government -- the same excavator as the Djoser funerary tiles already documented in this sample (met:543909).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/548485",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1926",
+          "actor_or_institution": "Gobierno egipcio",
+          "location": "Egipto -> Nueva York",
+          "description": "Comprada por el Metropolitan Museum al Gobierno egipcio.",
+          "descriptionEs": "Comprada por el Metropolitan Museum al Gobierno egipcio.",
+          "descriptionEn": "Purchased by the Metropolitan Museum from the Egyptian Government.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543915",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543916",
@@ -4583,8 +4730,57 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "state_sale"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estatua de madera de Tjeteti en edad madura, de la misma tumba 6001 (Cementerio de la Piramide de Teti, Saqqara) y el mismo evento de adquisicion que met:543915 (excavada 1921-22 por Cecil Firth para el Gobierno egipcio, comprada por el Met en 1926) -- el kilt largo de esta version, frente al corto de la otra, marca la diferencia de edad entre las dos representaciones del mismo hombre.",
+        "notesEn": "Wooden statue of Tjeteti in middle age, from the same tomb 6001 (Teti Pyramid Cemetery, Saqqara) and the same acquisition event as met:543915 (excavated 1921-22 by Cecil Firth for the Egyptian Government, purchased by the Met in 1926) -- the long kilt on this version, versus the short one on the other, marks the age difference between the two depictions of the same man."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dinastia VI, h. -2200 a -2152",
+          "actor_or_institution": "Desconocido",
+          "location": "Saqqara, Egipto",
+          "description": "Estatua de madera de Tjeteti, representado en edad madura.",
+          "descriptionEs": "Estatua de madera de Tjeteti, representado en edad madura.",
+          "descriptionEn": "Wooden statue of Tjeteti, shown in middle age.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543916",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1921-1922",
+          "actor_or_institution": "Cecil Firth (para el Gobierno egipcio)",
+          "location": "Tumba 6001, Cementerio de la Pirámide de Teti, Saqqara",
+          "description": "Excavada por Cecil Firth para el Gobierno egipcio -- el mismo excavador de los azulejos funerarios de Dyoser ya documentados en esta muestra (met:543909).",
+          "descriptionEs": "Excavada por Cecil Firth para el Gobierno egipcio -- el mismo excavador de los azulejos funerarios de Dyoser ya documentados en esta muestra (met:543909).",
+          "descriptionEn": "Excavated by Cecil Firth for the Egyptian Government -- the same excavator as the Djoser funerary tiles already documented in this sample (met:543909).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/548485",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1926",
+          "actor_or_institution": "Gobierno egipcio",
+          "location": "Egipto -> Nueva York",
+          "description": "Comprada por el Metropolitan Museum al Gobierno egipcio.",
+          "descriptionEs": "Comprada por el Metropolitan Museum al Gobierno egipcio.",
+          "descriptionEn": "Purchased by the Metropolitan Museum from the Egyptian Government.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543916",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543917",
@@ -4699,8 +4895,57 @@
       "originPrecision": "subregion",
       "originLat": 29.9765,
       "originLon": 31.1313,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "partage",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Caja para ganso momificado, hallada en Giza en 1912 por la Expedicion Harvard-Museum of Fine Arts (Boston), dirigida por George Reisner -- una de las excavaciones mas extensas y prolongadas en Egipto/Sudan (1905-1947), operando bajo el sistema de reparto (partage) habitual de la epoca entre el gobierno egipcio y la institucion excavadora. La pieza llego al Met recien en 1937 via Rogers Fund (compra) -- el mecanismo exacto de esa transferencia entre museos (lo mas probable, el MFA de Boston vendiendo piezas duplicadas de su parte del reparto) no esta confirmado por las fuentes consultadas, se deja anotado como no verificado en vez de asumido.",
+        "notesEn": "Mummified goose case, found at Giza in 1912 by the Harvard University-Museum of Fine Arts (Boston) Expedition, directed by George Reisner -- one of the most extensive and long-running excavations in Egypt/Sudan (1905-1947), operating under the era's standard partage system between the Egyptian government and the excavating institution. The piece only reached the Met in 1937 via the Rogers Fund (purchase) -- the exact mechanism of that inter-museum transfer (most likely, the MFA Boston selling duplicate pieces from its share of the divide) isn't confirmed by the sources consulted, left noted as unverified rather than assumed."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dinastia VI, primera mitad, h. -2323 a -2255",
+          "actor_or_institution": "Desconocido",
+          "location": "Giza, Egipto",
+          "description": "Caja de piedra caliza para ganso momificado.",
+          "descriptionEs": "Caja de piedra caliza para ganso momificado.",
+          "descriptionEn": "Limestone case for a mummified goose.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543918",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1912",
+          "actor_or_institution": "George Reisner (Expedicion Harvard-Museum of Fine Arts, Boston)",
+          "location": "Giza, Egipto",
+          "description": "Excavada por la Expedicion Harvard-MFA Boston bajo George Reisner (1905-1947 en Egipto/Sudan), bajo el sistema de reparto (partage) habitual entre el gobierno egipcio y la institucion excavadora.",
+          "descriptionEs": "Excavada por la Expedicion Harvard-MFA Boston bajo George Reisner (1905-1947 en Egipto/Sudan), bajo el sistema de reparto (partage) habitual entre el gobierno egipcio y la institucion excavadora.",
+          "descriptionEn": "Excavated by the Harvard-MFA Boston Expedition under George Reisner (active in Egypt/Sudan 1905-1947), under the era's standard partage system between the Egyptian government and the excavating institution.",
+          "source_url": "http://giza.fas.harvard.edu/pubdocs/158/full/",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1937",
+          "actor_or_institution": "Metropolitan Museum (Rogers Fund)",
+          "location": "Nueva York",
+          "description": "Llega al Met recien en 1937, comprada con el Rogers Fund -- el mecanismo exacto de la transferencia desde la excavacion original (lo mas probable, el MFA de Boston vendiendo piezas duplicadas de su parte del reparto) no esta confirmado por las fuentes consultadas.",
+          "descriptionEs": "Llega al Met recien en 1937, comprada con el Rogers Fund -- el mecanismo exacto de la transferencia desde la excavacion original (lo mas probable, el MFA de Boston vendiendo piezas duplicadas de su parte del reparto) no esta confirmado por las fuentes consultadas.",
+          "descriptionEn": "Only reaches the Met in 1937, purchased with the Rogers Fund -- the exact mechanism of the transfer from the original excavation (most likely, the MFA Boston selling duplicate pieces from its share of the divide) isn't confirmed by the sources consulted.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543918",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "met:543919",
@@ -4726,8 +4971,57 @@
       "originPrecision": "subregion",
       "originLat": 29.9765,
       "originLon": 31.1313,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "partage",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Caja para pato momificado, misma excavacion y evento de adquisicion que met:543918 (Giza, 1912, Expedicion Harvard-MFA Boston bajo George Reisner; llegada al Met en 1937 via Rogers Fund, mecanismo de transferencia entre museos no confirmado).",
+        "notesEn": "Mummified duck case, same excavation and acquisition event as met:543918 (Giza, 1912, Harvard-MFA Boston Expedition under George Reisner; reached the Met in 1937 via the Rogers Fund, inter-museum transfer mechanism unconfirmed)."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dinastia VI, primera mitad, h. -2323 a -2255",
+          "actor_or_institution": "Desconocido",
+          "location": "Giza, Egipto",
+          "description": "Caja de piedra caliza para pato momificado.",
+          "descriptionEs": "Caja de piedra caliza para pato momificado.",
+          "descriptionEn": "Limestone case for a mummified duck.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543919",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1912",
+          "actor_or_institution": "George Reisner (Expedicion Harvard-Museum of Fine Arts, Boston)",
+          "location": "Giza, Egipto",
+          "description": "Excavada por la Expedicion Harvard-MFA Boston bajo George Reisner (1905-1947 en Egipto/Sudan), bajo el sistema de reparto (partage) habitual entre el gobierno egipcio y la institucion excavadora.",
+          "descriptionEs": "Excavada por la Expedicion Harvard-MFA Boston bajo George Reisner (1905-1947 en Egipto/Sudan), bajo el sistema de reparto (partage) habitual entre el gobierno egipcio y la institucion excavadora.",
+          "descriptionEn": "Excavated by the Harvard-MFA Boston Expedition under George Reisner (active in Egypt/Sudan 1905-1947), under the era's standard partage system between the Egyptian government and the excavating institution.",
+          "source_url": "http://giza.fas.harvard.edu/pubdocs/158/full/",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1937",
+          "actor_or_institution": "Metropolitan Museum (Rogers Fund)",
+          "location": "Nueva York",
+          "description": "Llega al Met recien en 1937, comprada con el Rogers Fund -- el mecanismo exacto de la transferencia desde la excavacion original (lo mas probable, el MFA de Boston vendiendo piezas duplicadas de su parte del reparto) no esta confirmado por las fuentes consultadas.",
+          "descriptionEs": "Llega al Met recien en 1937, comprada con el Rogers Fund -- el mecanismo exacto de la transferencia desde la excavacion original (lo mas probable, el MFA de Boston vendiendo piezas duplicadas de su parte del reparto) no esta confirmado por las fuentes consultadas.",
+          "descriptionEn": "Only reaches the Met in 1937, purchased with the Rogers Fund -- the exact mechanism of the transfer from the original excavation (most likely, the MFA Boston selling duplicate pieces from its share of the divide) isn't confirmed by the sources consulted.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543919",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "met:543920",
@@ -8597,8 +8891,57 @@
       "originPrecision": "country",
       "originLat": 33.5,
       "originLon": 47.5,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Hacha de bronce de Luristan, sin excavador ni sitio de hallazgo puntual documentado en el registro del Louvre -- solo 'Luristan' como region de origen. Entra en la coleccion de antiguedades de David David-Weill (banquero y coleccionista frances) entre 1928 y 1939, y sus hijos Jean y Pierre la donan al Louvre en 1972 junto con otras 26 piezas de la misma coleccion. El contexto regional es el de la ola de excavaciones clandestinas de bronces de Luristan que empieza hacia 1927-1930, cuando tribus locales de la region de Pish-i Kuh/Pusht-i Kuh empiezan a saquear tumbas y asentamientos en masa ante la demanda creciente del mercado internacional -- los bronces inundan Paris, Londres y Nueva York a fines de los años 1920. No se afirma que esta pieza puntual venga de esa ola especifica (no hay excavador documentado en absoluto), pero es el fenomeno de mercado que explica por que una region con excavaciones cientificas escasas produjo semejante volumen de bronces sin procedencia hacia coleccionistas privados como David-Weill.",
+        "notesEn": "Bronze axe from Luristan, with no excavator or specific findspot documented in the Louvre's record -- only 'Luristan' as the region of origin. It entered the antiquities collection of David David-Weill (French banker and collector) between 1928 and 1939, and his sons Jean and Pierre donated it to the Louvre in 1972 along with 26 other pieces from the same collection. The regional context is the wave of clandestine excavation of Luristan bronzes that began around 1927-1930, when local tribes in the Pish-i Kuh/Pusht-i Kuh region began mass-looting tombs and settlements to meet growing international market demand -- the bronzes flooded Paris, London and New York markets by the late 1920s. This specific piece is not claimed to come from that particular wave (no excavator is documented at all), but it is the market phenomenon that explains why a region with scarce scientific excavation produced such a volume of unprovenanced bronzes flowing to private collectors like David-Weill."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "sin fecha precisa documentada",
+          "actor_or_institution": "Desconocido",
+          "location": "Luristán, Irán",
+          "description": "Hacha de bronce, sin excavador ni sitio de hallazgo puntual documentado -- solo 'Luristan' como region de origen en el registro del Louvre.",
+          "descriptionEs": "Hacha de bronce, sin excavador ni sitio de hallazgo puntual documentado -- solo 'Luristan' como region de origen en el registro del Louvre.",
+          "descriptionEn": "Bronze axe, with no excavator or specific findspot documented -- only 'Luristan' as the region of origin in the Louvre's record.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010149663",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1928-1939",
+          "actor_or_institution": "Coleccion David David-Weill",
+          "location": "Francia (privado)",
+          "description": "Entra en la coleccion de antiguedades del banquero y coleccionista frances David David-Weill. Contexto regional (no confirmado para esta pieza en particular): la ola de excavaciones clandestinas de bronces de Luristan que inunda los mercados de Paris, Londres y Nueva York desde fines de los años 1920.",
+          "descriptionEs": "Entra en la coleccion de antiguedades del banquero y coleccionista frances David David-Weill. Contexto regional (no confirmado para esta pieza en particular): la ola de excavaciones clandestinas de bronces de Luristan que inunda los mercados de Paris, Londres y Nueva York desde fines de los años 1920.",
+          "descriptionEn": "Enters the antiquities collection of French banker and collector David David-Weill. Regional context (not confirmed for this specific piece): the wave of clandestine excavation of Luristan bronzes that flooded the Paris, London and New York markets from the late 1920s.",
+          "source_url": "https://www.iranicaonline.org/articles/luristan-bronzes-ii-chronology/",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1972",
+          "actor_or_institution": "Jean y Pierre David-Weill (hijos del coleccionista)",
+          "location": "Francia",
+          "description": "Donada al Louvre por los hijos de David-Weill junto con otras 26 piezas de bronce de Luristan de la misma coleccion.",
+          "descriptionEs": "Donada al Louvre por los hijos de David-Weill junto con otras 26 piezas de bronce de Luristan de la misma coleccion.",
+          "descriptionEn": "Donated to the Louvre by David-Weill's sons along with 26 other Luristan bronze pieces from the same collection.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010149663",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010149665",
