@@ -113,18 +113,15 @@ function App() {
   // marcar qué piezas tienen layer 3, dejar ocultar/mostrar según eso.
   // "all" es el default — no cambia el comportamiento previo.
   const [researchFilter, setResearchFilter] = useState<"all" | "with" | "without">("all");
-  // Búsqueda "al revés" por país (19/08) — texto libre + dropdown de
-  // sugerencias, independiente de museum-toggles/research-filter a propósito
-  // (ver groupByCountry en geo.ts): el objetivo es "¿qué piezas de este país
-  // hay en cualquiera de los 3 museos?", no "de lo que tengo prendido ahora".
-  const [countryQuery, setCountryQuery] = useState("");
-  const [countrySearchOpen, setCountrySearchOpen] = useState(false);
-  // Click directo sobre un país en el mapa (19/08, segunda vuelta a pedido
-  // de la usuaria) — apagado por default: sin esto, cualquier click en
-  // tierra (que hoy no hace nada) abriría un panel, lo que rompería el
+  // Búsqueda "al revés" por país, segunda vuelta (19/08) — reemplazó al
+  // buscador de texto original (retirado a pedido de la usuaria, ver
+  // CLAUDE.md): ahora la única forma de elegir un país es clickeándolo
+  // directamente en el mapa. Apagado por default: sin esto, cualquier click
+  // en tierra (que hoy no hace nada) abriría un panel, lo que rompería el
   // gesto normal de arrastrar/rotar el globo para quien no busca esto. Se
-  // activa a mano con el toggle "Click en el mapa", junto al buscador.
+  // activa a mano con el toggle "Click en el mapa" + su botón "i".
   const [countryClickEnabled, setCountryClickEnabled] = useState(false);
+  const [countryClickNoteOpen, setCountryClickNoteOpen] = useState(false);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- geojson global type no está disponible, mismo criterio que colonialOverlay/navigatorRoutes
   const [countryPolygons, setCountryPolygons] = useState<any>(null);
   useEffect(() => {
@@ -233,13 +230,10 @@ function App() {
   const clusters = useMemo(() => groupByOrigin(visibleObjects, lang), [visibleObjects, lang]);
 
   // Búsqueda por país: agrupa TODOS los objetos (bundle.objects, no
-  // visibleObjects) — ver comentario en groupByCountry (geo.ts).
+  // visibleObjects) — ver comentario en groupByCountry (geo.ts). Usado por
+  // el click-en-el-mapa (handleClick/handleMouseMove) para encontrar el
+  // CountryGroup correspondiente al país clickeado/hovereado.
   const countryGroups = useMemo(() => groupByCountry(bundle.objects, lang), [lang]);
-  const filteredCountryOptions = useMemo(() => {
-    const q = countryQuery.trim().toLowerCase();
-    if (!q) return [];
-    return countryGroups.filter((g) => g.label.toLowerCase().includes(q)).slice(0, 8);
-  }, [countryGroups, countryQuery]);
 
   // Búsqueda por país (19/08, segunda vuelta): mientras el panel abierto sea
   // un resultado de país (kind === "country", ya sea por buscador o por
@@ -326,8 +320,6 @@ function App() {
 
   const selectCountryGroup = useCallback((group: { label: string; objects: MuseumObject[] }) => {
     setPanel({ view: "cluster", cluster: { lat: 0, lon: 0, label: group.label, objects: group.objects }, kind: "country" });
-    setCountryQuery("");
-    setCountrySearchOpen(false);
   }, []);
 
   const handleClick = useCallback((e: MapMouseEvent) => {
@@ -487,50 +479,28 @@ function App() {
             ))}
           </div>
         </div>
-        <div className="country-search-row">
-          <span className="filter-row-label">{s.countrySearchLabel}</span>
-          <div className="country-search-wrap">
-            <input
-              type="text"
-              className="country-search-input"
-              placeholder={s.countrySearchPlaceholder}
-              value={countryQuery}
-              onChange={(e) => {
-                setCountryQuery(e.target.value);
-                setCountrySearchOpen(true);
-              }}
-              onFocus={() => setCountrySearchOpen(true)}
-              onBlur={() => setTimeout(() => setCountrySearchOpen(false), 150)}
-            />
-            {countrySearchOpen && countryQuery.trim() && (
-              <div className="country-search-dropdown">
-                {filteredCountryOptions.length === 0 && (
-                  <div className="country-search-empty">{s.countrySearchNoResults}</div>
-                )}
-                {filteredCountryOptions.map((group) => (
-                  <button
-                    key={group.key}
-                    type="button"
-                    className="country-search-option"
-                    onMouseDown={(e) => e.preventDefault()}
-                    onClick={() => selectCountryGroup(group)}
-                  >
-                    <span>{group.label}</span>
-                    <span className="country-search-count">{group.objects.length}</span>
-                  </button>
-                ))}
-              </div>
-            )}
+        <div className="country-click-row">
+          <div className="country-click-wrap">
+            <button
+              type="button"
+              className={`country-click-toggle${countryClickEnabled ? " active" : ""}`}
+              aria-pressed={countryClickEnabled}
+              aria-label={s.countryClickToggleAria}
+              onClick={() => setCountryClickEnabled((v) => !v)}
+            >
+              {s.countryClickToggleLabel}
+            </button>
+            <button
+              type="button"
+              className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
+              aria-label={s.countryClickNoteAria}
+              aria-expanded={countryClickNoteOpen}
+              onClick={() => setCountryClickNoteOpen((v) => !v)}
+            >
+              i
+            </button>
+            {countryClickNoteOpen && <div className="museum-note">{s.countryClickNoteText}</div>}
           </div>
-          <button
-            type="button"
-            className={`country-click-toggle${countryClickEnabled ? " active" : ""}`}
-            aria-pressed={countryClickEnabled}
-            aria-label={s.countryClickToggleAria}
-            onClick={() => setCountryClickEnabled((v) => !v)}
-          >
-            {s.countryClickToggleLabel}
-          </button>
         </div>
         </div>
         <Map

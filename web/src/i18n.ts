@@ -83,14 +83,14 @@ export interface I18nStrings {
   imageExpandAria: string;
   imageCollapseAria: string;
 
-  countrySearchLabel: string;
-  countrySearchPlaceholder: string;
-  countrySearchNoResults: string;
   countryResultsSubtitle: (n: number) => string;
   countryClickToggleLabel: string;
   countryClickToggleAria: string;
+  countryClickNoteAria: string;
+  countryClickNoteText: string;
   tooltipCountry: (label: string, count: number) => string;
   tooltipCountryEmpty: (label: string) => string;
+  countryGroupMuseumHeader: (name: string, n: number) => string;
 }
 
 export const STRINGS: Record<Lang, I18nStrings> = {
@@ -203,14 +203,14 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     imageExpandAria: "Ver imagen completa",
     imageCollapseAria: "Volver al tamaño recortado",
 
-    countrySearchLabel: "Buscar por país:",
-    countrySearchPlaceholder: "Ej. Egipto, Perú, Nigeria…",
-    countrySearchNoResults: "Sin resultados",
     countryResultsSubtitle: (n) => `${n} pieza${n === 1 ? "" : "s"} en los 3 museos, sin importar los filtros de arriba`,
     countryClickToggleLabel: "Click en el mapa",
     countryClickToggleAria: "Activar búsqueda por países haciendo click en el mapa",
+    countryClickNoteAria: "Sobre la búsqueda por país",
+    countryClickNoteText: "Función nueva: con esto prendido, click en cualquier país del globo muestra todas sus piezas en los 3 museos y atenúa el resto de las líneas del mapa para resaltar solo las de ese país. Pasar el mouse por encima antes de clickear muestra cuántas piezas hay (o si no hay ninguna).",
     tooltipCountry: (label, count) => `${label} — ${count} pieza(s) (click para ver la lista)`,
     tooltipCountryEmpty: (label) => `${label} — sin piezas en esta muestra`,
+    countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
   },
   en: {
     museumInfoAria: (name) => `About the provenance of ${name}'s pieces`,
@@ -321,13 +321,13 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     imageExpandAria: "View full image",
     imageCollapseAria: "Back to cropped size",
 
-    countrySearchLabel: "Search by country:",
-    countrySearchPlaceholder: "e.g. Egypt, Peru, Nigeria…",
-    countrySearchNoResults: "No results",
     countryResultsSubtitle: (n) => `${n} piece${n === 1 ? "" : "s"} across all 3 museums, regardless of the filters above`,
     countryClickToggleLabel: "Click on the map",
     countryClickToggleAria: "Enable searching by country by clicking the map",
+    countryClickNoteAria: "About searching by country",
+    countryClickNoteText: "New feature: with this on, clicking any country on the globe shows all its pieces across the 3 museums and dims the rest of the map's lines to highlight only that country's. Hovering before you click shows how many pieces there are (or whether there are none).",
     tooltipCountry: (label, count) => `${label} — ${count} piece(s) (click to see the list)`,
     tooltipCountryEmpty: (label) => `${label} — no pieces in this sample`,
+    countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
   },
 };

@@ -187,87 +187,27 @@
   font-weight: 500;
 }
 
-/* Búsqueda "al revés" por país (19/08) — tercera fila de top-controls,
-   mismo tratamiento de label que .research-filter-row/.museum-toggles
-   (.filter-row-label). El input y el dropdown de sugerencias reusan la
-   paleta clara del resto de los controles (fondo crema translúcido, borde
-   #e5e2da) en vez de la paleta oscura del timeline. */
-.country-search-row {
+/* Búsqueda por país vía click en el mapa (19/08 — reemplazó al buscador de
+   texto original, retirado a pedido de la usuaria; ver CLAUDE.md). Tercera
+   fila de top-controls: el toggle "Click en el mapa" + su botón "i"
+   (mismo patrón visual que .museum-info-btn/.museum-note en
+   .museum-toggle-wrap, reusado tal cual acá). */
+.country-click-row {
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.country-search-wrap {
+.country-click-wrap {
   position: relative;
-}
-
-.country-search-input {
-  width: 200px;
-  background: rgba(251, 250, 247, 0.92);
-  border: 1px solid #e5e2da;
-  border-radius: 20px;
-  padding: 6px 12px;
-  font: inherit;
-  font-size: 12px;
-  color: #1a1a1a;
-}
-
-.country-search-input:focus {
-  outline: none;
-  border-color: #928d82;
-}
-
-.country-search-dropdown {
-  position: absolute;
-  top: calc(100% + 6px);
-  left: 0;
-  z-index: 1001;
-  width: 240px;
-  max-height: 280px;
-  overflow-y: auto;
-  background: #fbfaf7;
-  border: 1px solid #e5e2da;
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-  padding: 4px;
-}
-
-.country-search-option {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  border: none;
-  background: none;
-  font: inherit;
-  font-size: 13px;
-  color: #1a1a1a;
-  text-align: left;
-  padding: 7px 8px;
-  border-radius: 6px;
-  cursor: pointer;
+  gap: 4px;
 }
 
-.country-search-option:hover {
-  background: #efece4;
-}
-
-.country-search-count {
-  font-size: 11px;
-  color: #928d82;
-  font-variant-numeric: tabular-nums;
-}
-
-.country-search-empty {
-  font-size: 12px;
-  color: #928d82;
-  padding: 7px 8px;
-}
-
-/* Toggle "Click en el mapa" (19/08, segunda vuelta) — mismo tratamiento que
-   .research-filter-btn.active (pill oscuro cuando está prendido) para que
-   se lea como el mismo lenguaje de toggle que el resto de top-controls. */
+/* Mismo tratamiento que .research-filter-btn.active (pill oscuro cuando
+   está prendido) para que se lea como el mismo lenguaje de toggle que el
+   resto de top-controls. */
 .country-click-toggle {
   border: 1px solid #e5e2da;
   background: rgba(251, 250, 247, 0.92);
@@ -1063,6 +1003,23 @@
   padding: 4px 12px 8px;
   font-size: 11px;
   color: #928d82;
+}
+
+/* Búsqueda por país agrupada por museo (19/08, tercera vuelta) — un
+   encabezado chico por grupo, mismo tratamiento tipográfico que
+   .filter-row-label (mayúsculas, letterspacing) para que se lea como
+   metadata de agrupación y no como el título de una pieza. */
+.piece-list-museum-header {
+  padding: 10px 16px 2px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #928d82;
+}
+
+.piece-list-museum-group:first-child .piece-list-museum-header {
+  padding-top: 4px;
 }
 
 .piece-info {
