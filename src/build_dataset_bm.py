@@ -10,6 +10,7 @@ Uso:
 
 import csv
 import json
+import re
 from pathlib import Path
 
 from museum_id import BRITISH_MUSEUM, namespaced_id
@@ -30,11 +31,46 @@ def load_objects() -> list[dict]:
     return json.loads(RAW_PATH.read_text())
 
 
+def _title_case_object_type(text: str) -> str:
+    """Capitaliza la palabra/frase de fallback (ej. "signet-ring" ->
+    "Signet-Ring", "animal remains" -> "Animal Remains") — encontrado el
+    19/08: 75 de 90 piezas del BM no tienen "title" propio y caían en el
+    fallback de `objectType`, que en la fuente cruda viene todo en
+    minúscula, se veía desprolijo en la lista/ficha de la pieza. Es
+    formateo de presentación, no interpretación de contenido (no cambia
+    ninguna palabra, layer 1 sigue "tal cual la da la fuente" en el fondo).
+
+    No toca lo que va entre paréntesis — hay casos con notas técnicas o
+    texto en otro alfabeto ahí (ej. "bottle (백자반구병...)", coreano) que no
+    tiene sentido ni conviene tocar; los caracteres CJK no tienen mayúscula/
+    minúscula, así que da igual, pero paréntesis anidados ("jacket
+    (sheepskin jacket (farwah/farweh))") sí podrían quedar raros si se les
+    aplica el mismo capitalizado."""
+    if not text:
+        return text
+    paren_idx = text.find("(")
+    main = text if paren_idx == -1 else text[:paren_idx]
+    suffix = "" if paren_idx == -1 else text[paren_idx:]
+    parts = re.split(r"([ -])", main)
+    capitalized_main = "".join(
+        p[:1].upper() + p[1:] if p not in (" ", "-") else p for p in parts
+    )
+    return capitalized_main + suffix
+
+
 def _title(obj: dict) -> str | None:
     # El campo "Title" del BM no siempre está (muchas piezas solo tienen
     # "Object Type" + "Description", sin título propio) — en ese caso usamos
-    # el tipo de objeto como título de fallback.
-    return obj.get("title") or obj.get("objectType") or obj.get("pageTitle")
+    # el tipo de objeto como título de fallback. Cuando cae en ese fallback,
+    # se le aplica _title_case_object_type() (ver arriba) porque el dato
+    # crudo viene todo en minúscula; un "title" real del BM (15/90 piezas,
+    # ej. "Object: The Rosetta Stone") ya viene bien formateado y se deja
+    # intacto.
+    title = obj.get("title")
+    if title:
+        return title
+    fallback = obj.get("objectType") or obj.get("pageTitle")
+    return _title_case_object_type(fallback) if fallback else fallback
 
 
 def _excavation(obj: dict) -> str | None:
