@@ -4524,8 +4524,57 @@
       "originPrecision": "subregion",
       "originLat": 29.5667,
       "originLon": 31.2167,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "museum_funded_excavation",
+          "partage"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Mesa de ofrendas de caliza, Reino Medio (dinastia XII-XIII, h. 1981-1640 a.C.), hallada por la propia Expedicion Egipcia del Met en Lisht Norte durante la campana de 1930-31 -- mismo mecanismo que el relieve del barco (met:543894), la propia excavacion del museo bajo autorizacion del gobierno egipcio de la epoca.",
+        "notesEn": "Limestone offering table, Middle Kingdom (12th-13th dynasty, c. 1981-1640 BC), found by the Met's own Egyptian Expedition at Lisht North during the 1930-31 season -- same mechanism as the ship relief (met:543894), the museum's own excavation under authorization of the Egyptian government of the time."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dinastia XII-XIII, h. -1981 a -1640",
+          "actor_or_institution": "Desconocido",
+          "location": "Lisht Norte, Egipto",
+          "description": "Mesa de ofrendas de caliza, Reino Medio.",
+          "descriptionEs": "Mesa de ofrendas de caliza, Reino Medio.",
+          "descriptionEn": "Limestone offering table, Middle Kingdom.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543911",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1930-1931",
+          "actor_or_institution": "Expedicion Egipcia del Met",
+          "location": "Lisht Norte, Egipto",
+          "description": "Hallada por la propia Expedicion Egipcia del Met durante la campana de 1930-31.",
+          "descriptionEs": "Hallada por la propia Expedicion Egipcia del Met durante la campana de 1930-31.",
+          "descriptionEn": "Found by the Met's own Egyptian Expedition during the 1930-31 season.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543911",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1932",
+          "actor_or_institution": "Metropolitan Museum (Rogers Fund)",
+          "location": "Nueva York",
+          "description": "Adquirida por el Met como parte del reparto de su propia excavacion.",
+          "descriptionEs": "Adquirida por el Met como parte del reparto de su propia excavacion.",
+          "descriptionEn": "Acquired by the Met as part of the division of finds from its own excavation.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543911",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543912",
@@ -5150,8 +5199,57 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "partage"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Jarra de cobre del Reino Antiguo (dinastia VI, h. 2649-2100 a.C.), de una excavacion del Servicio de Antiguedades egipcio en Saqqara en 1920-21 -- mismo mecanismo de adquisicion ya documentado para otras piezas de esta muestra (met:543890/543909/543917), comprada por el Met en 1926.",
+        "notesEn": "Old Kingdom copper ewer (6th dynasty, c. 2649-2100 BC), from an Egyptian Antiquities Service excavation at Saqqara in 1920-21 -- same acquisition mechanism already documented for other pieces in this sample (met:543890/543909/543917), purchased by the Met in 1926."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dinastia VI, h. -2649 a -2100",
+          "actor_or_institution": "Desconocido",
+          "location": "Saqqara, Egipto",
+          "description": "Jarra de cobre, Reino Antiguo.",
+          "descriptionEs": "Jarra de cobre, Reino Antiguo.",
+          "descriptionEn": "Copper ewer, Old Kingdom.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543922",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1920-1921",
+          "actor_or_institution": "Servicio de Antiguedades egipcio",
+          "location": "Saqqara, Egipto",
+          "description": "Excavada por el Servicio de Antiguedades egipcio -- mismo mecanismo ya documentado para otras piezas de esta muestra (met:543890/543909/543917).",
+          "descriptionEs": "Excavada por el Servicio de Antiguedades egipcio -- mismo mecanismo ya documentado para otras piezas de esta muestra (met:543890/543909/543917).",
+          "descriptionEn": "Excavated by the Egyptian Antiquities Service -- same mechanism already documented for other pieces in this sample (met:543890/543909/543917).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543922",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1926",
+          "actor_or_institution": "Gobierno egipcio",
+          "location": "Egipto -> Nueva York",
+          "description": "Comprada por el Met al Gobierno egipcio.",
+          "descriptionEs": "Comprada por el Met al Gobierno egipcio.",
+          "descriptionEn": "Purchased by the Met from the Egyptian Government.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543922",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543923",
@@ -5177,8 +5275,57 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "partage"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Palangana de cobre del Reino Antiguo (dinastia VI, h. 2323-2150 a.C.), de la misma excavacion del Servicio de Antiguedades egipcio en Saqqara (1920-21) y el mismo evento de compra que met:543922/met:543924 -- probablemente parte del mismo ajuar funerario.",
+        "notesEn": "Old Kingdom copper basin (6th dynasty, c. 2323-2150 BC), from the same Egyptian Antiquities Service excavation at Saqqara (1920-21) and the same purchase event as met:543922/met:543924 -- likely part of the same funerary set."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dinastia VI, h. -2649 a -2100",
+          "actor_or_institution": "Desconocido",
+          "location": "Saqqara, Egipto",
+          "description": "Palangana de cobre (1 de 2), Reino Antiguo.",
+          "descriptionEs": "Palangana de cobre (1 de 2), Reino Antiguo.",
+          "descriptionEn": "Copper basin (1 of 2), Old Kingdom.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543923",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1920-1921",
+          "actor_or_institution": "Servicio de Antiguedades egipcio",
+          "location": "Saqqara, Egipto",
+          "description": "Excavada por el Servicio de Antiguedades egipcio -- mismo mecanismo ya documentado para otras piezas de esta muestra (met:543890/543909/543917).",
+          "descriptionEs": "Excavada por el Servicio de Antiguedades egipcio -- mismo mecanismo ya documentado para otras piezas de esta muestra (met:543890/543909/543917).",
+          "descriptionEn": "Excavated by the Egyptian Antiquities Service -- same mechanism already documented for other pieces in this sample (met:543890/543909/543917).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543923",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1926",
+          "actor_or_institution": "Gobierno egipcio",
+          "location": "Egipto -> Nueva York",
+          "description": "Comprada por el Met al Gobierno egipcio.",
+          "descriptionEs": "Comprada por el Met al Gobierno egipcio.",
+          "descriptionEn": "Purchased by the Met from the Egyptian Government.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543923",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543924",
@@ -5204,8 +5351,57 @@
       "originPrecision": "subregion",
       "originLat": 29.8714,
       "originLon": 31.2164,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "partage"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Segunda palangana de cobre, misma excavacion, ajuar y evento de compra que met:543923 y met:543922.",
+        "notesEn": "Second copper basin, same excavation, funerary set, and purchase event as met:543923 and met:543922."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dinastia VI, h. -2649 a -2100",
+          "actor_or_institution": "Desconocido",
+          "location": "Saqqara, Egipto",
+          "description": "Palangana de cobre (2 de 2), Reino Antiguo.",
+          "descriptionEs": "Palangana de cobre (2 de 2), Reino Antiguo.",
+          "descriptionEn": "Copper basin (2 of 2), Old Kingdom.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543924",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1920-1921",
+          "actor_or_institution": "Servicio de Antiguedades egipcio",
+          "location": "Saqqara, Egipto",
+          "description": "Excavada por el Servicio de Antiguedades egipcio -- mismo mecanismo ya documentado para otras piezas de esta muestra (met:543890/543909/543917).",
+          "descriptionEs": "Excavada por el Servicio de Antiguedades egipcio -- mismo mecanismo ya documentado para otras piezas de esta muestra (met:543890/543909/543917).",
+          "descriptionEn": "Excavated by the Egyptian Antiquities Service -- same mechanism already documented for other pieces in this sample (met:543890/543909/543917).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543924",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1926",
+          "actor_or_institution": "Gobierno egipcio",
+          "location": "Egipto -> Nueva York",
+          "description": "Comprada por el Met al Gobierno egipcio.",
+          "descriptionEs": "Comprada por el Met al Gobierno egipcio.",
+          "descriptionEn": "Purchased by the Met from the Egyptian Government.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543924",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543925",
@@ -6112,8 +6308,57 @@
       "originPrecision": "site",
       "originLat": 27.6453,
       "originLon": 30.9017,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Relieve de Ajenaton y Nefertiti, de Tell el-Amarna, con inscripcion/dedicatoria de Amenhotep IV Ajenaton (h. 1349-1333 a.C.). Comprado en junio de 1910 por el coleccionista estadounidense Atherton Curtis a los marchantes de El Cairo Hagob y Garbis Kalebdjian. El matrimonio Curtis lo dono al Louvre en 1938 -- estaba inventariado dos veces porque originalmente se penso como donacion con reserva de usufructo, pero terminaron donandolo en vida.",
+        "notesEn": "Relief of Akhenaten and Nefertiti, from Tell el-Amarna, with an inscription/dedication of Amenhotep IV Akhenaten (c. 1349-1333 BC). Bought in June 1910 by American collector Atherton Curtis from Cairo dealers Hagob and Garbis Kalebdjian. The Curtis couple donated it to the Louvre in 1938 -- it was inventoried twice because it was originally planned as a gift with a life-usufruct reservation, but they ended up donating it outright during their lifetime."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -1349 a -1333 (Amenhotep IV Ajenaton)",
+          "actor_or_institution": "Ajenaton (inscripcion/dedicatoria)",
+          "location": "Tell el-Amarna, Egipto",
+          "description": "Relieve con inscripcion/dedicatoria de Amenhotep IV Ajenaton.",
+          "descriptionEs": "Relieve con inscripcion/dedicatoria de Amenhotep IV Ajenaton.",
+          "descriptionEn": "Relief with an inscription/dedication of Amenhotep IV Akhenaten.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010008248",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1910-06",
+          "actor_or_institution": "Atherton Curtis (comprador) / Hagob y Garbis Kalebdjian (marchantes, El Cairo)",
+          "location": "El Cairo",
+          "description": "Comprada por el coleccionista estadounidense Atherton Curtis a los marchantes de El Cairo Hagob y Garbis Kalebdjian.",
+          "descriptionEs": "Comprada por el coleccionista estadounidense Atherton Curtis a los marchantes de El Cairo Hagob y Garbis Kalebdjian.",
+          "descriptionEn": "Bought by American collector Atherton Curtis from Cairo dealers Hagob and Garbis Kalebdjian.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010008248",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1938-11-08",
+          "actor_or_institution": "Atherton y Sra. Curtis",
+          "location": "Francia",
+          "description": "Donada al Louvre por el matrimonio Curtis -- estaba inventariado dos veces porque originalmente se penso como donacion con reserva de usufructo, pero terminaron donandolo en vida.",
+          "descriptionEs": "Donada al Louvre por el matrimonio Curtis -- estaba inventariado dos veces porque originalmente se penso como donacion con reserva de usufructo, pero terminaron donandolo en vida.",
+          "descriptionEn": "Donated to the Louvre by the Curtis couple -- it was inventoried twice because it was originally planned as a gift with a life-usufruct reservation, but they ended up donating it outright during their lifetime.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010008248",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010008693",
@@ -10776,8 +11021,57 @@
       "originPrecision": "country",
       "originLat": 41.8719,
       "originLon": 12.5674,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Italy",
+        "notes": "Estatua romana (imperial o republicana tardia, dataciones discutidas entre los siglos II a.C. y II d.C.) conocida como Atenea Mattei, por haber pasado por el Palacio Mattei en Roma. Antes estuvo en la coleccion de Beauveau; luego en la del cardenal Joseph Fesch (tio de Napoleon Bonaparte y gran coleccionista de arte). Comprada por el Louvre en 1824 -- cadena de coleccionismo privado europeo, sin mecanismo colonial.",
+        "notesEn": "Roman statue (late Republican or Imperial, dating debated between the 2nd century BC and 2nd century AD) known as the Athena Mattei, after passing through the Palazzo Mattei in Rome. Previously in the Beauveau collection; then in that of Cardinal Joseph Fesch (Napoleon Bonaparte's uncle and a major art collector). Purchased by the Louvre in 1824 -- a European private-collecting chain, no colonial mechanism."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "dataciones discutidas, entre s. II a.C. y s. II d.C.",
+          "actor_or_institution": "Desconocido",
+          "location": "Italia (romana)",
+          "description": "Estatua romana conocida como Atenea Mattei.",
+          "descriptionEs": "Estatua romana conocida como Atenea Mattei.",
+          "descriptionEn": "Roman statue known as the Athena Mattei.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010278738",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "sin fecha documentada, antes de comienzos s. XIX",
+          "actor_or_institution": "Beauveau, de -> cardenal Joseph Fesch",
+          "location": "Roma (Palacio Mattei) -> Francia",
+          "description": "Pasa por la coleccion de Beauveau y luego por la del cardenal Joseph Fesch, tio de Napoleon Bonaparte y gran coleccionista de arte -- previamente en el Palacio Mattei de Roma.",
+          "descriptionEs": "Pasa por la coleccion de Beauveau y luego por la del cardenal Joseph Fesch, tio de Napoleon Bonaparte y gran coleccionista de arte -- previamente en el Palacio Mattei de Roma.",
+          "descriptionEn": "Passes through the Beauveau collection and then that of Cardinal Joseph Fesch, Napoleon Bonaparte's uncle and a major art collector -- previously at the Palazzo Mattei in Rome.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010278738",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1824",
+          "actor_or_institution": "Musee du Louvre",
+          "location": "Francia",
+          "description": "Comprada por el Louvre.",
+          "descriptionEs": "Comprada por el Louvre.",
+          "descriptionEn": "Purchased by the Louvre.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010278738",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010278930",
@@ -15396,8 +15690,70 @@
       "originPrecision": "site",
       "originLat": -2.9006,
       "originLon": -79.0045,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "undocumented_early_chain",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Ecuador",
+        "notes": "Cabeza de azuela de bronce, con hallazgo registrado en Cuenca, Ecuador. El registro del BM la atribuye a 'recoleccion de campo' del reverendo canonigo William Greenwell (1820-1918), coleccionista y anticuario britanico -- pero la coleccion Greenwell documentada (comprada por J. P. Morgan en 1908 por 10.000 libras y donada al Museo Britanico en 1909) era de antiguedades prehistoricas europeas, no sudamericanas. Un hallazgo ecuatoriano no encaja con el perfil conocido de Greenwell -- discrepancia sin resolver: puede tratarse de una pieza comprada a un anticuario o coleccionista tercero e incorporada a su coleccion sin que el la haya recolectado personalmente en Ecuador, o de un error de catalogacion. Se documenta sin forzar una resolucion, mismo criterio que otras discrepancias de esta muestra.",
+        "notesEn": "Bronze adze-head, with findspot recorded as Cuenca, Ecuador. The BM's record attributes it to 'field collection' by Rev. Canon William Greenwell (1820-1918), British antiquarian and collector -- but Greenwell's well-documented collection (bought by J. P. Morgan in 1908 for GBP 10,000 and donated to the British Museum in 1909) was of prehistoric European antiquities, not South American ones. An Ecuadorian find doesn't fit Greenwell's known profile -- an unresolved discrepancy: this may be a piece bought from a dealer or third-party collector and folded into his collection without him personally collecting it in Ecuador, or a cataloguing error. Documented without forcing a resolution, same standard as other discrepancies in this sample."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Desconocido",
+          "location": "Cuenca, Ecuador",
+          "description": "Cabeza de azuela de bronce, findspot registrado como Cuenca, Ecuador.",
+          "descriptionEs": "Cabeza de azuela de bronce, findspot registrado como Cuenca, Ecuador.",
+          "descriptionEn": "Bronze adze-head, findspot recorded as Cuenca, Ecuador.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am-WG-2242",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "antes de 1908",
+          "actor_or_institution": "Rev. Canon William Greenwell (atribucion del registro del BM)",
+          "location": "Desconocido",
+          "description": "El registro del BM atribuye la pieza a 'recoleccion de campo' de William Greenwell -- pero su coleccion documentada era de antiguedades prehistoricas europeas, no sudamericanas. Discrepancia sin resolver, ver notas.",
+          "descriptionEs": "El registro del BM atribuye la pieza a 'recoleccion de campo' de William Greenwell -- pero su coleccion documentada era de antiguedades prehistoricas europeas, no sudamericanas. Discrepancia sin resolver, ver notas.",
+          "descriptionEn": "The BM's record attributes the piece to 'field collection' by William Greenwell -- but his documented collection was of prehistoric European antiquities, not South American ones. Unresolved discrepancy, see notes.",
+          "source_url": "https://en.wikipedia.org/wiki/William_Greenwell",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1908",
+          "actor_or_institution": "John Pierpont Morgan",
+          "location": "Reino Unido",
+          "description": "J. P. Morgan compra la coleccion de Greenwell por 10.000 libras.",
+          "descriptionEs": "J. P. Morgan compra la coleccion de Greenwell por 10.000 libras.",
+          "descriptionEn": "J. P. Morgan buys Greenwell's collection for GBP 10,000.",
+          "source_url": "https://en.wikipedia.org/wiki/William_Greenwell",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "gift",
+          "event_date": "1909",
+          "actor_or_institution": "John Pierpont Morgan",
+          "location": "Londres",
+          "description": "Morgan dona la coleccion al Museo Britanico.",
+          "descriptionEs": "Morgan dona la coleccion al Museo Britanico.",
+          "descriptionEn": "Morgan donates the collection to the British Museum.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am-WG-2242",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Am1855-1211-49",
@@ -16676,8 +17032,57 @@
       "originPrecision": "site",
       "originLat": 36.8167,
       "originLon": 38.0167,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "museum_funded_excavation",
+          "ottoman_authorization"
+        ],
+        "associated_communities_or_states": "Turkey;Syria",
+        "notes": "Caja fragmentaria de piedra negra con escena de caceria de leones, estilo neohitita (s. IX-VII a.C.), hallada cerca del postigo de agua de la ciudadela de Karkemish (hoy en la frontera Turquia-Siria). Excavada por Leonard Woolley -- mucho antes de sus famosas excavaciones de Ur (1922-1934) -- en la excavacion del Museo Britanico en Karkemish, en dos etapas: 1911-1914 (bajo administracion otomana) y una breve reanudacion en 1919-1920, tras la Primera Guerra Mundial y el colapso del Imperio Otomano. En la primera etapa, uno de los asistentes de Woolley fue T. E. Lawrence ('Lawrence de Arabia'), encargado del estudio de ceramica, hallazgos menores y fotografia de objetos -- antes de involucrarse en la Revuelta Arabe durante la guerra. Adquirida por el museo en 1922.",
+        "notesEn": "Fragmentary black stone box with a lion-hunt scene, Neo-Hittite style (9th-7th c. BC), found near the citadel water postern at Carchemish (today on the Turkey-Syria border). Excavated by Leonard Woolley -- long before his famous excavations at Ur (1922-1934) -- as part of the British Museum's excavation at Carchemish, in two stages: 1911-1914 (under Ottoman administration) and a brief resumption in 1919-1920, after World War I and the collapse of the Ottoman Empire. In the first stage, one of Woolley's assistants was T. E. Lawrence ('Lawrence of Arabia'), responsible for studying pottery, small finds, and object photography -- before becoming involved in the Arab Revolt during the war. Acquired by the museum in 1922."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. IX-VII a.C. (neohitita)",
+          "actor_or_institution": "Desconocido",
+          "location": "Karkemish",
+          "description": "Caja de piedra negra con escena de caceria de leones, estilo neohitita.",
+          "descriptionEs": "Caja de piedra negra con escena de caceria de leones, estilo neohitita.",
+          "descriptionEn": "Black stone box with a lion-hunt scene, Neo-Hittite style.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1922-0511-255",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1911-1914, reanudada 1919-1920",
+          "actor_or_institution": "Leonard Woolley (excavacion del Museo Britanico; T. E. Lawrence, asistente 1911-14)",
+          "location": "Karkemish (frontera actual Turquia-Siria)",
+          "description": "Excavada por Leonard Woolley para el Museo Britanico, en dos etapas separadas por la Primera Guerra Mundial -- la primera bajo administracion otomana, con T. E. Lawrence ('Lawrence de Arabia') como uno de sus asistentes, encargado de ceramica, hallazgos menores y fotografia.",
+          "descriptionEs": "Excavada por Leonard Woolley para el Museo Britanico, en dos etapas separadas por la Primera Guerra Mundial -- la primera bajo administracion otomana, con T. E. Lawrence ('Lawrence de Arabia') como uno de sus asistentes, encargado de ceramica, hallazgos menores y fotografia.",
+          "descriptionEn": "Excavated by Leonard Woolley for the British Museum, in two stages separated by World War I -- the first under Ottoman administration, with T. E. Lawrence ('Lawrence of Arabia') as one of his assistants, responsible for pottery, small finds, and photography.",
+          "source_url": "https://www.britannica.com/biography/Leonard-Woolley",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1922",
+          "actor_or_institution": "British Museum",
+          "location": "Londres",
+          "description": "Adquirida por el museo tras el cierre de la excavacion.",
+          "descriptionEs": "Adquirida por el museo tras el cierre de la excavacion.",
+          "descriptionEn": "Acquired by the museum after the excavation closed.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1922-0511-255",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:W_1970-0209-18",
@@ -16703,8 +17108,57 @@
       "originPrecision": "site",
       "originLat": 31.7745,
       "originLon": 35.2354,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "institutional_transfer",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Palestine (historic)",
+        "notes": "Cuenco de ceramica de la Edad del Hierro (s. VIII-VII a.C.), hallado en una tumba del area del Ofel, en Jerusalen. Excavado por Kathleen Kenyon, quien dirigio excavaciones a gran escala en Jerusalen entre 1961 y 1967 -- una mision conjunta de la British School of Archaeology in Jerusalem (que ella misma dirigia), el Royal Ontario Museum y la Ecole Biblique et Archeologique Francaise. La excavacion abarca un periodo de cambios politicos importantes en la zona (incluida la guerra de junio de 1967); la pieza recien se dono al Museo Britanico en 1970, tres años despues de terminada la excavacion, por la propia escuela britanica -- mecanismo academico de reparto de hallazgos, no una administracion colonial britanica directa sobre el territorio en ese momento.",
+        "notesEn": "Iron Age pottery bowl (8th-7th c. BC), found in a tomb in the Ophel area of Jerusalem. Excavated by Kathleen Kenyon, who directed large-scale excavations in Jerusalem between 1961 and 1967 -- a joint mission of the British School of Archaeology in Jerusalem (which she herself directed), the Royal Ontario Museum, and the Ecole Biblique et Archeologique Francaise. The excavation spans a period of major political change in the area (including the June 1967 war); the piece was only donated to the British Museum in 1970, three years after the excavation ended, by the British school itself -- an academic division-of-finds mechanism, not direct British colonial administration of the territory at that time."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. VIII-VII a.C. (Edad del Hierro)",
+          "actor_or_institution": "Desconocido",
+          "location": "Jerusalen",
+          "description": "Cuenco de ceramica, hallado en una tumba del area del Ofel.",
+          "descriptionEs": "Cuenco de ceramica, hallado en una tumba del area del Ofel.",
+          "descriptionEn": "Pottery bowl, found in a tomb in the Ophel area.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1970-0209-18",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1961-1967",
+          "actor_or_institution": "Kathleen Kenyon (British School of Archaeology in Jerusalem)",
+          "location": "Ofel, Jerusalen",
+          "description": "Excavada por Kathleen Kenyon, mision conjunta de la British School of Archaeology in Jerusalem, el Royal Ontario Museum y la Ecole Biblique et Archeologique Francaise -- la excavacion abarca un periodo de cambios politicos importantes en la zona, incluida la guerra de junio de 1967.",
+          "descriptionEs": "Excavada por Kathleen Kenyon, mision conjunta de la British School of Archaeology in Jerusalem, el Royal Ontario Museum y la Ecole Biblique et Archeologique Francaise -- la excavacion abarca un periodo de cambios politicos importantes en la zona, incluida la guerra de junio de 1967.",
+          "descriptionEn": "Excavated by Kathleen Kenyon, a joint mission of the British School of Archaeology in Jerusalem, the Royal Ontario Museum, and the Ecole Biblique et Archeologique Francaise -- the excavation spans a period of major political change in the area, including the June 1967 war.",
+          "source_url": "https://www.cbrl.ac.uk/news/re-excavating-jerusalem-from-the-archive-of-dame-kathleen-kenyons-excavations-1961-1967/",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1970",
+          "actor_or_institution": "British School of Archaeology in Jerusalem",
+          "location": "Londres",
+          "description": "Donada al Museo Britanico por la escuela britanica, tres años despues de terminada la excavacion -- reparto academico de hallazgos.",
+          "descriptionEs": "Donada al Museo Britanico por la escuela britanica, tres años despues de terminada la excavacion -- reparto academico de hallazgos.",
+          "descriptionEn": "Donated to the British Museum by the British school, three years after the excavation ended -- an academic division of finds.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_1970-0209-18",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:W_1970-0604-2",
@@ -16832,8 +17286,57 @@
       "originPrecision": "site",
       "originLat": 19.08,
       "originLon": 30.36,
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "partage"
+        ],
+        "associated_communities_or_states": "Sudan",
+        "notes": "Esfinge de granito del rey kushita Taharqo (dinastia XXV, gobernante nubio de Egipto), tocada con doble ureo. Excavada en el Templo T de Kawa (antigua Gematon, norte de Sudan) por Francis Llewellyn Griffith, primer profesor de egiptologia de Oxford, quien dirigio y financio excavaciones en Nubia/Sudan entre 1910-13 y 1929-31 a traves del Comite de Excavaciones de la Universidad de Oxford -- con Sudan bajo el Condominio anglo-egipcio (1899-1956) en ese momento. Adquirida por el Museo Britanico en 1932.",
+        "notesEn": "Granite sphinx of the Kushite king Taharqo (25th dynasty, Nubian ruler of Egypt), wearing a double uraeus. Excavated at Temple T in Kawa (ancient Gematon, northern Sudan) by Francis Llewellyn Griffith, Oxford's first professor of Egyptology, who directed and funded excavations in Nubia/Sudan between 1910-13 and 1929-31 through the Oxford University Excavation Committee -- with Sudan under the Anglo-Egyptian Condominium (1899-1956) at the time. Acquired by the British Museum in 1932."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -680 (reinado de Taharqo)",
+          "actor_or_institution": "Taharqo (representado)",
+          "location": "Kawa, Sudan",
+          "description": "Esfinge de granito del rey kushita Taharqo, tocada con doble ureo.",
+          "descriptionEs": "Esfinge de granito del rey kushita Taharqo, tocada con doble ureo.",
+          "descriptionEn": "Granite sphinx of the Kushite king Taharqo, wearing a double uraeus.",
+          "source_url": "https://www.britishmuseum.org/collection/object/Y_EA1770",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1929-1931",
+          "actor_or_institution": "Francis Llewellyn Griffith (Comite de Excavaciones de Oxford)",
+          "location": "Templo T, Kawa, Sudan",
+          "description": "Excavada por Francis Llewellyn Griffith, primer profesor de egiptologia de Oxford, en el Templo T de Kawa -- con Sudan bajo el Condominio anglo-egipcio.",
+          "descriptionEs": "Excavada por Francis Llewellyn Griffith, primer profesor de egiptologia de Oxford, en el Templo T de Kawa -- con Sudan bajo el Condominio anglo-egipcio.",
+          "descriptionEn": "Excavated by Francis Llewellyn Griffith, Oxford's first professor of Egyptology, at Temple T in Kawa -- with Sudan under the Anglo-Egyptian Condominium.",
+          "source_url": "https://egyptartefacts.griffith.ox.ac.uk/resources/university-oxford-excavations-nubia/",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1932",
+          "actor_or_institution": "British Museum",
+          "location": "Londres",
+          "description": "Adquirida por el Museo Britanico como parte del reparto de la excavacion.",
+          "descriptionEs": "Adquirida por el Museo Britanico como parte del reparto de la excavacion.",
+          "descriptionEn": "Acquired by the British Museum as part of the excavation's division of finds.",
+          "source_url": "https://www.britishmuseum.org/collection/object/Y_EA1770",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "bm:Y_EA24",
