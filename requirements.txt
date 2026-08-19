@@ -5,3 +5,4 @@ folium>=0.16
 beautifulsoup4>=4.12
 ddgs>=9.0
 tavily-python>=0.5  # opcional -- solo hace falta si usás --backend tavily en web_research.py
+pytest>=8.0  # dev -- solo hace falta para correr tests/ (pytest)
