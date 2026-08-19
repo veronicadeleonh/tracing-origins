@@ -87,6 +87,10 @@ export interface I18nStrings {
   countrySearchPlaceholder: string;
   countrySearchNoResults: string;
   countryResultsSubtitle: (n: number) => string;
+  countryClickToggleLabel: string;
+  countryClickToggleAria: string;
+  tooltipCountry: (label: string, count: number) => string;
+  tooltipCountryEmpty: (label: string) => string;
 }
 
 export const STRINGS: Record<Lang, I18nStrings> = {
@@ -203,6 +207,10 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countrySearchPlaceholder: "Ej. Egipto, Perú, Nigeria…",
     countrySearchNoResults: "Sin resultados",
     countryResultsSubtitle: (n) => `${n} pieza${n === 1 ? "" : "s"} en los 3 museos, sin importar los filtros de arriba`,
+    countryClickToggleLabel: "Click en el mapa",
+    countryClickToggleAria: "Activar búsqueda por países haciendo click en el mapa",
+    tooltipCountry: (label, count) => `${label} — ${count} pieza(s) (click para ver la lista)`,
+    tooltipCountryEmpty: (label) => `${label} — sin piezas en esta muestra`,
   },
   en: {
     museumInfoAria: (name) => `About the provenance of ${name}'s pieces`,
@@ -317,5 +325,9 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countrySearchPlaceholder: "e.g. Egypt, Peru, Nigeria…",
     countrySearchNoResults: "No results",
     countryResultsSubtitle: (n) => `${n} piece${n === 1 ? "" : "s"} across all 3 museums, regardless of the filters above`,
+    countryClickToggleLabel: "Click on the map",
+    countryClickToggleAria: "Enable searching by country by clicking the map",
+    tooltipCountry: (label, count) => `${label} — ${count} piece(s) (click to see the list)`,
+    tooltipCountryEmpty: (label) => `${label} — no pieces in this sample`,
   },
 };

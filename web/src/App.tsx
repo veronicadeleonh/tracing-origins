@@ -11,6 +11,7 @@ import { ObjectDetail } from "./components/ObjectDetail";
 import { Timeline } from "./components/Timeline";
 import { WelcomeModal } from "./components/WelcomeModal";
 import { HISTORICAL_EVENTS } from "./data/historicalEvents";
+import { NATURAL_EARTH_NAME_TO_COUNTRY_KEY } from "./data/countryPolygons";
 import { STRINGS, type Lang } from "./i18n";
 import "./App.css";
 
@@ -36,6 +37,12 @@ const COLONIAL_OVERLAY_URL = `${import.meta.env.BASE_URL}colonial_overlay.geojso
 // mismo trigger (timelineOpen) por consistencia de patrón, no por necesidad
 // real de lazy-loading.
 const NAVIGATOR_ROUTES_URL = `${import.meta.env.BASE_URL}navigator_routes.geojson`;
+// Búsqueda por país vía click en el mapa (19/08, segunda vuelta) — capa
+// invisible de polígonos de país (Natural Earth 110m, ver countryPolygons.ts
+// para la traducción de nombres), fetcheada bajo demanda recién cuando se
+// activa el toggle "Click en el mapa" (mismo patrón lazy que el overlay
+// colonial), no de entrada — la mayoría de las visitas nunca la va a usar.
+const COUNTRIES_GEOJSON_URL = `${import.meta.env.BASE_URL}countries.geojson`;
 
 const bundle = data as DataBundle;
 
@@ -112,6 +119,21 @@ function App() {
   // hay en cualquiera de los 3 museos?", no "de lo que tengo prendido ahora".
   const [countryQuery, setCountryQuery] = useState("");
   const [countrySearchOpen, setCountrySearchOpen] = useState(false);
+  // Click directo sobre un país en el mapa (19/08, segunda vuelta a pedido
+  // de la usuaria) — apagado por default: sin esto, cualquier click en
+  // tierra (que hoy no hace nada) abriría un panel, lo que rompería el
+  // gesto normal de arrastrar/rotar el globo para quien no busca esto. Se
+  // activa a mano con el toggle "Click en el mapa", junto al buscador.
+  const [countryClickEnabled, setCountryClickEnabled] = useState(false);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- geojson global type no está disponible, mismo criterio que colonialOverlay/navigatorRoutes
+  const [countryPolygons, setCountryPolygons] = useState<any>(null);
+  useEffect(() => {
+    if (!countryClickEnabled || countryPolygons) return;
+    fetch(COUNTRIES_GEOJSON_URL)
+      .then((res) => res.json())
+      .then(setCountryPolygons)
+      .catch((err) => console.error("No se pudo cargar countries.geojson", err));
+  }, [countryClickEnabled, countryPolygons]);
   const [panel, setPanel] = useState<PanelState>(null);
   const [tooltip, setTooltip] = useState<TooltipState>(null);
   const [cursor, setCursor] = useState("grab");
@@ -219,6 +241,17 @@ function App() {
     return countryGroups.filter((g) => g.label.toLowerCase().includes(q)).slice(0, 8);
   }, [countryGroups, countryQuery]);
 
+  // Búsqueda por país (19/08, segunda vuelta): mientras el panel abierto sea
+  // un resultado de país (kind === "country", ya sea por buscador o por
+  // click en el mapa), se atenúan todas las líneas pieza->museo salvo las
+  // que salen de ese país — "revela" el patrón de ese origen sin tocar el
+  // resto del modelo de datos. null cuando no hay país seleccionado (mismo
+  // comportamiento de siempre, todas las líneas a la misma opacidad).
+  const highlightedObjectIds = useMemo(() => {
+    if (!panel || panel.kind !== "country") return null;
+    return new Set(panel.cluster.objects.map((o) => o.objectID));
+  }, [panel]);
+
   const linesGeoJSON = useMemo(() => ({
     type: "FeatureCollection" as const,
     features: clusters.flatMap((cluster) =>
@@ -227,14 +260,15 @@ function App() {
         if (!dest) return [];
         const [jLat, jLon] = jitteredPoint(cluster.lat, cluster.lon, i, cluster.objects.length);
         const color = (obj.sourceMuseum && MUSEUM_COLORS[obj.sourceMuseum]) || DEFAULT_COLOR;
+        const dimmed = highlightedObjectIds ? !highlightedObjectIds.has(obj.objectID) : false;
         return [{
           type: "Feature" as const,
           geometry: { type: "LineString" as const, coordinates: [[jLon, jLat], [dest.lon, dest.lat]] },
-          properties: { objectID: obj.objectID, color },
+          properties: { objectID: obj.objectID, color, dimmed },
         }];
       })
     ),
-  }), [clusters]);
+  }), [clusters, highlightedObjectIds]);
 
   const originsGeoJSON = useMemo(() => ({
     type: "FeatureCollection" as const,
@@ -277,17 +311,6 @@ function App() {
       })),
   }), [visibleMuseums]);
 
-  const handleClick = useCallback((e: MapMouseEvent) => {
-    if (!e.features?.length) return;
-    const f = e.features[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> };
-    const properties = f.properties ?? {};
-    if (f.layer?.id === "origins") {
-      const key = properties.clusterKey as string;
-      const cluster = clusters.find((c) => `${c.lat}|${c.lon}|${c.label}` === key);
-      if (cluster) setPanel({ view: "cluster", cluster });
-    }
-  }, [clusters]);
-
   // Navegación prev/next dentro de un cluster de origen (18/08) — update
   // funcional para no depender de `panel` en las deps del callback (evita
   // handlers con closures viejas si el usuario navega rápido). Sirve tanto
@@ -307,20 +330,55 @@ function App() {
     setCountrySearchOpen(false);
   }, []);
 
+  const handleClick = useCallback((e: MapMouseEvent) => {
+    if (!e.features?.length) return;
+    const f = e.features[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> };
+    const properties = f.properties ?? {};
+    if (f.layer?.id === "origins") {
+      const key = properties.clusterKey as string;
+      const cluster = clusters.find((c) => `${c.lat}|${c.lon}|${c.label}` === key);
+      if (cluster) setPanel({ view: "cluster", cluster });
+    } else if (f.layer?.id === "country-hit") {
+      // Click en el mapa (19/08, segunda vuelta) -- mismo flujo que elegir
+      // un país en el buscador (selectCountryGroup), solo cambia cómo se
+      // identificó el país. Si el nombre de Natural Earth no mapea a
+      // ninguno de nuestros países (país sin piezas en la muestra), no pasa
+      // nada -- el hover ya avisó "sin piezas" antes del click, ver
+      // handleMouseMove.
+      const naturalEarthName = String(properties.name ?? "");
+      const key = NATURAL_EARTH_NAME_TO_COUNTRY_KEY[naturalEarthName];
+      const group = key ? countryGroups.find((g) => g.key === key) : undefined;
+      if (group && group.objects.length > 0) selectCountryGroup(group);
+    }
+  }, [clusters, countryGroups, selectCountryGroup]);
+
   const handleMouseMove = useCallback((e: MapMouseEvent) => {
     if (e.features?.length) {
       const f = e.features[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> };
       const properties = f.properties ?? {};
-      const text = f.layer?.id === "origins"
-        ? s.tooltipOrigin(String(properties.label), Number(properties.count))
-        : `${properties.name} (${properties.city})`;
+      let text: string;
+      if (f.layer?.id === "origins") {
+        text = s.tooltipOrigin(String(properties.label), Number(properties.count));
+      } else if (f.layer?.id === "country-hit") {
+        // Mismo lookup que handleClick, pero en hover: avisa de antemano si
+        // ese país no tiene piezas en la muestra, para que el click (o la
+        // falta de reacción al click) no sorprenda a nadie.
+        const naturalEarthName = String(properties.name ?? "");
+        const key = NATURAL_EARTH_NAME_TO_COUNTRY_KEY[naturalEarthName];
+        const group = key ? countryGroups.find((g) => g.key === key) : undefined;
+        text = group && group.objects.length > 0
+          ? s.tooltipCountry(group.label, group.objects.length)
+          : s.tooltipCountryEmpty(naturalEarthName);
+      } else {
+        text = `${properties.name} (${properties.city})`;
+      }
       setTooltip({ longitude: e.lngLat.lng, latitude: e.lngLat.lat, text });
       setCursor("pointer");
     } else {
       setTooltip(null);
       setCursor("grab");
     }
-  }, [s]);
+  }, [s, countryGroups]);
 
   return (
     <div className="app-layout">
@@ -464,6 +522,15 @@ function App() {
               </div>
             )}
           </div>
+          <button
+            type="button"
+            className={`country-click-toggle${countryClickEnabled ? " active" : ""}`}
+            aria-pressed={countryClickEnabled}
+            aria-label={s.countryClickToggleAria}
+            onClick={() => setCountryClickEnabled((v) => !v)}
+          >
+            {s.countryClickToggleLabel}
+          </button>
         </div>
         </div>
         <Map
@@ -474,13 +541,24 @@ function App() {
           mapStyle="mapbox://styles/mapbox/light-v11"
           projection="globe"
           fog={{}}
-          interactiveLayerIds={["origins", "museums"]}
+          interactiveLayerIds={countryClickEnabled ? ["origins", "museums", "country-hit"] : ["origins", "museums"]}
           cursor={cursor}
           onLoad={handleMapLoad}
           onClick={handleClick}
           onMouseMove={handleMouseMove}
           onMouseLeave={() => { setTooltip(null); setCursor("grab"); }}
         >
+          {countryClickEnabled && countryPolygons && (
+            // Capa invisible de hit-testing (19/08, click en el mapa) --
+            // agregada primero a propósito, para que quede debajo de
+            // origins/museums en el stack de capas: si el click cae
+            // exactamente sobre un punto de origen o un museo, ese feature
+            // sigue ganando (e.features[0] es el de más arriba), el país
+            // solo responde en el resto del área del mapa.
+            <Source id="country-hit-src" type="geojson" data={countryPolygons}>
+              <Layer id="country-hit" type="fill" paint={{ "fill-color": "#000000", "fill-opacity": 0 }} />
+            </Source>
+          )}
           {timelineOpen && showTerritories && colonialOverlay && (
             <Source id="colonial-overlay-src" type="geojson" data={colonialOverlay}>
               <Layer
@@ -540,7 +618,14 @@ function App() {
             <Layer
               id="lines"
               type="line"
-              paint={{ "line-color": ["get", "color"], "line-width": 1.4, "line-opacity": 0.55 }}
+              paint={{
+                "line-color": ["get", "color"],
+                "line-width": 1.4,
+                // dimmed viene de highlightedObjectIds (búsqueda por país,
+                // 19/08 segunda vuelta) -- 0.55 de siempre cuando no hay país
+                // seleccionado o la línea pertenece a él, casi invisible si no.
+                "line-opacity": ["case", ["get", "dimmed"], 0.06, 0.55],
+              }}
             />
           </Source>
           <Source id="origins-src" type="geojson" data={originsGeoJSON}>
