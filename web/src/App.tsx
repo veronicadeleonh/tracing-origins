@@ -102,7 +102,11 @@ type PanelState =
   | { view: "object"; cluster: OriginCluster; object: MuseumObject; kind?: "country" }
   | null;
 
-type TooltipState = { longitude: number; latitude: number; text: string } | null;
+// Tooltip de 2 líneas (19/08, pedido de la usuaria) -- título en negrita
+// (nombre del punto: origen, museo o país) + una segunda línea con el dato
+// secundario (cuenta de piezas, ciudad del museo). Reemplaza el string
+// plano de una sola línea que tenía antes.
+type TooltipState = { longitude: number; latitude: number; title: string; subtitle: string } | null;
 
 function App() {
   const [visibleMuseums, setVisibleMuseums] = useState<Record<string, boolean>>(
@@ -348,9 +352,11 @@ function App() {
     if (e.features?.length) {
       const f = e.features[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> };
       const properties = f.properties ?? {};
-      let text: string;
+      let title: string;
+      let subtitle: string;
       if (f.layer?.id === "origins") {
-        text = s.tooltipOrigin(String(properties.label), Number(properties.count));
+        title = String(properties.label);
+        subtitle = s.tooltipPieceCount(Number(properties.count));
       } else if (f.layer?.id === "country-hit") {
         // Mismo lookup que handleClick, pero en hover: avisa de antemano si
         // ese país no tiene piezas en la muestra, para que el click (o la
@@ -358,13 +364,15 @@ function App() {
         const naturalEarthName = String(properties.name ?? "");
         const key = NATURAL_EARTH_NAME_TO_COUNTRY_KEY[naturalEarthName];
         const group = key ? countryGroups.find((g) => g.key === key) : undefined;
-        text = group && group.objects.length > 0
-          ? s.tooltipCountry(group.label, group.objects.length)
-          : s.tooltipCountryEmpty(naturalEarthName);
+        title = group?.label ?? naturalEarthName;
+        subtitle = group && group.objects.length > 0
+          ? s.tooltipPieceCount(group.objects.length)
+          : s.tooltipCountryEmptySub;
       } else {
-        text = `${properties.name} (${properties.city})`;
+        title = String(properties.name);
+        subtitle = String(properties.city);
       }
-      setTooltip({ longitude: e.lngLat.lng, latitude: e.lngLat.lat, text });
+      setTooltip({ longitude: e.lngLat.lng, latitude: e.lngLat.lat, title, subtitle });
       setCursor("pointer");
     } else {
       setTooltip(null);
@@ -480,10 +488,10 @@ function App() {
           </div>
         </div>
         <div className="country-click-row">
-          <div className="country-click-wrap">
+          <div className={`country-click-wrap${countryClickEnabled ? " active" : ""}`}>
             <button
               type="button"
-              className={`country-click-toggle${countryClickEnabled ? " active" : ""}`}
+              className="country-click-toggle"
               aria-pressed={countryClickEnabled}
               aria-label={s.countryClickToggleAria}
               onClick={() => setCountryClickEnabled((v) => !v)}
@@ -654,9 +662,11 @@ function App() {
               latitude={tooltip.latitude}
               closeButton={false}
               anchor="bottom"
+              className="map-tooltip-popup"
               style={{ pointerEvents: "none" }}
             >
-              {tooltip.text}
+              <div className="map-tooltip-title">{tooltip.title}</div>
+              <div className="map-tooltip-subtitle">{tooltip.subtitle}</div>
             </Popup>
           )}
         </Map>

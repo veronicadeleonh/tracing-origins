@@ -71,7 +71,11 @@ export interface I18nStrings {
   welcomeCloseAria: string;
   welcomeFinish: string;
 
-  tooltipOrigin: (label: string, count: number) => string;
+  // Tooltip de 2 líneas sobre el mapa (19/08) -- título en negrita + una
+  // segunda línea con el dato secundario. tooltipPieceCount es la segunda
+  // línea compartida por origins/country-hit (museums usa la ciudad
+  // directamente, sin traducción).
+  tooltipPieceCount: (count: number) => string;
   langToggleLabel: string;
 
   prevPieceAria: string;
@@ -88,8 +92,7 @@ export interface I18nStrings {
   countryClickToggleAria: string;
   countryClickNoteAria: string;
   countryClickNoteText: string;
-  tooltipCountry: (label: string, count: number) => string;
-  tooltipCountryEmpty: (label: string) => string;
+  tooltipCountryEmptySub: string;
   countryGroupMuseumHeader: (name: string, n: number) => string;
 }
 
@@ -191,7 +194,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     welcomeCloseAria: "Cerrar",
     welcomeFinish: "Entendido, ver el mapa",
 
-    tooltipOrigin: (label, count) => `${label} — ${count} pieza(s) (click para el detalle)`,
+    tooltipPieceCount: (count) => `${count} pieza${count === 1 ? "" : "s"}`,
     langToggleLabel: "EN",
 
     prevPieceAria: "Pieza anterior de este lugar",
@@ -208,8 +211,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countryClickToggleAria: "Activar búsqueda por países haciendo click en el mapa",
     countryClickNoteAria: "Sobre la búsqueda por país",
     countryClickNoteText: "Función nueva: con esto prendido, click en cualquier país del globo muestra todas sus piezas en los 3 museos y atenúa el resto de las líneas del mapa para resaltar solo las de ese país. Pasar el mouse por encima antes de clickear muestra cuántas piezas hay (o si no hay ninguna).",
-    tooltipCountry: (label, count) => `${label} — ${count} pieza(s) (click para ver la lista)`,
-    tooltipCountryEmpty: (label) => `${label} — sin piezas en esta muestra`,
+    tooltipCountryEmptySub: "Sin piezas en esta muestra",
     countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
   },
   en: {
@@ -309,7 +311,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     welcomeCloseAria: "Close",
     welcomeFinish: "Got it, see the map",
 
-    tooltipOrigin: (label, count) => `${label} — ${count} piece(s) (click for details)`,
+    tooltipPieceCount: (count) => `${count} piece${count === 1 ? "" : "s"}`,
     langToggleLabel: "ES",
 
     prevPieceAria: "Previous piece from this location",
@@ -326,8 +328,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countryClickToggleAria: "Enable searching by country by clicking the map",
     countryClickNoteAria: "About searching by country",
     countryClickNoteText: "New feature: with this on, clicking any country on the globe shows all its pieces across the 3 museums and dims the rest of the map's lines to highlight only that country's. Hovering before you click shows how many pieces there are (or whether there are none).",
-    tooltipCountry: (label, count) => `${label} — ${count} piece(s) (click to see the list)`,
-    tooltipCountryEmpty: (label) => `${label} — no pieces in this sample`,
+    tooltipCountryEmptySub: "No pieces in this sample",
     countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
   },
 };

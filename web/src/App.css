@@ -10,6 +10,36 @@
   position: relative;
 }
 
+/* Tooltip de 2 líneas sobre el mapa (19/08, pedido de la usuaria) — título
+   en negrita (punto de origen, museo o país) + una segunda línea con el
+   dato secundario (cuenta de piezas / ciudad), reemplazando el string de
+   una sola línea que tenía antes. Achica el padding default de Mapbox
+   (pensado para popups con botón de cerrar, más generoso de lo que hace
+   falta acá) y le saca la flecha/punta (mismo motivo: es un tooltip de
+   hover, no un popup con contenido para leer con calma). */
+.map-tooltip-popup .mapboxgl-popup-content {
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.map-tooltip-popup .mapboxgl-popup-tip {
+  display: none;
+}
+
+.map-tooltip-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.map-tooltip-subtitle {
+  font-size: 11px;
+  color: #77726a;
+  line-height: 1.3;
+}
+
 /* Contenedor de las 2 filas de controles arriba a la izquierda: toggles de
    museo (qué se ve) y filtro de investigación (18/08, otro eje de
    filtrado, separado a pedido de la usuaria para que no lea como parte del
@@ -189,9 +219,13 @@
 
 /* Búsqueda por país vía click en el mapa (19/08 — reemplazó al buscador de
    texto original, retirado a pedido de la usuaria; ver CLAUDE.md). Tercera
-   fila de top-controls: el toggle "Click en el mapa" + su botón "i"
-   (mismo patrón visual que .museum-info-btn/.museum-note en
-   .museum-toggle-wrap, reusado tal cual acá). */
+   fila de top-controls: un solo pill (.country-click-wrap) con el mismo
+   tratamiento visual que .museum-toggle-wrap — el botón "i" vive DENTRO de
+   ese pill, no como un círculo separado al lado (19/08, corrección de
+   formato pedida por la usuaria: "el botón de i tiene que estar dentro del
+   botón principal, siguiendo el patrón de los otros botones"). El pill
+   entero (no solo el texto) cambia a fondo violeta cuando el toggle está
+   prendido, mismo violeta que .research-filter-btn.active. */
 .country-click-row {
   display: flex;
   align-items: center;
@@ -203,33 +237,50 @@
   display: flex;
   align-items: center;
   gap: 4px;
+  background: rgba(251, 250, 247, 0.92);
+  border: 1px solid #e5e2da;
+  border-radius: 20px;
+  padding: 5px 6px 5px 12px;
+  transition: background 0.15s ease, border-color 0.15s ease;
 }
 
-/* Mismo tratamiento que .research-filter-btn.active (pill oscuro cuando
-   está prendido) para que se lea como el mismo lenguaje de toggle que el
-   resto de top-controls. */
+.country-click-wrap:hover {
+  border-color: #c9c4b8;
+}
+
+.country-click-wrap.active {
+  background: #6a4c93;
+  border-color: #6a4c93;
+}
+
 .country-click-toggle {
-  border: 1px solid #e5e2da;
-  background: rgba(251, 250, 247, 0.92);
+  border: none;
+  background: none;
   font: inherit;
   font-size: 12px;
   color: #77726a;
-  padding: 6px 12px;
-  border-radius: 20px;
+  padding: 0;
   cursor: pointer;
   white-space: nowrap;
 }
 
-.country-click-toggle:hover {
-  color: #1a1a1a;
-  border-color: #c9c4b8;
-}
-
-.country-click-toggle.active {
-  background: #6a4c93;
-  border-color: #6a4c93;
+.country-click-wrap.active .country-click-toggle {
   color: #fbfaf7;
   font-weight: 500;
+}
+
+/* .museum-info-btn se reusa tal cual para el botón "i" -- estos overrides
+   solo ajustan su contraste cuando el pill que lo contiene está activo
+   (fondo violeta en vez del crema default). */
+.country-click-wrap.active .museum-info-btn {
+  border-color: rgba(251, 250, 247, 0.55);
+  color: rgba(251, 250, 247, 0.85);
+}
+
+.country-click-wrap.active .museum-info-btn:hover {
+  background: rgba(251, 250, 247, 0.18);
+  color: #fbfaf7;
+  border-color: #fbfaf7;
 }
 
 .curated-note-wrap {
