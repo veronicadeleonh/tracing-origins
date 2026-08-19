@@ -411,7 +411,13 @@ CULTURE_KEYWORDS = [
 def resolve_from_culture(culture: str) -> dict | None:
     for keyword, (lat, lon) in CULTURE_KEYWORDS:
         if _keyword_matches(keyword, culture):
-            return {"label": culture, "label_en": culture, "precision": "culture", "lat": lat, "lon": lon}
+            origin_country = _country_for_keyword(keyword)
+            return {
+                "label": culture, "label_en": culture, "precision": "culture",
+                "lat": lat, "lon": lon,
+                "country": origin_country[0] if origin_country else None,
+                "country_en": origin_country[1] if origin_country else None,
+            }
     return None
 
 
@@ -443,6 +449,8 @@ EDITORIAL_ORIGIN_OVERRIDES: dict[str, dict] = {
         "precision": "editorial",
         "lat": 30.9626,
         "lon": 46.1039,
+        "country": "Irak",
+        "country_en": "Iraq",
     },
     # Tiare de Saitapharnes -- falsificación moderna (ver context.csv). El
     # registro del Louvre marca placeOfDiscovery como "Inconnu" a propósito
@@ -456,8 +464,312 @@ EDITORIAL_ORIGIN_OVERRIDES: dict[str, dict] = {
         "precision": "editorial",
         "lat": 46.4825,
         "lon": 30.7233,
+        "country": "Ucrania",
+        "country_en": "Ukraine",
     },
 }
+
+
+# ---------------------------------------------------------------------------
+# País moderno de origen (19/08) — para la búsqueda "al revés" por país
+# (elegir un país y ver qué piezas de ahí están en cualquiera de los 3
+# museos, ver CLAUDE.md "Pendiente de decidir"). Es un campo NUEVO y
+# separado de origin_label: origin_label sigue siendo lo más específico que
+# tengamos (un sitio arqueológico, una región histórica, un país), pensado
+# para mostrarse en la ficha de la pieza; origin_country es siempre un país
+# moderno reconocible, pensado para filtrar/buscar, incluso cuando
+# origin_label es un sitio puntual ("Nimrud") o una región sin país en el
+# nombre ("Mesopotamia", "Luristán").
+#
+# Dos mecanismos, según qué matcheó resolve_origin*():
+#
+# 1. KEYWORD_COUNTRY — cuando lo que matcheó ya es (o corresponde 1:1 a) un
+#    país: las claves de COUNTRY_COORDS/CULTURE_KEYWORDS (Met) y
+#    LOUVRE_COUNTRY_KEYWORDS (Louvre). La mayoría son nombres de país
+#    directos (a veces en francés); un puñado son regiones históricas sin
+#    ambigüedad real para nuestro propósito (Luristán/Perse/Elam -> Irán,
+#    Assyrie/Mésopotamie/Babylonie/Sumer -> Irak, Anatolie -> Turquía,
+#    Levant -> Siria como aproximación) o etnónimos culturales del Met
+#    (Roman/Etruscan -> Italia, Greek/Corinthian/Argive/Attic -> Grecia).
+#    "Proche-Orient" (Louvre) queda sin país a propósito: es una región
+#    demasiado difusa (todo el Cercano Oriente) para asignarle un solo país
+#    sin que sea directamente engañoso.
+#
+# 2. SITE_COUNTRY_BY_POINT — cuando lo que matcheó es un sitio puntual
+#    (LOUVRE_SITE_COORDS/BM_SITE_COORDS/SUBREGION_COORDS/REGION_COORDS,
+#    ~150 puntos): no tiene sentido mantener un país a mano por cada sitio
+#    arqueológico, así que se generó una sola vez, offline, con el paquete
+#    reverse_geocode (dataset de ~10mil ciudades, sin red — mismo espíritu
+#    que "sin llamadas a Nominatim en bulk") corrido contra los puntos
+#    lat/lon que YA vive en este archivo, y el resultado se horneó acá como
+#    tabla estática — reverse_geocode NO es una dependencia del pipeline en
+#    tiempo de ejecución (no está en requirements.txt), se usó una sola vez
+#    para generar estos ~150 pares y después se revisó a mano. Un solo error
+#    encontrado en esa revisión: Haida Gwaii (53.25, -132.0) resolvía a
+#    Estados Unidos (matcheaba Metlakatla, Alaska, la ciudad más cercana en
+#    el dataset) en vez de Canadá (Columbia Británica, donde está en
+#    realidad) — corregido a mano abajo. El punto (30.0, 40.0), centroide
+#    genérico de "Middle East" (REGION_COORDS del Met, mismo centroide que
+#    "Proche-Orient" del Louvre pero ese usa el mecanismo de keyword, no de
+#    punto), se excluyó por el mismo motivo que "Proche-Orient": no hay un
+#    país real ahí, es un punto medio inventado para toda la región.
+KEYWORD_COUNTRY: dict[str, tuple[str, str] | None] = {
+    # Met COUNTRY_COORDS — ya son nombres de país
+    "Egypt": ("Egipto", "Egypt"),
+    "United States": ("Estados Unidos", "United States"),
+    "Guatemala": ("Guatemala", "Guatemala"),
+    "Peru": ("Perú", "Peru"),
+    "Colombia": ("Colombia", "Colombia"),
+    "Democratic Republic of the Congo": ("República Democrática del Congo", "Democratic Republic of the Congo"),
+    "Mexico": ("México", "Mexico"),
+    "China": ("China", "China"),
+    "Japan": ("Japón", "Japan"),
+    "India": ("India", "India"),
+    "Iran": ("Irán", "Iran"),
+    "Iraq": ("Irak", "Iraq"),
+    "Turkey": ("Turquía", "Turkey"),
+    "Greece": ("Grecia", "Greece"),
+    "Italy": ("Italia", "Italy"),
+    "France": ("Francia", "France"),
+    "Nigeria": ("Nigeria", "Nigeria"),
+    "Sudan": ("Sudán", "Sudan"),
+    "Ethiopia": ("Etiopía", "Ethiopia"),
+    "Syria": ("Siria", "Syria"),
+    "Cyprus": ("Chipre", "Cyprus"),
+    "present-day Uzbekistan": ("Uzbekistán", "Uzbekistan"),
+    "probably Iran": ("Irán", "Iran"),
+    "Indonesia": ("Indonesia", "Indonesia"),
+    "Ghana": ("Ghana", "Ghana"),
+    "Côte d'Ivoire": ("Costa de Marfil", "Côte d'Ivoire"),
+    "Papua New Guinea": ("Papúa Nueva Guinea", "Papua New Guinea"),
+    "Benin": ("Benín", "Benin"),
+    "Mali": ("Malí", "Mali"),
+    "Cameroon": ("Camerún", "Cameroon"),
+    "Bolivia": ("Bolivia", "Bolivia"),
+    "Ecuador": ("Ecuador", "Ecuador"),
+    # Met CULTURE_KEYWORDS — etnónimos/adjetivos culturales, mapeados al país
+    # moderno más asociado (mismo criterio que ya usa CULTURE_KEYWORDS para
+    # elegir una coordenada aproximada)
+    "Cypriot": ("Chipre", "Cyprus"),
+    "Etruscan": ("Italia", "Italy"),
+    "Corinthian": ("Grecia", "Greece"),
+    "Argive": ("Grecia", "Greece"),
+    "Attic": ("Grecia", "Greece"),
+    "South Italian": ("Italia", "Italy"),
+    "Greek": ("Grecia", "Greece"),
+    "Roman": ("Italia", "Italy"),
+    "Korea": ("Corea", "Korea"),
+    "Mongolia": ("Mongolia", "Mongolia"),
+    "Tibet": ("China", "China"),
+    "Nepal": ("Nepal", "Nepal"),
+    "Sri Lanka": ("Sri Lanka", "Sri Lanka"),
+    "Pakistan": ("Pakistán", "Pakistan"),
+    "Afghanistan": ("Afganistán", "Afghanistan"),
+    "Myanmar": ("Birmania (Myanmar)", "Myanmar (Burma)"),
+    "Burma": ("Birmania (Myanmar)", "Myanmar (Burma)"),
+    "Thailand": ("Tailandia", "Thailand"),
+    "Cambodia": ("Camboya", "Cambodia"),
+    "Vietnam": ("Vietnam", "Vietnam"),
+    "British": ("Reino Unido", "United Kingdom"),
+    # Louvre LOUVRE_COUNTRY_KEYWORDS — francés, países directos + un puñado
+    # de regiones históricas mapeadas a su país moderno más asociado
+    "Chypre": ("Chipre", "Cyprus"),
+    "Égypte": ("Egipto", "Egypt"),
+    "Egypte": ("Egipto", "Egypt"),
+    "Irak": ("Irak", "Iraq"),
+    "Turquie": ("Turquía", "Turkey"),
+    "Grèce": ("Grecia", "Greece"),
+    "Luristan": ("Irán", "Iran"),
+    "Assyrie": ("Irak", "Iraq"),
+    "Etrurie": ("Italia", "Italy"),
+    "Étrurie": ("Italia", "Italy"),
+    "Italie": ("Italia", "Italy"),
+    "Syrie": ("Siria", "Syria"),
+    "Espagne": ("España", "Spain"),
+    "Maroc": ("Marruecos", "Morocco"),
+    "Liban": ("Líbano", "Lebanon"),
+    "Ouzbékistan": ("Uzbekistán", "Uzbekistan"),
+    "Inde": ("India", "India"),
+    "Indonésie": ("Indonesia", "Indonesia"),
+    "Anatolie": ("Turquía", "Turkey"),
+    "Mésopotamie": ("Irak", "Iraq"),
+    "Proche-Orient": None,
+    "Levant": ("Siria", "Syria"),
+    "Perse": ("Irán", "Iran"),
+    "Elam": ("Irán", "Iran"),
+    "Babylonie": ("Irak", "Iraq"),
+    "Sumer": ("Irak", "Iraq"),
+    "Tunisie": ("Túnez", "Tunisia"),
+    "Sicile": ("Italia", "Italy"),
+}
+
+# Generado offline el 19/08 con reverse_geocode contra los puntos lat/lon de
+# SUBREGION_COORDS/REGION_COORDS (Met) + LOUVRE_SITE_COORDS + BM_SITE_COORDS,
+# revisado a mano (ver comentario arriba) — no es una dependencia del
+# pipeline en tiempo de ejecución.
+SITE_COUNTRY_BY_POINT: dict[tuple[float, float], tuple[str, str]] = {
+    (-27.1836, -109.4306): ("Chile", "Chile"),
+    (-27.1667, -109.4333): ("Chile", "Chile"),
+    (-22.5752, 144.0848): ("Australia", "Australia"),
+    (-20.2675, 30.9337): ("Zimbabue", "Zimbabwe"),
+    (-18.65, -173.98): ("Tonga", "Tonga"),
+    (-18.4783, -70.3126): ("Chile", "Chile"),
+    (-17.65, -67.95): ("Bolivia", "Bolivia"),
+    (-16.25, 168.1167): ("Vanuatu", "Vanuatu"),
+    (-8.1116, -79.029): ("Perú", "Peru"),
+    (-7.5, 110.0): ("Indonesia", "Indonesia"),
+    (-6.1659, 39.2026): ("Tanzania", "Tanzania"),
+    (-4.1, 143.9): ("Papúa Nueva Guinea", "Papua New Guinea"),
+    (-2.9006, -79.0045): ("Ecuador", "Ecuador"),
+    (-0.5333, 31.4167): ("Uganda", "Uganda"),
+    (0.2667, 32.65): ("Uganda", "Uganda"),
+    (6.335, 5.6037): ("Nigeria", "Nigeria"),
+    (6.6885, -1.6244): ("Ghana", "Ghana"),
+    (6.75, -1.5): ("Ghana", "Ghana"),
+    (7.4905, 4.5521): ("Nigeria", "Nigeria"),
+    (7.54, -5.5471): ("Costa de Marfil", "Côte d'Ivoire"),
+    (8.5711, 81.2335): ("Sri Lanka", "Sri Lanka"),
+    (10.2167, 105.1333): ("Vietnam", "Vietnam"),
+    (10.391, -75.4794): ("Colombia", "Colombia"),
+    (11.2408, -74.199): ("Colombia", "Colombia"),
+    (11.8, 39.7): ("Etiopía", "Ethiopia"),
+    (13.4125, 103.867): ("Camboya", "Cambodia"),
+    (14.1211, 38.7167): ("Etiopía", "Ethiopia"),
+    (15.1167, -10.5667): ("Malí", "Mali"),
+    (15.4045, -91.1502): ("Guatemala", "Guatemala"),
+    (15.43, 45.3286): ("Yemen", "Yemen"),
+    (16.573, 80.3567): ("India", "India"),
+    (16.9333, 33.75): ("Sudán", "Sudan"),
+    (19.0, -99.0): ("México", "Mexico"),
+    (19.08, 30.36): ("Sudán", "Sudan"),
+    (19.8968, -155.5828): ("Estados Unidos", "United States"),
+    (21.9588, 96.0891): ("Birmania (Myanmar)", "Myanmar (Burma)"),
+    (22.1833, 31.9): ("Egipto", "Egypt"),
+    (24.0833, 32.8833): ("Egipto", "Egypt"),
+    (24.0889, 32.8998): ("Egipto", "Egypt"),
+    (24.3745, 88.6042): ("Bangladés", "Bangladesh"),
+    (24.4514, 32.9283): ("Egipto", "Egypt"),
+    (25.1167, 32.8): ("Egipto", "Egypt"),
+    (25.6167, 32.5333): ("Egipto", "Egypt"),
+    (25.6872, 32.6396): ("Egipto", "Egypt"),
+    (25.7188, 32.6081): ("Egipto", "Egypt"),
+    (25.7188, 32.6573): ("Egipto", "Egypt"),
+    (25.728, 32.6014): ("Egipto", "Egypt"),
+    (25.75, 32.6333): ("Egipto", "Egypt"),
+    (26.14, 32.67): ("Egipto", "Egypt"),
+    (26.1417, 32.6706): ("Egipto", "Egypt"),
+    (26.15, 32.5): ("Egipto", "Egypt"),
+    (26.1833, 31.9192): ("Egipto", "Egypt"),
+    (27.1809, 31.1837): ("Egipto", "Egypt"),
+    (27.6453, 30.9017): ("Egipto", "Egypt"),
+    (29.5667, 31.2167): ("Egipto", "Egypt"),
+    (29.65, 91.1): ("China", "China"),
+    (29.8483, 31.25): ("Egipto", "Egypt"),
+    (29.85, 31.25): ("Egipto", "Egypt"),
+    (29.8714, 31.2164): ("Egipto", "Egypt"),
+    (29.924, 31.1739): ("Egipto", "Egypt"),
+    (29.9354, 52.8916): ("Irán", "Iran"),
+    (29.9765, 31.1313): ("Egipto", "Egypt"),
+    (30.1167, 31.2167): ("Egipto", "Egypt"),
+    (30.2839, 57.0834): ("Irán", "Iran"),
+    (30.65, 31.65): ("Egipto", "Egypt"),
+    (30.7, 31.65): ("Egipto", "Egypt"),
+    (30.9626, 46.1039): ("Irak", "Iraq"),
+    (31.0, -7.9): ("Marruecos", "Morocco"),
+    (31.24, 45.8583): ("Irak", "Iraq"),
+    (31.3225, 45.6367): ("Irak", "Iraq"),
+    (31.4022, 30.4181): ("Egipto", "Egypt"),
+    (31.4342, 46.5342): ("Irak", "Iraq"),
+    (31.5, 35.7833): ("Jordania", "Jordan"),
+    (31.59, 46.15): ("Irak", "Iraq"),
+    (31.7683, 35.2137): ("Israel", "Israel"),
+    (31.7745, 35.2354): ("Palestina", "Palestine"),
+    (32.1167, 20.0667): ("Libia", "Libya"),
+    (32.13, 45.24): ("Irak", "Iraq"),
+    (32.1881, 48.2578): ("Irán", "Iran"),
+    (32.4279, 53.688): ("Irán", "Iran"),
+    (32.5425, 44.4213): ("Irak", "Iraq"),
+    (32.585, 35.1836): ("Israel", "Israel"),
+    (32.75, 36.75): ("Siria", "Syria"),
+    (33.0, 44.0): ("Irak", "Iraq"),
+    (33.2704, 35.2038): ("Líbano", "Lebanon"),
+    (33.5, 36.0): ("Siria", "Syria"),
+    (33.5, 45.5): ("Irak", "Iraq"),
+    (33.5, 47.5): ("Irán", "Iran"),
+    (34.0, 71.5): ("Pakistán", "Pakistan"),
+    (34.0059, 36.2042): ("Líbano", "Lebanon"),
+    (34.1208, 35.6478): ("Líbano", "Lebanon"),
+    (34.43, 70.45): ("Afganistán", "Afghanistan"),
+    (34.5514, 38.2792): ("Siria", "Syria"),
+    (34.5514, 40.8908): ("Siria", "Syria"),
+    (34.7167, 33.1333): ("Chipre", "Cyprus"),
+    (34.8021, 38.9968): ("Siria", "Syria"),
+    (34.8828, -1.3167): ("Argelia", "Algeria"),
+    (35.32, 24.75): ("Grecia", "Greece"),
+    (35.4553, 43.2588): ("Irak", "Iraq"),
+    (35.6017, 35.7822): ("Siria", "Syria"),
+    (35.85, 36.75): ("Siria", "Syria"),
+    (35.95, 54.38): ("Irán", "Iran"),
+    (36.0, 62.0): ("Turkmenistán", "Turkmenistan"),
+    (36.05, 47.3): ("Irán", "Iran"),
+    (36.0994, 43.325): ("Irak", "Iraq"),
+    (36.1833, 37.2333): ("Siria", "Syria"),
+    (36.2021, 36.1603): ("Turquía", "Turkey"),
+    (36.36, 43.15): ("Irak", "Iraq"),
+    (36.4, 42.0): ("Irak", "Iraq"),
+    (36.4341, 28.2176): ("Grecia", "Greece"),
+    (36.4667, -5.7167): ("España", "Spain"),
+    (36.5, 38.05): ("Siria", "Syria"),
+    (36.5117, 43.2278): ("Irak", "Iraq"),
+    (36.6833, 27.3667): ("Grecia", "Greece"),
+    (36.69, 24.43): ("Grecia", "Greece"),
+    (36.75, 38.8667): ("Turquía", "Turkey"),
+    (36.75, 66.9): ("Afganistán", "Afghanistan"),
+    (36.8167, 38.0167): ("Siria", "Syria"),
+    (37.0, 39.0): ("Turquía", "Turkey"),
+    (37.0853, 25.1488): ("Grecia", "Greece"),
+    (37.15, 68.3667): ("Tayikistán", "Tajikistan"),
+    (37.3964, 25.2686): ("Grecia", "Greece"),
+    (37.6333, 22.7333): ("Grecia", "Greece"),
+    (37.6383, 21.63): ("Grecia", "Greece"),
+    (37.75, 26.8): ("Grecia", "Greece"),
+    (37.9715, 23.7267): ("Grecia", "Greece"),
+    (37.9838, 23.7275): ("Grecia", "Greece"),
+    (38.19, 34.17): ("Turquía", "Turkey"),
+    (38.3167, 23.5333): ("Grecia", "Greece"),
+    (38.4824, 22.501): ("Grecia", "Greece"),
+    (38.85, 35.62): ("Turquía", "Turkey"),
+    (39.0, 35.0): ("Turquía", "Turkey"),
+    (39.2975, 22.3961): ("Grecia", "Greece"),
+    (39.7833, 35.75): ("Turquía", "Turkey"),
+    (40.0, -4.0): ("España", "Spain"),
+    (40.0084, 116.2966): ("China", "China"),
+    (40.4708, 25.5228): ("Grecia", "Greece"),
+    (40.7461, 14.4989): ("Italia", "Italy"),
+    (40.7833, 24.7): ("Grecia", "Greece"),
+    (40.8058, 14.3487): ("Italia", "Italy"),
+    (41.9028, 12.4964): ("Italia", "Italy"),
+    (41.995, 12.103): ("Italia", "Italy"),
+    (42.25, 11.75): ("Italia", "Italy"),
+    (42.42, 11.625): ("Italia", "Italy"),
+    (43.2203, 142.8635): ("Japón", "Japan"),
+    (43.6763, 4.628): ("Francia", "France"),
+    # Haida Gwaii -- corregido a mano: el punto reverse-geocodeaba a Estados
+    # Unidos (Metlakatla, Alaska, la ciudad más cercana en el dataset de
+    # reverse_geocode) pero Haida Gwaii es Columbia Británica, Canadá.
+    (53.25, -132.0): ("Canadá", "Canada"),
+    (64.8255, -124.8457): ("Canadá", "Canada"),
+}
+
+
+def _country_for_keyword(keyword: str) -> tuple[str, str] | None:
+    return KEYWORD_COUNTRY.get(keyword)
+
+
+def _country_for_point(lat: float | None, lon: float | None) -> tuple[str, str] | None:
+    if lat is None or lon is None:
+        return None
+    return SITE_COUNTRY_BY_POINT.get((lat, lon))
 
 
 def resolve_origin(obj: dict) -> dict:
@@ -472,15 +784,33 @@ def resolve_origin(obj: dict) -> dict:
 
     if subregion in SUBREGION_COORDS:
         lat, lon = SUBREGION_COORDS[subregion]
-        return {"label": es_label(subregion), "label_en": en_label(subregion), "precision": "subregion", "lat": lat, "lon": lon}
+        origin_country = _country_for_point(lat, lon)
+        return {
+            "label": es_label(subregion), "label_en": en_label(subregion), "precision": "subregion",
+            "lat": lat, "lon": lon,
+            "country": origin_country[0] if origin_country else None,
+            "country_en": origin_country[1] if origin_country else None,
+        }
 
     if region in REGION_COORDS:
         lat, lon = REGION_COORDS[region]
-        return {"label": es_label(region), "label_en": en_label(region), "precision": "region", "lat": lat, "lon": lon}
+        origin_country = _country_for_point(lat, lon)
+        return {
+            "label": es_label(region), "label_en": en_label(region), "precision": "region",
+            "lat": lat, "lon": lon,
+            "country": origin_country[0] if origin_country else None,
+            "country_en": origin_country[1] if origin_country else None,
+        }
 
     if country in COUNTRY_COORDS:
         lat, lon = COUNTRY_COORDS[country]
-        return {"label": es_label(country), "label_en": en_label(country), "precision": "country", "lat": lat, "lon": lon}
+        origin_country = _country_for_keyword(country)
+        return {
+            "label": es_label(country), "label_en": en_label(country), "precision": "country",
+            "lat": lat, "lon": lon,
+            "country": origin_country[0] if origin_country else None,
+            "country_en": origin_country[1] if origin_country else None,
+        }
 
     culture = (obj.get("culture") or "").strip()
     if culture:
@@ -489,7 +819,7 @@ def resolve_origin(obj: dict) -> dict:
             return from_culture
 
     raw_label = subregion or region or country or culture or ""
-    return {"label": raw_label, "label_en": raw_label, "precision": "unresolved", "lat": None, "lon": None}
+    return {"label": raw_label, "label_en": raw_label, "precision": "unresolved", "lat": None, "lon": None, "country": None, "country_en": None}
 
 
 # ---------------------------------------------------------------------------
@@ -639,13 +969,25 @@ def resolve_origin_louvre(obj: dict) -> dict:
 
     for site, (lat, lon) in LOUVRE_SITE_COORDS:
         if _keyword_matches(site, haystack):
-            return {"label": es_label(site), "label_en": en_label(site), "precision": "site", "lat": lat, "lon": lon}
+            origin_country = _country_for_point(lat, lon)
+            return {
+                "label": es_label(site), "label_en": en_label(site), "precision": "site",
+                "lat": lat, "lon": lon,
+                "country": origin_country[0] if origin_country else None,
+                "country_en": origin_country[1] if origin_country else None,
+            }
 
     for country, (lat, lon) in LOUVRE_COUNTRY_KEYWORDS:
         if _keyword_matches(country, haystack):
-            return {"label": es_label(country), "label_en": en_label(country), "precision": "country", "lat": lat, "lon": lon}
+            origin_country = _country_for_keyword(country)
+            return {
+                "label": es_label(country), "label_en": en_label(country), "precision": "country",
+                "lat": lat, "lon": lon,
+                "country": origin_country[0] if origin_country else None,
+                "country_en": origin_country[1] if origin_country else None,
+            }
 
-    return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None}
+    return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None, "country": None, "country_en": None}
 
 
 # ---------------------------------------------------------------------------
@@ -803,6 +1145,20 @@ BM_COUNTRY_KEYWORDS = [
 ]
 
 
+# País moderno para BM_COUNTRY_KEYWORDS (19/08): a diferencia de Met/Louvre,
+# casi todas las keywords de BM_COUNTRY_KEYWORDS YA son nombres de país
+# limpios (traen su propio display_es/display_en, reusado directamente como
+# país) -- solo hace falta un override puntual para las pocas que no son un
+# país en sentido estricto (un territorio insular, una región dentro de otro
+# país).
+BM_COUNTRY_FIELD_OVERRIDES: dict[str, tuple[str, str]] = {
+    "Easter Island": ("Chile", "Chile"),  # Rapa Nui es territorio chileno
+    "New Guinea": ("Papúa Nueva Guinea", "Papua New Guinea"),
+    "Tibet": ("China", "China"),
+    "Trinidad": ("Trinidad y Tobago", "Trinidad and Tobago"),
+}
+
+
 def resolve_origin_bm(obj: dict) -> dict:
     """
     Igual idea que resolve_origin_louvre() pero para el BM: preferimos
@@ -825,10 +1181,21 @@ def resolve_origin_bm(obj: dict) -> dict:
 
     for site, display_es, display_en, (lat, lon) in BM_SITE_COORDS:
         if _keyword_matches(site, haystack):
-            return {"label": display_es, "label_en": display_en, "precision": "site", "lat": lat, "lon": lon}
+            origin_country = _country_for_point(lat, lon)
+            return {
+                "label": display_es, "label_en": display_en, "precision": "site",
+                "lat": lat, "lon": lon,
+                "country": origin_country[0] if origin_country else None,
+                "country_en": origin_country[1] if origin_country else None,
+            }
 
     for country, display_es, display_en, (lat, lon) in BM_COUNTRY_KEYWORDS:
         if _keyword_matches(country, haystack):
-            return {"label": display_es, "label_en": display_en, "precision": "country", "lat": lat, "lon": lon}
+            origin_country = BM_COUNTRY_FIELD_OVERRIDES.get(country, (display_es, display_en))
+            return {
+                "label": display_es, "label_en": display_en, "precision": "country",
+                "lat": lat, "lon": lon,
+                "country": origin_country[0], "country_en": origin_country[1],
+            }
 
-    return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None}
+    return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None, "country": None, "country_en": None}

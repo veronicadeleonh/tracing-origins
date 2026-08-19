@@ -4,7 +4,7 @@ import type { MapMouseEvent } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import data from "./data/objects.json";
 import type { DataBundle, MuseumObject } from "./types";
-import { groupByOrigin, jitteredPoint, objectHasResearch, type OriginCluster } from "./geo";
+import { groupByCountry, groupByOrigin, jitteredPoint, objectHasResearch, type OriginCluster } from "./geo";
 import { MUSEUM_COLORS, DEFAULT_COLOR, ORIGIN_COLOR } from "./colors";
 import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
@@ -84,9 +84,15 @@ const ROUTES_TOGGLE_ICON = (
   </svg>
 );
 
+// `kind: "country"` (19/08) marca que `cluster` no es un punto de origen real
+// sino un resultado de la búsqueda "al revés" por país (ver groupByCountry en
+// geo.ts) — mismo shape que OriginCluster (label + objects, lat/lon sin uso
+// real acá), reusado tal cual para no duplicar ClusterPanel/ObjectDetail ni
+// la lógica de prev/next. Sin `kind`, el comportamiento es exactamente el de
+// siempre (click en un punto de origen del mapa).
 type PanelState =
-  | { view: "cluster"; cluster: OriginCluster }
-  | { view: "object"; cluster: OriginCluster; object: MuseumObject }
+  | { view: "cluster"; cluster: OriginCluster; kind?: "country" }
+  | { view: "object"; cluster: OriginCluster; object: MuseumObject; kind?: "country" }
   | null;
 
 type TooltipState = { longitude: number; latitude: number; text: string } | null;
@@ -100,6 +106,12 @@ function App() {
   // marcar qué piezas tienen layer 3, dejar ocultar/mostrar según eso.
   // "all" es el default — no cambia el comportamiento previo.
   const [researchFilter, setResearchFilter] = useState<"all" | "with" | "without">("all");
+  // Búsqueda "al revés" por país (19/08) — texto libre + dropdown de
+  // sugerencias, independiente de museum-toggles/research-filter a propósito
+  // (ver groupByCountry en geo.ts): el objetivo es "¿qué piezas de este país
+  // hay en cualquiera de los 3 museos?", no "de lo que tengo prendido ahora".
+  const [countryQuery, setCountryQuery] = useState("");
+  const [countrySearchOpen, setCountrySearchOpen] = useState(false);
   const [panel, setPanel] = useState<PanelState>(null);
   const [tooltip, setTooltip] = useState<TooltipState>(null);
   const [cursor, setCursor] = useState("grab");
@@ -198,6 +210,15 @@ function App() {
 
   const clusters = useMemo(() => groupByOrigin(visibleObjects, lang), [visibleObjects, lang]);
 
+  // Búsqueda por país: agrupa TODOS los objetos (bundle.objects, no
+  // visibleObjects) — ver comentario en groupByCountry (geo.ts).
+  const countryGroups = useMemo(() => groupByCountry(bundle.objects, lang), [lang]);
+  const filteredCountryOptions = useMemo(() => {
+    const q = countryQuery.trim().toLowerCase();
+    if (!q) return [];
+    return countryGroups.filter((g) => g.label.toLowerCase().includes(q)).slice(0, 8);
+  }, [countryGroups, countryQuery]);
+
   const linesGeoJSON = useMemo(() => ({
     type: "FeatureCollection" as const,
     features: clusters.flatMap((cluster) =>
@@ -276,8 +297,14 @@ function App() {
       if (!prev) return prev;
       const object = prev.cluster.objects[index];
       if (!object) return prev;
-      return { view: "object", cluster: prev.cluster, object };
+      return { view: "object", cluster: prev.cluster, object, kind: prev.kind };
     });
+  }, []);
+
+  const selectCountryGroup = useCallback((group: { label: string; objects: MuseumObject[] }) => {
+    setPanel({ view: "cluster", cluster: { lat: 0, lon: 0, label: group.label, objects: group.objects }, kind: "country" });
+    setCountryQuery("");
+    setCountrySearchOpen(false);
   }, []);
 
   const handleMouseMove = useCallback((e: MapMouseEvent) => {
@@ -400,6 +427,42 @@ function App() {
                 {s.researchFilterLabels[value]}
               </button>
             ))}
+          </div>
+        </div>
+        <div className="country-search-row">
+          <span className="filter-row-label">{s.countrySearchLabel}</span>
+          <div className="country-search-wrap">
+            <input
+              type="text"
+              className="country-search-input"
+              placeholder={s.countrySearchPlaceholder}
+              value={countryQuery}
+              onChange={(e) => {
+                setCountryQuery(e.target.value);
+                setCountrySearchOpen(true);
+              }}
+              onFocus={() => setCountrySearchOpen(true)}
+              onBlur={() => setTimeout(() => setCountrySearchOpen(false), 150)}
+            />
+            {countrySearchOpen && countryQuery.trim() && (
+              <div className="country-search-dropdown">
+                {filteredCountryOptions.length === 0 && (
+                  <div className="country-search-empty">{s.countrySearchNoResults}</div>
+                )}
+                {filteredCountryOptions.map((group) => (
+                  <button
+                    key={group.key}
+                    type="button"
+                    className="country-search-option"
+                    onMouseDown={(e) => e.preventDefault()}
+                    onClick={() => selectCountryGroup(group)}
+                  >
+                    <span>{group.label}</span>
+                    <span className="country-search-count">{group.objects.length}</span>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         </div>
@@ -582,7 +645,10 @@ function App() {
           cluster={panel.cluster}
           lang={lang}
           onClose={() => setPanel(null)}
-          onSelectObject={(object) => setPanel({ view: "object", cluster: panel.cluster, object })}
+          onSelectObject={(object) => setPanel({ view: "object", cluster: panel.cluster, object, kind: panel.kind })}
+          showOriginAndMuseum={panel.kind === "country"}
+          museums={bundle.museums}
+          subtitleOverride={panel.kind === "country" ? s.countryResultsSubtitle(panel.cluster.objects.length) : undefined}
         />
       )}
       {panel?.view === "object" && (() => {
@@ -594,7 +660,7 @@ function App() {
             object={panel.object}
             museums={bundle.museums}
             lang={lang}
-            onBack={() => setPanel({ view: "cluster", cluster: panel.cluster })}
+            onBack={() => setPanel({ view: "cluster", cluster: panel.cluster, kind: panel.kind })}
             onClose={() => setPanel(null)}
             clusterPosition={clusterPosition}
             onPrev={index > 0 ? () => selectClusterObject(index - 1) : undefined}

@@ -49,6 +49,14 @@ export interface MuseumObject {
   originPrecision: string | null;
   originLat: number;
   originLon: number;
+  // País moderno de origen (19/08, búsqueda "al revés" por país) — separado
+  // de originLabel a propósito: originLabel puede ser un sitio puntual
+  // ("Nimrud") o una región histórica ("Luristán"), originCountry es
+  // siempre un país moderno reconocible, o null en el puñado de casos
+  // donde el origen es demasiado difuso para asignarle uno solo (ver
+  // geocode.py, KEYWORD_COUNTRY).
+  originCountry: string | null;
+  originCountryEn: string | null;
   context: ObjectContext | null;
   events: ProvenanceEvent[];
 }

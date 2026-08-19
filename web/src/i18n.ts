@@ -82,6 +82,11 @@ export interface I18nStrings {
 
   imageExpandAria: string;
   imageCollapseAria: string;
+
+  countrySearchLabel: string;
+  countrySearchPlaceholder: string;
+  countrySearchNoResults: string;
+  countryResultsSubtitle: (n: number) => string;
 }
 
 export const STRINGS: Record<Lang, I18nStrings> = {
@@ -193,6 +198,11 @@ export const STRINGS: Record<Lang, I18nStrings> = {
 
     imageExpandAria: "Ver imagen completa",
     imageCollapseAria: "Volver al tamaño recortado",
+
+    countrySearchLabel: "Buscar por país:",
+    countrySearchPlaceholder: "Ej. Egipto, Perú, Nigeria…",
+    countrySearchNoResults: "Sin resultados",
+    countryResultsSubtitle: (n) => `${n} pieza${n === 1 ? "" : "s"} en los 3 museos, sin importar los filtros de arriba`,
   },
   en: {
     museumInfoAria: (name) => `About the provenance of ${name}'s pieces`,
@@ -302,5 +312,10 @@ export const STRINGS: Record<Lang, I18nStrings> = {
 
     imageExpandAria: "View full image",
     imageCollapseAria: "Back to cropped size",
+
+    countrySearchLabel: "Search by country:",
+    countrySearchPlaceholder: "e.g. Egypt, Peru, Nigeria…",
+    countrySearchNoResults: "No results",
+    countryResultsSubtitle: (n) => `${n} piece${n === 1 ? "" : "s"} across all 3 museums, regardless of the filters above`,
   },
 };

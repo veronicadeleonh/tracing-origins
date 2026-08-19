@@ -130,6 +130,8 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
         "originPrecision": row.get("origin_precision") or None,
         "originLat": float(row["origin_lat"]),
         "originLon": float(row["origin_lon"]),
+        "originCountry": row.get("origin_country") or None,
+        "originCountryEn": row.get("origin_country_en") or row.get("origin_country") or None,
         "context": context_out,
         "events": obj_events,
     }

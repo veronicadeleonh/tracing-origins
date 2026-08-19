@@ -34,6 +34,43 @@ export function objectHasResearch(obj: MuseumObject): boolean {
   return !!obj.context || obj.events.length > 0;
 }
 
+// Búsqueda "al revés" por país (19/08, ver CLAUDE.md "Pendiente de
+// decidir") — agrupa TODAS las piezas (no solo las visibles según
+// museum-toggles/research-filter, a propósito: la idea es "¿qué piezas de
+// este país hay en cualquiera de los 3 museos?", independiente de qué esté
+// prendido en el mapa en ese momento) por originCountry, la clave de
+// agrupación es siempre el nombre en español (igual que groupByOrigin con
+// originLabel) para que cambiar el idioma no reparta un mismo país en dos
+// grupos. Piezas sin originCountry (el puñado de orígenes demasiado difusos
+// para asignarles un país, ver geocode.py) quedan afuera de la búsqueda por
+// país a propósito — no tiene sentido un resultado sin país real.
+export interface CountryGroup {
+  key: string;
+  label: string;
+  objects: MuseumObject[];
+}
+
+export function groupByCountry(objects: MuseumObject[], lang: Lang = "es"): CountryGroup[] {
+  const groups = new Map<string, CountryGroup>();
+
+  for (const obj of objects) {
+    if (!obj.originCountry) continue;
+    const key = obj.originCountry;
+    const label = (lang === "en" ? obj.originCountryEn || obj.originCountry : obj.originCountry) ?? key;
+
+    if (!groups.has(key)) {
+      groups.set(key, { key, label, objects: [] });
+    }
+    groups.get(key)!.objects.push(obj);
+  }
+
+  for (const group of groups.values()) {
+    group.objects.sort((a, b) => a.objectID.localeCompare(b.objectID));
+  }
+
+  return [...groups.values()].sort((a, b) => a.label.localeCompare(b.label));
+}
+
 export interface OriginCluster {
   lat: number;
   lon: number;

@@ -26,7 +26,7 @@ OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "geog
 # línea) — se llamaban met_lat/met_lon, renombradas porque geography.csv ya
 # no es Met-específico: cuando sumemos Louvre/British Museum sus filas van
 # acá también, con sus propias coordenadas de destino.
-FIELDS = ["objectID", "origin_label", "origin_label_en", "origin_precision", "origin_lat", "origin_lon", "museum_lat", "museum_lon"]
+FIELDS = ["objectID", "origin_label", "origin_label_en", "origin_precision", "origin_lat", "origin_lon", "origin_country", "origin_country_en", "museum_lat", "museum_lon"]
 
 
 def load_objects() -> list[dict]:
@@ -49,6 +49,8 @@ def build_row(obj: dict) -> dict:
         "origin_precision": origin["precision"],
         "origin_lat": origin["lat"],
         "origin_lon": origin["lon"],
+        "origin_country": origin.get("country"),
+        "origin_country_en": origin.get("country_en"),
         "museum_lat": museum_lat,
         "museum_lon": museum_lon,
     }

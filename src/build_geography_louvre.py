@@ -21,7 +21,7 @@ from museum_id import LOUVRE, namespaced_id
 RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "louvre_objects_raw.json"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "geography_louvre.csv"
 
-FIELDS = ["objectID", "origin_label", "origin_label_en", "origin_precision", "origin_lat", "origin_lon", "museum_lat", "museum_lon"]
+FIELDS = ["objectID", "origin_label", "origin_label_en", "origin_precision", "origin_lat", "origin_lon", "origin_country", "origin_country_en", "museum_lat", "museum_lon"]
 
 
 def load_objects() -> list[dict]:
@@ -44,6 +44,8 @@ def build_row(obj: dict) -> dict:
         "origin_precision": origin["precision"],
         "origin_lat": origin["lat"],
         "origin_lon": origin["lon"],
+        "origin_country": origin.get("country"),
+        "origin_country_en": origin.get("country_en"),
         "museum_lat": museum_lat,
         "museum_lon": museum_lon,
     }
