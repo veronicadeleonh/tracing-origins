@@ -122,6 +122,76 @@ conversación) queda para casos genuinamente no cubiertos por ninguno de los
 dos scripts — ej. un objeto del Met recién adquirido que todavía no está en
 `met_objects_raw.json` (ver caso `met:910742` más abajo).
 
+### Investigar piezas bandera sin Claude (19/08)
+
+Los dos scripts de arriba (`research_lookup.py`, `web_research.py`) no
+necesitan a Claude para nada — son scripts de Python normales, se corren en
+la terminal, no consumen tokens de ninguna sesión. Se puede investigar una
+pieza entera (buscar, leer las fuentes, decidir qué es relevante) sin abrir
+Cowork/Claude Code en absoluto. Lo único que hace Claude en este flujo es el
+último paso: sintetizar los hallazgos y escribirlos en el formato exacto de
+`data/enrichment/context.csv`/`provenance_events.csv` — y ese paso también se
+puede hacer a mano con un editor de texto/planilla, siguiendo el schema de
+acá abajo. Para minimizar el uso de tokens en una sesión con Claude sin dejar
+de usarlo para ese último paso: investigar del lado de la usuaria (los dos
+scripts, en su máquina) y pegarle a Claude solo los hallazgos ya
+resumidos/filtrados — igual que se hizo con la estatua de Gudea (ver
+"Actualizar provenance de la estatua de Gudea" en el historial de commits) —
+en vez de pedirle a Claude que busque en la web él mismo (eso es lo caro en
+tokens, no escribir 2 filas de CSV).
+
+**`data/enrichment/context.csv`** — una fila por pieza investigada:
+
+| columna | qué va |
+|---|---|
+| `objectID` | namespaceado (`met:96404`, `louvre:cl010119651`, `bm:W_1970-0604-2`) |
+| `research_status` | siempre `documented` en la práctica (es el único valor usado hasta ahora) |
+| `context_flags` | 1-3 tags separados por `;`, sin espacios, de la lista cerrada de abajo |
+| `associated_communities_or_states` | país(es)/estado(s) asociados, separados por `;` (ej. `Egypt`, `Iran;Iraq`) |
+| `notes` | 1-2 párrafos en español, resumen de investigación |
+| `notes_en` | lo mismo en inglés |
+
+`context_flags` — vocabulario cerrado, hay que reusar uno de estos (agregar
+uno nuevo solo si de verdad no encaja ninguno):
+`antiquarian_travel`, `art_market`, `colonial_administration`,
+`french_colonial_context`, `french_mandate`, `institutional_transfer`,
+`mariette_administration`, `military_seizure`, `museum_funded_excavation`,
+`napoleonic_transfer`, `non_colonial_context`, `ottoman_authorization`,
+`partage`, `private_collection`, `private_excavation`, `punitive_expedition`,
+`settler_collection`, `state_mission`, `state_sale`, `treaty_transfer`,
+`undocumented_early_chain`.
+
+**`data/enrichment/provenance_events.csv`** — varias filas por pieza (una por
+evento del recorrido: creación, excavación, venta, etc.), `event_order`
+empezando en 1:
+
+| columna | qué va |
+|---|---|
+| `objectID` | mismo namespaceado que en context.csv |
+| `event_order` | 1, 2, 3... en orden cronológico |
+| `event_type` | vocabulario cerrado, no acusatorio: `creation`, `excavation`, `transfer`, `sale`, `gift`, `bequest`, `exchange`, `acquisition`, `loan`, `restitution`, `other` |
+| `event_date` | fecha o rango, texto libre (`1922`, `h. -2450`, `1961-1967`) |
+| `actor_or_institution` | quién/qué institución interviene en ese evento |
+| `location` | lugar del evento |
+| `description` | texto en español (queda por compatibilidad con filas viejas — igual a `description_es`) |
+| `source_url` | link a la fuente |
+| `source_type` | `museum_record` o `secondary_source` |
+| `confidence_level` | `high`/`medium`/`low` |
+| `researcher` | quién investigó (ej. `"Verónica"` o `"Claude (fuentes: ...)"`) |
+| `last_reviewed_date` | fecha ISO (`2026-08-19`) |
+| `description_es` | mismo texto que `description` |
+| `description_en` | traducción al inglés |
+
+Convención del proyecto si dos fuentes no coinciden en algo (ver ejemplos:
+Maunier Victor/Henri, William Adams/Bullock, achat/donación de la estatua de
+Gudea): documentar ambas versiones en las notas, sin forzar una resolución —
+nunca elegir una y descartar la otra en silencio.
+
+Después de editar los CSVs a mano, correr `python src/export_web_data.py`
+para que los cambios lleguen a `web/src/data/objects.json` (y recién ahí se
+ven en `npm run dev`/`npm run build`) — este paso sí hace falta siempre,
+sea quien sea que edite los CSVs.
+
 ### Hallazgo estructural: el Louvre no tiene departamento de África/América
 
 Los 9 departamentos curatoriales del Louvre son todos Egipto/Medio Oriente/Mediterráneo/Europa (Antigüedades Egipcias, Orientales, Griegas-Etruscas-Romanas, Arte Bizantino, Arte Islámico, Pinturas, Escultura, Artes Decorativas, Artes Gráficas) — **no hay Sub-Saharan Africa ni América**. Ese fondo se transfirió al Musée du Quai Branly cuando abrió en 2006. Por eso las líneas del Louvre en el mapa van a seguir concentradas en Egipto/Medio Oriente casi sin importar cuánto se amplíe el piloto — no es un sesgo de muestreo, es la colección real. Si en algún momento se quiere cubrir el ángulo Francia-África/Caribe específicamente, el museo correcto sería Quai Branly (implicaría sumar una cuarta fuente, fuera del alcance actual de 3 museos).
