@@ -69,8 +69,6 @@ export interface I18nStrings {
   welcomeAboutP1: string;
   welcomeAboutP2: string;
   welcomeCloseAria: string;
-  welcomeBack: string;
-  welcomeNext: string;
   welcomeFinish: string;
 
   tooltipOrigin: (label: string, count: number) => string;
@@ -180,10 +178,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     ],
     welcomeAboutHeading: "Sobre esta muestra",
     welcomeAboutP1: "Proyecto curado para portfolio personal, no un dataset exhaustivo — no representa la colección completa de ningún museo.",
-    welcomeAboutP2: 'El patrón del mapa —de dónde viene cada pieza, a qué museo llegó— está completo en las 466 piezas. El detalle investigado es distinto: existe solo para un subconjunto, y no clasifica piezas como "robadas"; documenta el recorrido con fuentes, sin veredicto. La mayoría todavía no tiene esa investigación — es el estado por defecto, no una excepción.',
+    welcomeAboutP2: 'El patrón del mapa —de dónde viene cada pieza, a qué museo llegó— está completo en las 469 piezas. El detalle investigado es distinto: existe solo para un subconjunto, y no clasifica piezas como "robadas"; documenta el recorrido con fuentes, sin veredicto. La mayoría todavía no tiene esa investigación — es el estado por defecto, no una excepción.',
     welcomeCloseAria: "Cerrar",
-    welcomeBack: "Atrás",
-    welcomeNext: "Siguiente",
     welcomeFinish: "Entendido, ver el mapa",
 
     tooltipOrigin: (label, count) => `${label} — ${count} pieza(s) (click para el detalle)`,
@@ -291,10 +287,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     ],
     welcomeAboutHeading: "About this sample",
     welcomeAboutP1: "A curated personal-portfolio project, not an exhaustive dataset — it doesn't represent any museum's full collection.",
-    welcomeAboutP2: 'The map\'s pattern —where each piece comes from, which museum it reached— is complete across all 466 pieces. The researched detail is different: it exists only for a subset, and doesn\'t classify pieces as "stolen"; it documents the journey with sources, no verdict. Most pieces don\'t have that research yet — that\'s the default state, not an exception.',
+    welcomeAboutP2: 'The map\'s pattern —where each piece comes from, which museum it reached— is complete across all 469 pieces. The researched detail is different: it exists only for a subset, and doesn\'t classify pieces as "stolen"; it documents the journey with sources, no verdict. Most pieces don\'t have that research yet — that\'s the default state, not an exception.',
     welcomeCloseAria: "Close",
-    welcomeBack: "Back",
-    welcomeNext: "Next",
     welcomeFinish: "Got it, see the map",
 
     tooltipOrigin: (label, count) => `${label} — ${count} piece(s) (click for details)`,

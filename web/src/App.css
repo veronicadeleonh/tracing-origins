@@ -317,31 +317,71 @@
   padding: 24px;
 }
 
+/* Reescrito el 19/08 (feedback directo: "incómodo de navegar, las imágenes
+   no aportan valor, el texto es difícil de leer"). Antes era un carrusel de
+   4 slides con capturas de pantalla y una caja de texto de alto fijo
+   (340px) con su propio scroll interno -- el doble scroll (el del modal +
+   el de esa caja) era la fricción real. Ahora es una sola página que se lee
+   de corrido: el modal es el único contenedor con scroll, más ancho (560px
+   en vez de 440px) para que el texto respire, sin ninguna imagen. */
 .welcome-modal {
   width: 100%;
-  max-width: 440px;
+  max-width: 560px;
   max-height: calc(100vh - 48px);
   overflow-y: auto;
   background: #fbfaf7;
   border-radius: 12px;
-  padding: 20px 22px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.welcome-modal-close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+.welcome-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px 24px 18px;
+  border-bottom: 1px solid #e5e2da;
+}
+
+.welcome-modal-heading-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.welcome-modal-emoji {
+  font-size: 30px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.welcome-modal-appname {
+  font-size: 19px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 3px;
+}
+
+.welcome-modal-slogan {
+  font-size: 13.5px;
+  color: #6b665e;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.welcome-modal-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
 }
 
 /* Mismo botón que .lang-toggle-btn (App.tsx) pero anclado adentro del modal
    — el de afuera queda tapado por .welcome-modal-backdrop mientras el modal
    está abierto, así que el onboarding necesita su propia copia. */
 .welcome-modal-lang-btn {
-  position: absolute;
-  top: 10px;
-  right: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -364,94 +404,30 @@
   border-color: #c9c4b8;
 }
 
-/* Altura fija (no mínima) y mismo alineado vertical (centrado) en las 4
-   slides — con min-height el modal "saltaba" de tamaño entre la bienvenida
-   (corta) y los pasos de uso (más largos); con height fijo todas las slides
-   comparten el mismo alto y el mismo punto de centrado, sea cual sea su
-   contenido. Subido de 250px a 340px el 17/08 para hacerle lugar a
-   .welcome-slide-image en las 2 slides que tienen captura — las 2 que no
-   tienen (bienvenida, fe de datos) simplemente quedan con más aire arriba/
-   abajo del texto centrado, mismo alto para las 4 de cualquier forma.
-   overflow-y como red de seguridad si algún texto no entra en pantallas
-   muy chicas. */
 .welcome-modal-body {
-  height: 340px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding-top: 6px;
+  gap: 22px;
+  padding: 22px 24px;
 }
 
-/* Capturas reales de la app (no mockups) — misma caja (ancho completo x
-   150px) en las 4 slides sin importar el aspect ratio de origen; "recortarlos
-   todos del mismo tamaño" pedido por el usuario el 17/08. Default
-   object-fit:cover para fotos del globo (hero/how-to-use) donde perder el
-   borde no rompe nada. */
-.welcome-slide-image {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #e5e2da;
-  margin-bottom: 12px;
-  display: block;
-}
-
-/* Para capturas con texto (timeline de una pieza, lista de un cluster):
-   cover cortaba la imagen a la mitad de una oración y quedaba "mal
-   cuadrada, no ilustra nada" (reportado el 17/08). object-fit:contain
-   nunca corta contenido — fondo igual al de la tarjeta para que el
-   letterboxing lateral, si lo hay, sea invisible en vez de una barra vacía
-   que se note. */
-.welcome-slide-image--contain {
-  object-fit: contain;
-  background: #fbfaf7;
-}
-
-/* Slide 1 — solo nombre + slogan, sin instrucciones todavía (reportado
-   como abrumador tener todo junto el 17/08). */
-.welcome-slide-hero {
-  text-align: center;
-  padding: 10px 8px 4px;
-}
-
-.welcome-slide-emoji {
-  font-size: 34px;
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.welcome-slide-appname {
-  font-size: 22px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin: 0 0 8px;
-}
-
-.welcome-slide-slogan {
-  font-size: 13px;
-  color: #77726a;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.welcome-modal-section {
-  padding: 0 2px;
+.welcome-modal-section + .welcome-modal-section {
+  border-top: 1px solid #e5e2da;
+  padding-top: 22px;
 }
 
 .welcome-modal-heading {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   color: #1a1a1a;
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 
 .welcome-modal-section p {
-  font-size: 12.5px;
-  color: #555;
-  line-height: 1.6;
-  margin: 0 0 8px;
+  font-size: 14px;
+  color: #3f3b34;
+  line-height: 1.65;
+  margin: 0 0 10px;
 }
 
 .welcome-modal-section p:last-child {
@@ -460,77 +436,49 @@
 
 .welcome-steps {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 22px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .welcome-steps li {
-  font-size: 12.5px;
-  color: #555;
-  line-height: 1.55;
+  font-size: 14px;
+  color: #3f3b34;
+  line-height: 1.6;
 }
 
+/* Sticky al fondo del modal (mismo patrón que .piece-nav en ObjectDetail)
+   -- con un solo botón de cierre (ya no hay Atrás/Siguiente/puntitos), tiene
+   sentido que quede siempre alcanzable sin tener que scrollear hasta el
+   final del texto. */
 .welcome-modal-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  margin-top: 18px;
-  padding-top: 14px;
+  position: sticky;
+  bottom: 0;
+  padding: 16px 24px 20px;
   border-top: 1px solid #e5e2da;
-}
-
-.welcome-modal-dots {
-  display: flex;
-  gap: 5px;
-}
-
-.welcome-modal-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #e5e2da;
-}
-
-.welcome-modal-dot.active {
-  background: #1a1a1a;
-}
-
-.welcome-modal-nav {
-  display: flex;
-  gap: 8px;
+  background: #fbfaf7;
+  box-shadow: 0 -4px 10px rgba(26, 26, 26, 0.06);
 }
 
 .welcome-modal-btn {
   border: none;
   border-radius: 8px;
-  padding: 8px 14px;
+  padding: 10px 16px;
   font: inherit;
-  font-size: 12.5px;
+  font-size: 13.5px;
   font-weight: 500;
   cursor: pointer;
 }
 
 .welcome-modal-btn-primary {
+  width: 100%;
   background: #1a1a1a;
   color: #fbfaf7;
 }
 
 .welcome-modal-btn-primary:hover {
   background: #2c2c2c;
-}
-
-.welcome-modal-btn-secondary {
-  background: none;
-  color: #77726a;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-.welcome-modal-btn-secondary:hover {
-  color: #1a1a1a;
 }
 
 .year-timeline-dock {
