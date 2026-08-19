@@ -1045,6 +1045,10 @@
   padding: 4px 18px 16px;
 }
 
+.object-image-wrap {
+  position: relative;
+}
+
 .object-image {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -1053,6 +1057,30 @@
   margin-bottom: 10px;
   background: #e5e2da;
   transition: aspect-ratio 0.2s ease;
+}
+
+/* Pista visual delicada de que la imagen se puede expandir -- deliberadamente
+   discreta (fondo oscuro semitransparente, ícono chico) para no competir con
+   la imagen; sube de opacidad recién al pasar el mouse por encima. */
+.object-image-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(26, 26, 26, 0.55);
+  color: #fbfaf7;
+  opacity: 0.75;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.object-image-wrap:hover .object-image-hint {
+  opacity: 1;
 }
 
 /* Solo las imágenes que efectivamente se recortan (calculado en

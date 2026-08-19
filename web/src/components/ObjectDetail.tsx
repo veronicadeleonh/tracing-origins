@@ -92,20 +92,62 @@ export function ObjectDetail({
 
       <div className="object-header">
         {object.primaryImage && (
-          <img
-            className={`object-image${imageExpanded ? " expanded" : ""}${imageCropped ? " croppable" : ""}`}
-            src={object.primaryImage}
-            alt=""
-            onLoad={(e) => {
-              const img = e.currentTarget;
-              if (!img.naturalWidth || !img.naturalHeight) return;
-              const naturalRatio = img.naturalWidth / img.naturalHeight;
-              // Un poco de margen (2%) para no marcar como "recortada" una
-              // imagen que ya es casi exactamente 4:3.
-              setImageCropped(Math.abs(naturalRatio - FRAME_ASPECT_RATIO) / FRAME_ASPECT_RATIO > 0.02);
-            }}
-            onClick={() => imageCropped && setImageExpanded((v) => !v)}
-          />
+          <div className="object-image-wrap">
+            <img
+              className={`object-image${imageExpanded ? " expanded" : ""}${imageCropped ? " croppable" : ""}`}
+              src={object.primaryImage}
+              alt=""
+              role={imageCropped ? "button" : undefined}
+              tabIndex={imageCropped ? 0 : undefined}
+              aria-label={imageCropped ? (imageExpanded ? s.imageCollapseAria : s.imageExpandAria) : undefined}
+              onLoad={(e) => {
+                const img = e.currentTarget;
+                if (!img.naturalWidth || !img.naturalHeight) return;
+                const naturalRatio = img.naturalWidth / img.naturalHeight;
+                // Un poco de margen (2%) para no marcar como "recortada" una
+                // imagen que ya es casi exactamente 4:3.
+                setImageCropped(Math.abs(naturalRatio - FRAME_ASPECT_RATIO) / FRAME_ASPECT_RATIO > 0.02);
+              }}
+              onClick={() => imageCropped && setImageExpanded((v) => !v)}
+              onKeyDown={(e) => {
+                if (imageCropped && (e.key === "Enter" || e.key === " ")) {
+                  e.preventDefault();
+                  setImageExpanded((v) => !v);
+                }
+              }}
+            />
+            {/* Indicador delicado (19/08, pedido de la usuaria): solo se
+                muestra en imágenes efectivamente recortadas -- no es un
+                control en sí (el click va sobre toda la imagen), solo una
+                pista visual de que se puede expandir. Ícono y aria-label
+                cambian según el estado para reflejar la acción disponible
+                (expandir vs. volver al recorte). */}
+            {imageCropped && (
+              <span className="object-image-hint" aria-hidden="true">
+                {imageExpanded ? (
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M6 2v3a1 1 0 0 1-1 1H2M10 2v3a1 1 0 0 0 1 1h3M6 14v-3a1 1 0 0 0-1-1H2M10 14v-3a1 1 0 0 1 1-1h3"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                ) : (
+                  <svg width="12" height="12" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M2 5V2h3M11 2h3v3M14 11v3h-3M5 14H2v-3"
+                      stroke="currentColor"
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
+              </span>
+            )}
+          </div>
         )}
         <div className="object-title">{object.title || s.untitled}</div>
         {subtitle && <div className="object-subtitle">{subtitle}</div>}

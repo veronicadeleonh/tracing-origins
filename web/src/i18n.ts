@@ -81,6 +81,9 @@ export interface I18nStrings {
   piecePosition: (index: number, total: number) => string;
   piecePrevLabel: string;
   pieceNextLabel: string;
+
+  imageExpandAria: string;
+  imageCollapseAria: string;
 }
 
 export const STRINGS: Record<Lang, I18nStrings> = {
@@ -191,6 +194,9 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     piecePosition: (index, total) => `${index} de ${total}`,
     piecePrevLabel: "Anterior",
     pieceNextLabel: "Siguiente",
+
+    imageExpandAria: "Ver imagen completa",
+    imageCollapseAria: "Volver al tamaño recortado",
   },
   en: {
     museumInfoAria: (name) => `About the provenance of ${name}'s pieces`,
@@ -299,5 +305,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     piecePosition: (index, total) => `${index} of ${total}`,
     piecePrevLabel: "Previous",
     pieceNextLabel: "Next",
+
+    imageExpandAria: "View full image",
+    imageCollapseAria: "Back to cropped size",
   },
 };
