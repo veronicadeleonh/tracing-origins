@@ -47,10 +47,10 @@ captured yet). To add it:
   4. Screenshot at a wide viewport (~1600px), save as
      docs/screenshot-country-search.png.
   5. Replace this HTML comment with:
+-->
 
 ![Country search: click a country to reveal only its lines](docs/screenshot-country-search.png)
 _Click any country on the globe to see its pieces grouped by museum, while every other line on the map dims to reveal just that country's origin→museum pattern._
--->
 
 > The four screenshots above are from 17/08 and predate a few UI changes since (English as the default language, the country-search feature above, the welcome-modal contents). Recapture when convenient — same process as above, just save over the existing filename in `docs/`.
 
