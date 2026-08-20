@@ -217,136 +217,88 @@
   font-weight: 500;
 }
 
-/* Búsqueda por país vía click en el mapa (19/08 — reemplazó al buscador de
-   texto original, retirado a pedido de la usuaria; ver CLAUDE.md). Tercera
-   fila de top-controls: un solo pill (.country-click-wrap) con el mismo
-   tratamiento visual que .museum-toggle-wrap — el botón "i" vive DENTRO de
-   ese pill, no como un círculo separado al lado (19/08, corrección de
-   formato pedida por la usuaria: "el botón de i tiene que estar dentro del
-   botón principal, siguiendo el patrón de los otros botones"). El pill
-   entero (no solo el texto) cambia a fondo violeta cuando el toggle está
-   prendido, mismo violeta que .research-filter-btn.active. */
-.country-click-row {
+/* Búsqueda por país vía click en el mapa (19/08, quinta vuelta — reubicada
+   fuera de top-controls a su propio control flotante arriba a la derecha,
+   debajo de "?"/idioma; ver CLAUDE.md). Es una función distinta a los
+   filtros de museo/investigación (no oculta/muestra piezas, cambia qué
+   hace un click en el mapa), así que además de separarla espacialmente usa
+   un switch real (track + knob) en vez de un pill-botón — para que se lea
+   como on/off y no como "un filtro más" entre los de arriba a la
+   izquierda. */
+.country-click-panel {
+  position: absolute;
+  z-index: 1000;
+  top: 54px;
+  right: 12px;
   display: flex;
   align-items: center;
   gap: 8px;
-}
-
-.country-click-wrap {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 4px;
   background: rgba(251, 250, 247, 0.92);
   border: 1px solid #e5e2da;
   border-radius: 20px;
-  padding: 5px 6px 5px 12px;
-  transition: background 0.15s ease, border-color 0.15s ease;
+  padding: 6px 10px 6px 14px;
 }
 
-.country-click-wrap:hover {
-  border-color: #c9c4b8;
-}
-
-.country-click-wrap.active {
-  background: #6a4c93;
-  border-color: #6a4c93;
-}
-
-.country-click-toggle {
-  border: none;
-  background: none;
-  font: inherit;
+.country-click-label {
   font-size: 12px;
   color: #77726a;
-  padding: 0;
-  cursor: pointer;
   white-space: nowrap;
 }
 
-.country-click-wrap.active .country-click-toggle {
-  color: #fbfaf7;
-  font-weight: 500;
-}
-
-/* .museum-info-btn se reusa tal cual para el botón "i" -- estos overrides
-   solo ajustan su contraste cuando el pill que lo contiene está activo
-   (fondo violeta en vez del crema default). */
-.country-click-wrap.active .museum-info-btn {
-  border-color: rgba(251, 250, 247, 0.55);
-  color: rgba(251, 250, 247, 0.85);
-}
-
-.country-click-wrap.active .museum-info-btn:hover {
-  background: rgba(251, 250, 247, 0.18);
-  color: #fbfaf7;
-  border-color: #fbfaf7;
-}
-
-.curated-note-wrap {
+.country-click-switch {
   position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.curated-note-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px;
-  height: 26px;
+  width: 34px;
+  height: 20px;
   flex-shrink: 0;
-  border-radius: 50%;
-  border: 1px solid #e5e2da;
-  background: rgba(251, 250, 247, 0.92);
-  color: #77726a;
-  font-size: 12px;
-  font-style: italic;
-  font-family: Georgia, "Times New Roman", serif;
-  line-height: 1;
+  border: none;
+  border-radius: 10px;
+  background: #d8d4c8;
   padding: 0;
   cursor: pointer;
+  transition: background 0.15s ease;
 }
 
-.curated-note-btn:hover {
-  background: #efece4;
-  color: #1a1a1a;
-  border-color: #c9c4b8;
+.country-click-switch:hover {
+  background: #c9c4b8;
 }
 
-.curated-note-btn.open {
-  background: #1a1a1a;
-  color: #fbfaf7;
-  border-color: #1a1a1a;
+.country-click-switch.on {
+  background: #6a4c93;
 }
 
-/* Anclado al botón "i" en vez de a una esquina fija del mapa — antes vivía
-   pegado al mapa (bottom-left, después top-right) y en las dos terminaba
-   tapado por otra cosa (el dock del timeline, el panel lateral). */
-.curated-note {
+.country-click-switch.on:hover {
+  background: #5c4080;
+}
+
+.country-click-switch-knob {
   position: absolute;
-  z-index: 1001;
-  top: calc(100% + 6px);
-  right: 0;
-  width: 280px;
-  background: #1a1a1a;
-  color: #fbfaf7;
-  border-radius: 8px;
-  padding: 10px 12px;
-  font-size: 12px;
-  line-height: 1.5;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fbfaf7;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease;
 }
 
-.curated-note a {
-  color: #fbfaf7;
-  text-decoration: underline;
+.country-click-switch.on .country-click-switch-knob {
+  transform: translateX(14px);
+}
+
+/* .museum-note se ancla por default a la izquierda (left: 0) porque nació
+   dentro de .museum-toggle-wrap, en la esquina opuesta del mapa -- acá el
+   panel está pegado al borde derecho, así que la nota se alinea al revés
+   (right: 0) para no salirse de la pantalla. */
+.country-click-panel .museum-note {
+  left: auto;
+  right: 0;
 }
 
 /* Botón persistente para reabrir el modal de bienvenida (nivel 1) — se abre
    solo en la primera visita (ver App.tsx), este botón es el único acceso
-   después de esa vez. Esquina opuesta a .museum-toggles/.curated-note-wrap
-   para no sumar otro elemento a esa fila ya cargada. */
+   después de esa vez. Esquina opuesta a .museum-toggles para no sumar otro
+   elemento a esa fila ya cargada. */
 .welcome-trigger-btn {
   position: absolute;
   z-index: 1000;

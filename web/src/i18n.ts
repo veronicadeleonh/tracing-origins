@@ -12,9 +12,6 @@ export interface I18nStrings {
   museumNotes: Record<string, string>;
   pieceCounterAll: (n: number) => string;
   pieceCounterFiltered: (visible: number, total: number) => string;
-  curatedNoteBtnAria: string;
-  curatedNoteText: string;
-  curatedNoteResearch: string;
   curatedNoteBasemap: string;
   curatedNoteTerritoriesPrefix: string;
   curatedNoteTerritoriesLicense: string;
@@ -68,6 +65,7 @@ export interface I18nStrings {
   welcomeAboutHeading: string;
   welcomeAboutP1: string;
   welcomeAboutP2: string;
+  welcomeSourcesHeading: string;
   welcomeCloseAria: string;
   welcomeFinish: string;
 
@@ -106,9 +104,6 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     },
     pieceCounterAll: (n) => `${n} piezas`,
     pieceCounterFiltered: (visible, total) => `${visible} de ${total} piezas`,
-    curatedNoteBtnAria: "Sobre esta muestra",
-    curatedNoteText: "Muestra curada — no representa la colección completa de cada museo. Muchas piezas quedan fuera.",
-    curatedNoteResearch: "El patrón origen→museo está completo para todas las piezas del mapa; el recorrido investigado y citado con fuentes existe solo para un subconjunto, no es un puntaje de qué tan controversial es cada una. Los puntos violeta tienen al menos una pieza con ese recorrido documentado.",
     curatedNoteBasemap: "Los límites y nombres del mapa base son la convención por default de Mapbox, no una postura editorial de este proyecto.",
     curatedNoteTerritoriesPrefix: "Territorios coloniales: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
@@ -191,6 +186,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     welcomeAboutHeading: "Sobre esta muestra",
     welcomeAboutP1: "Proyecto curado para portfolio personal, no un dataset exhaustivo — no representa la colección completa de ningún museo.",
     welcomeAboutP2: 'El patrón del mapa —de dónde viene cada pieza, a qué museo llegó— está completo en las 469 piezas. El detalle investigado es distinto: existe solo para un subconjunto, y no clasifica piezas como "robadas"; documenta el recorrido con fuentes, sin veredicto. La mayoría todavía no tiene esa investigación — es el estado por defecto, no una excepción.',
+    welcomeSourcesHeading: "Fuentes y licencias",
     welcomeCloseAria: "Cerrar",
     welcomeFinish: "Entendido, ver el mapa",
 
@@ -210,7 +206,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countryClickToggleLabel: "Click en el mapa",
     countryClickToggleAria: "Activar búsqueda por países haciendo click en el mapa",
     countryClickNoteAria: "Sobre la búsqueda por país",
-    countryClickNoteText: "Función nueva: con esto prendido, click en cualquier país del globo muestra todas sus piezas en los 3 museos y atenúa el resto de las líneas del mapa para resaltar solo las de ese país. Pasar el mouse por encima antes de clickear muestra cuántas piezas hay (o si no hay ninguna).",
+    countryClickNoteText: "Con esto prendido, click en cualquier país del globo muestra todas sus piezas en los 3 museos y atenúa el resto de las líneas del mapa para resaltar solo las de ese país. Pasar el mouse por encima antes de clickear muestra cuántas piezas hay (o si no hay ninguna).",
     tooltipCountryEmptySub: "Sin piezas en esta muestra",
     countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
   },
@@ -223,9 +219,6 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     },
     pieceCounterAll: (n) => `${n} pieces`,
     pieceCounterFiltered: (visible, total) => `${visible} of ${total} pieces`,
-    curatedNoteBtnAria: "About this sample",
-    curatedNoteText: "Curated sample — doesn't represent each museum's full collection. Many pieces are left out.",
-    curatedNoteResearch: "The origin→museum pattern is complete for every piece on the map; the cited, sourced journey exists only for a subset — it isn't a score of how controversial each piece is. Purple points have at least one piece with that documented journey.",
     curatedNoteBasemap: "The basemap's borders and labels are Mapbox's default convention, not an editorial stance from this project.",
     curatedNoteTerritoriesPrefix: "Colonial territories: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
@@ -308,6 +301,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     welcomeAboutHeading: "About this sample",
     welcomeAboutP1: "A curated personal-portfolio project, not an exhaustive dataset — it doesn't represent any museum's full collection.",
     welcomeAboutP2: 'The map\'s pattern —where each piece comes from, which museum it reached— is complete across all 469 pieces. The researched detail is different: it exists only for a subset, and doesn\'t classify pieces as "stolen"; it documents the journey with sources, no verdict. Most pieces don\'t have that research yet — that\'s the default state, not an exception.',
+    welcomeSourcesHeading: "Sources & licenses",
     welcomeCloseAria: "Close",
     welcomeFinish: "Got it, see the map",
 
@@ -327,7 +321,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countryClickToggleLabel: "Click on the map",
     countryClickToggleAria: "Enable searching by country by clicking the map",
     countryClickNoteAria: "About searching by country",
-    countryClickNoteText: "New feature: with this on, clicking any country on the globe shows all its pieces across the 3 museums and dims the rest of the map's lines to highlight only that country's. Hovering before you click shows how many pieces there are (or whether there are none).",
+    countryClickNoteText: "With this on, clicking any country on the globe shows all its pieces across the 3 museums and dims the rest of the map's lines to highlight only that country's. Hovering before you click shows how many pieces there are (or whether there are none).",
     tooltipCountryEmptySub: "No pieces in this sample",
     countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
   },

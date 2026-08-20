@@ -147,14 +147,6 @@ function App() {
   const [showTerritories, setShowTerritories] = useState(true);
   const [showRoutes, setShowRoutes] = useState(true);
   const [museumNoteOpen, setMuseumNoteOpen] = useState<string | null>(null);
-  // La nota "muestra curada" vivía anclada en una esquina del mapa (primero
-  // bottom-left, después top-right) y en las dos terminaba tapada por algo
-  // (el dock del timeline, el panel lateral) — pasa a un botón "i" en la
-  // fila de arriba, mismo patrón que MUSEUM_NOTES, inmune a qué esté abierto
-  // en el resto de la pantalla. Mismo contenido que va a alimentar el modal
-  // de bienvenida (nivel 1 de "notas de contexto en la UI", ver CLAUDE.md)
-  // cuando se implemente — por ahora es un popover simple.
-  const [curatedNoteOpen, setCuratedNoteOpen] = useState(false);
   // Auto-abre en la primera visita (localStorage), después solo vía el botón
   // "?" — decidido con el usuario el 17/08 (no molestar en visitas siguientes).
   const [welcomeOpen, setWelcomeOpen] = useState(false);
@@ -420,6 +412,37 @@ function App() {
         >
           {s.langToggleLabel}
         </button>
+        {/* Búsqueda por país vía click en el mapa (19/08, quinta vuelta) --
+            movida fuera de top-controls (filtros de museo/investigación,
+            arriba a la izquierda) a su propio control flotante arriba a la
+            derecha, debajo de "?"/idioma: es una función completamente
+            distinta a los filtros (no oculta/muestra piezas, cambia qué
+            hace un click en el mapa), así que separarla espacialmente y
+            usar un switch en vez de un pill-botón (mismo lenguaje visual
+            que los filtros) evita que se lea como "un filtro más". */}
+        <div className="country-click-panel">
+          <span className="country-click-label">{s.countryClickToggleLabel}</span>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={countryClickEnabled}
+            aria-label={s.countryClickToggleAria}
+            className={`country-click-switch${countryClickEnabled ? " on" : ""}`}
+            onClick={toggleCountryClick}
+          >
+            <span className="country-click-switch-knob" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
+            aria-label={s.countryClickNoteAria}
+            aria-expanded={countryClickNoteOpen}
+            onClick={() => setCountryClickNoteOpen((v) => !v)}
+          >
+            i
+          </button>
+          {countryClickNoteOpen && <div className="museum-note country-click-note">{s.countryClickNoteText}</div>}
+        </div>
         {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
         <div className="top-controls">
         <div className="museum-toggles">
@@ -459,38 +482,6 @@ function App() {
               ? s.pieceCounterAll(visibleObjects.length)
               : s.pieceCounterFiltered(visibleObjects.length, bundle.objects.length)}
           </div>
-          <div className="curated-note-wrap">
-            <button
-              type="button"
-              className={`curated-note-btn${curatedNoteOpen ? " open" : ""}`}
-              aria-label={s.curatedNoteBtnAria}
-              aria-expanded={curatedNoteOpen}
-              onClick={() => setCuratedNoteOpen((v) => !v)}
-            >
-              i
-            </button>
-            {curatedNoteOpen && (
-              <div className="curated-note">
-                {s.curatedNoteText} {s.curatedNoteResearch} {s.curatedNoteBasemap}
-                {timelineOpen && showTerritories && (
-                  <>
-                    {" "}{s.curatedNoteTerritoriesPrefix}{" "}
-                    <a href="https://github.com/Seshat-Global-History-Databank/cliopatria" target="_blank" rel="noreferrer">
-                      Cliopatria
-                    </a>{" "}{s.curatedNoteTerritoriesLicense}
-                  </>
-                )}
-                {timelineOpen && showRoutes && (
-                  <>
-                    {" "}{s.curatedNoteRoutesPrefix}{" "}
-                    <a href="https://doi.org/10.1594/PANGAEA.611088" target="_blank" rel="noreferrer">
-                      CLIWOC
-                    </a>{" "}{s.curatedNoteRoutesSuffix}
-                  </>
-                )}
-              </div>
-            )}
-          </div>
         </div>
         <div className="research-filter-row">
           <span className="filter-row-label">{s.researchFilterRowLabel}</span>
@@ -506,29 +497,6 @@ function App() {
                 {s.researchFilterLabels[value]}
               </button>
             ))}
-          </div>
-        </div>
-        <div className="country-click-row">
-          <div className={`country-click-wrap${countryClickEnabled ? " active" : ""}`}>
-            <button
-              type="button"
-              className="country-click-toggle"
-              aria-pressed={countryClickEnabled}
-              aria-label={s.countryClickToggleAria}
-              onClick={toggleCountryClick}
-            >
-              {s.countryClickToggleLabel}
-            </button>
-            <button
-              type="button"
-              className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
-              aria-label={s.countryClickNoteAria}
-              aria-expanded={countryClickNoteOpen}
-              onClick={() => setCountryClickNoteOpen((v) => !v)}
-            >
-              i
-            </button>
-            {countryClickNoteOpen && <div className="museum-note">{s.countryClickNoteText}</div>}
           </div>
         </div>
         </div>

@@ -90,6 +90,31 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
             <p>{s.welcomeAboutP1}</p>
             <p>{s.welcomeAboutP2}</p>
           </section>
+
+          {/* Antes vivía en un popover aparte ("i" junto al contador de
+              piezas, .curated-note) -- retirado el 19/08 a pedido de la
+              usuaria por redundante con este mismo botón "?". El contenido
+              único que tenía ese popover (disclaimer del basemap, atribución
+              de licencias) se muda acá, sin condicionarlo a qué capa esté
+              prendida en el mapa en este momento -- a diferencia del
+              popover viejo, este modal no sabe (ni necesita saber) el
+              estado actual del timeline. */}
+          <section className="welcome-modal-section">
+            <h2 className="welcome-modal-heading">{s.welcomeSourcesHeading}</h2>
+            <p>{s.curatedNoteBasemap}</p>
+            <p>
+              {s.curatedNoteTerritoriesPrefix}{" "}
+              <a href="https://github.com/Seshat-Global-History-Databank/cliopatria" target="_blank" rel="noreferrer">
+                Cliopatria
+              </a>{" "}{s.curatedNoteTerritoriesLicense}
+            </p>
+            <p>
+              {s.curatedNoteRoutesPrefix}{" "}
+              <a href="https://doi.org/10.1594/PANGAEA.611088" target="_blank" rel="noreferrer">
+                CLIWOC
+              </a>{" "}{s.curatedNoteRoutesSuffix}
+            </p>
+          </section>
         </div>
 
         <div className="welcome-modal-footer">
