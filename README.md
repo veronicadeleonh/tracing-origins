@@ -23,7 +23,7 @@ See `CLAUDE.md` for the full architecture and per-museum methodology.
 
 ## Screenshots
 
-The screenshot above shows the main globe view. A few more are planned to round out the picture — drop matching files into `docs/` and uncomment the lines below to add them:
+The screenshot above shows the main globe view. A few more round out the picture:
 
 ![Object detail panel with a researched provenance timeline](docs/screenshot-object-detail.png)
 _Object detail panel: a cited provenance timeline showing each documented step in the object's journey, from creation to museum acquisition._
@@ -33,6 +33,26 @@ _Colonial-context layer: former British and French territories and naval trade r
 
 ![Cluster panel listing every object that shares an origin point](docs/screenshot-cluster-panel.png)
 _Cluster panel: all objects sharing the same origin point, with thumbnail, title, and culture at a glance._
+
+<!--
+SCREENSHOT NEEDED — country search via map click (feature added 19/08, not
+captured yet). To add it:
+  1. Run `npm run dev` in `web/`, open the app.
+  2. Turn on the "Click on the map" switch (top-right corner, below the
+     "?"/language buttons).
+  3. Click any country with pieces in the sample (e.g. Egypt or Iraq) —
+     the side panel should be open, its pieces grouped into per-museum
+     sections (Met/Louvre/British Museum headers), and every line on the
+     map dimmed except the ones connecting that country to its museums.
+  4. Screenshot at a wide viewport (~1600px), save as
+     docs/screenshot-country-search.png.
+  5. Replace this HTML comment with:
+
+![Country search: click a country to reveal only its lines](docs/screenshot-country-search.png)
+_Click any country on the globe to see its pieces grouped by museum, while every other line on the map dims to reveal just that country's origin→museum pattern._
+-->
+
+> The four screenshots above are from 17/08 and predate a few UI changes since (English as the default language, the country-search feature above, the welcome-modal contents). Recapture when convenient — same process as above, just save over the existing filename in `docs/`.
 
 ## Data at a glance
 
