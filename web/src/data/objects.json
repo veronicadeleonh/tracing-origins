@@ -2490,8 +2490,57 @@
       "originLon": -74.2973,
       "originCountry": "Colombia",
       "originCountryEn": "Colombia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "private_collection",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Colombia",
+        "notes": "Figura de oro fundido en forma de serpiente (tipo 'tunjo', figurillas votivas muiscas), cultura Muisca (actual Colombia), h. siglos X-XVI. Sin excavador ni sitio de hallazgo documentados -- como la gran mayoria del oro prehispanico colombiano que circulo en el mercado internacional de antiguedades desde fines del siglo XIX, producto en buena parte del saqueo sistematico de tumbas ('guaqueria') por parte de campesinos locales durante la colonizacion de tierras en la cordillera Central colombiana. Pertenecio a la coleccion privada del restaurantero y coleccionista neoyorquino de origen leton Jan Mitchell, quien reunio una de las mayores colecciones privadas de orfebreria prehispanica americana; el Met exhibio 80 piezas de su coleccion en 1985, y en 1991 Mitchell dono 70 objetos de oro al museo, financiando ademas la ampliacion de una sala que abrio en 1993 como el 'Jan Mitchell Treasury' (el entonces director del Met, Philippe de Montebello, la llamo 'nuestro pequeno El Dorado'). Esta pieza ingreso al Met como parte de esa donacion en 1992.",
+        "notesEn": "Cast gold figure in the shape of a serpent (a 'tunjo', Muisca votive figurine type), Muisca culture (modern Colombia), c. 10th-16th century. No excavator or findspot documented -- like most pre-Hispanic Colombian gold that circulated on the international antiquities market from the late 19th century onward, largely the product of systematic tomb looting ('guaqueria') by local peasants during land colonization in Colombia's Central Cordillera. It belonged to the private collection of Latvian-born New York restaurateur and collector Jan Mitchell, who assembled one of the largest private collections of pre-Hispanic American goldwork; the Met exhibited 80 pieces from his collection in 1985, and in 1991 Mitchell donated 70 gold objects to the museum, also funding the expansion of a gallery that opened in 1993 as the 'Jan Mitchell Treasury' (then-director Philippe de Montebello called it 'our little El Dorado'). This piece entered the Met as part of that 1992 gift."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "siglos X-XVI",
+          "actor_or_institution": "Cultura Muisca",
+          "location": "Colombia (actual)",
+          "description": "Figura votiva de oro fundido en forma de serpiente ('tunjo').",
+          "descriptionEs": "Figura votiva de oro fundido en forma de serpiente ('tunjo').",
+          "descriptionEn": "Cast gold votive figure in the shape of a serpent ('tunjo').",
+          "source_url": "https://www.metmuseum.org/art/collection/search/316724",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Mercado de antiguedades / guaqueria",
+          "location": "Colombia",
+          "description": "Sin excavador ni sitio de hallazgo documentados, como la mayor parte del oro prehispanico colombiano en circulacion desde fines del siglo XIX, producto en buena parte del saqueo de tumbas ('guaqueria').",
+          "descriptionEs": "Sin excavador ni sitio de hallazgo documentados, como la mayor parte del oro prehispanico colombiano en circulacion desde fines del siglo XIX, producto en buena parte del saqueo de tumbas ('guaqueria').",
+          "descriptionEn": "No excavator or findspot documented, like most pre-Hispanic Colombian gold in circulation from the late 19th century onward, largely the product of tomb looting ('guaqueria').",
+          "source_url": "https://www.metmuseum.org/art/collection/search/316724",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1992",
+          "actor_or_institution": "Jan Mitchell (coleccionista)",
+          "location": "Nueva York",
+          "description": "Donada al Met como parte de la coleccion Jan Mitchell and Sons.",
+          "descriptionEs": "Donada al Met como parte de la coleccion Jan Mitchell and Sons.",
+          "descriptionEn": "Donated to the Met as part of the Jan Mitchell and Sons collection.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/316724",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:316728",
@@ -2711,8 +2760,70 @@
       "originLon": 46.1039,
       "originCountry": "Irak",
       "originCountryEn": "Iraq",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "museum_funded_excavation",
+          "partage"
+        ],
+        "associated_communities_or_states": "Iraq",
+        "notes": "Colgante de cuentas de oro y lapislazuli, hallado en el llamado 'Gran Pozo de la Muerte' del Cementerio Real de Ur (Mesopotamia, actual Irak), una de las dieciseis tumbas 'reales' entre las cerca de 1.800 excavadas por Leonard Woolley entre 1922 y 1934 para la expedicion conjunta del British Museum y el University Museum de la Universidad de Pensilvania (Penn Museum). El Gran Pozo de la Muerte contenia los cuerpos de 68 mujeres, todas adornadas con joyeria de oro, lapislazuli y cornalina -- el lapislazuli procedia de la region de Badakhshan (actual Afganistan) y el oro probablemente de Iran, Anatolia o Egipto. Los hallazgos del cementerio real se dividieron formalmente entre el British Museum, el Penn Museum y el Museo de Irak en Bagdad, conforme a la ley de antiguedades iraqui de 1924 -- el Met no fue una de las tres instituciones patrocinadoras ni parte de esa division oficial. Esta pieza ingreso al Met en 1933 (Dodge Fund) -- un ano antes de que concluyeran las excavaciones (1934) -- lo que sugiere que llego via una transaccion posterior con una de las instituciones ya beneficiadas del reparto (probablemente el Penn Museum, que en este periodo vendia o intercambiaba piezas duplicadas de Ur con otros museos estadounidenses), pero el mecanismo exacto de esa transferencia no esta confirmado por las fuentes consultadas.",
+        "notesEn": "Necklace beads of gold and lapis lazuli, found in the so-called 'Great Death Pit' of the Royal Cemetery at Ur (Mesopotamia, modern Iraq), one of sixteen 'royal' tombs among roughly 1,800 excavated by Leonard Woolley between 1922 and 1934 for the joint expedition of the British Museum and the University Museum of the University of Pennsylvania (Penn Museum). The Great Death Pit held the bodies of 68 women, all adorned with jewelry of gold, lapis lazuli, and carnelian -- the lapis lazuli originated in the Badakhshan region (modern Afghanistan) and the gold likely from Iran, Anatolia, or Egypt. Finds from the royal cemetery were formally divided among the British Museum, the Penn Museum, and the Iraq Museum in Baghdad, under Iraq's 1924 antiquities law -- the Met was not one of the three sponsoring institutions nor part of that official division. This piece entered the Met in 1933 (Dodge Fund) -- a year before the excavations concluded (1934) -- suggesting it arrived via a later transaction with one of the institutions already granted a share (likely the Penn Museum, which sold or exchanged duplicate Ur pieces with other American museums during this period), though the exact mechanism of that transfer is not confirmed by the sources consulted."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -2600/-2500 (Dinastico Arcaico IIIa)",
+          "actor_or_institution": "Desconocido",
+          "location": "Ur, Mesopotamia (actual Irak)",
+          "description": "Cuentas de collar de oro y lapislazuli.",
+          "descriptionEs": "Cuentas de collar de oro y lapislazuli.",
+          "descriptionEn": "Necklace beads of gold and lapis lazuli.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/322910",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1926-1931",
+          "actor_or_institution": "Leonard Woolley (expedicion conjunta British Museum / University Museum of Pennsylvania)",
+          "location": "Ur (actual Tell al-Muqayyar), Irak",
+          "description": "Excavadas en el 'Gran Pozo de la Muerte' del Cementerio Real de Ur, junto con joyeria de oro, lapislazuli y cornalina de otras 68 mujeres enterradas en la misma fosa.",
+          "descriptionEs": "Excavadas en el 'Gran Pozo de la Muerte' del Cementerio Real de Ur, junto con joyeria de oro, lapislazuli y cornalina de otras 68 mujeres enterradas en la misma fosa.",
+          "descriptionEn": "Excavated in the 'Great Death Pit' of the Royal Cemetery at Ur, alongside gold, lapis lazuli, and carnelian jewelry from 68 other women buried in the same pit.",
+          "source_url": "https://www.metmuseum.org/essays/ur-the-royal-graves",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1924-1934 (reparto formal, fecha exacta no documentada)",
+          "actor_or_institution": "British Museum / Penn Museum / Museo de Irak",
+          "location": "Ur / Bagdad / Londres / Filadelfia",
+          "description": "Los hallazgos del cementerio real se dividieron entre las tres instituciones patrocinadoras/anfitrionas conforme a la ley de antiguedades iraqui de 1924; el Met no participo de este reparto oficial.",
+          "descriptionEs": "Los hallazgos del cementerio real se dividieron entre las tres instituciones patrocinadoras/anfitrionas conforme a la ley de antiguedades iraqui de 1924; el Met no participo de este reparto oficial.",
+          "descriptionEn": "Finds from the royal cemetery were divided among the three sponsoring/host institutions under Iraq's 1924 antiquities law; the Met was not part of this official division.",
+          "source_url": "https://www.metmuseum.org/essays/ur-the-royal-graves",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1933",
+          "actor_or_institution": "The Metropolitan Museum of Art (Dodge Fund)",
+          "location": "Nueva York",
+          "description": "Ingreso al Met en 1933, un ano antes de concluir las excavaciones (1934) -- probablemente via una transaccion posterior con una de las instituciones beneficiadas del reparto oficial (verosimilmente el Penn Museum), aunque el mecanismo exacto no esta confirmado por las fuentes consultadas.",
+          "descriptionEs": "Ingreso al Met en 1933, un ano antes de concluir las excavaciones (1934) -- probablemente via una transaccion posterior con una de las instituciones beneficiadas del reparto oficial (verosimilmente el Penn Museum), aunque el mecanismo exacto no esta confirmado por las fuentes consultadas.",
+          "descriptionEn": "Entered the Met in 1933, a year before the excavations concluded (1934) -- likely via a later transaction with one of the institutions granted a share in the official division (plausibly the Penn Museum), though the exact mechanism is not confirmed by the sources consulted.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/322910",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        }
+      ]
     },
     {
       "objectID": "met:323174",
@@ -6143,8 +6254,57 @@
       "originLon": 32.6081,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "undocumented_early_chain",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estatuilla-colgante de oro y lapislazuli con la triada osiriaca (Osiris entronizado al centro, Isis a la derecha, Horus halcon a la izquierda), con inscripciones jeroglificas que nombran a Osorkon II (dinastia XXII, h. -865/-830). El registro del propio Louvre atribuye el hallazgo a las cercanias del templo de Karnak, Tebas (segun Chrysikopoulos 2018), pero sin excavador, contexto arqueologico ni fecha de hallazgo documentados -- aparece directamente en el mercado de antiguedades parisino. Comprada por el Louvre en 1872 a los anticuarios Rollin et Feuardent por 25.000 francos (propuesta el 21/11/1872, aprobada el 05/12/1872, inscripcion en inventario el 19/12/1872). Coincidencia notada aqui: otra pieza ya documentada en esta muestra, la Figurine du demon Pazuzu (louvre:cl010120489), fue comprada ese mismo ano, 1872, al mismo negocio (Feuardent) -- sin que esto implique una procedencia compartida real mas alla de haber pasado por el mismo marchante parisino en el mismo ano.",
+        "notesEn": "Gold and lapis lazuli pendant-statuette of the Osirian triad (Osiris enthroned at center, Isis on the right, falcon-headed Horus on the left), with hieroglyphic inscriptions naming Osorkon II (22nd dynasty, c. 865-830 BCE). The Louvre's own record attributes the find to the vicinity of the Karnak temple, Thebes (per Chrysikopoulos 2018), but with no excavator, archaeological context, or find date documented -- it surfaces directly on the Paris antiquities market. Bought by the Louvre in 1872 from dealers Rollin et Feuardent for 25,000 francs (proposed 21 Nov 1872, approved 5 Dec 1872, inventory entry 19 Dec 1872). A coincidence worth noting: another piece already documented in this sample, the Pazuzu demon figurine (louvre:cl010120489), was bought that same year, 1872, from the same firm (Feuardent) -- without implying a shared real provenance beyond passing through the same Paris dealer in the same year."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "Dinastia XXII, reinado de Osorkon II, h. -865/-830",
+          "actor_or_institution": "Osorkon II (encargo real/templo)",
+          "location": "Karnak (?), Tebas, Egipto",
+          "description": "Pieza de orfebreria egipcia (oro y lapislazuli) con inscripciones jeroglificas que nombran a Osorkon II; el propio Louvre atribuye el hallazgo a la zona de Karnak, sin confirmacion arqueologica del contexto de hallazgo.",
+          "descriptionEs": "Pieza de orfebreria egipcia (oro y lapislazuli) con inscripciones jeroglificas que nombran a Osorkon II; el propio Louvre atribuye el hallazgo a la zona de Karnak, sin confirmacion arqueologica del contexto de hallazgo.",
+          "descriptionEn": "Egyptian goldwork piece (gold and lapis lazuli) with hieroglyphic inscriptions naming Osorkon II; the Louvre itself attributes the find to the Karnak area, with no archaeological confirmation of the find context.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010006343",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1872",
+          "actor_or_institution": "Rollin et Feuardent (anticuarios, Paris)",
+          "location": "Paris, Francia",
+          "description": "Vendida al Louvre por los anticuarios parisinos Rollin et Feuardent por 25.000 francos (propuesta 21/11/1872, aprobada 05/12/1872); sin cadena de custodia documentada entre Egipto y su aparicion en el mercado parisino.",
+          "descriptionEs": "Vendida al Louvre por los anticuarios parisinos Rollin et Feuardent por 25.000 francos (propuesta 21/11/1872, aprobada 05/12/1872); sin cadena de custodia documentada entre Egipto y su aparicion en el mercado parisino.",
+          "descriptionEn": "Sold to the Louvre by Paris dealers Rollin et Feuardent for 25,000 francs (proposed 21 Nov 1872, approved 5 Dec 1872); no documented chain of custody between Egypt and its appearance on the Paris market.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010006343",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "19/12/1872",
+          "actor_or_institution": "Musee du Louvre",
+          "location": "Paris, Francia",
+          "description": "Ingresa a la coleccion del Departamento de Antiguedades Egipcias del Louvre (fecha de inscripcion en inventario).",
+          "descriptionEs": "Ingresa a la coleccion del Departamento de Antiguedades Egipcias del Louvre (fecha de inscripcion en inventario).",
+          "descriptionEn": "Enters the collection of the Louvre's Department of Egyptian Antiquities (inventory entry date).",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010006343",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010006354",
@@ -8792,8 +8952,57 @@
       "originLon": 48.2578,
       "originCountry": "Irán",
       "originCountryEn": "Iran",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "partage",
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Colgante de oro, de epoca de Susa II (h. -3800/-3100), hallado en 1939 en el segundo sondeo de la acropolis de Susa (Iran) durante la mision arqueologica francesa dirigida entonces por Roland de Mecquenem (director de las excavaciones de Susa desde 1912/1913 hasta 1946, sucesor de Jacques de Morgan). A diferencia de otras piezas de Susa ya documentadas en esta muestra (la Estela de Naram-Sin, louvre:cl010123450, y la cabeza atribuida a Hammurabi, louvre:cl010121494), que llegaron a Francia bajo el monopolio de excavacion exclusivo que Francia mantuvo en Persia entre 1895 y 1927 (sin division real de hallazgos), esta pieza fue excavada en 1939, ya bajo el regimen de reparto ('partage') introducido tras el fin de ese monopolio en 1927 -- cuando el gobierno de Reza Shah, molesto por el control frances sobre Susa, abrio el pais a otros excavadores e impuso una division real de los hallazgos al cierre de cada temporada. El registro del Louvre usa la misma frase 'partage apres fouilles' para las tres piezas, pero en este caso el termino si describe con precision el mecanismo real, a diferencia de las dos piezas anteriores.",
+        "notesEn": "Gold pendant from the Susa II period (c. 3800-3100 BCE), found in 1939 in the second sounding of the Susa acropolis (Iran) during the French archaeological mission then directed by Roland de Mecquenem (director of the Susa excavations from 1912/1913 to 1946, successor to Jacques de Morgan). Unlike other Susa pieces already documented in this sample (the Victory Stele of Naram-Sin, louvre:cl010123450, and the head attributed to Hammurabi, louvre:cl010121494), which reached France under the exclusive excavation monopoly France held in Persia between 1895 and 1927 (with no real division of finds), this piece was excavated in 1939, already under the finds-sharing ('partage') regime introduced after that monopoly ended in 1927 -- when Reza Shah's government, unhappy with French control over Susa, opened the country to other excavators and imposed a real division of finds at the close of each season. The Louvre's record uses the same phrase 'partage apres fouilles' for all three pieces, but in this case the term does accurately describe the real mechanism, unlike the two earlier pieces."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "Susa II, h. -3800/-3100",
+          "actor_or_institution": "Desconocido",
+          "location": "Susa, Iran",
+          "description": "Colgante de oro, periodo Susa II.",
+          "descriptionEs": "Colgante de oro, periodo Susa II.",
+          "descriptionEn": "Gold pendant, Susa II period.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010122992",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1939",
+          "actor_or_institution": "Mision arqueologica francesa (dir. Roland de Mecquenem)",
+          "location": "Susa, acropolis, 2do sondeo, Iran",
+          "description": "Excavado en el segundo sondeo de la acropolis de Susa bajo la direccion de Roland de Mecquenem, ya bajo el regimen de reparto de hallazgos vigente en Persia desde 1927 (no el monopolio exclusivo frances de 1895-1927).",
+          "descriptionEs": "Excavado en el segundo sondeo de la acropolis de Susa bajo la direccion de Roland de Mecquenem, ya bajo el regimen de reparto de hallazgos vigente en Persia desde 1927 (no el monopolio exclusivo frances de 1895-1927).",
+          "descriptionEn": "Excavated in the second sounding of the Susa acropolis under the direction of Roland de Mecquenem, already under the finds-sharing regime in force in Persia since 1927 (not the exclusive French monopoly of 1895-1927).",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010122992",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1939",
+          "actor_or_institution": "Musee du Louvre",
+          "location": "Paris, Francia",
+          "description": "Ingresa a la coleccion del Departamento de Antiguedades Orientales del Louvre como parte del reparto de hallazgos de la temporada de excavacion de 1939.",
+          "descriptionEs": "Ingresa a la coleccion del Departamento de Antiguedades Orientales del Louvre como parte del reparto de hallazgos de la temporada de excavacion de 1939.",
+          "descriptionEn": "Enters the Louvre's Department of Oriental Antiquities as part of the finds-sharing division from the 1939 excavation season.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010122992",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010123247",
@@ -15953,8 +16162,57 @@
       "originLon": 30.9337,
       "originCountry": "Zimbabue",
       "originCountryEn": "Zimbabwe",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "undocumented_early_chain",
+          "settler_collection"
+        ],
+        "associated_communities_or_states": "Zimbabwe",
+        "notes": "Cuentas de oro de formas variadas, atribuidas con reserva ('Great Zimbabwe (?)') al sitio de Great Zimbabwe, Rodesia del Sur (actual Zimbabue). El sitio fue objeto de saqueo intensivo de oro por parte de buscadores de tesoros y companias mineras coloniales entre las decadas de 1890 y 1900 -- entre ellas la Rhodesia Ancient Ruins Limited, que opero bajo la Ordenanza de Minas y Minerales de 1895 y exploto decenas de sitios de la cultura de Zimbabue en busca de oro, destruyendo su contexto arqueologico; se calcula que varios kilos de objetos de oro (joyeria, brazaletes, cuentas) fueron fundidos y vendidos como metal en bruto durante este periodo, sin registro alguno de sus formas originales. La presion de estas actividades llevo a la Ordenanza de Proteccion de Monumentos Antiguos de 1902 en Rodesia del Sur, aunque esa proteccion no alcanzaba a las explotaciones mineras ya autorizadas. Esta pieza en particular fue donada al Museo en 1923 por Franklin White, de quien no se encontro informacion adicional en las fuentes consultadas -- no hay evidencia que vincule esta donacion puntual con la actividad de la Ancient Ruins Company especificamente, y el propio registro del museo marca el sitio de hallazgo con un signo de interrogacion.",
+        "notesEn": "Gold beads of various shapes, tentatively attributed ('Great Zimbabwe (?)') to the Great Zimbabwe site, Southern Rhodesia (modern Zimbabwe). The site suffered intensive gold looting by treasure hunters and colonial mining companies between the 1890s and 1900s -- among them the Rhodesia Ancient Ruins Limited, which operated under the 1895 Mines and Minerals Ordinance and worked dozens of Zimbabwe-culture sites in search of gold, destroying their archaeological context; several kilograms of gold objects (jewelry, bracelets, beads) are estimated to have been melted down and sold as raw metal during this period, with no record of their original forms. Pressure from these activities led to the 1902 Ancient Monuments Protection Ordinance in Southern Rhodesia, though that protection did not extend to already-licensed mining operations. This particular piece was donated to the Museum in 1923 by Franklin White, about whom no further information was found in the sources consulted -- there is no evidence linking this specific donation to the Ancient Ruins Company's activity in particular, and the museum's own record marks the findspot with a question mark."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Cultura de Zimbabue",
+          "location": "Great Zimbabwe (?), Rodesia del Sur (actual Zimbabue)",
+          "description": "Cuentas de oro de formas variadas.",
+          "descriptionEs": "Cuentas de oro de formas variadas.",
+          "descriptionEn": "Gold beads of various shapes.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1923-1211-11-a-b",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "sin fecha documentada, probablemente decadas de 1890-1900",
+          "actor_or_institution": "Desconocido (contexto de saqueo minero colonial en la region)",
+          "location": "Great Zimbabwe (?), Rodesia del Sur",
+          "description": "Sin excavador documentado; el sitio sufrio saqueo intensivo de oro por parte de companias y particulares coloniales en este periodo (ver Rhodesia Ancient Ruins Limited), sin que se pueda vincular esta pieza puntual a un actor especifico.",
+          "descriptionEs": "Sin excavador documentado; el sitio sufrio saqueo intensivo de oro por parte de companias y particulares coloniales en este periodo (ver Rhodesia Ancient Ruins Limited), sin que se pueda vincular esta pieza puntual a un actor especifico.",
+          "descriptionEn": "No excavator documented; the site suffered intensive gold looting by colonial companies and individuals during this period (see Rhodesia Ancient Ruins Limited), though this particular piece cannot be linked to a specific actor.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1923-1211-11-a-b",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1923",
+          "actor_or_institution": "Franklin White (donante)",
+          "location": "Londres, Reino Unido",
+          "description": "Donada al British Museum por Franklin White.",
+          "descriptionEs": "Donada al British Museum por Franklin White.",
+          "descriptionEn": "Donated to the British Museum by Franklin White.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1923-1211-11-a-b",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1926-0410-1",
@@ -16760,8 +17018,57 @@
       "originLon": -74.199,
       "originCountry": "Colombia",
       "originCountryEn": "Colombia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "undocumented_early_chain",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Colombia",
+        "notes": "Cascabel de oro con forma de ave rapaz ('hawk bell'), atribuido con reserva ('Quimbaya (?)') a la cultura Quimbaya del actual eje cafetero colombiano. El registro del BM da como sitio de hallazgo 'Santa Marta (Valle de Cauca) (?)' -- una etiqueta con una posible inconsistencia interna, ya que Santa Marta es una ciudad de la costa caribena colombiana, en el departamento de Magdalena, no en el Valle del Cauca (region del suroccidente andino donde si se ubica el territorio quimbaya); no se intenta resolver aqui cual de los dos toponimos es el correcto, solo se senala la discrepancia tal como aparece en la fuente. Donada al Museo en 1928 por A. Naylor, sin mas informacion sobre como la pieza llego a sus manos. El oro quimbaya en general circulo ampliamente en colecciones y museos internacionales desde fines del siglo XIX y principios del XX, en gran parte producto del saqueo sistematico de tumbas ('guaqueria') en la region -- el caso mas conocido es el llamado 'Tesoro de los Quimbayas', saqueado en 1890 de tumbas en La Soledad (Quindio) y regalado por el gobierno colombiano a Espana en 1892; no hay ninguna evidencia de que esta pieza puntual provenga de ese hallazgo especifico.",
+        "notesEn": "Gold hawk bell, tentatively attributed ('Quimbaya (?)') to the Quimbaya culture of modern Colombia's coffee-growing region. The BM's record gives the findspot as 'Santa Marta (Valle de Cauca) (?)' -- a label with a possible internal inconsistency, since Santa Marta is a city on Colombia's Caribbean coast, in the department of Magdalena, not in Valle del Cauca (the southwestern Andean region where Quimbaya territory actually lies); no attempt is made here to resolve which toponym is correct, only to flag the discrepancy as it appears in the source. Donated to the Museum in 1928 by A. Naylor, with no further information on how the piece came into his hands. Quimbaya gold generally circulated widely among international collections and museums from the late 19th and early 20th centuries, largely the product of systematic tomb looting ('guaqueria') in the region -- the best-known case is the so-called 'Quimbaya Treasure', looted in 1890 from tombs at La Soledad (Quindio) and gifted by the Colombian government to Spain in 1892; there is no evidence this particular piece comes from that specific find."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Cultura Quimbaya (?)",
+          "location": "Colombia (actual)",
+          "description": "Cascabel de oro con forma de ave rapaz.",
+          "descriptionEs": "Cascabel de oro con forma de ave rapaz.",
+          "descriptionEn": "Gold bell in the shape of a bird of prey.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1928-0516-2",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Desconocido (posible guaqueria)",
+          "location": "'Santa Marta (Valle de Cauca)' segun el BM (?) -- discrepancia de toponimo no resuelta",
+          "description": "Sin excavador documentado; hallazgo probablemente producto de saqueo de tumbas ('guaqueria'), practica extendida en la region durante este periodo.",
+          "descriptionEs": "Sin excavador documentado; hallazgo probablemente producto de saqueo de tumbas ('guaqueria'), practica extendida en la region durante este periodo.",
+          "descriptionEn": "No excavator documented; the find was likely the product of tomb looting ('guaqueria'), a widespread practice in the region during this period.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1928-0516-2",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1928",
+          "actor_or_institution": "A. Naylor (donante)",
+          "location": "Londres, Reino Unido",
+          "description": "Donado al British Museum por A. Naylor.",
+          "descriptionEs": "Donado al British Museum por A. Naylor.",
+          "descriptionEn": "Donated to the British Museum by A. Naylor.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1928-0516-2",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Am1930-F-1",
