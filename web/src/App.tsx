@@ -335,9 +335,33 @@ function App() {
     });
   }, []);
 
-  const selectCountryGroup = useCallback((group: { label: string; objects: MuseumObject[] }) => {
-    setPanel({ view: "cluster", cluster: { lat: 0, lon: 0, label: group.label, objects: group.objects }, kind: "country" });
+  const selectCountryGroup = useCallback((group: { key: string; label: string; objects: MuseumObject[] }) => {
+    setPanel({
+      view: "cluster",
+      cluster: { lat: 0, lon: 0, label: group.label, objects: group.objects, key: group.key },
+      kind: "country",
+    });
   }, []);
+
+  // Highlight visual del país seleccionado (20/08, pedido de la usuaria: con
+  // "Click en el mapa" activo, hacer evidente qué país está elegido, no solo
+  // atenuar el resto de las líneas). `panel.cluster.key` es el
+  // `originCountry`/`originCountryEn` (ver geo.ts), pero el polígono de
+  // `countries.geojson` está indexado por nombre de Natural Earth -- puede
+  // haber más de un nombre por key (ej. "North Korea"/"South Korea" ambos
+  // mapean a "Corea", ver countryPolygons.ts), así que se resuelve la lista
+  // completa de nombres que matchean, no un único nombre. Vacío (no `[]`
+  // fijo, sino el resultado de un filter que no encuentra nada) cuando no
+  // hay país seleccionado -- el filtro de Mapbox con `["literal", []]` no
+  // matchea ningún feature, así que la capa de highlight queda sin pintar
+  // nada en vez de tener que condicionar su render.
+  const highlightedCountryNames = useMemo(() => {
+    if (!panel || panel.kind !== "country" || !panel.cluster.key) return [];
+    const key = panel.cluster.key;
+    return Object.entries(NATURAL_EARTH_NAME_TO_COUNTRY_KEY)
+      .filter(([, k]) => k === key)
+      .map(([name]) => name);
+  }, [panel]);
 
   const handleClick = useCallback((e: MapMouseEvent) => {
     if (!e.features?.length) return;
@@ -524,6 +548,24 @@ function App() {
             // solo responde en el resto del área del mapa.
             <Source id="country-hit-src" type="geojson" data={countryPolygons}>
               <Layer id="country-hit" type="fill" paint={{ "fill-color": "#000000", "fill-opacity": 0 }} />
+              {/* Highlight del país seleccionado (20/08) -- mismo violeta que
+                  ya identifica "activo/seleccionado" en el resto de la UI
+                  (.research-filter-btn.active, .country-click-switch.on), en
+                  vez de introducir un color nuevo. No son capas
+                  interactivas (no entran en interactiveLayerIds): son puro
+                  feedback visual sobre la capa invisible de hit-testing. */}
+              <Layer
+                id="country-hit-highlight-fill"
+                type="fill"
+                filter={["in", ["get", "name"], ["literal", highlightedCountryNames]]}
+                paint={{ "fill-color": "#6a4c93", "fill-opacity": 0.22 }}
+              />
+              <Layer
+                id="country-hit-highlight-outline"
+                type="line"
+                filter={["in", ["get", "name"], ["literal", highlightedCountryNames]]}
+                paint={{ "line-color": "#6a4c93", "line-width": 2.5, "line-opacity": 0.9 }}
+              />
             </Source>
           )}
           {timelineOpen && showTerritories && colonialOverlay && (

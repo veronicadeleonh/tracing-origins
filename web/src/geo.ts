@@ -76,6 +76,12 @@ export interface OriginCluster {
   lon: number;
   label: string;
   objects: MuseumObject[];
+  // Solo poblado para pseudo-clusters de búsqueda por país (19/08, ver
+  // App.tsx `selectCountryGroup`/`kind: "country"`) -- el `CountryGroup.key`
+  // original, reusado para poder resaltar el polígono del país seleccionado
+  // en el mapa (`countries.geojson`, vía NATURAL_EARTH_NAME_TO_COUNTRY_KEY).
+  // Un cluster de origen normal nunca lo trae.
+  key?: string;
 }
 
 /** Agrupa objetos por punto de origen (redondeado a 3 decimales, como en
