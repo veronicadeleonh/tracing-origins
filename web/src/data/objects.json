@@ -15455,8 +15455,57 @@
       "originLon": 35.2137,
       "originCountry": "Israel",
       "originCountryEn": "Israel",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Palestine",
+        "notes": "Siquel de plata del 'Ano 2' (67-68 d.C.) de la Primera Guerra Judeo-Romana (66-73 d.C.), acunado en Jerusalen por el gobierno rebelde judio con plata del tesoro del Templo -- el anverso lleva un caliz con la inscripcion en hebreo antiguo 'Siquel de Israel', el reverso tres granadas y la leyenda 'Jerusalen la Santa'. Sin excavador ni sitio de hallazgo documentados: comprada por el Museo en 1908 al comerciante de monedas 'Leo Hamburger'. La casa Hamburger de Frankfurt fue fundada en 1861 por Leopold (Leo) Hamburger (1836-1902), numismata judio devoto que reunio la que se describe como la mayor coleccion conocida de monedas antiguas de Palestina y la lego al British Museum a su muerte en 1902; su primo, tambien llamado Leo Hamburger, se sumo como socio en 1875 y continuo el negocio bajo el nombre 'L. & L. Hamburger' tras el fallecimiento del fundador. Como esta pieza fue comprada en 1908 -- seis anos despues de la muerte del Leo Hamburger fundador y de su legado a la BM -- no se puede afirmar que forme parte de aquella coleccion legada; lo mas probable es que se trate de una compra posterior a la firma continuada por su primo, pero no hay una fuente que lo confirme de forma directa.",
+        "notesEn": "Silver shekel of 'Year 2' (67-68 CE) of the First Jewish-Roman War (66-73 CE), minted in Jerusalem by the Jewish rebel government with silver from the Temple treasury -- the obverse shows a chalice with the paleo-Hebrew inscription 'Shekel of Israel', the reverse three pomegranates and the legend 'Jerusalem the Holy'. No excavator or findspot documented: purchased by the Museum in 1908 from the coin dealer 'Leo Hamburger'. The Frankfurt firm of Hamburger was founded in 1861 by Leopold (Leo) Hamburger (1836-1902), a devout Jewish numismatist who assembled what is described as the largest known collection of ancient Palestinian coins and bequeathed it to the British Museum on his death in 1902; his cousin, also named Leo Hamburger, joined as a partner in 1875 and continued the business as 'L. & L. Hamburger' after the founder's death. Since this piece was purchased in 1908 -- six years after the founding Leo Hamburger's death and his bequest to the BM -- it cannot be said to be part of that bequeathed collection; it is more likely a later purchase from the continuing firm run by his cousin, though no source confirms this directly."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "Ano 2 de la revuelta, 67-68 d.C.",
+          "actor_or_institution": "Gobierno rebelde judio (Primera Guerra Judeo-Romana)",
+          "location": "Jerusalen",
+          "description": "Siquel de plata acunado en Jerusalen con plata del tesoro del Templo, durante el segundo ano de la revuelta contra Roma.",
+          "descriptionEs": "Siquel de plata acunado en Jerusalen con plata del tesoro del Templo, durante el segundo ano de la revuelta contra Roma.",
+          "descriptionEn": "Silver shekel minted in Jerusalem with silver from the Temple treasury, during the second year of the revolt against Rome.",
+          "source_url": "https://www.britishmuseum.org/collection/object/C_1908-0110-4",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1908",
+          "actor_or_institution": "Leo Hamburger (comerciante de monedas, Frankfurt)",
+          "location": "Frankfurt, Alemania",
+          "description": "Comprada por el Museo al comerciante de monedas Leo Hamburger; sin cadena de custodia documentada entre la acunacion en el siglo I y su aparicion en el mercado numismatico aleman.",
+          "descriptionEs": "Comprada por el Museo al comerciante de monedas Leo Hamburger; sin cadena de custodia documentada entre la acunacion en el siglo I y su aparicion en el mercado numismatico aleman.",
+          "descriptionEn": "Purchased by the Museum from coin dealer Leo Hamburger; no documented chain of custody between its 1st-century minting and its appearance on the German numismatic market.",
+          "source_url": "https://www.britishmuseum.org/collection/object/C_1908-0110-4",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1908",
+          "actor_or_institution": "British Museum",
+          "location": "Londres, Reino Unido",
+          "description": "Ingresa a la coleccion del departamento de Monedas y Medallas del British Museum.",
+          "descriptionEs": "Ingresa a la coleccion del departamento de Monedas y Medallas del British Museum.",
+          "descriptionEn": "Enters the collection of the British Museum's Department of Coins and Medals.",
+          "source_url": "https://www.britishmuseum.org/collection/object/C_1908-0110-4",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:C_1953-0402-17",
@@ -18498,8 +18547,57 @@
       "originLon": 35.2332,
       "originCountry": "Palestina",
       "originCountryEn": "Palestine",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "institutional_transfer",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Palestine",
+        "notes": "Chaqueta rural de piel de oveja (farwah/farweh), hecha con piezas de piel cosidas entre si, lana natural crema y marron hacia adentro y bandas de algodon rojo entre las costuras; Palestina, entre fines del siglo XIX y principios del XX. Sin coleccionista individual documentado -- donada al Museo en 1967 por la 'Jerusalem and the East Mission' (JEM), organizacion misionera anglicana fundada en 1888 por el obispo George Blyth como fondo para sostener las propiedades y ministerios de la Diocesis de Jerusalen (creada en 1841 bajo el patrocinio conjunto de la reina Victoria y el rey Federico Guillermo IV de Prusia), activa en salud, educacion y capellania en Palestina, Siria, Egipto, Sudan, Irak, Jordania, Iran, el Golfo, Chipre y el norte de Africa. La prenda fue probablemente recolectada como pieza etnografica durante la actividad misionera en Palestina otomana o del Mandato britanico, pero la donacion al Museo llega recien en 1967 -- casi dos decadas despues del fin del Mandato en 1948 -- sin que las fuentes consultadas documenten el momento ni el mecanismo exacto de la recoleccion original.",
+        "notesEn": "Rural sheepskin jacket (farwah/farweh), made of sheepskin pieces sewn together, natural cream and brown wool turned inward, with red cotton bands between the seams; Palestine, late 19th to early 20th century. No individual collector documented -- donated to the Museum in 1967 by the 'Jerusalem and the East Mission' (JEM), an Anglican missionary organization founded in 1888 by Bishop George Blyth as a fund to support the properties and ministries of the Diocese of Jerusalem (established in 1841 under the joint patronage of Queen Victoria and King Frederick William IV of Prussia), active in health, education, and chaplaincy work across Palestine, Syria, Egypt, Sudan, Iraq, Jordan, Iran, the Gulf, Cyprus, and North Africa. The garment was likely collected as an ethnographic piece during missionary activity in Ottoman or Mandate-era Palestine, but the donation to the Museum only occurs in 1967 -- nearly two decades after the Mandate ended in 1948 -- with the sources consulted documenting neither the exact moment nor mechanism of the original collection."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "fines s. XIX - principios s. XX",
+          "actor_or_institution": "Artesano/a rural desconocido/a",
+          "location": "Palestina (historica)",
+          "description": "Chaqueta rural de piel de oveja (farwah/farweh).",
+          "descriptionEs": "Chaqueta rural de piel de oveja (farwah/farweh).",
+          "descriptionEn": "Rural sheepskin jacket (farwah/farweh).",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_As1967-02-1",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Jerusalem and the East Mission (mision anglicana)",
+          "location": "Palestina",
+          "description": "Probablemente recolectada como pieza etnografica durante la actividad misionera anglicana en Palestina otomana o del Mandato britanico; ni el momento ni el mecanismo exacto de la recoleccion estan documentados en las fuentes consultadas.",
+          "descriptionEs": "Probablemente recolectada como pieza etnografica durante la actividad misionera anglicana en Palestina otomana o del Mandato britanico; ni el momento ni el mecanismo exacto de la recoleccion estan documentados en las fuentes consultadas.",
+          "descriptionEn": "Likely collected as an ethnographic piece during Anglican missionary activity in Ottoman or Mandate-era Palestine; neither the exact moment nor mechanism of collection is documented in the sources consulted.",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_As1967-02-1",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1967",
+          "actor_or_institution": "Jerusalem and the East Mission",
+          "location": "Londres, Reino Unido",
+          "description": "Donada al British Museum por la Jerusalem and the East Mission, casi dos decadas despues del fin del Mandato britanico sobre Palestina (1948).",
+          "descriptionEs": "Donada al British Museum por la Jerusalem and the East Mission, casi dos decadas despues del fin del Mandato britanico sobre Palestina (1948).",
+          "descriptionEn": "Donated to the British Museum by the Jerusalem and the East Mission, nearly two decades after the end of the British Mandate for Palestine (1948).",
+          "source_url": "https://www.britishmuseum.org/collection/object/W_As1967-02-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:Y_EA1770",
