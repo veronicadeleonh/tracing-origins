@@ -2330,7 +2330,7 @@
     "accessionNumber": "1978.412.1122",
     "accessionYear": "1978",
     "isPublicDomain": false,
-    "primaryImage": "",
+    "primaryImage": "https://collectionapi.metmuseum.org/api/collection/v1/iiif/311563/645361/restricted",
     "department": "The Michael C. Rockefeller Wing",
     "objectName": "Canoe prow",
     "title": "Canoe Prow",
