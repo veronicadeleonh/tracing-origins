@@ -6080,8 +6080,175 @@
       "originLon": 53.688,
       "originCountry": "Irán",
       "originCountryEn": "Iran",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Manuscrito ilustrado 'Persian Travelogue: A Diary of a Journey through the region of Fars', de 1838, con textos e imagenes de un recorrido por Fars (suroeste de Iran) hecho a mediados de la decada de 1830 por la tutora francesa Louise de la Marinierre, acompanada por un escriba persa ('Ali Akbar) y un artista persa (Ahmad Naqqash), visitando sitios como las ruinas de Persepolis, Qasr-e Abu Nasr, las tumbas reales de Naqsh-e Rustam y Pasargada, y varios relieves rupestres. Caso de contraste sin mecanismo colonial en su origen: el manuscrito resultante no fue extraido ni excavado, sino creado como regalo -- de la Marinierre se lo presento al propio Mohammad Shah Qajar en 1838. Como llego luego al mercado internacional de arte antes de su compra por el Met en 2019 (via Friends of Ancient Near Eastern Art y donaciones de la Ishtar Society) no esta documentado en las fuentes consultadas.",
+        "notesEn": "Illustrated manuscript 'Persian Travelogue: A Diary of a Journey through the region of Fars', dated 1838, recording in text and images a journey through Fars (southwestern Iran) undertaken in the mid-1830s by French tutor Louise de la Marinierre, accompanied by a Persian scribe ('Ali Akbar) and a Persian artist (Ahmad Naqqash), visiting sites including the ruins of Persepolis, Qasr-e Abu Nasr, the royal tombs at Naqsh-e Rustam and Pasargadae, and various rock reliefs. A contrast case with no colonial mechanism at its origin: the resulting manuscript was not extracted or excavated, but created as a gift -- de la Marinierre presented it to Mohammad Shah Qajar himself in 1838. How it later reached the international art market before the Met's 2019 purchase (via Friends of Ancient Near Eastern Art and Ishtar Society gifts) is not documented in the sources consulted."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1835-1838",
+          "actor_or_institution": "Louise de la Marinierre, con 'Ali Akbar (escriba) y Ahmad Naqqash (artista)",
+          "location": "Fars, Iran",
+          "description": "Manuscrito ilustrado que registra un recorrido por sitios de Fars (Persepolis, Qasr-e Abu Nasr, Naqsh-e Rustam, Pasargada).",
+          "descriptionEs": "Manuscrito ilustrado que registra un recorrido por sitios de Fars (Persepolis, Qasr-e Abu Nasr, Naqsh-e Rustam, Pasargada).",
+          "descriptionEn": "Illustrated manuscript recording a journey through sites in Fars (Persepolis, Qasr-e Abu Nasr, Naqsh-e Rustam, Pasargadae).",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "gift",
+          "event_date": "1838",
+          "actor_or_institution": "Louise de la Marinierre -> Mohammad Shah Qajar",
+          "location": "Corte Qajar, Iran",
+          "description": "El manuscrito es presentado como regalo al propio Mohammad Shah Qajar.",
+          "descriptionEs": "El manuscrito es presentado como regalo al propio Mohammad Shah Qajar.",
+          "descriptionEn": "The manuscript is presented as a gift to Mohammad Shah Qajar himself.",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "entre 1838 y 2019",
+          "actor_or_institution": "Desconocido",
+          "location": "Desconocido",
+          "description": "Como el manuscrito salio de circulos de la corte Qajar y llego al mercado internacional de arte no esta documentado en las fuentes consultadas.",
+          "descriptionEs": "Como el manuscrito salio de circulos de la corte Qajar y llego al mercado internacional de arte no esta documentado en las fuentes consultadas.",
+          "descriptionEn": "How the manuscript left Qajar court circles and reached the international art market is not documented in the sources consulted.",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "2019",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York",
+          "description": "Comprado con fondos de Friends of Ancient Near Eastern Art y donaciones de la Ishtar Society.",
+          "descriptionEs": "Comprado con fondos de Friends of Ancient Near Eastern Art y donaciones de la Ishtar Society.",
+          "descriptionEn": "Purchased with funds from Friends of Ancient Near Eastern Art and Ishtar Society gifts.",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
+    },
+    {
+      "objectID": "met:891607",
+      "sourceMuseum": "met",
+      "title": "Urn with Assyrian scenes",
+      "objectName": "Urn",
+      "department": "Ancient West Asian Art",
+      "culture": "French",
+      "period": "Victorian",
+      "dynasty": null,
+      "objectDate": "1851",
+      "medium": "Slate, bronze",
+      "creditLine": "Henrietta and Christopher McCall Collection, Purchase, Henrie Jo Barth Bequest, and Museum Acquisitions and Josephine Lois Berger-Nadler Endowment Funds, 2023",
+      "accessionYear": "2023",
+      "excavation": null,
+      "country": null,
+      "region": null,
+      "subregion": null,
+      "primaryImage": "https://images.metmuseum.org/CRDImages/an/original/DP-33307-001.jpg",
+      "objectURL": "https://www.metmuseum.org/art/collection/search/891607",
+      "originLabel": "French",
+      "originLabelEn": "French",
+      "originPrecision": "culture",
+      "originLat": 48.8566,
+      "originLon": 2.3522,
+      "originCountry": null,
+      "originCountryEn": null,
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "United Kingdom",
+        "notes": "Urna de pizarra y bronce con escenas asirias, pieza victoriana de 1851 (no antigua) -- ilustrada en el catalogo de la Gran Exposicion de Londres de ese ano ('Art Journal Illustrated Catalogue: The Industry of All Nations'). El propio registro del Met la cataloga con cultura 'French' (no britanica, a diferencia de los toros alados con cabeza humana de la misma coleccion McCall, catalogados como 'British') -- el revival asirio, disparado por las excavaciones de Layard en Nimrud y Nineveh a mediados del siglo XIX, se puso de moda en las artes decorativas de varios paises europeos, no solo en Gran Bretana. El recorrido moderno de esta pieza es inusualmente sinuoso: habria sido traida de Europa a Estados Unidos en 1902-03 por el comico W. C. Fields, o bien obtenida por Fields de manos del director de cine D. W. Griffith a fines de los anos 1930; hacia 1946 paso a Carlotta Monti (companera de Fields) en California, y de ahi a coleccionistas privados de Nueva Inglaterra antes de que Henrietta y Christopher McCall la compraran por eBay en 2004; el Met la adquirio de la coleccion McCall en 2023. Henrietta McCall publico en 2022 un articulo sobre esta pieza y su par, titulado 'Excavating a pair of Assyrian Revival urns: A Hollywood Mystery'.",
+        "notesEn": "Slate and bronze urn with Assyrian scenes, a Victorian piece from 1851 (not ancient) -- illustrated in the catalogue of that year's Great Exhibition in London ('Art Journal Illustrated Catalogue: The Industry of All Nations'). The Met's own record catalogues it with culture 'French' (not British, unlike the human-headed winged bulls from the same McCall collection, catalogued as 'British') -- the Assyrian revival, sparked by Layard's mid-19th-century excavations at Nimrud and Nineveh, became fashionable in the decorative arts of several European countries, not only Britain. The piece's modern journey is unusually winding: it was reportedly brought from Europe to the United States in 1902-03 by comedian W. C. Fields, or else obtained by Fields from film director D. W. Griffith in the late 1930s; by 1946 it passed to Carlotta Monti (Fields's companion) in California, and from there to private New England collectors before Henrietta and Christopher McCall bought it on eBay in 2004; the Met acquired it from the McCall collection in 2023. Henrietta McCall published an article on this piece and its pair in 2022, titled 'Excavating a pair of Assyrian Revival urns: A Hollywood Mystery'."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "1851",
+          "actor_or_institution": "Manufactura britanica (revival asirio)",
+          "location": "Reino Unido",
+          "description": "Urna de pizarra y bronce con escenas asirias, ilustrada en el catalogo de la Gran Exposicion de Londres de 1851.",
+          "descriptionEs": "Urna de pizarra y bronce con escenas asirias, ilustrada en el catalogo de la Gran Exposicion de Londres de 1851.",
+          "descriptionEn": "Slate and bronze urn with Assyrian scenes, illustrated in the catalogue of the 1851 Great Exhibition in London.",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "1902-1903 o fines de 1930s",
+          "actor_or_institution": "W. C. Fields (posiblemente via D. W. Griffith)",
+          "location": "Europa -> Estados Unidos",
+          "description": "Segun la investigacion de Henrietta McCall, la pieza habria sido traida de Europa a EEUU por el comico W. C. Fields en 1902-03, o bien obtenida por Fields de D. W. Griffith a fines de los anos 1930 -- las fuentes no coinciden en cual de las dos versiones es correcta.",
+          "descriptionEs": "Segun la investigacion de Henrietta McCall, la pieza habria sido traida de Europa a EEUU por el comico W. C. Fields en 1902-03, o bien obtenida por Fields de D. W. Griffith a fines de los anos 1930 -- las fuentes no coinciden en cual de las dos versiones es correcta.",
+          "descriptionEn": "Per Henrietta McCall's research, the piece was reportedly brought from Europe to the US by comedian W. C. Fields in 1902-03, or else obtained by Fields from D. W. Griffith in the late 1930s -- sources disagree on which version is correct.",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "h. 1946",
+          "actor_or_institution": "Carlotta Monti",
+          "location": "California, EEUU",
+          "description": "Pasa a Carlotta Monti, companera de W. C. Fields.",
+          "descriptionEs": "Pasa a Carlotta Monti, companera de W. C. Fields.",
+          "descriptionEn": "Passed to Carlotta Monti, W. C. Fields's companion.",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "2004",
+          "actor_or_institution": "Henrietta y Christopher McCall",
+          "location": "eBay",
+          "description": "Comprada por los McCall en una subasta de eBay, tras pasar por coleccionistas privados de Nueva Inglaterra.",
+          "descriptionEs": "Comprada por los McCall en una subasta de eBay, tras pasar por coleccionistas privados de Nueva Inglaterra.",
+          "descriptionEn": "Purchased by the McCalls in an eBay auction, after passing through private New England collectors.",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 5,
+          "event_type": "acquisition",
+          "event_date": "2023",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York",
+          "description": "Adquirida de la Coleccion Henrietta y Christopher McCall.",
+          "descriptionEs": "Adquirida de la Coleccion Henrietta y Christopher McCall.",
+          "descriptionEn": "Acquired from the Henrietta and Christopher McCall Collection.",
+          "source_url": "https://www.metmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:918237",
@@ -11041,8 +11208,70 @@
       "originLon": 28.2176,
       "originCountry": "Grecia",
       "originCountryEn": "Greece",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Italy;Greece",
+        "notes": "Estatua de bronce de un Apolo, creada en Rodas (segun inscripcion en la propia pieza) por los escultores griegos Menodoto de Tiro y Jenofonte de Rodas, probablemente como pastiche arcaizante para un cliente romano hacia fines del siglo II a.C. Hallada en 1832 en un naufragio frente a Piombino (Toscana, Italia) -- la estatua ya estaba siendo transportada por mar hacia Roma para su venta en la Antiguedad cuando el barco que la llevaba se hundio; es uno de los pocos bronces antiguos originales que escapo de ser fundido como chatarra, precisamente gracias a ese naufragio. Comprada por el Louvre en 1834, dos anos despues del hallazgo -- caso de contraste sin mecanismo colonial: ni excavacion ni administracion colonial intervienen, solo un naufragio antiguo redescubierto por pescadores o buzos del siglo XIX y revendida en el mercado de antiguedades italiano.",
+        "notesEn": "Bronze statue of Apollo, created at Rhodes (per an inscription on the piece itself) by Greek sculptors Menodotus of Tyre and Xenophon of Rhodes, likely as an archaizing pastiche for a Roman client toward the end of the 2nd century BCE. Found in 1832 in a shipwreck off Piombino (Tuscany, Italy) -- the statue was already being transported by sea to Rome for sale in antiquity when the ship carrying it sank; it is one of the few original ancient bronzes to escape being melted down as scrap, precisely because of that wreck. Purchased by the Louvre in 1834, two years after the find -- a contrast case with no colonial mechanism: no excavation or colonial administration is involved, just an ancient shipwreck rediscovered by 19th-century fishermen or divers and resold on the Italian antiquities market."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 100 a.C.",
+          "actor_or_institution": "Menodoto de Tiro y Jenofonte de Rodas (segun inscripcion en la pieza)",
+          "location": "Rodas",
+          "description": "Estatua de bronce de Apolo, pastiche arcaizante fabricado para un cliente romano.",
+          "descriptionEs": "Estatua de bronce de Apolo, pastiche arcaizante fabricado para un cliente romano.",
+          "descriptionEn": "Bronze statue of Apollo, an archaizing pastiche made for a Roman client.",
+          "source_url": "https://collections.louvre.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "Antiguedad (post h. 100 a.C.)",
+          "actor_or_institution": "Desconocido",
+          "location": "Mar Tirreno, frente a Piombino",
+          "description": "La estatua se hunde junto con el barco que la transportaba hacia Roma para su venta -- ese naufragio es lo que la preservo de ser fundida como chatarra de bronce, destino de la gran mayoria de bronces antiguos.",
+          "descriptionEs": "La estatua se hunde junto con el barco que la transportaba hacia Roma para su venta -- ese naufragio es lo que la preservo de ser fundida como chatarra de bronce, destino de la gran mayoria de bronces antiguos.",
+          "descriptionEn": "The statue sank along with the ship transporting it to Rome for sale -- that wreck is precisely what preserved it from being melted down as bronze scrap, the fate of most ancient bronzes.",
+          "source_url": "https://collections.louvre.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "excavation",
+          "event_date": "1832",
+          "actor_or_institution": "Desconocido (hallazgo en naufragio)",
+          "location": "Frente a Piombino, Toscana, Italia",
+          "description": "La estatua es recuperada del fondo marino cerca de Piombino.",
+          "descriptionEs": "La estatua es recuperada del fondo marino cerca de Piombino.",
+          "descriptionEn": "The statue is recovered from the seabed near Piombino.",
+          "source_url": "https://collections.louvre.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1834",
+          "actor_or_institution": "Musee du Louvre",
+          "location": "Paris",
+          "description": "Comprada por el Louvre dos anos despues de su hallazgo.",
+          "descriptionEs": "Comprada por el Louvre dos anos despues de su hallazgo.",
+          "descriptionEn": "Purchased by the Louvre two years after its discovery.",
+          "source_url": "https://collections.louvre.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010258136",
@@ -11712,8 +11941,71 @@
       "originLon": 36.1603,
       "originCountry": "Turquía",
       "originCountryEn": "Turkey",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "french_mandate",
+          "partage",
+          "museum_funded_excavation"
+        ],
+        "associated_communities_or_states": "Syria;Turkey",
+        "notes": "Mosaico romano del Juicio de Paris (h. 115-150 d.C.), hallado en 1932 en la 'Casa del Atrio' de Antioquia sobre el Orontes (actual Antakya, provincia de Hatay, Turquia -- entonces Siria bajo Mandato Frances). Excavada por el 'Comite para la Excavacion de Antioquia y sus Alrededores', un consorcio internacional que incluia la Universidad de Princeton, el Worcester Art Museum, el Baltimore Museum of Art y los Musees Nationaux de Francia (representados por el Louvre), bajo un permiso del Servicio de Antiguedades sirio que estipulaba un regimen de 'partage' -- los mosaicos del comedor de la Casa del Atrio se repartieron entre Wellesley College, Princeton, el Baltimore Museum of Art y el Louvre. La pieza fue asignada al Louvre en 1936. Las excavaciones terminaron abruptamente a fines de 1939, antes de agotar el contrato, por el estallido de la Segunda Guerra Mundial y la cesion de la provincia de Hatay de Siria a Turquia -- el propio estatus politico del sitio cambio de mano durante la vida util de la excavacion. Medios turcos actuales (ej. Turkiye Today) enmarcan estos mosaicos como 'patrimonio robado' desde la perspectiva turca; se documenta esa disputa sin adjudicarla.",
+        "notesEn": "Roman mosaic of the Judgment of Paris (c. 115-150 CE), found in 1932 in the 'Atrium House' at Antioch on the Orontes (modern Antakya, Hatay province, Turkey -- then Syria under the French Mandate). Excavated by the 'Committee for the Excavation of Antioch and Its Vicinity,' an international consortium including Princeton University, the Worcester Art Museum, the Baltimore Museum of Art, and the Musees Nationaux de France (represented by the Louvre), under a permit from the Syrian Antiquities Service that stipulated a 'partage' regime -- the mosaics from the Atrium House dining room were divided among Wellesley College, Princeton, the Baltimore Museum of Art, and the Louvre. This piece was allocated to the Louvre in 1936. The excavations ended abruptly in late 1939, before the contract ran out, due to the outbreak of WWII and Hatay province's cession from Syria to Turkey -- the site's own political status changed hands during the excavation's working life. Present-day Turkish media (e.g. Turkiye Today) frame these mosaics as 'stolen heritage' from a Turkish perspective; that dispute is documented here without adjudicating it."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 115-150 d.C.",
+          "actor_or_institution": "Talleres locales de mosaico",
+          "location": "Antioquia sobre el Orontes (actual Antakya, Turquia)",
+          "description": "Mosaico de piso con el Juicio de Paris, del comedor de la 'Casa del Atrio'.",
+          "descriptionEs": "Mosaico de piso con el Juicio de Paris, del comedor de la 'Casa del Atrio'.",
+          "descriptionEn": "Floor mosaic depicting the Judgment of Paris, from the dining room of the 'Atrium House'.",
+          "source_url": "https://collections.louvre.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1932",
+          "actor_or_institution": "Comite para la Excavacion de Antioquia y sus Alrededores (Princeton, Worcester Art Museum, Baltimore Museum of Art, Musees Nationaux de Francia)",
+          "location": "Antioquia sobre el Orontes, Siria bajo Mandato Frances",
+          "description": "Excavada bajo permiso del Servicio de Antiguedades sirio, con regimen de partage acordado de antemano.",
+          "descriptionEs": "Excavada bajo permiso del Servicio de Antiguedades sirio, con regimen de partage acordado de antemano.",
+          "descriptionEn": "Excavated under a permit from the Syrian Antiquities Service, with a partage arrangement agreed in advance.",
+          "source_url": "https://www.worcesterart.org",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1936",
+          "actor_or_institution": "Comite de excavacion / Servicio de Antiguedades sirio",
+          "location": "Antioquia / Paris",
+          "description": "Division (partage) de los mosaicos de la Casa del Atrio entre Wellesley College, Princeton, el Baltimore Museum of Art y el Louvre; esta pieza fue asignada al Louvre.",
+          "descriptionEs": "Division (partage) de los mosaicos de la Casa del Atrio entre Wellesley College, Princeton, el Baltimore Museum of Art y el Louvre; esta pieza fue asignada al Louvre.",
+          "descriptionEn": "Division (partage) of the Atrium House mosaics among Wellesley College, Princeton, the Baltimore Museum of Art, and the Louvre; this piece was allocated to the Louvre.",
+          "source_url": "https://collections.louvre.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1936",
+          "actor_or_institution": "Musee du Louvre",
+          "location": "Paris",
+          "description": "Ingreso a las colecciones del Louvre por el partage de 1936.",
+          "descriptionEs": "Ingreso a las colecciones del Louvre por el partage de 1936.",
+          "descriptionEn": "Entered the Louvre's collections via the 1936 partage.",
+          "source_url": "https://collections.louvre.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010277325",
@@ -15287,8 +15579,57 @@
       "originLon": 71.5,
       "originCountry": "Pakistán",
       "originCountryEn": "Pakistan",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "colonial_administration",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Pakistan",
+        "notes": "Fragmento arquitectonico en esquisto con un Bodhisattva predicando dentro de una capilla, arte de Gandhara (periodo Kushan, siglos II-III d.C.), de Takht-i-Bahi (actual provincia de Khyber Pakhtunkhwa, Pakistan). El sitio fue explorado y excavado desde 1864 en adelante bajo administracion colonial britanica en la India, y buena parte de su escultura terminó dispersa en colecciones britanicas durante el Raj. Esta pieza fue donada al Museo en 1950 por un tal 'Aubrey Turnbull' -- no se encontro informacion adicional sobre esta persona (rol, coleccion, como obtuvo la pieza) en las fuentes consultadas; investigacion parcial.",
+        "notesEn": "Schist architectural fragment showing a preaching Bodhisattva within a chapel, Gandharan art (Kushan period, 2nd-3rd century CE), from Takht-i-Bahi (modern Khyber Pakhtunkhwa province, Pakistan). The site was explored and excavated from 1864 onward under British colonial administration in India, and much of its sculpture ended up dispersed across British collections during the Raj. This piece was donated to the Museum in 1950 by an 'Aubrey Turnbull' -- no further information about this person (role, collection, how they obtained the piece) was found in the sources consulted; partial research."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "siglos II-III d.C.",
+          "actor_or_institution": "Talleres de Gandhara (periodo Kushan)",
+          "location": "Takht-i-Bahi, actual Pakistan",
+          "description": "Fragmento arquitectonico en esquisto con un Bodhisattva predicando dentro de una capilla.",
+          "descriptionEs": "Fragmento arquitectonico en esquisto con un Bodhisattva predicando dentro de una capilla.",
+          "descriptionEn": "Schist architectural fragment showing a preaching Bodhisattva within a chapel.",
+          "source_url": "https://www.britishmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "desde 1864",
+          "actor_or_institution": "Exploraciones britanicas en la India colonial",
+          "location": "Takht-i-Bahi, Raj britanico",
+          "description": "El sitio es explorado y excavado desde 1864 bajo administracion colonial britanica; no se pudo confirmar el evento puntual de hallazgo de esta pieza especifica.",
+          "descriptionEs": "El sitio es explorado y excavado desde 1864 bajo administracion colonial britanica; no se pudo confirmar el evento puntual de hallazgo de esta pieza especifica.",
+          "descriptionEn": "The site was explored and excavated from 1864 onward under British colonial administration; the specific find event for this particular piece could not be confirmed.",
+          "source_url": "https://www.britishmuseum.org",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1950",
+          "actor_or_institution": "Aubrey Turnbull",
+          "location": "Londres",
+          "description": "Donada al Museo por un tal Aubrey Turnbull; no se encontro informacion adicional sobre esta persona en las fuentes consultadas.",
+          "descriptionEs": "Donada al Museo por un tal Aubrey Turnbull; no se encontro informacion adicional sobre esta persona en las fuentes consultadas.",
+          "descriptionEn": "Donated to the Museum by an Aubrey Turnbull; no further information about this person was found in the sources consulted.",
+          "source_url": "https://www.britishmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        }
+      ]
     },
     {
       "objectID": "bm:A_1958-1112-1",
@@ -17398,8 +17739,70 @@
       "originLon": -132.0,
       "originCountry": "Canadá",
       "originCountryEn": "Canada",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "settler_collection",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Canada",
+        "notes": "Delantal de piel con pezunas de venado, pueblo haida, siglo XIX. Segun una investigacion curatorial detallada del propio Museo (que cruza el registro de adquisicion con los diarios de navegacion del buque), la pieza fue recolectada por el teniente Henry Reginald Shipster durante su unico paso por Haida Gwaii (entonces Islas de la Reina Carlota) al mando del HMS Pheasant, que atraco en Naden Harbour el 1 de julio de 1896 y partio al dia siguiente. El registro del Museo describe con detalle que Shipster obtuvo un conjunto de doce objetos (incluido este) de tumbas del cementerio de la aldea haida de Kung -- entre ellos el craneo de un jefe y objetos que, por su naturaleza ceremonial, probablemente correspondian en realidad a la tumba de un chaman. El Museo no compro estos objetos a Shipster directamente sino a su viuda, Ina Mary Pym, en 1919 -- diez anos despues de la muerte de Shipster.",
+        "notesEn": "Deer-hide apron with hooves, Haida people, 19th century. Per detailed curatorial research by the Museum itself (cross-referencing the acquisition register with the ship's logs), the piece was collected by Lieutenant Henry Reginald Shipster during his single call at Haida Gwaii (then the Queen Charlotte Islands) while commanding HMS Pheasant, which docked at Naden Harbour on 1 July 1896 and departed the next day. The Museum's register describes in detail that Shipster obtained a set of twelve objects (including this one) from graves in the cemetery of the Haida village of Kung -- among them a chief's skull and objects that, given their ceremonial nature, likely actually belonged to a shaman's grave. The Museum did not buy these objects from Shipster directly but from his widow, Ina Mary Pym, in 1919 -- ten years after Shipster's death."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "siglo XIX",
+          "actor_or_institution": "Pueblo haida",
+          "location": "Kung, Haida Gwaii (Islas de la Reina Carlota), Canada",
+          "description": "Delantal de piel con pezunas, depositado como ajuar funerario en el cementerio de la aldea de Kung.",
+          "descriptionEs": "Delantal de piel con pezunas, depositado como ajuar funerario en el cementerio de la aldea de Kung.",
+          "descriptionEn": "Hide apron with hooves, deposited as grave goods in the cemetery of the village of Kung.",
+          "source_url": "https://www.britishmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1-2 de julio de 1896",
+          "actor_or_institution": "Teniente Henry Reginald Shipster (HMS Pheasant, Marina Real britanica)",
+          "location": "Naden Harbour, Haida Gwaii, Canada",
+          "description": "Shipster retira un conjunto de doce objetos, incluido este, de tumbas del cementerio de Kung durante la unica escala del HMS Pheasant en el puerto.",
+          "descriptionEs": "Shipster retira un conjunto de doce objetos, incluido este, de tumbas del cementerio de Kung durante la unica escala del HMS Pheasant en el puerto.",
+          "descriptionEn": "Shipster removed a set of twelve objects, including this one, from graves in the Kung cemetery during HMS Pheasant's single call at the port.",
+          "source_url": "https://www.britishmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1909-1919",
+          "actor_or_institution": "Ina Mary Pym (viuda de Shipster)",
+          "location": "Reino Unido",
+          "description": "Tras la muerte de Shipster en 1909, la coleccion pasa a su viuda.",
+          "descriptionEs": "Tras la muerte de Shipster en 1909, la coleccion pasa a su viuda.",
+          "descriptionEn": "After Shipster's death in 1909, the collection passed to his widow.",
+          "source_url": "https://www.britishmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "1919",
+          "actor_or_institution": "British Museum, comprado a Ina Mary Pym",
+          "location": "Londres",
+          "description": "El Museo compra la pieza a la viuda de Shipster, diez anos despues de la muerte de este.",
+          "descriptionEs": "El Museo compra la pieza a la viuda de Shipster, diez anos despues de la muerte de este.",
+          "descriptionEn": "The Museum purchased the piece from Shipster's widow, ten years after his death.",
+          "source_url": "https://www.britishmuseum.org",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Am1928-0516-2",

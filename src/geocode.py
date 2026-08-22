@@ -405,6 +405,14 @@ CULTURE_KEYWORDS = [
     # arqueológico puntual). Precisión "culture", igual que el resto de esta
     # lista.
     ("British", (51.5074, -0.1278)),  # Londres, como aproximación de "hecho en Gran Bretaña"
+    # Agregado 22/08, mismo mecanismo/motivo que "British" arriba: met:891607
+    # (urna con escenas asirias, colección McCall) tiene culture="French" en
+    # la API del Met -- dato crudo real (el objeto es de 1851, revival asirio
+    # victoriano, pero catalogado por el Met con cultura francesa, no
+    # británica). Sin esta entrada la pieza quedaba "unresolved" y por lo
+    # tanto invisible en el mapa pese a tener layer 3 cargada, mismo bug ya
+    # documentado para met:918237/met:910742/louvre:cl010256592.
+    ("French", (48.8566, 2.3522)),  # París, como aproximación de "hecho en Francia"
 ]
 
 
