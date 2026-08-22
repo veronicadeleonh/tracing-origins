@@ -391,6 +391,12 @@ function App() {
       const properties = f.properties ?? {};
       let title: string;
       let subtitle: string;
+      // "pointer" solo cuando lo que está debajo del mouse realmente hace
+      // algo al clickear -- para country-hit eso significa un país con al
+      // menos 1 pieza en la muestra (22/08, pedido de la usuaria: antes el
+      // cursor cambiaba a mano sobre cualquier país, incluidos los que no
+      // tienen ninguna pieza y por lo tanto el click no hace nada).
+      let clickable = true;
       if (f.layer?.id === "origins") {
         title = String(properties.label);
         subtitle = s.tooltipPieceCount(Number(properties.count));
@@ -401,16 +407,16 @@ function App() {
         const naturalEarthName = String(properties.name ?? "");
         const key = NATURAL_EARTH_NAME_TO_COUNTRY_KEY[naturalEarthName];
         const group = key ? countryGroups.find((g) => g.key === key) : undefined;
+        const hasPieces = !!group && group.objects.length > 0;
         title = group?.label ?? naturalEarthName;
-        subtitle = group && group.objects.length > 0
-          ? s.tooltipPieceCount(group.objects.length)
-          : s.tooltipCountryEmptySub;
+        subtitle = hasPieces ? s.tooltipPieceCount(group.objects.length) : s.tooltipCountryEmptySub;
+        clickable = hasPieces;
       } else {
         title = String(properties.name);
         subtitle = String(properties.city);
       }
       setTooltip({ longitude: e.lngLat.lng, latitude: e.lngLat.lat, title, subtitle });
-      setCursor("pointer");
+      setCursor(clickable ? "pointer" : "grab");
     } else {
       setTooltip(null);
       setCursor("grab");
