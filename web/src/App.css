@@ -482,6 +482,20 @@
   margin-bottom: 0;
 }
 
+/* Links dentro del modal (Fuentes y licencias, Créditos) heredan el color
+   del párrafo en vez del azul por default del navegador -- siguen siendo
+   distinguibles por el subrayado, no por un color que choque con el resto
+   del texto. */
+.welcome-modal-section p a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.welcome-modal-section p a:hover {
+  color: #1a1a1a;
+}
+
 .welcome-steps {
   margin: 0;
   padding-left: 22px;
