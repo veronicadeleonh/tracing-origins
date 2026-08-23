@@ -38,6 +38,15 @@ export interface I18nStrings {
   researchFilterAria: string;
   researchFilterRowLabel: string;
   researchFilterLabels: Record<"all" | "with" | "without", string>;
+  // Filtro por mecanismo (context_flags), agregado 23/08 a pedido de la
+  // usuaria al retomar el ítem "tratamiento narrativo de context_flags"
+  // del backlog -- ver CLAUDE.md. Vocabulario cerrado de 21 flags,
+  // mostrados tal cual (sin agrupar) en un dropdown multi-select.
+  mechanismFilterLabel: string;
+  mechanismFilterLabelActive: (n: number) => string;
+  mechanismFilterAria: string;
+  mechanismClearLabel: string;
+  contextFlagLabels: Record<string, string>;
   closePanelAria: string;
   untitled: string;
 
@@ -141,6 +150,33 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     researchFilterAria: "Filtrar por estado de investigación",
     researchFilterRowLabel: "Investigación:",
     researchFilterLabels: { all: "Todas", with: "Con investigación", without: "Sin investigación" },
+    mechanismFilterLabel: "Mecanismo",
+    mechanismFilterLabelActive: (n) => `Mecanismo (${n})`,
+    mechanismFilterAria: "Filtrar por mecanismo de adquisición",
+    mechanismClearLabel: "Limpiar selección",
+    contextFlagLabels: {
+      antiquarian_travel: "Viaje anticuario",
+      art_market: "Mercado de arte",
+      colonial_administration: "Administración colonial",
+      french_colonial_context: "Contexto colonial francés",
+      french_mandate: "Mandato francés",
+      institutional_transfer: "Transferencia institucional",
+      mariette_administration: "Administración de Mariette",
+      military_seizure: "Confiscación militar",
+      museum_funded_excavation: "Excavación financiada por el museo",
+      napoleonic_transfer: "Transferencia napoleónica",
+      non_colonial_context: "Sin mecanismo colonial",
+      ottoman_authorization: "Autorización otomana",
+      partage: "Partage (reparto de hallazgos)",
+      private_collection: "Colección privada",
+      private_excavation: "Excavación privada",
+      punitive_expedition: "Expedición punitiva",
+      settler_collection: "Colección de colonos",
+      state_mission: "Misión estatal",
+      state_sale: "Venta estatal",
+      treaty_transfer: "Transferencia por tratado",
+      undocumented_early_chain: "Cadena temprana sin documentar",
+    },
     closePanelAria: "Cerrar panel",
     untitled: "(sin título)",
 
@@ -259,6 +295,33 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     researchFilterAria: "Filter by research status",
     researchFilterRowLabel: "Research:",
     researchFilterLabels: { all: "All", with: "With research", without: "Without research" },
+    mechanismFilterLabel: "Mechanism",
+    mechanismFilterLabelActive: (n) => `Mechanism (${n})`,
+    mechanismFilterAria: "Filter by acquisition mechanism",
+    mechanismClearLabel: "Clear selection",
+    contextFlagLabels: {
+      antiquarian_travel: "Antiquarian travel",
+      art_market: "Art market",
+      colonial_administration: "Colonial administration",
+      french_colonial_context: "French colonial context",
+      french_mandate: "French Mandate",
+      institutional_transfer: "Institutional transfer",
+      mariette_administration: "Mariette administration",
+      military_seizure: "Military seizure",
+      museum_funded_excavation: "Museum-funded excavation",
+      napoleonic_transfer: "Napoleonic-era transfer",
+      non_colonial_context: "No colonial mechanism",
+      ottoman_authorization: "Ottoman authorization",
+      partage: "Partage (division of finds)",
+      private_collection: "Private collection",
+      private_excavation: "Private excavation",
+      punitive_expedition: "Punitive expedition",
+      settler_collection: "Settler collection",
+      state_mission: "State mission",
+      state_sale: "State sale",
+      treaty_transfer: "Treaty transfer",
+      undocumented_early_chain: "Undocumented early chain",
+    },
     closePanelAria: "Close panel",
     untitled: "(untitled)",
 

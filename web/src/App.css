@@ -217,6 +217,113 @@
   font-weight: 500;
 }
 
+/* Filtro por mecanismo (context_flags), 23/08 -- dropdown aparte del pill
+   de arriba (~21 opciones, no 3). Mismo pill/violeta que .research-filter
+   para leerse como parte del mismo eje de filtrado ("Investigación"), pero
+   con caret porque abre un menú en vez de alternar 3 estados fijos. */
+.mechanism-filter-wrap {
+  position: relative;
+}
+
+.mechanism-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e5e2da;
+  background: rgba(251, 250, 247, 0.92);
+  font: inherit;
+  font-size: 12px;
+  color: #77726a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.mechanism-filter-btn:hover:not(:disabled) {
+  color: #1a1a1a;
+  border-color: #928d82;
+}
+
+.mechanism-filter-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mechanism-filter-btn.active {
+  background: #6a4c93;
+  border-color: #6a4c93;
+  color: #fbfaf7;
+  font-weight: 500;
+}
+
+.mechanism-filter-caret {
+  font-size: 8px;
+}
+
+.mechanism-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 1001;
+  width: 280px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: #fbfaf7;
+  border: 1px solid #e5e2da;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+}
+
+.mechanism-menu-clear {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  color: #6a4c93;
+  padding: 6px 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.mechanism-menu-clear:hover {
+  background: #efece4;
+}
+
+.mechanism-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mechanism-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #3f3b34;
+}
+
+.mechanism-menu-item:hover {
+  background: #efece4;
+}
+
+.mechanism-menu-item-label {
+  flex: 1;
+}
+
+.mechanism-menu-item-count {
+  font-size: 11px;
+  color: #928d82;
+}
+
 /* Búsqueda por país vía click en el mapa (19/08, quinta vuelta — reubicada
    fuera de top-controls a su propio control flotante arriba a la derecha,
    debajo de "?"/idioma; ver CLAUDE.md). Es una función distinta a los

@@ -117,6 +117,14 @@ function App() {
   // marcar qué piezas tienen layer 3, dejar ocultar/mostrar según eso.
   // "all" es el default — no cambia el comportamiento previo.
   const [researchFilter, setResearchFilter] = useState<"all" | "with" | "without">("all");
+  // Filtro por mecanismo (context_flags), agregado 23/08 al retomar el ítem
+  // "tratamiento narrativo de context_flags" del backlog -- ver CLAUDE.md.
+  // Multi-select (Set): una pieza matchea si tiene AL MENOS UNO de los
+  // flags elegidos (OR, no AND) -- la mayoría de las piezas tienen 2-3
+  // flags, exigir todos sería demasiado restrictivo. Vacío = sin filtro,
+  // mismo comportamiento que antes de esta ronda.
+  const [selectedFlags, setSelectedFlags] = useState<Set<string>>(new Set());
+  const [mechanismMenuOpen, setMechanismMenuOpen] = useState(false);
   // Búsqueda "al revés" por país, segunda vuelta (19/08) — reemplazó al
   // buscador de texto original (retirado a pedido de la usuaria, ver
   // CLAUDE.md): ahora la única forma de elegir un país es clickeándolo
@@ -230,12 +238,54 @@ function App() {
     () =>
       bundle.objects.filter((obj) => {
         if (!obj.sourceMuseum || !visibleMuseums[obj.sourceMuseum]) return false;
-        if (researchFilter === "with") return objectHasResearch(obj);
-        if (researchFilter === "without") return !objectHasResearch(obj);
+        if (researchFilter === "with" && !objectHasResearch(obj)) return false;
+        if (researchFilter === "without" && objectHasResearch(obj)) return false;
+        // Filtro por mecanismo: implica "con investigación" aunque
+        // researchFilter esté en "all" -- una pieza sin layer 3 no tiene
+        // flags, así que nunca podría matchear de todos modos.
+        if (selectedFlags.size > 0) {
+          if (!objectHasResearch(obj)) return false;
+          const flags = obj.context?.context_flags ?? [];
+          if (!flags.some((f) => selectedFlags.has(f))) return false;
+        }
         return true;
       }),
-    [visibleMuseums, researchFilter],
+    [visibleMuseums, researchFilter, selectedFlags],
   );
+
+  // Cuenta de piezas por flag, para el dropdown de mecanismo -- se calcula
+  // sobre TODO el dataset (no visibleObjects) para que la lista de opciones
+  // y sus conteos no cambien según qué otros filtros estén activos en ese
+  // momento, mismo criterio que ya usa groupByCountry en geo.ts.
+  const flagCounts = useMemo(() => {
+    // Objeto plano en vez de `new Map(...)` -- el import por default de
+    // react-map-gl se llama "Map" y shadowea el constructor global acá.
+    const counts: Record<string, number> = {};
+    for (const obj of bundle.objects) {
+      for (const flag of obj.context?.context_flags ?? []) {
+        counts[flag] = (counts[flag] ?? 0) + 1;
+      }
+    }
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  }, []);
+
+  const toggleFlag = useCallback((flag: string) => {
+    setSelectedFlags((prev) => {
+      const next = new Set(prev);
+      if (next.has(flag)) next.delete(flag);
+      else next.add(flag);
+      return next;
+    });
+  }, []);
+
+  // Elegir "Sin investigación" con flags activos dejaría el filtro en un
+  // estado sin resultados posibles (esas piezas nunca tienen flags) -- se
+  // limpia la selección de flags al mismo tiempo, en vez de dejar al
+  // usuario con un resultado vacío sin pista de por qué.
+  const setResearchFilterAndClearFlags = useCallback((value: "all" | "with" | "without") => {
+    setResearchFilter(value);
+    if (value === "without") setSelectedFlags(new Set());
+  }, []);
 
   const clusters = useMemo(() => groupByOrigin(visibleObjects, lang), [visibleObjects, lang]);
 
@@ -522,11 +572,56 @@ function App() {
                 type="button"
                 className={`research-filter-btn${researchFilter === value ? " active" : ""}`}
                 aria-pressed={researchFilter === value}
-                onClick={() => setResearchFilter(value)}
+                onClick={() => setResearchFilterAndClearFlags(value)}
               >
                 {s.researchFilterLabels[value]}
               </button>
             ))}
+          </div>
+          {/* Filtro por mecanismo (context_flags), 23/08 -- dropdown aparte
+              del pill de arriba porque son ~21 opciones, no 3: un pill no
+              escala a eso. Deshabilitado con "Sin investigación" activo
+              (esas piezas nunca tienen flags, ver setResearchFilterAndClearFlags). */}
+          <div className="mechanism-filter-wrap">
+            <button
+              type="button"
+              className={`mechanism-filter-btn${selectedFlags.size > 0 ? " active" : ""}`}
+              aria-expanded={mechanismMenuOpen}
+              aria-label={s.mechanismFilterAria}
+              disabled={researchFilter === "without"}
+              onClick={() => setMechanismMenuOpen((v) => !v)}
+            >
+              {selectedFlags.size > 0 ? s.mechanismFilterLabelActive(selectedFlags.size) : s.mechanismFilterLabel}
+              <span className="mechanism-filter-caret" aria-hidden="true">{mechanismMenuOpen ? "▲" : "▼"}</span>
+            </button>
+            {mechanismMenuOpen && (
+              <div className="mechanism-menu">
+                {selectedFlags.size > 0 && (
+                  <button
+                    type="button"
+                    className="mechanism-menu-clear"
+                    onClick={() => setSelectedFlags(new Set())}
+                  >
+                    {s.mechanismClearLabel}
+                  </button>
+                )}
+                <ul className="mechanism-menu-list">
+                  {flagCounts.map(([flag, count]) => (
+                    <li key={flag}>
+                      <label className="mechanism-menu-item">
+                        <input
+                          type="checkbox"
+                          checked={selectedFlags.has(flag)}
+                          onChange={() => toggleFlag(flag)}
+                        />
+                        <span className="mechanism-menu-item-label">{s.contextFlagLabels[flag] ?? flag}</span>
+                        <span className="mechanism-menu-item-count">{count}</span>
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
         </div>
