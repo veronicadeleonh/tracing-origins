@@ -115,6 +115,27 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
               </a>{" "}{s.curatedNoteRoutesSuffix}
             </p>
           </section>
+
+          {/* Créditos del proyecto (23/08, pedido de la usuaria): un lugar
+              chico y persistente para el link al repo y a su sitio personal,
+              sin agregar un elemento nuevo flotando sobre el mapa — mismo
+              criterio que "Fuentes y licencias" arriba, contenido de
+              atribución que no depende del estado del mapa en este momento. */}
+          <section className="welcome-modal-section">
+            <h2 className="welcome-modal-heading">{s.welcomeCreditsHeading}</h2>
+            <p>
+              {s.welcomeCreditsRepoPrefix}{" "}
+              <a href="https://github.com/veronicadeleonh/tracing-origins" target="_blank" rel="noreferrer">
+                github.com/veronicadeleonh/tracing-origins
+              </a>
+            </p>
+            <p>
+              {s.welcomeCreditsSitePrefix}{" "}
+              <a href="https://veronicadeleonh.github.io/" target="_blank" rel="noreferrer">
+                veronicadeleonh.github.io
+              </a>
+            </p>
+          </section>
         </div>
 
         <div className="welcome-modal-footer">
