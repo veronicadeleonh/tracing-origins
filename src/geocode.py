@@ -655,7 +655,13 @@ SITE_COUNTRY_BY_POINT: dict[tuple[float, float], tuple[str, str]] = {
     (19.08, 30.36): ("Sudán", "Sudan"),
     (19.8968, -155.5828): ("Estados Unidos", "United States"),
     (21.9588, 96.0891): ("Birmania (Myanmar)", "Myanmar (Burma)"),
-    (22.1833, 31.9): ("Egipto", "Egypt"),
+    # Corregido a mano el 23/08 (mismo mecanismo que el error de Haida Gwaii
+    # documentado en CLAUDE.md): reverse_geocode resolvía este punto a Egipto
+    # porque la ciudad más cercana en su dataset caía del lado egipcio de la
+    # frontera moderna (22°N) -- pero el sitio real (Faras, BM_SITE_COORDS)
+    # es Nubia sudanesa, del lado sudanés de esa misma frontera. Encontrado
+    # al investigar bm:Y_EA51515 (ánfora de Faras) para layer 3.
+    (22.1833, 31.9): ("Sudán", "Sudan"),
     (24.0833, 32.8833): ("Egipto", "Egypt"),
     (24.0889, 32.8998): ("Egipto", "Egypt"),
     (24.3745, 88.6042): ("Bangladés", "Bangladesh"),

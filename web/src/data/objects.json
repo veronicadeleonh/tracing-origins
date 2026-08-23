@@ -6417,8 +6417,43 @@
       "originLon": 32.6081,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Busto de Akenaton, fragmento de un pilar osiriaco de una estatua colosal del templo de Karnak Este que el faraon mando construir durante sus reformas religiosas dedicadas a Atón. Caso de contraste sin mecanismo colonial: la pieza fue un regalo del Estado egipcio a Francia en 1972, en agradecimiento por la participacion francesa en la campana internacional de la UNESCO para salvar los templos de Nubia (Abu Simbel y otros monumentos amenazados por la construccion de la presa de Asuan) en los anos 1960. A diferencia de la gran mayoria de piezas egipcias de esta muestra, no llego al Louvre por excavacion, partage o compra en el mercado de antiguedades, sino como un obsequio diplomatico de un Estado egipcio ya independiente y postcolonial.",
+        "notesEn": "Bust of Akhenaten, a fragment from an Osiride pillar of a colossal statue from the Karnak East temple that the pharaoh had built during his religious reforms dedicated to the Aten. A contrast case with no colonial mechanism: the piece was a gift from the Egyptian state to France in 1972, in gratitude for French participation in UNESCO's international campaign to save the temples of Nubia (Abu Simbel and other monuments threatened by the construction of the Aswan Dam) in the 1960s. Unlike most Egyptian pieces in this sample, it did not reach the Louvre through excavation, partage, or purchase on the antiquities market, but as a diplomatic gift from an already independent, postcolonial Egyptian state."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1349-1333 a.C.",
+          "actor_or_institution": "Talleres reales de Amenhotep IV/Akenaton",
+          "location": "Templo de Karnak Este, Egipto",
+          "description": "Fragmento de un pilar osiriaco de una estatua colosal de Akenaton.",
+          "descriptionEs": "Fragmento de un pilar osiriaco de una estatua colosal de Akenaton.",
+          "descriptionEn": "Fragment of an Osiride pillar from a colossal statue of Akhenaten.",
+          "source_url": "https://www.louvre.fr/en/the-bust-of-akhenaten-from-the-temple-of-karnak",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "gift",
+          "event_date": "1972",
+          "actor_or_institution": "Estado egipcio -> Francia",
+          "location": "Paris",
+          "description": "Regalada por Egipto a Francia en agradecimiento por la participacion francesa en la campana de la UNESCO para salvar los templos de Nubia.",
+          "descriptionEs": "Regalada por Egipto a Francia en agradecimiento por la participacion francesa en la campana de la UNESCO para salvar los templos de Nubia.",
+          "descriptionEn": "Gifted by Egypt to France in gratitude for French participation in UNESCO's campaign to save the temples of Nubia.",
+          "source_url": "https://www.louvre.fr/en/the-bust-of-akhenaten-from-the-temple-of-karnak",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010005443",
@@ -7997,8 +8032,83 @@
       "originLon": 32.6081,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "antiquarian_travel",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estela de Bakhtan (tambien conocida como 'estela de Bentresh'), texto narrativo egipcio que combina mito y propaganda religiosa: se presenta como un relato del reinado de Ramses II (h. 1279-1213 a.C.), pero los egiptologos coinciden en que fue tallada varios siglos despues, probablemente entre el 700 y el 500 a.C. (Baja Epoca). Hallada en 1829 por el propio Jean-Francois Champollion en las cercanias del templo de Khonsu en Karnak. Fue retirada de Karnak en 1843 por el egiptologo y coleccionista Emile Prisse d'Avennes y entregada al Cabinet des Medailles (Biblioteca Nacional de Francia) en 1845. Recien en 1907 fue asignada administrativamente al Louvre, aunque el traslado fisico de la pieza no se concreto hasta abril de 1919.",
+        "notesEn": "The Bakhtan Stela (also known as the 'Bentresh Stela'), an Egyptian narrative text blending myth and religious propaganda: it presents itself as an account from the reign of Ramesses II (c. 1279-1213 BCE), but Egyptologists agree it was carved centuries later, most likely between 700 and 500 BCE (Late Period). Discovered in 1829 by Jean-Francois Champollion himself near the temple of Khonsu at Karnak. It was removed from Karnak in 1843 by Egyptologist and collector Emile Prisse d'Avennes and given to the Cabinet des Medailles (French National Library) in 1845. It was only administratively assigned to the Louvre in 1907, though the piece wasn't physically transferred until April 1919."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 700-500 a.C. (narrativamente ambientada en el reinado de Ramses II, h. 1279-1213 a.C.)",
+          "actor_or_institution": "Talleres del templo de Khonsu",
+          "location": "Karnak, Tebas, Egipto",
+          "description": "Estela narrativa que combina mito y propaganda religiosa, tallada siglos despues de la epoca que dice retratar.",
+          "descriptionEs": "Estela narrativa que combina mito y propaganda religiosa, tallada siglos despues de la epoca que dice retratar.",
+          "descriptionEn": "Narrative stela blending myth and religious propaganda, carved centuries after the era it claims to depict.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010029573",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1829",
+          "actor_or_institution": "Jean-Francois Champollion",
+          "location": "Templo de Khonsu, Karnak, Egipto",
+          "description": "Descubierta por el propio Champollion durante su expedicion a Egipto.",
+          "descriptionEs": "Descubierta por el propio Champollion durante su expedicion a Egipto.",
+          "descriptionEn": "Discovered by Champollion himself during his expedition to Egypt.",
+          "source_url": "https://egypt-museum.com/bentresh-stela/",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1843",
+          "actor_or_institution": "Emile Prisse d'Avennes",
+          "location": "Karnak -> Francia",
+          "description": "Retirada de Karnak por el egiptologo y coleccionista Prisse d'Avennes.",
+          "descriptionEs": "Retirada de Karnak por el egiptologo y coleccionista Prisse d'Avennes.",
+          "descriptionEn": "Removed from Karnak by Egyptologist and collector Prisse d'Avennes.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010029573",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "1845",
+          "actor_or_institution": "Cabinet des Medailles, Biblioteca Nacional de Francia",
+          "location": "Paris",
+          "description": "Entregada al Cabinet des Medailles.",
+          "descriptionEs": "Entregada al Cabinet des Medailles.",
+          "descriptionEn": "Given to the Cabinet des Medailles.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010029573",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 5,
+          "event_type": "acquisition",
+          "event_date": "1907 (asignacion) / 1919 (traslado fisico)",
+          "actor_or_institution": "Musee du Louvre",
+          "location": "Paris",
+          "description": "Asignada administrativamente al Louvre en 1907, trasladada fisicamente recien en abril de 1919.",
+          "descriptionEs": "Asignada administrativamente al Louvre en 1907, trasladada fisicamente recien en abril de 1919.",
+          "descriptionEn": "Administratively assigned to the Louvre in 1907, only physically transferred in April 1919.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010029573",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010030030",
@@ -8434,8 +8544,70 @@
       "originLon": 46.15,
       "originCountry": "Irak",
       "originCountryEn": "Iraq",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "ottoman_authorization",
+          "partage"
+        ],
+        "associated_communities_or_states": "Iraq",
+        "notes": "'Perro de Sumuel', pequena figura hallada en Tello (antigua Girsu), fechada en el reinado de Sumuel de Larsa (h. 1894-1866 a.C.). Excavada en 1904 durante la mision arqueologica francesa dirigida por Gaston Cros, oficial del ejercito frances que tomo a su cargo las excavaciones de Tello desde 1901/1903 tras la muerte de Ernest de Sarzec (excavador original del sitio desde 1877), continuandolas hasta 1909 bajo autorizacion del Imperio otomano (entonces soberano de Mesopotamia). Los hallazgos de la mision Cros se repartieron entre el Museo Arqueologico de Estambul y el Louvre -- mismo mecanismo de partage ya documentado para otras piezas de Tello/Girsu de esta muestra asociadas a de Sarzec.",
+        "notesEn": "'Dog of Sumuel', a small figure found at Tello (ancient Girsu), dated to the reign of Sumuel of Larsa (c. 1894-1866 BCE). Excavated in 1904 during the French archaeological mission led by Gaston Cros, a French army officer who took charge of the Tello excavations in 1901/1903 after the death of Ernest de Sarzec (the site's original excavator since 1877), continuing them until 1909 under authorization from the Ottoman Empire (then sovereign over Mesopotamia). Finds from the Cros mission were divided between the Istanbul Archaeological Museum and the Louvre -- the same partage mechanism already documented for other Tello/Girsu pieces associated with de Sarzec in this sample."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1894-1866 a.C.",
+          "actor_or_institution": "Reino de Larsa, bajo Sumuel",
+          "location": "Tello (antigua Girsu), Irak",
+          "description": "Pequena figura de perro fechada en el reinado de Sumuel de Larsa.",
+          "descriptionEs": "Pequena figura de perro fechada en el reinado de Sumuel de Larsa.",
+          "descriptionEn": "Small dog figure dated to the reign of Sumuel of Larsa.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010119629",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1904",
+          "actor_or_institution": "Mision arqueologica francesa dirigida por Gaston Cros, bajo autorizacion otomana",
+          "location": "Tello (necropolis, Tranchee III), Irak otomano",
+          "description": "Excavada durante la mision de Cros, que tomo a su cargo las excavaciones de Tello desde 1901/1903 tras la muerte de Ernest de Sarzec.",
+          "descriptionEs": "Excavada durante la mision de Cros, que tomo a su cargo las excavaciones de Tello desde 1901/1903 tras la muerte de Ernest de Sarzec.",
+          "descriptionEn": "Excavated during the Cros mission, which took charge of the Tello excavations from 1901/1903 after the death of Ernest de Sarzec.",
+          "source_url": "https://en.wikipedia.org/wiki/Gaston_Cros",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1904-1910",
+          "actor_or_institution": "Museo Arqueologico de Estambul / Musee du Louvre",
+          "location": "Estambul / Paris",
+          "description": "Los hallazgos de la mision Cros se repartieron (partage) entre el Museo Arqueologico de Estambul y el Louvre.",
+          "descriptionEs": "Los hallazgos de la mision Cros se repartieron (partage) entre el Museo Arqueologico de Estambul y el Louvre.",
+          "descriptionEn": "Finds from the Cros mission were divided (partage) between the Istanbul Archaeological Museum and the Louvre.",
+          "source_url": "https://en.wikipedia.org/wiki/Gaston_Cros",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1904",
+          "actor_or_institution": "Musee du Louvre (adquisicion en mision)",
+          "location": "Paris",
+          "description": "Ingreso a las colecciones del Louvre por reparto de la mision Cros.",
+          "descriptionEs": "Ingreso a las colecciones del Louvre por reparto de la mision Cros.",
+          "descriptionEn": "Entered the Louvre's collections via the Cros mission's division of finds.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010119629",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010119651",
@@ -8716,8 +8888,70 @@
       "originLon": 35.6478,
       "originCountry": "Líbano",
       "originCountryEn": "Lebanon",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Lebanon",
+        "notes": "Estela de Yehawmilk, rey de Biblos, dedicada a la 'Dama de Biblos' (Baalat Gebal), h. 450 a.C. -- una de las inscripciones fenicias mas importantes conocidas. Hallada en 1869 por Louis Peretie durante la segunda campana de la Mision de Fenicia de Ernest Renan (mision arqueologica francesa bajo autorizacion otomana, el Monte Libano era entonces un mutasarrifato del Imperio otomano); la estela habia pasado desapercibida en la primera campana de Renan y fue encontrada por casualidad cuando habitantes locales cavaban tierra para plantar arboles cerca de la ciudadela de Biblos. Entro luego a la coleccion privada de Louis de Clercq (1836-1901), el coleccionista de antiguedades fenicias mas importante de su epoca, y fue donada al Louvre en 1967 por su sobrino nieto y heredero, el conde Henri de Boisgelin -- el mismo par coleccionista/donante (de Clercq/Boisgelin) ya documentado para la Statue de Gudea de esta muestra. Un fragmento de la esquina inferior derecha de la estela quedo separado y hoy esta en los depositos del Museo Nacional de Beirut.",
+        "notesEn": "Stele of Yehawmilk, king of Byblos, dedicated to the 'Lady of Byblos' (Baalat Gebal), c. 450 BCE -- one of the most important known Phoenician inscriptions. Found in 1869 by Louis Peretie during the second campaign of Ernest Renan's Mission de Phenicie (a French archaeological mission under Ottoman authorization, Mount Lebanon then being an Ottoman mutasarrifate); the stele had gone unnoticed during Renan's first campaign and was found by chance when local residents were digging soil to plant trees near the Byblos citadel. It later entered the private collection of Louis de Clercq (1836-1901), the era's foremost collector of Phoenician antiquities, and was donated to the Louvre in 1967 by his grand-nephew and heir, Count Henri de Boisgelin -- the same collector/donor pair (de Clercq/Boisgelin) already documented for the Statue de Gudea in this sample. A fragment from the stele's lower right corner became separated and is now in the storerooms of the National Museum of Beirut."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 450 a.C.",
+          "actor_or_institution": "Reino de Biblos, bajo Yehawmilk",
+          "location": "Biblos, Libano",
+          "description": "Estela dedicada por el rey Yehawmilk a la 'Dama de Biblos' (Baalat Gebal).",
+          "descriptionEs": "Estela dedicada por el rey Yehawmilk a la 'Dama de Biblos' (Baalat Gebal).",
+          "descriptionEn": "Stele dedicated by King Yehawmilk to the 'Lady of Byblos' (Baalat Gebal).",
+          "source_url": "https://en.wikipedia.org/wiki/Yehawmilk_Stele",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1869",
+          "actor_or_institution": "Louis Peretie, durante la Mision de Fenicie de Ernest Renan (autorizacion otomana)",
+          "location": "Cerca de la ciudadela de Biblos, Monte Libano (mutasarrifato otomano)",
+          "description": "Hallada por casualidad por habitantes locales que cavaban tierra para plantar arboles, durante la segunda campana de la mision de Renan.",
+          "descriptionEs": "Hallada por casualidad por habitantes locales que cavaban tierra para plantar arboles, durante la segunda campana de la mision de Renan.",
+          "descriptionEn": "Found by chance by local residents digging soil to plant trees, during the second campaign of Renan's mission.",
+          "source_url": "https://en.wikipedia.org/wiki/Yehawmilk_Stele",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "entre 1869 y 1901",
+          "actor_or_institution": "Louis de Clercq (coleccionista)",
+          "location": "Francia",
+          "description": "Entra a la coleccion privada de Louis de Clercq, el coleccionista de antiguedades fenicias mas importante de su epoca.",
+          "descriptionEs": "Entra a la coleccion privada de Louis de Clercq, el coleccionista de antiguedades fenicias mas importante de su epoca.",
+          "descriptionEn": "Entered the private collection of Louis de Clercq, the era's foremost collector of Phoenician antiquities.",
+          "source_url": "https://en.wikipedia.org/wiki/Yehawmilk_Stele",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "gift",
+          "event_date": "1967",
+          "actor_or_institution": "Conde Henri de Boisgelin (heredero de de Clercq)",
+          "location": "Paris",
+          "description": "Donada al Louvre por el sobrino nieto y heredero de Louis de Clercq -- mismo donante ya documentado para la Statue de Gudea de esta muestra.",
+          "descriptionEs": "Donada al Louvre por el sobrino nieto y heredero de Louis de Clercq -- mismo donante ya documentado para la Statue de Gudea de esta muestra.",
+          "descriptionEn": "Donated to the Louvre by Louis de Clercq's grand-nephew and heir -- the same donor already documented for the Statue de Gudea in this sample.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010120347",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010120348",
@@ -16814,8 +17048,44 @@
       "originLon": 27.8493,
       "originCountry": "Zambia",
       "originCountryEn": "Zambia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "colonial_administration",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Zambia",
+        "notes": "Hacha con hoja de hierro y mango de madera, hallada en el Alto Zambeze, actual Zambia, fabricada h. 1891-1901. Comprada por el Museo en 1902 a un tal Fritz Schindler -- no se encontro informacion adicional sobre esta persona en las fuentes consultadas. La pieza corresponde a los primeros anos de administracion colonial britanica en la region (la futura Rodesia del Norte, bajo concesiones de la British South Africa Company desde la decada de 1890, protectorado formal desde 1911), pero no se pudo confirmar el rol especifico de Schindler en ese contexto; investigacion parcial.",
+        "notesEn": "An axe with an iron blade and wooden handle, found on the Upper Zambezi, in modern Zambia, made c. 1891-1901. Purchased by the Museum in 1902 from a Fritz Schindler -- no further information about this person was found in the sources consulted. The piece dates to the early years of British colonial administration in the region (the future Northern Rhodesia, under British South Africa Company concessions from the 1890s, formal protectorate from 1911), but Schindler's specific role in that context could not be confirmed; partial research."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1891-1901",
+          "actor_or_institution": "Desconocido",
+          "location": "Alto Zambeze, actual Zambia",
+          "description": "Hacha con hoja de hierro y mango de madera.",
+          "descriptionEs": "Hacha con hoja de hierro y mango de madera.",
+          "descriptionEn": "Axe with an iron blade and wooden handle.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1902-0513-5",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1902",
+          "actor_or_institution": "Comprada a: Fritz Schindler",
+          "location": "Londres",
+          "description": "Comprada por el Museo a un tal Fritz Schindler; no se encontro informacion adicional sobre esta persona en las fuentes consultadas.",
+          "descriptionEs": "Comprada por el Museo a un tal Fritz Schindler; no se encontro informacion adicional sobre esta persona en las fuentes consultadas.",
+          "descriptionEn": "Purchased by the Museum from a Fritz Schindler; no further information about this person was found in the sources consulted.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1902-0513-5",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1904-110-d-g",
@@ -19631,10 +19901,59 @@
       "originPrecision": "site",
       "originLat": 22.1833,
       "originLon": 31.9,
-      "originCountry": "Egipto",
-      "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "originCountry": "Sudán",
+      "originCountryEn": "Sudan",
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "museum_funded_excavation",
+          "colonial_administration"
+        ],
+        "associated_communities_or_states": "Sudan",
+        "notes": "Anfora ceramica de mesa, probablemente producida en la region de Asuan (Alto Egipto) y exportada a Nubia como contenedor de vino u otro liquido, hallada en la Tumba 1087 de un gran cementerio meroitico en Faras, Nubia sudanesa (siglos II-III d.C.). Excavada por Francis Llewellyn Griffith durante las 'Oxford Excavations in Nubia' de 1910-12, bajo el Condominio anglo-egipcio de Sudan -- el mismo excavador ya documentado en esta muestra para la esfinge de Taharqo hallada en Kawa (1929-31), aqui en una campana casi dos decadas anterior. Donada al Museo por la Universidad de Oxford en 1912.",
+        "notesEn": "A ceramic table amphora, likely produced in the Aswan region (Upper Egypt) and exported to Nubia as a container for wine or another liquid, found in Grave 1087 of a large Meroitic cemetery at Faras, Sudanese Nubia (2nd-3rd century CE). Excavated by Francis Llewellyn Griffith during the 'Oxford Excavations in Nubia' of 1910-12, under the Anglo-Egyptian Condominium of Sudan -- the same excavator already documented in this sample for the Taharqo sphinx found at Kawa (1929-31), here in a campaign almost two decades earlier. Donated to the Museum by the University of Oxford in 1912."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "siglos II-III d.C.",
+          "actor_or_institution": "Talleres ceramicos de la region de Asuan, Alto Egipto",
+          "location": "Asuan, Egipto",
+          "description": "Anfora de mesa producida en la region de Asuan, probablemente exportada a Nubia como contenedor de vino u otro liquido.",
+          "descriptionEs": "Anfora de mesa producida en la region de Asuan, probablemente exportada a Nubia como contenedor de vino u otro liquido.",
+          "descriptionEn": "Table amphora produced in the Aswan region, likely exported to Nubia as a container for wine or another liquid.",
+          "source_url": "https://www.britishmuseum.org/collection/object/Y_EA51515",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1910-1912",
+          "actor_or_institution": "Francis Llewellyn Griffith, Oxford Excavations in Nubia",
+          "location": "Faras, Nubia sudanesa (Condominio anglo-egipcio)",
+          "description": "Excavada de la Tumba 1087 de un gran cementerio meroitico -- mismo excavador ya documentado en esta muestra para la esfinge de Taharqo hallada en Kawa (1929-31), aqui casi dos decadas antes.",
+          "descriptionEs": "Excavada de la Tumba 1087 de un gran cementerio meroitico -- mismo excavador ya documentado en esta muestra para la esfinge de Taharqo hallada en Kawa (1929-31), aqui casi dos decadas antes.",
+          "descriptionEn": "Excavated from Grave 1087 of a large Meroitic cemetery -- the same excavator already documented in this sample for the Taharqo sphinx found at Kawa (1929-31), here almost two decades earlier.",
+          "source_url": "https://www.britishmuseum.org/collection/object/Y_EA51515",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1912",
+          "actor_or_institution": "University of Oxford",
+          "location": "Londres",
+          "description": "Donada al Museo por la Universidad de Oxford.",
+          "descriptionEs": "Donada al Museo por la Universidad de Oxford.",
+          "descriptionEn": "Donated to the Museum by the University of Oxford.",
+          "source_url": "https://www.britishmuseum.org/collection/object/Y_EA51515",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     }
   ]
 }
