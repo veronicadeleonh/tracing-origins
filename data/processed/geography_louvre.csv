@@ -37,7 +37,7 @@ louvre:cl010009464,Saqqara,Saqqara,site,29.8714,31.2164,Egipto,Egypt,48.8606,2.3
 louvre:cl010009969,Tebas,Thebes,site,25.7188,32.6081,Egipto,Egypt,48.8606,2.3376
 louvre:cl010010049,Asiut,Asyut,site,27.1809,31.1837,Egipto,Egypt,48.8606,2.3376
 louvre:cl010010056,,,unresolved,,,,,48.8606,2.3376
-louvre:cl010010062,Egipto,Egypt,country,26.8206,30.8025,Egipto,Egypt,48.8606,2.3376
+louvre:cl010010062,Tanis,Tanis,site,30.975,31.8833,Egipto,Egypt,48.8606,2.3376
 louvre:cl010010873,Egipto,Egypt,country,26.8206,30.8025,Egipto,Egypt,48.8606,2.3376
 louvre:cl010011417,,,unresolved,,,,,48.8606,2.3376
 louvre:cl010011420,Amarna,Amarna,site,27.6453,30.9017,Egipto,Egypt,48.8606,2.3376
@@ -68,7 +68,7 @@ louvre:cl010120343,Neirab,Neirab,site,36.1833,37.2333,Siria,Syria,48.8606,2.3376
 louvre:cl010120347,Biblos,Byblos,site,34.1208,35.6478,Líbano,Lebanon,48.8606,2.3376
 louvre:cl010120348,Biblos,Byblos,site,34.1208,35.6478,Líbano,Lebanon,48.8606,2.3376
 louvre:cl010120353,Afis,Afis,site,35.85,36.75,Siria,Syria,48.8606,2.3376
-louvre:cl010120357,Líbano,Lebanon,country,33.8547,35.8623,Líbano,Lebanon,48.8606,2.3376
+louvre:cl010120357,Sidón,Sidon,site,33.5606,35.3689,Líbano,Lebanon,48.8606,2.3376
 louvre:cl010120489,Asiria,Assyria,country,36.335,43.1189,Irak,Iraq,48.8606,2.3376
 louvre:cl010120528,Mari,Mari,site,34.5514,40.8908,Siria,Syria,48.8606,2.3376
 louvre:cl010120557,Mari,Mari,site,34.5514,40.8908,Siria,Syria,48.8606,2.3376
@@ -81,7 +81,7 @@ louvre:cl010123247,Tiro,Tyre,site,33.2704,35.2038,Líbano,Lebanon,48.8606,2.3376
 louvre:cl010123278,Nemara,Nemara,site,32.75,36.75,Siria,Syria,48.8606,2.3376
 louvre:cl010123450,Susa,Susa,site,32.1881,48.2578,Irán,Iran,48.8606,2.3376
 louvre:cl010123454,Susa,Susa,site,32.1881,48.2578,Irán,Iran,48.8606,2.3376
-louvre:cl010123458,Grecia,Greece,country,39.0742,21.8243,Grecia,Greece,48.8606,2.3376
+louvre:cl010123458,Dura Europos,Dura-Europos,site,34.75,40.73,Siria,Syria,48.8606,2.3376
 louvre:cl010127854,Palmira,Palmyra,site,34.5514,38.2792,Siria,Syria,48.8606,2.3376
 louvre:cl010130455,Luristán,Luristan,country,33.5,47.5,Irán,Iran,48.8606,2.3376
 louvre:cl010136190,Arslan Tash,Arslan Tash,site,36.75,38.8667,Turquía,Turkey,48.8606,2.3376

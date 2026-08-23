@@ -180,6 +180,8 @@ ES_NAMES: dict[str, str] = {
     "Benghazi": "Bengasi",
     "Pharsale": "Farsala",
     "Tyr": "Tiro",
+    "Doura Europos": "Dura Europos",
+    "Saïda": "Sidón",
 }
 
 
@@ -274,6 +276,8 @@ EN_NAMES: dict[str, str] = {
     "Éleutherne": "Eleutherna",
     "Pharsale": "Pharsalus",
     "Tyr": "Tyre",
+    "Doura Europos": "Dura-Europos",
+    "Saïda": "Sidon",
 }
 
 
@@ -357,6 +361,13 @@ SUBREGION_COORDS = {
     "Nippur": (32.1300, 45.2400),
     "Ur (modern Tell al-Muqayyar)": (30.9626, 46.1039),
     "Nimrud (ancient Kalhu)": (36.0994, 43.3250),
+    # Agregados 23/08 al auditar precisión geográfica de piezas investigadas
+    # (pedido de la usuaria) -- ambos subregion existían tal cual en el
+    # registro crudo del Met, solo faltaban en esta tabla, así que las
+    # piezas caían a nivel "region" (Mesopotamia/Levante) en vez del sitio
+    # específico ya documentado en su propia layer 3.
+    "Nineveh": (36.3600, 43.1500),  # mismas coords que el BM_SITE_COORDS ya existente
+    "Lachish (modern Tell ed-Duweir)": (31.5642, 34.8493),
     "Tell Taya": (36.4000, 42.0000),
     "probably from Kültepe (Karum Kanesh)": (38.8500, 35.6200),
     "probably from Acemhöyük": (38.1900, 34.1700),
@@ -619,6 +630,13 @@ KEYWORD_COUNTRY: dict[str, tuple[str, str] | None] = {
 # revisado a mano (ver comentario arriba) — no es una dependencia del
 # pipeline en tiempo de ejecución.
 SITE_COUNTRY_BY_POINT: dict[tuple[float, float], tuple[str, str]] = {
+    # Agregados a mano el 23/08 junto con los sitios nuevos de LOUVRE_SITE_COORDS/
+    # SUBREGION_COORDS de la misma fecha (Tanis, Dura Europos, Sidón, Laquis) --
+    # países sin ambigüedad real, no requieren pasar por reverse_geocode.
+    (31.5642, 34.8493): ("Israel", "Israel"),  # Laquis / Tell ed-Duweir
+    (30.975, 31.8833): ("Egipto", "Egypt"),  # Tanis
+    (34.75, 40.73): ("Siria", "Syria"),  # Dura Europos
+    (33.5606, 35.3689): ("Líbano", "Lebanon"),  # Sidón
     (-27.1836, -109.4306): ("Chile", "Chile"),
     (-27.1667, -109.4333): ("Chile", "Chile"),
     (-22.5752, 144.0848): ("Australia", "Australia"),
@@ -930,6 +948,17 @@ LOUVRE_SITE_COORDS = [
     ("Tlemcen", (34.8828, -1.3167)),  # Argelia
     ("Tyr", (33.2704, 35.2038)),  # Tiro, Líbano
     ("Alcalá de los Gazules", (36.4667, -5.7167)),  # Cádiz, España
+    # Agregados 23/08 al auditar precisión geográfica de piezas investigadas
+    # (pedido de la usuaria): las 3 estaban literalmente en placeOfDiscovery
+    # del registro del Louvre, solo faltaban en esta lista -- las piezas
+    # caían a nivel país ("Egipto"/"Grecia"/"Líbano") en vez del sitio
+    # específico ya documentado en su propia layer 3. Verificado contra las
+    # notas de investigación de cada pieza para descartar que el sitio
+    # fuera una atribución dudosa (a diferencia de Gebel el-Arak, ver abajo,
+    # que se dejó a propósito sin agregar).
+    ("Tanis", (30.9750, 31.8833)),  # San el-Hagar, Egipto
+    ("Doura Europos", (34.7500, 40.7300)),  # Siria
+    ("Saïda", (33.5606, 35.3689)),  # Sidón, Líbano — usado en placeOfDiscovery en vez de "Sidon"
 ]
 
 LOUVRE_COUNTRY_KEYWORDS = [
