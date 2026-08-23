@@ -148,6 +148,7 @@ ES_NAMES: dict[str, str] = {
     "Baalbeck": "Baalbek",
     "Assyrie": "Asiria",
     "Luristan": "Luristán",
+    "Khurasan": "Jorasán",
     "Louxor": "Luxor",
     "Assiout": "Asiut",
     "Assouan": "Asuán",
@@ -228,6 +229,7 @@ EN_NAMES: dict[str, str] = {
     "Proche-Orient": "Near East",
     "Perse": "Persia",
     "Babylonie": "Babylonia (region)",
+    "Khurasan": "Khorasan",
     "Tunisie": "Tunisia",
     "Sicile": "Sicily",
     # Sitios del Louvre con ortografía francesa distinta de la inglesa
@@ -588,6 +590,7 @@ KEYWORD_COUNTRY: dict[str, tuple[str, str] | None] = {
     "Turquie": ("Turquía", "Turkey"),
     "Grèce": ("Grecia", "Greece"),
     "Luristan": ("Irán", "Iran"),
+    "Khurasan": ("Irán", "Iran"),
     "Assyrie": ("Irak", "Iraq"),
     "Etrurie": ("Italia", "Italy"),
     "Étrurie": ("Italia", "Italy"),
@@ -934,6 +937,15 @@ LOUVRE_COUNTRY_KEYWORDS = [
     ("Turquie", (38.9637, 35.2433)),
     ("Grèce", (39.0742, 21.8243)),
     ("Luristan", (33.5000, 47.5000)),  # región del oeste de Irán, mismas coords que "Iran, Luristan" en CULTURE_KEYWORDS
+    # Agregado 23/08, pedido de la usuaria: el Suaire de Saint-Josse
+    # (louvre:cl010329960) tiene placeOfCreation con 3 procedencias
+    # alternativas, las 3 marcadas "(?)" por el propio Louvre --
+    # "Monde iranien - Caucase (Ancienne attribution : Khurasan)" es la
+    # atribución históricamente más citada por la bibliografía textil
+    # islámica, así que se prioriza sobre "Proche-Orient arabe (?)" (que
+    # matcheaba antes, sin ser más confiable). Coordenada aproximada de la
+    # región histórica de Khorasan (noreste de Irán/Asia Central).
+    ("Khurasan", (36.0000, 59.0000)),
     ("Assyrie", (36.3350, 43.1189)),  # región/civilización, corazón asirio cerca de Mosul, Irak
     ("Etrurie", (42.8000, 11.5000)),
     ("Étrurie", (42.8000, 11.5000)),

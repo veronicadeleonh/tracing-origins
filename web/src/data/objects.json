@@ -14494,15 +14494,91 @@
       "subregion": null,
       "primaryImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000329960/0001090856_OG.JPG",
       "objectURL": "https://collections.louvre.fr/ark:/53355/cl010329960",
-      "originLabel": "Cercano Oriente",
-      "originLabelEn": "Near East",
+      "originLabel": "Jorasán",
+      "originLabelEn": "Khorasan",
       "originPrecision": "country",
-      "originLat": 30.0,
-      "originLon": 40.0,
-      "originCountry": null,
-      "originCountryEn": null,
-      "context": null,
-      "events": []
+      "originLat": 36.0,
+      "originLon": 59.0,
+      "originCountry": "Irán",
+      "originCountryEn": "Iran",
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "undocumented_early_chain",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Suaire de Saint-Josse: tela de seda samite con una inscripcion cufica que menciona a Abu Mansur Bujtakin, general y emir samanida al servicio de Abd al-Malik I de Jorasan (gobernante 954-961 d.C.), fechada por esa mencion antes de 961. El propio registro del Louvre lista tres procedencias posibles para su fabricacion, las tres marcadas como inciertas: 'Asia Menor y Europa oriental (?)', 'mundo iranio-caucasico (atribucion antigua: Jorasan)' y 'Cercano Oriente arabe (?)' -- la bibliografia especializada en textiles islamicos cita mayoritariamente Jorasan (actual noreste de Iran/Asia Central) como la atribucion mas aceptada, aunque ninguna esta confirmada de forma definitiva. Segun fuentes secundarias (no el registro del propio Louvre), la tela habria sido traida de regreso de la Primera Cruzada por Esteban de Blois y donada como ofrenda votiva a la abadia de Saint-Josse, cerca de Boulogne-sur-Mer (Paso de Calais), donde se uso para envolver las reliquias de San Josse -- de ahi su nombre. Como circulo entre esa donacion medieval y su compra por el Louvre en 1921-22 (Departamento de Artes del Islam) no esta documentado en las fuentes consultadas.",
+        "notesEn": "Shroud of Saint Josse: a silk samite textile with a Kufic inscription naming Abu Mansur Bukhtakin, a Samanid general and emir in the service of 'Abd al-Malik I of Khorasan (r. 954-961 CE), dated by that mention to before 961. The Louvre's own record lists three possible attributions for where it was woven, all marked as uncertain: 'Asia Minor and Eastern Europe (?)', 'Iranian-Caucasian world (old attribution: Khorasan)', and 'Arab Near East (?)' -- the specialist literature on Islamic textiles most often cites Khorasan (modern northeastern Iran/Central Asia) as the best-supported attribution, though none is definitively confirmed. Per secondary sources (not the Louvre's own record), the textile was reportedly brought back from the First Crusade by Stephen of Blois and dedicated as a votive gift to the Abbey of Saint-Josse, near Boulogne-sur-Mer (Pas-de-Calais), where it was used to wrap the relics of Saint Josse -- hence its name. How it circulated between that medieval gift and its purchase by the Louvre in 1921-22 (Department of Islamic Art) is not documented in the sources consulted."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 961 d.C.",
+          "actor_or_institution": "Talleres de tejido de seda, atribucion mas citada: Jorasan (bajo dominio samanida)",
+          "location": "Jorasan (noreste de Iran/Asia Central) -- atribucion incierta, ver notas",
+          "description": "Tela de seda samite con inscripcion cufica que menciona a Abu Mansur Bujtakin, general samanida.",
+          "descriptionEs": "Tela de seda samite con inscripcion cufica que menciona a Abu Mansur Bujtakin, general samanida.",
+          "descriptionEn": "Silk samite textile with a Kufic inscription naming Abu Mansur Bukhtakin, a Samanid general.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010329960",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "h. 1099-1102",
+          "actor_or_institution": "Esteban de Blois (Étienne de Blois)",
+          "location": "Levante -> Francia",
+          "description": "Segun fuentes secundarias, la tela fue traida de regreso de la Primera Cruzada por Esteban de Blois.",
+          "descriptionEs": "Segun fuentes secundarias, la tela fue traida de regreso de la Primera Cruzada por Esteban de Blois.",
+          "descriptionEn": "Per secondary sources, the textile was brought back from the First Crusade by Stephen of Blois.",
+          "source_url": "https://en.wikipedia.org/wiki/Suaire_de_Saint-Josse",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "h. 1099-1134",
+          "actor_or_institution": "Esteban de Blois -> Abadia de Saint-Josse",
+          "location": "Cerca de Boulogne-sur-Mer, Paso de Calais, Francia",
+          "description": "Donada como ofrenda votiva a la abadia de Saint-Josse, donde se uso para envolver las reliquias de San Josse.",
+          "descriptionEs": "Donada como ofrenda votiva a la abadia de Saint-Josse, donde se uso para envolver las reliquias de San Josse.",
+          "descriptionEn": "Donated as a votive gift to the Abbey of Saint-Josse, where it was used to wrap the relics of Saint Josse.",
+          "source_url": "https://en.wikipedia.org/wiki/Suaire_de_Saint-Josse",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 4,
+          "event_type": "other",
+          "event_date": "entre h. 1134 y 1921",
+          "actor_or_institution": "Desconocido",
+          "location": "Desconocido",
+          "description": "Como circulo entre la donacion medieval a la abadia y su aparicion en el mercado antes de la compra del Louvre no esta documentado en las fuentes consultadas.",
+          "descriptionEs": "Como circulo entre la donacion medieval a la abadia y su aparicion en el mercado antes de la compra del Louvre no esta documentado en las fuentes consultadas.",
+          "descriptionEn": "How it circulated between the medieval gift to the abbey and its appearance on the market before the Louvre's purchase is not documented in the sources consulted.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010329960",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 5,
+          "event_type": "acquisition",
+          "event_date": "1921-1922",
+          "actor_or_institution": "Musee du Louvre (achat)",
+          "location": "Paris",
+          "description": "Comprada por el Louvre, ingreso al Departamento de Artes del Islam.",
+          "descriptionEs": "Comprada por el Louvre, ingreso al Departamento de Artes del Islam.",
+          "descriptionEn": "Purchased by the Louvre, entering the Department of Islamic Art.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010329960",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010330142",
