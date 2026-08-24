@@ -758,7 +758,12 @@ SITE_COUNTRY_BY_POINT: dict[tuple[float, float], tuple[str, str]] = {
     (36.5117, 43.2278): ("Irak", "Iraq"),
     (36.6833, 27.3667): ("Grecia", "Greece"),
     (36.69, 24.43): ("Grecia", "Greece"),
-    (36.75, 38.8667): ("Turquía", "Turkey"),
+    # Corregido 24/08 (mismo mecanismo que Haida Gwaii/Alaska y Faras/Egipto-
+    # Sudán, ver CLAUDE.md): Arslan Tash es un sitio arqueológico en Siria
+    # (gobernación de Alepo), a pocos km de la frontera turca -- reverse_geocode
+    # eligió una ciudad turca como la más cercana en su dataset, pero el punto
+    # cae del lado sirio de la frontera. Afectaba a 2 piezas del Louvre.
+    (36.75, 38.8667): ("Siria", "Syria"),
     (36.75, 66.9): ("Afganistán", "Afghanistan"),
     (36.8167, 38.0167): ("Siria", "Syria"),
     (37.0, 39.0): ("Turquía", "Turkey"),

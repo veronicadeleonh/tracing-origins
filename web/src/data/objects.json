@@ -4349,8 +4349,70 @@
       "originLon": 31.1313,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "partage",
+          "museum_funded_excavation"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Fragmento de relieve que muestra a varios arqueros egipcios, la escena de batalla más antigua conservada (Dinastía 4, reinado de Keops o Kefrén). El bloque fue reutilizado como material de construcción en el núcleo de la pirámide de Amenemhat I, en Lisht Norte, y probablemente proviene originalmente del templo funerario de la pirámide de Keops en Guiza. Excavado por la propia Expedición Egipcia del Museo Metropolitano durante la temporada 1920-22 en Lisht Norte, y adquirido por el Museo mediante partage (reparto de hallazgos) -- el mismo mecanismo institucional ya documentado para otras piezas de la Expedición Egipcia del Met en esta muestra, como el Relieve con un barco a vela y la mesa de ofrendas de Lisht Norte.",
+        "notesEn": "Relief fragment showing several Egyptian archers, the earliest preserved battle scene (Dynasty 4, reign of Khufu or Khafre). The block was reused as building material in the core of the pyramid of Amenemhat I at Lisht North, and probably originally came from Khufu's pyramid temple at Giza. Excavated by the Met's own Egyptian Expedition during the 1920-22 season at Lisht North, and acquired by the Museum via the division of finds -- the same institutional mechanism already documented for other Met Egyptian Expedition pieces in this sample, such as the Relief Fragment with a Ship Under Sail and the offering table from Lisht North."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 2551-2494 a.C. (Dinastía 4, reinado de Keops o Kefrén)",
+          "actor_or_institution": "Antiguo Egipto",
+          "location": "Probablemente templo funerario de la pirámide de Keops, Guiza, Egipto",
+          "description": "Tallado probablemente para el templo funerario de la pirámide de Keops en Guiza.",
+          "descriptionEs": "Tallado probablemente para el templo funerario de la pirámide de Keops en Guiza.",
+          "descriptionEn": "Probably carved for the pyramid temple of Khufu at Giza.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543895",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "Dinastía 12 (reinado de Amenemhat I)",
+          "actor_or_institution": "Constructores de la pirámide de Amenemhat I",
+          "location": "Reutilizado en el núcleo de la pirámide, Lisht Norte, Egipto",
+          "description": "El bloque fue reutilizado como material de construcción en el núcleo de la pirámide de Amenemhat I.",
+          "descriptionEs": "El bloque fue reutilizado como material de construcción en el núcleo de la pirámide de Amenemhat I.",
+          "descriptionEn": "The block was reused as building material in the core of the pyramid of Amenemhat I.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543895",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "excavation",
+          "event_date": "1920-1922",
+          "actor_or_institution": "Expedición Egipcia del Museo Metropolitano",
+          "location": "Lisht Norte, Egipto",
+          "description": "Excavado por la Expedición Egipcia del Met durante la temporada 1920-22 en Lisht Norte.",
+          "descriptionEs": "Excavado por la Expedición Egipcia del Met durante la temporada 1920-22 en Lisht Norte.",
+          "descriptionEn": "Excavated by the Met's Egyptian Expedition during the 1920-22 season at Lisht North.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543895",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1922",
+          "actor_or_institution": "Partage (reparto de hallazgos) -- Rogers Fund and Edward S. Harkness Gift",
+          "location": "Museo Metropolitano de Arte, Nueva York",
+          "description": "Adquirido por el Museo mediante partage (reparto de hallazgos).",
+          "descriptionEs": "Adquirido por el Museo mediante partage (reparto de hallazgos).",
+          "descriptionEn": "Acquired by the Museum via the division of finds (partage).",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543895",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543896",
@@ -9980,8 +10042,8 @@
       "originPrecision": "site",
       "originLat": 36.75,
       "originLon": 38.8667,
-      "originCountry": "Turquía",
-      "originCountryEn": "Turkey",
+      "originCountry": "Siria",
+      "originCountryEn": "Syria",
       "context": null,
       "events": []
     },
@@ -10009,10 +10071,60 @@
       "originPrecision": "site",
       "originLat": 36.75,
       "originLon": 38.8667,
-      "originCountry": "Turquía",
-      "originCountryEn": "Turkey",
-      "context": null,
-      "events": []
+      "originCountry": "Siria",
+      "originCountryEn": "Syria",
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "partage",
+          "french_mandate",
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Syria",
+        "notes": "Placa de marfil neoasiria con inscripción, hallada en 1928 en la \"Sala de los marfiles\" (sala 14) de un edificio de Arslan Tash (norte de Siria), durante la misión arqueológica dirigida por el padre Augustin Georges Barrois y François Thureau-Dangin -- el mismo Thureau-Dangin ya documentado en esta muestra por las excavaciones de Gaston Cros en Tello. La pieza llegó al Louvre por partage después de excavación, aprobado por el comité de museos el 18/07/1929 y por el consejo el 04/11/1929, bajo el Mandato Francés en Siria.",
+        "notesEn": "Inscribed Neo-Assyrian ivory plaque, found in 1928 in the \"Room of the Ivories\" (room 14) of a building at Arslan Tash (northern Syria), during the archaeological mission led by Father Augustin Georges Barrois and François Thureau-Dangin -- the same Thureau-Dangin already documented in this sample for Gaston Cros's excavations at Tello. The piece entered the Louvre via partage after excavation, approved by the museums committee on 18/07/1929 and by the council on 04/11/1929, under the French Mandate in Syria."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "Neo-asirio (h. -800/-700)",
+          "actor_or_institution": "Cultura neoasiria",
+          "location": "Arslan Tash, Siria",
+          "description": "Creación de la placa de marfil.",
+          "descriptionEs": "Creación de la placa de marfil.",
+          "descriptionEn": "Creation of the ivory plaque.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010136213",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1928",
+          "actor_or_institution": "Augustin Georges Barrois y François Thureau-Dangin (misión arqueológica francesa)",
+          "location": "Arslan Tash, edificio de los marfiles, sala 14, Siria",
+          "description": "Excavada en la 'Sala de los marfiles' de un edificio de Arslan Tash.",
+          "descriptionEs": "Excavada en la 'Sala de los marfiles' de un edificio de Arslan Tash.",
+          "descriptionEn": "Excavated in the 'Room of the Ivories' of a building at Arslan Tash.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010136213",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "18/07/1929 (comité); 04/11/1929 (consejo)",
+          "actor_or_institution": "Partage -- Mandato Francés en Siria / Musée du Louvre",
+          "location": "Arslan Tash, Siria / París, Francia",
+          "description": "Adquirida por el Louvre mediante partage después de excavación, bajo el Mandato Francés.",
+          "descriptionEs": "Adquirida por el Louvre mediante partage después de excavación, bajo el Mandato Francés.",
+          "descriptionEn": "Acquired by the Louvre via partage after excavation, under the French Mandate.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010136213",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010138617",
@@ -10147,8 +10259,58 @@
       "originLon": 35.7822,
       "originCountry": "Siria",
       "originCountryEn": "Syria",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "partage",
+          "french_mandate",
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Syria",
+        "notes": "Estela que representa al dios cananeo-ugarítico Baal empuñando un rayo, hallada el 28 de mayo de 1932 en la acrópolis de Ras Shamra (antigua Ugarit, Siria), junto al Templo de Baal, durante la misión arqueológica dirigida por Claude Schaeffer. La pieza llegó al Louvre por partage después de excavación (reparto de hallazgos entre el Servicio de Antigüedades de Siria, entonces bajo Mandato Francés, y la misión francesa) -- el mismo mecanismo institucional ya documentado para otras piezas de Ras Shamra y del Levante bajo mandato en esta muestra.",
+        "notesEn": "Stele depicting the Canaanite-Ugaritic god Baal wielding a thunderbolt, found on 28 May 1932 on the acropolis of Ras Shamra (ancient Ugarit, Syria), near the Temple of Baal, during the archaeological mission led by Claude Schaeffer. The piece entered the Louvre via partage after excavation (division of finds between the Antiquities Service of Syria, then under French Mandate, and the French mission) -- the same institutional mechanism already documented for other Ras Shamra and Levantine Mandate-era pieces in this sample."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "Bronce Medio - Bronce Reciente (h. -2000/-1150)",
+          "actor_or_institution": "Cultura ugarítica",
+          "location": "Ras Shamra (Ugarit), Siria",
+          "description": "Creación de la estela votiva a Baal.",
+          "descriptionEs": "Creación de la estela votiva a Baal.",
+          "descriptionEn": "Creation of the votive stele to Baal.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010140542",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "28 de mayo de 1932",
+          "actor_or_institution": "Claude Schaeffer (misión arqueológica francesa)",
+          "location": "Ras Shamra (Ugarit), acrópolis, junto al Templo de Baal, Siria",
+          "description": "Excavada por la misión de Claude Schaeffer en la acrópolis de Ras Shamra.",
+          "descriptionEs": "Excavada por la misión de Claude Schaeffer en la acrópolis de Ras Shamra.",
+          "descriptionEn": "Excavated by Claude Schaeffer's mission on the acropolis of Ras Shamra.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010140542",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1932",
+          "actor_or_institution": "Partage -- Servicio de Antigüedades de Siria (Mandato Francés) / Musée du Louvre",
+          "location": "Ras Shamra, Siria / París, Francia",
+          "description": "Adquirida por el Louvre mediante partage después de excavación.",
+          "descriptionEs": "Adquirida por el Louvre mediante partage después de excavación.",
+          "descriptionEn": "Acquired by the Louvre via partage (division of finds) after excavation.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010140542",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010141456",
@@ -10863,8 +11025,70 @@
       "originLon": 48.2578,
       "originCountry": "Irán",
       "originCountryEn": "Iran",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "treaty_transfer",
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Iran;Iraq",
+        "notes": "Kudurru (piedra de límites) del rey casita Nazi-Maruttash (Babilonia, s. XIV a.C.), objeto que ya en la Antigüedad tuvo su propio recorrido: fue llevado a Susa como botín de guerra por los elamitas en el siglo XII a.C. -- un traslado forzado ocurrido más de mil años antes de cualquier intervención francesa. Excavado en 1898 en la acrópolis de Susa (Trinchera 7α) por la misión de Jacques de Morgan, bajo el monopolio de excavación exclusivo que Francia mantenía en Persia en esa época -- el mismo mecanismo institucional ya documentado para la Stèle de Naram-Sin y la cabeza atribuida a Hammurabi de esta muestra.",
+        "notesEn": "Kudurru (boundary stone) of the Kassite king Nazi-Maruttash (Babylonia, 14th century BCE) -- an object with its own ancient journey: it was carried off to Susa as war booty by the Elamites in the 12th century BCE, a forced transfer that took place over a thousand years before any French involvement. Excavated in 1898 on the acropolis of Susa (Trench 7α) by Jacques de Morgan's mission, under the exclusive excavation monopoly France held in Persia at the time -- the same institutional mechanism already documented for the Stèle de Naram-Sin and the head attributed to Hammurabi in this sample."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. XIV a.C. (reinado de Nazi-Maruttash)",
+          "actor_or_institution": "Babilonia (cultura casita)",
+          "location": "Babilonia (Sumer)",
+          "description": "Creación del kudurru (piedra de límites) casita.",
+          "descriptionEs": "Creación del kudurru (piedra de límites) casita.",
+          "descriptionEn": "Creation of the Kassite kudurru (boundary stone).",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010174451",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "s. XII a.C.",
+          "actor_or_institution": "Elamitas (botín de guerra)",
+          "location": "De Babilonia a Susa",
+          "description": "Llevado a Susa como botín de guerra por los elamitas, en la Antigüedad.",
+          "descriptionEs": "Llevado a Susa como botín de guerra por los elamitas, en la Antigüedad.",
+          "descriptionEn": "Carried off to Susa as war booty by the Elamites, in Antiquity.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010174451",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "excavation",
+          "event_date": "1898",
+          "actor_or_institution": "Jacques de Morgan (misión francesa, monopolio de excavación Francia-Persia)",
+          "location": "Susa, acrópolis, Trinchera 7α, Irán",
+          "description": "Excavado por la misión de Jacques de Morgan en la acrópolis de Susa.",
+          "descriptionEs": "Excavado por la misión de Jacques de Morgan en la acrópolis de Susa.",
+          "descriptionEn": "Excavated by Jacques de Morgan's mission on the acropolis of Susa.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010174451",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1898",
+          "actor_or_institution": "Bajo el monopolio de excavación exclusivo Francia-Persia -- Musée du Louvre",
+          "location": "Susa, Irán / París, Francia",
+          "description": "Adquirido por el Louvre bajo el monopolio de excavación exclusivo que Francia mantenía en Persia.",
+          "descriptionEs": "Adquirido por el Louvre bajo el monopolio de excavación exclusivo que Francia mantenía en Persia.",
+          "descriptionEn": "Acquired by the Louvre under the exclusive excavation monopoly France held in Persia.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010174451",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010174452",
@@ -12416,8 +12640,56 @@
       "originLon": 4.628,
       "originCountry": "Francia",
       "originCountryEn": "France",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "France",
+        "notes": "Estatua romana de mármol hallada el 6 de junio de 1651 durante excavaciones en el teatro antiguo de Arlés (sur de Francia), por obreros que cavaban una cisterna. Identificada primero como Diana, fue rebautizada Venus y, en 1681, la ciudad de Arlés se la entregó a Luis XIV, quien la quería para decorar la Galería de los Espejos de Versalles -- un traslado motivado por el deseo real, no una compra ni una donación espontánea. Permaneció en las colecciones reales hasta la Revolución Francesa: la pieza fue confiscada como bien de la corona y llegó al Louvre en 1798. Caso de contraste sin mecanismo colonial: tanto el hallazgo (suelo francés) como los dos traslados posteriores (cesión al rey, confiscación revolucionaria) ocurrieron enteramente dentro de Francia.",
+        "notesEn": "Roman marble statue found on 6 June 1651 during excavations at the ancient theater of Arles (southern France), by workers digging a cistern. First identified as Diana, it was renamed Venus, and in 1681 the city of Arles gave it to Louis XIV, who wanted it to decorate the Hall of Mirrors at Versailles -- a transfer driven by royal desire rather than a purchase or a spontaneous gift. It remained in the royal collections until the French Revolution, when it was confiscated as crown property and arrived at the Louvre in 1798. A contrast case with no colonial mechanism: both the find (French soil) and the two later transfers (cession to the king, revolutionary confiscation) took place entirely within France."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "excavation",
+          "event_date": "6 de junio de 1651",
+          "actor_or_institution": "Obreros municipales (excavación de una cisterna)",
+          "location": "Teatro antiguo de Arlés, Francia",
+          "description": "Hallada durante la excavación de una cisterna en el teatro antiguo de Arlés.",
+          "descriptionEs": "Hallada durante la excavación de una cisterna en el teatro antiguo de Arlés.",
+          "descriptionEn": "Found during the digging of a cistern at the ancient theater of Arles.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010277986",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "1681",
+          "actor_or_institution": "Ciudad de Arlés (cesión) a Luis XIV",
+          "location": "Arlés → Palacio de Versalles, Francia",
+          "description": "Cedida por la ciudad de Arlés a Luis XIV, para decorar la Galería de los Espejos de Versalles.",
+          "descriptionEs": "Cedida por la ciudad de Arlés a Luis XIV, para decorar la Galería de los Espejos de Versalles.",
+          "descriptionEn": "Ceded by the city of Arles to Louis XIV, to decorate the Hall of Mirrors at Versailles.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010277986",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1798",
+          "actor_or_institution": "Confiscación revolucionaria de bienes de la corona -- Musée du Louvre",
+          "location": "Versalles → París, Francia",
+          "description": "Confiscada como bien de la corona durante la Revolución Francesa y trasladada al Louvre.",
+          "descriptionEs": "Confiscada como bien de la corona durante la Revolución Francesa y trasladada al Louvre.",
+          "descriptionEn": "Confiscated as crown property during the French Revolution and transferred to the Louvre.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010277986",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010277994",
@@ -17616,8 +17888,44 @@
       "originLon": 31.4167,
       "originCountry": "Uganda",
       "originCountryEn": "Uganda",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "colonial_administration",
+          "private_excavation"
+        ],
+        "associated_communities_or_states": "Uganda",
+        "notes": "Fragmento de asa de una vasija de cerámica, decorada con roleteado, hallada en la zona del montículo central del sitio de Bigo bya Mugenyi (distrito de Mubende, Uganda) -- el complejo de terraplenes más extenso de la región de los Grandes Lagos africanos, asociado por tradición oral a la cultura Bachwezi. Donada en 1955 por E. C. Lanning, arqueólogo británico que realizó el primer estudio sistemático del sitio a comienzos de los años 1950 y publicó los primeros mapas detallados de sus terraplenes, en la Uganda entonces bajo protectorado británico. No se encontró documentación sobre si Lanning excavó la pieza él mismo o la recolectó de superficie; se documenta como recolección/excavación privada de un funcionario/investigador británico en el marco de la administración colonial, no como una misión financiada por el propio Museo Británico.",
+        "notesEn": "Fragment of a pottery jar handle, roulette-decorated, found in the area of the central mound at the Bigo bya Mugenyi site (Mubende District, Uganda) -- the most extensive earthworks complex in the African Great Lakes region, traditionally associated with the Bachwezi culture. Donated in 1955 by E. C. Lanning, a British archaeologist who carried out the first systematic survey of the site in the early 1950s and published the first detailed maps of its earthworks, in a Uganda then under British protectorate rule. No documentation was found on whether Lanning excavated the piece himself or collected it from the surface; it is documented as a private collection/excavation by a British official-researcher within the colonial administration, not as a mission funded by the British Museum itself."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "excavation",
+          "event_date": "años 1950 (probablemente asociado al relevamiento de Lanning de 1953-54)",
+          "actor_or_institution": "E. C. Lanning",
+          "location": "Bigo bya Mugenyi, montículo central, distrito de Mubende, Uganda",
+          "description": "Hallada en el área del montículo central de los terraplenes de Bigo.",
+          "descriptionEs": "Hallada en el área del montículo central de los terraplenes de Bigo.",
+          "descriptionEn": "Found in the area of the central mound of the Bigo earthworks.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1955-01-1",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1955",
+          "actor_or_institution": "Donación de E. C. Lanning",
+          "location": "Museo Británico, Londres",
+          "description": "Donada al Museo Británico por E. C. Lanning.",
+          "descriptionEs": "Donada al Museo Británico por E. C. Lanning.",
+          "descriptionEn": "Donated to the British Museum by E. C. Lanning.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1955-01-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1981-27-1",
