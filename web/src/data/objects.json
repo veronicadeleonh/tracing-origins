@@ -9041,8 +9041,70 @@
       "originLon": 35.6478,
       "originCountry": "Líbano",
       "originCountryEn": "Lebanon",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "art_market",
+          "french_mandate"
+        ],
+        "associated_communities_or_states": "Egypt;Lebanon",
+        "notes": "Busto de cuarcita del faraón egipcio Osorkon I (XXII dinastía, h. 924-889 a.C.), tallado originalmente en Egipto y reutilizado siglos después por Elibaal, rey de Biblos, quien mandó grabarle una dedicatoria en fenicio a la diosa Baalat Gebal junto al cartucho egipcio original -- un objeto que documenta contacto e intercambio egipcio-fenicio en la Antigüedad, no un mecanismo colonial moderno. Hallado en el templo de Baalat Gebal en Biblos (Líbano); el propio registro del Louvre data el hallazgo en el \"siglo XIX\", mientras que fuentes secundarias asocian fragmentos relacionados de la misma estatua a las campañas de excavación de Pierre Montet en Biblos (1921-1924) y de Maurice Dunand (1937-1958) -- discrepancia entre nuestra fuente primaria y la bibliografía externa, no resuelta aquí. Comprada por el Louvre en 1925 (comité 29/01/1925, decreto 26/02/1925), con el Líbano ya bajo Mandato Francés -- el modo de adquisición registrado es compra, no partage, y no se encontró documentación sobre el vendedor.",
+        "notesEn": "Quartzite bust of the Egyptian pharaoh Osorkon I (22nd Dynasty, c. 924-889 BCE), originally carved in Egypt and reused centuries later by Elibaal, king of Byblos, who had a Phoenician dedication to the goddess Baalat Gebal inscribed next to the original Egyptian cartouche -- an object documenting Egyptian-Phoenician contact and exchange in Antiquity, not a modern colonial mechanism. Found in the temple of Baalat Gebal at Byblos (Lebanon); the Louvre's own record dates the find to the \"19th century\", while secondary sources associate related fragments of the same statue with Pierre Montet's excavation campaigns at Byblos (1921-1924) and Maurice Dunand's (1937-1958) -- a discrepancy between our primary source and the external literature, left unresolved here. Purchased by the Louvre in 1925 (committee 29/01/1925, decree 26/02/1925), with Lebanon already under the French Mandate -- the recorded acquisition mode is a purchase, not partage, and no documentation was found on the seller."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -924/-889 (reinado de Osorkon I)",
+          "actor_or_institution": "Antiguo Egipto",
+          "location": "Egipto",
+          "description": "Tallado originalmente en Egipto como estatua del faraón Osorkon I.",
+          "descriptionEs": "Tallado originalmente en Egipto como estatua del faraón Osorkon I.",
+          "descriptionEn": "Originally carved in Egypt as a statue of pharaoh Osorkon I.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120348",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "s. X-IX a.C. (reinado de Elibaal de Biblos)",
+          "actor_or_institution": "Elibaal, rey de Biblos",
+          "location": "Biblos, templo de Baalat Gebal, Líbano",
+          "description": "Reutilizada y reinscripta por Elibaal, rey de Biblos, con una dedicatoria en fenicio a la diosa Baalat Gebal.",
+          "descriptionEs": "Reutilizada y reinscripta por Elibaal, rey de Biblos, con una dedicatoria en fenicio a la diosa Baalat Gebal.",
+          "descriptionEn": "Reused and re-inscribed by Elibaal, king of Byblos, with a Phoenician dedication to the goddess Baalat Gebal.",
+          "source_url": "https://en.wikipedia.org/wiki/Osorkon_Bust",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "excavation",
+          "event_date": "Registro del Louvre: siglo XIX. Fuentes secundarias asocian fragmentos relacionados a las campañas de Pierre Montet (1921-1924) y Maurice Dunand (1937-1958)",
+          "actor_or_institution": "Sin excavador documentado con certeza (ver discrepancia de fuentes)",
+          "location": "Biblos, templo de Baalat Gebal, Líbano",
+          "description": "Hallada en el templo de Baalat Gebal; fecha y excavador exactos no coinciden entre nuestra fuente primaria y la bibliografía externa.",
+          "descriptionEs": "Hallada en el templo de Baalat Gebal; fecha y excavador exactos no coinciden entre nuestra fuente primaria y la bibliografía externa.",
+          "descriptionEn": "Found in the temple of Baalat Gebal; the exact date and excavator do not match between our primary source and the external literature.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120348",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1925",
+          "actor_or_institution": "Compra -- Musée du Louvre (comité 29/01/1925, decreto 26/02/1925)",
+          "location": "Musée du Louvre, París",
+          "description": "Comprada por el Louvre en 1925, con el Líbano bajo Mandato Francés; vendedor no documentado.",
+          "descriptionEs": "Comprada por el Louvre en 1925, con el Líbano bajo Mandato Francés; vendedor no documentado.",
+          "descriptionEn": "Purchased by the Louvre in 1925, with Lebanon under the French Mandate; seller not documented.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120348",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010120353",
@@ -9362,8 +9424,58 @@
       "originLon": 40.8908,
       "originCountry": "Siria",
       "originCountryEn": "Syria",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "partage",
+          "french_mandate",
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Syria",
+        "notes": "León de bronce y piedra caliza, guardián del \"templo de los leones\" (llamado templo de Dagan por el excavador) en Mari (Tell Hariri, Siria), hallado el 8 de febrero de 1937 por la misión arqueológica de André Parrot, activa en el sitio desde 1933. La pieza llegó al Louvre por partage después de excavación, el mismo año del hallazgo, bajo el Mandato Francés en Siria -- el mismo mecanismo institucional ya documentado para otras piezas de Mari y del Levante bajo mandato en esta muestra.",
+        "notesEn": "Bronze and limestone lion, guardian of the \"temple of the lions\" (called the temple of Dagan by the excavator) at Mari (Tell Hariri, Syria), found on 8 February 1937 by André Parrot's archaeological mission, active at the site since 1933. The piece entered the Louvre via partage after excavation, the same year as the find, under the French Mandate in Syria -- the same institutional mechanism already documented for other Mari and Mandate-era Levantine pieces in this sample."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "Dinasties amorreas, época de Zimri-Lim (?) (h. -1782/-1759)",
+          "actor_or_institution": "Reino de Mari",
+          "location": "Mari (Tell Hariri), Siria",
+          "description": "Creación del león guardián para el templo de Dagan.",
+          "descriptionEs": "Creación del león guardián para el templo de Dagan.",
+          "descriptionEn": "Creation of the guardian lion for the temple of Dagan.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120558",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "8 de febrero de 1937",
+          "actor_or_institution": "André Parrot (misión arqueológica francesa, activa en Mari desde 1933)",
+          "location": "Mari, templo de Dagan (\"templo de los leones\"), Siria",
+          "description": "Excavado por la misión de André Parrot en el templo de Dagan.",
+          "descriptionEs": "Excavado por la misión de André Parrot en el templo de Dagan.",
+          "descriptionEn": "Excavated by André Parrot's mission in the temple of Dagan.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120558",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1937",
+          "actor_or_institution": "Partage -- Mandato Francés en Siria / Musée du Louvre",
+          "location": "Mari, Siria / París, Francia",
+          "description": "Adquirido por el Louvre mediante partage después de excavación.",
+          "descriptionEs": "Adquirido por el Louvre mediante partage después de excavación.",
+          "descriptionEn": "Acquired by the Louvre via partage after excavation.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120558",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010120706",
@@ -11455,8 +11567,70 @@
       "originLon": 12.4964,
       "originCountry": "Italia",
       "originCountryEn": "Italy",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Italy",
+        "notes": "Escultura romana en mármol del Hermafrodita dormido (h. 100-150 d.C.), hallada en 1618 cerca de las Termas de Diocleciano en Roma (algunas fuentes secundarias dan 1608). Adquirida por el cardenal Scipione Borghese, quien en 1620 encargó al joven Gian Lorenzo Bernini tallar el colchón de mármol sobre el que descansa la figura. La pieza permaneció en la Galería Borghese hasta 1807, cuando el príncipe Camille Borghese -- casado con Paulina Bonaparte, hermana de Napoleón -- vendió gran parte de la colección familiar a su cuñado por decreto imperial del 27 de septiembre de 1807, pasando así al Louvre. Caso de contraste sin mecanismo colonial: una venta dentro de una red familiar y dinástica europea, aunque con la presión política evidente de vender al propio emperador.",
+        "notesEn": "Roman marble sculpture of the Sleeping Hermaphroditus (c. 100-150 CE), found in 1618 near the Baths of Diocletian in Rome (some secondary sources give 1608). Acquired by Cardinal Scipione Borghese, who in 1620 commissioned the young Gian Lorenzo Bernini to carve the marble mattress on which the figure rests. The piece remained in the Borghese Gallery until 1807, when Prince Camille Borghese -- married to Pauline Bonaparte, Napoleon's sister -- sold much of the family collection to his brother-in-law by imperial decree of 27 September 1807, passing it to the Louvre. A contrast case with no colonial mechanism: a sale within a European dynastic and family network, though under evident political pressure to sell to the emperor himself."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 100-150 d.C.",
+          "actor_or_institution": "Roma imperial",
+          "location": "Roma, Italia",
+          "description": "Escultura romana del Hermafrodita dormido.",
+          "descriptionEs": "Escultura romana del Hermafrodita dormido.",
+          "descriptionEn": "Roman sculpture of the Sleeping Hermaphroditus.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010250571",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1618 (algunas fuentes secundarias dan 1608)",
+          "actor_or_institution": "Hallazgo sin excavador documentado",
+          "location": "Cerca de las Termas de Diocleciano, Roma, Italia",
+          "description": "Hallada cerca de las Termas de Diocleciano en Roma.",
+          "descriptionEs": "Hallada cerca de las Termas de Diocleciano en Roma.",
+          "descriptionEn": "Found near the Baths of Diocletian in Rome.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010250571",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "1620",
+          "actor_or_institution": "Cardenal Scipione Borghese, encargó el colchón de mármol a Gian Lorenzo Bernini",
+          "location": "Roma, Italia",
+          "description": "El cardenal Scipione Borghese encargó a Bernini tallar el colchón de mármol sobre el que descansa la figura.",
+          "descriptionEs": "El cardenal Scipione Borghese encargó a Bernini tallar el colchón de mármol sobre el que descansa la figura.",
+          "descriptionEn": "Cardinal Scipione Borghese commissioned Bernini to carve the marble mattress on which the figure rests.",
+          "source_url": "https://fr.wikipedia.org/wiki/Hermaphrodite_endormi",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "27 de septiembre de 1807",
+          "actor_or_institution": "Príncipe Camille Borghese, venta a Napoleón I (decreto imperial)",
+          "location": "Roma, Italia / París, Francia",
+          "description": "Vendida por el príncipe Camille Borghese a su cuñado Napoleón I junto con gran parte de la colección Borghese.",
+          "descriptionEs": "Vendida por el príncipe Camille Borghese a su cuñado Napoleón I junto con gran parte de la colección Borghese.",
+          "descriptionEn": "Sold by Prince Camille Borghese to his brother-in-law Napoleon I along with much of the Borghese collection.",
+          "source_url": "https://fr.wikipedia.org/wiki/Hermaphrodite_endormi",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010252531",
@@ -15141,8 +15315,84 @@
       "originLon": -3.7492,
       "originCountry": "España",
       "originCountryEn": "Spain",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context",
+          "art_market",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Spain",
+        "notes": "León de bronce con decoración grabada, probablemente fabricado en Córdoba (España omeya/al-Ándalus, h. 975-1100), hallado en 1849 en las ruinas del Castellón, a las afueras de Monzón de Campos (Palencia, España). Pasó por la colección del pintor y coleccionista de arte islámico Mariano Fortuny y Marsal, luego por la del anticuario Eugène Piot -- rematada en el Hôtel Drouot de París en 1890 tras su muerte -- y de ahí a la del banquero parisino Louis Stern. Stern legó la pieza al Louvre antes de morir en 1900, pero el museo la recibió recién en 1926, al morir su viuda Ernesta Stern. Caso de contraste sin mecanismo colonial: toda la cadena de custodia documentada, desde el hallazgo en España hasta el legado final, transcurre dentro del circuito europeo de coleccionismo privado y mercado de arte, sin intervención de ninguna administración colonial.",
+        "notesEn": "Bronze lion with engraved decoration, probably made in Córdoba (Umayyad Spain / al-Andalus, c. 975-1100), found in 1849 in the ruins of the Castellón, outside Monzón de Campos (Palencia, Spain). It passed through the collection of the painter and Islamic-art collector Mariano Fortuny y Marsal, then that of the antiquarian Eugène Piot -- auctioned at the Hôtel Drouot in Paris in 1890 after his death -- and from there to that of the Parisian banker Louis Stern. Stern bequeathed the piece to the Louvre before his death in 1900, but the museum only received it in 1926, upon the death of his widow Ernesta Stern. A contrast case with no colonial mechanism: the entire documented chain of custody, from the find in Spain to the final bequest, took place within the European private-collecting and art-market circuit, with no colonial administration involved."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 975-1100",
+          "actor_or_institution": "Taller de Córdoba (España omeya)",
+          "location": "Córdoba, España",
+          "description": "Fabricación del león de bronce, probablemente en Córdoba.",
+          "descriptionEs": "Fabricación del león de bronce, probablemente en Córdoba.",
+          "descriptionEn": "Manufacture of the bronze lion, probably in Córdoba.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010330266",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1849",
+          "actor_or_institution": "Hallazgo sin excavador documentado",
+          "location": "Ruinas del Castellón, Monzón de Campos, España",
+          "description": "Hallado en las ruinas del Castellón, a las afueras de Monzón de Campos.",
+          "descriptionEs": "Hallado en las ruinas del Castellón, a las afueras de Monzón de Campos.",
+          "descriptionEn": "Found in the ruins of the Castellón, outside Monzón de Campos.",
+          "source_url": "https://fr.wikipedia.org/wiki/Lion_de_Monzon",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "entre 1849 y 1890",
+          "actor_or_institution": "Mariano Fortuny y Marsal; luego Eugène Piot",
+          "location": "España / Francia",
+          "description": "Pasó por las colecciones privadas del pintor Mariano Fortuny y Marsal y del anticuario Eugène Piot.",
+          "descriptionEs": "Pasó por las colecciones privadas del pintor Mariano Fortuny y Marsal y del anticuario Eugène Piot.",
+          "descriptionEn": "Passed through the private collections of the painter Mariano Fortuny y Marsal and the antiquarian Eugène Piot.",
+          "source_url": "https://fr.wikipedia.org/wiki/Lion_de_Monzon",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "1890",
+          "actor_or_institution": "Rematado en el Hôtel Drouot, comprado por Louis Stern",
+          "location": "París, Francia",
+          "description": "Rematado en el Hôtel Drouot tras la muerte de Piot; adquirido por el banquero Louis Stern.",
+          "descriptionEs": "Rematado en el Hôtel Drouot tras la muerte de Piot; adquirido por el banquero Louis Stern.",
+          "descriptionEn": "Auctioned at the Hôtel Drouot after Piot's death; acquired by the banker Louis Stern.",
+          "source_url": "https://fr.wikipedia.org/wiki/Lion_de_Monzon",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
+          "event_type": "bequest",
+          "event_date": "1926",
+          "actor_or_institution": "Legado de Louis Stern (recibido al morir su viuda, Ernesta Stern)",
+          "location": "Musée du Louvre, París",
+          "description": "Legado al Louvre por Louis Stern, recibido efectivamente en 1926 al morir su viuda.",
+          "descriptionEs": "Legado al Louvre por Louis Stern, recibido efectivamente en 1926 al morir su viuda.",
+          "descriptionEn": "Bequeathed to the Louvre by Louis Stern, effectively received in 1926 upon his widow's death.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010330266",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010330328",
@@ -15692,8 +15942,57 @@
       "originLon": 81.2335,
       "originCountry": "Sri Lanka",
       "originCountryEn": "Sri Lanka",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "military_seizure"
+        ],
+        "associated_communities_or_states": "Sri Lanka",
+        "notes": "Estatua de bronce dorado de la diosa budista Tara (h. siglo VIII), una de las piezas más grandes y elaboradas de este tipo conocidas. Donada al Museo Británico en 1830 por Sir Robert Brownrigg, gobernador británico de Ceilán entre 1812 y 1820. Según la propia carta de Brownrigg al Museo, la pieza \"fue hallada en el noreste de Ceilán, entre Trincomalee y Batticaloa\" -- pero la procedencia es objeto de disputa activa: se alega que en realidad fue tomada de las bóvedas del último rey de Kandy, Sri Wickrama Rajasinha, durante la anexión británica del Reino de Kandy en 1815 (campaña que el propio Brownrigg comandó como gobernador). El Museo Británico documenta ambas versiones sin resolverlas; Sri Lanka reclama activamente la devolución de la pieza.",
+        "notesEn": "Gilt-bronze statue of the Buddhist goddess Tara (c. 8th century), one of the largest and most elaborate known examples of this type. Donated to the British Museum in 1830 by Sir Robert Brownrigg, British Governor of Ceylon from 1812 to 1820. According to Brownrigg's own letter to the Museum, the piece \"was found in the North East part of Ceylon between Trincomalee and Batticaloa\" -- but its provenance is actively disputed: it is alleged that it was in fact taken from the vaults of the last King of Kandy, Sri Wickrama Rajasinha, during the British annexation of the Kingdom of Kandy in 1815 (a campaign Brownrigg himself commanded as governor). The British Museum documents both versions without resolving them; Sri Lanka actively campaigns for the statue's return."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. siglo VIII",
+          "actor_or_institution": "Sri Lanka budista",
+          "location": "Sri Lanka",
+          "description": "Fabricación de la estatua de bronce dorado de la diosa Tara.",
+          "descriptionEs": "Fabricación de la estatua de bronce dorado de la diosa Tara.",
+          "descriptionEn": "Manufacture of the gilt-bronze statue of the goddess Tara.",
+          "source_url": "https://en.wikipedia.org/wiki/Statue_of_Tara",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1815",
+          "actor_or_institution": "Robert Brownrigg, gobernador británico de Ceilán (anexión del Reino de Kandy)",
+          "location": "Reino de Kandy, Ceilán",
+          "description": "Versión disputada: se alega que la pieza fue tomada de las bóvedas del último rey de Kandy durante la anexión británica de 1815, comandada por el propio Brownrigg.",
+          "descriptionEs": "Versión disputada: se alega que la pieza fue tomada de las bóvedas del último rey de Kandy durante la anexión británica de 1815, comandada por el propio Brownrigg.",
+          "descriptionEn": "Disputed version: it is alleged the piece was taken from the vaults of the last King of Kandy during the 1815 British annexation, which Brownrigg himself commanded.",
+          "source_url": "https://en.wikipedia.org/wiki/Statue_of_Tara",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1830",
+          "actor_or_institution": "Donación de Sir Robert Brownrigg",
+          "location": "Museo Británico, Londres",
+          "description": "Donada al Museo Británico por Brownrigg, quien declaró que fue hallada entre Trincomalee y Batticaloa.",
+          "descriptionEs": "Donada al Museo Británico por Brownrigg, quien declaró que fue hallada entre Trincomalee y Batticaloa.",
+          "descriptionEn": "Donated to the British Museum by Brownrigg, who stated it was found between Trincomalee and Batticaloa.",
+          "source_url": "https://www.britishmuseum.org/collection/object/A_1830-0612-4",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:A_1859-1228-121",
@@ -16981,8 +17280,57 @@
       "originLon": -11.7799,
       "originCountry": "Sierra Leona",
       "originCountryEn": "Sierra Leone",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "settler_collection",
+          "colonial_administration"
+        ],
+        "associated_communities_or_states": "Sierra Leone",
+        "notes": "Brazalete hecho de casco de pata de elefante, con incrustaciones de metal blanco, comprado en 1886 al Museo Británico a Thomas Joshua Alldridge, sobre el río Sherbro (Sierra Leona). En 1886 Alldridge era agente comercial de una compañía radicada en Bonthe, isla de Sherbro; recién en la década de 1890 pasaría a ser comisionado itinerante del gobierno británico -- encargado de persuadir a jefes mende del interior de firmar tratados con las autoridades británicas -- y luego el primer Comisionado de Distrito (1894-1905). La pieza se documenta como parte de su colección personal de cultura material sierraleonesa, reunida a lo largo de décadas de residencia y trabajo en la región y vendida en parte al Museo Británico y al Brighton Art Gallery and Museum; se documenta su cronología exacta (comerciante privado en 1886, funcionario colonial recién años después) para no atribuir a esta pieza puntual un mecanismo de recolección que en ese momento aún no existía.",
+        "notesEn": "Armlet made from an elephant-hoof shell, inlaid with white-metal dots, purchased by the British Museum in 1886 from Thomas Joshua Alldridge, on the Sherbro River (Sierra Leone). In 1886 Alldridge was a commercial agent for a trading company based at Bonthe, Sherbro Island; only in the 1890s would he become a travelling commissioner for the British government -- tasked with persuading Mende chiefs in the interior to sign treaties with British authorities -- and later the first District Commissioner (1894-1905). The piece is documented as part of his personal collection of Sierra Leonean material culture, assembled over decades of residence and work in the region and sold in part to the British Museum and to the Brighton Art Gallery and Museum; its exact chronology is documented here (private trader in 1886, colonial official only years later) so as not to attribute a collecting mechanism to this particular piece that did not yet exist at the time."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1886",
+          "actor_or_institution": "Comunidad del río Sherbro",
+          "location": "Río Sherbro, Sierra Leona",
+          "description": "Fabricación del brazalete de casco de pata de elefante.",
+          "descriptionEs": "Fabricación del brazalete de casco de pata de elefante.",
+          "descriptionEn": "Manufacture of the elephant-hoof armlet.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1886-1126-2",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1886",
+          "actor_or_institution": "Thomas Joshua Alldridge (agente comercial en Bonthe, Isla de Sherbro)",
+          "location": "Río Sherbro, Sierra Leona",
+          "description": "Recolectada por Alldridge, entonces agente comercial (años antes de convertirse en funcionario colonial).",
+          "descriptionEs": "Recolectada por Alldridge, entonces agente comercial (años antes de convertirse en funcionario colonial).",
+          "descriptionEn": "Collected by Alldridge, then a commercial agent (years before becoming a colonial official).",
+          "source_url": "https://en.wikipedia.org/wiki/T._J._Alldridge",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1886",
+          "actor_or_institution": "Compra a Thomas Joshua Alldridge",
+          "location": "Museo Británico, Londres",
+          "description": "Comprada por el Museo Británico a Alldridge en 1886.",
+          "descriptionEs": "Comprada por el Museo Británico a Alldridge en 1886.",
+          "descriptionEn": "Purchased by the British Museum from Alldridge in 1886.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1886-1126-2",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1887-1211-51",
