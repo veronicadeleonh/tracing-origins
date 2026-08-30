@@ -202,6 +202,15 @@ SEED_OBJECT_IDS = [
     "A_2004-0628-24",  # Altar, período Ratnakosin — Tailandia (s. XIX)
     "A_As1903-1006-8",  # Gorro, pueblo khalka — Mongolia
     "E_Af1900-0524-37",  # Brazalete, pueblo malgache — Madagascar (1896)
+    # Octava ronda (30/08) — identificadas vía cruce con Wikidata (P793="looting",
+    # ver CLAUDE.md, sección "Cruce con Wikidata para piezas en disputa"), ya
+    # investigadas para layer 3 como entradas huérfanas antes de este fetch.
+    # Las 4 comparten el mismo evento: la Expedición Británica a Abisinia y el
+    # saqueo de la fortaleza de Tewodros II en Maqdala, abril de 1868.
+    "E_Af1912-0410-7",  # Collar del príncipe Alemayehu, hijo de Tewodros II — Maqdala/Etiopía
+    "E_Af1868-1001-1",  # Escudo, posiblemente hecho para el propio Tewodros II — Maqdala/Etiopía
+    "E_Af1868-1001-24",  # Túnica de brocado de seda — Maqdala/Etiopía
+    "E_Af1868-1230-5",  # Cruz procesional de Gondar — Maqdala/Etiopía
 ]
 
 
