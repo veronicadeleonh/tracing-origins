@@ -6,6 +6,16 @@ import type { Lang } from "./i18n";
 // calcular el punto de arranque de cada línea dibujada.
 export const JITTER_RADIUS_DEG = 0.02;
 
+// ~30km — radio bastante mayor que JITTER_RADIUS_DEG, usado en groupByOrigin
+// para separar CLUSTERS distintos (no líneas dentro de un mismo cluster) que
+// caen exactamente en el mismo punto -- típicamente varios orígenes a nivel
+// país que comparten el mismo centroide (ver CLAUDE.md, "grupo de piezas
+// superpuestas en el mapa", 31/08). Ahí el problema es un círculo entero
+// tapando a otro (0 px de separación entre centros, imposible de clickear el
+// de abajo), no líneas que se pisan -- necesita un radio bastante más grande
+// que el de líneas para que los círculos queden separados a simple vista.
+export const CLUSTER_COLLISION_JITTER_RADIUS_DEG = 0.3;
+
 export function jitteredPoint(
   lat: number,
   lon: number,
@@ -111,6 +121,42 @@ export function groupByOrigin(objects: MuseumObject[], lang: Lang = "es"): Origi
     // objectID ahora es "met:96404" etc. (namespaceado por museo) — orden
     // lexicográfico alcanza, lo único que importa es que sea determinístico.
     cluster.objects.sort((a, b) => a.objectID.localeCompare(b.objectID));
+  }
+
+  // Clusters DISTINTOS (etiqueta distinta, ej. "Aït Berdjal" vs. "Djanet")
+  // pueden coincidir en el mismo punto exacto -- el caso típico es varios
+  // orígenes a nivel país (sin sitio puntual conocido) que caen todos en el
+  // mismo centroide de país. Sin esto quedan apilados pixel a pixel en el
+  // mapa: un solo círculo visible, imposible de clickear el resto (ver
+  // CLAUDE.md, 31/08, reportado por la usuaria con Argelia como ejemplo). Se
+  // separan con el mismo mecanismo de jitteredPoint que ya usan las líneas
+  // dentro de un cluster, pero con un radio mucho mayor
+  // (CLUSTER_COLLISION_JITTER_RADIUS_DEG) porque acá hace falta separar
+  // círculos enteros, no solo puntas de línea. Esto NUNCA fusiona ni separa
+  // objetos dentro de un mismo cluster (ya vienen agrupados por label más
+  // arriba) -- solo desplaza el punto de renderizado de clusters que, siendo
+  // lugares distintos según su propio registro, comparten coordenada por no
+  // tener (todavía) una coordenada de sitio propia.
+  const byCoord = new Map<string, OriginCluster[]>();
+  for (const cluster of groups.values()) {
+    const coordKey = `${cluster.lat}|${cluster.lon}`;
+    if (!byCoord.has(coordKey)) byCoord.set(coordKey, []);
+    byCoord.get(coordKey)!.push(cluster);
+  }
+  for (const colliding of byCoord.values()) {
+    if (colliding.length <= 1) continue;
+    colliding.sort((a, b) => a.label.localeCompare(b.label)); // orden determinístico, no depende de Map insertion order
+    colliding.forEach((cluster, i) => {
+      const [jLat, jLon] = jitteredPoint(
+        cluster.lat,
+        cluster.lon,
+        i,
+        colliding.length,
+        CLUSTER_COLLISION_JITTER_RADIUS_DEG,
+      );
+      cluster.lat = jLat;
+      cluster.lon = jLon;
+    });
   }
 
   return [...groups.values()];

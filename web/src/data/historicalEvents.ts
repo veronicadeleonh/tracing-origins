@@ -48,4 +48,14 @@ export const HISTORICAL_EVENTS: HistoricalEvent[] = [
     label: "Pico territorial simultáneo de ambos imperios coloniales — Reino Unido llega a ~13,7 millones de mi² (24% de la superficie terrestre) y Francia a ~12,5 millones de km², tras absorber los mandatos de la Sociedad de Naciones sobre territorio alemán y otomano (Irak, Palestina, Siria, Líbano, Camerún, Togo). Ambas potencias tenían asiento permanente en el Consejo de la Sociedad de Naciones recién fundada. Por esto el timeline arranca en este año por default.",
     color: "#928d82",
   },
+  // Agregado 31/08, pedido explícito de la usuaria al sumar Quai Branly como
+  // 4ta fuente: a diferencia del hito de 1920 (dos potencias distintas, color
+  // neutro), este es un hito entre dos museos del mismo país -- usa el
+  // mismo teal que ya identifica a ambos (MUSEUM_COLORS.louvre/FRANCE_COLOR
+  // en colors.ts), no el gris neutro.
+  {
+    year: 2006,
+    label: "Se inaugura el Musée du Quai Branly — el fondo de África Subsahariana, América, Asia y Oceanía del Louvre (que nunca tuvo un departamento curatorial propio para esas regiones) se transfiere al museo nuevo. Desde entonces el Louvre queda concentrado en Egipto, Medio Oriente, el Mediterráneo y Europa, y Quai Branly cubre el resto del mundo — por eso las líneas de ambos museos en el mapa se leen como dos mitades de una misma colección francesa.",
+    color: "#3d7a8c",
+  },
 ];

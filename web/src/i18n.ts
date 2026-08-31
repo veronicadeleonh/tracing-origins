@@ -35,6 +35,10 @@ export interface I18nStrings {
   hasResearchBadgeAria: string;
   hasResearchLegend: string;
   museumFilterRowLabel: string;
+  // Agrupación de toggles de museo por país (31/08, pedido de la usuaria) --
+  // claves fijas "us"/"fr"/"uk" (los 3 países de origen de los 4 museos),
+  // ver MUSEUM_COUNTRY en colors.ts.
+  museumCountryNames: Record<string, string>;
   researchFilterAria: string;
   researchFilterRowLabel: string;
   researchFilterLabels: Record<"all" | "with" | "without", string>;
@@ -113,6 +117,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       met: "El Met no adquirió estas piezas porque EEUU controlara territorialmente sus lugares de origen. Llegaron por el mercado internacional de antigüedades, misiones de excavación autorizadas por la potencia colonial de turno y donantes ricos — poder económico y político ganado en años recientes, no expansión territorial.",
       louvre: "Los 4 departamentos del Louvre representados acá (Antigüedades Egipcias, Orientales, Griegas-Etruscas-Romanas, Arte Islámico) cubren sobre todo Egipto, Medio Oriente y el Mediterráneo. El fondo de África Subsahariana y América no está en el Louvre: se transfirió al Musée du Quai Branly cuando abrió en 2006.",
       bm: "El caso más directo de administración colonial territorial de los tres museos, con mecanismos que van desde la conquista militar (la Piedra de Rosetta, las Placas de Benín) hasta excavaciones bajo permiso del gobierno otomano.",
+      qb: "A diferencia de los otros tres, Quai Branly no es un museo de antigüedades sino etnográfico — reúne el fondo de África, América, Asia y Oceanía que el Louvre no cubre (transferido acá cuando el museo abrió en 2006). Buena parte de su colección llegó vía coleccionistas privados, funcionarios coloniales franceses y compras en el mercado de arte, no por excavación arqueológica — el propio registro del museo documenta esto con más detalle que el resto (quién donó o vendió cada pieza, no solo dónde se encontró).",
     },
     pieceCounterAll: (n) => `${n} piezas`,
     pieceCounterFiltered: (visible, total) => `${visible} de ${total} piezas`,
@@ -137,6 +142,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       "Compra la Colección Cesnola (antigüedades de Chipre) — establece la reputación del Met como repositorio serio de antigüedades. Cesnola era cónsul de EEUU en Chipre; sus métodos de excavación fueron polémicos incluso en su época.",
       "El Met arranca su propia Expedición Egipcia (hasta 1935) — pasa de financiar excavaciones ajenas (Egypt Exploration Fund, 1897-1906) a excavar directamente, bajo autorización del gobierno egipcio de la época. El núcleo de sus ~30.000 piezas egipcias viene de este período.",
       "Pico territorial simultáneo de ambos imperios coloniales — Reino Unido llega a ~13,7 millones de mi² (24% de la superficie terrestre) y Francia a ~12,5 millones de km², tras absorber los mandatos de la Sociedad de Naciones sobre territorio alemán y otomano (Irak, Palestina, Siria, Líbano, Camerún, Togo). Ambas potencias tenían asiento permanente en el Consejo de la Sociedad de Naciones recién fundada. Por esto el timeline arranca en este año por default.",
+      "Se inaugura el Musée du Quai Branly — el fondo de África Subsahariana, América, Asia y Oceanía del Louvre (que nunca tuvo un departamento curatorial propio para esas regiones) se transfiere al museo nuevo. Desde entonces el Louvre queda concentrado en Egipto, Medio Oriente, el Mediterráneo y Europa, y Quai Branly cubre el resto del mundo — por eso las líneas de ambos museos en el mapa se leen como dos mitades de una misma colección francesa.",
     ],
     timelineNoteAria: (label) => `Sobre la capa de ${label}`,
     timelineSliderAria: "Año del mapa de territorios coloniales",
@@ -147,6 +153,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     hasResearchBadgeAria: "Tiene recorrido investigado y citado",
     hasResearchLegend: "recorrido investigado y citado (color = museo)",
     museumFilterRowLabel: "Museos:",
+    museumCountryNames: { us: "Estados Unidos", fr: "Francia", uk: "Reino Unido" },
     researchFilterAria: "Filtrar por estado de investigación",
     researchFilterRowLabel: "Investigación:",
     researchFilterLabels: { all: "Todas", with: "Con investigación", without: "Sin investigación" },
@@ -224,7 +231,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     ],
     welcomeAboutHeading: "Sobre esta muestra",
     welcomeAboutP1: "Proyecto curado para portfolio personal, no un dataset exhaustivo — no representa la colección completa de ningún museo.",
-    welcomeAboutP2: 'El patrón del mapa —de dónde viene cada pieza, a qué museo llegó— está completo en las 470 piezas. El detalle investigado es distinto: existe solo para un subconjunto, y no clasifica piezas como "robadas"; documenta el recorrido con fuentes, sin veredicto. La mayoría todavía no tiene esa investigación — es el estado por defecto, no una excepción.',
+    welcomeAboutP2: 'El patrón del mapa —de dónde viene cada pieza, a qué museo llegó— está completo en las 641 piezas. El detalle investigado es distinto: existe solo para un subconjunto, y no clasifica piezas como "robadas"; documenta el recorrido con fuentes, sin veredicto. La mayoría todavía no tiene esa investigación — es el estado por defecto, no una excepción.',
     welcomeSourcesHeading: "Fuentes y licencias",
     welcomeCreditsHeading: "Créditos",
     welcomeCreditsRepoPrefix: "Código fuente en",
@@ -258,6 +265,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       met: "The Met didn't acquire these pieces because the US held territorial control over their places of origin. They arrived through the international antiquities market, excavation missions authorized by whichever colonial power held the territory, and wealthy donors — recent economic and political power, not territorial expansion.",
       louvre: "The 4 Louvre departments represented here (Egyptian Antiquities, Near Eastern Antiquities, Greek/Etruscan/Roman Antiquities, Islamic Art) cover mostly Egypt, the Middle East, and the Mediterranean. The Louvre's Sub-Saharan Africa and Americas holdings aren't here — they were transferred to the Musée du Quai Branly when it opened in 2006.",
       bm: "The most direct case of territorial colonial administration of the three museums, with mechanisms ranging from military conquest (the Rosetta Stone, the Benin Bronzes) to excavations permitted by the Ottoman government.",
+      qb: "Unlike the other three, Quai Branly isn't an antiquities museum but an ethnographic one — it holds the Africa, Americas, Asia, and Oceania collections the Louvre doesn't cover (transferred here when the museum opened in 2006). Much of its collection arrived via private collectors, French colonial officials, and art-market purchases rather than archaeological excavation — the museum's own records document this in more detail than the other three (who donated or sold each piece, not just where it was found).",
     },
     pieceCounterAll: (n) => `${n} pieces`,
     pieceCounterFiltered: (visible, total) => `${visible} of ${total} pieces`,
@@ -282,6 +290,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       "Purchases the Cesnola Collection (antiquities from Cyprus) — establishes the Met's reputation as a serious antiquities repository. Cesnola was the US consul in Cyprus; his excavation methods were controversial even at the time.",
       "The Met starts its own Egyptian Expedition (through 1935) — moves from funding other institutions' excavations (Egypt Exploration Fund, 1897-1906) to excavating directly, authorized by the Egyptian government of the time. The core of its ~30,000 Egyptian pieces comes from this period.",
       "Simultaneous territorial peak of both colonial empires — the UK reaches ~13.7 million sq mi (24% of the world's land area) and France ~12.5 million km², after absorbing League of Nations mandates over former German and Ottoman territory (Iraq, Palestine, Syria, Lebanon, Cameroon, Togo). Both powers held permanent seats on the newly founded League of Nations Council. This is why the timeline defaults to this year.",
+      "The Musée du Quai Branly opens — the Louvre's Sub-Saharan Africa, Americas, Asia, and Oceania holdings (which never had their own curatorial department there) transfer to the new museum. Since then the Louvre stays concentrated on Egypt, the Middle East, the Mediterranean, and Europe, while Quai Branly covers the rest of the world — which is why both museums' lines on the map read as two halves of a single French collection.",
     ],
     timelineNoteAria: (label) => `About the ${label} layer`,
     timelineSliderAria: "Year of the colonial-territories map",
@@ -292,6 +301,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     hasResearchBadgeAria: "Has a researched, cited journey",
     hasResearchLegend: "researched, cited journey (colored by museum)",
     museumFilterRowLabel: "Museums:",
+    museumCountryNames: { us: "United States", fr: "France", uk: "United Kingdom" },
     researchFilterAria: "Filter by research status",
     researchFilterRowLabel: "Research:",
     researchFilterLabels: { all: "All", with: "With research", without: "Without research" },
@@ -369,7 +379,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     ],
     welcomeAboutHeading: "About this sample",
     welcomeAboutP1: "A curated personal-portfolio project, not an exhaustive dataset — it doesn't represent any museum's full collection.",
-    welcomeAboutP2: 'The map\'s pattern —where each piece comes from, which museum it reached— is complete across all 470 pieces. The researched detail is different: it exists only for a subset, and doesn\'t classify pieces as "stolen"; it documents the journey with sources, no verdict. Most pieces don\'t have that research yet — that\'s the default state, not an exception.',
+    welcomeAboutP2: 'The map\'s pattern —where each piece comes from, which museum it reached— is complete across all 641 pieces. The researched detail is different: it exists only for a subset, and doesn\'t classify pieces as "stolen"; it documents the journey with sources, no verdict. Most pieces don\'t have that research yet — that\'s the default state, not an exception.',
     welcomeSourcesHeading: "Sources & licenses",
     welcomeCreditsHeading: "Credits",
     welcomeCreditsRepoPrefix: "Source code on",

@@ -16,6 +16,7 @@ layer 1 (build_dataset.py / el equivalente de cada museo).
 MET = "met"
 LOUVRE = "louvre"
 BRITISH_MUSEUM = "bm"
+QUAI_BRANLY = "qb"
 
 
 def namespaced_id(museum: str, raw_id) -> str:

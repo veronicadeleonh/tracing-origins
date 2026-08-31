@@ -14,6 +14,7 @@ import re
 MET_COORDS = (40.7794, -73.9632)
 LOUVRE_COORDS = (48.8606, 2.3376)
 BM_COORDS = (51.5194, -0.1270)
+QUAI_BRANLY_COORDS = (48.8607, 2.2978)
 
 
 def _keyword_matches(keyword: str, haystack: str) -> bool:
@@ -1278,4 +1279,205 @@ def resolve_origin_bm(obj: dict) -> dict:
                 "country": origin_country[0], "country_en": origin_country[1],
             }
 
+    return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None, "country": None, "country_en": None}
+
+
+# ---------------------------------------------------------------------------
+# Quai Branly (31/08): a diferencia de Met/Louvre/BM, acá NO hace falta
+# matchear texto libre contra listas de keywords -- el propio registro del
+# museo ya trae un campo `Country` estructurado, con un término EXACTO de su
+# thesaurus controlado (francés, ej. "Congo, république démocratique"). El
+# lookup contra QUAI_BRANLY_COUNTRY_COORDS es un dict exacto, no
+# _keyword_matches() -- sin el riesgo de falso positivo por substring que
+# motivó esa función para las otras 3 fuentes (ver arriba). `Country` puede
+# venir como dict (un país) o como list (más de uno asociado al objeto) --
+# se usa el primero, mismo criterio que el resto del pipeline ante campos
+# multivaluados sin prioridad documentada por la fuente.
+#
+# El campo `Toponyme` del propio registro suele ser bastante más específico
+# que `Country` -- hasta nivel de aldea/isla (ej. "Muri Muri (village)"
+# dentro de "Fidji"), ver CLAUDE.md para ejemplos reales encontrados en el
+# reconocimiento del 31/08. Cuando no hay coordenada propia para ese
+# `Toponyme` (la mayoría de los casos -- cientos de aldeas/islas únicas en
+# los datos, no vale la pena investigar cada una) se usa como TEXTO del
+# label nomás, y la coordenada sigue siendo la del país -- marcar precision
+# "site" ahí sería mostrar más certeza geográfica de la que realmente
+# tenemos. Para los `Toponyme` que SÍ se repiten lo suficiente como para
+# justificar buscar su coordenada real (ver `QUAI_BRANLY_SITE_COORDS` más
+# abajo, agregado el 31/08 segunda vuelta a pedido de la usuaria -- varias
+# decenas de piezas quedaban amontonadas en el mismo punto de país), se
+# resuelve la coordenada real ANTES de caer al país, mismo mecanismo
+# incremental que el resto de este archivo.
+# Coordenadas a nivel sitio/región para Quai Branly (31/08, segunda vuelta —
+# pedido explícito de la usuaria: varias piezas quedaban amontonadas en el
+# mismo punto de país cuando el propio registro (`Toponyme`) ya da un lugar
+# más específico, ej. 22 piezas argelinas de Khankhoun y 16 bolivianas de La
+# Paz, todas superpuestas en el centroide de Argelia/Bolivia). Mismo lookup
+# EXACTO por `Toponyme.Term` que `QUAI_BRANLY_COUNTRY_COORDS` (thesaurus
+# controlado, no texto libre) -- se consulta primero en
+# `resolve_origin_quaibranly()`, y si hay match gana sobre el país. Cubre
+# solo los términos que se repiten lo suficiente como para justificar
+# investigar la coordenada real (mismo criterio incremental que el resto del
+# archivo) más un puñado de sitios únicos fáciles de confirmar (ciudades
+# conocidas) -- no las ~150 aldeas/islas únicas del dataset completo, eso
+# queda para si se repiten en corridas futuras.
+#
+# "Khankhoun (village)" es un caso aparte: no se encontró ninguna fuente que
+# confirme su coordenada exacta como asentamiento, pero sí está ubicado por
+# el propio thesaurus de Quai Branly dentro de "Constantine (département)"
+# -- el departamento colonial francés que en la época de la misión cubría
+# justamente la zona del macizo de los Aurès (Batna/Khenchela) -- y las 22
+# piezas con este Toponyme comparten colector (`Thérèse Rivière | Mission`
+# en `ConXother`), coincidiendo con la misión etnográfica documentada de
+# Rivière/Tillion a los Aurès (1935-36, ver context.csv). Se usa el punto de
+# Arris, la ciudad más importante del macizo, con precisión `"region"` (no
+# `"site"`) para dejar explícito que es una aproximación apoyada en fuentes
+# externas sobre la misión, no una ubicación puntual confirmada del propio
+# registro del museo.
+#
+# "Aït Berdjal" se investigó y se descartó a propósito: aunque comparte el
+# mismo colector (Thérèse Rivière) que Khankhoun, sus 4 nombres alternativos
+# en `Toponyme` ("L'Arbaa Naït Irathen", "Ouadhias", "Grande Kabylie") ubican
+# la pieza en Tizi Ouzou -- la Kabilia, una región bereber distinta y
+# geográficamente lejana de los Aurès (Chauia) -- sin que ninguna fuente
+# externa consultada resuelva la contradicción entre "Aït Berdjal" y esos
+# otros nombres. Forzar el mismo punto de Arris para estas 6 piezas hubiera
+# sido inventar precisión que no tenemos; quedan a nivel país (Argelia) como
+# antes, sin entrada en esta tabla -- mismo criterio que el resto del
+# proyecto ante evidencia contradictoria (ver Maunier Victor/Henri en
+# CLAUDE.md).
+#
+# Otros dos descartes por el mismo motivo, encontrados al auditar el campo
+# `Toponyme` COMPLETO (no solo el primero) de cada término antes de sumarlo
+# acá: "Djanet"/"Tindouf (ville)"/"Tlemcen (ville)" (Argelia, objetos de
+# comercio transahariano) traen como alternativas explícitas "Tombouctou"
+# (¡Malí!) y "Mauritanie" -- geográficamente demasiado lejos como para tratar
+# el primer término del thesaurus como una atribución confiable, a
+# diferencia de "Khankhoun" donde los 4 nombres alternativos apuntan todos a
+# la misma zona. Y "Pahang (état)"/"Perak (état)" (Malasia, 34 piezas): cada
+# objeto individual trae AMBOS estados como Toponyme (uno como primero, el
+# otro como alternativa) en partes iguales -- ninguno de los dos es más
+# confiable que el otro según el propio registro, así que elegir el primero
+# por convención (como hace `_first()` en el resto del pipeline) sería
+# fabricar una precisión de estado que el museo mismo no tiene. Las 34
+# piezas malasias y las 3 argelinas de comercio transahariano quedan a nivel
+# país, igual que antes de esta ronda.
+QUAI_BRANLY_SITE_COORDS: dict[str, tuple[float, float, str, str, str]] = {
+    # (lat, lon, display_es, display_en, precision)
+    "Khankhoun (village)": (35.2667, 6.5333, "Aurès (aprox., misión Rivière-Tillion)", "Aurès region (approx., Rivière-Tillion mission)", "region"),
+    "La Paz (ville)": (-16.5000, -68.1500, "La Paz, Bolivia", "La Paz, Bolivia", "site"),
+    "Murillo (province)": (-16.5000, -68.1500, "Provincia Murillo, Bolivia", "Murillo Province, Bolivia", "region"),
+    "Curva (village)": (-15.017, -68.950, "Curva, Bolivia (región Kallawaya)", "Curva, Bolivia (Kallawaya region)", "site"),
+    "Oruro (département)": (-17.9833, -67.1500, "Oruro, Bolivia", "Oruro, Bolivia", "region"),
+    "Lac Titicaca": (-15.9, -69.2, "Lago Titicaca", "Lake Titicaca", "site"),
+    "Bangkok": (13.7563, 100.5018, "Bangkok, Tailandia", "Bangkok, Thailand", "site"),
+    "Makira-Ulawa (province)": (-10.450, 161.917, "Makira-Ulawa, islas Salomón", "Makira-Ulawa, Solomon Islands", "region"),
+    "Isabel (île)": (-8.133, 159.583, "Isabel, islas Salomón", "Isabel, Solomon Islands", "region"),
+    "Nouvelle-Georgie (îles)": (-8.106, 156.839, "Nueva Georgia, islas Salomón", "New Georgia Islands, Solomon Islands", "region"),
+    "Nuku Hiva (île)": (-8.9057, -140.1075, "Nuku Hiva, islas Marquesas", "Nuku Hiva, Marquesas Islands", "site"),
+    "Hopaiku (village)": (-7.8883, 145.3056, "Bahía de Orokolo, Papúa Nueva Guinea (aprox.)", "Orokolo Bay, Papua New Guinea (approx.)", "region"),
+}
+
+QUAI_BRANLY_COUNTRY_COORDS: dict[str, tuple[float, float, str, str]] = {
+    # (lat, lon, display_es, display_en) -- keyeado por el Country.Term EXACTO
+    # tal cual lo da el thesaurus del museo (francés). Cubre los 48 países
+    # distintos vistos en la primera corrida de fetch_quaibranly.py
+    # (--per-department 40, 31/08) -- expandir cuando aparezcan países nuevos
+    # en corridas futuras, mismo mecanismo incremental que el resto del archivo.
+    "Algérie": (28.0339, 1.6596, "Argelia", "Algeria"),
+    "Malaisie": (4.2105, 101.9758, "Malasia", "Malaysia"),
+    "Bolivie": (-16.2902, -63.5887, "Bolivia", "Bolivia"),
+    "Salomon, îles": (-9.6457, 160.1562, "Islas Salomón", "Solomon Islands"),
+    "Papouasie-Nouvelle-Guinée": (-6.3149, 143.9555, "Papúa Nueva Guinea", "Papua New Guinea"),
+    "Maroc": (31.7917, -7.0926, "Marruecos", "Morocco"),
+    "Fidji": (-17.7134, 178.0650, "Fiyi", "Fiji"),
+    "Vanuatu": (-15.3767, 166.9592, "Vanuatu", "Vanuatu"),
+    # Territorios de ultramar franceses -- se dejan como entidad propia en vez
+    # de colapsar a "Francia", mismo criterio que Hawái/Territorios del
+    # Noroeste en SITE_COUNTRY_BY_POINT más arriba: son geográfica y
+    # culturalmente distintos de la metrópoli, y el propio thesaurus del
+    # museo ya los separa de "France" como Country.Term (que también aparece
+    # como valor propio en los datos).
+    "Marquises (îles)": (-9.7833, -139.0667, "Islas Marquesas", "Marquesas Islands"),
+    "Nouvelle-Calédonie": (-20.9043, 165.6180, "Nueva Caledonia", "New Caledonia"),
+    "Wallis (île)": (-13.3000, -176.2000, "Wallis y Futuna", "Wallis and Futuna"),
+    "Guyane française": (3.9339, -53.1258, "Guayana Francesa", "French Guiana"),
+    "Australie": (-25.2744, 133.7751, "Australia", "Australia"),
+    "Tchad": (15.4542, 18.7322, "Chad", "Chad"),
+    "France": (46.6034, 1.8883, "Francia", "France"),
+    "Mali": (17.5707, -3.9962, "Malí", "Mali"),
+    "Mauritanie": (21.0079, -10.9408, "Mauritania", "Mauritania"),
+    "Afghanistan": (33.9391, 67.7100, "Afganistán", "Afghanistan"),
+    "Brésil": (-14.2350, -51.9253, "Brasil", "Brazil"),
+    "Cameroun": (7.3697, 12.3547, "Camerún", "Cameroon"),
+    "Thaïlande": (15.8700, 100.9925, "Tailandia", "Thailand"),
+    "Libye": (26.3351, 17.2283, "Libia", "Libya"),
+    "Iraq": (33.2232, 43.6793, "Irak", "Iraq"),
+    "Arabie saoudite": (23.8859, 45.0792, "Arabia Saudita", "Saudi Arabia"),
+    "Pérou": (-9.1900, -75.0152, "Perú", "Peru"),
+    "Équateur": (-1.8312, -78.1834, "Ecuador", "Ecuador"),
+    "Paraguay": (-23.4425, -58.4438, "Paraguay", "Paraguay"),
+    "Mexique": (23.6345, -102.5528, "México", "Mexico"),
+    "Indonésie": (-0.7893, 113.9213, "Indonesia", "Indonesia"),
+    "Tunisie": (33.8869, 9.5375, "Túnez", "Tunisia"),
+    "Guyana": (4.8604, -58.9302, "Guyana", "Guyana"),
+    "États-Unis": (39.8283, -98.5795, "Estados Unidos", "United States"),
+    "Colombie": (4.5709, -74.2973, "Colombia", "Colombia"),
+    "Argentine": (-38.4161, -63.6167, "Argentina", "Argentina"),
+    "Tanzanie": (-6.3690, 34.8888, "Tanzania", "Tanzania"),
+    "Somalie": (5.1521, 46.1996, "Somalia", "Somalia"),
+    "Djibouti": (11.8251, 42.5903, "Yibuti", "Djibouti"),
+    "Ethiopie": (9.1450, 40.4897, "Etiopía", "Ethiopia"),
+    "Kenya": (-0.0236, 37.9062, "Kenia", "Kenya"),
+    "Fédération de Russie": (61.5240, 105.3188, "Rusia", "Russia"),
+    "Arménie": (40.0691, 45.0382, "Armenia", "Armenia"),
+    "Géorgie": (42.3154, 43.3569, "Georgia", "Georgia"),
+    "Tonga": (-21.1789, -175.1982, "Tonga", "Tonga"),
+    "Nouvelle-Zélande": (-40.9006, 174.8860, "Nueva Zelanda", "New Zealand"),
+    "Mozambique": (-18.6657, 35.5296, "Mozambique", "Mozambique"),
+    "Zambie": (-13.1339, 27.8493, "Zambia", "Zambia"),
+    "Zimbabwe": (-19.0154, 29.1549, "Zimbabue", "Zimbabwe"),
+    "Malawi": (-13.2543, 34.3015, "Malaui", "Malawi"),
+}
+
+
+def resolve_origin_quaibranly(obj: dict) -> dict:
+    """Ver docstring de la sección de arriba para el porqué del lookup exacto
+    en vez de matching por keyword. Devuelve el mismo shape que
+    resolve_origin_louvre()/resolve_origin_bm()."""
+    country_field = obj.get("Country")
+    if isinstance(country_field, list):
+        country_field = country_field[0] if country_field else None
+    country_term = country_field.get("Term") if isinstance(country_field, dict) else None
+
+    toponyme_field = obj.get("Toponyme")
+    if isinstance(toponyme_field, list):
+        toponyme_field = toponyme_field[0] if toponyme_field else None
+    toponyme_term = toponyme_field.get("Term") if isinstance(toponyme_field, dict) else None
+
+    if toponyme_term and toponyme_term in QUAI_BRANLY_SITE_COORDS:
+        lat, lon, display_es, display_en, precision = QUAI_BRANLY_SITE_COORDS[toponyme_term]
+        country_display = QUAI_BRANLY_COUNTRY_COORDS.get(country_term) if country_term else None
+        country_es = country_display[2] if country_display else None
+        country_en = country_display[3] if country_display else None
+        return {
+            "label": display_es,
+            "label_en": display_en,
+            "precision": precision,
+            "lat": lat, "lon": lon,
+            "country": country_es, "country_en": country_en,
+        }
+
+    if country_term and country_term in QUAI_BRANLY_COUNTRY_COORDS:
+        lat, lon, display_es, display_en = QUAI_BRANLY_COUNTRY_COORDS[country_term]
+        more_specific = toponyme_term and toponyme_term != country_term
+        return {
+            "label": toponyme_term if more_specific else display_es,
+            "label_en": toponyme_term if more_specific else display_en,
+            "precision": "country",
+            "lat": lat, "lon": lon,
+            "country": display_es, "country_en": display_en,
+        }
+
+    label = toponyme_term or country_term or ""
     return {"label": label, "label_en": label, "precision": "unresolved", "lat": None, "lon": None, "country": None, "country_en": None}

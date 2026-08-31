@@ -40,6 +40,23 @@
   line-height: 1.3;
 }
 
+/* Tooltip de museos con paleta invertida (31/08, pedido de la usuaria: "así
+   se diferencian de los tooltips de lugar de origen") -- origen/país quedan
+   con el tratamiento default de arriba (fondo claro, texto oscuro); museos
+   pasa a fondo oscuro con texto claro, mismo par de colores que ya usa el
+   resto de la UI para "superficie oscura" (.piece-counter, .museum-note). */
+.map-tooltip-popup--museum .mapboxgl-popup-content {
+  background: #1a1a1a;
+}
+
+.map-tooltip-popup--museum .map-tooltip-title {
+  color: #fbfaf7;
+}
+
+.map-tooltip-popup--museum .map-tooltip-subtitle {
+  color: #c9c4b8;
+}
+
 /* Contenedor de las 2 filas de controles arriba a la izquierda: toggles de
    museo (qué se ve) y filtro de investigación (18/08, otro eje de
    filtrado, separado a pedido de la usuaria para que no lea como parte del
@@ -56,9 +73,43 @@
 
 .museum-toggles {
   display: flex;
-  align-items: center;
-  gap: 6px;
+  align-items: center; /* el label de país ahora flota arriba vía position:absolute (ver .museum-country-label) en vez de ocupar espacio en el flujo, así que esta fila vuelve a ser de una sola línea "de facto" -- mismo align-items:center que .research-filter-row, para que "MUSEUMS:"/el contador queden centrados respecto a la fila de pills, no a la altura del label de país (31/08, segunda vuelta -- la primera vuelta con margin-top a mano no daba un alineado preciso) */
+  gap: 14px; /* espacio entre grupos de país -- más ancho que el gap interno de .museum-country-row */
   flex-wrap: wrap;
+  margin-top: 20px; /* el label de país, al flotar por fuera del flujo (position:absolute, bottom:100%), necesita este espacio arriba para no quedar recortado contra el borde superior de .top-controls/la ventana (31/08, tercera vuelta -- se veía cortado a la mitad) */
+}
+
+/* Agrupación por país (31/08, pedido de la usuaria; reubicado el 31/08
+   segunda vuelta -- el label pasó de estar al lado de los toggles a estar
+   arriba de ellos, mismo criterio que un label de sección) -- cada grupo es
+   la etiqueta de país apilada sobre la fila de sus museos. Sin borde/fondo
+   propio a propósito: los pills de museo (.museum-toggle-wrap) ya tienen su
+   propio borde, uno más alrededor del grupo entero se hubiera visto como
+   "pill dentro de pill".
+   31/08, segunda vuelta: el label de país pasa a position:absolute (ver
+   .museum-country-label) en vez de flex-direction:column -- así el alto de
+   este contenedor lo determina únicamente .museum-country-row (la fila de
+   pills), y .museum-toggles puede centrar verticalmente todos sus hijos
+   (label "MUSEUMS:", cada grupo, el contador de piezas) por altura de pill,
+   exactamente como ya hace .research-filter-row con "RESEARCH:". */
+.museum-country-group {
+  position: relative;
+}
+
+.museum-country-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.museum-country-label {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  margin-bottom: 4px;
+  font-size: 10px;
+  color: #928d82;
+  white-space: nowrap;
 }
 
 .research-filter-row {

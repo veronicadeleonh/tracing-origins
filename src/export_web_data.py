@@ -25,6 +25,7 @@ MUSEUM_SOURCES = [
     (DATA_DIR / "processed" / "met_objects.csv", DATA_DIR / "processed" / "geography.csv"),
     (DATA_DIR / "processed" / "louvre_objects.csv", DATA_DIR / "processed" / "geography_louvre.csv"),
     (DATA_DIR / "processed" / "bm_objects.csv", DATA_DIR / "processed" / "geography_bm.csv"),
+    (DATA_DIR / "processed" / "quaibranly_objects.csv", DATA_DIR / "processed" / "geography_quaibranly.csv"),
 ]
 
 OUT_PATH = Path(__file__).resolve().parent.parent / "web" / "src" / "data" / "objects.json"
@@ -36,6 +37,7 @@ MUSEUM_META = {
     "met": {"name": "The Metropolitan Museum of Art", "city": "New York"},
     "louvre": {"name": "Musée du Louvre", "city": "Paris"},
     "bm": {"name": "British Museum", "city": "London"},
+    "qb": {"name": "Musée du Quai Branly - Jacques Chirac", "city": "Paris"},
 }
 
 

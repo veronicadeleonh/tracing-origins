@@ -5,7 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import data from "./data/objects.json";
 import type { DataBundle, MuseumObject } from "./types";
 import { groupByCountry, groupByOrigin, jitteredPoint, objectHasResearch, type OriginCluster } from "./geo";
-import { MUSEUM_COLORS, DEFAULT_COLOR, ORIGIN_COLOR } from "./colors";
+import { MUSEUM_COLORS, MUSEUM_COUNTRY, DEFAULT_COLOR, ORIGIN_COLOR } from "./colors";
 import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
 import { Timeline } from "./components/Timeline";
@@ -43,11 +43,18 @@ const NAVIGATOR_ROUTES_URL = `${import.meta.env.BASE_URL}navigator_routes.geojso
 // activa el toggle "Click en el mapa" (mismo patrón lazy que el overlay
 // colonial), no de entrada — la mayoría de las visitas nunca la va a usar.
 const COUNTRIES_GEOJSON_URL = `${import.meta.env.BASE_URL}countries.geojson`;
+// Orden fijo para agrupar los toggles de museo por país (31/08) -- ver
+// museumGroups más abajo.
+const MUSEUM_COUNTRY_ORDER = ["us", "fr", "uk"];
 
 const bundle = data as DataBundle;
 
 // mismo color que cada museo, para reforzar la conexión territorio-colonial
-// -> museo que se benefició de él. UK = BM (rojo), Francia = Louvre (teal).
+// -> museo que se benefició de él. UK = BM (rojo), Francia = el teal de
+// Louvre/Quai Branly (31/08: ahora hay 2 museos franceses en la muestra,
+// MUSEUM_COLORS.qb es una variante más oscura del mismo teal -- ver
+// colors.ts -- así que este fill sigue representando "Francia" en general,
+// no específicamente al Louvre).
 const COLONIAL_POWER_COLORS: Record<string, string> = {
   uk: MUSEUM_COLORS.bm,
   fr: MUSEUM_COLORS.louvre,
@@ -106,7 +113,12 @@ type PanelState =
 // (nombre del punto: origen, museo o país) + una segunda línea con el dato
 // secundario (cuenta de piezas, ciudad del museo). Reemplaza el string
 // plano de una sola línea que tenía antes.
-type TooltipState = { longitude: number; latitude: number; title: string; subtitle: string } | null;
+// `kind` (31/08, pedido de la usuaria: "diferenciar el tooltip de museos del
+// de origen") -- el tooltip de museos invierte la paleta (fondo oscuro,
+// texto claro) respecto del de origen/país (fondo claro, texto oscuro) para
+// que se distingan de un vistazo, sin depender de leer el texto. Ver
+// .map-tooltip-popup--museum en App.css.
+type TooltipState = { longitude: number; latitude: number; title: string; subtitle: string; kind: "origin" | "museum" | "country" } | null;
 
 function App() {
   const [visibleMuseums, setVisibleMuseums] = useState<Record<string, boolean>>(
@@ -219,6 +231,21 @@ function App() {
   const toggleMuseum = useCallback((id: string) => {
     setVisibleMuseums((prev) => ({ ...prev, [id]: !prev[id] }));
   }, []);
+
+  // Agrupar los toggles de museo por país (31/08, pedido de la usuaria) --
+  // MUSEUM_COUNTRY_ORDER (fijo, no alfabético ni el de bundle.museums) para
+  // que los grupos salgan en el mismo orden relativo de siempre (Met,
+  // Louvre/Quai Branly, BM) en vez de saltar según qué claves trae el JSON.
+  // Un museo cuyo país no esté en MUSEUM_COUNTRY (no debería pasar, pero por
+  // las dudas) queda afuera de todo grupo en vez de romper el render.
+  const museumGroups = useMemo(
+    () =>
+      MUSEUM_COUNTRY_ORDER.map((country) => ({
+        country,
+        museums: Object.entries(bundle.museums).filter(([id]) => MUSEUM_COUNTRY[id] === country),
+      })).filter((group) => group.museums.length > 0),
+    [],
+  );
 
   // Apagar "Click en el mapa" con un resultado de país abierto (19/08,
   // pedido de la usuaria): no alcanza con dejar de atenuar las líneas
@@ -441,6 +468,7 @@ function App() {
       const properties = f.properties ?? {};
       let title: string;
       let subtitle: string;
+      let kind: "origin" | "museum" | "country";
       // "pointer" solo cuando lo que está debajo del mouse realmente hace
       // algo al clickear -- para country-hit eso significa un país con al
       // menos 1 pieza en la muestra (22/08, pedido de la usuaria: antes el
@@ -450,6 +478,7 @@ function App() {
       if (f.layer?.id === "origins") {
         title = String(properties.label);
         subtitle = s.tooltipPieceCount(Number(properties.count));
+        kind = "origin";
       } else if (f.layer?.id === "country-hit") {
         // Mismo lookup que handleClick, pero en hover: avisa de antemano si
         // ese país no tiene piezas en la muestra, para que el click (o la
@@ -461,11 +490,13 @@ function App() {
         title = group?.label ?? naturalEarthName;
         subtitle = hasPieces ? s.tooltipPieceCount(group.objects.length) : s.tooltipCountryEmptySub;
         clickable = hasPieces;
+        kind = "country";
       } else {
         title = String(properties.name);
         subtitle = String(properties.city);
+        kind = "museum";
       }
-      setTooltip({ longitude: e.lngLat.lng, latitude: e.lngLat.lat, title, subtitle });
+      setTooltip({ longitude: e.lngLat.lng, latitude: e.lngLat.lat, title, subtitle, kind });
       setCursor(clickable ? "pointer" : "grab");
     } else {
       setTooltip(null);
@@ -527,34 +558,41 @@ function App() {
         <div className="top-controls">
         <div className="museum-toggles">
           <span className="filter-row-label">{s.museumFilterRowLabel}</span>
-          {Object.entries(bundle.museums).map(([id, m]) => (
-            <div
-              key={id}
-              className={`museum-toggle-wrap${visibleMuseums[id] ? " active" : " inactive"}`}
-            >
-              <button
-                type="button"
-                className="museum-toggle"
-                onClick={() => toggleMuseum(id)}
-              >
-                <span
-                  className="museum-toggle-dot"
-                  style={{ background: MUSEUM_COLORS[id] ?? DEFAULT_COLOR }}
-                />
-                {m.name}
-              </button>
-              <button
-                type="button"
-                className={`museum-info-btn${museumNoteOpen === id ? " open" : ""}`}
-                aria-label={s.museumInfoAria(m.name)}
-                aria-expanded={museumNoteOpen === id}
-                onClick={() => setMuseumNoteOpen((cur) => (cur === id ? null : id))}
-              >
-                i
-              </button>
-              {museumNoteOpen === id && (
-                <div className="museum-note">{s.museumNotes[id]}</div>
-              )}
+          {museumGroups.map(({ country, museums }) => (
+            <div key={country} className="museum-country-group">
+              <span className="museum-country-label">{s.museumCountryNames[country]}</span>
+              <div className="museum-country-row">
+                {museums.map(([id, m]) => (
+                  <div
+                    key={id}
+                    className={`museum-toggle-wrap${visibleMuseums[id] ? " active" : " inactive"}`}
+                  >
+                    <button
+                      type="button"
+                      className="museum-toggle"
+                      onClick={() => toggleMuseum(id)}
+                    >
+                      <span
+                        className="museum-toggle-dot"
+                        style={{ background: MUSEUM_COLORS[id] ?? DEFAULT_COLOR }}
+                      />
+                      {m.name}
+                    </button>
+                    <button
+                      type="button"
+                      className={`museum-info-btn${museumNoteOpen === id ? " open" : ""}`}
+                      aria-label={s.museumInfoAria(m.name)}
+                      aria-expanded={museumNoteOpen === id}
+                      onClick={() => setMuseumNoteOpen((cur) => (cur === id ? null : id))}
+                    >
+                      i
+                    </button>
+                    {museumNoteOpen === id && (
+                      <div className="museum-note">{s.museumNotes[id]}</div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
           <div className="piece-counter">
@@ -794,7 +832,7 @@ function App() {
               latitude={tooltip.latitude}
               closeButton={false}
               anchor="bottom"
-              className="map-tooltip-popup"
+              className={`map-tooltip-popup${tooltip.kind === "museum" ? " map-tooltip-popup--museum" : ""}`}
               style={{ pointerEvents: "none" }}
             >
               <div className="map-tooltip-title">{tooltip.title}</div>
