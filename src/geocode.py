@@ -488,6 +488,26 @@ EDITORIAL_ORIGIN_OVERRIDES: dict[str, dict] = {
         "country": "Ucrania",
         "country_en": "Ukraine",
     },
+    # Calice, Antiquités égyptiennes -- a diferencia de la Tiare de Saitapharnes
+    # (arriba), esta SÍ es una pieza antigua egipcia real (Dinastía XXII (?),
+    # h. -943/-731) con un excavador/sitio de hallazgo simplemente no
+    # documentado por el Louvre (placeOfDiscovery/placeOfCreation/provenance
+    # los tres vacíos en el registro crudo) -- fue comprada en 1913 en El
+    # Cairo al marchante Maurice Nahman (ver context.csv), no hay ningún
+    # hallazgo arqueológico atribuible. Egipto como país está bien
+    # justificado por el departamento curatorial y el punto de compra, pero
+    # no hay un sitio más específico que asignar -- de ahí precision
+    # "editorial" en vez de "site"/"country" (que implicaría que sí vino de
+    # un campo estructurado del propio museo).
+    "louvre:cl010007229": {
+        "label": "Egipto (sin sitio de hallazgo documentado; adquirida en El Cairo)",
+        "label_en": "Egypt (no findspot documented; acquired in Cairo)",
+        "precision": "editorial",
+        "lat": 26.8206,
+        "lon": 30.8025,
+        "country": "Egipto",
+        "country_en": "Egypt",
+    },
 }
 
 

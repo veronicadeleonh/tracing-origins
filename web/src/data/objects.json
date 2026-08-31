@@ -6924,6 +6924,70 @@
       "events": []
     },
     {
+      "objectID": "louvre:cl010007229",
+      "sourceMuseum": "louvre",
+      "title": "calice",
+      "objectName": "calice",
+      "department": "Département des Antiquités égyptiennes",
+      "culture": null,
+      "period": "Date de création/fabrication : XXIIe dynastie (?) (bibliographie/travail de référence) (-943 - -731)",
+      "dynasty": null,
+      "objectDate": "Date de création/fabrication : XXIIe dynastie (?) (bibliographie/travail de référence) (-943 - -731)",
+      "medium": "Matériau : faïence siliceuse\nCouleur : bleu vif",
+      "creditLine": "achat (29/05/1913)",
+      "accessionYear": "1913",
+      "excavation": null,
+      "country": null,
+      "region": null,
+      "subregion": null,
+      "primaryImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000007229/0000060563_OG.JPG",
+      "objectURL": "https://collections.louvre.fr/ark:/53355/cl010007229",
+      "originLabel": "Egipto (sin sitio de hallazgo documentado; adquirida en El Cairo)",
+      "originLabelEn": "Egypt (no findspot documented; acquired in Cairo)",
+      "originPrecision": "editorial",
+      "originLat": 26.8206,
+      "originLon": 30.8025,
+      "originCountry": "Egipto",
+      "originCountryEn": "Egypt",
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Caliz posiblemente de la Dinastia XXII (h. 943-731 a.C., atribucion incierta segun la propia ficha del Louvre). Comprado en 1913 por Georges-Aaron Benedite -- egiptologo, curador del Louvre y responsable de la mision arqueologica francesa en Egipto -- al marchante Maurice Nahman (1868-1948), la figura mas prominente del comercio de antiguedades en El Cairo durante la primera mitad del siglo XX, con una galeria en su residencia que proveyo piezas a los principales museos de Europa y Estados Unidos. Transaccion de mercado sin sitio de excavacion documentado en la ficha del objeto.",
+        "notesEn": "Chalice possibly from Dynasty XXII (c. 943-731 BC, attribution uncertain per the Louvre's own record). Bought in 1913 by Georges-Aaron Benedite -- Egyptologist, Louvre curator, and head of the French archaeological mission in Egypt -- from the dealer Maurice Nahman (1868-1948), the most prominent figure in the Cairo antiquities trade during the first half of the 20th century, whose gallery at his residence supplied pieces to major museums across Europe and the United States. A market transaction with no excavation site documented in the object's own record."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -943/-731 (?)",
+          "actor_or_institution": "Desconocido",
+          "location": "Egipto",
+          "description": "Caliz posiblemente de la Dinastia XXII, atribucion incierta.",
+          "descriptionEs": "Caliz posiblemente de la Dinastia XXII, atribucion incierta.",
+          "descriptionEn": "Chalice possibly from Dynasty XXII, uncertain attribution.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010007229",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1913",
+          "actor_or_institution": "Georges-Aaron Benedite, comprado a Maurice Nahman",
+          "location": "El Cairo, Egipto",
+          "description": "Benedite, curador del Louvre y jefe de la mision arqueologica francesa, compra la pieza al marchante Maurice Nahman.",
+          "descriptionEs": "Benedite, curador del Louvre y jefe de la mision arqueologica francesa, compra la pieza al marchante Maurice Nahman.",
+          "descriptionEn": "Benedite, Louvre curator and head of the French archaeological mission, buys the piece from dealer Maurice Nahman.",
+          "source_url": "https://arce.org/maurice-nahman-antiquities-collector-dealer-and-authority/",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
+    },
+    {
       "objectID": "louvre:cl010007230",
       "sourceMuseum": "louvre",
       "title": "Tête de Djedefrê",
@@ -7561,8 +7625,57 @@
       "originLon": 32.6081,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "institutional_transfer",
+          "mariette_administration"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estatua cubo de un funcionario del reinado de Hatshepsut (Dinastia XVIII, h. 1479-1458 a.C.), procedente del templo de Amon-Re en Karnak, Tebas. Segun el registro del Louvre, fue un 'envio hecho por Maspero de objetos que se encontraban en el vice-consulado de Francia en Tebas', incorporado al inventario en 1884. Gaston Maspero dirigia entonces el Servicio de Antiguedades egipcio, cargo creado por Auguste Mariette y ocupado por egiptologos franceses en sucesion directa -- el mismo mecanismo institucional ya documentado en esta muestra para otras piezas de la 'administracion Mariette'. La pieza llego al Louvre por canal diplomatico-institucional (vice-consulado frances) mas que por una excavacion o compra puntual, dos anos despues del inicio de la ocupacion britanica de Egipto (1882), cuando el Servicio de Antiguedades seguia bajo direccion francesa pese al cambio de poder colonial de facto.",
+        "notesEn": "Cube statue of an official from the reign of Hatshepsut (Dynasty XVIII, c. 1479-1458 BC), from the temple of Amun-Re at Karnak, Thebes. Per the Louvre's own record, it was a 'shipment made by Maspero of objects found at the French vice-consulate in Thebes', entered into inventory in 1884. Gaston Maspero was then director of the Egyptian Antiquities Service, a post created by Auguste Mariette and held by French Egyptologists in direct succession -- the same institutional mechanism already documented in this sample as the 'Mariette administration'. The piece reached the Louvre through a diplomatic-institutional channel (the French vice-consulate) rather than a specific excavation or purchase, two years after the start of the British occupation of Egypt (1882), when the Antiquities Service remained under French direction despite the de facto shift in colonial power."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -1479/-1458",
+          "actor_or_institution": "Desconocido",
+          "location": "Templo de Amon-Re, Karnak, Tebas, Egipto",
+          "description": "Estatua cubo de un funcionario, reinado de Hatshepsut.",
+          "descriptionEs": "Estatua cubo de un funcionario, reinado de Hatshepsut.",
+          "descriptionEn": "Cube statue of an official, reign of Hatshepsut.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010009461",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "antes de 1884",
+          "actor_or_institution": "Vice-consulado de Francia en Tebas",
+          "location": "Tebas, Egipto",
+          "description": "La pieza se encontraba depositada en el vice-consulado frances de Tebas.",
+          "descriptionEs": "La pieza se encontraba depositada en el vice-consulado frances de Tebas.",
+          "descriptionEn": "The piece was held at the French vice-consulate in Thebes.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010009461",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1884",
+          "actor_or_institution": "Gaston Maspero, director del Servicio de Antiguedades egipcio",
+          "location": "Tebas -> Paris",
+          "description": "Maspero envia la pieza al Louvre desde el vice-consulado; ingresa al inventario en 1884.",
+          "descriptionEs": "Maspero envia la pieza al Louvre desde el vice-consulado; ingresa al inventario en 1884.",
+          "descriptionEn": "Maspero sends the piece to the Louvre from the vice-consulate; entered into inventory in 1884.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010009461",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010009464",
@@ -7959,8 +8072,57 @@
       "originLon": 30.8025,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estela funeraria de Imeny, procedente de Abidos, fechada en el reinado de Amenemhat II (Dinastia XII, h. 1900-1865 a.C.). Comprada por el Louvre en la venta publica de 1857 de la coleccion de Giovanni Anastasi, comerciante griego afincado en Alejandria que oficio de consul general de Suecia y Noruega en Egipto entre 1828 y 1857 -- cargo diplomatico que uso para comerciar a gran escala con antiguedades, comprando directamente a habitantes de Saqqara y Tebas. Anastasi vendio grandes colecciones a los Paises Bajos (1828), al Museo Britanico (1839) y a Francia (1857) -- mecanismo de consul-comerciante analogo al de Luigi Palma di Cesnola en Chipre, ya documentado en esta muestra, aunque unas decadas anterior. La estela estaba intacta al momento de la compra; se rompio, segun el registro del Louvre, probablemente en el otono de 1870.",
+        "notesEn": "Funerary stele of Imeny, from Abydos, dated to the reign of Amenemhat II (Dynasty XII, c. 1900-1865 BC). Bought by the Louvre at the 1857 public sale of the collection of Giovanni Anastasi, a Greek merchant based in Alexandria who served as Consul General of Sweden and Norway in Egypt between 1828 and 1857 -- a diplomatic post he used to trade antiquities on a large scale, buying directly from residents of Saqqara and Thebes. Anastasi sold large collections to the Netherlands (1828), the British Museum (1839), and France (1857) -- a consul-as-dealer mechanism analogous to Luigi Palma di Cesnola's in Cyprus, already documented in this sample, though a few decades earlier. The stele was intact at the time of purchase; the Louvre's own records note it was probably broken in the autumn of 1870."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -1900/-1865",
+          "actor_or_institution": "Desconocido",
+          "location": "Abidos, Egipto",
+          "description": "Estela funeraria tallada en el reinado de Amenemhat II.",
+          "descriptionEs": "Estela funeraria tallada en el reinado de Amenemhat II.",
+          "descriptionEn": "Funerary stele carved during the reign of Amenemhat II.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010022918",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1828-1857",
+          "actor_or_institution": "Giovanni Anastasi, consul general de Suecia y Noruega en Egipto",
+          "location": "Alejandria / Saqqara / Tebas, Egipto",
+          "description": "Anastasi compra antiguedades directamente a habitantes de Saqqara y Tebas usando su cargo diplomatico.",
+          "descriptionEs": "Anastasi compra antiguedades directamente a habitantes de Saqqara y Tebas usando su cargo diplomatico.",
+          "descriptionEn": "Anastasi buys antiquities directly from residents of Saqqara and Thebes using his diplomatic post.",
+          "source_url": "https://en.wikipedia.org/wiki/Giovanni_Anastasi_(merchant)",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "25/06/1857",
+          "actor_or_institution": "Museo del Louvre, venta publica de la coleccion Anastasi",
+          "location": "Paris, Francia",
+          "description": "Comprada por el Louvre en la venta publica de la coleccion Anastasi.",
+          "descriptionEs": "Comprada por el Louvre en la venta publica de la coleccion Anastasi.",
+          "descriptionEn": "Bought by the Louvre at the public sale of the Anastasi collection.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010022918",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010024569",
@@ -8997,8 +9159,57 @@
       "originLon": 35.7833,
       "originCountry": "Jordania",
       "originCountryEn": "Jordan",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "antiquarian_travel",
+          "private_excavation"
+        ],
+        "associated_communities_or_states": "Jordan",
+        "notes": "Estela de piedra basaltica hallada en 1851 por Louis Felicien de Saulcy en Redjom el A'Abed, entre Shihan y Diban, en la orilla oriental del Mar Muerto (actual Jordania) -- la misma region de Moab donde unos anos despues (1868) se hallaria la Estela de Mesha. El viaje de Saulcy de 1850-51 fue de los primeros reconocimientos europeos sistematicos de la zona, financiado de forma privada, no una mision oficial francesa. La pieza fue donada al Louvre en 1864 por Honore d'Albert, duque de Luynes, aristocrata y coleccionista frances que financio varias expediciones arqueologicas del siglo XIX -- el mismo mecenas ya documentado en esta muestra por el Sarcofago de Eshmunazor de Sidon.",
+        "notesEn": "Basalt stele found in 1851 by Louis Felicien de Saulcy at Redjom el A'Abed, between Shihan and Diban, on the eastern shore of the Dead Sea (present-day Jordan) -- the same Moab region where the Mesha Stele would be found a few years later (1868). Saulcy's 1850-51 journey was one of the first systematic European surveys of the area, privately funded rather than an official French mission. The piece was donated to the Louvre in 1864 by Honore d'Albert, Duke of Luynes, a French aristocrat and collector who funded several 19th-century archaeological expeditions -- the same patron already documented in this sample for the Eshmunazor Sarcophagus from Sidon."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. -1200/-1150",
+          "actor_or_institution": "Desconocido",
+          "location": "Redjom el A'Abed, Moab (actual Jordania)",
+          "description": "Estela basaltica tallada en la region de Moab, Bronce Final.",
+          "descriptionEs": "Estela basaltica tallada en la region de Moab, Bronce Final.",
+          "descriptionEn": "Basalt stele carved in the Moab region, Late Bronze Age.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120340",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1851",
+          "actor_or_institution": "Louis Felicien de Saulcy",
+          "location": "Redjom el A'Abed, entre Shihan y Diban",
+          "description": "Hallada por Saulcy durante su expedicion privada de reconocimiento del Mar Muerto (1850-51).",
+          "descriptionEs": "Hallada por Saulcy durante su expedicion privada de reconocimiento del Mar Muerto (1850-51).",
+          "descriptionEn": "Found by Saulcy during his privately funded Dead Sea survey expedition (1850-51).",
+          "source_url": "https://en.wikipedia.org/wiki/Louis_F%C3%A9licien_de_Saulcy",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1864",
+          "actor_or_institution": "Honore d'Albert, duque de Luynes",
+          "location": "Paris, Francia",
+          "description": "Donacion al Louvre por el duque de Luynes, mecenas que financio la expedicion.",
+          "descriptionEs": "Donacion al Louvre por el duque de Luynes, mecenas que financio la expedicion.",
+          "descriptionEn": "Donated to the Louvre by the Duke of Luynes, the patron who funded the expedition.",
+          "source_url": "https://collections.louvre.fr/ark:/53355/cl010120340",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010120343",
@@ -18324,8 +18535,44 @@
       "originLon": 21.7587,
       "originCountry": "República Democrática del Congo",
       "originCountryEn": "Democratic Republic of Congo",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Democratic Republic of the Congo",
+        "notes": "Figura nkisi (minkisi) del pueblo kongo: figura masculina tallada en madera con hojas de cuchillo y clavos de hierro clavados en el cuerpo y trozos de tela atados, usada por un nganga (experto ritual) en ceremonias para atrapar ladrones o brujos y resolver problemas de salud, riqueza o fortuna. Fechada a fines del siglo XIX. Comprada por el Museo Britanico en 1905 a un tal H. L. Sparrow por 25 libras -- precio pagado 'por la coleccion' completa, lo que sugiere que la pieza formaba parte de un lote mayor -- sin que se haya encontrado informacion adicional sobre quien era Sparrow ni como obtuvo la coleccion en el Congo. La fecha (1905) cae en el periodo del Estado Libre del Congo bajo dominio personal de Leopoldo II de Belgica (1885-1908), el regimen colonial mas violento documentado en Africa central en esa epoca, pero no hay evidencia que vincule a esta pieza puntual con ese aparato administrativo -- research_status parcial.",
+        "notesEn": "Nkisi (minkisi) figure of the Kongo peoples: a male figure carved in wood with knife blades and iron nails driven into the body and pieces of cloth attached, used by a nganga (ritual expert) in ceremonies to catch thieves or witches and to resolve problems of health, wealth, or fortune. Dated to the late 19th century. Purchased by the British Museum in 1905 from a certain H. L. Sparrow for 25 pounds -- a price paid 'for the collection' as a whole, suggesting the piece was part of a larger lot -- with no further information found on who Sparrow was or how he obtained the collection in the Congo. The date (1905) falls within the period of the Congo Free State under the personal rule of Leopold II of Belgium (1885-1908), the most violently documented colonial regime in central Africa at the time, but there is no evidence tying this specific piece to that administrative apparatus -- research_status partial."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. XIX (fin)",
+          "actor_or_institution": "Pueblo kongo",
+          "location": "Congo",
+          "description": "Figura nkisi tallada por un escultor kongo, cargada por un nganga (experto ritual).",
+          "descriptionEs": "Figura nkisi tallada por un escultor kongo, cargada por un nganga (experto ritual).",
+          "descriptionEn": "Nkisi figure carved by a Kongo sculptor, charged by a nganga (ritual expert).",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1905-0525-3",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1905",
+          "actor_or_institution": "H. L. Sparrow",
+          "location": "Londres, Reino Unido",
+          "description": "El Museo Britanico compra la pieza a H. L. Sparrow por 25 libras, precio pagado por una coleccion completa; no se encontro informacion adicional sobre Sparrow.",
+          "descriptionEs": "El Museo Britanico compra la pieza a H. L. Sparrow por 25 libras, precio pagado por una coleccion completa; no se encontro informacion adicional sobre Sparrow.",
+          "descriptionEn": "The British Museum buys the piece from H. L. Sparrow for 25 pounds, a price paid for an entire collection; no further information was found on Sparrow.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1905-0525-3",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1912-0410-7",
@@ -18799,8 +19046,43 @@
       "originLon": 27.8493,
       "originCountry": "Zambia",
       "originCountryEn": "Zambia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration"
+        ],
+        "associated_communities_or_states": "Zambia",
+        "notes": "Instrumental de adivinacion awemba (parte de un 'equipo de adivino' completo, Af1933,1206.67 a 74): una pequena taza de barro, una semilla ritual ('lukusu', cargada con una mezcla de cortezas, restos de ardilla, garra de aguila y madera de canoa) y un trozo de piel de cabra sobre el que se hace rodar la taza para determinar culpabilidad o causa de muerte/enfermedad. Procurado en Kasama, Rodesia del Norte (actual Zambia). Donado al Museo Britanico en 1933 directamente por el Gobierno de Rodesia del Norte -- entonces protectorado britanico administrado por la Oficina Colonial desde 1924 -- un caso de transferencia institucional directa de un gobierno colonial al museo, distinto de una compra o excavacion privada.",
+        "notesEn": "Awemba divination equipment (part of a complete 'diviner's outfit', Af1933,1206.67 to 74): a small earthenware cup, a ritual seed ('lukusu', loaded with a mixture of bark, squirrel remains, eagle claw, and canoe wood), and a piece of goatskin on which the cup is rolled to determine guilt or the cause of death or illness. Procured at Kasama, Northern Rhodesia (present-day Zambia). Donated to the British Museum in 1933 directly by the Government of Northern Rhodesia -- then a British protectorate administered by the Colonial Office since 1924 -- a case of direct institutional transfer from a colonial government to the museum, distinct from a private purchase or excavation."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1933",
+          "actor_or_institution": "Pueblo awemba",
+          "location": "Kasama, Rodesia del Norte (actual Zambia)",
+          "description": "Instrumental ritual de adivinacion procurado de un adivino local en Kasama.",
+          "descriptionEs": "Instrumental ritual de adivinacion procurado de un adivino local en Kasama.",
+          "descriptionEn": "Ritual divination equipment procured from a local diviner at Kasama.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1933-1206-70",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "gift",
+          "event_date": "1933",
+          "actor_or_institution": "Gobierno de Rodesia del Norte",
+          "location": "Londres, Reino Unido",
+          "description": "Donacion directa del gobierno colonial de Rodesia del Norte al Museo Britanico.",
+          "descriptionEs": "Donacion directa del gobierno colonial de Rodesia del Norte al Museo Britanico.",
+          "descriptionEn": "Direct donation from the Northern Rhodesian colonial government to the British Museum.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1933-1206-70",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1937-0210-13",
@@ -20020,8 +20302,56 @@
       "originLon": 144.0848,
       "originCountry": "Australia",
       "originCountryEn": "Australia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Australia",
+        "notes": "Garrote de madera aborigen, recolectado el 29 de octubre de 1846 junto con un escudo (tambien en el Museo Britanico) unas 50 millas al noreste de la actual St George, en el sudoeste de Queensland, durante la cuarta expedicion de Thomas Mitchell al interior de Australia -- una mision oficial en busca de una ruta terrestre entre Sidney y el Golfo de Carpentaria. Mitchell era entonces Agrimensor General (Surveyor-General) de Nueva Gales del Sur, uno de los cargos coloniales britanicos mas altos en materia de exploracion y cartografia del territorio. Segun su propio diario de viaje publicado en 1848, los objetos se hallaron guardados sobre un armazon de corteza y fueron incorporados a la coleccion; el, mismo los dono al Museo Britanico. La etiqueta de registro original atribuia erroneamente la pieza a Australia Meridional -- corregido por analisis del propio relato de Mitchell.",
+        "notesEn": "Aboriginal wooden club, collected on 29 October 1846 together with a shield (also in the British Museum) about 50 miles northeast of present-day St George, in southwestern Queensland, during Thomas Mitchell's fourth expedition into inland Australia -- an official mission in search of an overland route between Sydney and the Gulf of Carpentaria. Mitchell was then Surveyor-General of New South Wales, one of the highest British colonial posts concerned with exploring and mapping the territory. Per his own journal, published in 1848, the objects were found stored on a bark scaffold and were taken into the collection; he himself donated them to the British Museum. The original registration slip mistakenly attributed the piece to South Australia -- corrected by analysis of Mitchell's own narrative."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 1846",
+          "actor_or_institution": "Pueblos aborigenes australianos",
+          "location": "Sudoeste de Queensland, Australia",
+          "description": "Garrote de madera de fabricacion aborigen local.",
+          "descriptionEs": "Garrote de madera de fabricacion aborigen local.",
+          "descriptionEn": "Wooden club of local Aboriginal manufacture.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc1848-0202-1",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "29/10/1846",
+          "actor_or_institution": "Sir Thomas Mitchell, Agrimensor General de Nueva Gales del Sur",
+          "location": "Sudoeste de Queensland, Australia",
+          "description": "Mitchell recolecta el garrote y un escudo durante su cuarta expedicion al interior de Australia.",
+          "descriptionEs": "Mitchell recolecta el garrote y un escudo durante su cuarta expedicion al interior de Australia.",
+          "descriptionEn": "Mitchell collects the club and a shield during his fourth expedition into inland Australia.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc1848-0202-1",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1848",
+          "actor_or_institution": "Sir Thomas Mitchell",
+          "location": "Londres, Reino Unido",
+          "description": "Mitchell dona el garrote y el escudo al Museo Britanico.",
+          "descriptionEs": "Mitchell dona el garrote y el escudo al Museo Britanico.",
+          "descriptionEn": "Mitchell donates the club and shield to the British Museum.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc1848-0202-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Oc1869-1005-1",
