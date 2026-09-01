@@ -35,6 +35,11 @@ export interface I18nStrings {
   hasResearchBadgeAria: string;
   hasResearchLegend: string;
   museumFilterRowLabel: string;
+  // Drawer de filtros para mobile/tablet (01/09) -- botón pull-tab que
+  // colapsa/expande museos + investigación + switch de país en pantallas
+  // angostas, ver .mobile-filters-toggle en App.css.
+  mobileFiltersToggleLabel: string;
+  mobileFiltersToggleAria: string;
   // Agrupación de toggles de museo por país (31/08, pedido de la usuaria) --
   // claves fijas "us"/"fr"/"uk" (los 3 países de origen de los 4 museos),
   // ver MUSEUM_COUNTRY en colors.ts.
@@ -108,16 +113,28 @@ export interface I18nStrings {
   countryClickNoteText: string;
   tooltipCountryEmptySub: string;
   countryGroupMuseumHeader: (name: string, n: number) => string;
+
+  // Onboarding interactivo con spotlight (01/09) -- ver data/tourSteps.ts
+  // para los selectores (posición, no traducible); acá solo título+texto de
+  // cada paso, indexado por posición en TOUR_STEPS (mismo patrón que
+  // historicalEvents/historicalEventLabels).
+  tourSteps: { title: string; text: string }[];
+  tourStepOf: (current: number, total: number) => string;
+  tourBack: string;
+  tourNext: string;
+  tourStart: string;
+  tourSkip: string;
+  tourAria: string;
 }
 
 export const STRINGS: Record<Lang, I18nStrings> = {
   es: {
     museumInfoAria: (name) => `Sobre la procedencia de las piezas de ${name}`,
     museumNotes: {
-      met: "El Met no adquirió estas piezas porque EEUU controlara territorialmente sus lugares de origen. Llegaron por el mercado internacional de antigüedades, misiones de excavación autorizadas por la potencia colonial de turno y donantes ricos — poder económico y político ganado en años recientes, no expansión territorial.",
-      louvre: "Los 4 departamentos del Louvre representados acá (Antigüedades Egipcias, Orientales, Griegas-Etruscas-Romanas, Arte Islámico) cubren sobre todo Egipto, Medio Oriente y el Mediterráneo. El fondo de África Subsahariana y América no está en el Louvre: se transfirió al Musée du Quai Branly cuando abrió en 2006.",
-      bm: "El caso más directo de administración colonial territorial de los tres museos, con mecanismos que van desde la conquista militar (la Piedra de Rosetta, las Placas de Benín) hasta excavaciones bajo permiso del gobierno otomano.",
-      qb: "A diferencia de los otros tres, Quai Branly no es un museo de antigüedades sino etnográfico — reúne el fondo de África, América, Asia y Oceanía que el Louvre no cubre (transferido acá cuando el museo abrió en 2006). Buena parte de su colección llegó vía coleccionistas privados, funcionarios coloniales franceses y compras en el mercado de arte, no por excavación arqueológica — el propio registro del museo documenta esto con más detalle que el resto (quién donó o vendió cada pieza, no solo dónde se encontró).",
+      met: "El Met no controló territorialmente sus lugares de origen — llegaron por el mercado de antigüedades, excavaciones autorizadas por la potencia colonial de turno y donantes ricos.",
+      louvre: "Sus departamentos cubren sobre todo Egipto, Medio Oriente y el Mediterráneo. África Subsahariana y América pasaron al Musée du Quai Branly en 2006.",
+      bm: "El caso más directo de administración colonial: desde la conquista militar (Piedra de Rosetta, Placas de Benín) hasta excavaciones bajo permiso otomano.",
+      qb: "Museo etnográfico, no de antigüedades — cubre África, América, Asia y Oceanía (transferido del Louvre en 2006). Llegó vía coleccionistas privados y funcionarios coloniales, no excavación.",
     },
     pieceCounterAll: (n) => `${n} piezas`,
     pieceCounterFiltered: (visible, total) => `${visible} de ${total} piezas`,
@@ -134,8 +151,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     layerToggleTerritories: "Colonias",
     layerToggleRoutes: "Rutas navales",
     layerNotes: {
-      territories: "Sombrea las regiones que fueron territorio colonial de UK o Francia en el año seleccionado (Cliopatria, Seshat Global History Databank). EEUU no aparece — el Met no adquirió piezas por control territorial, ver la nota del Met arriba. Los mandatos británicos de Irak y Palestina (1920-1932) tampoco están: la fuente no los modela como entidad propia.",
-      routes: "50 rutas curadas de barcos británicos y franceses entre 1700-1900, de un archivo real de bitácoras de navegación (CLIWOC/PANGAEA). No son las únicas rutas de la época ni viajes de exploradores famosos (Cook, Bougainville, etc. no están en este dataset) — es una muestra priorizada por nación y densidad de datos registrados.",
+      territories: "Sombrea el territorio colonial de UK y Francia en el año seleccionado. EEUU no aparece (ver la nota del Met) ni los mandatos británicos de Irak/Palestina — la fuente no los modela.",
+      routes: "50 rutas curadas de barcos británicos y franceses, 1700-1900, de bitácoras reales de navegación (CLIWOC). No incluye viajes de exploradores famosos como Cook o Bougainville.",
     },
     historicalEvents: [
       "Se funda el Met — adquiere su primer objeto ese mismo año (un sarcófago romano). Colección inicial vía donaciones y compras en el mercado, no expansión territorial.",
@@ -153,6 +170,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     hasResearchBadgeAria: "Tiene recorrido investigado y citado",
     hasResearchLegend: "recorrido investigado y citado (color = museo)",
     museumFilterRowLabel: "Museos:",
+    mobileFiltersToggleLabel: "Filtros",
+    mobileFiltersToggleAria: "Mostrar u ocultar los filtros de museo e investigación",
     museumCountryNames: { us: "Estados Unidos", fr: "Francia", uk: "Reino Unido" },
     researchFilterAria: "Filtrar por estado de investigación",
     researchFilterRowLabel: "Investigación:",
@@ -258,14 +277,55 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countryClickNoteText: "Con esto prendido, click en cualquier país del globo muestra todas sus piezas en los 3 museos y atenúa el resto de las líneas del mapa para resaltar solo las de ese país. Pasar el mouse por encima antes de clickear muestra cuántas piezas hay (o si no hay ninguna).",
     tooltipCountryEmptySub: "Sin piezas en esta muestra",
     countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
+
+    tourSteps: [
+      {
+        title: "Bienvenida a Tracing Origins",
+        text: "Un recorrido de 30 segundos por los controles del mapa, antes de explorar.",
+      },
+      {
+        title: "Museos",
+        text: "Prendé o apagá cada museo para filtrar sus piezas. El botón \"i\" explica cómo llegó su colección.",
+      },
+      {
+        title: "Investigación",
+        text: "Filtrá piezas con recorrido investigado, o por el mecanismo puntual de adquisición.",
+      },
+      {
+        title: "Contador de piezas",
+        text: "Cuántas piezas ves ahora mismo — es solo informativo, no un botón.",
+      },
+      {
+        title: "Búsqueda por país",
+        text: "Activá esto y clickeá cualquier país del globo para ver todas sus piezas.",
+      },
+      {
+        title: "Contexto histórico",
+        text: "Abrí esto para sumar territorios coloniales y rutas navales en un timeline de 1700 a 2020.",
+      },
+      {
+        title: "¿Necesitás más info?",
+        text: "Este botón vuelve a mostrar este tour, o abre el detalle completo del proyecto (fuentes, modelo de datos, créditos).",
+      },
+      {
+        title: "Listo para explorar",
+        text: "Clickeá un punto de origen para ver sus piezas, o una línea para seguir su recorrido hasta el museo.",
+      },
+    ],
+    tourStepOf: (current, total) => `${current} de ${total}`,
+    tourBack: "Atrás",
+    tourNext: "Siguiente",
+    tourStart: "Empezar",
+    tourSkip: "Saltar tour",
+    tourAria: "Tour guiado de la interfaz",
   },
   en: {
     museumInfoAria: (name) => `About the provenance of ${name}'s pieces`,
     museumNotes: {
-      met: "The Met didn't acquire these pieces because the US held territorial control over their places of origin. They arrived through the international antiquities market, excavation missions authorized by whichever colonial power held the territory, and wealthy donors — recent economic and political power, not territorial expansion.",
-      louvre: "The 4 Louvre departments represented here (Egyptian Antiquities, Near Eastern Antiquities, Greek/Etruscan/Roman Antiquities, Islamic Art) cover mostly Egypt, the Middle East, and the Mediterranean. The Louvre's Sub-Saharan Africa and Americas holdings aren't here — they were transferred to the Musée du Quai Branly when it opened in 2006.",
-      bm: "The most direct case of territorial colonial administration of the three museums, with mechanisms ranging from military conquest (the Rosetta Stone, the Benin Bronzes) to excavations permitted by the Ottoman government.",
-      qb: "Unlike the other three, Quai Branly isn't an antiquities museum but an ethnographic one — it holds the Africa, Americas, Asia, and Oceania collections the Louvre doesn't cover (transferred here when the museum opened in 2006). Much of its collection arrived via private collectors, French colonial officials, and art-market purchases rather than archaeological excavation — the museum's own records document this in more detail than the other three (who donated or sold each piece, not just where it was found).",
+      met: "The Met didn't hold territorial control over these pieces' places of origin — they arrived via the antiquities market, colonial-authorized excavations, and wealthy donors.",
+      louvre: "Its departments cover mostly Egypt, the Middle East, and the Mediterranean. Sub-Saharan Africa and the Americas moved to the Musée du Quai Branly in 2006.",
+      bm: "The most direct case of colonial administration: from military conquest (Rosetta Stone, Benin Bronzes) to excavations under Ottoman permit.",
+      qb: "An ethnographic museum, not antiquities — covers Africa, the Americas, Asia, and Oceania (transferred from the Louvre in 2006). Arrived via private collectors and colonial officials, not excavation.",
     },
     pieceCounterAll: (n) => `${n} pieces`,
     pieceCounterFiltered: (visible, total) => `${visible} of ${total} pieces`,
@@ -282,8 +342,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     layerToggleTerritories: "Colonies",
     layerToggleRoutes: "Naval routes",
     layerNotes: {
-      territories: "Shades the regions that were UK or French colonial territory in the selected year (Cliopatria, Seshat Global History Databank). The US doesn't appear — the Met didn't acquire pieces through territorial control, see the Met's note above. The British mandates of Iraq and Palestine (1920-1932) aren't shown either: the source doesn't model them as their own entity.",
-      routes: "50 curated routes of British and French ships between 1700-1900, from a real archive of navigation logbooks (CLIWOC/PANGAEA). These aren't the only routes of the period, nor famous explorers' voyages (Cook, Bougainville, etc. aren't in this dataset) — it's a sample prioritized by nation and how much data each logbook recorded.",
+      territories: "Shades UK and French colonial territory in the selected year. The US doesn't appear (see the Met's note) nor the British mandates of Iraq/Palestine — the source doesn't model them.",
+      routes: "50 curated British and French ship routes, 1700-1900, from real navigation logbooks (CLIWOC). Doesn't include famous explorers' voyages like Cook or Bougainville.",
     },
     historicalEvents: [
       "The Met is founded — it acquires its first object that same year (a Roman sarcophagus). Early collection built through donations and market purchases, not territorial expansion.",
@@ -301,6 +361,8 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     hasResearchBadgeAria: "Has a researched, cited journey",
     hasResearchLegend: "researched, cited journey (colored by museum)",
     museumFilterRowLabel: "Museums:",
+    mobileFiltersToggleLabel: "Filters",
+    mobileFiltersToggleAria: "Show or hide the museum and research filters",
     museumCountryNames: { us: "United States", fr: "France", uk: "United Kingdom" },
     researchFilterAria: "Filter by research status",
     researchFilterRowLabel: "Research:",
@@ -406,5 +468,46 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countryClickNoteText: "With this on, clicking any country on the globe shows all its pieces across the 3 museums and dims the rest of the map's lines to highlight only that country's. Hovering before you click shows how many pieces there are (or whether there are none).",
     tooltipCountryEmptySub: "No pieces in this sample",
     countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
+
+    tourSteps: [
+      {
+        title: "Welcome to Tracing Origins",
+        text: "A 30-second walkthrough of the map's controls before you dive in.",
+      },
+      {
+        title: "Museums",
+        text: "Turn each museum on or off to filter its pieces. The \"i\" button explains how its collection got here.",
+      },
+      {
+        title: "Research",
+        text: "Filter pieces with a documented journey, or by the specific acquisition mechanism.",
+      },
+      {
+        title: "Piece counter",
+        text: "How many pieces you're seeing right now — it's informational only, not a button.",
+      },
+      {
+        title: "Search by country",
+        text: "Turn this on and click any country on the globe to see all its pieces.",
+      },
+      {
+        title: "Historical context",
+        text: "Open this to add colonial territories and naval routes on a 1700–2020 timeline.",
+      },
+      {
+        title: "Need more info?",
+        text: "This button brings this tour back, or opens the project's full detail (sources, data model, credits).",
+      },
+      {
+        title: "Ready to explore",
+        text: "Click an origin point to see its pieces, or a line to follow its journey to the museum.",
+      },
+    ],
+    tourStepOf: (current, total) => `${current} of ${total}`,
+    tourBack: "Back",
+    tourNext: "Next",
+    tourStart: "Start",
+    tourSkip: "Skip tour",
+    tourAria: "Guided interface tour",
   },
 };

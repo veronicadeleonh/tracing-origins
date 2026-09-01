@@ -132,7 +132,7 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
             <p>
               {s.welcomeCreditsSitePrefix}{" "}
               <a href="https://veronicadeleonh.github.io/" target="_blank" rel="noreferrer">
-                veronicadeleonh.github.io
+                veronicadeleonh.de
               </a>
             </p>
           </section>

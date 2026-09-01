@@ -37,7 +37,13 @@ MUSEUM_META = {
     "met": {"name": "The Metropolitan Museum of Art", "city": "New York"},
     "louvre": {"name": "Musée du Louvre", "city": "Paris"},
     "bm": {"name": "British Museum", "city": "London"},
-    "qb": {"name": "Musée du Quai Branly - Jacques Chirac", "city": "Paris"},
+    # Nombre acortado a propósito (01/09, pedido de la usuaria) -- el nombre
+    # oficial completo es "Musée du quai Branly - Jacques Chirac", pero como
+    # label de UI (toggle de museo, tooltip, drawer de filtros en mobile) es
+    # demasiado largo y competía por espacio con los otros 3 museos, cuyos
+    # nombres son bastante más cortos. El nombre completo sigue documentado
+    # en CLAUDE.md/README; acá solo se acorta lo que ve la usuaria en pills.
+    "qb": {"name": "Musée du Quai Branly", "city": "Paris"},
 }
 
 

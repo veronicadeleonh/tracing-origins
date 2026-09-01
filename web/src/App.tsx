@@ -10,14 +10,20 @@ import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
 import { Timeline } from "./components/Timeline";
 import { WelcomeModal } from "./components/WelcomeModal";
+import { SpotlightTour } from "./components/SpotlightTour";
 import { HISTORICAL_EVENTS } from "./data/historicalEvents";
 import { NATURAL_EARTH_NAME_TO_COUNTRY_KEY } from "./data/countryPolygons";
 import { STRINGS, type Lang } from "./i18n";
 import "./App.css";
 
-// Nivel 1 de "notas de contexto en la UI" (ver CLAUDE.md) — se abre solo en
-// la primera visita, después queda accesible vía el botón "?" persistente.
+// Nivel 1 de "notas de contexto en la UI" (ver CLAUDE.md) — accesible vía el
+// botón "?" persistente. Ya no se auto-abre en la primera visita (01/09, ver
+// TOUR_SEEN_KEY) -- la key se mantiene igual para no perder el estado
+// "visto" de quienes ya cerraron el modal antes de este cambio.
 const WELCOME_SEEN_KEY = "tracing-origins-welcome-seen";
+// Onboarding interactivo con spotlight (01/09) — reemplaza la apertura
+// automática de WelcomeModal en la primera visita, ver SpotlightTour.tsx.
+const TOUR_SEEN_KEY = "tracing-origins-tour-seen";
 // Toggle ES/EN (17/08) — alcance acordado con el usuario: solo texto de
 // interfaz (ver i18n.ts). Persistido igual que WELCOME_SEEN_KEY, mismo
 // patrón de localStorage + useEffect al montar.
@@ -46,6 +52,25 @@ const COUNTRIES_GEOJSON_URL = `${import.meta.env.BASE_URL}countries.geojson`;
 // Orden fijo para agrupar los toggles de museo por país (31/08) -- ver
 // museumGroups más abajo.
 const MUSEUM_COUNTRY_ORDER = ["us", "fr", "uk"];
+
+// Zoom inicial del globo, responsive (01/09, pedido de la usuaria: "el mapa
+// en mobile debe empezar más alejado, que se vea todo el globo terráqueo").
+// zoom:2 fijo se eligió y se ve bien en un viewport ancho de desktop, pero
+// en un teléfono angosto el mismo zoom muestra una porción mucho más
+// recortada del globo -- a igual zoom, un viewport más angosto en píxeles
+// siempre encuadra menos superficie del planeta, sin importar la proyección.
+// Se usa el lado más chico del viewport (no solo el ancho) para que
+// funcione igual de bien en landscape que en portrait. Calculado una sola
+// vez al montar -- initialViewState de react-map-gl solo se lee al primer
+// render, así que no hace falta recalcular en cada resize.
+function getInitialMapZoom(): number {
+  if (typeof window === "undefined") return 2;
+  const size = Math.min(window.innerWidth, window.innerHeight);
+  if (size <= 420) return 0.4;
+  if (size <= 640) return 0.9;
+  if (size <= 900) return 1.4;
+  return 2;
+}
 
 const bundle = data as DataBundle;
 
@@ -137,6 +162,24 @@ function App() {
   // mismo comportamiento que antes de esta ronda.
   const [selectedFlags, setSelectedFlags] = useState<Set<string>>(new Set());
   const [mechanismMenuOpen, setMechanismMenuOpen] = useState(false);
+  // Cerrar el dropdown al tocar/clickear afuera (01/09, reportado por la
+  // usuaria: "tap afuera no funciona" -- las casillas ya aplican el filtro
+  // al toquealtirte, así que no hace falta un botón "Aplicar"; lo único que
+  // faltaba era el gesto esperado de cerrar el menú al tocar en cualquier
+  // otro lado, en vez de tener que volver a tocar el botón "Mecanismo").
+  // pointerdown (no click) para que el cierre ocurra ANTES de que un tap en
+  // otro control dispare su propio onClick en el mismo gesto.
+  const mechanismMenuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!mechanismMenuOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (mechanismMenuRef.current && !mechanismMenuRef.current.contains(e.target as Node)) {
+        setMechanismMenuOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [mechanismMenuOpen]);
   // Búsqueda "al revés" por país, segunda vuelta (19/08) — reemplazó al
   // buscador de texto original (retirado a pedido de la usuaria, ver
   // CLAUDE.md): ahora la única forma de elegir un país es clickeándolo
@@ -167,16 +210,38 @@ function App() {
   const [showTerritories, setShowTerritories] = useState(true);
   const [showRoutes, setShowRoutes] = useState(true);
   const [museumNoteOpen, setMuseumNoteOpen] = useState<string | null>(null);
-  // Auto-abre en la primera visita (localStorage), después solo vía el botón
-  // "?" — decidido con el usuario el 17/08 (no molestar en visitas siguientes).
+  // Drawer de filtros para mobile (01/09, feedback de la usuaria con
+  // capturas de iPhone SE/iPad mini: los filtros de museo/investigación +
+  // el switch de país se superponían ilegibles arriba del mapa en pantallas
+  // angostas). En desktop este estado no hace nada -- .mobile-filters-toggle
+  // queda display:none y .mobile-filters-wrap se muestra siempre vía CSS,
+  // ver App.css. Arranca cerrado para no tapar el mapa apenas se carga.
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  // WelcomeModal ya no se auto-abre (01/09, ver TOUR_SEEN_KEY más abajo) --
+  // queda accesible solo vía el botón "?" persistente, sin cambios en su
+  // propio comportamiento de apertura/cierre manual.
   const [welcomeOpen, setWelcomeOpen] = useState(false);
-  useEffect(() => {
-    if (!localStorage.getItem(WELCOME_SEEN_KEY)) setWelcomeOpen(true);
-  }, []);
   const closeWelcome = useCallback(() => {
     localStorage.setItem(WELCOME_SEEN_KEY, "1");
     setWelcomeOpen(false);
   }, []);
+  // Onboarding interactivo con spotlight (01/09) -- reemplaza la apertura
+  // automática de WelcomeModal en la primera visita (ver CLAUDE.md, feedback
+  // de usuarios de prueba). Key de localStorage nueva y separada de
+  // WELCOME_SEEN_KEY a propósito: es contenido nuevo, así que quien ya había
+  // visto el modal viejo igual ve el tour una vez.
+  const [tourOpen, setTourOpen] = useState(false);
+  useEffect(() => {
+    if (!localStorage.getItem(TOUR_SEEN_KEY)) setTourOpen(true);
+  }, []);
+  const closeTour = useCallback(() => {
+    localStorage.setItem(TOUR_SEEN_KEY, "1");
+    setTourOpen(false);
+  }, []);
+  const openInfoFromTour = useCallback(() => {
+    closeTour();
+    setWelcomeOpen(true);
+  }, [closeTour]);
   // Default inglés (19/08, pedido de la usuaria) — antes era español por
   // default. localStorage sigue siendo la fuente de verdad si el visitante
   // ya tocó el toggle antes; el fallback (primera visita, sin nada guardado
@@ -279,6 +344,15 @@ function App() {
       }),
     [visibleMuseums, researchFilter, selectedFlags],
   );
+
+  // Texto del contador de piezas, compartido entre las 2 copias del pill
+  // (la de siempre, al final de .museum-toggles, y la nueva de arriba del
+  // drawer mobile -- ver .piece-counter-top/.piece-counter-inline en
+  // App.css) para no duplicar el ternario.
+  const pieceCounterText =
+    visibleObjects.length === bundle.objects.length
+      ? s.pieceCounterAll(visibleObjects.length)
+      : s.pieceCounterFiltered(visibleObjects.length, bundle.objects.length);
 
   // Cuenta de piezas por flag, para el dropdown de mecanismo -- se calcula
   // sobre TODO el dataset (no visibleObjects) para que la lista de opciones
@@ -523,39 +597,68 @@ function App() {
         >
           {s.langToggleLabel}
         </button>
-        {/* Búsqueda por país vía click en el mapa (19/08, quinta vuelta) --
-            movida fuera de top-controls (filtros de museo/investigación,
-            arriba a la izquierda) a su propio control flotante arriba a la
-            derecha, debajo de "?"/idioma: es una función completamente
-            distinta a los filtros (no oculta/muestra piezas, cambia qué
-            hace un click en el mapa), así que separarla espacialmente y
-            usar un switch en vez de un pill-botón (mismo lenguaje visual
-            que los filtros) evita que se lea como "un filtro más". */}
-        <div className="country-click-panel">
-          <span className="country-click-label">{s.countryClickToggleLabel}</span>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={countryClickEnabled}
-            aria-label={s.countryClickToggleAria}
-            className={`country-click-switch${countryClickEnabled ? " on" : ""}`}
-            onClick={toggleCountryClick}
-          >
-            <span className="country-click-switch-knob" aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
-            aria-label={s.countryClickNoteAria}
-            aria-expanded={countryClickNoteOpen}
-            onClick={() => setCountryClickNoteOpen((v) => !v)}
-          >
-            i
-          </button>
-          {countryClickNoteOpen && <div className="museum-note country-click-note">{s.countryClickNoteText}</div>}
-        </div>
-        {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
-        <div className="top-controls">
+        {/* Drawer de filtros para mobile (01/09) -- botón pull-tab siempre en
+            el DOM, pero display:none arriba de ~900px (ver App.css): en
+            desktop .mobile-filters-wrap de abajo ya está siempre visible por
+            su cuenta, este botón sería redundante ahí. En pantallas angostas
+            reemplaza a los filtros/switch de país, que dejan de mostrarse
+            solos y pasan a vivir dentro del drawer que este botón abre. */}
+        <button
+          type="button"
+          className={`mobile-filters-toggle${filtersOpen ? " open" : ""}`}
+          aria-expanded={filtersOpen}
+          aria-label={s.mobileFiltersToggleAria}
+          onClick={() => setFiltersOpen((v) => !v)}
+        >
+          {s.mobileFiltersToggleLabel}
+          <span className="mobile-filters-toggle-arrow" aria-hidden="true">{filtersOpen ? "▲" : "▼"}</span>
+        </button>
+        {/* Envoltorio puramente estructural en desktop (los hijos siguen
+            position:absolute contra .map-pane, este div no les cambia nada);
+            en mobile es lo que el botón de arriba muestra/oculta como un
+            único panel apilado en columna -- ver .mobile-filters-wrap.open
+            en App.css. */}
+        <div className={`mobile-filters-wrap${filtersOpen ? " open" : ""}`}>
+          {/* Copia del contador de piezas, visible solo dentro del drawer
+              mobile (pedido de la usuaria: que el total quede arriba de
+              todo, no perdido al final de la lista de museos) -- ver
+              pieceCounterText más arriba y .piece-counter-top en App.css.
+              La copia de siempre (.piece-counter-inline, al final de
+              .museum-toggles) se oculta cuando el drawer está abierto para
+              no duplicar el número dos veces en pantalla. */}
+          <div className="piece-counter piece-counter-top">{pieceCounterText}</div>
+          {/* Búsqueda por país vía click en el mapa (19/08, quinta vuelta) --
+              movida fuera de top-controls (filtros de museo/investigación,
+              arriba a la izquierda) a su propio control flotante arriba a la
+              derecha, debajo de "?"/idioma: es una función completamente
+              distinta a los filtros (no oculta/muestra piezas, cambia qué
+              hace un click en el mapa), así que separarla espacialmente y
+              usar un switch en vez de un pill-botón (mismo lenguaje visual
+              que los filtros) evita que se lea como "un filtro más". */}
+          <div className="country-click-panel">
+            <span className="country-click-label">{s.countryClickToggleLabel}</span>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={countryClickEnabled}
+              aria-label={s.countryClickToggleAria}
+              className={`country-click-switch${countryClickEnabled ? " on" : ""}`}
+              onClick={toggleCountryClick}
+            >
+              <span className="country-click-switch-knob" aria-hidden="true" />
+            </button>
+            <button
+              type="button"
+              className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
+              aria-label={s.countryClickNoteAria}
+              aria-expanded={countryClickNoteOpen}
+              onClick={() => setCountryClickNoteOpen((v) => !v)}
+            >
+              i
+            </button>
+            {countryClickNoteOpen && <div className="museum-note country-click-note">{s.countryClickNoteText}</div>}
+          </div>
+          <div className="top-controls">
         <div className="museum-toggles">
           <span className="filter-row-label">{s.museumFilterRowLabel}</span>
           {museumGroups.map(({ country, museums }) => (
@@ -595,11 +698,7 @@ function App() {
               </div>
             </div>
           ))}
-          <div className="piece-counter">
-            {visibleObjects.length === bundle.objects.length
-              ? s.pieceCounterAll(visibleObjects.length)
-              : s.pieceCounterFiltered(visibleObjects.length, bundle.objects.length)}
-          </div>
+          <div className="piece-counter piece-counter-inline">{pieceCounterText}</div>
         </div>
         <div className="research-filter-row">
           <span className="filter-row-label">{s.researchFilterRowLabel}</span>
@@ -620,7 +719,7 @@ function App() {
               del pill de arriba porque son ~21 opciones, no 3: un pill no
               escala a eso. Deshabilitado con "Sin investigación" activo
               (esas piezas nunca tienen flags, ver setResearchFilterAndClearFlags). */}
-          <div className="mechanism-filter-wrap">
+          <div className="mechanism-filter-wrap" ref={mechanismMenuRef}>
             <button
               type="button"
               className={`mechanism-filter-btn${selectedFlags.size > 0 ? " active" : ""}`}
@@ -663,10 +762,13 @@ function App() {
           </div>
         </div>
         </div>
+        </div>
+        {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
+        {tourOpen && <SpotlightTour lang={lang} onClose={closeTour} onOpenInfo={openInfoFromTour} />}
         <Map
           ref={mapRef}
           mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
-          initialViewState={{ longitude: 10, latitude: 20, zoom: 2 }}
+          initialViewState={{ longitude: 10, latitude: 20, zoom: getInitialMapZoom() }}
           style={{ width: "100%", height: "100%" }}
           mapStyle="mapbox://styles/mapbox/light-v11"
           projection="globe"

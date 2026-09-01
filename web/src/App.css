@@ -2,6 +2,13 @@
   display: flex;
   width: 100%;
   height: 100vh;
+  /* 100dvh (01/09, fix mobile) -- en Safari/Chrome de iOS, 100vh se calcula
+     contra el viewport SIN la barra de URL, dejando una franja del mapa
+     tapada/cortada abajo hasta que se hace scroll. dvh sí sigue el alto
+     visible real. Se declara después de 100vh (no reemplazándolo) para que
+     los navegadores que no soportan dvh se queden con el fallback en vez de
+     ignorar la propiedad entera. */
+  height: 100dvh;
 }
 
 .map-pane {
@@ -55,6 +62,40 @@
 
 .map-tooltip-popup--museum .map-tooltip-subtitle {
   color: #c9c4b8;
+}
+
+/* Pointer/línea recta hacia el punto, solo para museos (31/08, pedido de la
+   usuaria: "los museos pudiesen estar señalados... con un tooltip que
+   sobresalga en línea recta con un pointer, así son fáciles de identificar
+   visualmente"). El resto de los tooltips (origen/país) se queda sin punta
+   -- son hovers frecuentes sobre docenas de puntos, la puntita agregaría
+   ruido visual sin aportar nada ahí. Los museos son solo un puñado de
+   puntos fijos y sirven como referencia geográfica constante en el mapa, así
+   que vale la pena que el callout "apunte" físicamente al punto exacto,
+   igual que un pin de mapa clásico. Se reactiva la punta triangular nativa
+   de Mapbox (la regla de arriba la esconde para todos) y se recolorea para
+   que combine con el fondo oscuro invertido del tooltip de museo en vez del
+   blanco por default. Cubre los 4 anchors por las dudas de que el popup se
+   reposicione cerca de un borde del mapa -- en la práctica casi siempre es
+   "bottom" (caja arriba del punto, punta apuntando hacia abajo). */
+.map-tooltip-popup--museum .mapboxgl-popup-tip {
+  display: block;
+}
+
+.map-tooltip-popup--museum.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: #1a1a1a;
+}
+
+.map-tooltip-popup--museum.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
+  border-bottom-color: #1a1a1a;
+}
+
+.map-tooltip-popup--museum.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+  border-right-color: #1a1a1a;
+}
+
+.map-tooltip-popup--museum.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+  border-left-color: #1a1a1a;
 }
 
 /* Contenedor de las 2 filas de controles arriba a la izquierda: toggles de
@@ -221,16 +262,22 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
 
+/* Radio de borde chico (4px) a propósito, NO el 20px de pill que usan los
+   botones reales (.museum-toggle-wrap, .research-filter-btn) -- feedback de
+   usuarios de prueba: con la misma forma de pill, esta caja se leía como un
+   filtro más para clickear, cuando en realidad es solo un contador de
+   solo-lectura. `cursor: default` explícito por la misma razón (31/08). */
 .piece-counter {
   display: flex;
   align-items: center;
   background: rgba(26, 26, 26, 0.85);
   color: #fbfaf7;
-  border-radius: 20px;
-  padding: 5px 12px;
+  border-radius: 4px;
+  padding: 5px 10px;
   font-size: 12px;
   font-weight: 500;
   font-variant-numeric: tabular-nums;
+  cursor: default;
 }
 
 /* Filtro por estado de investigación (18/08, pedido explícito de la
@@ -698,6 +745,127 @@
 }
 
 .welcome-modal-btn-primary:hover {
+  background: #2c2c2c;
+}
+
+/* Onboarding interactivo con spotlight (01/09) -- ver SpotlightTour.tsx para
+   la técnica del "agujero" (box-shadow gigante). El overlay entero
+   intercepta clicks (bloquea la interacción con la página de fondo mientras
+   el tour está abierto); el agujero en sí (.spotlight-hole) tiene
+   pointer-events:none para que el click, si cae justo ahí, siga
+   burbujeando hasta el overlay -- ningún elemento resaltado se vuelve
+   interactivo durante el tour, es puramente visual. */
+.spotlight-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2100;
+  pointer-events: auto;
+}
+
+.spotlight-hole {
+  position: fixed;
+  box-shadow: 0 0 0 9999px rgba(26, 26, 26, 0.78);
+  pointer-events: none;
+  transition: top 0.2s ease, left 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.spotlight-callout {
+  position: fixed;
+  z-index: 2101;
+  background: #fbfaf7;
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
+  transition: top 0.2s ease, left 0.2s ease;
+}
+
+.spotlight-callout-progress {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #928d82;
+  margin-bottom: 6px;
+}
+
+.spotlight-callout-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 6px;
+}
+
+.spotlight-callout-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #3f3b34;
+  margin: 0;
+}
+
+.spotlight-callout-link {
+  display: inline-block;
+  margin-top: 8px;
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6a4c93;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.spotlight-callout-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.spotlight-callout-skip {
+  border: none;
+  background: none;
+  padding: 0;
+  font: inherit;
+  font-size: 12px;
+  color: #928d82;
+  cursor: pointer;
+}
+
+.spotlight-callout-skip:hover {
+  color: #77726a;
+}
+
+.spotlight-callout-nav {
+  display: flex;
+  gap: 8px;
+}
+
+.spotlight-callout-btn {
+  border: 1px solid #e5e2da;
+  background: #fbfaf7;
+  border-radius: 8px;
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #3f3b34;
+  cursor: pointer;
+}
+
+.spotlight-callout-btn:hover {
+  border-color: #c9c4b8;
+}
+
+.spotlight-callout-btn-primary {
+  border-color: #1a1a1a;
+  background: #1a1a1a;
+  color: #fbfaf7;
+}
+
+.spotlight-callout-btn-primary:hover {
   background: #2c2c2c;
 }
 
@@ -1475,4 +1643,313 @@
   font-size: 11px;
   color: #928d82;
   flex-shrink: 0;
+}
+
+/* ============================================================
+   Mobile (01/09, pedido de la usuaria: "acomodemos la version mobile")
+   ============================================================
+   La app se construyó y ajustó a mano enteramente sobre desktop (ningún
+   breakpoint existía hasta ahora) -- este bloque no rediseña nada, corrige
+   los puntos donde el layout desktop directamente se rompe en una pantalla
+   angosta (~320-428px, iPhone SE a Pro Max), agrupados por causa real, no
+   por componente:
+
+   1. `.side-panel` tenía un ancho fijo (`flex: 0 0 380px`) como hermano
+      flex de `.map-pane` -- en cualquier teléfono, eso desborda el
+      viewport o exprime el mapa a un hilo. Pasa a overlay de pantalla
+      completa (`position:fixed; inset:0`), que además es el patrón
+      esperado en mobile para un panel de detalle (tapa el mapa en vez de
+      convivir al lado).
+   2. `.top-controls` (museos + investigación, arriba a la izquierda) se
+      apoyaba en que su ancho de "shrink-to-fit" (position:absolute con
+      solo `left`) dejara lugar de sobra a la derecha -- en un teléfono no
+      queda margen y el contenido puede terminar por detrás de los botones
+      "?"/idioma de la esquina opuesta. `max-width` fuerza el wrap de
+      `.museum-toggles`/`.research-filter-row` antes de llegar ahí.
+   3. Los popovers chicos anclados a un botón (`.museum-note`,
+      `.mechanism-menu`, `.year-timeline-note`) tienen un ancho fijo
+      (250-280px) posicionado `left:0`/`right:0` relativo a un pill
+      angosto -- en una pantalla de 320-375px, un pill cerca de un borde
+      deja el popover recortado o directamente afuera del viewport. En vez
+      de intentar mantener el anclaje relativo (impredecible según qué pill
+      se tocó), se convierten en una hoja fija pegada a los bordes
+      izq/der del viewport -- mismo contenido, posición predecible.
+   4. `.year-timeline-header` mete 3 grupos (leyenda / año / capas) en una
+      sola fila sin wrap -- en el ancho disponible dentro del dock del
+      timeline (bastante menor que el viewport, por el padding lateral) no
+      entran. Pasa a columna: año arriba (centrado, ya no absolute), leyenda
+      y capas debajo, cada una con su propio wrap.
+   5. `SpotlightTour.tsx` tiene su propio fix en JS (no CSS) -- ver el
+      comentario en ese archivo -- porque su ancho se pasa como inline
+      style, que un @media acá no puede pisar.
+
+   No se pudo verificar visualmente en un navegador real desde este entorno
+   (mismo límite ya documentado para el onboarding con spotlight) -- esto es
+   la mejor corrección razonada a partir de la estructura del CSS/JSX, no
+   una captura de pantalla confirmada. Falta la verificación visual de la
+   usuaria vía `npm run dev` en un teléfono real o el modo responsive del
+   navegador. */
+/* ============================================================
+   Drawer de filtros para mobile/tablet (01/09, segunda vuelta)
+   ============================================================
+   El bloque de arriba (max-width:640px) ya intentaba que los filtros de
+   museo/investigación wrapearan prolijos en el mismo lugar de siempre
+   (arriba a la izquierda, flotando sobre el mapa) -- capturas reales de la
+   usuaria en iPhone SE e iPad mini mostraron que eso no alcanza: el switch
+   "Click en el mapa" (arriba a la derecha) y los filtros (arriba a la
+   izquierda) igual terminan superpuestos e ilegibles en cuanto no sobra
+   ancho de sobra para los dos a la vez -- ni siquiera en iPad mini (768px),
+   que está fuera del breakpoint de 640px de arriba.
+
+   Solución: en vez de seguir ajustando el layout flotante, los filtros
+   (museos + investigación + el switch de país) se colapsan detrás de un
+   botón pull-tab ("Filtros ▼", mismo lenguaje visual que
+   .year-timeline-handle) que abre un panel único, apilado en columna, con
+   todo el ancho del viewport disponible -- ahí no compiten por espacio con
+   nada más. En desktop (>900px) este mecanismo no existe: el botón queda
+   oculto y .mobile-filters-wrap no tiene ningún estilo propio (sus hijos
+   siguen siendo position:absolute contra .map-pane exactamente como
+   siempre), así que no hay riesgo de regresión ahí. */
+.mobile-filters-toggle,
+.piece-counter-top {
+  /* display:none por default (fuera de cualquier @media) -- sin esto, en
+     desktop estos 2 elementos (nuevos, sin ningún estilo propio en el
+     documento fuera del bloque de 900px) renderizarían con su apariencia
+     default del navegador (botón/div en flujo normal), como un elemento
+     suelto encima del mapa. El bloque de abajo los reactiva solo ≤900px. */
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .mobile-filters-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: absolute;
+    z-index: 1100;
+    top: 12px;
+    left: 12px;
+    background: rgba(20, 19, 17, 0.88);
+    color: #fbfaf7;
+    border: none;
+    border-radius: 16px;
+    padding: 7px 14px;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .mobile-filters-toggle-arrow {
+    font-size: 9px;
+  }
+
+  /* Cerrado por default -- el mapa queda libre apenas se carga la página,
+     mismo criterio que .year-timeline-handle.collapsed. */
+  .mobile-filters-wrap {
+    display: none;
+  }
+
+  .mobile-filters-wrap.open {
+    display: block;
+    position: fixed;
+    z-index: 1550;
+    top: 56px;
+    left: 8px;
+    right: 8px;
+    max-height: calc(100vh - 68px);
+    overflow-y: auto;
+    background: rgba(251, 250, 247, 0.98);
+    border: 1px solid #e5e2da;
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
+  }
+
+  /* Adentro del drawer, .country-click-panel y .top-controls dejan de ser
+     position:absolute (pensado para flotar sueltos sobre el mapa) y pasan a
+     fluir en columna -- ahí sí hay lugar para que .museum-toggles/
+     .research-filter-row wrapeen legibles, en vez de competir por una
+     franja angosta arriba del mapa. */
+  .mobile-filters-wrap.open .country-click-panel,
+  .mobile-filters-wrap.open .top-controls {
+    position: static;
+    max-width: none;
+  }
+
+  /* .top-controls sí necesita el ancho completo (sus hijos -- museos,
+     investigación -- pasan a columna y quieren todo el espacio del drawer),
+     pero .country-click-panel es un pill chico (label + switch + botón "i")
+     que no necesita estirarse a lo ancho de todo el drawer solo porque
+     dejó de ser position:absolute -- feedback de la usuaria: "el borde no
+     tiene por qué abarcar todo el width". width:fit-content en vez de
+     width:100% para que se ajuste a su contenido, igual que en desktop. */
+  .mobile-filters-wrap.open .country-click-panel {
+    width: fit-content;
+    margin-bottom: 14px;
+  }
+
+  .mobile-filters-wrap.open .top-controls {
+    width: 100%;
+    padding-top: 14px;
+    border-top: 1px solid #e5e2da;
+  }
+
+  /* Contador de piezas duplicado arriba del drawer (pedido de la usuaria:
+     "el total de piezas debería ir en la parte superior") -- la copia de
+     siempre, al final de .museum-toggles, se oculta mientras el drawer está
+     abierto para no mostrar el mismo número dos veces. En desktop ninguna
+     de las dos reglas de acá aplica (.piece-counter-top ya está
+     display:none por default, ver fuera de este media query).
+     width:fit-content por el mismo motivo que .country-click-panel más
+     arriba -- sin ancho explícito, un display:flex de bloque se estira al
+     100% del contenedor una vez que no está más position:absolute,
+     dejando un rectángulo oscuro de punta a punta en vez de la píldora
+     chica de siempre (reportado por la usuaria: "se ve extraño alineado a
+     la derecha y con full width"). */
+  .piece-counter-top {
+    display: flex;
+    width: fit-content;
+    margin-bottom: 14px;
+  }
+
+  .mobile-filters-wrap.open .piece-counter-inline {
+    display: none;
+  }
+
+  /* Columna en vez de flex-wrap (bug encontrado por la usuaria: con
+     flex-wrap, .museum-country-label -- position:absolute; bottom:100%
+     sobre su propio grupo, pensado para flotar sobre UNA sola fila en
+     desktop -- se solapaba con la fila de arriba cada vez que un grupo
+     nuevo caía en una línea de wrap distinta, porque el `gap` entre líneas
+     no alcanza para el label que escapa hacia arriba del flujo normal. En
+     columna cada elemento (label "MUSEUMS:", cada grupo de país, el
+     contador) ocupa su propia fila completa, sin competir por ancho ni
+     necesitar que ningún elemento escape del flujo -- más legible en un
+     drawer angosto que intentar que todo entre en la menor cantidad de
+     líneas posible. */
+  .mobile-filters-wrap.open .museum-toggles,
+  .mobile-filters-wrap.open .research-filter-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 0;
+  }
+
+  /* Separación entre la sección de museos y la de investigación (pedido de
+     la usuaria) -- mismo tratamiento que ya separa "Click en el mapa" de
+     .top-controls más arriba (borde + padding), para que las 3 secciones
+     del drawer se lean como bloques distintos en vez de una lista continua
+     sin pausas. */
+  .mobile-filters-wrap.open .research-filter-row {
+    margin-top: 4px;
+    padding-top: 14px;
+    border-top: 1px solid #e5e2da;
+  }
+
+  /* El label de país deja de flotar (position:absolute) y pasa a ser un
+     mini-heading en flujo normal, arriba de la fila de museos de ese país
+     -- ver comentario de arriba. */
+  .mobile-filters-wrap.open .museum-country-group {
+    position: static;
+  }
+
+  .mobile-filters-wrap.open .museum-country-label {
+    position: static;
+    display: block;
+    margin: 0 0 4px;
+  }
+
+  /* Nombres de museo largos (ej. "Musée du Quai Branly") no siempre entran
+     dos pills en la misma fila dentro del drawer -- se les permite wrapear
+     a la fila de abajo en vez de forzarlos a compartir una franja angosta. */
+  .mobile-filters-wrap.open .museum-country-row {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  /* --- Popovers de ancho fijo (notas "i" de museo/capa, menú de mecanismo)
+     -> hoja fija pegada a los bordes del viewport. Anclados por default a
+     un pill chico (left:0/right:0 relativo al botón que los abre) -- en un
+     drawer que ahora puede ocupar casi todo el ancho de la pantalla, ese
+     pill puede estar en cualquier punto horizontal, así que el anclaje
+     relativo ya no es confiable. Mismo tratamiento para .year-timeline-note
+     (no vive en el drawer, pero tiene el mismo problema de ancho fijo
+     anclado a un pill chico dentro del dock del timeline). --- */
+  .museum-note,
+  .country-click-panel .museum-note,
+  .mechanism-menu,
+  .year-timeline-note {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    top: auto;
+    bottom: 12px;
+    width: auto;
+    max-width: none;
+    max-height: 60vh;
+    overflow-y: auto;
+    z-index: 1700;
+  }
+}
+
+@media (max-width: 640px) {
+  /* --- 1. Panel lateral como overlay de pantalla completa --- */
+  .side-panel {
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    flex: none;
+    width: 100%;
+    border-left: none;
+  }
+
+  /* --- 2. Botones fijos arriba a la derecha ("?"/idioma): un poco más
+     ajustados en teléfonos angostos, para dejarle aire al toggle "Filtros"
+     de la esquina opuesta (ver drawer de filtros, @media 900px abajo). --- */
+  .welcome-trigger-btn {
+    right: 8px;
+  }
+
+  .lang-toggle-btn {
+    right: 46px;
+  }
+
+  /* Tooltip de hitos del timeline (hover/año activo) -- se achica en vez de
+     convertirse en hoja fija (es informativo y efímero, no vale la pena el
+     mismo tratamiento que los popovers del drawer de filtros) para reducir
+     el riesgo de desbordar el viewport cerca de los extremos del track. */
+  .year-timeline-event-tooltip {
+    width: 170px;
+  }
+
+  /* --- 3. Header del timeline: columna en vez de fila sin wrap --- */
+  .year-timeline {
+    padding: 10px 14px 16px;
+  }
+
+  .year-timeline-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .year-timeline-year {
+    position: static;
+    transform: none;
+    text-align: center;
+    order: -1;
+  }
+
+  .year-timeline-legend {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 14px;
+  }
+
+  .year-timeline-layers {
+    margin-left: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
