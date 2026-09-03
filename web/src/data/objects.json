@@ -777,8 +777,71 @@
       "originLon": 78.9629,
       "originCountry": "India",
       "originCountryEn": "India",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "private_collection",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "India",
+        "notes": "Pintura mogol sobre papel (ca. 1701) que representa la entrada del príncipe A'zam Shah en Ahmedabad, adquirida por el Met en 2022 como parte de la Howard Hodgkin Collection. Howard Hodgkin (1932-2017), pintor britanico, coleccionó pintura de corte india entre 1964 y 2017 comprando a marchantes internacionales -- según su propia pareja, sus prioridades como coleccionista eran \"la calidad, no la procedencia\", sin exigir documentación sobre cómo cada obra había salido de India. El Ashmolean Museum de Oxford, a quien Hodgkin ofreció primero su colección completa, la rechazó por dudas sobre el tráfico ilegal de varias piezas fuera de India. El Met, pese a esas dudas ya públicas, adquirió 84 obras de la colección en 2022 -- entre ellas esta pintura --, decisión cubierta críticamente por la prensa especializada (ArtNews: \"Met Acquires Works from Artist Howard Hodgkin's Indian Art Collection Despite Provenance Concerns\").",
+        "notesEn": "Mughal painting on paper (c. 1701) depicting Prince A'zam Shah entering Ahmedabad, acquired by the Met in 2022 as part of the Howard Hodgkin Collection. Howard Hodgkin (1932-2017), a British painter, collected Indian court painting between 1964 and 2017, buying from international dealers -- according to his own partner, his priorities as a collector were \"quality, not provenance,\" with no requirement for documentation of how each work had left India. The Ashmolean Museum in Oxford, to whom Hodgkin first offered his entire collection, turned it down over concerns that several pieces had been illegally trafficked out of India. The Met, despite those already-public concerns, acquired 84 works from the collection in 2022 -- including this painting --, a decision covered critically by the trade press (ArtNews: \"Met Acquires Works from Artist Howard Hodgkin's Indian Art Collection Despite Provenance Concerns\")."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 1701",
+          "actor_or_institution": "Taller de corte mogol (no identificado/a)",
+          "location": "Ahmedabad, India",
+          "description": "Pintura mogol que representa la entrada del príncipe A'zam Shah en Ahmedabad.",
+          "descriptionEs": "Pintura mogol que representa la entrada del príncipe A'zam Shah en Ahmedabad.",
+          "descriptionEn": "Mughal painting depicting Prince A'zam Shah's entry into Ahmedabad.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/76035",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1964-2017",
+          "actor_or_institution": "Howard Hodgkin",
+          "location": "Reino Unido (mercado internacional de arte)",
+          "description": "Hodgkin compra la pintura a marchantes internacionales sin exigir documentación de procedencia.",
+          "descriptionEs": "Hodgkin compra la pintura a marchantes internacionales sin exigir documentación de procedencia.",
+          "descriptionEn": "Hodgkin buys the painting from international dealers without requiring provenance documentation.",
+          "source_url": "https://www.artnews.com/art-news/news/met-museum-howard-hodgkin-collection-provenance-concerns-1234628119/",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "antes de 2022",
+          "actor_or_institution": "Ashmolean Museum (Oxford)",
+          "location": "Oxford, Reino Unido",
+          "description": "El Ashmolean rechaza la colección completa de Hodgkin por dudas sobre tráfico ilegal de piezas fuera de India.",
+          "descriptionEs": "El Ashmolean rechaza la colección completa de Hodgkin por dudas sobre tráfico ilegal de piezas fuera de India.",
+          "descriptionEn": "The Ashmolean declines the entire Hodgkin collection over concerns about pieces illegally trafficked out of India.",
+          "source_url": "https://www.artnews.com/art-news/news/met-museum-howard-hodgkin-collection-provenance-concerns-1234628119/",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "2022",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met compra 84 obras de la Howard Hodgkin Collection, incluida esta pieza, pese a las dudas de procedencia ya públicas.",
+          "descriptionEs": "El Met compra 84 obras de la Howard Hodgkin Collection, incluida esta pieza, pese a las dudas de procedencia ya públicas.",
+          "descriptionEn": "The Met purchases 84 works from the Howard Hodgkin Collection, including this piece, despite the already-public provenance concerns.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/76035",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:80390",
@@ -1038,8 +1101,43 @@
       "originLon": 21.7587,
       "originCountry": "República Democrática del Congo",
       "originCountryEn": "Democratic Republic of the Congo",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Democratic Republic of the Congo",
+        "notes": "Falda ceremonial de rafia bordada (\"ntshakokot\") del pueblo kuba, República Democrática del Congo, de comienzos del siglo XX. La propia ficha pública del Met no documenta ningún coleccionista o cadena de custodia anterior a su compra en 1991 (\"Purchase, Various Donors by Exchange\") -- caso genuino de cadena temprana sin documentar, sin inventar un mecanismo que no está confirmado. Contexto general, no específico de esta pieza: los textiles kuba empezaron a entrar en el mercado europeo desde la década de 1880, bajo la presión del Estado Libre del Congo de Leopoldo II primero y luego del Congo Belga sobre la soberanía kuba -- el mismo período colonial ya documentado para otras piezas de la región en esta muestra (ver figura nkisi kongo del BM, 31/08), pero sin que ninguna fuente vincule a esta pieza en particular con ese mecanismo.",
+        "notesEn": "Embroidered raffia ceremonial wrapper (\"ntshakokot\") made by the Kuba people, Democratic Republic of the Congo, early 20th century. The Met's own public record does not document any collector or custody chain prior to its 1991 purchase (\"Purchase, Various Donors by Exchange\") -- a genuine undocumented early chain, without inventing a mechanism that isn't confirmed. General context, not specific to this piece: Kuba textiles began entering the European market from the 1880s onward, under pressure first from Leopold II's Congo Free State and later the Belgian Congo on Kuba sovereignty -- the same colonial period already documented for other pieces from the region in this sample (see the BM's nkisi kongo figure, 31/08), though no source links this particular piece to that mechanism."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "principios del siglo XX",
+          "actor_or_institution": "Pueblo kuba (no identificado/a)",
+          "location": "República Democrática del Congo",
+          "description": "Falda ceremonial de rafia bordada, manufactura kuba.",
+          "descriptionEs": "Falda ceremonial de rafia bordada, manufactura kuba.",
+          "descriptionEn": "Embroidered raffia ceremonial wrapper, Kuba manufacture.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/96404",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1991",
+          "actor_or_institution": "The Metropolitan Museum of Art (Various Donors, por intercambio)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met adquiere la pieza por intercambio -- sin documentación pública de ningún propietario o coleccionista anterior.",
+          "descriptionEs": "El Met adquiere la pieza por intercambio -- sin documentación pública de ningún propietario o coleccionista anterior.",
+          "descriptionEn": "The Met acquires the piece by exchange -- with no public documentation of any prior owner or collector.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/96404",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:105510",
@@ -1870,8 +1968,43 @@
       "originLon": -74.2973,
       "originCountry": "Colombia",
       "originCountryEn": "Colombia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Colombia",
+        "notes": "Adorno nasal de oro, atribuido a una cultura prehispánica de Colombia (s. XIII-XVI), comprado directamente por el Met en 1891 -- apenas 21 años después de la fundación del museo, uno de sus primeros objetos de orfebrería colombiana. No hay coleccionista ni sitio de hallazgo documentados en el registro del Met. Contexto general, no específico de esta pieza: el oro prehispánico colombiano circuló ampliamente en mercados internacionales desde el s. XIX vía la \"guaquería\" (saqueo de tumbas indígenas), el mismo fenómeno ya documentado para el cascabel quimbaya del British Museum -- sin que ninguna fuente vincule a esta pieza puntual con un caso de saqueo específico.",
+        "notesEn": "Gold nose ornament, attributed to a pre-Hispanic culture of Colombia (13th-16th century), purchased directly by the Met in 1891 -- just 21 years after the museum's founding, one of its earliest pieces of Colombian goldwork. No collector or findspot is documented in the Met's record. General context, not specific to this piece: pre-Hispanic Colombian gold circulated widely on international markets from the 19th century onward via \"guaquería\" (looting of Indigenous graves), the same phenomenon already documented for the British Museum's Quimbaya gold bell -- though no source links this particular piece to a specific looting case."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. XIII-XVI",
+          "actor_or_institution": "Cultura prehispánica de Colombia (no identificado/a)",
+          "location": "Colombia",
+          "description": "Adorno nasal de oro.",
+          "descriptionEs": "Adorno nasal de oro.",
+          "descriptionEn": "Gold nose ornament.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/307438",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1891",
+          "actor_or_institution": "The Metropolitan Museum of Art (Museum Purchase)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met compra la pieza directamente -- sin coleccionista ni sitio de hallazgo documentados.",
+          "descriptionEs": "El Met compra la pieza directamente -- sin coleccionista ni sitio de hallazgo documentados.",
+          "descriptionEn": "The Met purchases the piece directly -- with no documented collector or findspot.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/307438",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:307726",
@@ -3325,8 +3458,70 @@
       "originLon": 62.0,
       "originCountry": "Turkmenistán",
       "originCountryEn": "Turkmenistan",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Figura masculina \"monstruosa\" tallada en clorita, calcita, oro y hierro, atribuida al Complejo Arqueológico de Bactria-Margiana (BMAC), Edad de Bronce (h. finales del III-comienzos del II milenio a.C.). Según el arqueólogo Roman Ghirshman, que la publicó en 1963, la pieza fue \"hallada\" a comienzos de la década de 1960 junto con otras cinco similares cerca de Faza, unos 75 km al sureste de Shiraz, en la provincia de Fars, Irán -- un hallazgo reportado, no una excavación científica documentada. Antes de esa publicación había pasado por la colección privada Azizbeghlou de Teherán. Entre la venta de esa colección (antes de 1963) y la compra del Met en 2010 -- casi medio siglo después -- no hay cadena de custodia documentada. El material BMAC en general es tristemente célebre por circular casi enteramente sin contexto arqueológico, producto en gran parte de excavaciones clandestinas en Asia Central/Afganistán desde los años 1970; esta pieza en particular reporta un sitio en Irán, no en Afganistán, pero comparte el mismo patrón de \"hallazgo\" sin excavación documentada.",
+        "notesEn": "\"Monstrous\" male figure carved from chlorite, calcite, gold and iron, attributed to the Bactria-Margiana Archaeological Complex (BMAC), Bronze Age (c. late 3rd-early 2nd millennium BC). According to archaeologist Roman Ghirshman, who published it in 1963, the piece was \"found\" in the early 1960s along with five similar works near Faza, about 75 km southeast of Shiraz, in Iran's Fars province -- a reported find, not a documented scientific excavation. Before that publication it had passed through the private Azizbeghlou collection in Tehran. Between that collection's sale (before 1963) and the Met's 2010 purchase -- nearly half a century later -- there is no documented chain of custody. BMAC material in general is notorious for circulating almost entirely without archaeological context, largely the product of clandestine digging in Central Asia/Afghanistan since the 1970s; this particular piece reports a findspot in Iran rather than Afghanistan, but shares the same pattern of an undocumented \"find\" rather than a recorded excavation."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. finales del III-comienzos del II milenio a.C.",
+          "actor_or_institution": "Cultura BMAC (no identificado/a)",
+          "location": "Fars, Irán (probable)",
+          "description": "Figura tallada en clorita, calcita, oro y hierro.",
+          "descriptionEs": "Figura tallada en clorita, calcita, oro y hierro.",
+          "descriptionEn": "Figure carved from chlorite, calcite, gold, and iron.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/328593",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "comienzos de la década de 1960",
+          "actor_or_institution": "Desconocido/a",
+          "location": "Faza, cerca de Shiraz, Fars, Irán",
+          "description": "Hallazgo reportado sin excavación científica documentada, junto a otras 5 piezas similares.",
+          "descriptionEs": "Hallazgo reportado sin excavación científica documentada, junto a otras 5 piezas similares.",
+          "descriptionEn": "A reported find with no documented scientific excavation, along with 5 other similar pieces.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/328593",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "antes de 1963",
+          "actor_or_institution": "Colección Azizbeghlou",
+          "location": "Teherán, Irán",
+          "description": "La pieza integra la colección privada Azizbeghlou antes de ser publicada por Roman Ghirshman en 1963.",
+          "descriptionEs": "La pieza integra la colección privada Azizbeghlou antes de ser publicada por Roman Ghirshman en 1963.",
+          "descriptionEn": "The piece is part of the private Azizbeghlou collection before being published by Roman Ghirshman in 1963.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/328593",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "2010",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met compra la pieza, casi medio siglo después de su aparición en el mercado, sin cadena de custodia documentada entre medio.",
+          "descriptionEs": "El Met compra la pieza, casi medio siglo después de su aparición en el mercado, sin cadena de custodia documentada entre medio.",
+          "descriptionEn": "The Met purchases the piece, nearly half a century after it surfaced, with no documented chain of custody in between.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/328593",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:328744",
@@ -4625,8 +4820,70 @@
       "originLon": 31.2164,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estatua de granito pintado de Nikare, escriba y sacerdote del Reino Antiguo (Dinastía 5, ca. 2420-2389 a.C.), procedente de una tumba en Saqqara cuya ubicación exacta nunca fue documentada. La pieza pertenece a un grupo escultórico familiar -- Nikare, más una estatua aparte de su esposa e hija (\"Nikare with his Wife and Daughter\", también en la colección del Met, met:543901) -- que se dispersó en el mercado de arte entre 1948 y 1952: distintas piezas del mismo conjunto terminaron en el Met (via Rogers Fund), el Brooklyn Museum y el Cleveland Museum of Art. No hay excavador documentado ni fecha de hallazgo real -- el conjunto simplemente aparece ya circulando en el comercio de antigüedades de mediados del siglo XX, un patrón habitual para tumbas saqueadas o excavadas sin registro formal en el Egipto de esa época.",
+        "notesEn": "Painted granite statue of Nikare, an Old Kingdom scribe and priest (Dynasty 5, ca. 2420-2389 BC), from a Saqqara tomb whose exact location was never documented. The piece belongs to a family sculptural group -- Nikare, plus a separate statue of his wife and daughter (\"Nikare with his Wife and Daughter,\" also in the Met's collection, met:543901) -- that was dispersed on the art market between 1948 and 1952: different pieces from the same set ended up at the Met (via the Rogers Fund), the Brooklyn Museum, and the Cleveland Museum of Art. No excavator or real discovery date is documented -- the group simply appears already circulating in the mid-20th-century antiquities trade, a common pattern for tombs looted or excavated without formal record in Egypt at the time."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2420-2389 a.C. (Dinastía 5)",
+          "actor_or_institution": "Nikare (escriba y sacerdote)",
+          "location": "Saqqara, Egipto",
+          "description": "Estatua funeraria tallada para la tumba de Nikare.",
+          "descriptionEs": "Estatua funeraria tallada para la tumba de Nikare.",
+          "descriptionEn": "Funerary statue carved for the tomb of Nikare.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543900",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "desconocida (antes de 1948)",
+          "actor_or_institution": "Desconocido/a",
+          "location": "Saqqara, Egipto",
+          "description": "Sin excavador ni fecha de hallazgo documentados -- la tumba de Nikare no fue excavada científicamente ni su ubicación exacta registrada; la pieza aparece ya en el mercado de arte a mediados del siglo XX.",
+          "descriptionEs": "Sin excavador ni fecha de hallazgo documentados -- la tumba de Nikare no fue excavada científicamente ni su ubicación exacta registrada; la pieza aparece ya en el mercado de arte a mediados del siglo XX.",
+          "descriptionEn": "No excavator or discovery date documented -- Nikare's tomb was not scientifically excavated, nor was its exact location recorded; the piece simply appears already on the art market by the mid-20th century.",
+          "source_url": "https://en.wikipedia.org/wiki/Nykara",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1948-1952",
+          "actor_or_institution": "Mercado de arte",
+          "location": "Nueva York, Estados Unidos (probable)",
+          "description": "El conjunto escultórico familiar de Nikare se dispersa en el mercado de arte -- piezas relacionadas del mismo hallazgo son adquiridas por separado por el Met, el Brooklyn Museum y el Cleveland Museum of Art.",
+          "descriptionEs": "El conjunto escultórico familiar de Nikare se dispersa en el mercado de arte -- piezas relacionadas del mismo hallazgo son adquiridas por separado por el Met, el Brooklyn Museum y el Cleveland Museum of Art.",
+          "descriptionEn": "The Nikare family sculptural group is dispersed on the art market -- related pieces from the same find are separately acquired by the Met, the Brooklyn Museum, and the Cleveland Museum of Art.",
+          "source_url": "https://en.wikipedia.org/wiki/Nykara",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1948",
+          "actor_or_institution": "The Metropolitan Museum of Art (Rogers Fund)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met adquiere la estatua de Nikare como escriba mediante el Rogers Fund.",
+          "descriptionEs": "El Met adquiere la estatua de Nikare como escriba mediante el Rogers Fund.",
+          "descriptionEn": "The Met acquires the statue of Nikare as a scribe through the Rogers Fund.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543900",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543901",
@@ -4654,8 +4911,57 @@
       "originLon": 31.2164,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Grupo escultórico de piedra caliza pintada con Nikare junto a su esposa e hija, mismo Reino Antiguo (Dinastía 5, ca. 2420-2389 a.C.) y mismo origen sin documentar en Saqqara que la estatua de Nikare como escriba (met:543900) -- son parte del mismo conjunto familiar disperso en el mercado de arte entre 1948 y 1952, solo que esta pieza llegó al Met cuatro años después (Rogers Fund, 1952) que la del escriba (1948), reforzando que se vendieron por separado en vez de como lote único.",
+        "notesEn": "Painted limestone sculptural group of Nikare with his wife and daughter, same Old Kingdom period (Dynasty 5, ca. 2420-2389 BC) and same undocumented Saqqara origin as the statue of Nikare as a scribe (met:543900) -- part of the same family group dispersed on the art market between 1948 and 1952, except this piece reached the Met four years later (Rogers Fund, 1952) than the scribe statue (1948), reinforcing that they were sold separately rather than as a single lot."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2420-2389 a.C. (Dinastía 5)",
+          "actor_or_institution": "Nikare (escriba y sacerdote) y su familia",
+          "location": "Saqqara, Egipto",
+          "description": "Grupo escultórico funerario de Nikare con su esposa e hija, tallado para la misma tumba que la estatua individual de Nikare.",
+          "descriptionEs": "Grupo escultórico funerario de Nikare con su esposa e hija, tallado para la misma tumba que la estatua individual de Nikare.",
+          "descriptionEn": "Funerary sculptural group of Nikare with his wife and daughter, carved for the same tomb as Nikare's individual statue.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543901",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1948-1952",
+          "actor_or_institution": "Mercado de arte",
+          "location": "Nueva York, Estados Unidos (probable)",
+          "description": "Se dispersa junto con la estatua individual de Nikare (met:543900) y otras piezas del mismo hallazgo, vendidas por separado al Met, al Brooklyn Museum y al Cleveland Museum of Art.",
+          "descriptionEs": "Se dispersa junto con la estatua individual de Nikare (met:543900) y otras piezas del mismo hallazgo, vendidas por separado al Met, al Brooklyn Museum y al Cleveland Museum of Art.",
+          "descriptionEn": "Dispersed along with Nikare's individual statue (met:543900) and other pieces from the same find, sold separately to the Met, the Brooklyn Museum, and the Cleveland Museum of Art.",
+          "source_url": "https://en.wikipedia.org/wiki/Nykara",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1952",
+          "actor_or_institution": "The Metropolitan Museum of Art (Rogers Fund)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met adquiere el grupo de Nikare con su esposa e hija, cuatro años después de la estatua individual del mismo conjunto.",
+          "descriptionEs": "El Met adquiere el grupo de Nikare con su esposa e hija, cuatro años después de la estatua individual del mismo conjunto.",
+          "descriptionEn": "The Met acquires the group of Nikare with his wife and daughter, four years after the individual statue from the same set.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543901",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543902",
@@ -4847,8 +5153,57 @@
       "originLon": 31.2164,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "undocumented_early_chain",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Estatua de piedra caliza pintada de un cautivo arrodillado, atribuida al complejo piramidal de Pepi II en Saqqara Sur (Dinastía 6, ca. 2246-2152 a.C.) -- este tipo de estatuas de \"enemigos\" atados formaba parte de un programa ritual destinado a neutralizar simbólicamente amenazas al faraón, y muchas fueron deliberadamente destruidas o mutiladas en la Antigüedad o poco después del reinado del rey. Sin excavador ni sitio de hallazgo documentados en el registro del Met; comprada en 1964 con fondos Louis V. Bell. Existe una pieza relacionada del mismo tipo (47.2, Fletcher Fund 1947) en la colección del Met, sin que las fuentes consultadas confirmen si ambas provienen del mismo hallazgo original.",
+        "notesEn": "Painted limestone statue of a kneeling captive, attributed to the pyramid complex of Pepi II at South Saqqara (Dynasty 6, c. 2246-2152 BC) -- this type of bound-\"enemy\" statue was part of a ritual program meant to symbolically neutralize threats to the pharaoh, and many were deliberately destroyed or mutilated in antiquity or shortly after the king's reign. No excavator or findspot is documented in the Met's record; purchased in 1964 with Louis V. Bell funds. A related piece of the same type (47.2, Fletcher Fund 1947) exists in the Met's collection, though the sources consulted do not confirm whether both come from the same original find."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2246-2152 a.C.",
+          "actor_or_institution": "Talleres funerarios del Reino Antiguo",
+          "location": "Complejo piramidal de Pepi II, Saqqara Sur, Egipto",
+          "description": "Estatua ritual de un cautivo arrodillado.",
+          "descriptionEs": "Estatua ritual de un cautivo arrodillado.",
+          "descriptionEn": "Ritual statue of a kneeling captive.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543906",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Desconocido/a",
+          "location": "Saqqara Sur, Egipto",
+          "description": "Sin excavador ni sitio de hallazgo documentados.",
+          "descriptionEs": "Sin excavador ni sitio de hallazgo documentados.",
+          "descriptionEn": "No excavator or findspot documented.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543906",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1964",
+          "actor_or_institution": "The Metropolitan Museum of Art (Louis V. Bell Fund)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met compra la pieza sin cadena de custodia documentada previa.",
+          "descriptionEs": "El Met compra la pieza sin cadena de custodia documentada previa.",
+          "descriptionEn": "The Met purchases the piece with no documented prior chain of custody.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543906",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543907",
@@ -5181,8 +5536,57 @@
       "originLon": 31.2164,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "mariette_administration",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Bloque esquinero de nicho de piedra caliza de la tumba de Akhtihotep en Saqqara (Dinastía 4, ca. 2575-2551 a.C.), que muestra a Akhtihotep dos veces con vestimentas distintas. Fuentes secundarias lo asocian con excavaciones de Auguste Mariette (fundador del Servicio de Antigüedades egipcio, ver \"administración Mariette\" ya documentada para otras piezas de esta muestra) en Saqqara a mediados del s. XIX, aunque esa atribución concreta queda calificada como \"probable\" en las fuentes consultadas, no confirmada con certeza. Entre esa presunta excavación y la compra del Met en 1958 -- un siglo después -- no hay cadena de custodia documentada. Nota de desambiguación: este Akhtihotep de Saqqara no debe confundirse con el dignatario homónimo cuya mastaba completa compró el Louvre en 1903 (ya documentada en esta muestra) -- Akhethetep/Akhtihotep es un nombre egipcio común compartido por varios funcionarios del Reino Antiguo con tumbas distintas.",
+        "notesEn": "Corner block of a limestone niche from the tomb of Akhtihotep at Saqqara (Dynasty 4, c. 2575-2551 BC), showing Akhtihotep twice in different garments. Secondary sources associate it with Auguste Mariette's excavations (founder of the Egyptian Antiquities Service, see the \"Mariette administration\" mechanism already documented for other pieces in this sample) at Saqqara in the mid-19th century, though that specific attribution is qualified as \"likely\" in the sources consulted, not confirmed with certainty. Between that presumed excavation and the Met's 1958 purchase -- a century later -- there is no documented chain of custody. Disambiguation note: this Saqqara Akhtihotep should not be confused with the same-named official whose complete mastaba chapel the Louvre purchased in 1903 (already documented in this sample) -- Akhethetep/Akhtihotep is a common Egyptian name shared by several Old Kingdom officials with distinct tombs."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 2575-2551 a.C.",
+          "actor_or_institution": "Talleres funerarios del Reino Antiguo",
+          "location": "Saqqara, Egipto",
+          "description": "Bloque de nicho tallado para la tumba de Akhtihotep.",
+          "descriptionEs": "Bloque de nicho tallado para la tumba de Akhtihotep.",
+          "descriptionEn": "Niche block carved for the tomb of Akhtihotep.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543912",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "mediados del s. XIX (probable)",
+          "actor_or_institution": "Auguste Mariette (probable, sin confirmar)",
+          "location": "Saqqara, Egipto",
+          "description": "Atribución probable, no confirmada con certeza por las fuentes consultadas, a las excavaciones de Mariette en Saqqara.",
+          "descriptionEs": "Atribución probable, no confirmada con certeza por las fuentes consultadas, a las excavaciones de Mariette en Saqqara.",
+          "descriptionEn": "Likely attribution, not confirmed with certainty by the sources consulted, to Mariette's excavations at Saqqara.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543912",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1958",
+          "actor_or_institution": "The Metropolitan Museum of Art (Funds from Various Donors, and by exchange)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met adquiere la pieza un siglo después de la presunta excavación, sin cadena de custodia documentada entre medio.",
+          "descriptionEs": "El Met adquiere la pieza un siglo después de la presunta excavación, sin cadena de custodia documentada entre medio.",
+          "descriptionEn": "The Met acquires the piece a century after the presumed excavation, with no documented chain of custody in between.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/543912",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:543914",
@@ -6215,6 +6619,96 @@
       ]
     },
     {
+      "objectID": "met:820847",
+      "sourceMuseum": "met",
+      "title": "Orthostates",
+      "objectName": null,
+      "department": "Ancient West Asian Art",
+      "culture": null,
+      "period": null,
+      "dynasty": null,
+      "objectDate": "2017-ongoing",
+      "medium": "32 charcoal on paper drawings",
+      "creditLine": "Purchase, Henrie Jo Barth Bequest and Josephine Lois Berger-Nadler Endowment Fund, 2019",
+      "accessionYear": "2019",
+      "excavation": null,
+      "country": null,
+      "region": null,
+      "subregion": null,
+      "primaryImage": null,
+      "objectURL": "https://www.metmuseum.org/art/collection/search/820847",
+      "originLabel": "Tell Halaf, Siria (sitio arqueológico referenciado por la obra)",
+      "originLabelEn": "Tell Halaf, Syria (the archaeological site the artwork references)",
+      "originPrecision": "editorial",
+      "originLat": 36.835,
+      "originLon": 40.043,
+      "originCountry": "Siria",
+      "originCountryEn": "Syria",
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Syria;Germany",
+        "notes": "Obra de arte contemporáneo (2017-en curso) del artista libanés Rayyane Tabet: 32 dibujos al carboncillo sobre papel que son frotados (rubbings) directos de los ortostatos de basalto y caliza de Tell Halaf, un palacio neohitita en la actual Siria excavado en 1911 por el barón alemán Max von Oppenheim (194 relieves en total). Tabet -- bisnieto de Faek Borkhoche, secretario personal de Oppenheim durante la excavación -- creó la serie \"Alien Property\" para reconstruir en papel el friso disperso, cuyo destino real fue accidentado: Oppenheim llevó 8 de los relieves a Estados Unidos en 1931 esperando venderlos, no lo logró y los dejó en depósito en Nueva York; con la Segunda Guerra Mundial, esos 8 relieves fueron confiscados en 1943 por la Oficina del Custodio de Propiedad Enemiga (Alien Property Custodian) de EE.UU. por ser de titularidad alemana, y el Met los compró poco después directamente a esa oficina -- un mecanismo de incautación bélica, no colonial, y distinto por completo de la obra de Tabet en sí. La obra de Tabet fue comprada directamente al artista vivo en 2019 (Purchase, Henrie Jo Barth Bequest and Josephine Lois Berger-Nadler Endowment Fund) -- caso de contraste sin mecanismo colonial en su propia adquisición, aunque documenta y refiere activamente la historia dispersa de las piezas antiguas reales.",
+        "notesEn": "Contemporary artwork (2017-ongoing) by Lebanese artist Rayyane Tabet: 32 charcoal-on-paper drawings that are direct rubbings of the basalt and limestone orthostats of Tell Halaf, a Neo-Hittite palace in present-day Syria excavated in 1911 by the German baron Max von Oppenheim (194 reliefs in total). Tabet -- great-grandson of Faek Borkhoche, Oppenheim's personal secretary during the excavation -- created the \"Alien Property\" series to reconstruct on paper the dispersed frieze, whose real fate was eventful: Oppenheim brought 8 of the reliefs to the United States in 1931 hoping to sell them, failed, and left them in storage in New York; with World War II, those 8 reliefs were seized in 1943 by the U.S. Office of the Alien Property Custodian as German-owned property, and the Met purchased them soon after directly from that office -- a wartime-seizure mechanism, not a colonial one, and entirely separate from Tabet's own artwork. Tabet's piece was purchased directly from the living artist in 2019 (Purchase, Henrie Jo Barth Bequest and Josephine Lois Berger-Nadler Endowment Fund) -- a contrast case with no colonial mechanism in its own acquisition, even as it actively documents and references the real antiquities' dispersed history."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "excavation",
+          "event_date": "1911",
+          "actor_or_institution": "Barón Max von Oppenheim",
+          "location": "Tell Halaf, Siria (entonces Imperio Otomano)",
+          "description": "Oppenheim excava el palacio neohitita de Tell Halaf y descubre 194 ortostatos con relieves narrativos.",
+          "descriptionEs": "Oppenheim excava el palacio neohitita de Tell Halaf y descubre 194 ortostatos con relieves narrativos.",
+          "descriptionEn": "Oppenheim excavates the Neo-Hittite palace of Tell Halaf and discovers 194 orthostats with narrative relief carvings.",
+          "source_url": "https://www.metmuseum.org/-/media/files/exhibitions/2019/rayyane_tabet_alien_property/alien-property-chronology-of-the-tell-halaf-reliefs.pdf",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1943",
+          "actor_or_institution": "Alien Property Custodian (EE.UU.)",
+          "location": "Nueva York, Estados Unidos",
+          "description": "8 relieves que Oppenheim había traído a EE.UU. en 1931 sin venderlos son confiscados por titularidad alemana durante la Segunda Guerra Mundial; el Met los compra poco después a esa oficina -- historia de las piezas antiguas reales, no de esta obra de Tabet.",
+          "descriptionEs": "8 relieves que Oppenheim había traído a EE.UU. en 1931 sin venderlos son confiscados por titularidad alemana durante la Segunda Guerra Mundial; el Met los compra poco después a esa oficina -- historia de las piezas antiguas reales, no de esta obra de Tabet.",
+          "descriptionEn": "8 reliefs Oppenheim had brought to the U.S. in 1931 without selling them are seized as German-owned property during World War II; the Met purchases them soon after from that office -- history of the real ancient pieces, not of this Tabet artwork.",
+          "source_url": "https://www.metmuseum.org/-/media/files/exhibitions/2019/rayyane_tabet_alien_property/alien-property-chronology-of-the-tell-halaf-reliefs.pdf",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "creation",
+          "event_date": "2017-en curso",
+          "actor_or_institution": "Rayyane Tabet",
+          "location": "Nueva York/Beirut",
+          "description": "Tabet crea la serie de frotados \"Alien Property\", reconstruyendo en papel el friso disperso de Tell Halaf.",
+          "descriptionEs": "Tabet crea la serie de frotados \"Alien Property\", reconstruyendo en papel el friso disperso de Tell Halaf.",
+          "descriptionEn": "Tabet creates the \"Alien Property\" rubbing series, reconstructing on paper the dispersed Tell Halaf frieze.",
+          "source_url": "https://www.metmuseum.org/press-releases/rayyane-tabet-alien-property-2019-exhibitions",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "2019",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Met compra la obra directamente a Tabet, artista vivo.",
+          "descriptionEs": "El Met compra la obra directamente a Tabet, artista vivo.",
+          "descriptionEn": "The Met purchases the work directly from Tabet, a living artist.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/820847",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
+    },
+    {
       "objectID": "met:891607",
       "sourceMuseum": "met",
       "title": "Urn with Assyrian scenes",
@@ -6390,6 +6884,70 @@
           "descriptionEs": "Adquirida por el Met en 2023 como parte de la coleccion Henrietta y Christopher McCall, junto con otras piezas de joyeria y decoracion victoriana de tema asirio.",
           "descriptionEn": "Acquired by the Met in 2023 as part of the Henrietta and Christopher McCall collection, along with other pieces of Victorian Assyrian-themed jewelry and decorative arts.",
           "source_url": "https://www.metmuseum.org/art/collection/search/918237",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
+    },
+    {
+      "objectID": "met:969159",
+      "sourceMuseum": "met",
+      "title": "Drone Hits Great Ziggurat of Ur",
+      "objectName": "Drawing, \"Drone Hits Great Ziggurat of Ur\"",
+      "department": "Ancient West Asian Art",
+      "culture": null,
+      "period": "Modern",
+      "dynasty": null,
+      "objectDate": "2016",
+      "medium": "pencil, ink and watercolor on paper",
+      "creditLine": "Museum Acquisitions Fund, 2025",
+      "accessionYear": "2025",
+      "excavation": null,
+      "country": null,
+      "region": null,
+      "subregion": null,
+      "primaryImage": null,
+      "objectURL": "https://www.metmuseum.org/art/collection/search/969159",
+      "originLabel": "Ur, Irak (referencia temática de la obra)",
+      "originLabelEn": "Ur, Iraq (the artwork's thematic reference)",
+      "originPrecision": "editorial",
+      "originLat": 30.9626,
+      "originLon": 46.1039,
+      "originCountry": "Irak",
+      "originCountryEn": "Iraq",
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Irak",
+        "notes": "Dibujo a lápiz, tinta y acuarela sobre papel, componente complementario de la instalación de video \"Drone Hits Great Ziggurat of Ur\" (2016) de la artista iraquí-británica Hanaa Malallah -- mismo título y misma adquisición (Museum Acquisitions Fund, 2025) que la pieza de video ya documentada en esta muestra (met:910742), comprada directamente a la artista viva. Ver la ficha de met:910742 para el contexto completo de la obra y de la artista.",
+        "notesEn": "Pencil, ink and watercolor drawing on paper, a complementary component of the video installation \"Drone Hits Great Ziggurat of Ur\" (2016) by Iraqi-British artist Hanaa Malallah -- same title and same acquisition (Museum Acquisitions Fund, 2025) as the video piece already documented in this sample (met:910742), purchased directly from the living artist. See met:910742's entry for the work's and artist's full context."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "2016",
+          "actor_or_institution": "Hanaa Malallah",
+          "location": "Reino Unido/Irak (estudio de la artista)",
+          "description": "Dibujo a lápiz, tinta y acuarela, componente de la misma obra que met:910742.",
+          "descriptionEs": "Dibujo a lápiz, tinta y acuarela, componente de la misma obra que met:910742.",
+          "descriptionEn": "Pencil, ink, and watercolor drawing, a component of the same work as met:910742.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/969159",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "2025",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "Comprada junto con la instalación de video del mismo título (met:910742), directamente a la artista viva.",
+          "descriptionEs": "Comprada junto con la instalación de video del mismo título (met:910742), directamente a la artista viva.",
+          "descriptionEn": "Purchased together with the video installation of the same title (met:910742), directly from the living artist.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/969159",
           "source_type": "museum_record",
           "confidence_level": "high"
         }
@@ -9243,8 +9801,57 @@
       "originLon": 37.2333,
       "originCountry": "Siria",
       "originCountryEn": "Syria",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "ottoman_authorization",
+          "antiquarian_travel"
+        ],
+        "associated_communities_or_states": "Syria",
+        "notes": "Estela funeraria de basalto negro con inscripción aramea del s. VII a.C., perteneciente a Si-Gabbor, sacerdote de Sahar en Neirab (cerca de Alepo, Siria). Hallada por casualidad el 11 de noviembre de 1891 por trabajadores que reparaban terrazas en Neirab -- el hallazgo llegó a oídos del dragomán del consulado francés en Alepo, Adrien Barthélemy, a través de un sacerdote franciscano. La estela fue adquirida por Charles Clermont-Ganneau, prestigioso orientalista y diplomático francés, en nombre de la Comisión del Corpus Inscriptionum Semiticarum -- una intervención erudita/consular en la Siria otomana anterior al Mandato Francés (que recién empezaría en 1920), comprada formalmente por el Louvre en 1897.",
+        "notesEn": "Black basalt funerary stele with a 7th-century BC Aramaic inscription, belonging to Si-Gabbor, priest of Sahar at Neirab (near Aleppo, Syria). Found by chance on 11 November 1891 by workers repairing terraces at Neirab -- the discovery reached the French consulate's dragoman in Aleppo, Adrien Barthélemy, via a Franciscan priest. The stele was acquired by Charles Clermont-Ganneau, a prominent French orientalist and diplomat, on behalf of the Commission of the Corpus Inscriptionum Semiticarum -- a scholarly/consular intervention in Ottoman Syria predating the French Mandate (which only began in 1920), formally purchased by the Louvre in 1897."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. VII a.C.",
+          "actor_or_institution": "Si-Gabbor, sacerdote de Sahar",
+          "location": "Neirab, Siria",
+          "description": "Estela funeraria tallada para Si-Gabbor, con inscripción en arameo.",
+          "descriptionEs": "Estela funeraria tallada para Si-Gabbor, con inscripción en arameo.",
+          "descriptionEn": "Funerary stele carved for Si-Gabbor, with an Aramaic inscription.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010120343",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "11/11/1891",
+          "actor_or_institution": "Trabajadores locales (hallazgo casual)",
+          "location": "Neirab, cerca de Alepo, Siria (entonces Imperio Otomano)",
+          "description": "La estela es descubierta por casualidad por trabajadores que reparaban terrazas; el hallazgo se reporta al dragomán del consulado francés en Alepo vía un sacerdote franciscano.",
+          "descriptionEs": "La estela es descubierta por casualidad por trabajadores que reparaban terrazas; el hallazgo se reporta al dragomán del consulado francés en Alepo vía un sacerdote franciscano.",
+          "descriptionEn": "The stele is found by chance by workers repairing terraces; the discovery is reported to the French consulate's dragoman in Aleppo via a Franciscan priest.",
+          "source_url": "https://en.wikipedia.org/wiki/Neirab_steles",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1897",
+          "actor_or_institution": "Charles Clermont-Ganneau / Musée du Louvre",
+          "location": "Alepo, Siria / París, Francia",
+          "description": "Clermont-Ganneau adquiere la estela en nombre de la Comisión del Corpus Inscriptionum Semiticarum; comprada formalmente por el Louvre en 1897.",
+          "descriptionEs": "Clermont-Ganneau adquiere la estela en nombre de la Comisión del Corpus Inscriptionum Semiticarum; comprada formalmente por el Louvre en 1897.",
+          "descriptionEn": "Clermont-Ganneau acquires the stele on behalf of the Commission of the Corpus Inscriptionum Semiticarum; formally purchased by the Louvre in 1897.",
+          "source_url": "https://en.wikipedia.org/wiki/Neirab_steles",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010120347",
@@ -9454,8 +10061,57 @@
       "originLon": 36.75,
       "originCountry": "Siria",
       "originCountryEn": "Syria",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "ottoman_authorization",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Syria",
+        "notes": "Estela de basalto negro con una importante inscripción real en arameo del rey Zakkur de Hamat y Luhuti (h. 785 a.C.), hallada en 1903 en la cima de la acrópolis de Tell Afis (45 km al sureste de Alepo, en el antiguo reino de Hamat) por Henri Pognon, entonces cónsul francés en la región -- un mecanismo de recolección diplomática similar al ya documentado para la Colección Cesnola del Met (cónsul usando su cargo para adquirir antigüedades) y para Giovanni Anastasi en Egipto, aunque unas décadas más tarde y en Siria otomana, no en Chipre o Egipto. La estela fue publicada en 1907, pero recién comprada por el Louvre en 1921-22 -- justo al comienzo formal del Mandato Francés en Siria (proclamado en 1920) -- casi dos décadas después de su hallazgo.",
+        "notesEn": "Black basalt stele bearing an important royal Aramaic inscription of King Zakkur of Hamath and Luhuti (c. 785 BC), found in 1903 at the top of the acropolis of Tell Afis (45 km southeast of Aleppo, in the ancient kingdom of Hamath) by Henri Pognon, then the French consul in the region -- a diplomatic-collecting mechanism similar to the Met's Cesnola Collection (a consul using his post to acquire antiquities) and to Giovanni Anastasi in Egypt, though a few decades later and in Ottoman Syria rather than Cyprus or Egypt. The stele was published in 1907, but only purchased by the Louvre in 1921-22 -- right at the formal start of the French Mandate for Syria (proclaimed in 1920) -- nearly two decades after its discovery."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 785 a.C.",
+          "actor_or_institution": "Zakkur, rey de Hamat y Luhuti",
+          "location": "Hamat (actual Siria)",
+          "description": "Estela real con inscripción conmemorativa en arameo.",
+          "descriptionEs": "Estela real con inscripción conmemorativa en arameo.",
+          "descriptionEn": "Royal stele with a commemorative Aramaic inscription.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010120353",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1903",
+          "actor_or_institution": "Henri Pognon (cónsul francés)",
+          "location": "Tell Afis, cerca de Alepo, Siria (entonces Imperio Otomano)",
+          "description": "Pognon halla la estela en la acrópolis de Tell Afis durante su actividad consular.",
+          "descriptionEs": "Pognon halla la estela en la acrópolis de Tell Afis durante su actividad consular.",
+          "descriptionEn": "Pognon finds the stele on the acropolis of Tell Afis during his consular activity.",
+          "source_url": "https://en.wikipedia.org/wiki/Zakkur_stele",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1921-1922",
+          "actor_or_institution": "Musée du Louvre",
+          "location": "París, Francia",
+          "description": "Comprada por el Louvre casi dos décadas después del hallazgo, al inicio del Mandato Francés en Siria.",
+          "descriptionEs": "Comprada por el Louvre casi dos décadas después del hallazgo, al inicio del Mandato Francés en Siria.",
+          "descriptionEn": "Purchased by the Louvre nearly two decades after its discovery, at the start of the French Mandate for Syria.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010120353",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010120357",
@@ -9825,8 +10481,57 @@
       "originLon": 46.15,
       "originCountry": "Irak",
       "originCountryEn": "Iraq",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "private_excavation",
+          "ottoman_authorization"
+        ],
+        "associated_communities_or_states": "Iraq;Turkey",
+        "notes": "Vaso de plata y cobre con una inscripción real de Enmetena, príncipe de Lagash (h. 2400 a.C.) -- el vaso metálico más antiguo conocido con una inscripción real, hallado en 1888 en Tello (antigua Girsu, Irak) por Ernest de Sarzec, el mismo excavador ya documentado para la Statue de Gudea \"au vase jaillissant\". A diferencia de esa estatua, que llegó al Louvre casi un siglo después por el mercado de arte, este vaso siguió un camino directo y bien documentado: fue **donado al Louvre por el propio sultán otomano Abdel Hamid II en 1896**, ocho años después del hallazgo -- un regalo diplomático de la autoridad otomana (Irak formaba parte del Imperio Otomano en ese momento) a Francia, distinto del mecanismo de partage habitual en las excavaciones de Sarzec y de Morgan documentadas en el resto de esta muestra.",
+        "notesEn": "Silver and copper vase bearing a royal inscription of Enmetena, prince of Lagash (c. 2400 BC) -- the oldest known metal vase with a royal inscription, found in 1888 at Tello (ancient Girsu, Iraq) by Ernest de Sarzec, the same excavator already documented for the Statue de Gudea \"au vase jaillissant.\" Unlike that statue, which reached the Louvre almost a century later via the art market, this vase followed a direct and well-documented path: it was **donated to the Louvre by the Ottoman Sultan Abdul Hamid II himself in 1896**, eight years after the find -- a diplomatic gift from the Ottoman authority (Iraq was then part of the Ottoman Empire) to France, distinct from the partage mechanism typical of the Sarzec and de Morgan excavations documented elsewhere in this sample."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 2400 a.C.",
+          "actor_or_institution": "Enmetena, príncipe de Lagash",
+          "location": "Girsu (Tello), Mesopotamia",
+          "description": "Vaso de plata y cobre fabricado para/por Enmetena, con inscripción real.",
+          "descriptionEs": "Vaso de plata y cobre fabricado para/por Enmetena, con inscripción real.",
+          "descriptionEn": "Silver and copper vase made for/by Enmetena, bearing a royal inscription.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010120706",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1888",
+          "actor_or_institution": "Ernest de Sarzec",
+          "location": "Tello (Girsu), Irak (entonces Imperio Otomano)",
+          "description": "Sarzec excava Tello y recupera el vaso entre los hallazgos de esa temporada.",
+          "descriptionEs": "Sarzec excava Tello y recupera el vaso entre los hallazgos de esa temporada.",
+          "descriptionEn": "Sarzec excavates Tello and recovers the vase among that season's finds.",
+          "source_url": "https://fr.wikipedia.org/wiki/Vase_d%27Ent%C3%A9m%C3%A9na",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1896",
+          "actor_or_institution": "Sultán Abdul Hamid II (Imperio Otomano)",
+          "location": "Estambul / París",
+          "description": "El sultán otomano Abdul Hamid II dona el vaso al Louvre -- regalo diplomático de la autoridad otomana a Francia, no partage de excavación.",
+          "descriptionEs": "El sultán otomano Abdul Hamid II dona el vaso al Louvre -- regalo diplomático de la autoridad otomana a Francia, no partage de excavación.",
+          "descriptionEn": "Ottoman Sultan Abdul Hamid II donates the vase to the Louvre -- a diplomatic gift from the Ottoman authority to France, not an excavation partage.",
+          "source_url": "https://fr.wikipedia.org/wiki/Vase_d%27Ent%C3%A9m%C3%A9na",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010121494",
@@ -10313,8 +11018,69 @@
       "originLon": 48.2578,
       "originCountry": "Irán",
       "originCountryEn": "Iran",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "partage"
+        ],
+        "associated_communities_or_states": "Iran;Iraq",
+        "notes": "Obelisco piramidal de diorita de cuatro caras erigido por Manishtusu, rey acadio (hijo de Sargón de Acad), con 1519 casillas de escritura cuneiforme -- narra sus campañas militares al otro lado del \"mar inferior\" (el golfo Pérsico-Arábigo) y grandes compras de tierras repartidas entre sus oficiales. La pieza tiene un doble despojo: en la Antigüedad, el rey elamita Shutruk-Nahhunte se la llevó como botín de guerra desde Mesopotamia hasta Susa en el siglo XII a.C. -- más de mil años antes de cualquier intervención francesa --, y recién en 1897-98 fue hallada en la acrópolis de Susa por Jacques de Morgan, bajo el monopolio de excavación exclusivo Francia-Persia, el mismo contexto institucional ya documentado para la Stèle de Naram-Sin y la cabeza atribuida a Hammurabi (ambas también trofeos elamitas trasladados a Susa en la Antigüedad). Adquirida por el Louvre vía partage después de las excavaciones de de Morgan.",
+        "notesEn": "Four-sided diorite pyramidal obelisk erected by Manishtusu, an Akkadian king (son of Sargon of Akkad), with 1,519 cells of cuneiform writing -- it recounts his military campaigns across the \"lower sea\" (the Persian/Arabian Gulf) and large land purchases divided among his officers. The piece was plundered twice over: in antiquity, the Elamite king Shutruk-Nahhunte carried it off as war booty from Mesopotamia to Susa in the 12th century BC -- over a thousand years before any French involvement --, and it was only found at the Susa acropolis in 1897-98 by Jacques de Morgan, under the exclusive Franco-Persian excavation monopoly, the same institutional context already documented for the Naram-Sin stele and the head attributed to Hammurabi (both likewise Elamite war trophies moved to Susa in antiquity). Acquired by the Louvre via partage following de Morgan's excavations."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. XXIII a.C. (reinado de Manishtusu)",
+          "actor_or_institution": "Manishtusu, rey de Acad",
+          "location": "Mesopotamia (Acad)",
+          "description": "Obelisco erigido por Manishtusu para conmemorar campañas militares y compras de tierra.",
+          "descriptionEs": "Obelisco erigido por Manishtusu para conmemorar campañas militares y compras de tierra.",
+          "descriptionEn": "Obelisk erected by Manishtusu to commemorate military campaigns and land purchases.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010123454",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "s. XII a.C.",
+          "actor_or_institution": "Shutruk-Nahhunte, rey de Elam",
+          "location": "Susa, Persia",
+          "description": "El obelisco es llevado como botín de guerra desde Mesopotamia hasta Susa por el rey elamita Shutruk-Nahhunte -- despojo ocurrido más de mil años antes de cualquier intervención francesa.",
+          "descriptionEs": "El obelisco es llevado como botín de guerra desde Mesopotamia hasta Susa por el rey elamita Shutruk-Nahhunte -- despojo ocurrido más de mil años antes de cualquier intervención francesa.",
+          "descriptionEn": "The obelisk is carried off as war booty from Mesopotamia to Susa by the Elamite king Shutruk-Nahhunte -- a plunder that took place over a thousand years before any French involvement.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010123454",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "excavation",
+          "event_date": "1897-1898",
+          "actor_or_institution": "Jacques de Morgan",
+          "location": "Susa (acrópolis), Persia (actual Irán)",
+          "description": "De Morgan excava la acrópolis de Susa bajo el monopolio de excavación exclusivo Francia-Persia y descubre el obelisco.",
+          "descriptionEs": "De Morgan excava la acrópolis de Susa bajo el monopolio de excavación exclusivo Francia-Persia y descubre el obelisco.",
+          "descriptionEn": "De Morgan excavates the Susa acropolis under the exclusive Franco-Persian excavation monopoly and discovers the obelisk.",
+          "source_url": "https://fr.wikipedia.org/wiki/Ob%C3%A9lisque_de_Manishtusu",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1898",
+          "actor_or_institution": "Musée du Louvre (partage après fouilles)",
+          "location": "París, Francia",
+          "description": "El Louvre recibe el obelisco vía partage tras las excavaciones de de Morgan en Susa.",
+          "descriptionEs": "El Louvre recibe el obelisco vía partage tras las excavaciones de de Morgan en Susa.",
+          "descriptionEn": "The Louvre receives the obelisk via partage following de Morgan's excavations at Susa.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010123454",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010123458",
@@ -10420,8 +11186,57 @@
       "originLon": 38.2792,
       "originCountry": "Siria",
       "originCountryEn": "Syria",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Syria",
+        "notes": "Relieve de piedra caliza que representa una tríada divina de Palmira -- Baal-Shamin al centro, flanqueado por Aglibol (luna) y Malakbel (sol) --, hallado en Bir Wereb, en la región palmirena (Siria), y datado en la primera mitad del s. I d.C. El registro del Louvre no documenta excavador ni circunstancias del hallazgo, solo que la pieza fue comprada en 1945 -- el último año del Mandato Francés en Siria antes de la independencia formal del país en 1946, un período de fuerte tensión política (la Crisis de Levante de mayo de 1945 incluyó el bombardeo francés de Damasco). Sin más información sobre cómo llegó al mercado de antigüedades ni quién la vendió.",
+        "notesEn": "Limestone relief depicting a Palmyrene divine triad -- Baal-Shamin at the center, flanked by Aglibol (the moon) and Malakbel (the sun) --, found at Bir Wereb, in the Palmyrene region (Syria), and dated to the first half of the 1st century AD. The Louvre's record documents no excavator or circumstances of discovery, only that the piece was purchased in 1945 -- the final year of the French Mandate for Syria before the country's formal independence in 1946, a period of intense political tension (the May 1945 Levant Crisis included the French bombardment of Damascus). No further information on how it reached the antiquities market or who sold it."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "primera mitad s. I d.C.",
+          "actor_or_institution": "Artesanos palmirenos (no identificado/a)",
+          "location": "Bir Wereb, región de Palmira, Siria",
+          "description": "Relieve tallado representando la tríada divina de Palmira.",
+          "descriptionEs": "Relieve tallado representando la tríada divina de Palmira.",
+          "descriptionEn": "Relief carved depicting the Palmyrene divine triad.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010127854",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Desconocido/a",
+          "location": "Bir Wereb, Siria",
+          "description": "Sin excavador ni circunstancias de hallazgo documentadas.",
+          "descriptionEs": "Sin excavador ni circunstancias de hallazgo documentadas.",
+          "descriptionEn": "No excavator or discovery circumstances documented.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010127854",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1945",
+          "actor_or_institution": "Musée du Louvre",
+          "location": "París, Francia",
+          "description": "Comprada por el Louvre en el último año del Mandato Francés en Siria.",
+          "descriptionEs": "Comprada por el Louvre en el último año del Mandato Francés en Siria.",
+          "descriptionEn": "Purchased by the Louvre in the final year of the French Mandate for Syria.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010127854",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010130455",
@@ -11364,8 +12179,70 @@
       "originLon": 30.9017,
       "originCountry": "Egipto",
       "originCountryEn": "Egypt",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Egypt",
+        "notes": "Tablilla cuneiforme de Tell el-Amarna, parte del archivo diplomático conocido como \"Cartas de Amarna\" -- correspondencia entre el faraón egipcio y otros gobernantes/vasallos de Oriente Próximo durante el reinado de Ajenatón (s. XIV a.C.). El archivo completo fue hallado por casualidad en 1887 por una campesina local que cavaba en las ruinas de Amarna buscando tierra fértil para su huerta; los habitantes locales extrajeron un gran número de tablillas y las vendieron en el mercado de antigüedades antes de que se determinara con precisión el sitio de origen. El hallazgo ocurrió bajo Egipto khedival, ya con ocupación militar británica de facto desde 1882 pero sin que el mercado de antigüedades estuviera bajo control colonial directo. Las tablillas terminaron dispersas entre el Museo de Berlín (~202), El Cairo (~49), el Louvre (7, incluida esta pieza), Moscú (3) y Chicago (1). Recién en 1891-92 Flinders Petrie excavó el sitio de forma sistemática y recuperó tablillas adicionales.",
+        "notesEn": "Cuneiform tablet from Tell el-Amarna, part of the diplomatic archive known as the \"Amarna Letters\" -- correspondence between the Egyptian pharaoh and other Near Eastern rulers/vassals during Akhenaten's reign (14th century BC). The full archive was discovered by chance in 1887 by a local peasant woman digging in the Amarna ruins for fertile soil for her garden; local residents extracted a large number of tablets and sold them on the antiquities market before the findspot was precisely determined. The find occurred under khedival Egypt, already under de facto British military occupation since 1882 but with the antiquities market not under direct colonial control. The tablets ended up dispersed among the Berlin Museum (~202), Cairo (~49), the Louvre (7, including this piece), Moscow (3), and Chicago (1). Only in 1891-92 did Flinders Petrie systematically excavate the site and recover additional tablets."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. XIV a.C. (reinado de Ajenatón)",
+          "actor_or_institution": "Cancillería real egipcia",
+          "location": "Akhetaton (Tell el-Amarna), Egipto",
+          "description": "Tablilla cuneiforme del archivo diplomático real.",
+          "descriptionEs": "Tablilla cuneiforme del archivo diplomático real.",
+          "descriptionEn": "Cuneiform tablet from the royal diplomatic archive.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010167793",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1887",
+          "actor_or_institution": "Campesina local (no identificada)",
+          "location": "Tell el-Amarna, Egipto",
+          "description": "Hallazgo casual del archivo durante trabajo agrícola, seguido de extracción y venta por habitantes locales.",
+          "descriptionEs": "Hallazgo casual del archivo durante trabajo agrícola, seguido de extracción y venta por habitantes locales.",
+          "descriptionEn": "Chance discovery of the archive during farm work, followed by extraction and sale by local residents.",
+          "source_url": "https://en.wikipedia.org/wiki/Amarna_letters",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "sale",
+          "event_date": "1887 en adelante",
+          "actor_or_institution": "Mercado de antigüedades de Egipto",
+          "location": "El Cairo / Luxor, Egipto",
+          "description": "Las tablillas se venden y dispersan entre varios museos internacionales, incluido el Louvre.",
+          "descriptionEs": "Las tablillas se venden y dispersan entre varios museos internacionales, incluido el Louvre.",
+          "descriptionEn": "The tablets are sold and dispersed among several international museums, including the Louvre.",
+          "source_url": "https://en.wikipedia.org/wiki/Amarna_letters",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "sin fecha específica",
+          "actor_or_institution": "Musée du Louvre",
+          "location": "París, Francia",
+          "description": "El Louvre adquiere 7 de las tablillas del archivo disperso.",
+          "descriptionEs": "El Louvre adquiere 7 de las tablillas del archivo disperso.",
+          "descriptionEn": "The Louvre acquires 7 of the tablets from the dispersed archive.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010167793",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010167794",
@@ -11422,8 +12299,70 @@
       "originLon": 48.2578,
       "originCountry": "Irán",
       "originCountryEn": "Iran",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "partage"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Ladrillos vidriados que forman parte del friso de los arqueros del palacio aqueménida de Darío I en Susa (actual Irán), uno de los conjuntos más emblemáticos del arte persa aqueménida. Hallados en los alrededores del apadana de Susa en dos oleadas: la primera, entre 1884 y 1886, por la pareja de arqueólogos franceses Jane y Marcel Dieulafoy -- Jane Dieulafoy dirigió personalmente la exhumación de los frisos de los Leones y los Arqueros, y es conocida además como una de las primeras mujeres en obtener permiso oficial para vestir ropa masculina en Francia, en su caso por su trabajo de campo. Una segunda oleada de hallazgos llegó a partir de 1908, ya bajo la dirección de Roland de Mecquenem y Jacques de Morgan -- el mismo de Morgan de las excavaciones de Susa ya documentadas para el Obelisco de Manishtusu y otras piezas de esta muestra. La adquisición de esta pieza en particular está registrada en el Louvre como \"acquisition en mission\" (adquirida directamente durante la misión), sin fecha específica en el propio inventario.",
+        "notesEn": "Glazed bricks forming part of the Frieze of Archers from the Achaemenid palace of Darius I at Susa (present-day Iran), one of the most iconic ensembles of Achaemenid Persian art. Found around the Susa apadana in two waves: the first, between 1884 and 1886, by the French archaeologist couple Jane and Marcel Dieulafoy -- Jane Dieulafoy personally directed the excavation of the Lion and Archer friezes, and is also known as one of the first women to obtain official permission to wear men's clothing in France, in her case for her fieldwork. A second wave of finds arrived from 1908 onward, under Roland de Mecquenem and Jacques de Morgan -- the same de Morgan already documented for the Susa excavations behind the Manishtusu Obelisk and other pieces in this sample. This particular piece's acquisition is recorded by the Louvre as \"acquisition en mission\" (acquired directly during the mission), with no specific date in its own inventory."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "reinado de Darío I (s. VI-V a.C.)",
+          "actor_or_institution": "Taller real aqueménida",
+          "location": "Susa, Persia",
+          "description": "Ladrillos vidriados fabricados para decorar el palacio de Darío I.",
+          "descriptionEs": "Ladrillos vidriados fabricados para decorar el palacio de Darío I.",
+          "descriptionEn": "Glazed bricks made to decorate the palace of Darius I.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010170853",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1884-1886",
+          "actor_or_institution": "Jane y Marcel Dieulafoy",
+          "location": "Susa, Persia (actual Irán)",
+          "description": "Primera oleada de hallazgos del friso, bajo misión científica francesa dirigida por el matrimonio Dieulafoy.",
+          "descriptionEs": "Primera oleada de hallazgos del friso, bajo misión científica francesa dirigida por el matrimonio Dieulafoy.",
+          "descriptionEn": "First wave of frieze finds, under a French scientific mission led by the Dieulafoys.",
+          "source_url": "https://fr.wikipedia.org/wiki/Frise_des_archers",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "excavation",
+          "event_date": "desde 1908",
+          "actor_or_institution": "Roland de Mecquenem y Jacques de Morgan",
+          "location": "Susa, Persia",
+          "description": "Segunda oleada de hallazgos del friso.",
+          "descriptionEs": "Segunda oleada de hallazgos del friso.",
+          "descriptionEn": "Second wave of frieze finds.",
+          "source_url": "https://fr.wikipedia.org/wiki/Frise_des_archers",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "sin fecha específica",
+          "actor_or_institution": "Musée du Louvre (adquisición en misión)",
+          "location": "Susa, Persia / París, Francia",
+          "description": "Adquirida directamente durante la misión arqueológica francesa en Susa.",
+          "descriptionEs": "Adquirida directamente durante la misión arqueológica francesa en Susa.",
+          "descriptionEn": "Acquired directly during the French archaeological mission at Susa.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010170853",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010174063",
@@ -11745,8 +12684,57 @@
       "originLon": 48.2578,
       "originCountry": "Irán",
       "originCountryEn": "Iran",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "partage"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Estatua de bronce de la reina elamita Napirasu, esposa del rey Untash-Napirisha (segunda mitad del II milenio a.C.), la mayor pieza de fundición en bronce elamita conocida (1750 kg). Hallada en 1903 por Jacques de Morgan en el temenos del templo de Ninhursag, en la acrópolis de Suse -- mismo excavador y mismo mecanismo de monopolio de excavación exclusivo Francia-Persia ya documentado para el Kudurru de Nazimaruttash, el Obelisco de Manishtusu y otras piezas de esta muestra. Le falta la cabeza y la mayor parte del brazo izquierdo.",
+        "notesEn": "Bronze statue of the Elamite queen Napirasu, wife of King Untash-Napirisha (second half of the 2nd millennium BC), the largest known piece of Elamite bronze casting (1,750 kg). Found in 1903 by Jacques de Morgan in the temenos of the temple of Ninhursag, on the Susa acropolis -- the same excavator and the same exclusive Franco-Persian excavation monopoly already documented for the Kudurru of Nazimaruttash, the Manishtusu Obelisk, and other pieces in this sample. The head and most of the left arm are missing."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "segunda mitad del II milenio a.C.",
+          "actor_or_institution": "Talleres reales elamitas",
+          "location": "Susa, Elam (actual Irán)",
+          "description": "Estatua de bronce de la reina Napirasu.",
+          "descriptionEs": "Estatua de bronce de la reina Napirasu.",
+          "descriptionEn": "Bronze statue of Queen Napirasu.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010176829",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1903",
+          "actor_or_institution": "Jacques de Morgan",
+          "location": "Templo de Ninhursag, acrópolis de Susa, Persia (actual Irán)",
+          "description": "De Morgan halla la estatua bajo el monopolio de excavación exclusivo Francia-Persia.",
+          "descriptionEs": "De Morgan halla la estatua bajo el monopolio de excavación exclusivo Francia-Persia.",
+          "descriptionEn": "De Morgan finds the statue under the exclusive Franco-Persian excavation monopoly.",
+          "source_url": "https://fr.wikipedia.org/wiki/Statue_de_Napirasu",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "1903",
+          "actor_or_institution": "Musée du Louvre",
+          "location": "París, Francia",
+          "description": "Ingresa a la colección del Louvre por partage tras la excavación.",
+          "descriptionEs": "Ingresa a la colección del Louvre por partage tras la excavación.",
+          "descriptionEn": "Enters the Louvre's collection via partage after the excavation.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010176829",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010186847",
@@ -13573,8 +14561,57 @@
       "originLon": 21.63,
       "originCountry": "Grecia",
       "originCountryEn": "Greece",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "treaty_transfer"
+        ],
+        "associated_communities_or_states": "Greece",
+        "notes": "Métopa del templo de Zeus en Olimpia que representa a Heracles capturando al toro de Creta, uno de sus doce trabajos. Hallada en 1829 por la Expédition scientifique de Morée, la misión franco-griega organizada tras la independencia griega para documentar el Peloponeso -- misma expedición y mismo mecanismo diplomático (donación del gobierno griego recién independizado de Ioannis Kapodistrias, no extracción colonial) ya documentado para las tres metopas de Heracles contra Gerión de esta muestra, encontradas en el mismo templo.",
+        "notesEn": "Metope from the Temple of Zeus at Olympia depicting Heracles capturing the Cretan Bull, one of his twelve labors. Found in 1829 by the Expédition scientifique de Morée, the Franco-Greek mission organized after Greek independence to document the Peloponnese -- the same expedition and the same diplomatic mechanism (a gift from the newly independent Greek government of Ioannis Kapodistrias, not colonial extraction) already documented for this sample's three metopes of Heracles and Geryon, found at the same temple."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. V a.C.",
+          "actor_or_institution": "Escultores griegos (no identificado/a)",
+          "location": "Olimpia, Grecia",
+          "description": "Métopa tallada para el templo de Zeus, representando a Heracles y el toro de Creta.",
+          "descriptionEs": "Métopa tallada para el templo de Zeus, representando a Heracles y el toro de Creta.",
+          "descriptionEn": "Metope carved for the Temple of Zeus, depicting Heracles and the Cretan Bull.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010279027",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1829",
+          "actor_or_institution": "Expédition scientifique de Morée",
+          "location": "Templo de Zeus, Olimpia, Grecia",
+          "description": "Hallada durante la misión científica franco-griega.",
+          "descriptionEs": "Hallada durante la misión científica franco-griega.",
+          "descriptionEn": "Found during the Franco-Greek scientific mission.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010279027",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1830",
+          "actor_or_institution": "Gobierno de Ioannis Kapodistrias (Grecia)",
+          "location": "Grecia / Francia",
+          "description": "Donada por el gobierno de la Grecia recién independizada, como regalo diplomático.",
+          "descriptionEs": "Donada por el gobierno de la Grecia recién independizada, como regalo diplomático.",
+          "descriptionEn": "Donated by the government of newly independent Greece, as a diplomatic gift.",
+          "source_url": "https://collections.louvre.fr/en/ark:/53355/cl010279027",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "louvre:cl010279145",
@@ -18389,8 +19426,44 @@
       "originLon": 46.8691,
       "originCountry": "Madagascar",
       "originCountryEn": "Madagascar",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Madagascar",
+        "notes": "Brazalete de plata malgache, descrito en la etiqueta original del vendedor como una \"reliquia familiar malgache\" (vako-drazana en la nota, \"herencia\" en los proverbios locales), vista según esa misma nota por los primeros exploradores europeos en Madagascar hacia 1800. Comprado por el Museo Británico en 1900 a un tal Rev. A. N. Johnson -- un misionero de la London Missionary Society, activa en Madagascar desde 1818, antes incluso de la anexión formal francesa de la isla en 1896. La venta ocurre así en un momento de transición: Madagascar ya colonia francesa, pero con presencia continuada de misioneros protestantes británicos de una etapa anterior. No hay más información documentada sobre cómo Johnson obtuvo la pieza.",
+        "notesEn": "Malagasy silver armlet, described in the original vendor's label as a \"Malagasy heirloom\" (\"vako-drazana\" in the note, \"heirloom\" per local proverbs), said in that same note to have been seen by early European explorers in Madagascar as far back as 1800. Purchased by the British Museum in 1900 from a Rev. A. N. Johnson -- a London Missionary Society missionary, active in Madagascar since 1818, well before the island's formal French annexation in 1896. The sale thus takes place at a moment of transition: Madagascar already a French colony, but with continued presence of British Protestant missionaries from an earlier era. No further information is documented on how Johnson obtained the piece."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 1900 (posiblemente s. XIX o anterior)",
+          "actor_or_institution": "Orfebres malgaches (no identificado/a)",
+          "location": "Madagascar",
+          "description": "Brazalete de plata descrito como reliquia familiar malgache.",
+          "descriptionEs": "Brazalete de plata descrito como reliquia familiar malgache.",
+          "descriptionEn": "Silver armlet described as a Malagasy family heirloom.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1900-0524-37",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "sale",
+          "event_date": "1900",
+          "actor_or_institution": "Rev. A. N. Johnson (misionero de la London Missionary Society)",
+          "location": "Madagascar (entonces colonia francesa)",
+          "description": "El Museo Británico compra la pieza a Johnson, misionero protestante británico activo en Madagascar bajo administración colonial francesa.",
+          "descriptionEs": "El Museo Británico compra la pieza a Johnson, misionero protestante británico activo en Madagascar bajo administración colonial francesa.",
+          "descriptionEn": "The British Museum purchases the piece from Johnson, a British Protestant missionary active in Madagascar under French colonial administration.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1900-0524-37",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1900-55",
@@ -19174,8 +20247,57 @@
       "originLon": -11.7799,
       "originCountry": "Sierra Leona",
       "originCountryEn": "Sierra Leone",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Sierra Leone",
+        "notes": "Hacha de piedra pulida (tipo azuela), de piedra ocre de grano fino, hallada hacia 1937 por un prospector de oro de apellido Wilkins, a unos 90 cm de profundidad en aluvión aurífero cerca del lago Sonfon, distrito de Koinadugu, Sierra Leona -- entonces protectorado/colonia británica. Un hallazgo incidental de prospección minera colonial, no una excavación arqueológica. Donada al Museo Británico en 1947 por T. S. Jones, sin relación documentada con el propio Wilkins.",
+        "notesEn": "Polished stone adze/celt, of fine-grained ochre stone, found around 1937 by a gold prospector named Wilkins, about three feet down in gold-bearing alluvium near Lake Sonfon, Koinadugu district, Sierra Leone -- then a British protectorate/colony. An incidental find from colonial-era mineral prospecting, not an archaeological excavation. Donated to the British Museum in 1947 by T. S. Jones, with no documented connection to Wilkins himself."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "fecha incierta (prehistoria)",
+          "actor_or_institution": "Desconocido/a",
+          "location": "Koinadugu, Sierra Leona",
+          "description": "Hacha de piedra pulida de tipo azuela.",
+          "descriptionEs": "Hacha de piedra pulida de tipo azuela.",
+          "descriptionEn": "Polished stone adze/celt.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1947-30-1",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "h. 1937",
+          "actor_or_institution": "Wilkins (prospector de oro)",
+          "location": "Cerca del lago Sonfon, Koinadugu, Sierra Leona (entonces colonia/protectorado británico)",
+          "description": "Hallada de forma incidental en aluvión aurífero durante actividad de prospección minera.",
+          "descriptionEs": "Hallada de forma incidental en aluvión aurífero durante actividad de prospección minera.",
+          "descriptionEn": "Found incidentally in gold-bearing alluvium during mineral prospecting activity.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1947-30-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1947",
+          "actor_or_institution": "T. S. Jones",
+          "location": "Londres, Reino Unido",
+          "description": "Donada al Museo Británico, sin relación documentada con el hallador.",
+          "descriptionEs": "Donada al Museo Británico, sin relación documentada con el hallador.",
+          "descriptionEn": "Donated to the British Museum, with no documented connection to the finder.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1947-30-1",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1954-17-1-a-b",
@@ -19203,8 +20325,44 @@
       "originLon": 4.5521,
       "originCountry": "Nigeria",
       "originCountryEn": "Nigeria",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Nigeria",
+        "notes": "Dos cuentas de vidrio, según el propio registro de 1954 del Museo Británico, procedentes de la \"Cabeza de Bronce No. 7\" -- una de las trece cabezas y la figura de medio cuerpo halladas por casualidad en enero de 1938 en el Wunmonije Compound de Ife, Nigeria (entonces colonia/protectorado británico), durante la excavación de cimientos para una vivienda. La mayoría de las piezas del hallazgo quedó en el Museo Nacional de Ife, pero algunas salieron del país por distintas vías -- una de las cabezas terminó en el propio Museo Británico en 1939, llevada por el editor del Daily Times de Nigeria. Estas dos cuentas, en cambio, llegaron por una vía institucional distinta: donadas por el Lagos Museum en 1954, dieciséis años después del hallazgo -- probablemente como intercambio o colaboración académica entre museos, en Nigeria colonial (independencia recién en 1960), aunque las fuentes consultadas no documentan el motivo puntual del envío.",
+        "notesEn": "Two glass beads which, according to the British Museum's own 1954 register, came from \"Bronze Head No. 7\" -- one of the thirteen heads and the half-figure found by chance in January 1938 at the Wunmonije Compound in Ife, Nigeria (then a British colony/protectorate), during the digging of house foundations. Most of the find remained at the National Museum of Ife, but some pieces left the country by different routes -- one head ended up at the British Museum itself in 1939, taken by the editor of Nigeria's Daily Times. These two beads, by contrast, arrived via a different institutional route: donated by the Lagos Museum in 1954, sixteen years after the find -- likely as an inter-museum exchange or academic collaboration, in colonial Nigeria (independence only in 1960), though the sources consulted do not document the specific reason for the transfer."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "excavation",
+          "event_date": "enero de 1938",
+          "actor_or_institution": "Desconocido/a (obra de construcción)",
+          "location": "Wunmonije Compound, Ife, Nigeria",
+          "description": "Hallazgo casual del conjunto de cabezas de bronce/latón de Ife, incluida la Cabeza No. 7 de la que proceden estas cuentas.",
+          "descriptionEs": "Hallazgo casual del conjunto de cabezas de bronce/latón de Ife, incluida la Cabeza No. 7 de la que proceden estas cuentas.",
+          "descriptionEn": "Chance discovery of the Ife bronze/brass heads, including Head No. 7, the source of these beads.",
+          "source_url": "https://en.wikipedia.org/wiki/Bronze_Head_from_Ife",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "gift",
+          "event_date": "1954",
+          "actor_or_institution": "Lagos Museum",
+          "location": "Lagos, Nigeria (entonces colonia británica)",
+          "description": "El Lagos Museum dona las dos cuentas al Museo Británico, dieciséis años después del hallazgo.",
+          "descriptionEs": "El Lagos Museum dona las dos cuentas al Museo Británico, dieciséis años después del hallazgo.",
+          "descriptionEn": "The Lagos Museum donates the two beads to the British Museum, sixteen years after the find.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Af1954-17-1-a-b",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Af1954-23-2641-a-b",
@@ -20056,8 +21214,70 @@
       "originLon": -124.8457,
       "originCountry": "Canadá",
       "originCountryEn": "Canada",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "private_collection",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Canada",
+        "notes": "Bolsa hecha con el pico de un pelícano blanco americano, con trabajo de púas, atribuida a un pueblo cree del río Mackenzie (Territorios del Noroeste, Canadá) -- la etiqueta original dice \"Red Indian bag made from a Pelican's bill, July 1858\" y un documento de préstamo de 1939 la describe como \"pelican's bill bag with quillwork, Mackenzie River\". Casi con certeza fue recolectada junto con otros materiales por el mayor George Seton en la década de 1850, en el territorio entonces bajo control de la Hudson's Bay Company (\"Rupert's Land\") -- una carta fechada el 1 de julio de 1878, conservada en los archivos del Museo, del propio Seton, describe \"a Cree Bag made of lower mandible of Pelican brought from Rupert's Land\". La pieza formó parte de la colección del Warwickshire Museum antes de ser comprada por el Museo Británico en 1982.",
+        "notesEn": "Bag made from the bill of an American White Pelican, with quillwork, attributed to a Cree people of the Mackenzie River (Northwest Territories, Canada) -- the original label reads \"Red Indian bag made from a Pelican's bill, July 1858\" and a 1939 loan document describes it as a \"pelican's bill bag with quillwork, Mackenzie River.\" It was almost certainly collected along with other material by Major George Seton in the 1850s, in territory then under the control of the Hudson's Bay Company (\"Rupert's Land\") -- a letter dated 1 July 1878, held in the Museum's archives, from Seton himself, describes \"a Cree Bag made of lower mandible of Pelican brought from Rupert's Land.\" The piece was part of the Warwickshire Museum's collection before being purchased by the British Museum in 1982."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de julio de 1858",
+          "actor_or_institution": "Pueblo cree (no identificado/a)",
+          "location": "Río Mackenzie, Territorios del Noroeste, Canadá",
+          "description": "Bolsa confeccionada con el pico de un pelícano blanco americano y decorada con trabajo de púas.",
+          "descriptionEs": "Bolsa confeccionada con el pico de un pelícano blanco americano y decorada con trabajo de púas.",
+          "descriptionEn": "Bag made from the bill of an American White Pelican, decorated with quillwork.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1982-28-13",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "década de 1850",
+          "actor_or_institution": "Mayor George Seton",
+          "location": "Rupert's Land (territorio de la Hudson's Bay Company), Canadá",
+          "description": "Recolectada casi con certeza por el mayor George Seton, junto con otros objetos de la misma región -- documentado por una carta de Seton de 1878 conservada en los archivos del Museo.",
+          "descriptionEs": "Recolectada casi con certeza por el mayor George Seton, junto con otros objetos de la misma región -- documentado por una carta de Seton de 1878 conservada en los archivos del Museo.",
+          "descriptionEn": "Almost certainly collected by Major George Seton, along with other objects from the same region -- documented by an 1878 letter from Seton held in the Museum's archives.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1982-28-13",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "antes de 1982",
+          "actor_or_institution": "Warwickshire Museum",
+          "location": "Warwick, Reino Unido",
+          "description": "La pieza pasa a formar parte de la colección del Warwickshire Museum.",
+          "descriptionEs": "La pieza pasa a formar parte de la colección del Warwickshire Museum.",
+          "descriptionEn": "The piece becomes part of the Warwickshire Museum's collection.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1982-28-13",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "acquisition",
+          "event_date": "1982",
+          "actor_or_institution": "British Museum (comprada al Warwickshire Museum)",
+          "location": "Londres, Reino Unido",
+          "description": "El Museo Británico compra la pieza al Warwickshire Museum.",
+          "descriptionEs": "El Museo Británico compra la pieza al Warwickshire Museum.",
+          "descriptionEn": "The British Museum purchases the piece from the Warwickshire Museum.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1982-28-13",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Am1983-12-35",
@@ -20172,8 +21392,70 @@
       "originLon": -77.2975,
       "originCountry": "Jamaica",
       "originCountryEn": "Jamaica",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Jamaica",
+        "notes": "Figura antropomorfa de madera taína hallada en Jamaica (entonces colonia británica), datada por radiocarbono h. 1220-1280 d.C. -- una de las pocas esculturas de madera taína jamaicana que sobreviven. La pieza es en sí misma un caso curioso de identidad perdida y recuperada: fue donada al Museo en 1757 por James Theobald, cuatro años después de la fundación del Museo Británico, con el número original Am1757,0520.1 -- pero ese número se perdió con el tiempo, y la pieza quedó re-registrada como \"desconocida\" bajo el número Am1997,Q.793 en 1997. Fue la investigadora Joanna Ostapkowicz quien, revisando los archivos de la Royal Society, encontró una carta de época con las medidas exactas de la figura hallada en Jamaica en la década de 1730 -- coincidentes con las de este objeto -- permitiendo reidentificarla dos siglos y medio después de su ingreso original. No hay información sobre quién recolectó la pieza en Jamaica ni bajo qué circunstancias exactas, más allá del contexto general de la isla como colonia británica azucarera del siglo XVIII.",
+        "notesEn": "Wooden Taino anthropomorphic figure found in Jamaica (then a British colony), radiocarbon-dated to c. 1220-1280 AD -- one of the few surviving Jamaican Taino wood sculptures. The piece is itself a curious case of lost-and-recovered identity: it was donated to the Museum in 1757 by James Theobald, four years after the British Museum's founding, under the original number Am1757,0520.1 -- but that number was lost over time, and the piece was re-registered as \"unidentified\" under number Am1997,Q.793 in 1997. It was researcher Joanna Ostapkowicz who, while reviewing the Royal Society's archives, found a period letter with the exact measurements of a figure found in Jamaica in the 1730s -- matching this object's -- allowing it to be re-identified two and a half centuries after its original accession. There is no information on who collected the piece in Jamaica or under what exact circumstances, beyond the general context of the island as an 18th-century British sugar colony."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1220-1280 d.C. (datación por radiocarbono)",
+          "actor_or_institution": "Pueblo taíno (no identificado/a)",
+          "location": "Jamaica",
+          "description": "Figura antropomorfa tallada en madera por artesanos taínos.",
+          "descriptionEs": "Figura antropomorfa tallada en madera por artesanos taínos.",
+          "descriptionEn": "Anthropomorphic figure carved in wood by Taino craftspeople.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1997-Q-793",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "década de 1730",
+          "actor_or_institution": "Desconocido/a",
+          "location": "Jamaica",
+          "description": "Hallada en Jamaica en la década de 1730, según la carta de época encontrada por Ostapkowicz en los archivos de la Royal Society -- sin más detalle sobre el hallador o las circunstancias del hallazgo.",
+          "descriptionEs": "Hallada en Jamaica en la década de 1730, según la carta de época encontrada por Ostapkowicz en los archivos de la Royal Society -- sin más detalle sobre el hallador o las circunstancias del hallazgo.",
+          "descriptionEn": "Found in Jamaica in the 1730s, according to the period letter located by Ostapkowicz in the Royal Society's archives -- with no further detail on the finder or the circumstances of the find.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1997-Q-793",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1757",
+          "actor_or_institution": "James Theobald",
+          "location": "Londres, Reino Unido",
+          "description": "Donada al Museo Británico por James Theobald bajo el número original Am1757,0520.1, cuatro años después de la fundación del Museo.",
+          "descriptionEs": "Donada al Museo Británico por James Theobald bajo el número original Am1757,0520.1, cuatro años después de la fundación del Museo.",
+          "descriptionEn": "Donated to the British Museum by James Theobald under the original number Am1757,0520.1, four years after the Museum's founding.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1997-Q-793",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "other",
+          "event_date": "1997",
+          "actor_or_institution": "Museo Británico / Joanna Ostapkowicz",
+          "location": "Londres, Reino Unido",
+          "description": "El número original se había perdido y la pieza fue re-registrada como 'desconocida' (Am1997,Q.793); Ostapkowicz la reidentifica cruzando una carta de archivo de la Royal Society con las medidas del objeto.",
+          "descriptionEs": "El número original se había perdido y la pieza fue re-registrada como 'desconocida' (Am1997,Q.793); Ostapkowicz la reidentifica cruzando una carta de archivo de la Royal Society con las medidas del objeto.",
+          "descriptionEn": "The original number had been lost and the piece was re-registered as 'unidentified' (Am1997,Q.793); Ostapkowicz re-identified it by cross-referencing a Royal Society archive letter with the object's measurements.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Am1997-Q-793",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Oc-6509",
@@ -20201,8 +21483,57 @@
       "originLon": -173.98,
       "originCountry": "Tonga",
       "originCountryEn": "Tonga",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Tonga",
+        "notes": "Pequeña azuela usada en la construcción de canoas, de Vava'u, Tonga, recolectada en julio de 1865 por Julius Lucius Brenchley (1816-1873), viajero y naturalista aficionado británico que se embarcó en el HMS Curaçoa en Sídney -- un buque de la Marina Real desplegado para proteger los intereses británicos en el Pacífico. Durante esa travesía por Tonga, Fiyi, las Nuevas Hébridas y las islas Salomón, Brenchley reunió una colección de más de mil objetos, publicada después en su libro \"Jottings During the Cruise of H.M.S. Curaçoa\" (1873) y dispersa entre el Museo de Maidstone, el Pitt Rivers Museum, el Museo de Exeter y el Museo Británico. Una nota posterior en el registro del Museo pone en duda el origen exacto (\"? Rotumah\"), sin resolver la discrepancia.",
+        "notesEn": "Small adze used in canoe-building, from Vava'u, Tonga, collected in July 1865 by Julius Lucius Brenchley (1816-1873), a British amateur traveler and naturalist who joined HMS Curaçoa at Sydney -- a Royal Navy vessel deployed to protect British interests in the Pacific. During that cruise through Tonga, Fiji, the New Hebrides and the Solomon Islands, Brenchley amassed a collection of over a thousand objects, later published in his book \"Jottings During the Cruise of H.M.S. Curaçoa\" (1873) and dispersed among Maidstone Museum, the Pitt Rivers Museum, Exeter Museum, and the British Museum. A later note in the Museum's record casts doubt on the exact origin (\"? Rotumah\"), left unresolved."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 1865",
+          "actor_or_institution": "Pueblo tongano (no identificado/a)",
+          "location": "Vava'u, Tonga",
+          "description": "Azuela usada para la construcción de canoas.",
+          "descriptionEs": "Azuela usada para la construcción de canoas.",
+          "descriptionEn": "Adze used for canoe-building.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc-6509",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "julio de 1865",
+          "actor_or_institution": "Julius Lucius Brenchley, a bordo del HMS Curaçoa",
+          "location": "Vava'u, Tonga",
+          "description": "Recolectada durante la travesía del HMS Curaçoa, buque de la Marina Real desplegado para proteger intereses británicos en el Pacífico.",
+          "descriptionEs": "Recolectada durante la travesía del HMS Curaçoa, buque de la Marina Real desplegado para proteger intereses británicos en el Pacífico.",
+          "descriptionEn": "Collected during the cruise of HMS Curaçoa, a Royal Navy vessel deployed to protect British interests in the Pacific.",
+          "source_url": "https://en.wikipedia.org/wiki/Julius_Brenchley",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1870",
+          "actor_or_institution": "Julius Lucius Brenchley",
+          "location": "Londres, Reino Unido",
+          "description": "Donada al Museo Británico.",
+          "descriptionEs": "Donada al Museo Británico.",
+          "descriptionEn": "Donated to the British Museum.",
+          "source_url": "https://www.britishmuseum.org/collection/object/E_Oc-6509",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "bm:E_Oc-HAW-138",
@@ -21960,8 +23291,84 @@
       "originLon": 178.065,
       "originCountry": "Fiyi",
       "originCountryEn": "Fiji",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "institutional_transfer",
+          "art_market"
+        ],
+        "associated_communities_or_states": "Fiji",
+        "notes": "Espantamoscas ceremonial (\"Iroi\") de Fiyi (poblado de Muri Muri, isla de Matuku), recolectado durante la expedición privada francesa de \"La Korrigane\" (1934-1936, organizada por los Ganay y los van den Broek d'Obrenan con respaldo científico de Paul Rivet -- mismo mecanismo ya documentado para otras piezas de esta muestra) e integrado después a la colección del Musée de l'Homme (sección Oceanía). A diferencia de esas otras piezas, esta pasó además por una venta pública en el Hôtel des ventes Drouot antes de llegar a Quai Branly -- parte de la misma dispersión de objetos de la colección de La Korrigane ya mencionada para otra pieza de esta muestra (el amuleto de Manus, qb:17904).",
+        "notesEn": "Ceremonial fly-whisk (\"Iroi\") from Fiji (Muri Muri village, Matuku island), collected during the private French expedition \"La Korrigane\" (1934-1936, organized by the Ganay and van den Broek d'Obrenan families with scientific backing from Paul Rivet -- the same mechanism already documented for other pieces in this sample) and later integrated into the Musée de l'Homme's collection (Oceania section). Unlike those other pieces, this one also passed through a public sale at the Hôtel des ventes Drouot before reaching Quai Branly -- part of the same dispersal of La Korrigane collection material already noted for another piece in this sample (the Manus amulet, qb:17904)."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 1934",
+          "actor_or_institution": "Pueblo fiyiano (no identificado/a)",
+          "location": "Muri Muri, isla de Matuku, Fiyi",
+          "description": "Espantamoscas ceremonial de manufactura fiyiana.",
+          "descriptionEs": "Espantamoscas ceremonial de manufactura fiyiana.",
+          "descriptionEn": "Ceremonial fly-whisk of Fijian manufacture.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/18218",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1934-1936",
+          "actor_or_institution": "Expedición \"La Korrigane\"",
+          "location": "Muri Muri, Matuku, Fiyi",
+          "description": "Recolectado durante la expedición privada de La Korrigane.",
+          "descriptionEs": "Recolectado durante la expedición privada de La Korrigane.",
+          "descriptionEn": "Collected during the private La Korrigane expedition.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/18218",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musée de l'Homme (sección Oceanía)",
+          "location": "París, Francia",
+          "description": "Integra la colección oceanista del Musée de l'Homme.",
+          "descriptionEs": "Integra la colección oceanista del Musée de l'Homme.",
+          "descriptionEn": "Part of the Musée de l'Homme's Oceania collection.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/18218",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "sale",
+          "event_date": "s. XX",
+          "actor_or_institution": "Hôtel des ventes Drouot",
+          "location": "París, Francia",
+          "description": "Vendido en subasta pública antes de llegar a Quai Branly.",
+          "descriptionEs": "Vendido en subasta pública antes de llegar a Quai Branly.",
+          "descriptionEn": "Sold at public auction before reaching Quai Branly.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/18218",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musée du Quai Branly",
+          "location": "París, Francia",
+          "description": "Pasa a la colección del museo nuevo.",
+          "descriptionEs": "Pasa a la colección del museo nuevo.",
+          "descriptionEn": "Enters the new museum's collection.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/18218",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:20682",
@@ -23206,8 +24613,57 @@
       "originLon": 101.9758,
       "originCountry": "Malasia",
       "originCountryEn": "Malaysia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "private_collection",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Malaysia",
+        "notes": "Peine de bambú tallado y decorado, \"peine de protección contra las enfermedades\" (tin leig o tela), de las regiones de Sungei Telom, Mensom y Jelai Kechil, estado de Pahang, y de la región de Sungei Batang Padang, estado de Perak, en la Malasia peninsular británica (principios del s. XX). Donado al Musée de l'Homme por un tal \"Mr. Chasseloup-Laubat\" -- probablemente François de Chasseloup-Laubat, quien estudió a los pueblos indígenas Sakai/Orang Asli de Perak y Pahang durante viajes a la Malasia central en 1928, 1933 y 1934, y donó fotografías de su trabajo de campo al mismo museo. Caso sin mecanismo colonial francés: Malasia era entonces territorio bajo administración colonial británica (Estados Malayos Federados), no francesa -- un investigador privado francés documentando pueblos indígenas dentro del imperio colonial de otra potencia europea.",
+        "notesEn": "Carved and decorated bamboo comb, a \"comb for protection against illness\" (tin leig or tela), from the Sungei Telom, Mensom and Jelai Kechil regions of Pahang state, and the Sungei Batang Padang region of Perak state, in British peninsular Malaya (early 20th century). Donated to the Musée de l'Homme by a \"Mr. Chasseloup-Laubat\" -- likely François de Chasseloup-Laubat, who studied the Sakai/Orang Asli Indigenous peoples of Perak and Pahang during trips to central Malaya in 1928, 1933, and 1934, and donated photographs from his fieldwork to the same museum. A case with no French colonial mechanism: Malaya was then territory under British colonial administration (the Federated Malay States), not French -- a private French researcher documenting Indigenous peoples within another European power's colonial empire."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "início del s. XX (1900-1920)",
+          "actor_or_institution": "Pueblo Sakai/Orang Asli (no identificado/a)",
+          "location": "Pahang / Perak, Malasia británica",
+          "description": "Peine de bambú tallado, usado como protección ritual contra enfermedades.",
+          "descriptionEs": "Peine de bambú tallado, usado como protección ritual contra enfermedades.",
+          "descriptionEn": "Carved bamboo comb, used as ritual protection against illness.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/53236",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1928-1934",
+          "actor_or_institution": "François de Chasseloup-Laubat (probable)",
+          "location": "Pahang / Perak, Malasia británica",
+          "description": "Recolectado durante viajes de estudio a las poblaciones Sakai/Orang Asli de la Malasia central.",
+          "descriptionEs": "Recolectado durante viajes de estudio a las poblaciones Sakai/Orang Asli de la Malasia central.",
+          "descriptionEn": "Collected during study trips to the Sakai/Orang Asli peoples of central Malaya.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/53236",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1934",
+          "actor_or_institution": "Musée de l'Homme (Asie)",
+          "location": "París, Francia",
+          "description": "Donado al Musée de l'Homme, antecesor de Quai Branly.",
+          "descriptionEs": "Donado al Musée de l'Homme, antecesor de Quai Branly.",
+          "descriptionEn": "Donated to the Musée de l'Homme, predecessor of Quai Branly.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/53236",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:53237",
@@ -24308,8 +25764,57 @@
       "originLon": -75.0152,
       "originCountry": "Perú",
       "originCountryEn": "Peru",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Peru",
+        "notes": "Amuleto de piedra blanquecina de tres puntas, de Cuzco, Perú, recolectado por Charles Wiener (1851-1913), explorador y arqueólogo francoaustríaco enviado por el gobierno francés en una misión científica arqueológica y etnográfica a Perú y Bolivia entre 1875 y 1877. Wiener recorrió Chan Chan, Chavín, Huánuco Viejo, Ayacucho, Vilcashuamán, Cuzco, Ollantaytambo y el Collao, siendo uno de los primeros europeos en referirse a Machu Picchu (sin llegar a redescubrirlo). Trajo a Francia un volumen considerable de material para el Museo Etnográfico del Trocadero (antecesor del Musée de l'Homme). Caso de contraste sin mecanismo colonial francés: Perú nunca fue colonia francesa, la misión operó bajo permiso del propio gobierno peruano, y el mecanismo es de misión científica de Estado, no de administración colonial.",
+        "notesEn": "Whitish three-pointed stone amulet, from Cuzco, Peru, collected by Charles Wiener (1851-1913), a French-Austrian explorer and archaeologist sent by the French government on a scientific archaeological and ethnographic mission to Peru and Bolivia between 1875 and 1877. Wiener traveled through Chan Chan, Chavín, Huánuco Viejo, Ayacucho, Vilcashuamán, Cuzco, Ollantaytambo, and the Collao, and was among the first Europeans to reference Machu Picchu (without actually rediscovering it). He brought back to France a considerable volume of material for the Trocadéro Ethnographic Museum (predecessor of the Musée de l'Homme). A contrast case with no French colonial mechanism: Peru was never a French colony, the mission operated with the permission of the Peruvian government itself, and the mechanism is a state scientific mission, not colonial administration."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "período prehispánico",
+          "actor_or_institution": "Cultura andina prehispánica (no identificado/a)",
+          "location": "Cuzco, Perú",
+          "description": "Amuleto de piedra de tres puntas.",
+          "descriptionEs": "Amuleto de piedra de tres puntas.",
+          "descriptionEn": "Three-pointed stone amulet.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/96514",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1875-1877",
+          "actor_or_institution": "Charles Wiener",
+          "location": "Cuzco, Perú",
+          "description": "Recolectado durante la misión científica francesa de Wiener a Perú y Bolivia.",
+          "descriptionEs": "Recolectado durante la misión científica francesa de Wiener a Perú y Bolivia.",
+          "descriptionEn": "Collected during Wiener's French scientific mission to Peru and Bolivia.",
+          "source_url": "https://en.wikipedia.org/wiki/Charles_Wiener",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1880",
+          "actor_or_institution": "Museo Etnográfico del Trocadero",
+          "location": "París, Francia",
+          "description": "Integra la colección del museo, antecesor del Musée de l'Homme y de Quai Branly.",
+          "descriptionEs": "Integra la colección del museo, antecesor del Musée de l'Homme y de Quai Branly.",
+          "descriptionEn": "Enters the museum's collection, predecessor to the Musée de l'Homme and Quai Branly.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/96514",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        }
+      ]
     },
     {
       "objectID": "qb:96515",
@@ -25294,8 +26799,70 @@
       "originLon": -102.5528,
       "originCountry": "México",
       "originCountryEn": "Mexico",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Mexico",
+        "notes": "Máscara de piel oscura con banda de piel para sujetarla, atribuida al pueblo lacandón de Sivacá (municipio de Ocosingo, Chiapas, México). Recolectada durante la misión etnográfica de Jacques y Georgette Soustelle a México en 1932-33, encargada por Paul Rivet -- el mismo antropólogo que ya aparece en otras piezas de esta muestra (colección de La Korrigane, amuleto de Ecuador) -- para estudiar a los pueblos otomí y lacandón. La misión formó parte de la primera etapa de la carrera de Jacques Soustelle, antes de convertirse décadas después en una figura política controvertida en la Argelia colonial francesa (fue Gobernador General de Argelia en 1955-56); esta pieza en particular corresponde a su período estrictamente científico, sin relación con ese episodio posterior. Existe una máscara gemela de la misma misión y el mismo sitio (qb:130232, no investigada por separado). Pasó por el Musée de l'Homme (sección América) antes de integrarse a la colección de Quai Branly. Caso de contraste: México nunca fue territorio colonial francés, pero la misión encaja en el mismo patrón de expediciones científicas francesas de la época (mismo respaldo institucional -- Rivet e Institut d'Ethnologie -- que otras piezas de la muestra).",
+        "notesEn": "Dark-skinned mask with a leather strap to hold it in place, attributed to the Lacandon people of Sivacá (Ocosingo municipality, Chiapas, Mexico). Collected during Jacques and Georgette Soustelle's ethnographic mission to Mexico in 1932-33, commissioned by Paul Rivet -- the same anthropologist who appears elsewhere in this sample (the La Korrigane collection, the Ecuador amulet) -- to study the Otomi and Lacandon peoples. The mission was part of the earliest stage of Jacques Soustelle's career, decades before he became a controversial political figure in French colonial Algeria (he served as Governor-General of Algeria in 1955-56); this particular piece belongs to his strictly scientific period, unrelated to that later episode. A twin mask from the same mission and site exists (qb:130232, not researched separately). It passed through the Musée de l'Homme (Americas section) before entering the Quai Branly collection. A contrast case: Mexico was never French colonial territory, but the mission fits the same pattern of French scientific expeditions of the era (same institutional backing -- Rivet and the Institut d'Ethnologie -- as other pieces in the sample)."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 1933",
+          "actor_or_institution": "Pueblo lacandón (no identificado/a)",
+          "location": "Sivacá, Ocosingo, Chiapas, México",
+          "description": "Máscara confeccionada por artesanos lacandones.",
+          "descriptionEs": "Máscara confeccionada por artesanos lacandones.",
+          "descriptionEn": "Mask made by Lacandon craftspeople.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/130231",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1932-1933",
+          "actor_or_institution": "Jacques y Georgette Soustelle (misión científica, encargada por Paul Rivet)",
+          "location": "Sivacá, Chiapas, México",
+          "description": "Recolectada durante la misión etnográfica de los Soustelle sobre los pueblos otomí y lacandón, encargada por Paul Rivet.",
+          "descriptionEs": "Recolectada durante la misión etnográfica de los Soustelle sobre los pueblos otomí y lacandón, encargada por Paul Rivet.",
+          "descriptionEn": "Collected during the Soustelles' ethnographic mission on the Otomi and Lacandon peoples, commissioned by Paul Rivet.",
+          "source_url": "https://www.persee.fr/doc/jsa_0037-9174_1933_num_25_1_1875",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musée de l'Homme (sección América)",
+          "location": "París, Francia",
+          "description": "Pasa a la colección americanista del Musée de l'Homme.",
+          "descriptionEs": "Pasa a la colección americanista del Musée de l'Homme.",
+          "descriptionEn": "Enters the Americas collection of the Musée de l'Homme.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/130231",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musée du Quai Branly",
+          "location": "París, Francia",
+          "description": "Pasa a la colección del museo nuevo.",
+          "descriptionEs": "Pasa a la colección del museo nuevo.",
+          "descriptionEn": "Enters the new museum's collection.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/130231",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:130232",
@@ -25584,8 +27151,70 @@
       "originLon": 1.6596,
       "originCountry": "Argelia",
       "originCountryEn": "Algeria",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "french_colonial_context",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Algeria",
+        "notes": "Broche de plata fundida en forma de estrella de seis puntas (\"Bzîm segaa\"/\"Medouar\"), fíbula tradicional bereber argelina, h. 1880-1920. Gemela de la pieza qb:302287 ya documentada en esta muestra: mismo tipo de objeto, misma incertidumbre de sitio de fabricación (el registro de Quai Branly lista hasta cinco topónimos alternativos posibles en Argelia y Malí, todos marcados con dudas), y adquirida el mismo día -- el cierre de la Exposición Colonial Internacional de París de 1931 (~8 millones de visitantes) -- vía el Pabellón de Argelia de esa exposición. A diferencia de su gemela, esta pieza documenta un paso institucional adicional antes de llegar a Quai Branly: integró la colección del Musée national des arts d'Afrique et d'Océanie (Maghreb) entre 1960 y 2003, el mismo museo predecesor ya documentado para otras piezas argelinas de la muestra (ver la broche qb:302287 y el cuchillo mangbetu del Congo).",
+        "notesEn": "Cast silver brooch in the shape of a six-pointed star (\"Bzîm segaa\"/\"Medouar\"), a traditional Algerian Berber fibula, c. 1880-1920. Twin of piece qb:302287 already documented in this sample: same object type, same uncertainty over its place of manufacture (Quai Branly's record lists up to five alternative possible toponyms across Algeria and Mali, all flagged with doubt), and acquired on the same day -- the closing of the 1931 Paris International Colonial Exhibition (~8 million visitors) -- via that exhibition's Algeria Pavilion. Unlike its twin, this piece documents one additional institutional step before reaching Quai Branly: it was part of the Musée national des arts d'Afrique et d'Océanie (Maghreb) collection between 1960 and 2003, the same predecessor museum already documented for other Algerian pieces in the sample (see the qb:302287 brooch and the Congolese Mangbetu knife)."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "h. 1880-1920",
+          "actor_or_institution": "Artesanas/os bereberes (no identificado/a)",
+          "location": "Argelia (sitio exacto incierto entre 4 topónimos alternativos)",
+          "description": "Broche de plata fundida, manufactura bereber tradicional.",
+          "descriptionEs": "Broche de plata fundida, manufactura bereber tradicional.",
+          "descriptionEn": "Cast silver brooch, traditional Berber manufacture.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/302286",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "27/11/1931",
+          "actor_or_institution": "Pabellón de Argelia, Exposición Colonial Internacional de 1931",
+          "location": "París, Francia",
+          "description": "Adquirida el día del cierre de la Exposición Colonial Internacional de 1931, vía el Pabellón de Argelia -- mismo día y mecanismo que su pieza gemela, qb:302287.",
+          "descriptionEs": "Adquirida el día del cierre de la Exposición Colonial Internacional de 1931, vía el Pabellón de Argelia -- mismo día y mecanismo que su pieza gemela, qb:302287.",
+          "descriptionEn": "Acquired on the closing day of the 1931 International Colonial Exhibition, via the Algeria Pavilion -- same day and mechanism as its twin piece, qb:302287.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/302286",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "1960-2003",
+          "actor_or_institution": "Musée national des arts d'Afrique et d'Océanie (Maghreb)",
+          "location": "París, Francia",
+          "description": "Integra la colección del museo predecesor especializado en el Magreb antes de su cierre en 2003.",
+          "descriptionEs": "Integra la colección del museo predecesor especializado en el Magreb antes de su cierre en 2003.",
+          "descriptionEn": "Part of the predecessor museum's Maghreb-focused collection before its 2003 closure.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/302286",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musée du Quai Branly",
+          "location": "París, Francia",
+          "description": "Pasa a la colección del museo nuevo.",
+          "descriptionEs": "Pasa a la colección del museo nuevo.",
+          "descriptionEn": "Enters the new museum's collection.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/302286",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:302287",
@@ -26728,8 +28357,70 @@
       "originLon": 156.839,
       "originCountry": "Islas Salomón",
       "originCountryEn": "Solomon Islands",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Solomon Islands",
+        "notes": "Colgante de las islas Salomón (región de Nueva Georgia/Isabel/Central), recolectado durante el segundo viaje de Jules Dumont d'Urville a bordo de L'Astrolabe (1837-1840) -- misma expedición ya documentada para otras piezas de Fiyi en esta muestra (massue qb:358884, collier qb:359082) y para la efigie maorí obtenida por intercambio con un jefe local (qb:359385). Pasó por el Musée national des arts d'Afrique et d'Océanie y el Musée d'archéologie nationale antes de llegar a Quai Branly -- una cadena institucional un poco distinta de la ruta habitual Musée de l'Homme→Quai Branly ya documentada para el grueso de las piezas de d'Urville de esta muestra.",
+        "notesEn": "Pendant from the Solomon Islands (New Georgia/Isabel/Central province region), collected during Jules Dumont d'Urville's second voyage aboard L'Astrolabe (1837-1840) -- the same expedition already documented for other Fiji pieces in this sample (the massue qb:358884, the collier qb:359082) and for the Maori effigy obtained by exchange with a local chief (qb:359385). It passed through the Musée national des arts d'Afrique et d'Océanie and the Musée d'archéologie nationale before reaching Quai Branly -- a slightly different institutional chain from the usual Musée de l'Homme→Quai Branly route already documented for most of this sample's d'Urville pieces."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 1838",
+          "actor_or_institution": "Pueblo de las islas Salomón (no identificado/a)",
+          "location": "Nueva Georgia/Isabel, islas Salomón",
+          "description": "Colgante de manufactura local.",
+          "descriptionEs": "Colgante de manufactura local.",
+          "descriptionEn": "Pendant of local manufacture.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/359023",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1837-1840",
+          "actor_or_institution": "Jules Dumont d'Urville (L'Astrolabe)",
+          "location": "Islas Salomón",
+          "description": "Recolectado durante el segundo viaje de Dumont d'Urville.",
+          "descriptionEs": "Recolectado durante el segundo viaje de Dumont d'Urville.",
+          "descriptionEn": "Collected during Dumont d'Urville's second voyage.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/359023",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XIX-XX",
+          "actor_or_institution": "Musée d'archéologie nationale / Musée national des arts d'Afrique et d'Océanie",
+          "location": "Francia",
+          "description": "Pasa por estas dos instituciones antes de Quai Branly.",
+          "descriptionEs": "Pasa por estas dos instituciones antes de Quai Branly.",
+          "descriptionEn": "Passes through these two institutions before Quai Branly.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/359023",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musée du Quai Branly",
+          "location": "París, Francia",
+          "description": "Pasa a la colección del museo nuevo.",
+          "descriptionEs": "Pasa a la colección del museo nuevo.",
+          "descriptionEn": "Enters the new museum's collection.",
+          "source_url": "https://collections.quaibranly.fr/#/objet/359023",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:359030",

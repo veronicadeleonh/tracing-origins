@@ -824,6 +824,15 @@
   margin-top: 14px;
 }
 
+/* Último paso del tour: sin "Skip tour" (no queda nada por saltear), así
+   que el footer tiene un solo hijo (.spotlight-callout-nav) -- sin esto,
+   `justify-content: space-between` con un único hijo lo deja pegado al
+   borde izquierdo (comportamiento de flexbox con un solo ítem), separado
+   del botón primario que en todos los demás pasos vive a la derecha. */
+.spotlight-callout-footer-solo {
+  justify-content: flex-end;
+}
+
 .spotlight-callout-skip {
   border: none;
   background: none;

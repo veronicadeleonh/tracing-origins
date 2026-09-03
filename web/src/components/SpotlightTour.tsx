@@ -29,10 +29,23 @@ interface Rect {
 
 function measure(selector: string | null): Rect | null {
   if (!selector) return null;
-  const el = document.querySelector(selector);
-  if (!el) return null;
-  const r = el.getBoundingClientRect();
-  return { top: r.top, left: r.left, width: r.width, height: r.height };
+  // querySelector solo devolvería el primer match en orden de DOM, sin
+  // importar si está visible -- rompía el paso del contador de piezas
+  // (`.piece-counter`, ver tourSteps.ts): esa clase la comparten
+  // `.piece-counter-top` (primero en el DOM, pero `display:none` fuera de
+  // mobile) y `.piece-counter-inline` (la que de verdad se ve en desktop),
+  // así que el spotlight terminaba midiendo un elemento de tamaño cero y no
+  // resaltaba nada. Recorremos todos los matches y usamos el primero con
+  // tamaño real -- más robusto que apuntar el selector a una clase
+  // específica, porque sigue funcionando si el orden del DOM cambia.
+  const candidates = document.querySelectorAll(selector);
+  for (const el of candidates) {
+    const r = el.getBoundingClientRect();
+    if (r.width > 0 && r.height > 0) {
+      return { top: r.top, left: r.left, width: r.width, height: r.height };
+    }
+  }
+  return null;
 }
 
 // Onboarding interactivo con spotlight (01/09) -- reemplaza la apertura
@@ -155,10 +168,12 @@ export function SpotlightTour({ lang, onClose, onOpenInfo }: SpotlightTourProps)
             {s.welcomeTriggerAria}
           </button>
         )}
-        <div className="spotlight-callout-footer">
-          <button type="button" className="spotlight-callout-skip" onClick={onClose}>
-            {s.tourSkip}
-          </button>
+        <div className={`spotlight-callout-footer${isLast ? " spotlight-callout-footer-solo" : ""}`}>
+          {!isLast && (
+            <button type="button" className="spotlight-callout-skip" onClick={onClose}>
+              {s.tourSkip}
+            </button>
+          )}
           <div className="spotlight-callout-nav">
             {!isFirst && (
               <button type="button" className="spotlight-callout-btn" onClick={goBack}>

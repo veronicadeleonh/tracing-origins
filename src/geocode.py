@@ -474,6 +474,21 @@ EDITORIAL_ORIGIN_OVERRIDES: dict[str, dict] = {
         "country": "Irak",
         "country_en": "Iraq",
     },
+    # "Drone Hits Great Ziggurat of Ur" -- dibujo complementario (met:969159,
+    # batch 15 layer 3 03/09) de la misma obra e instalación que met:910742
+    # arriba, comprado en la misma adquisición de 2025 (Museum Acquisitions
+    # Fund) -- mismo override, mismo motivo: sin ningún campo geográfico en
+    # la API del Met, el tema de la obra (el zigurat de Ur) es la única
+    # referencia geográfica real.
+    "met:969159": {
+        "label": "Ur, Irak (referencia temática de la obra)",
+        "label_en": "Ur, Iraq (the artwork's thematic reference)",
+        "precision": "editorial",
+        "lat": 30.9626,
+        "lon": 46.1039,
+        "country": "Irak",
+        "country_en": "Iraq",
+    },
     # Tiare de Saitapharnes -- falsificación moderna (ver context.csv). El
     # registro del Louvre marca placeOfDiscovery como "Inconnu" a propósito
     # (nunca fue una pieza antigua real). Layer 3 documenta que fue
@@ -508,6 +523,24 @@ EDITORIAL_ORIGIN_OVERRIDES: dict[str, dict] = {
         "lon": 30.8025,
         "country": "Egipto",
         "country_en": "Egypt",
+    },
+    # "Orthostates" (Rayyane Tabet, 2017-en curso, batch 14 layer 3 03/09) --
+    # obra de arte contemporáneo sin ningún campo geográfico poblado en la
+    # API del Met (country/region/subregion/culture todos vacíos, mismo
+    # patrón que "Drone Hits Great Ziggurat of Ur" arriba). La obra son 32
+    # frotados (rubbings) al carboncillo de los ortostatos reales de Tell
+    # Halaf, Siria -- ese es el tema geográfico central de la pieza, no un
+    # hallazgo arqueológico de la obra física (creada en el estudio del
+    # artista). Coordenadas de Tell Halaf (cerca de Ras al-Ain, frontera
+    # sirio-turca).
+    "met:820847": {
+        "label": "Tell Halaf, Siria (sitio arqueológico referenciado por la obra)",
+        "label_en": "Tell Halaf, Syria (the archaeological site the artwork references)",
+        "precision": "editorial",
+        "lat": 36.835,
+        "lon": 40.043,
+        "country": "Siria",
+        "country_en": "Syria",
     },
 }
 

@@ -29,7 +29,17 @@ const TOUR_SEEN_KEY = "tracing-origins-tour-seen";
 // patrón de localStorage + useEffect al montar.
 const LANG_KEY = "tracing-origins-lang";
 
-const TIMELINE_MIN_YEAR = 1700;
+// Rango acortado el 03/09 (pedido de la usuaria, con datos reales de
+// respaldo): accessionYear de las piezas va de 1793 a 2025 (el grueso recién
+// arranca en 1850+) y las 50 rutas navales curadas caen todas entre 1754 y
+// 1837 -- 1700 dejaba ~50 años de rango sin piezas ni rutas que mostrar.
+// 1750 cubre el 100% de las rutas navales y el 83% de los polígonos de
+// territorio colonial (los que arrancan 1677-1749 pierden su primer tramo,
+// pero casi todos tienen un snapshot posterior que cruza 1750, así que la
+// entidad sigue siendo visible más adelante en el rango -- verificado contra
+// colonial_overlay.geojson antes de este cambio, ninguna entidad relevante
+// queda permanentemente invisible).
+const TIMELINE_MIN_YEAR = 1750;
 const TIMELINE_MAX_YEAR = 2020;
 const TIMELINE_DEFAULT_YEAR = 1920;
 
