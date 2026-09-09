@@ -7,7 +7,7 @@ _The main view: a 3D globe with lines connecting museum objects to their place o
 
 Tracing Origins is an interactive map that connects museum objects to their place of origin, to visualize patterns of expropriation and colonial-era acquisition in museum collections. It focuses on four "prestige" museums in countries that were colonial powers: **The Metropolitan Museum of Art** (New York), **Musée du Louvre** (Paris), **British Museum** (London), and **Musée du Quai Branly - Jacques Chirac** (Paris) — added to cover the Sub-Saharan Africa, Americas, Asia, and Oceania holdings the Louvre's own departments don't include.
 
-Each object gets a line connecting its museum to its inferred point of origin. Clicking an origin point opens a panel listing the objects from that place; opening an individual object shows its documented journey — creation, excavation, transfers, acquisition — whenever research has been done on that piece. A colonial-context layer overlays former British and French territories and naval trade routes on a scrubbable timeline (1700–2020), so the museum-to-origin lines can be read against the territorial control that made many of those acquisitions possible.
+Each object gets a line connecting its museum to its inferred point of origin. Clicking an origin point opens a panel listing the objects from that place; opening an individual object shows its documented journey — creation, excavation, transfers, acquisition — whenever research has been done on that piece. A colonial-context layer overlays former British and French territories and naval trade routes on a scrubbable timeline (1750–2020), so the museum-to-origin lines can be read against the territorial control that made many of those acquisitions possible.
 
 This is a curated personal portfolio project, not an exhaustive dataset — it doesn't aim to represent each museum's full collection, just a manageable, well-documented set per institution (~150–250 pieces per museum), with a smaller subset of "flagship" pieces researched in real depth.
 
@@ -56,9 +56,9 @@ _Click any country on the globe to see its pieces grouped by museum, while every
 
 ## Data at a glance
 
-- **641 objects** on the map (Met 165 · Louvre 217 · British Museum 94 · Quai Branly 165 — geocoded)
-- **~90 flagship pieces** with a fully cited provenance timeline across the Met, Louvre, and British Museum, including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, the Parthenon Sculptures, and the Benin Bronzes — deep research on Quai Branly hasn't started yet
-- **Two optional context layers**: former British/French colonial territories (1700–2020, [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), CC-BY 4.0) and curated British/French naval routes (1700–1900, [CLIWOC](https://www.pangaea.de/), CC-BY 3.0), both on a shared, scrubbable timeline
+- **644 objects** on the map (Met 168 · Louvre 217 · British Museum 94 · Quai Branly 165 — geocoded)
+- **222 flagship pieces** with a fully cited provenance timeline across all four museums (Met 48 · Louvre 82 · British Museum 61 · Quai Branly 31), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, the Parthenon Sculptures, and the Benin Bronzes
+- **Two optional context layers**: former British/French colonial territories (1750–2020, [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), CC-BY 4.0) and curated British/French naval routes (1754–1837, [CLIWOC](https://www.pangaea.de/), CC-BY 3.0), both on a shared, scrubbable timeline
 - **Bilingual interface** (Spanish/English), including the researched provenance text itself, not just UI chrome
 
 ## Tech stack
@@ -97,7 +97,7 @@ The web app needs `web/.env` with a `VITE_MAPBOX_TOKEN`, and `objects.json` need
 
 ## Project status
 
-The core experience is complete: all four museums are pipelined and geocoded, the 3-layer data model is in place end to end, and the app has the interactive globe, per-museum toggles, bilingual UI, and both context layers. Deep research (layer 3) has passed its original 5–10-per-museum goal for the Met, Louvre, and British Museum and stays open-ended — new flagship pieces get added whenever a well-documented candidate turns up. Quai Branly is newest (added 31/08) and doesn't have flagship research yet.
+The core experience is complete: all four museums are pipelined and geocoded, the 3-layer data model is in place end to end, and the app has the interactive globe, per-museum toggles, bilingual UI, and both context layers. Deep research (layer 3) has passed its original 5–10-per-museum goal for all four museums and stays open-ended — new flagship pieces get added whenever a well-documented candidate turns up. Quai Branly is the newest source (added 31/08) but has caught up quickly (31 pieces across 9 rounds), helped by its own acquisition-chain field (`ConXother`), which is more structured than what the other three museums expose.
 
 For the full, dated build log — every decision, every bug found and fixed, every open question — see `CLAUDE.md`.
 

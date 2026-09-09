@@ -542,6 +542,22 @@ EDITORIAL_ORIGIN_OVERRIDES: dict[str, dict] = {
         "country": "Siria",
         "country_en": "Syria",
     },
+    # "Relief, tomb of Akhtihotep" (met:543913, batch 17 layer 3 09/09) --
+    # bloque compañero de met:543912 (mismo conjunto, la propia ficha del Met
+    # remite a "See 58.44.2a"), pero a diferencia de esa pieza tiene
+    # country/region/subregion/culture TODOS vacíos en la API del Met --
+    # mismo patrón ya visto varias veces (met:820847, met:969159). Se usa la
+    # misma coordenada de Saqqara ya cargada para met:543912, porque ambos
+    # bloques vienen documentadamente de la misma tumba.
+    "met:543913": {
+        "label": "Saqqara (mismo conjunto que met:543912)",
+        "label_en": "Saqqara (same set as met:543912)",
+        "precision": "editorial",
+        "lat": 29.8714,
+        "lon": 31.2164,
+        "country": "Egipto",
+        "country_en": "Egypt",
+    },
 }
 
 
