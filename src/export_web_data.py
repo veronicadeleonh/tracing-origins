@@ -118,6 +118,12 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
         "objectID": object_id,
         "sourceMuseum": row.get("sourceMuseum") or None,
         "title": row.get("title") or None,
+        # titleEn/mediumEn/creditLineEn: solo poblados hoy para el Louvre (ver
+        # src/louvre_translations.py, ronda del 09/09) -- Met/BM son piezas en
+        # inglés de origen, no necesitan traducción; Quai Branly queda
+        # pendiente. Caen al campo base si no hay traducción, mismo criterio
+        # que originLabelEn/notesEn/descriptionEn.
+        "titleEn": row.get("titleEn") or row.get("title") or None,
         "objectName": row.get("objectName") or None,
         "department": row.get("department") or None,
         "culture": row.get("culture") or None,
@@ -125,7 +131,9 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
         "dynasty": row.get("dynasty") or None,
         "objectDate": row.get("objectDate") or None,
         "medium": row.get("medium") or None,
+        "mediumEn": row.get("mediumEn") or row.get("medium") or None,
         "creditLine": row.get("creditLine") or None,
+        "creditLineEn": row.get("creditLineEn") or row.get("creditLine") or None,
         "accessionYear": row.get("accessionYear") or None,
         "excavation": row.get("excavation") or None,
         "country": row.get("country") or None,

@@ -57,7 +57,9 @@ export function ClusterPanel({ cluster, lang, onClose, onSelectObject, showOrigi
           )}
         </div>
         <div className="piece-info">
-          <div className="piece-title">{obj.title || s.untitled}</div>
+          <div className="piece-title">
+            {(lang === "en" ? obj.titleEn || obj.title : obj.title) || s.untitled}
+          </div>
           <div className="piece-sub">
             {showOriginAndMuseum
               // Búsqueda por país: el museo ya queda identificado por el

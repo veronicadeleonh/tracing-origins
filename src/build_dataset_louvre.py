@@ -23,13 +23,15 @@ import json
 from pathlib import Path
 
 from museum_id import LOUVRE, namespaced_id
+from louvre_translations import translate_credit_line, translate_medium, translate_title
 
 RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "louvre_objects_raw.json"
 OUT_PATH = Path(__file__).resolve().parent.parent / "data" / "processed" / "louvre_objects.csv"
 
 FIELDS = [
-    "objectID", "sourceMuseum", "sourceObjectID", "title", "objectName", "department",
-    "culture", "period", "objectDate", "medium", "creditLine", "accessionYear",
+    "objectID", "sourceMuseum", "sourceObjectID", "title", "titleEn", "objectName", "department",
+    "culture", "period", "objectDate", "medium", "mediumEn", "creditLine", "creditLineEn",
+    "accessionYear",
     "excavation", "placeOfCreation", "placeOfDiscovery", "provenance",
     "primaryImage", "objectURL",
 ]
@@ -83,18 +85,23 @@ def build_row(obj: dict) -> dict:
     ark = obj.get("arkId")
     credit_line, accession_year = _acquisition_credit(obj)
     image = (obj.get("image") or [{}])[0]
+    title = obj.get("title")
+    medium = obj.get("materialsAndTechniques")
     return {
         "objectID": namespaced_id(LOUVRE, ark),
         "sourceMuseum": LOUVRE,
         "sourceObjectID": ark,
-        "title": obj.get("title"),
-        "objectName": _denomination(obj) or obj.get("title"),
+        "title": title,
+        "titleEn": translate_title(title),
+        "objectName": _denomination(obj) or title,
         "department": obj.get("collection"),
         "culture": None,
         "period": obj.get("displayDateCreated"),
         "objectDate": obj.get("displayDateCreated"),
-        "medium": obj.get("materialsAndTechniques"),
+        "medium": medium,
+        "mediumEn": translate_medium(medium),
         "creditLine": credit_line,
+        "creditLineEn": translate_credit_line(credit_line),
         "accessionYear": accession_year,
         "excavation": _excavation(obj),
         "placeOfCreation": obj.get("placeOfCreation"),

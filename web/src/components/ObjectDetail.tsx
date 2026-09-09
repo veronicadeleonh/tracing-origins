@@ -71,11 +71,19 @@ export function ObjectDetail({
   // lenguaje visual que el toggle de museo y las líneas del mapa.
   const accentColor = museumColor(object.sourceMuseum);
   const originLabel = lang === "en" ? object.originLabelEn || object.originLabel : object.originLabel;
+  // Metadata cruda del Louvre (title/medium/creditLine) traducida al inglés
+  // (09/09, ver src/louvre_translations.py) — mismo criterio de fallback que
+  // originLabelEn/notesEn: si falta el par _en (museos que no son el
+  // Louvre, o un término de medium fuera del glosario), se cae al campo
+  // base sin que la UI note la diferencia.
+  const displayTitle = lang === "en" ? object.titleEn || object.title : object.title;
+  const displayMedium = lang === "en" ? object.mediumEn || object.medium : object.medium;
+  const displayCreditLine = lang === "en" ? object.creditLineEn || object.creditLine : object.creditLine;
 
   const subtitle = [object.culture, object.period, object.objectDate].filter(Boolean).join(" · ");
   const museumFields = [
-    object.medium ? `${s.mediumPrefix}${object.medium}` : null,
-    object.creditLine,
+    displayMedium ? `${s.mediumPrefix}${displayMedium}` : null,
+    displayCreditLine,
     object.accessionYear ? `${s.accessionYearPrefix}${object.accessionYear}` : null,
   ].filter(Boolean) as string[];
 
@@ -149,7 +157,7 @@ export function ObjectDetail({
             )}
           </div>
         )}
-        <div className="object-title">{object.title || s.untitled}</div>
+        <div className="object-title">{displayTitle || s.untitled}</div>
         {subtitle && <div className="object-subtitle">{subtitle}</div>}
       </div>
 

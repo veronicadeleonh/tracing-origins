@@ -29,6 +29,12 @@ export interface MuseumObject {
   objectID: string;
   sourceMuseum: string | null;
   title: string | null;
+  // titleEn/mediumEn/creditLineEn: metadata cruda traducida al inglés (09/09,
+  // ver src/louvre_translations.py) — solo poblada hoy para el Louvre;
+  // Met/BM ya están en inglés, Quai Branly queda pendiente. Cae al campo
+  // base en export_web_data.py si no hay traducción, así que estos 3 campos
+  // nunca vienen null cuando el base tampoco lo es.
+  titleEn: string | null;
   objectName: string | null;
   department: string | null;
   culture: string | null;
@@ -36,7 +42,9 @@ export interface MuseumObject {
   dynasty: string | null;
   objectDate: string | null;
   medium: string | null;
+  mediumEn: string | null;
   creditLine: string | null;
+  creditLineEn: string | null;
   accessionYear: string | null;
   excavation: string | null;
   country: string | null;
