@@ -15,7 +15,7 @@ import csv
 import json
 from pathlib import Path
 
-from geocode import QUAI_BRANLY_COORDS, resolve_origin_quaibranly
+from geocode import EDITORIAL_ORIGIN_OVERRIDES, QUAI_BRANLY_COORDS, resolve_origin_quaibranly
 from museum_id import QUAI_BRANLY, namespaced_id
 
 RAW_PATH = Path(__file__).resolve().parent.parent / "data" / "raw" / "quaibranly_objects_raw.json"
@@ -32,7 +32,11 @@ def load_objects() -> list[dict]:
 
 def build_row(obj: dict) -> dict:
     object_id = namespaced_id(QUAI_BRANLY, obj.get("ccObjectID"))
-    origin = resolve_origin_quaibranly(obj)
+    # Overrides editoriales (ver geocode.py) tienen prioridad sobre el lookup
+    # automático -- solo existen para piezas cuyo registro no tiene ningún
+    # Toponyme/Country matcheable (ej. una medalla de la Monnaie de Paris sin
+    # sitio de hallazgo, batch 20 layer 3 17/09), no un caso normal de layer 2.
+    origin = EDITORIAL_ORIGIN_OVERRIDES.get(object_id) or resolve_origin_quaibranly(obj)
     museum_lat, museum_lon = QUAI_BRANLY_COORDS
     return {
         "objectID": object_id,

@@ -783,6 +783,7 @@ function App() {
           mapStyle="mapbox://styles/mapbox/light-v11"
           projection="globe"
           fog={{}}
+          attributionControl={false}
           interactiveLayerIds={countryClickEnabled ? ["origins", "museums", "country-hit"] : ["origins", "museums"]}
           cursor={cursor}
           onLoad={handleMapLoad}
@@ -985,6 +986,7 @@ function App() {
             />
           )}
         </div>
+
       </div>
 
       {panel?.view === "cluster" && (

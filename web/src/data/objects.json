@@ -2578,8 +2578,70 @@
       "originLon": 113.9213,
       "originCountry": "Indonesia",
       "originCountryEn": "Indonesia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Pueblo asmat, Indonesia (Papua Occidental)",
+        "notes": "Lanza del pueblo asmat, Nueva Guinea Holandesa (hoy Papua Occidental, Indonesia) -- misma coleccion y recorrido que la proa de canoa ya documentada de esta muestra (met:311563): recolectada por la Expedicion Michael C. Rockefeller de 1961, el mismo ano en que Michael Rockefeller (hijo del entonces gobernador de Nueva York, Nelson Rockefeller) desaparecio frente a la costa de Nueva Guinea tras volcarse su catamaran, sin que se encontrara jamas su cuerpo. La coleccion paso a Nelson A. y Mary C. Rockefeller en 1965, luego al Museum of Primitive Art de Nueva York, y en 1978 se integro al Met formando el ala Michael C. Rockefeller. Recoleccion bajo administracion colonial holandesa de Nueva Guinea.",
+        "notesEn": "Spear of the Asmat people, Dutch New Guinea (now Western Papua, Indonesia) -- same collection and path as the already documented canoe prow in this collection (met:311563): collected by the Michael C. Rockefeller Expedition of 1961, the same year Michael Rockefeller (son of then-New York governor Nelson Rockefeller) disappeared off the coast of New Guinea after his catamaran capsized, his body never found. The collection passed to Nelson A. and Mary C. Rockefeller in 1965, then to the Museum of Primitive Art in New York, and in 1978 was absorbed into the Met, forming the Michael C. Rockefeller Wing. Collection occurred under Dutch colonial administration of New Guinea."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "mediados del siglo XX",
+          "actor_or_institution": "Artesanos asmat",
+          "location": "Nueva Guinea Holandesa",
+          "description": "Fabricacion de la lanza por el pueblo asmat.",
+          "descriptionEs": "Fabricacion de la lanza por el pueblo asmat.",
+          "descriptionEn": "Manufacture of the spear by the Asmat people.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311551",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1961",
+          "actor_or_institution": "Expedicion Michael C. Rockefeller",
+          "location": "Nueva Guinea Holandesa",
+          "description": "Recolectada por la Expedicion Michael C. Rockefeller en 1961, el mismo ano en que Michael Rockefeller desaparecio frente a la costa tras volcarse su catamaran.",
+          "descriptionEs": "Recolectada por la Expedicion Michael C. Rockefeller en 1961, el mismo ano en que Michael Rockefeller desaparecio frente a la costa tras volcarse su catamaran.",
+          "descriptionEn": "Collected by the Michael C. Rockefeller Expedition in 1961, the same year Michael Rockefeller disappeared off the coast after his catamaran capsized.",
+          "source_url": "https://www.cbsnews.com/news/unraveling-the-disappearance-of-michael-rockefeller/",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1965",
+          "actor_or_institution": "Nelson A. Rockefeller y Mary C. Rockefeller",
+          "location": "Nueva York, Estados Unidos",
+          "description": "La coleccion paso a Nelson A. y Mary C. Rockefeller en 1965, luego al Museum of Primitive Art de Nueva York.",
+          "descriptionEs": "La coleccion paso a Nelson A. y Mary C. Rockefeller en 1965, luego al Museum of Primitive Art de Nueva York.",
+          "descriptionEn": "The collection passed to Nelson A. and Mary C. Rockefeller in 1965, then to the Museum of Primitive Art in New York.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311551",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "other",
+          "event_date": "1978",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Museum of Primitive Art se integro al Met en 1978, formando el ala Michael C. Rockefeller.",
+          "descriptionEs": "El Museum of Primitive Art se integro al Met en 1978, formando el ala Michael C. Rockefeller.",
+          "descriptionEn": "The Museum of Primitive Art was absorbed into the Met in 1978, forming the Michael C. Rockefeller Wing.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311551",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:311555",
@@ -2610,8 +2672,70 @@
       "originLon": 113.9213,
       "originCountry": "Indonesia",
       "originCountryEn": "Indonesia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Pueblo asmat, Indonesia (Papua Occidental)",
+        "notes": "Segunda lanza del pueblo asmat de la misma coleccion Rockefeller que met:311551 y met:311563, con identico recorrido: Nueva Guinea Holandesa (bajo administracion colonial holandesa) -> Expedicion Michael C. Rockefeller 1961 (el ano de la desaparicion de Michael Rockefeller) -> Nelson A. y Mary C. Rockefeller 1965 -> Museum of Primitive Art -> Met 1978, ala Michael C. Rockefeller. El Met conserva multiples lanzas asmat de la misma expedicion (incluida met:311559, no investigada por separado en esta ronda) -- reflejo del volumen de material recolectado por la expedicion en una sola temporada de campo.",
+        "notesEn": "Second Asmat spear from the same Rockefeller collection as met:311551 and met:311563, with an identical path: Dutch New Guinea (under Dutch colonial administration) -> Michael C. Rockefeller Expedition 1961 (the year of Michael Rockefeller's disappearance) -> Nelson A. and Mary C. Rockefeller 1965 -> Museum of Primitive Art -> Met 1978, Michael C. Rockefeller Wing. The Met holds multiple Asmat spears from the same expedition (including met:311559, not individually investigated in this round) -- a reflection of the volume of material collected by the expedition in a single field season."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "mediados del siglo XX",
+          "actor_or_institution": "Artesanos asmat",
+          "location": "Nueva Guinea Holandesa",
+          "description": "Fabricacion de la lanza por el pueblo asmat.",
+          "descriptionEs": "Fabricacion de la lanza por el pueblo asmat.",
+          "descriptionEn": "Manufacture of the spear by the Asmat people.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311555",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1961",
+          "actor_or_institution": "Expedicion Michael C. Rockefeller",
+          "location": "Nueva Guinea Holandesa",
+          "description": "Recolectada por la Expedicion Michael C. Rockefeller en 1961, el mismo ano en que Michael Rockefeller desaparecio frente a la costa tras volcarse su catamaran.",
+          "descriptionEs": "Recolectada por la Expedicion Michael C. Rockefeller en 1961, el mismo ano en que Michael Rockefeller desaparecio frente a la costa tras volcarse su catamaran.",
+          "descriptionEn": "Collected by the Michael C. Rockefeller Expedition in 1961, the same year Michael Rockefeller disappeared off the coast after his catamaran capsized.",
+          "source_url": "https://www.cbsnews.com/news/unraveling-the-disappearance-of-michael-rockefeller/",
+          "source_type": "secondary_source",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1965",
+          "actor_or_institution": "Nelson A. Rockefeller y Mary C. Rockefeller",
+          "location": "Nueva York, Estados Unidos",
+          "description": "La coleccion paso a Nelson A. y Mary C. Rockefeller en 1965, luego al Museum of Primitive Art de Nueva York.",
+          "descriptionEs": "La coleccion paso a Nelson A. y Mary C. Rockefeller en 1965, luego al Museum of Primitive Art de Nueva York.",
+          "descriptionEn": "The collection passed to Nelson A. and Mary C. Rockefeller in 1965, then to the Museum of Primitive Art in New York.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311555",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "other",
+          "event_date": "1978",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York, Estados Unidos",
+          "description": "El Museum of Primitive Art se integro al Met en 1978, formando el ala Michael C. Rockefeller.",
+          "descriptionEs": "El Museum of Primitive Art se integro al Met en 1978, formando el ala Michael C. Rockefeller.",
+          "descriptionEn": "The Museum of Primitive Art was absorbed into the Met in 1978, forming the Michael C. Rockefeller Wing.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311555",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:311559",
@@ -29165,8 +29289,70 @@
       "originLon": -68.15,
       "originCountry": "Bolivia",
       "originCountryEn": "Bolivia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Bolivia",
+        "notes": "Amuleto antropomorfo de piedra blanca tallada (\"Khatera\"?, segun su propio nombre vernaculo con signo de interrogacion en el registro del museo), representando de pie a un personaje femenino, de La Paz, Bolivia -- gemelo del ya documentado qb:118290 (\"Maki\"), atribuido a la misma mision cientifica conjunta de Eugene Louis Joseph Senechal de la Grange y Georges de Crequi-Montfort (1877-1966, ya documentado en esta muestra por el hacha de bronce de Luristan del Louvre). Mismo caso de contraste sin mecanismo colonial frances: Bolivia nunca fue territorio frances, la mision opero por invitacion/autorizacion cientifica. Integro la coleccion del Musee de l'Homme (seccion America) antes de Quai Branly.",
+        "notesEn": "Anthropomorphic amulet of carved white stone (\"Khatera\"?, per its own vernacular name marked with a question mark in the museum's record), depicting a standing female figure, from La Paz, Bolivia -- twin to the already documented qb:118290 (\"Maki\"), attributed to the same joint scientific mission of Eugene Louis Joseph Senechal de la Grange and Georges de Crequi-Montfort (1877-1966, already documented in this collection via the Louvre's Luristan bronze axe). Same contrast case with no French colonial mechanism: Bolivia was never French territory, and the mission operated by scientific invitation/authorization. It entered the collection of the Musee de l'Homme (Americas section) before reaching Quai Branly."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 1903",
+          "actor_or_institution": "artesanos indigenas/mestizos, tradicion callawaya",
+          "location": "La Paz, Bolivia",
+          "description": "Talla del amuleto antropomorfo por artesanos locales.",
+          "descriptionEs": "Talla del amuleto antropomorfo por artesanos locales.",
+          "descriptionEn": "Carving of the anthropomorphic amulet by local artisans.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "antes de 1903",
+          "actor_or_institution": "mision de Eugene Senechal de la Grange y Georges de Crequi-Montfort",
+          "location": "La Paz, Bolivia",
+          "description": "Recoleccion durante la mision cientifica franco-boliviana.",
+          "descriptionEs": "Recoleccion durante la mision cientifica franco-boliviana.",
+          "descriptionEn": "Collected during the French-Bolivian scientific mission.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musee de l'Homme (America)",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion americana del Musee de l'Homme.",
+          "descriptionEs": "Integracion a la coleccion americana del Musee de l'Homme.",
+          "descriptionEn": "Integration into the Musee de l'Homme's Americas collection.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo.",
+          "descriptionEs": "Traspaso al museo nuevo.",
+          "descriptionEn": "Transfer to the new museum.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:118607",
@@ -29261,8 +29447,70 @@
       "originLon": -68.15,
       "originCountry": "Bolivia",
       "originCountryEn": "Bolivia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Bolivia",
+        "notes": "Amuleto antropomorfo de piedra blanca tallada representando una mano derecha con el pulgar extendido y los demas dedos replegados sobre la palma (\"Maki\"/\"Wichuna Sepja\", nombre bilingue quechua-callawaya), de La Paz, Bolivia -- segundo gemelo, junto con qb:118605, del ya documentado qb:118290, atribuido a la misma mision cientifica conjunta de Eugene Louis Joseph Senechal de la Grange y Georges de Crequi-Montfort. El propio registro del museo conserva otras cuatro variantes casi identicas de amuletos en forma de mano de la misma mision (qb:118717/118718/118719, entre otras), no investigadas individualmente en esta ronda -- mismo patron de series casi idénticas ya documentado para otras colecciones de esta muestra. Mismo caso de contraste sin mecanismo colonial frances que su gemelo: integro la coleccion del Musee de l'Homme (seccion America) antes de Quai Branly.",
+        "notesEn": "Anthropomorphic amulet of carved white stone depicting a right hand with the thumb extended and the other fingers folded over the palm (\"Maki\"/\"Wichuna Sepja,\" a bilingual Quechua-Callawaya name), from La Paz, Bolivia -- second twin, alongside qb:118605, to the already documented qb:118290, attributed to the same joint scientific mission of Eugene Louis Joseph Senechal de la Grange and Georges de Crequi-Montfort. The museum's own record holds four other nearly identical hand-shaped amulet variants from the same mission (qb:118717/118718/118719, among others), not individually investigated in this round -- the same pattern of near-identical series already documented for other collections in this sample. Same contrast case with no French colonial mechanism as its twin: it entered the collection of the Musee de l'Homme (Americas section) before reaching Quai Branly."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "antes de 1903",
+          "actor_or_institution": "artesanos indigenas/mestizos, tradicion callawaya",
+          "location": "La Paz, Bolivia",
+          "description": "Talla del amuleto en forma de mano por artesanos locales.",
+          "descriptionEs": "Talla del amuleto en forma de mano por artesanos locales.",
+          "descriptionEn": "Carving of the hand-shaped amulet by local artisans.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "antes de 1903",
+          "actor_or_institution": "mision de Eugene Senechal de la Grange y Georges de Crequi-Montfort",
+          "location": "La Paz, Bolivia",
+          "description": "Recoleccion durante la mision cientifica franco-boliviana.",
+          "descriptionEs": "Recoleccion durante la mision cientifica franco-boliviana.",
+          "descriptionEn": "Collected during the French-Bolivian scientific mission.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musee de l'Homme (America)",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion americana del Musee de l'Homme.",
+          "descriptionEs": "Integracion a la coleccion americana del Musee de l'Homme.",
+          "descriptionEn": "Integration into the Musee de l'Homme's Americas collection.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo.",
+          "descriptionEs": "Traspaso al museo nuevo.",
+          "descriptionEn": "Transfer to the new museum.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:118717",
@@ -31035,8 +31283,84 @@
       "originLon": 165.618,
       "originCountry": "Nueva Caledonia",
       "originCountryEn": "New Caledonia",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "french_colonial_context",
+          "undocumented_early_chain",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "New Caledonia",
+        "notes": "Mascara ceremonial \"apouema\" en madera, Nueva Caledonia (region de Balade/Pouebo, norte de la Grande Terre), siglo XIX -- segun la propia ficha del museo, usada en fiestas por un hombre que la portaba causando temor en las danzas, sin que sobreviva ninguna leyenda o costumbre que explique su origen; el propio registro nota que el tipo de mascara pertenece al norte de la isla, de donde se difundio hacia el sur sin tradicion explicativa asociada. Donada por Raphael Bischoffsheim (1823-1906), banquero parisino de una prominente familia de financistas judios, mecenas y fundador del Observatorio de Niza (1879, con edificios disenados por Charles Garnier y la cupula principal por Gustave Eiffel), diputado de los Alpes-Maritimes desde 1881 y miembro libre de la Academia de Ciencias desde 1891 -- conocido casi enteramente como filantropo de la astronomia, sin ninguna relacion documentada con Nueva Caledonia ni con expediciones coloniales en el Pacifico; no se encontro fuente que explique como llego la mascara a sus manos. Nueva Caledonia era colonia francesa (y colonia penal desde 1864) durante todo el periodo probable de recoleccion. Paso por el Musee de l'Homme (seccion Oceania) antes de Quai Branly. `research_status: partial` por el mecanismo de adquisicion sin documentar.",
+        "notesEn": "Ceremonial \"apouema\" wooden mask, New Caledonia (Balade/Pouebo area, northern Grande Terre), 19th century -- per the museum's own record, worn during festivals by a man whose masked figure caused fear during dances, with no surviving legend or custom explaining its origin; the record itself notes that this mask type belongs to the north of the island, from where it spread south without an accompanying origin tradition. Donated by Raphael Bischoffsheim (1823-1906), a Parisian banker from a prominent Jewish financier family, patron and founder of the Nice Observatory (1879, with buildings designed by Charles Garnier and the main dome by Gustave Eiffel), deputy for Alpes-Maritimes from 1881 and a free member of the Academy of Sciences from 1891 -- known almost entirely as a patron of astronomy, with no documented connection to New Caledonia or to colonial expeditions in the Pacific; no source was found explaining how the mask came into his hands. New Caledonia was a French colony (and a penal colony from 1864) throughout the likely collection period. It passed through the Musee de l'Homme (Oceania section) before reaching Quai Branly. `research_status: partial` due to the undocumented mechanism of acquisition."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "s. XIX",
+          "actor_or_institution": "artesanos kanak del norte de la Grande Terre",
+          "location": "Balade/Pouebo, Nueva Caledonia",
+          "description": "Fabricacion de la mascara ceremonial \"apouema\".",
+          "descriptionEs": "Fabricacion de la mascara ceremonial \"apouema\".",
+          "descriptionEn": "Manufacture of the ceremonial \"apouema\" mask.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "s. XIX (colonia francesa desde 1853)",
+          "actor_or_institution": "Administracion colonial francesa de Nueva Caledonia",
+          "location": "Nueva Caledonia",
+          "description": "La recoleccion ocurre en algun momento bajo administracion colonial francesa, sin mecanismo puntual documentado.",
+          "descriptionEs": "La recoleccion ocurre en algun momento bajo administracion colonial francesa, sin mecanismo puntual documentado.",
+          "descriptionEn": "The collection occurred at some point under French colonial administration, with no documented specific mechanism.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "anterior a 1906",
+          "actor_or_institution": "Raphael Bischoffsheim",
+          "location": "Paris, Francia",
+          "description": "Donacion de la mascara por el banquero y mecenas Raphael Bischoffsheim, sin que se documente como la obtuvo.",
+          "descriptionEs": "Donacion de la mascara por el banquero y mecenas Raphael Bischoffsheim, sin que se documente como la obtuvo.",
+          "descriptionEn": "Donation of the mask by the banker and patron Raphael Bischoffsheim, with no record of how he obtained it.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musee de l'Homme (Oceania)",
+          "location": "Paris, Francia",
+          "description": "Integracion a la seccion de Oceania del Musee de l'Homme.",
+          "descriptionEs": "Integracion a la seccion de Oceania del Musee de l'Homme.",
+          "descriptionEn": "Entry into the Oceania section of the Musee de l'Homme.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo.",
+          "descriptionEs": "Traspaso al museo nuevo.",
+          "descriptionEn": "Transfer to the new museum.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:354200",
@@ -31323,8 +31647,96 @@
       "originLon": -140.1075,
       "originCountry": "Islas Marquesas",
       "originCountryEn": "Marquesas Islands",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "french_colonial_context",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "French Polynesia",
+        "notes": "Segundo baston ceremonial (\"tokotoko pioo\"/\"tootoo pioo\", tambien llamado \"Mataneva\") de Nuku Hiva, islas Marquesas, gemelo del ya documentado qb:358832 -- misma primera mitad del siglo XIX, mismo tipo de insignia de rango en madera de hierro coronada por una bola de cabello humano sagrado (\"tapu\"), y mismo donante, Jean-Benoit Amedee Collet (1801-1858, ver ficha de qb:358832 para su rol como primer comandante frances de las Marquesas del norte tras la anexion de 1842). Una etiqueta antigua distinta indica que este ejemplar habria pertenecido a \"Matahiva, grande pretresse des Taiva\" -- otra atribucion de etiqueta sin confirmacion independiente, distinta de la de su pieza gemela.",
+        "notesEn": "Second ceremonial staff (\"tokotoko pioo\"/\"tootoo pioo,\" also called \"Mataneva\") from Nuku Hiva, Marquesas Islands, twin to the already documented qb:358832 -- same first half of the 19th century, same type of rank insignia in ironwood topped with a ball of sacred human hair (\"tapu\"), and the same donor, Jean-Benoit Amedee Collet (1801-1858, see qb:358832's record for his role as the first French commander of the northern Marquesas after the 1842 annexation). A different old label states this piece belonged to \"Matahiva, great priestess of the Taiva\" -- another label attribution without independent confirmation, distinct from its twin piece's."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "primera mitad s. XIX",
+          "actor_or_institution": "artesanos especializados (\"tuhuka\") marquesanos",
+          "location": "Nuku Hiva, islas Marquesas",
+          "description": "Fabricacion del baston de rango en madera de hierro, con sparteria de fibra vegetal y cabello humano.",
+          "descriptionEs": "Fabricacion del baston de rango en madera de hierro, con sparteria de fibra vegetal y cabello humano.",
+          "descriptionEn": "Manufacture of the rank staff in ironwood, with plant-fiber cordage and human hair.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "sin fecha (anterior a 1858)",
+          "actor_or_institution": "Matahiva (segun etiqueta antigua, sin confirmar)",
+          "location": "Nuku Hiva, islas Marquesas",
+          "description": "Una etiqueta antigua conservada con la pieza la atribuye a Matahiva, descrita como gran sacerdotisa de los Taiva -- atribucion sin confirmacion independiente.",
+          "descriptionEs": "Una etiqueta antigua conservada con la pieza la atribuye a Matahiva, descrita como gran sacerdotisa de los Taiva -- atribucion sin confirmacion independiente.",
+          "descriptionEn": "An old label kept with the piece attributes it to Matahiva, described as great priestess of the Taiva -- an attribution without independent confirmation.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "anterior a 1858",
+          "actor_or_institution": "Jean-Benoit Amedee Collet",
+          "location": "Nuku Hiva, islas Marquesas",
+          "description": "Recolectada/adquirida por Collet, primer comandante frances del grupo norte de las Marquesas tras la anexion de 1842.",
+          "descriptionEs": "Recolectada/adquirida por Collet, primer comandante frances del grupo norte de las Marquesas tras la anexion de 1842.",
+          "descriptionEn": "Collected/acquired by Collet, the first French commander of the northern Marquesas group after the 1842 annexation.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musee d'archeologie nationale",
+          "location": "Paris, Francia",
+          "description": "Paso a la coleccion del Musee d'archeologie nationale.",
+          "descriptionEs": "Paso a la coleccion del Musee d'archeologie nationale.",
+          "descriptionEn": "Transfer to the collection of the Musee d'archeologie nationale.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "1960-2003",
+          "actor_or_institution": "Musee national des arts d'Afrique et d'Oceanie",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEs": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEn": "Entry into the Oceania collection of the MNAAO.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 6,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEs": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEn": "Transfer to the new museum after the MNAAO closed.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:358832",
@@ -31355,8 +31767,96 @@
       "originLon": -140.1075,
       "originCountry": "Islas Marquesas",
       "originCountryEn": "Marquesas Islands",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "french_colonial_context",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "French Polynesia",
+        "notes": "Baston ceremonial (\"tokotoko pioo\"/\"tootoo pioo\") de Nuku Hiva, islas Marquesas, primera mitad del siglo XIX -- insignia de rango de madera de hierro pulida, coronada por una bola de cabello humano (material sagrado, \"tapu\", tomado de ancestros o enemigos vencidos segun la propia ficha del museo) y, en este ejemplar en particular, adornada ademas con un mechon de barba de anciano (\"pavahina\"). Una etiqueta antigua conservada con la pieza indica que habria pertenecido a Tahiaoko, reina o gran jefa de Nuku Hiva -- atribucion de etiqueta, no confirmada por otra fuente. Donada por Jean-Benoit Amedee Collet (1801-1858), oficial naval frances que en 1842 quedo como primer comandante del grupo norte de las Marquesas tras la anexion ordenada por el rey Louis-Philippe I y ejecutada por el contraalmirante Dupetit-Thouars -- una bahia de Nuku Hiva (\"Baie Collet\") lleva su nombre. Hermana de un segundo baston de la misma procedencia y donante en esta muestra (qb:358828) y, mas alla de esta pareja, de los dos abanicos ceremoniales \"Tahii\" ya documentados (qb:359224/qb:361493), tambien donados por Collet.",
+        "notesEn": "Ceremonial staff (\"tokotoko pioo\"/\"tootoo pioo\") from Nuku Hiva, Marquesas Islands, first half of the 19th century -- a rank insignia of polished ironwood, topped with a ball of human hair (sacred, \"tapu\" material, taken from ancestors or defeated enemies per the museum's own record) and, on this particular piece, further adorned with a tuft of an elder's beard hair (\"pavahina\"). An old label kept with the piece states it belonged to Tahiaoko, queen or great chief of Nuku Hiva -- a label attribution, not confirmed by any other source. Donated by Jean-Benoit Amedee Collet (1801-1858), a French naval officer who in 1842 became the first commander of the northern Marquesas group following the annexation ordered by King Louis-Philippe I and carried out by Rear Admiral Dupetit-Thouars -- a bay on Nuku Hiva (\"Baie Collet\") bears his name. Sibling to a second staff of the same provenance and donor in this collection (qb:358828) and, beyond that pair, to the two ceremonial \"Tahii\" fans already documented (qb:359224/qb:361493), also donated by Collet."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "primera mitad s. XIX",
+          "actor_or_institution": "artesanos especializados (\"tuhuka\") marquesanos",
+          "location": "Nuku Hiva, islas Marquesas",
+          "description": "Fabricacion del baston de rango en madera de hierro, con sparteria de fibra vegetal y cabello humano.",
+          "descriptionEs": "Fabricacion del baston de rango en madera de hierro, con sparteria de fibra vegetal y cabello humano.",
+          "descriptionEn": "Manufacture of the rank staff in ironwood, with plant-fiber cordage and human hair.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "sin fecha (anterior a 1858)",
+          "actor_or_institution": "Tahiaoko (segun etiqueta antigua, sin confirmar)",
+          "location": "Nuku Hiva, islas Marquesas",
+          "description": "Una etiqueta antigua conservada con la pieza la atribuye a Tahiaoko, reina o gran jefa de Nuku Hiva -- atribucion sin confirmacion independiente.",
+          "descriptionEs": "Una etiqueta antigua conservada con la pieza la atribuye a Tahiaoko, reina o gran jefa de Nuku Hiva -- atribucion sin confirmacion independiente.",
+          "descriptionEn": "An old label kept with the piece attributes it to Tahiaoko, queen or great chief of Nuku Hiva -- an attribution without independent confirmation.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "acquisition",
+          "event_date": "anterior a 1858",
+          "actor_or_institution": "Jean-Benoit Amedee Collet",
+          "location": "Nuku Hiva, islas Marquesas",
+          "description": "Recolectada/adquirida por Collet, primer comandante frances del grupo norte de las Marquesas tras la anexion de 1842.",
+          "descriptionEs": "Recolectada/adquirida por Collet, primer comandante frances del grupo norte de las Marquesas tras la anexion de 1842.",
+          "descriptionEn": "Collected/acquired by Collet, the first French commander of the northern Marquesas group after the 1842 annexation.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musee d'archeologie nationale",
+          "location": "Paris, Francia",
+          "description": "Paso a la coleccion del Musee d'archeologie nationale.",
+          "descriptionEs": "Paso a la coleccion del Musee d'archeologie nationale.",
+          "descriptionEn": "Transfer to the collection of the Musee d'archeologie nationale.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "1960-2003",
+          "actor_or_institution": "Musee national des arts d'Afrique et d'Oceanie",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEs": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEn": "Entry into the Oceania collection of the MNAAO.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 6,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEs": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEn": "Transfer to the new museum after the MNAAO closed.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:358884",
@@ -31508,8 +32008,84 @@
       "originLon": 178.065,
       "originCountry": "Fiyi",
       "originCountryEn": "Fiji",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "partial",
+        "context_flags": [
+          "state_mission",
+          "institutional_transfer",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Fiji",
+        "notes": "Maza de guerra pesada (\"sali vividrasa\"/\"cali vividrasa\") de Fiyi, comienzos del siglo XIX, con el mango envuelto en fibra de coco tenida en negro y blanco alternados y un extremo superior grabado en cuadricula. Registrada como recolectada por \"L'Astrolabe\", pero con un rango de fecha (1800-1838) que cubre tanto el primer viaje de Dumont d'Urville (1826-1829, ver qb:359254) como el segundo (1837-1840, con La Zelee, ver qb:358884/qb:359082/qb:383549) -- el propio registro de Quai Branly no distingue cual de los dos, asi que se documenta la ambiguedad sin forzar una fecha. Mismo recorrido institucional que las otras piezas fiyianas de esta muestra: Musee de Marine du Louvre -> MNAAO (1960-2003) -> Quai Branly.",
+        "notesEn": "Heavy war club (\"sali vividrasa\"/\"cali vividrasa\") from Fiji, early 19th century, its handle wrapped in coconut fiber dyed in alternating black and natural bands and its upper end engraved with a grid pattern. Recorded as collected by \"L'Astrolabe,\" but with a date range (1800-1838) that spans both Dumont d'Urville's first voyage (1826-1829, see qb:359254) and second voyage (1837-1840, with La Zelee, see qb:358884/qb:359082/qb:383549) -- Quai Branly's own record does not specify which, so the ambiguity is documented rather than forcing a date. Same institutional path as the other Fijian pieces in this collection: Musee de Marine du Louvre -> MNAAO (1960-2003) -> Quai Branly."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "comienzos s. XIX",
+          "actor_or_institution": "artesanos fiyianos",
+          "location": "Fiyi",
+          "description": "Talla de la maza pesada con mango envuelto en fibra de coco tenida.",
+          "descriptionEs": "Talla de la maza pesada con mango envuelto en fibra de coco tenida.",
+          "descriptionEn": "Carving of the heavy club with a handle wrapped in dyed coconut fiber.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1826-1829 o 1837-1840 (sin resolver)",
+          "actor_or_institution": "Corbeta L'Astrolabe (primer o segundo viaje de Dumont d'Urville)",
+          "location": "Fiyi",
+          "description": "Recolectada por L'Astrolabe; el registro del museo no especifica si fue durante el primer o el segundo viaje de Dumont d'Urville.",
+          "descriptionEs": "Recolectada por L'Astrolabe; el registro del museo no especifica si fue durante el primer o el segundo viaje de Dumont d'Urville.",
+          "descriptionEn": "Collected by L'Astrolabe; the museum's record does not specify whether during Dumont d'Urville's first or second voyage.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XIX - 1943",
+          "actor_or_institution": "Musee de Marine du Louvre",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion del antiguo museo naval alojado dentro del Louvre.",
+          "descriptionEs": "Integracion a la coleccion del antiguo museo naval alojado dentro del Louvre.",
+          "descriptionEn": "Entry into the collection of the former naval museum housed within the Louvre.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "1960-2003",
+          "actor_or_institution": "Musee national des arts d'Afrique et d'Oceanie",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEs": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEn": "Entry into the Oceania collection of the MNAAO.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEs": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEn": "Transfer to the new museum after the MNAAO closed.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:359023",
@@ -31969,8 +32545,97 @@
       "originLon": 178.065,
       "originCountry": "Fiyi",
       "originCountryEn": "Fiji",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "institutional_transfer",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Fiji",
+        "notes": "Maza de guerra (\"Totokia vonotabua\") de Fiyi, de fines del siglo XVIII o comienzos del XIX, con cabeza terminada en picos inspirados en el fruto del pandanus -- segun los grabados del atlas del propio viaje de Dumont d'Urville, la punta remataba originalmente en marfil de cachalote, hoy perdido. Recolectada durante la exploracion de Fiyi de la corbeta L'Astrolabe en el PRIMER viaje al mando de Jules Dumont d'Urville (1826-1829), anterior al segundo viaje (1837-1840, con La Zelee) que ya documentan otras piezas fiyianas de esta muestra (qb:358884/qb:359082). Mismo recorrido institucional que esas piezas: Musee de Marine du Louvre (el antiguo museo naval alojado dentro del propio Louvre) -> Musee d'archeologie nationale -> Musee national des arts d'Afrique et d'Oceanie (1960-2003) -> Quai Branly (2006). Sin informacion sobre el mecanismo puntual de adquisicion en la propia isla.",
+        "notesEn": "War club (\"Totokia vonotabua\") from Fiji, late 18th or early 19th century, with a head ending in spikes inspired by the pandanus fruit -- according to the engravings in Dumont d'Urville's own voyage atlas, the tip originally ended in sperm-whale ivory, since lost. Collected during the Fiji exploration of the corvette L'Astrolabe on the FIRST voyage under Jules Dumont d'Urville (1826-1829), earlier than the second voyage (1837-1840, with La Zelee) already documented by other Fijian pieces in this collection (qb:358884/qb:359082). Same institutional path as those pieces: Musee de Marine du Louvre (the former naval museum housed within the Louvre itself) -> Musee d'archeologie nationale -> Musee national des arts d'Afrique et d'Oceanie (1960-2003) -> Quai Branly (2006). No information on the specific mechanism of acquisition on the island itself."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "fines s. XVIII / inicio s. XIX",
+          "actor_or_institution": "artesanos fiyianos",
+          "location": "Fiyi",
+          "description": "Talla de la maza de guerra con cabeza en picos inspirados en el fruto del pandanus.",
+          "descriptionEs": "Talla de la maza de guerra con cabeza en picos inspirados en el fruto del pandanus.",
+          "descriptionEn": "Carving of the war club with a spiked head inspired by the pandanus fruit.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1826-1827",
+          "actor_or_institution": "Corbeta L'Astrolabe (primer viaje de Jules Dumont d'Urville)",
+          "location": "Fiyi",
+          "description": "Recolectada durante la exploracion de Fiyi del primer viaje de Dumont d'Urville a bordo de L'Astrolabe (1826-1829).",
+          "descriptionEs": "Recolectada durante la exploracion de Fiyi del primer viaje de Dumont d'Urville a bordo de L'Astrolabe (1826-1829).",
+          "descriptionEn": "Collected during the Fiji exploration of Dumont d'Urville's first voyage aboard L'Astrolabe (1826-1829).",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XIX - 1943",
+          "actor_or_institution": "Musee de Marine du Louvre",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion del antiguo museo naval alojado dentro del Louvre.",
+          "descriptionEs": "Integracion a la coleccion del antiguo museo naval alojado dentro del Louvre.",
+          "descriptionEn": "Entry into the collection of the former naval museum housed within the Louvre.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musee d'archeologie nationale",
+          "location": "Paris, Francia",
+          "description": "Paso a la coleccion del Musee d'archeologie nationale.",
+          "descriptionEs": "Paso a la coleccion del Musee d'archeologie nationale.",
+          "descriptionEn": "Transfer to the collection of the Musee d'archeologie nationale.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "1960-2003",
+          "actor_or_institution": "Musee national des arts d'Afrique et d'Oceanie",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEs": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEn": "Entry into the Oceania collection of the MNAAO.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 6,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEs": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEn": "Transfer to the new museum after the MNAAO closed.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:359353",
@@ -32486,8 +33151,97 @@
       "originLon": 178.065,
       "originCountry": "Fiyi",
       "originCountryEn": "Fiji",
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "state_mission",
+          "institutional_transfer",
+          "undocumented_early_chain"
+        ],
+        "associated_communities_or_states": "Fiji",
+        "notes": "Maza de lanzar (\"i ula tavatava vonotabua\") de Fiyi, de fines del siglo XVIII o comienzos del XIX, sin rastros de uso -- probablemente un objeto ceremonial, segun la propia ficha del museo. A diferencia de sus dos companeras de esta muestra (qb:359254/qb:358919), esta pieza SI tiene su recoleccion firmemente atribuida a La Zelee, la corbeta gemela de L'Astrolabe en el segundo viaje de Dumont d'Urville (1837-1840) -- mismo viaje que ya documentan el collar qb:359082 y la maza qb:358884. Mismo recorrido institucional: Musee de Marine du Louvre -> Musee d'archeologie nationale -> MNAAO (1960-2003) -> Quai Branly.",
+        "notesEn": "Throwing club (\"i ula tavatava vonotabua\") from Fiji, late 18th or early 19th century, showing no signs of use -- probably a ceremonial object, per the museum's own record. Unlike its two counterparts in this collection (qb:359254/qb:358919), this piece's collection IS firmly attributed to La Zelee, the sister ship to L'Astrolabe on Dumont d'Urville's second voyage (1837-1840) -- the same voyage already documented by the necklace qb:359082 and the club qb:358884. Same institutional path: Musee de Marine du Louvre -> Musee d'archeologie nationale -> MNAAO (1960-2003) -> Quai Branly."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "fines s. XVIII / inicio s. XIX",
+          "actor_or_institution": "artesanos fiyianos",
+          "location": "Fiyi",
+          "description": "Talla de la maza de lanzar, probablemente objeto ceremonial sin uso real.",
+          "descriptionEs": "Talla de la maza de lanzar, probablemente objeto ceremonial sin uso real.",
+          "descriptionEn": "Carving of the throwing club, probably a ceremonial object with no real use.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "acquisition",
+          "event_date": "1837-1838",
+          "actor_or_institution": "Corbeta La Zelee (segundo viaje de Jules Dumont d'Urville)",
+          "location": "Fiyi",
+          "description": "Recolectada durante la exploracion de Fiyi del segundo viaje de Dumont d'Urville a bordo de La Zelee.",
+          "descriptionEs": "Recolectada durante la exploracion de Fiyi del segundo viaje de Dumont d'Urville a bordo de La Zelee.",
+          "descriptionEn": "Collected during the Fiji exploration of Dumont d'Urville's second voyage aboard La Zelee.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "s. XIX - 1943",
+          "actor_or_institution": "Musee de Marine du Louvre",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion del antiguo museo naval alojado dentro del Louvre.",
+          "descriptionEs": "Integracion a la coleccion del antiguo museo naval alojado dentro del Louvre.",
+          "descriptionEn": "Entry into the collection of the former naval museum housed within the Louvre.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "s. XX",
+          "actor_or_institution": "Musee d'archeologie nationale",
+          "location": "Paris, Francia",
+          "description": "Paso a la coleccion del Musee d'archeologie nationale.",
+          "descriptionEs": "Paso a la coleccion del Musee d'archeologie nationale.",
+          "descriptionEn": "Transfer to the collection of the Musee d'archeologie nationale.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "1960-2003",
+          "actor_or_institution": "Musee national des arts d'Afrique et d'Oceanie",
+          "location": "Paris, Francia",
+          "description": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEs": "Integracion a la coleccion de Oceania del MNAAO.",
+          "descriptionEn": "Entry into the Oceania collection of the MNAAO.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 6,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEs": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEn": "Transfer to the new museum after the MNAAO closed.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:383558",
@@ -32648,6 +33402,113 @@
       "originCountryEn": "Thailand",
       "context": null,
       "events": []
+    },
+    {
+      "objectID": "qb:421148",
+      "sourceMuseum": "qb",
+      "title": "Les Anglais chassés de l'ïle Saint Christophe, 1666",
+      "titleEn": "Les Anglais chassés de l'ïle Saint Christophe, 1666",
+      "objectName": "Les Anglais chassés de l'ïle Saint Christophe, 1666",
+      "department": "Mondialisation historique et contemporaine",
+      "culture": null,
+      "period": "1666",
+      "dynasty": null,
+      "objectDate": "1666",
+      "medium": "Bronze",
+      "mediumEn": "Bronze",
+      "creditLine": "Usage commémoratif.",
+      "creditLineEn": "Usage commémoratif.",
+      "accessionYear": "1950",
+      "excavation": null,
+      "country": null,
+      "region": null,
+      "subregion": null,
+      "primaryImage": "https://collections.quaibranly.fr/cc/imageproxy.ashx?server=localhost&port=15012&filename=Objets/Images/421/421148.jpg&cache=yes",
+      "objectURL": "https://collections.quaibranly.fr/#/objet/421148",
+      "originLabel": "Saint Kitts (referencia temática de la medalla)",
+      "originLabelEn": "Saint Kitts (the medal's thematic reference)",
+      "originPrecision": "editorial",
+      "originLat": 17.3026,
+      "originLon": -62.7177,
+      "originCountry": "San Cristóbal y Nieves",
+      "originCountryEn": "Saint Kitts and Nevis",
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "french_colonial_context",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Saint Kitts and Nevis;France",
+        "notes": "Medalla conmemorativa de Luis XIV, \"Les Anglais chasses de l'ile Saint Christophe, 1666\" (\"Los ingleses expulsados de la isla de San Cristobal\"), con el perfil del rey en el anverso y una alegoria de las colonias caribenas en el reverso, firmada por Jean Mauger (1648-1712), el mas prolifico de los medallistas de la \"Histoire metallique\" de Luis XIV (responsable de 250 de las 286 medallas de la serie publicada en 1702), grabador en la Casa de la Moneda de Paris desde 1685. A diferencia de la enorme mayoria de las piezas de esta muestra, no es un objeto recolectado en el terreno sino una emision oficial francesa: conmemora la Batalla de Sandy Point (San Cristobal/St Kitts, 1666), en la que Francia -- aliada de los Paises Bajos en la Segunda Guerra Anglo-Holandesa -- expulso a los ingleses de su mitad de la isla, caribena compartida hasta entonces entre ambas coronas. Donada por la propia Monnaie de Paris (la Casa de la Moneda francesa); paso por el Fondo Historico del Musee national des arts d'Afrique et d'Oceanie (1960-2003) antes de Quai Branly. El museo conserva dos ejemplares identicos de la misma medalla (no investigados por separado, mismo tipo y procedencia).",
+        "notesEn": "Commemorative medal of Louis XIV, \"Les Anglais chasses de l'ile Saint Christophe, 1666\" (\"The English driven out of the island of Saint Christopher\"), with the king's profile on the obverse and an allegory of the Caribbean colonies on the reverse, signed by Jean Mauger (1648-1712), the most prolific medalist of Louis XIV's \"Histoire metallique\" (responsible for 250 of the 286 medals in the series published in 1702), an engraver at the Paris mint from 1685. Unlike the vast majority of pieces in this collection, this is not a field-collected object but an official French issue: it commemorates the Battle of Sandy Point (Saint Kitts, 1666), in which France -- allied with the Dutch in the Second Anglo-Dutch War -- drove the English out of their half of the island, until then a Caribbean island shared between the two crowns. Donated by the Monnaie de Paris (the French mint) itself; it passed through the Historical Fund of the Musee national des arts d'Afrique et d'Oceanie (1960-2003) before Quai Branly. The museum holds two identical specimens of the same medal (not investigated separately, same type and provenance)."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "other",
+          "event_date": "1666",
+          "actor_or_institution": "Fuerzas francesas (aliadas de los Paises Bajos, Segunda Guerra Anglo-Holandesa)",
+          "location": "Saint Kitts (San Cristobal), Caribe",
+          "description": "Batalla de Sandy Point: Francia expulsa a los ingleses de su mitad de la isla de San Cristobal.",
+          "descriptionEs": "Batalla de Sandy Point: Francia expulsa a los ingleses de su mitad de la isla de San Cristobal.",
+          "descriptionEn": "Battle of Sandy Point: France drives the English out of their half of the island of Saint Kitts.",
+          "source_url": "https://en.wikipedia.org/wiki/Battle_of_Saint_Kitts",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 2,
+          "event_type": "creation",
+          "event_date": "posterior a 1666",
+          "actor_or_institution": "Jean Mauger, grabador de la Casa de la Moneda de Paris",
+          "location": "Paris, Francia",
+          "description": "Acunacion de la medalla conmemorativa dentro de la serie \"Histoire metallique\" de Luis XIV.",
+          "descriptionEs": "Acunacion de la medalla conmemorativa dentro de la serie \"Histoire metallique\" de Luis XIV.",
+          "descriptionEn": "Striking of the commemorative medal as part of Louis XIV's \"Histoire metallique\" series.",
+          "source_url": "https://en.wikipedia.org/wiki/Jean_Mauger",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "s. XX (anterior a 1960)",
+          "actor_or_institution": "Monnaie de Paris",
+          "location": "Paris, Francia",
+          "description": "Donacion de la medalla por la propia Casa de la Moneda francesa.",
+          "descriptionEs": "Donacion de la medalla por la propia Casa de la Moneda francesa.",
+          "descriptionEn": "Donation of the medal by the French mint itself.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "1960-2003",
+          "actor_or_institution": "Musee national des arts d'Afrique et d'Oceanie (Fondo Historico)",
+          "location": "Paris, Francia",
+          "description": "Integracion al Fondo Historico del MNAAO.",
+          "descriptionEs": "Integracion al Fondo Historico del MNAAO.",
+          "descriptionEn": "Entry into the MNAAO's Historical Fund.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musee du Quai Branly",
+          "location": "Paris, Francia",
+          "description": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEs": "Traspaso al museo nuevo tras el cierre del MNAAO.",
+          "descriptionEn": "Transfer to the new museum after the MNAAO closed.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:421156",

@@ -211,6 +211,28 @@ SEED_OBJECT_IDS = [
     "E_Af1868-1001-1",  # Escudo, posiblemente hecho para el propio Tewodros II — Maqdala/Etiopía
     "E_Af1868-1001-24",  # Túnica de brocado de seda — Maqdala/Etiopía
     "E_Af1868-1230-5",  # Cruz procesional de Gondar — Maqdala/Etiopía
+    # Novena ronda (17/09) — las 15 candidatas restantes del cruce con Wikidata
+    # (ver CLAUDE.md, "Cruce con Wikidata para piezas en disputa"), ya
+    # investigadas para layer 3 como entradas huérfanas antes de este fetch.
+    # 9 de Maqdala (mismo evento de saqueo de 1868 que las 4 de arriba) + 6 de
+    # Adulis (excavación propia del Museo en 1868, sitio distinto en la actual
+    # Eritrea — ver nota en context.csv sobre la conexión sin confirmar con la
+    # Campaña Abisinia del mismo año).
+    "E_Af1900-0711-1",  # Disco de oro, Crucifixión — Maqdala/Etiopía (comprado 1900)
+    "E_Af1900-0711-2",  # Disco de oro, Virgen con el Niño — Maqdala/Etiopía (comprado 1900)
+    "E_Af1900-0711-3",  # Disco de oro, tercero del conjunto — Maqdala/Etiopía (comprado 1900)
+    "E_Af1868-1001-3-a-b",  # Par de ajorcas de plata — Maqdala/Etiopía
+    "E_Af1868-1001-30",  # Collar de semillas y cuentas venecianas — Maqdala/Etiopía
+    "E_Af1868-1005-3",  # Tabot de madera — Maqdala/Etiopía
+    "E_Af1968-0401-1",  # Tabot de alabastro — Maqdala/Etiopía (comprado 1968, familia Mackie)
+    "E_Af1868-1001-21",  # Tabot de madera — Maqdala/Etiopía
+    "E_Af1868-1001-20",  # Cruz de mano de cobre dorado — Maqdala/Etiopía (subasta oficial 1868)
+    "H_1868-1005-16",  # Fragmento de relieve en alabastro — Adulis/Eritrea (excavación BM 1868)
+    "H_1868-1005-15",  # Fragmento de relieve en mármol, cruz en corona — Adulis/Eritrea
+    "H_1868-1005-10",  # Fragmento de poste octogonal en mármol — Adulis/Eritrea
+    "H_OA-11008",  # Fragmento de relieve en mármol, cruz en círculo — Adulis/Eritrea
+    "H_1868-1005-12",  # Capitel de columna con acanto — Adulis/Eritrea
+    "C_1868-1219-1",  # Moneda aksumita del rey Ouazebas — Adulis/Eritrea
 ]
 
 

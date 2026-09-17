@@ -504,6 +504,25 @@ EDITORIAL_ORIGIN_OVERRIDES: dict[str, dict] = {
         "country": "Ucrania",
         "country_en": "Ukraine",
     },
+    # Médaille "Les Anglais chassés de l'île Saint Christophe, 1666" (Quai
+    # Branly, batch 20 layer 3, 17/09) -- a diferencia de las piezas
+    # recolectadas en el terreno del resto de la muestra, esta es una
+    # emisión oficial de la Monnaie de Paris (grabador Jean Mauger): no tiene
+    # Toponyme/Country en el thesaurus del museo porque nunca fue un objeto
+    # etnográfico con sitio de hallazgo, es una medalla conmemorativa. El
+    # tema de la medalla es explícitamente la Batalla de Sandy Point (Saint
+    # Kitts, 1666) -- se usa esa ubicación como origen, mismo criterio que
+    # met:910742/met:969159 arriba (la referencia geográfica del objeto, no
+    # su sitio físico de fabricación en París).
+    "qb:421148": {
+        "label": "Saint Kitts (referencia temática de la medalla)",
+        "label_en": "Saint Kitts (the medal's thematic reference)",
+        "precision": "editorial",
+        "lat": 17.3026,
+        "lon": -62.7177,
+        "country": "San Cristóbal y Nieves",
+        "country_en": "Saint Kitts and Nevis",
+    },
     # Calice, Antiquités égyptiennes -- a diferencia de la Tiare de Saitapharnes
     # (arriba), esta SÍ es una pieza antigua egipcia real (Dinastía XXII (?),
     # h. -943/-731) con un excavador/sitio de hallazgo simplemente no
