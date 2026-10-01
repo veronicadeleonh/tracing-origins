@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
-import type { KeyboardEvent as ReactKeyboardEvent } from "react";
+import type { KeyboardEvent as ReactKeyboardEvent, CSSProperties } from "react";
 import Map, { Source, Layer, Popup } from "react-map-gl/mapbox";
 import type { MapMouseEvent } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -232,7 +232,19 @@ function App() {
   // ese momento.
   const [titleQuery, setTitleQuery] = useState("");
   const [titleSearchOpen, setTitleSearchOpen] = useState(false);
+  // Resaltar solo la línea origen→museo de la pieza elegida en el buscador
+  // (01/10, pedido de la usuaria) -- objectID de la última pieza abierta vía
+  // selectSearchedObject, o null si no hay ninguna. Se limpia solo (ver
+  // useEffect más abajo) en cuanto el panel deja de mostrar exactamente esa
+  // pieza -- volver al cluster, navegar con prev/next, o cerrar el panel
+  // todos cuentan como "ya no estamos mirando el resultado de la búsqueda".
+  const [searchFocusObjectId, setSearchFocusObjectId] = useState<string | null>(null);
   const titleSearchRef = useRef<HTMLDivElement>(null);
+  const titleSearchInputRef = useRef<HTMLInputElement>(null);
+  // Ancho del placeholder medido en píxeles reales -- ver el useEffect que
+  // lo calcula más abajo (después de que `s` esté definido), 90 es solo el
+  // valor para el primer render antes de que ese efecto corra.
+  const [searchPlaceholderWidth, setSearchPlaceholderWidth] = useState(90);
   useEffect(() => {
     if (!titleSearchOpen) return;
     const onPointerDown = (e: PointerEvent) => {
@@ -320,6 +332,25 @@ function App() {
   // todavía) es el único que cambió, de "es" a "en".
   const [lang, setLang] = useState<Lang>(() => (localStorage.getItem(LANG_KEY) === "es" ? "es" : "en"));
   const s = STRINGS[lang];
+  // Ancho del placeholder del buscador de títulos, medido en píxeles reales
+  // (01/10, segunda vuelta -- la primera aproximación con `ch` quedaba de
+  // más: 1ch es el ancho del glifo "0", bastante más ancho que el promedio
+  // de letras/espacios de "Search a piece"/"Buscar pieza", así que el
+  // input quedaba con aire de sobra a la derecha del texto). Se mide con un
+  // canvas 2D usando la tipografía efectiva del propio input
+  // (`getComputedStyle`, no un font-family hardcodeado) para que el
+  // resultado sea exacto sin importar qué fuente termine resolviendo el
+  // navegador. Corre de nuevo cada vez que cambia el placeholder (toggle de
+  // idioma), no solo al montar.
+  useEffect(() => {
+    const el = titleSearchInputRef.current;
+    if (!el || typeof document === "undefined") return;
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    ctx.font = window.getComputedStyle(el).font;
+    setSearchPlaceholderWidth(Math.ceil(ctx.measureText(s.titleSearchPlaceholder).width));
+  }, [s.titleSearchPlaceholder]);
   const toggleLang = useCallback(() => {
     setLang((prev) => {
       const next = prev === "es" ? "en" : "es";
@@ -529,11 +560,40 @@ function App() {
       const cluster = allClusters.find((c) => c.objects.some((o) => o.objectID === obj.objectID));
       if (!cluster) return;
       setPanel({ view: "object", cluster, object: obj });
+      setSearchFocusObjectId(obj.objectID);
       setTitleQuery("");
       setTitleSearchOpen(false);
+      // Globo acercándose al origen de la pieza elegida (pedido de la
+      // usuaria, 01/10) -- usa la coordenada real de la pieza
+      // (obj.originLat/originLon), no la del cluster, que puede estar
+      // jitereada para separarse visualmente de otro cluster superpuesto
+      // (ver CLUSTER_COLLISION_JITTER_RADIUS_DEG en geo.ts). `essential:
+      // true` para que la animación corra igual si el usuario tiene
+      // "reduce motion" activado en el sistema -- es la única forma de
+      // feedback de que el buscador encontró algo, no un adorno puramente
+      // decorativo que convenga respetar esa preferencia.
+      const map = mapRef.current?.getMap?.();
+      if (map && Number.isFinite(obj.originLat) && Number.isFinite(obj.originLon)) {
+        map.flyTo({
+          center: [obj.originLon, obj.originLat],
+          zoom: Math.max(map.getZoom?.() ?? 0, 4),
+          duration: 1800,
+          essential: true,
+        });
+      }
     },
     [allClusters],
   );
+
+  // Limpia el resaltado de búsqueda en cuanto el panel deja de mostrar
+  // exactamente esa pieza -- cubre cerrar el panel (null), volver al
+  // cluster, o navegar a otra pieza con prev/next, sin tener que tocar cada
+  // uno de esos puntos por separado.
+  useEffect(() => {
+    if (!searchFocusObjectId) return;
+    const stillFocused = panel?.view === "object" && panel.object.objectID === searchFocusObjectId;
+    if (!stillFocused) setSearchFocusObjectId(null);
+  }, [panel, searchFocusObjectId]);
 
   const handleTitleSearchKeyDown = useCallback(
     (e: ReactKeyboardEvent<HTMLInputElement>) => {
@@ -570,10 +630,15 @@ function App() {
   // visual de "este modo está activo, clickeá un país". Apagar el toggle
   // sin haber elegido país vuelve todo a la opacidad normal (null).
   const highlightedObjectIds = useMemo(() => {
+    // Pieza abierta desde el buscador de títulos (01/10): gana por sobre la
+    // lógica de país de abajo -- son mutuamente excluyentes en la práctica
+    // (una pieza abierta vía buscador no es un resultado de país), pero el
+    // orden deja explícito cuál manda si alguna vez coincidieran.
+    if (searchFocusObjectId) return new Set([searchFocusObjectId]);
     if (panel && panel.kind === "country") return new Set(panel.cluster.objects.map((o) => o.objectID));
     if (countryClickEnabled) return new Set<string>();
     return null;
-  }, [panel, countryClickEnabled]);
+  }, [panel, countryClickEnabled, searchFocusObjectId]);
 
   const linesGeoJSON = useMemo(() => ({
     type: "FeatureCollection" as const,
@@ -793,11 +858,26 @@ function App() {
             visibleObjects -- encontrar "Sleeping Hermaphroditus" no debería
             depender de qué museos estén prendidos. */}
         <div className={`title-search-panel${timelineOpen ? " timeline-open" : ""}`}>
-          <div className="title-search-wrap" ref={titleSearchRef}>
+          <div
+            className="title-search-wrap"
+            ref={titleSearchRef}
+            // Ancho del estado inactivo ajustado al ancho real (en píxeles)
+            // del placeholder (01/10, pedido de la usuaria; segunda vuelta
+            // el mismo día -- la primera versión con `ch` quedaba con aire
+            // de sobra, ver comentario en el useEffect que mide
+            // searchPlaceholderWidth más arriba). `--search-text-width` se
+            // consume en .title-search-wrap (App.css) vía `calc(var(...) +
+            // 44px)`, donde 44px es el padding horizontal del input que no
+            // es texto (30px a la izquierda para la lupa + 12px a la
+            // derecha + ~2px de borde). El estado expandido (:focus-within,
+            // 260px) sigue fijo -- el pedido fue solo sobre el default.
+            style={{ "--search-text-width": `${searchPlaceholderWidth}px` } as CSSProperties}
+          >
             <span className="title-search-icon" aria-hidden="true">
               {TITLE_SEARCH_ICON}
             </span>
             <input
+              ref={titleSearchInputRef}
               type="text"
               className="title-search-input"
               value={titleQuery}

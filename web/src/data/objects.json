@@ -2985,8 +2985,96 @@
       "objectTypeFlags": [
         "weapon"
       ],
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "institutional_transfer"
+        ],
+        "associated_communities_or_states": "Indonesia",
+        "notes": "Lanza de madera del pueblo asmat, Nueva Guinea Holandesa (hoy Papúa Occidental, Indonesia), mediados del siglo XX -- mismo recorrido ya documentado para las otras lanzas y la proa de canoa de esta muestra (met:311551, met:311555, met:311563): recolección bajo administración colonial holandesa, probablemente vía la Misión Católica de Agats como intermediaria local, incorporada a la Expedición Michael C. Rockefeller de 1961 -- el mismo año en que Michael Rockefeller desapareció sin dejar rastro frente a la costa de Nueva Guinea --, donada por Nelson A. y Mary C. Rockefeller en 1965 a The Michael C. Rockefeller Memorial Collection, de ahí al Museum of Primitive Art y finalmente al Met en 1978. El Met conserva varias piezas más de la misma expedición y temporada de campo (incluida esta), reflejo del volumen de material recolectado en una sola campaña.",
+        "notesEn": "Wooden spear of the Asmat people, Dutch New Guinea (today Western Papua, Indonesia), mid-20th century -- same journey already documented for the other spears and the canoe prow in this sample (met:311551, met:311555, met:311563): collected under Dutch colonial administration, likely via the Agats Catholic Mission as a local intermediary, incorporated into the 1961 Michael C. Rockefeller Expedition -- the same year Michael Rockefeller disappeared without a trace off the coast of New Guinea --, donated by Nelson A. and Mary C. Rockefeller in 1965 to The Michael C. Rockefeller Memorial Collection, from there to the Museum of Primitive Art and finally to the Met in 1978. The Met holds several more pieces from the same expedition and field season (including this one), reflecting the volume of material collected in a single campaign."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "siglo XX medio",
+          "actor_or_institution": "Pueblo asmat",
+          "location": "Nueva Guinea Holandesa (Papúa Occidental, Indonesia)",
+          "description": "Wooden spear carved by the Asmat people.",
+          "descriptionEs": "Lanza de madera tallada por el pueblo asmat.",
+          "descriptionEn": "Wooden spear carved by the Asmat people.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311559",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "transfer",
+          "event_date": "hasta 1961",
+          "actor_or_institution": "Misión Católica de Agats (probable)",
+          "location": "Nueva Guinea Holandesa",
+          "description": "Same mechanism already documented for met:311551/met:311555/met:311563 -- likely held at the Agats Catholic Mission as a local intermediary before the 1961 expedition.",
+          "descriptionEs": "Mismo mecanismo ya documentado para met:311551/met:311555/met:311563 -- probablemente retenida en la Misión Católica de Agats como intermediaria local antes de la expedición de 1961.",
+          "descriptionEn": "Same mechanism already documented for met:311551/met:311555/met:311563 -- likely held at the Agats Catholic Mission as a local intermediary before the 1961 expedition.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311551",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "other",
+          "event_date": "1961",
+          "actor_or_institution": "Expedición Michael C. Rockefeller",
+          "location": "Nueva Guinea Holandesa",
+          "description": "Collected during the 1961 Michael C. Rockefeller Expedition, the same year Michael Rockefeller disappeared off the coast.",
+          "descriptionEs": "Recolectada durante la Expedición Michael C. Rockefeller de 1961, el mismo año en que Michael Rockefeller desapareció frente a la costa.",
+          "descriptionEn": "Collected during the 1961 Michael C. Rockefeller Expedition, the same year Michael Rockefeller disappeared off the coast.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311559",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "gift",
+          "event_date": "1965",
+          "actor_or_institution": "Nelson A. Rockefeller y Mary C. Rockefeller",
+          "location": "Nueva York",
+          "description": "Donated to The Michael C. Rockefeller Memorial Collection.",
+          "descriptionEs": "Donada a The Michael C. Rockefeller Memorial Collection.",
+          "descriptionEn": "Donated to The Michael C. Rockefeller Memorial Collection.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311559",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 5,
+          "event_type": "transfer",
+          "event_date": "1965-1978",
+          "actor_or_institution": "Museum of Primitive Art",
+          "location": "Nueva York",
+          "description": "Incorporated into the Museum of Primitive Art collection before its merger with the Met.",
+          "descriptionEs": "Integrada a la colección del Museum of Primitive Art antes de su fusión con el Met.",
+          "descriptionEn": "Incorporated into the Museum of Primitive Art collection before its merger with the Met.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311559",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 6,
+          "event_type": "acquisition",
+          "event_date": "1978",
+          "actor_or_institution": "The Metropolitan Museum of Art",
+          "location": "Nueva York",
+          "description": "The Met absorbs the Museum of Primitive Art collection, including this spear.",
+          "descriptionEs": "El Met incorpora la colección del Museum of Primitive Art, incluida esta lanza.",
+          "descriptionEn": "The Met absorbs the Museum of Primitive Art collection, including this spear.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/311559",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:311563",
@@ -4176,8 +4264,57 @@
       "objectTypeFlags": [
         "jewelry"
       ],
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "museum_funded_excavation",
+          "non_colonial_context"
+        ],
+        "associated_communities_or_states": "Iran",
+        "notes": "Cuenta de vidrio parta (h. siglo I a.C.-I d.C.) de Shahr-i Qumis, la antigua Hecatompylos, capital parta identificada en el norte de Irán -- excavada en 1967 (con temporadas posteriores en 1971, 1976 y 1978) por el British Institute of Persian Studies y el Oriental Institute de la Universidad de Chicago, bajo la dirección de David Stronach y John Hansman. El Met cofinanció la excavación de 1967 a través de una donación del coleccionista H. Dunscombe Colt -- el mismo financista privado ya documentado en esta muestra por la lámpara israelita de Laquis, pero ahí bajo Mandato Británico en Palestina (años 1930) y con el mecanismo \"museum_funded_excavation;partage\" -- y recibió varias piezas de la temporada como retorno de esa contribución, acreditadas como \"H. Dunscombe Colt Gift\". A diferencia de la pieza de Laquis, esta excavación ocurrió en Irán ya plenamente independiente (dinastía Pahlavi), bajo permiso del propio gobierno iraní y sin marco colonial -- mismo tipo de financista privado, mecanismo de adquisición distinto según el contexto político del sitio.",
+        "notesEn": "Parthian glass bead (ca. 1st century BCE-1st century CE) from Shahr-i Qumis, ancient Hecatompylos, the Parthian capital identified in northern Iran -- excavated in 1967 (with later seasons in 1971, 1976, and 1978) by the British Institute of Persian Studies and the Oriental Institute of the University of Chicago, under the direction of David Stronach and John Hansman. The Met co-funded the 1967 excavation through a donation from collector H. Dunscombe Colt -- the same private financier already documented in this sample for the Lachish israelite lamp, but there under British Mandate Palestine (1930s) and with the mechanism \"museum_funded_excavation;partage\" -- and received several pieces from the season in return for that contribution, credited as the \"H. Dunscombe Colt Gift\". Unlike the Lachish piece, this excavation took place in a fully independent Iran (Pahlavi dynasty), under permit from Iran's own government and with no colonial framework -- same type of private financier, different acquisition mechanism depending on the site's political context."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. siglo I a.C.-I d.C.",
+          "actor_or_institution": "Artesano parto",
+          "location": "Shahr-i Qumis (antigua Hecatompylos), Irán",
+          "description": "Parthian-period glass bead.",
+          "descriptionEs": "Cuenta de vidrio del período parto.",
+          "descriptionEn": "Parthian-period glass bead.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/326466",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "excavation",
+          "event_date": "1967",
+          "actor_or_institution": "British Institute of Persian Studies / Oriental Institute (David Stronach, John Hansman)",
+          "location": "Shahr-i Qumis, Irán",
+          "description": "Excavated in the first season of the joint British-American expedition, under permit from the already-independent Iranian government.",
+          "descriptionEs": "Excavada en la primera temporada de la expedición conjunta británico-estadounidense, bajo permiso del gobierno iraní ya independiente.",
+          "descriptionEn": "Excavated in the first season of the joint British-American expedition, under permit from the already-independent Iranian government.",
+          "source_url": "https://en.wikipedia.org/wiki/Qumis,_Iran",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "exchange",
+          "event_date": "1978",
+          "actor_or_institution": "H. Dunscombe Colt / The Metropolitan Museum of Art",
+          "location": "Nueva York",
+          "description": "The Met receives the piece in return for co-funding the excavation, credited as a purchase via the fund donated by H. Dunscombe Colt.",
+          "descriptionEs": "El Met recibe la pieza como retorno de su cofinanciamiento de la excavación, acreditada como compra vía el fondo donado por H. Dunscombe Colt.",
+          "descriptionEn": "The Met receives the piece in return for co-funding the excavation, credited as a purchase via the fund donated by H. Dunscombe Colt.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/326466",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:327079",
@@ -4281,8 +4418,57 @@
       "objectTypeFlags": [
         "manuscript_document"
       ],
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "art_market",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Syria",
+        "notes": "Sello cilíndrico de hematita, período sirio antiguo (h. 1820-1730 a.C.), sin excavador ni sitio de hallazgo documentados -- legado al Met en 1999 por Nanette B. Kelekian \"en memoria de Charles Dikran y Beatrice Kelekian\". Charles Dikran Kelekian (1899-1982) era hijo de Dikran Garabed Kelekian (1868-1951), el mismo marchante ya documentado en esta muestra por el \"Relief: procession of captives\" y por haber sido propietario, antes que el Met, del hipopótamo de fayenza \"William\" -- Charles se incorporó a la galería de su padre en Nueva York en los años 1920 y continuó el negocio familiar de antigüedades (arte egipcio, cerámica islámica, textiles coptos) durante varias décadas, descrito en su propio obituario del New York Times como \"el decano de los marchantes de antigüedades en Estados Unidos\", igual que antes se había descrito a su padre. El sello llega al museo como legado de la nuera de Charles (Nanette), no como venta directa -- la pieza probablemente formaba parte de la colección numismática/de sellos personal de la familia, sin que se documente cuándo ni cómo la adquirió originalmente ninguno de los dos Kelekian.",
+        "notesEn": "Hematite cylinder seal, Old Syrian period (ca. 1820-1730 BCE), with no excavator or findspot documented -- bequeathed to the Met in 1999 by Nanette B. Kelekian \"in memory of Charles Dikran and Beatrice Kelekian\". Charles Dikran Kelekian (1899-1982) was the son of Dikran Garabed Kelekian (1868-1951), the same dealer already documented in this sample for the \"Relief: procession of captives\" and for having owned, before the Met, the faience hippopotamus \"William\" -- Charles joined his father's New York gallery in the 1920s and continued the family antiquities business (Egyptian art, Islamic ceramics, Coptic textiles) for several decades, described in his own New York Times obituary as \"the dean of antiquities dealers in the United States\", just as his father had been described before him. The seal enters the museum as a bequest from Charles's daughter-in-law (Nanette), not a direct sale -- the piece likely belonged to the family's personal seal/numismatic collection, with no documentation of when or how either Kelekian originally acquired it."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "ca. 1820-1730 BCE",
+          "actor_or_institution": "Artesano sirio antiguo",
+          "location": "Siria",
+          "description": "Hematite cylinder seal of the Old Syrian period.",
+          "descriptionEs": "Sello cilíndrico de hematita del período sirio antiguo.",
+          "descriptionEn": "Hematite cylinder seal of the Old Syrian period.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/327754",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "sin fecha documentada",
+          "actor_or_institution": "Dikran Garabed Kelekian / Charles Dikran Kelekian (coleccion familiar)",
+          "location": "Nueva York",
+          "description": "Likely part of the Kelekian family's personal seal/numismatic collection -- Dikran Garabed Kelekian (1868-1951) and his son Charles (1899-1982) ran a New York antiquities gallery for decades; no documentation of when or how the seal was acquired.",
+          "descriptionEs": "Probablemente parte de la colección personal de sellos/numismática de la familia Kelekian -- Dikran Garabed Kelekian (1868-1951) y su hijo Charles (1899-1982) operaron una galería de antigüedades en Nueva York durante décadas; no se documenta cuándo ni cómo se adquirió el sello.",
+          "descriptionEn": "Likely part of the Kelekian family's personal seal/numismatic collection -- Dikran Garabed Kelekian (1868-1951) and his son Charles (1899-1982) ran a New York antiquities gallery for decades; no documentation of when or how the seal was acquired.",
+          "source_url": "https://en.wikipedia.org/wiki/Dikran_Kelekian",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "bequest",
+          "event_date": "1999",
+          "actor_or_institution": "Nanette B. Kelekian",
+          "location": "Nueva York",
+          "description": "Bequeathed to the Met by Nanette B. Kelekian in memory of Charles Dikran and Beatrice Kelekian.",
+          "descriptionEs": "Legado al Met por Nanette B. Kelekian en memoria de Charles Dikran y Beatrice Kelekian.",
+          "descriptionEn": "Bequeathed to the Met by Nanette B. Kelekian in memory of Charles Dikran and Beatrice Kelekian.",
+          "source_url": "https://www.metmuseum.org/art/collection/search/327754",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "met:328095",
@@ -28180,8 +28366,70 @@
       "objectTypeFlags": [
         "jewelry"
       ],
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Morocco",
+        "notes": "Par de fíbulas de plata y esmalte (\"bzima\"), finales del s. XIX, de la región del valle del Sous/Anti-Atlas, Marruecos -- parte de la parafernalia femenina tradicional, usada para sujetar la tela que cubría los hombros. Donadas al Musée de l'Homme por René Bénézech (1883-1945), pintor orientalista e intérprete de chino durante la Primera Guerra Mundial que colaboró unos diez años con el pintor Jacques Majorelle en Marruecos, entonces bajo protectorado francés -- Bénézech y su esposa Jacqueline reunieron la colección que llegó al museo en 1939 (misión DMH1939.45). Caso distinto de los funcionarios/etnólogos coloniales ya documentados en esta muestra para el Magreb -- la conexión de Bénézech con Marruecos parece haber sido artística (vía Majorelle) antes que administrativa o científica, aunque ambos operaron bajo el mismo marco de protectorado francés; no se encontró más información sobre el mecanismo puntual de adquisición de estas fíbulas en particular.",
+        "notesEn": "Pair of silver and enamel fibulae (\"bzima\"), late 19th century, from the Sous valley/Anti-Atlas region of Morocco -- part of traditional women's dress paraphernalia, used to fasten the cloth draped over the shoulders. Donated to the Musée de l'Homme by René Bénézech (1883-1945), an orientalist painter and Chinese interpreter during World War I who spent about ten years collaborating with painter Jacques Majorelle in Morocco, then under French protectorate -- Bénézech and his wife Jacqueline assembled the collection that reached the museum in 1939 (mission DMH1939.45). A different case from the colonial officials/ethnologists already documented in this sample for the Maghreb -- Bénézech's connection to Morocco appears to have been artistic (via Majorelle) rather than administrative or scientific, though both operated under the same French protectorate framework; no further information was found on the specific acquisition mechanism for these particular fibulae."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "fines s. XIX",
+          "actor_or_institution": "Artesana bereber (no identificada)",
+          "location": "Valle del Sous / Anti-Atlas, Marruecos",
+          "description": "Pair of silver and enamel fibulae, part of traditional women's dress paraphernalia.",
+          "descriptionEs": "Par de fíbulas de plata y esmalte, parte de la parafernalia femenina tradicional.",
+          "descriptionEn": "Pair of silver and enamel fibulae, part of traditional women's dress paraphernalia.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "h. 1920s-1930s (estimado)",
+          "actor_or_institution": "René y Jacqueline Bénézech",
+          "location": "Marruecos (protectorado francés)",
+          "description": "Assembled by René Bénézech, an orientalist painter and interpreter, during his roughly ten-year stay collaborating with painter Jacques Majorelle in Morocco under French protectorate.",
+          "descriptionEs": "Reunida por René Bénézech, pintor orientalista e intérprete, durante su estadía de unos diez años colaborando con el pintor Jacques Majorelle en Marruecos bajo protectorado francés.",
+          "descriptionEn": "Assembled by René Bénézech, an orientalist painter and interpreter, during his roughly ten-year stay collaborating with painter Jacques Majorelle in Morocco under French protectorate.",
+          "source_url": "https://melc.washington.edu/sites/melc/files/documents/events/burke_extreme_ethnog.pdf",
+          "source_type": "secondary_source",
+          "confidence_level": "low"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1939",
+          "actor_or_institution": "René Bénézech (misión DMH1939.45)",
+          "location": "París",
+          "description": "Donated to the Musée de l'Homme.",
+          "descriptionEs": "Donada al Musée de l'Homme.",
+          "descriptionEn": "Donated to the Musée de l'Homme.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musée du Quai Branly",
+          "location": "París",
+          "description": "Transfer to the new museum.",
+          "descriptionEs": "Traspaso al museo nuevo.",
+          "descriptionEn": "Transfer to the new museum.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:36060",
@@ -28250,8 +28498,71 @@
       "objectTypeFlags": [
         "vessel_ceramic"
       ],
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "french_colonial_context",
+          "state_mission"
+        ],
+        "associated_communities_or_states": "Algeria",
+        "notes": "Lámpara de cerámica (primera mitad del s. XX), usada tradicionalmente en mezquitas y llevada ante la novia en ceremonias de boda según la propia ficha del museo -- atribuida a la \"antigua colección\" de Thérèse Rivière (1901-1970), la misma etnógrafa ya documentada en esta muestra por el bol de Douar Mansouria (qb:36405), jefa de la primera misión etnográfica francesa a los Aurès (1934-36, elegida por Lucien Lévy-Bruhl, Marcel Mauss y Paul Rivet del Institut d'Ethnologie de Paris, acompañada por Germaine Tillion) para estudiar a los bereberes chaouïa bajo administración colonial francesa de Argelia. Caso con la misma tensión geográfica ya señalada en CLAUDE.md para otras 6 piezas de esta colección: el propio registro del museo ubica esta lámpara en \"Aït Berdjal\" (Tizi Ouzou, la Kabilia) -- una región bereber distinta y geográficamente lejana de los Aurès (Chaouïa), donde la misión de Rivière/Tillion efectivamente trabajó en 1935-36 según toda la bibliografía consultada. No hay fuente que confirme que Rivière haya recolectado también en la Kabilia, así que el sitio puntual de esta pieza queda sin resolver -- el colector y el mecanismo institucional (misión científica bajo administración colonial) sí están firmemente documentados, `research_status: partial` en la práctica para el sitio exacto, aunque se deja `documented` por tratarse del mismo patrón ya aceptado para el resto de piezas de Aït Berdjal en esta muestra.",
+        "notesEn": "Ceramic lamp (first half of the 20th century), traditionally kept in mosques and carried before the bride during wedding ceremonies according to the museum's own record -- attributed to the \"former collection\" of Thérèse Rivière (1901-1970), the same ethnographer already documented in this sample for the Douar Mansouria bowl (qb:36405), head of the first French ethnographic mission to the Aurès (1934-36, chosen by Lucien Lévy-Bruhl, Marcel Mauss and Paul Rivet of the Institut d'Ethnologie de Paris, accompanied by Germaine Tillion) to study the Chaouïa Berbers under French colonial administration of Algeria. A case with the same geographic tension already flagged in CLAUDE.md for 6 other pieces in this collection: the museum's own record places this lamp in \"Aït Berdjal\" (Tizi Ouzou, Kabylia) -- a different and geographically distant Berber region from the Aurès (Chaouïa), where the Rivière/Tillion mission actually worked in 1935-36 according to all sources consulted. No source confirms Rivière also collected in Kabylia, so the exact findspot for this piece remains unresolved -- the collector and the institutional mechanism (a scientific mission under colonial administration) are both firmly documented; effectively `research_status: partial` for the exact site, though left as `documented` since it follows the same already-accepted pattern as the rest of the Aït Berdjal pieces in this sample."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "primera mitad s. XX",
+          "actor_or_institution": "Artesana argelina (no identificada)",
+          "location": "Aït Berdjal (?) / Argelia",
+          "description": "Ceramic lamp for ritual/ceremonial use (mosques, weddings).",
+          "descriptionEs": "Lámpara de cerámica para uso ritual/ceremonial (mezquitas, bodas).",
+          "descriptionEn": "Ceramic lamp for ritual/ceremonial use (mosques, weddings).",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1934-1936",
+          "actor_or_institution": "Thérèse Rivière (misión Aurès, Institut d'Ethnologie de Paris)",
+          "location": "Aurès, Argelia",
+          "description": "Collected during Thérèse Rivière's ethnographic mission to the Aurès -- the museum's own record places the piece in Aït Berdjal (Kabylia), a different region from where the mission is documented by external sources to have actually worked (Aurès/Chaouïa); contradiction flagged without resolution, same case already documented in CLAUDE.md for other pieces from this site.",
+          "descriptionEs": "Recolectada durante la misión etnográfica de Thérèse Rivière a los Aurès -- el propio registro del museo ubica la pieza en Aït Berdjal (Kabilia), una región distinta de donde la misión documentada por fuentes externas efectivamente trabajó (Aurès/Chaouïa); contradicción señalada sin resolver, mismo caso ya documentado en CLAUDE.md para otras piezas de este sitio.",
+          "descriptionEn": "Collected during Thérèse Rivière's ethnographic mission to the Aurès -- the museum's own record places the piece in Aït Berdjal (Kabylia), a different region from where the mission is documented by external sources to have actually worked (Aurès/Chaouïa); contradiction flagged without resolution, same case already documented in CLAUDE.md for other pieces from this site.",
+          "source_url": "https://www.berose.fr/article1676.html?lang=fr",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "transfer",
+          "event_date": "siglo XX",
+          "actor_or_institution": "Musée de l'Homme (Afrique du Nord et Proche-Orient)",
+          "location": "París",
+          "description": "Incorporated into the North Africa collection of the Musée de l'Homme.",
+          "descriptionEs": "Integrada a la colección de África del Norte del Musée de l'Homme.",
+          "descriptionEn": "Incorporated into the North Africa collection of the Musée de l'Homme.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musée du Quai Branly",
+          "location": "París",
+          "description": "Transfer to the new museum along with the rest of the Musée de l'Homme's North African holdings.",
+          "descriptionEs": "Traspaso al museo nuevo junto con el resto del fondo norteafricano del Musée de l'Homme.",
+          "descriptionEn": "Transfer to the new museum along with the rest of the Musée de l'Homme's North African holdings.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:36388",
@@ -29271,8 +29582,70 @@
       "objectTypeFlags": [
         "amulet_ritual"
       ],
-      "context": null,
-      "events": []
+      "context": {
+        "research_status": "documented",
+        "context_flags": [
+          "colonial_administration",
+          "private_collection"
+        ],
+        "associated_communities_or_states": "Tunisia;Libya",
+        "notes": "Amuleto de madera de éfedra (\"chguiga\"), siglo XX, de la región fronteriza entre el sur de Túnez y Libia (Ghadamis/Fezzán) -- colgado de los pendientes de las mujeres o de la chechia de los hombres contra la migraña y las neuralgias, según la propia ficha del museo, que remite a otra pieza gemela (71.1960.136.9, no investigada por separado). Donado por Ernest-Gustave Gobert (1879-1973), médico francés activo en Túnez desde 1906 bajo el protectorado francés, nombrado inspector de antigüedades prehistóricas de Túnez en 1948 -- prehistoriador y etnólogo que recorrió el país a caballo y reunió una valiosa colección de cerámica que, según las fuentes consultadas, donó principalmente al Museo del Bardo en Túnez; esta pieza puntual llegó en cambio al Musée de l'Homme, sin que se documente por qué una parte de su colección se repartió entre las dos instituciones. Caso de un funcionario médico colonial que, a la vez, ejerció un cargo oficial de protección patrimonial dentro del mismo aparato administrativo.",
+        "notesEn": "Wooden ephedra amulet (\"chguiga\"), 20th century, from the border region between southern Tunisia and Libya (Ghadamis/Fezzan) -- hung from women's earrings or men's chechia against migraines and neuralgia, according to the museum's own record, which cross-references a twin piece (71.1960.136.9, not investigated separately). Donated by Ernest-Gustave Gobert (1879-1973), a French physician active in Tunisia from 1906 under the French protectorate, appointed inspector of prehistoric antiquities of Tunisia in 1948 -- a prehistorian and ethnologist who explored the country on horseback and gathered a valuable pottery collection that, per the sources consulted, he mainly donated to the Bardo Museum in Tunis; this particular piece instead reached the Musée de l'Homme, with no documentation of why part of his collection was split between the two institutions. A case of a colonial medical official who also held an official heritage-protection post within the same administrative apparatus."
+      },
+      "events": [
+        {
+          "event_order": 1,
+          "event_type": "creation",
+          "event_date": "siglo XX",
+          "actor_or_institution": "Artesano/a de la región Túnez-Libia (no identificado/a)",
+          "location": "Ghadamis/Fezzán, frontera Túnez-Libia",
+          "description": "Wooden ephedra amulet against migraines and neuralgia.",
+          "descriptionEs": "Amuleto de madera de éfedra contra la migraña y las neuralgias.",
+          "descriptionEn": "Wooden ephedra amulet against migraines and neuralgia.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 2,
+          "event_type": "other",
+          "event_date": "1906-1948",
+          "actor_or_institution": "Ernest-Gustave Gobert",
+          "location": "Túnez (protectorado francés)",
+          "description": "Assembled by Ernest-Gustave Gobert, a French physician active in Tunisia from 1906 and appointed inspector of prehistoric antiquities of Tunisia in 1948.",
+          "descriptionEs": "Reunido por Ernest-Gustave Gobert, médico francés activo en Túnez desde 1906 y nombrado inspector de antigüedades prehistóricas de Túnez en 1948.",
+          "descriptionEn": "Assembled by Ernest-Gustave Gobert, a French physician active in Tunisia from 1906 and appointed inspector of prehistoric antiquities of Tunisia in 1948.",
+          "source_url": "https://cths.fr/an/savant.php?id=129162",
+          "source_type": "secondary_source",
+          "confidence_level": "medium"
+        },
+        {
+          "event_order": 3,
+          "event_type": "gift",
+          "event_date": "1960",
+          "actor_or_institution": "Ernest-Gustave Gobert",
+          "location": "París",
+          "description": "Donated to the Musée de l'Homme (inventory number 71.1960.136.26).",
+          "descriptionEs": "Donado al Musée de l'Homme (numero de inventario 71.1960.136.26).",
+          "descriptionEn": "Donated to the Musée de l'Homme (inventory number 71.1960.136.26).",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        },
+        {
+          "event_order": 4,
+          "event_type": "transfer",
+          "event_date": "2006",
+          "actor_or_institution": "Musée du Quai Branly",
+          "location": "París",
+          "description": "Transfer to the new museum.",
+          "descriptionEs": "Traspaso al museo nuevo.",
+          "descriptionEn": "Transfer to the new museum.",
+          "source_url": "https://collections.quaibranly.fr",
+          "source_type": "museum_record",
+          "confidence_level": "high"
+        }
+      ]
     },
     {
       "objectID": "qb:53236",

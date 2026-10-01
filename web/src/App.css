@@ -152,12 +152,23 @@
 }
 
 /* Sexta vuelta (18/09, mismo día, pedido de la usuaria): el wrap arranca
-   mucho más angosto (150px, era 260px) y se expande al enfocarse
-   (:focus-within más abajo, 260px) -- transition acá para que el cambio de
-   ancho sea animado en los dos sentidos, no un salto brusco. */
+   mucho más angosto y se expande al enfocarse (:focus-within más abajo,
+   260px) -- transition acá para que el cambio de ancho sea animado en los
+   dos sentidos, no un salto brusco.
+   Ancho del estado inactivo ajustado al contenido real (01/10, pedido de la
+   usuaria; segunda vuelta el mismo día -- la primera versión usaba `ch`,
+   que sobreestima: 1ch es el ancho del glifo "0", más ancho que el
+   promedio de letras/espacios del placeholder real, así que quedaba con
+   aire de sobra a la derecha del texto). `--search-text-width` lo pone
+   App.tsx inline, medido con canvas contra la tipografía real del input
+   (ver el useEffect de searchPlaceholderWidth en App.tsx) -- ya es el
+   ancho exacto del texto en píxeles, no una aproximación por cantidad de
+   caracteres. 44px cubre lo que no es texto: 30px de padding-left para la
+   lupa + 12px de padding-right + ~2px de borde (ver .title-search-input).
+   El fallback (90px) es una estimación gruesa para el primer render. */
 .title-search-wrap {
   position: relative;
-  width: 150px;
+  width: calc(var(--search-text-width, 90px) + 44px);
   transition: width 0.25s ease;
 }
 
