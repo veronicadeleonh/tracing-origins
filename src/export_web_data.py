@@ -12,6 +12,8 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
+from object_types import classify_object_type
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 CONTEXT_PATH = DATA_DIR / "enrichment" / "context.csv"
 EVENTS_PATH = DATA_DIR / "enrichment" / "provenance_events.csv"
@@ -148,6 +150,12 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
         "originLon": float(row["origin_lon"]),
         "originCountry": row.get("origin_country") or None,
         "originCountryEn": row.get("origin_country_en") or row.get("origin_country") or None,
+        # objectTypeFlags (18/09): clasificación "tipo de pieza" nuestra,
+        # inferida de objectName vía object_types.py (mapeo exacto por
+        # museo, 1-3 tags del vocabulario cerrado de 14 categorías, mismo
+        # mecanismo multi-label que context_flags). "unclassified" cuando
+        # el objectName no matchea ninguna entrada de la tabla.
+        "objectTypeFlags": classify_object_type(row.get("sourceMuseum"), row.get("objectName")),
         "context": context_out,
         "events": obj_events,
     }

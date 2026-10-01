@@ -44,6 +44,12 @@ export interface I18nStrings {
   // claves fijas "us"/"fr"/"uk" (los 3 países de origen de los 4 museos),
   // ver MUSEUM_COUNTRY en colors.ts.
   museumCountryNames: Record<string, string>;
+  // Buscador de piezas por título (18/09) -- distinto del buscador de país
+  // retirado el 19/08 (ese buscaba país, reemplazado por click en el mapa);
+  // este busca por título de pieza y nunca existió antes.
+  titleSearchPlaceholder: string;
+  titleSearchAria: string;
+  titleSearchNoResults: string;
   researchFilterAria: string;
   researchFilterRowLabel: string;
   researchFilterLabels: Record<"all" | "with" | "without", string>;
@@ -56,6 +62,16 @@ export interface I18nStrings {
   mechanismFilterAria: string;
   mechanismClearLabel: string;
   contextFlagLabels: Record<string, string>;
+  // Filtro por "Tipo de pieza" (objectTypeFlags), 18/09 -- vocabulario
+  // cerrado de 14 categorías inferidas de objectName vía
+  // src/object_types.py, mismo mecanismo multi-select que el de mecanismo
+  // arriba (dropdown aparte, no un pill de 3 estados). No depende de
+  // research_status: toda pieza tiene objectTypeFlags.
+  objectTypeFilterLabel: string;
+  objectTypeFilterLabelActive: (n: number) => string;
+  objectTypeFilterAria: string;
+  objectTypeClearLabel: string;
+  objectTypeLabels: Record<string, string>;
   closePanelAria: string;
   untitled: string;
 
@@ -173,6 +189,9 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     mobileFiltersToggleLabel: "Filtros",
     mobileFiltersToggleAria: "Mostrar u ocultar los filtros de museo e investigación",
     museumCountryNames: { us: "Estados Unidos", fr: "Francia", uk: "Reino Unido" },
+    titleSearchPlaceholder: "Buscar pieza por título…",
+    titleSearchAria: "Buscar una pieza por título",
+    titleSearchNoResults: "Sin resultados",
     researchFilterAria: "Filtrar por estado de investigación",
     researchFilterRowLabel: "Investigación:",
     researchFilterLabels: { all: "Todas", with: "Con investigación", without: "Sin investigación" },
@@ -202,6 +221,26 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       state_sale: "Venta estatal",
       treaty_transfer: "Transferencia por tratado",
       undocumented_early_chain: "Cadena temprana sin documentar",
+    },
+    objectTypeFilterLabel: "Tipo de pieza",
+    objectTypeFilterLabelActive: (n) => `Tipo de pieza (${n})`,
+    objectTypeFilterAria: "Filtrar por tipo de pieza",
+    objectTypeClearLabel: "Limpiar selección",
+    objectTypeLabels: {
+      sculpture: "Escultura",
+      stela_inscription: "Estela e inscripción",
+      vessel_ceramic: "Vasija y cerámica",
+      jewelry: "Joyería y ornamento",
+      textile: "Textil y vestimenta",
+      weapon: "Arma",
+      amulet_ritual: "Objeto ritual y religioso",
+      architectural_element: "Elemento arquitectónico",
+      manuscript_document: "Manuscrito, sello y documento",
+      coin: "Moneda",
+      musical_instrument: "Instrumento musical",
+      furniture: "Mobiliario",
+      painting_drawing: "Pintura y dibujo",
+      unclassified: "Sin clasificar",
     },
     closePanelAria: "Cerrar panel",
     untitled: "(sin título)",
@@ -364,6 +403,9 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     mobileFiltersToggleLabel: "Filters",
     mobileFiltersToggleAria: "Show or hide the museum and research filters",
     museumCountryNames: { us: "United States", fr: "France", uk: "United Kingdom" },
+    titleSearchPlaceholder: "Search a piece by title…",
+    titleSearchAria: "Search a piece by title",
+    titleSearchNoResults: "No results",
     researchFilterAria: "Filter by research status",
     researchFilterRowLabel: "Research:",
     researchFilterLabels: { all: "All", with: "With research", without: "Without research" },
@@ -393,6 +435,26 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       state_sale: "State sale",
       treaty_transfer: "Treaty transfer",
       undocumented_early_chain: "Undocumented early chain",
+    },
+    objectTypeFilterLabel: "Piece type",
+    objectTypeFilterLabelActive: (n) => `Piece type (${n})`,
+    objectTypeFilterAria: "Filter by piece type",
+    objectTypeClearLabel: "Clear selection",
+    objectTypeLabels: {
+      sculpture: "Sculpture",
+      stela_inscription: "Stela and inscription",
+      vessel_ceramic: "Vessel and ceramics",
+      jewelry: "Jewelry and ornament",
+      textile: "Textile and clothing",
+      weapon: "Weapon",
+      amulet_ritual: "Ritual and religious object",
+      architectural_element: "Architectural element",
+      manuscript_document: "Manuscript, seal and document",
+      coin: "Coin",
+      musical_instrument: "Musical instrument",
+      furniture: "Furniture",
+      painting_drawing: "Painting and drawing",
+      unclassified: "Unclassified",
     },
     closePanelAria: "Close panel",
     untitled: "(untitled)",

@@ -112,6 +112,275 @@
   gap: 8px;
 }
 
+/* Buscador de piezas por título (18/09). Primera reubicación (mismo día,
+   tercera vuelta) lo sacó de .top-controls a un panel flotante propio,
+   arriba-centro -- pero la usuaria probó eso en la práctica y lo rechazó
+   (cuarta vuelta, mismo día): "top center para desktop no funciona por los
+   filtros del mapa, se ve incómodo y no combina con las funciones de los
+   filtros de abajo". Su idea: abajo-centro, arriba de "Contexto colonial"
+   (el dock del timeline, .year-timeline-dock, z-index 999) -- misma zona
+   neutral pero sin competir con .top-controls/.country-click-panel/"?" de
+   arriba. Sigue siendo z-index 1000 (por encima del dock, que es 999).
+
+   El dock cambia de alto según esté colapsado (solo el pull-tab
+   .year-timeline-handle, ~40px con su margin-bottom) o abierto (handle +
+   panel .year-timeline completo, ~160px) -- un solo `bottom` fijo o se
+   superpone al panel abierto o deja un hueco grande de mapa vacío cuando
+   está cerrado. Se resuelve con 2 valores según `timelineOpen` (estado que
+   ya existe en App.tsx, controla el mismo pull-tab): clase `.timeline-open`
+   agregada condicionalmente al panel, con la variante alta escopeada a
+   `min-width:901px` (ver más abajo) para que nunca choque con el offset
+   fijo de la versión mobile (`top:56px`, ver @media 900px). Los dos valores
+   (56px/190px) son una estimación razonada a partir del CSS real de
+   .year-timeline-handle/.year-timeline (mismo criterio que el resto del
+   proyecto para estos casos -- ver SpotlightTour/zoom inicial en CLAUDE.md
+   -- no una medición en un navegador real). */
+.title-search-panel {
+  position: absolute;
+  z-index: 1000;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  transition: bottom 0.2s ease;
+}
+
+@media (min-width: 901px) {
+  .title-search-panel.timeline-open {
+    bottom: 190px;
+  }
+}
+
+/* Sexta vuelta (18/09, mismo día, pedido de la usuaria): el wrap arranca
+   mucho más angosto (150px, era 260px) y se expande al enfocarse
+   (:focus-within más abajo, 260px) -- transition acá para que el cambio de
+   ancho sea animado en los dos sentidos, no un salto brusco. */
+.title-search-wrap {
+  position: relative;
+  width: 150px;
+  transition: width 0.25s ease;
+}
+
+.title-search-wrap:focus-within {
+  width: 260px;
+}
+
+/* Ícono de lupa (18/09, quinta vuelta, pedido de la usuaria) -- posicionado
+   absoluto dentro de .title-search-wrap, a la izquierda del input (que gana
+   padding-left para dejarle lugar, ver .title-search-input abajo).
+   Sexta vuelta (mismo día): pasó de un gris apagado (#928d82, el mismo tono
+   que el placeholder) a blanco con opacidad -- la usuaria reportó que no se
+   veía bien en el estado inactivo/glass; un gris tan oscuro se perdía contra
+   el fondo semitransparente sobre casi cualquier color de mapa detrás,
+   mientras que blanco es el tono que mejor contrasta con un fondo glass en
+   general. Sigue oscureciéndose a un gris legible cuando el panel está
+   activo (:focus-within, fondo opaco claro) -- ahí blanco fijo se perdería. */
+.title-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  color: rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+  /* Séptima vuelta (18/09, mismo día): la usuaria reportó que la lupa
+     blanca seguía sin verse bien en reposo -- el problema real es que un
+     blanco a secas se pierde igual contra zonas claras del mapa detrás del
+     glass, sin importar la opacidad del color. Un drop-shadow oscuro chico
+     le da un borde de contraste propio, así que se lee tanto sobre fondos
+     claros como oscuros del mapa. Se retira en :focus-within porque ahí el
+     ícono ya es oscuro sobre un fondo opaco claro -- una sombra oscura ahí
+     se vería como un halo sucio en vez de dar contraste. */
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+  /* Octava vuelta (18/09, mismo día): la usuaria seguía sin ver la lupa en
+     absoluto (no un problema de contraste -- directamente ausente), incluso
+     con el drop-shadow de la séptima vuelta. Causa real: `.title-search-input`
+     (el hermano siguiente en el DOM) tiene su propio `backdrop-filter`, que
+     -- igual que cualquier `filter`/`opacity<1`/`transform` -- lo promueve a
+     su propio contexto de apilamiento aunque no sea `position:absolute`. Una
+     vez que el input también forma su propio contexto de apilamiento, el
+     orden de pintado deja de ser "no-posicionado abajo, posicionado arriba"
+     (donde el ícono, absoluto, ya ganaría) y pasa a resolverse por orden de
+     DOM entre los dos contextos -- y el input, al venir DESPUÉS del ícono en
+     el JSX, pintaba encima y lo tapaba por completo. `z-index` explícito acá
+     desempata a favor del ícono sin importar el orden de DOM. */
+  z-index: 1;
+}
+
+.title-search-wrap:focus-within .title-search-icon {
+  color: #77726a;
+  filter: none;
+}
+
+/* Efecto glass por defecto, opaco al estar en uso (pedido explícito de la
+   usuaria: "en vez de transparencia... un efecto glass"). Reemplaza la
+   primera versión (cuarta vuelta, opacity plano en .title-search-wrap) --
+   ese enfoque atenuaba TODO por igual (texto, ícono, borde), mientras que el
+   glass real (fondo semitransparente + blur) deja el input legible en
+   cualquier fondo del mapa detrás, en vez de simplemente "verse apagado".
+   :focus-within cubre tanto el input enfocado como cualquier ítem del
+   dropdown (ambos viven dentro de este mismo wrap, ver JSX), así que el
+   panel se mantiene opaco mientras se navega el menú de sugerencias, no solo
+   mientras se tipea. Hover (no pedido, agregado como pista de que es
+   interactivo antes de enfocarlo) sube la opacidad del glass a mitad de
+   camino entre los dos extremos, sin llegar a la versión opaca. */
+.title-search-input {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  font: inherit;
+  font-size: 12px;
+  color: #1a1a1a;
+  padding: 6px 12px 6px 30px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  /* Séptima vuelta (18/09, mismo día): sin esto el input usa el outline de
+     foco nativo del navegador al activarse -- en varios navegadores/SO ese
+     outline sale en el color de acento del sistema (a la usuaria le salía
+     naranja), no en el gris/borde que ya define este archivo. El estado
+     activo ya tiene su propio feedback visual (fondo opaco + border-color +
+     box-shadow, ver :focus-within más abajo), así que el outline nativo es
+     puramente redundante -- no hace falta reemplazarlo por otro. */
+  outline: none;
+  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.title-search-wrap:hover .title-search-input {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.title-search-wrap:focus-within .title-search-input {
+  background: rgba(251, 250, 247, 0.96);
+  border-color: #e5e2da;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+/* Sexta vuelta (18/09): "Search by title..." pasa de gris apagado (#928d82,
+   mismo problema de contraste que la lupa arriba) a blanco con opacidad en
+   reposo -- mismo criterio, mismo par de colores que .title-search-icon.
+   Cuando el panel está activo (fondo opaco, ver .title-search-wrap
+   :focus-within .title-search-input más arriba) vuelve al gris de siempre,
+   porque ahí blanco fijo no se leería bien contra el fondo claro. */
+.title-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.title-search-wrap:focus-within .title-search-input::placeholder {
+  color: #928d82;
+}
+
+/* Dropup, no dropdown (18/09, quinta vuelta, pedido de la usuaria) -- desde
+   que el buscador vive abajo-centro (cuarta vuelta, arriba), un menú que
+   sigue abriendo hacia abajo (`top: calc(100% + 6px)`) queda pegado contra
+   el piso del viewport o directamente tapado por el dock del timeline. Se
+   invierte a `bottom: calc(100% + 6px); top: auto` -- mismo offset, mismo
+   ancho/alto máximo, solo cambia qué borde ancla. El bloque mobile (ver
+   @media 900px) sigue pisando esto con `position:fixed` de todos modos, así
+   que el dropup es un comportamiento puramente desktop. */
+.title-search-menu {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  top: auto;
+  left: 0;
+  z-index: 1001;
+  width: 280px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: #fbfaf7;
+  border: 1px solid #e5e2da;
+  border-radius: 10px;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+}
+
+.title-search-empty {
+  font-size: 12px;
+  color: #928d82;
+  padding: 6px 8px;
+}
+
+.title-search-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.title-search-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  font: inherit;
+  padding: 6px 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.title-search-item:hover {
+  background: #efece4;
+}
+
+/* Resaltado de teclado (18/09, segunda vuelta, feedback de la usuaria: "no
+   puedo ir con las flechas del teclado") — misma clase también se aplica al
+   pasar el mouse (onMouseEnter sincroniza titleSearchHighlight), para que no
+   quede un ítem resaltado por teclado y otro distinto por hover a la vez.
+   Mismo fondo que :hover a propósito, se ve como "esto es lo que se
+   seleccionaría con Enter" sin introducir un color nuevo. */
+.title-search-item.highlighted {
+  background: #efece4;
+}
+
+/* Thumbnail (18/09, segunda vuelta, pregunta de la usuaria: "sería
+   demasiado tener un pequeño thumbnail con la imagen?") — no es una
+   novedad visual para la app: ClusterPanel ya muestra un thumbnail de 40px
+   por cada fila de pieza (.piece-thumb) para TODAS las piezas, no solo las
+   investigadas, así que agregarlo acá es consistente con un patrón que ya
+   existe, no un elemento nuevo. Achicado a 32px (vs. 40px de ClusterPanel)
+   porque la fila del dropdown es más compacta -- mismo criterio de "más
+   chico que su equivalente de escritorio" ya aplicado en otros lugares
+   compactos de la app. Sin imagen, queda el mismo gris neutro de fallback
+   que .piece-thumb (sin inventar una imagen que no existe).  */
+.title-search-item-thumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #e5e2da center/cover no-repeat;
+  flex-shrink: 0;
+}
+
+.title-search-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.title-search-item-title {
+  font-size: 12px;
+  color: #3f3b34;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.title-search-item-museum {
+  font-size: 11px;
+  color: #928d82;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .museum-toggles {
   display: flex;
   align-items: center; /* el label de país ahora flota arriba vía position:absolute (ver .museum-country-label) en vez de ocupar espacio en el flujo, así que esta fila vuelve a ser de una sola línea "de facto" -- mismo align-items:center que .research-filter-row, para que "MUSEUMS:"/el contador queden centrados respecto a la fila de pills, no a la altura del label de país (31/08, segunda vuelta -- la primera vuelta con margin-top a mano no daba un alineado preciso) */
@@ -418,6 +687,110 @@
 }
 
 .mechanism-menu-item-count {
+  font-size: 11px;
+  color: #928d82;
+}
+
+/* Filtro por "Tipo de pieza" (objectTypeFlags), 18/09 -- mismo mecanismo y
+   mismas clases visuales que el dropdown de mecanismo de arriba (multi-select,
+   14 opciones del vocabulario cerrado en vez de 21), reusando el patrón en
+   vez de inventar uno nuevo. A diferencia del mecanismo, no depende de
+   research_status -- toda pieza tiene objectTypeFlags (incl. "unclassified"),
+   así que el botón nunca se deshabilita. */
+.object-type-filter-wrap {
+  position: relative;
+}
+
+.object-type-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e5e2da;
+  background: rgba(251, 250, 247, 0.92);
+  font: inherit;
+  font-size: 12px;
+  color: #77726a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.object-type-filter-btn:hover {
+  color: #1a1a1a;
+  border-color: #928d82;
+}
+
+.object-type-filter-btn.active {
+  background: #6a4c93;
+  border-color: #6a4c93;
+  color: #fbfaf7;
+  font-weight: 500;
+}
+
+.object-type-filter-caret {
+  font-size: 8px;
+}
+
+.object-type-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 1001;
+  width: 280px;
+  max-height: 320px;
+  overflow-y: auto;
+  background: #fbfaf7;
+  border: 1px solid #e5e2da;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 6px;
+}
+
+.object-type-menu-clear {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: 12px;
+  color: #6a4c93;
+  padding: 6px 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.object-type-menu-clear:hover {
+  background: #efece4;
+}
+
+.object-type-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.object-type-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #3f3b34;
+}
+
+.object-type-menu-item:hover {
+  background: #efece4;
+}
+
+.object-type-menu-item-label {
+  flex: 1;
+}
+
+.object-type-menu-item-count {
   font-size: 11px;
   color: #928d82;
 }
@@ -1776,6 +2149,35 @@
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
   }
 
+  /* Buscador de piezas por título: ahora vive AFUERA de .mobile-filters-wrap
+     (ver App.tsx) para no quedar oculto detrás del drawer cerrado -- en
+     mobile pasa de panel centrado angosto a una fila propia de ancho
+     completo, debajo de la fila de "Filtros ▼"/"?"/idioma (mismo slot
+     top:56 que usa el drawer abierto -- si el usuario abre el drawer, su
+     hoja fija (z-index 1550) lo tapa por completo, que es aceptable: mientras
+     se ajustan filtros no hace falta ver el buscador, y se revela de nuevo
+     apenas se cierra). Este slot arriba se mantiene sin cambios en esta
+     ronda -- la usuaria rechazó el top-center para DESKTOP explícitamente
+     ("no funciona por los filtros del mapa"), la versión mobile no fue
+     parte de esa crítica. `bottom: auto` explícito para cancelar el
+     `bottom: 56px/190px` de la base desktop (ver arriba) -- sin esto, un
+     position:absolute con top Y bottom seteados a la vez se estira para
+     llenar la distancia entre los dos en vez de tomar su alto natural. La
+     variante `.timeline-open` (bottom:190px) no necesita su propio reset
+     acá porque quedó escopeada a `min-width:901px`, nunca se aplica bajo
+     este breakpoint. */
+  .title-search-panel {
+    left: 8px;
+    right: 8px;
+    top: 56px;
+    bottom: auto;
+    transform: none;
+  }
+
+  .title-search-panel .title-search-wrap {
+    width: 100%;
+  }
+
   /* Adentro del drawer, .country-click-panel y .top-controls dejan de ser
      position:absolute (pensado para flotar sueltos sobre el mapa) y pasan a
      fluir en columna -- ahí sí hay lugar para que .museum-toggles/
@@ -1889,6 +2291,8 @@
   .museum-note,
   .country-click-panel .museum-note,
   .mechanism-menu,
+  .object-type-menu,
+  .title-search-menu,
   .year-timeline-note {
     position: fixed;
     left: 12px;

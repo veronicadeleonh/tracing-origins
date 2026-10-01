@@ -67,6 +67,12 @@ export interface MuseumObject {
   originCountryEn: string | null;
   context: ObjectContext | null;
   events: ProvenanceEvent[];
+  // objectTypeFlags (18/09): clasificación "tipo de pieza" nuestra, 1-3 tags
+  // de un vocabulario cerrado de 14 categorías, inferida de objectName vía
+  // src/object_types.py -- mismo mecanismo multi-label que context_flags.
+  // Nunca vacío: "unclassified" cuando objectName no matchea ninguna
+  // entrada de la tabla (ver object_types.py para el criterio).
+  objectTypeFlags: string[];
 }
 
 export interface MuseumDestination {

@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import type { KeyboardEvent as ReactKeyboardEvent } from "react";
 import Map, { Source, Layer, Popup } from "react-map-gl/mapbox";
 import type { MapMouseEvent } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -133,6 +134,18 @@ const ROUTES_TOGGLE_ICON = (
   </svg>
 );
 
+// Ícono de lupa para el buscador de títulos (18/09, quinta vuelta, pedido de
+// la usuaria) -- mismo criterio que ROUTES_TOGGLE_ICON arriba: SVG inline con
+// currentColor en vez de un emoji o librería de íconos nueva, para que herede
+// el color de texto que ya define .title-search-icon/.title-search-input
+// según el estado glass/activo del panel.
+const TITLE_SEARCH_ICON = (
+  <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true">
+    <circle cx="6.6" cy="6.6" r="5" fill="none" stroke="currentColor" strokeWidth="1.6" />
+    <line x1="10.4" y1="10.4" x2="14.2" y2="14.2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+);
+
 // `kind: "country"` (19/08) marca que `cluster` no es un punto de origen real
 // sino un resultado de la búsqueda "al revés" por país (ver groupByCountry en
 // geo.ts) — mismo shape que OriginCluster (label + objects, lat/lon sin uso
@@ -190,6 +203,55 @@ function App() {
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
   }, [mechanismMenuOpen]);
+  // Filtro por "Tipo de pieza" (objectTypeFlags), 18/09 — mismo mecanismo
+  // multi-select que el filtro de mecanismo de arriba (dropdown aparte,
+  // OR entre los tags elegidos), pero independiente de research_status:
+  // toda pieza tiene objectTypeFlags (incl. "unclassified"), a diferencia
+  // de context_flags que solo existe para piezas con layer 3.
+  const [selectedObjectTypes, setSelectedObjectTypes] = useState<Set<string>>(new Set());
+  const [objectTypeMenuOpen, setObjectTypeMenuOpen] = useState(false);
+  const objectTypeMenuRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!objectTypeMenuOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (objectTypeMenuRef.current && !objectTypeMenuRef.current.contains(e.target as Node)) {
+        setObjectTypeMenuOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [objectTypeMenuOpen]);
+  // Buscador de piezas por título (18/09, pedido explícito de la usuaria
+  // tras no poder encontrar el Sleeping Hermaphroditus sin saber en qué
+  // cluster de origen cayó) — distinto del buscador de país retirado el
+  // 19/08 (ver comentario de abajo): ese buscaba PAÍS y fue reemplazado por
+  // el click en el mapa; este busca PIEZA por título y nunca existió antes.
+  // Mismo criterio que la búsqueda por país: opera sobre TODAS las piezas
+  // (bundle.objects), no las visibleObjects filtradas -- encontrar una
+  // pieza puntual no debería depender de qué toggles estén prendidos en
+  // ese momento.
+  const [titleQuery, setTitleQuery] = useState("");
+  const [titleSearchOpen, setTitleSearchOpen] = useState(false);
+  const titleSearchRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!titleSearchOpen) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (titleSearchRef.current && !titleSearchRef.current.contains(e.target as Node)) {
+        setTitleSearchOpen(false);
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [titleSearchOpen]);
+  // Navegación por teclado en el dropdown (18/09, segunda vuelta, feedback
+  // de la usuaria: "no puedo ir con las flechas del teclado en las opciones
+  // del dropdown") — ningún otro dropdown de la app tenía este patrón
+  // (mecanismo/tipo de pieza se manejan con checkboxes + mouse, nunca
+  // necesitaron flechas), así que es interacción nueva, no una copia. -1
+  // significa "nada resaltado" (ni por teclado ni por mouse todavía).
+  // Se resetea cada vez que cambia el resultado (nueva query) para no dejar
+  // un índice resaltado que ya no corresponde a ningún resultado visible.
+  const [titleSearchHighlight, setTitleSearchHighlight] = useState(-1);
   // Búsqueda "al revés" por país, segunda vuelta (19/08) — reemplazó al
   // buscador de texto original (retirado a pedido de la usuaria, ver
   // CLAUDE.md): ahora la única forma de elegir un país es clickeándolo
@@ -350,9 +412,16 @@ function App() {
           const flags = obj.context?.context_flags ?? [];
           if (!flags.some((f) => selectedFlags.has(f))) return false;
         }
+        // Filtro por tipo de pieza (18/09): OR entre los tags elegidos, sin
+        // la restricción de "implica investigación" del filtro de
+        // mecanismo -- objectTypeFlags existe para toda pieza, investigada
+        // o no.
+        if (selectedObjectTypes.size > 0) {
+          if (!obj.objectTypeFlags.some((t) => selectedObjectTypes.has(t))) return false;
+        }
         return true;
       }),
-    [visibleMuseums, researchFilter, selectedFlags],
+    [visibleMuseums, researchFilter, selectedFlags, selectedObjectTypes],
   );
 
   // Texto del contador de piezas, compartido entre las 2 copias del pill
@@ -389,6 +458,29 @@ function App() {
     });
   }, []);
 
+  // Cuenta de piezas por tipo, para el dropdown "Tipo de pieza" -- mismo
+  // criterio que flagCounts: se calcula sobre TODO el dataset, no
+  // visibleObjects, para que la lista de opciones no cambie según qué
+  // otros filtros estén activos.
+  const objectTypeCounts = useMemo(() => {
+    const counts: Record<string, number> = {};
+    for (const obj of bundle.objects) {
+      for (const tag of obj.objectTypeFlags) {
+        counts[tag] = (counts[tag] ?? 0) + 1;
+      }
+    }
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]);
+  }, []);
+
+  const toggleObjectType = useCallback((tag: string) => {
+    setSelectedObjectTypes((prev) => {
+      const next = new Set(prev);
+      if (next.has(tag)) next.delete(tag);
+      else next.add(tag);
+      return next;
+    });
+  }, []);
+
   // Elegir "Sin investigación" con flags activos dejaría el filtro en un
   // estado sin resultados posibles (esas piezas nunca tienen flags) -- se
   // limpia la selección de flags al mismo tiempo, en vez de dejar al
@@ -405,6 +497,65 @@ function App() {
   // el click-en-el-mapa (handleClick/handleMouseMove) para encontrar el
   // CountryGroup correspondiente al país clickeado/hovereado.
   const countryGroups = useMemo(() => groupByCountry(bundle.objects, lang), [lang]);
+
+  // Clusters de origen sobre TODAS las piezas (no visibleObjects) -- solo
+  // para el lookup del buscador de títulos: encontrar a qué cluster
+  // pertenece una pieza elegida en el dropdown, sin que la respuesta
+  // dependa de qué museos/filtros estén prendidos en ese momento (mismo
+  // criterio que countryGroups, arriba).
+  const allClusters = useMemo(() => groupByOrigin(bundle.objects, lang), [lang]);
+
+  const titleSearchResults = useMemo(() => {
+    const q = titleQuery.trim().toLowerCase();
+    if (!q) return [];
+    return bundle.objects
+      .filter((obj) => {
+        const title = (obj.title ?? "").toLowerCase();
+        const titleEn = (obj.titleEn ?? "").toLowerCase();
+        return title.includes(q) || titleEn.includes(q);
+      })
+      .slice(0, 8);
+  }, [titleQuery]);
+
+  // Resetea el resaltado de teclado cada vez que cambian los resultados
+  // (nueva query) -- sin esto, un índice resaltado de la búsqueda anterior
+  // podría apuntar a un resultado que ya no existe o a uno distinto.
+  useEffect(() => {
+    setTitleSearchHighlight(-1);
+  }, [titleSearchResults]);
+
+  const selectSearchedObject = useCallback(
+    (obj: MuseumObject) => {
+      const cluster = allClusters.find((c) => c.objects.some((o) => o.objectID === obj.objectID));
+      if (!cluster) return;
+      setPanel({ view: "object", cluster, object: obj });
+      setTitleQuery("");
+      setTitleSearchOpen(false);
+    },
+    [allClusters],
+  );
+
+  const handleTitleSearchKeyDown = useCallback(
+    (e: ReactKeyboardEvent<HTMLInputElement>) => {
+      if (titleSearchResults.length === 0) return;
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setTitleSearchOpen(true);
+        setTitleSearchHighlight((i) => Math.min(i + 1, titleSearchResults.length - 1));
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setTitleSearchHighlight((i) => Math.max(i - 1, 0));
+      } else if (e.key === "Enter") {
+        if (titleSearchHighlight >= 0 && titleSearchHighlight < titleSearchResults.length) {
+          e.preventDefault();
+          selectSearchedObject(titleSearchResults[titleSearchHighlight]);
+        }
+      } else if (e.key === "Escape") {
+        setTitleSearchOpen(false);
+      }
+    },
+    [titleSearchResults, titleSearchHighlight, selectSearchedObject],
+  );
 
   // Búsqueda por país (19/08): mientras el panel abierto sea un resultado de
   // país (kind === "country", por click en el mapa), se atenúan todas las
@@ -623,6 +774,92 @@ function App() {
           {s.mobileFiltersToggleLabel}
           <span className="mobile-filters-toggle-arrow" aria-hidden="true">{filtersOpen ? "▲" : "▼"}</span>
         </button>
+        {/* Buscador de piezas por título (18/09, reubicado el mismo día
+            a pedido de la usuaria: "ubiquemos el search bar en un mejor
+            lugar") -- panel flotante propio, arriba-centro, en vez de vivir
+            como primera fila de .top-controls. Dos motivos: (1) no compite
+            visualmente con los filtros de museo/investigación (izquierda,
+            .top-controls dentro de .mobile-filters-wrap) ni con "Click en
+            el mapa"/"?"/idioma (derecha) -- zona neutral arriba-centro,
+            mismo lugar donde buscadores de mapas conocidos (Google/Apple
+            Maps) ponen el suyo; (2) bug real encontrado de paso -- vivir
+            dentro de .top-controls significaba vivir también dentro de
+            .mobile-filters-wrap, así que en mobile el buscador quedaba
+            oculto hasta abrir el drawer "Filtros ▼" (el atajo más directo
+            a una pieza puntual, escondido detrás de un tap extra). Al
+            quedar afuera de ese wrapper, en mobile permanece siempre
+            visible sin depender de filtersOpen. Opera sobre todas las
+            piezas (titleSearchResults/allClusters, arriba), no sobre
+            visibleObjects -- encontrar "Sleeping Hermaphroditus" no debería
+            depender de qué museos estén prendidos. */}
+        <div className={`title-search-panel${timelineOpen ? " timeline-open" : ""}`}>
+          <div className="title-search-wrap" ref={titleSearchRef}>
+            <span className="title-search-icon" aria-hidden="true">
+              {TITLE_SEARCH_ICON}
+            </span>
+            <input
+              type="text"
+              className="title-search-input"
+              value={titleQuery}
+              placeholder={s.titleSearchPlaceholder}
+              aria-label={s.titleSearchAria}
+              role="combobox"
+              aria-expanded={titleSearchOpen && titleQuery.trim() !== ""}
+              aria-autocomplete="list"
+              onChange={(e) => {
+                setTitleQuery(e.target.value);
+                setTitleSearchOpen(true);
+              }}
+              onFocus={() => setTitleSearchOpen(true)}
+              onKeyDown={handleTitleSearchKeyDown}
+            />
+            {titleSearchOpen && titleQuery.trim() !== "" && (
+              <div className="title-search-menu">
+                {titleSearchResults.length === 0 ? (
+                  <div className="title-search-empty">{s.titleSearchNoResults}</div>
+                ) : (
+                  <ul className="title-search-list">
+                    {titleSearchResults.map((obj, index) => {
+                      const displayTitle = (lang === "en" ? obj.titleEn || obj.title : obj.title) || s.untitled;
+                      const museumName = obj.sourceMuseum ? bundle.museums[obj.sourceMuseum]?.name ?? "" : "";
+                      // Feedback de la usuaria (18/09, segunda vuelta): sumar
+                      // el origen a la subline, ej. "Musée du Louvre • Made
+                      // in Italy" -- antes solo mostraba el museo. Se usa
+                      // madeIn() (i18n.ts, ya usado en ObjectDetail para el
+                      // mismo dato) en vez de pegar el label crudo, para que
+                      // la frase quede natural en los dos idiomas ("Hecho en
+                      // Francia" / "Made in France"), no solo el nombre del
+                      // lugar suelto.
+                      const originLabelText = lang === "en" ? obj.originLabelEn || obj.originLabel : obj.originLabel;
+                      const subline = [museumName, originLabelText ? s.madeIn(originLabelText) : null]
+                        .filter(Boolean)
+                        .join(" • ");
+                      return (
+                        <li key={obj.objectID}>
+                          <button
+                            type="button"
+                            className={`title-search-item${index === titleSearchHighlight ? " highlighted" : ""}`}
+                            onClick={() => selectSearchedObject(obj)}
+                            onMouseEnter={() => setTitleSearchHighlight(index)}
+                          >
+                            <div
+                              className="title-search-item-thumb"
+                              style={obj.primaryImage ? { backgroundImage: `url(${obj.primaryImage})` } : undefined}
+                            />
+                            <div className="title-search-item-text">
+                              <span className="title-search-item-title">{displayTitle}</span>
+                              <span className="title-search-item-museum">{subline}</span>
+                            </div>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
         {/* Envoltorio puramente estructural en desktop (los hijos siguen
             position:absolute contra .map-pane, este div no les cambia nada);
             en mobile es lo que el botón de arriba muestra/oculta como un
@@ -763,6 +1000,53 @@ function App() {
                         />
                         <span className="mechanism-menu-item-label">{s.contextFlagLabels[flag] ?? flag}</span>
                         <span className="mechanism-menu-item-count">{count}</span>
+                      </label>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+          {/* Filtro por "Tipo de pieza" (objectTypeFlags), 18/09 -- mismo
+              patrón que el dropdown de mecanismo (arriba), pero sin
+              disabled: toda pieza tiene objectTypeFlags, investigada o no. */}
+          <div className="object-type-filter-wrap" ref={objectTypeMenuRef}>
+            <button
+              type="button"
+              className={`object-type-filter-btn${selectedObjectTypes.size > 0 ? " active" : ""}`}
+              aria-expanded={objectTypeMenuOpen}
+              aria-label={s.objectTypeFilterAria}
+              onClick={() => setObjectTypeMenuOpen((v) => !v)}
+            >
+              {selectedObjectTypes.size > 0
+                ? s.objectTypeFilterLabelActive(selectedObjectTypes.size)
+                : s.objectTypeFilterLabel}
+              <span className="object-type-filter-caret" aria-hidden="true">
+                {objectTypeMenuOpen ? "▲" : "▼"}
+              </span>
+            </button>
+            {objectTypeMenuOpen && (
+              <div className="object-type-menu">
+                {selectedObjectTypes.size > 0 && (
+                  <button
+                    type="button"
+                    className="object-type-menu-clear"
+                    onClick={() => setSelectedObjectTypes(new Set())}
+                  >
+                    {s.objectTypeClearLabel}
+                  </button>
+                )}
+                <ul className="object-type-menu-list">
+                  {objectTypeCounts.map(([tag, count]) => (
+                    <li key={tag}>
+                      <label className="object-type-menu-item">
+                        <input
+                          type="checkbox"
+                          checked={selectedObjectTypes.has(tag)}
+                          onChange={() => toggleObjectType(tag)}
+                        />
+                        <span className="object-type-menu-item-label">{s.objectTypeLabels[tag] ?? tag}</span>
+                        <span className="object-type-menu-item-count">{count}</span>
                       </label>
                     </li>
                   ))}

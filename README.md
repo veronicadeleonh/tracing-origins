@@ -5,21 +5,21 @@ _The main view: a 3D globe with lines connecting museum objects to their place o
 
 **[Live demo →](https://tracing-origins-lac.vercel.app)**
 
-Tracing Origins is an interactive map that connects museum objects to their place of origin, to visualize patterns of expropriation and colonial-era acquisition in museum collections. It focuses on four "prestige" museums in countries that were colonial powers: **The Metropolitan Museum of Art** (New York), **Musée du Louvre** (Paris), **British Museum** (London), and **Musée du Quai Branly - Jacques Chirac** (Paris) — added to cover the Sub-Saharan Africa, Americas, Asia, and Oceania holdings the Louvre's own departments don't include.
+Tracing Origins is an interactive map that traces museum objects back to where they actually came from, to make patterns of colonial-era acquisition visible instead of buried in a catalog entry. It focuses on four "prestige" museums in former colonial powers: **The Metropolitan Museum of Art** (New York), **Musée du Louvre** (Paris), **British Museum** (London), and **Musée du Quai Branly - Jacques Chirac** (Paris) — that last one because the Louvre's own departments skip Sub-Saharan Africa, the Americas, Asia, and Oceania almost entirely, and that's exactly where most of Quai Branly's collection comes from.
 
-Each object gets a line connecting its museum to its inferred point of origin. Clicking an origin point opens a panel listing the objects from that place; opening an individual object shows its documented journey — creation, excavation, transfers, acquisition — whenever research has been done on that piece. A colonial-context layer overlays former British and French territories and naval trade routes on a scrubbable timeline (1750–2020), so the museum-to-origin lines can be read against the territorial control that made many of those acquisitions possible.
+Every object gets a line from its museum to its point of origin. Click an origin point and you get every object from that place; open one object and you get its documented journey — creation, excavation, transfers, acquisition — whenever someone's actually dug into that piece's history. There's also an optional colonial-context layer: former British and French territories plus naval trade routes, scrubbable across an 1750–2020 timeline, so you can read the museum-to-origin lines against the territorial control that often made the acquisition possible in the first place.
 
-This is a curated personal portfolio project, not an exhaustive dataset — it doesn't aim to represent each museum's full collection, just a manageable, well-documented set per institution (~150–250 pieces per museum), with a smaller subset of "flagship" pieces researched in real depth.
+This is a personal portfolio project, not an attempt at an exhaustive dataset. It's not trying to represent each museum's full collection — just a well-documented sample (~150–250 pieces per museum), with a smaller set of "flagship" pieces researched in real depth.
 
 ## How it works
 
-The data model keeps three things explicitly separate:
+Three things, kept deliberately apart:
 
-1. **What the museum says** — raw metadata exactly as published by each museum's own records (title, medium, culture, credit line, accession year).
-2. **Where we place it geographically** — an inferred point of origin, computed by us from each museum's free-text findspot/culture fields (see `geocode.py`), kept separate from museum metadata because it's our own inference, not a museum-provided fact.
-3. **What we've researched historically** — a hand-researched, cited timeline of an object's journey (creation → excavation/find → transfers → acquisition → today), for a curated subset of pieces. This layer never labels objects "stolen" or "not stolen" — the goal is to document the documented journey, not deliver a verdict.
+1. **What the museum says** — raw metadata straight from each museum's own records: title, medium, culture, credit line, accession year.
+2. **Where we think it's from** — a point of origin we infer ourselves, from each museum's free-text findspot/culture fields (see `geocode.py`). Kept separate from the museum's own metadata because it's our guess, not their fact.
+3. **What we've actually researched** — a hand-researched, cited timeline of an object's journey (creation → excavation/find → transfers → acquisition → today), for a curated subset of pieces. This layer never labels anything "stolen" or "not stolen" — the goal is to document the journey, not hand down a verdict.
 
-See `CLAUDE.md` for the full architecture and per-museum methodology.
+The full architecture and per-museum methodology lives in `CLAUDE.md`, if you want the long version.
 
 ## Screenshots
 
@@ -34,32 +34,18 @@ _Colonial-context layer: former British and French territories and naval trade r
 ![Cluster panel listing every object that shares an origin point](docs/screenshot-cluster-panel.png)
 _Cluster panel: all objects sharing the same origin point, with thumbnail, title, and culture at a glance._
 
-<!--
-SCREENSHOT NEEDED — country search via map click (feature added 19/08, not
-captured yet). To add it:
-  1. Run `npm run dev` in `web/`, open the app.
-  2. Turn on the "Click on the map" switch (top-right corner, below the
-     "?"/language buttons).
-  3. Click any country with pieces in the sample (e.g. Egypt or Iraq) —
-     the side panel should be open, its pieces grouped into per-museum
-     sections (Met/Louvre/British Museum headers), and every line on the
-     map dimmed except the ones connecting that country to its museums.
-  4. Screenshot at a wide viewport (~1600px), save as
-     docs/screenshot-country-search.png.
-  5. Replace this HTML comment with:
--->
-
 ![Country search: click a country to reveal only its lines](docs/screenshot-country-search.png)
 _Click any country on the globe to see its pieces grouped by museum, while every other line on the map dims to reveal just that country's origin→museum pattern._
 
-> The four screenshots above are from 17/08 and predate a few UI changes since (English as the default language, the country-search feature above, the welcome-modal contents). Recapture when convenient — same process as above, just save over the existing filename in `docs/`.
+> These screenshots are from mid/late August and are now a bit behind the actual app — see "Project status" below for what's changed since and isn't pictured yet.
 
 ## Data at a glance
 
-- **644 objects** on the map (Met 168 · Louvre 217 · British Museum 94 · Quai Branly 165 — geocoded)
-- **222 flagship pieces** with a fully cited provenance timeline across all four museums (Met 48 · Louvre 82 · British Museum 61 · Quai Branly 31), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, the Parthenon Sculptures, and the Benin Bronzes
+- **645 objects** on the map (Met 168 · Louvre 217 · British Museum 94 · Quai Branly 166 — all geocoded)
+- **260 flagship pieces** with a fully cited provenance timeline across all four museums (Met 55 · Louvre 82 · British Museum 76 · Quai Branly 47), including well-known works like the Venus de Milo, the Winged Victory of Samothrace, the Mesha Stele, the Rosetta Stone, the Parthenon Sculptures, and the Benin Bronzes
 - **Two optional context layers**: former British/French colonial territories (1750–2020, [Cliopatria](https://github.com/Seshat-Global-History-Databank/cliopatria), CC-BY 4.0) and curated British/French naval routes (1754–1837, [CLIWOC](https://www.pangaea.de/), CC-BY 3.0), both on a shared, scrubbable timeline
 - **Bilingual interface** (Spanish/English), including the researched provenance text itself, not just UI chrome
+- A **search bar** to jump straight to a piece by title, plus filters by acquisition mechanism and by object type (sculpture, vessel, textile, etc.)
 
 ## Tech stack
 
@@ -97,7 +83,9 @@ The web app needs `web/.env` with a `VITE_MAPBOX_TOKEN`, and `objects.json` need
 
 ## Project status
 
-The core experience is complete: all four museums are pipelined and geocoded, the 3-layer data model is in place end to end, and the app has the interactive globe, per-museum toggles, bilingual UI, and both context layers. Deep research (layer 3) has passed its original 5–10-per-museum goal for all four museums and stays open-ended — new flagship pieces get added whenever a well-documented candidate turns up. Quai Branly is the newest source (added 31/08) but has caught up quickly (31 pieces across 9 rounds), helped by its own acquisition-chain field (`ConXother`), which is more structured than what the other three museums expose.
+The core experience is done: all four museums are pipelined and geocoded, the 3-layer data model is in end to end, and the app has the interactive globe, per-museum toggles, bilingual UI, and both context layers. Deep research (layer 3) blew past its original 5–10-per-museum goal a while ago and just keeps going — new flagship pieces get added whenever a well-documented one turns up. Quai Branly was the last museum added (31/08) but has basically caught up to the others (47 pieces now), helped by its own acquisition-chain field (`ConXother`), which is more structured than what the other three museums expose.
+
+A few things have shipped since the screenshots above were taken and aren't pictured yet: a floating search bar to jump to a piece by title, dropdown filters for acquisition mechanism and object type, a collapsible filters drawer on mobile, and a guided spotlight tour that replaces the old welcome modal on first visit. Worth a fresh round of screenshots at some point — not urgent, just flagging it.
 
 For the full, dated build log — every decision, every bug found and fixed, every open question — see `CLAUDE.md`.
 
