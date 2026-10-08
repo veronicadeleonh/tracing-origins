@@ -19,9 +19,6 @@ export interface I18nStrings {
   curatedNoteRoutesSuffix: string;
   welcomeTriggerAria: string;
   langToggleAria: string;
-  kbdOriginsLabel: string;
-  kbdOriginsAria: string;
-  kbdOriginsPieces: (n: number) => string;
   contextDockLabel: string;
   legendUK: string;
   legendFR: string;
@@ -133,6 +130,25 @@ export interface I18nStrings {
   tooltipCountryEmptySub: string;
   countryGroupMuseumHeader: (name: string, n: number) => string;
 
+  // Vista de lista (08/10)
+  viewSwitchAria: string;
+  viewMapAria: string;
+  viewListAria: string;
+  viewList: string;
+  listGroupByLabel: string;
+  listGroupMuseum: string;
+  listGroupCountry: string;
+  listGroupNone: string;
+  originMiniMapAria: (place: string) => string;
+  listUnknownCountry: string;
+  listEmpty: string;
+  listAllPieces: string;
+  listAllMuseums: string;
+  countryClickListLink: string;
+  countryClickStatusOn: string;
+  countryClickStatusOff: string;
+  listSummary: (museums: string, extras: string[], n: number) => string;
+
   // Onboarding interactivo con spotlight (01/09) -- ver data/tourSteps.ts
   // para los selectores (posición, no traducible); acá solo título+texto de
   // cada paso, indexado por posición en TOUR_STEPS (mismo patrón que
@@ -164,10 +180,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     curatedNoteRoutesSuffix: "(CC-BY 3.0) — muestra curada de 50 cruceros, no todas las rutas del período.",
     welcomeTriggerAria: "Sobre este proyecto",
     langToggleAria: "Cambiar a inglés",
-    kbdOriginsLabel: "Explorar orígenes (teclado)",
-    kbdOriginsAria: "Lista de orígenes en el mapa, navegable con teclado",
-    kbdOriginsPieces: (n) => `${n} ${n === 1 ? "pieza" : "piezas"}`,
-    contextDockLabel: "Contexto histórico",
+          contextDockLabel: "Contexto histórico",
     legendUK: "Reino Unido",
     legendFR: "Francia",
     layerToggleTerritories: "Colonias",
@@ -323,6 +336,24 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     tooltipCountryEmptySub: "Sin piezas en esta muestra",
     countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
 
+    viewSwitchAria: "Vista",
+    viewMapAria: "Vista de mapa",
+    viewListAria: "Vista de lista",
+    viewList: "Lista",
+    listGroupByLabel: "Agrupar por",
+    listGroupMuseum: "Museo",
+    listGroupCountry: "País",
+    listGroupNone: "Sin agrupar",
+    originMiniMapAria: (place) => `Mapa del origen: ${place}`,
+    listUnknownCountry: "País sin determinar",
+    listEmpty: "Ninguna pieza coincide con los filtros activos.",
+    listAllPieces: "Todas las piezas",
+    listAllMuseums: "todos los museos",
+    countryClickListLink: "Ver la lista agrupada por país",
+    countryClickStatusOn: "Búsqueda por país activada. Elige un país en el mapa, o usa la lista agrupada por país.",
+    countryClickStatusOff: "Búsqueda por país desactivada.",
+    listSummary: (museums, extras, n) => `Mostrando ${museums}${extras.length ? " · " + extras.join(" · ") : ""}. ${n} ${n === 1 ? "resultado" : "resultados"}`,
+
     tourSteps: [
       {
         title: "Bienvenida a Tracing Origins",
@@ -381,10 +412,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     curatedNoteRoutesSuffix: "(CC-BY 3.0) — curated sample of 50 voyages, not every route from the period.",
     welcomeTriggerAria: "About this project",
     langToggleAria: "Switch to Spanish",
-    kbdOriginsLabel: "Browse origins (keyboard)",
-    kbdOriginsAria: "List of origins on the map, keyboard navigable",
-    kbdOriginsPieces: (n) => `${n} ${n === 1 ? "piece" : "pieces"}`,
-    contextDockLabel: "Historical context",
+          contextDockLabel: "Historical context",
     legendUK: "United Kingdom",
     legendFR: "France",
     layerToggleTerritories: "Colonies",
@@ -539,6 +567,24 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     countryClickNoteText: "With this on, clicking any country on the globe shows all its pieces across the 3 museums and dims the rest of the map's lines to highlight only that country's. Hovering before you click shows how many pieces there are (or whether there are none).",
     tooltipCountryEmptySub: "No pieces in this sample",
     countryGroupMuseumHeader: (name, n) => `${name} (${n})`,
+
+    viewSwitchAria: "View",
+    viewMapAria: "Map view",
+    viewListAria: "List view",
+    viewList: "List",
+    listGroupByLabel: "Group by",
+    listGroupMuseum: "Museum",
+    listGroupCountry: "Country",
+    listGroupNone: "No grouping",
+    originMiniMapAria: (place) => `Origin map: ${place}`,
+    listUnknownCountry: "Country unknown",
+    listEmpty: "No pieces match the active filters.",
+    listAllPieces: "All pieces",
+    listAllMuseums: "all museums",
+    countryClickListLink: "View the list grouped by country",
+    countryClickStatusOn: "Country search on. Pick a country on the map, or use the list grouped by country.",
+    countryClickStatusOff: "Country search off.",
+    listSummary: (museums, extras, n) => `Showing ${museums}${extras.length ? " · " + extras.join(" · ") : ""}. ${n} ${n === 1 ? "result" : "results"}`,
 
     tourSteps: [
       {

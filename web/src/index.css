@@ -17,17 +17,21 @@
   --color-focus-ring: #8a8680;
   --radius-pill: 20px;
   --radius-chip: 4px;
-  /* Type scale */
-  --font-size-xs:    11px;
-  --font-size-sm:    12px;
-  --font-size-md:    13px;
-  --font-size-md-lg: 13.5px;
-  --font-size-base:  14px;
-  --font-size-lg:    15px;
-  --font-size-xl:    16px;
-  --font-size-2xl:   19px;
-  --font-size-3xl:   20px;
-  --font-size-4xl:   30px;
+  /* Spacing scale (padding / gap): 2, 4, 6, 8, 12, 16, 24 */
+  --space-1: 2px;
+  --space-2: 4px;
+  --space-3: 6px;
+  --space-4: 8px;
+  --space-5: 12px;
+  --space-6: 16px;
+  --space-7: 24px;
+  /* Type scale (6 pasos) */
+  --font-size-xs:   11px;
+  --font-size-sm:   12px;
+  --font-size-base: 14px;
+  --font-size-lg:   16px;
+  --font-size-xl:   20px;
+  --font-size-2xl:  30px;
   font-family: system-ui, "Segoe UI", Roboto, sans-serif;
 }
 

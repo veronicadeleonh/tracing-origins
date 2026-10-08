@@ -9,6 +9,7 @@ import { groupByCountry, groupByOrigin, jitteredPoint, objectHasResearch, type O
 import { MUSEUM_COLORS, MUSEUM_COUNTRY, DEFAULT_COLOR, ORIGIN_COLOR } from "./colors";
 import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
+import { ListView, type GroupBy } from "./components/ListView";
 import { Timeline } from "./components/Timeline";
 import { WelcomeModal } from "./components/WelcomeModal";
 import { SpotlightTour } from "./components/SpotlightTour";
@@ -294,13 +295,15 @@ function App() {
       .catch((err) => console.error("No se pudo cargar countries.geojson", err));
   }, [countryClickEnabled, countryPolygons]);
   const [panel, setPanel] = useState<PanelState>(null);
-  const [kbdOriginsOpen, setKbdOriginsOpen] = useState(false);
+  // Vista Mapa / Lista (08/10): la lista es alternativa al globo; el Map
+  // queda montado detrás para conservar cámara y estado.
+  const [viewMode, setViewMode] = useState<"map" | "list">("map");
+  const [listGroupBy, setListGroupBy] = useState<GroupBy>("museum");
   // Devolver el foco al disparador al cerrar el panel lateral: se recuerda
   // el último elemento enfocado FUERA del panel (focusin global); si el
-  // disparador se desmonta (ej. un botón de la lista de orígenes) se fija
-  // explícitamente otro (el botón de la lista). Al pasar de panel abierto
+  // disparador se desmonta se puede fijar explícitamente otro en
+  // panelOpenerRef. Al pasar de panel abierto
   // a null se restaura, si el elemento sigue en el DOM.
-  const kbdToggleRef = useRef<HTMLButtonElement>(null);
   const lastFocusOutsideRef = useRef<HTMLElement | null>(null);
   const panelOpenerRef = useRef<HTMLElement | null>(null);
   const panelWasOpenRef = useRef(false);
@@ -560,6 +563,23 @@ function App() {
     setResearchFilter(value);
     if (value === "without") setSelectedFlags(new Set());
   }, []);
+
+  // Resumen de filtros activos para encabezar la vista de lista (08/10).
+  const listSummary = useMemo(() => {
+    const ids = Object.keys(bundle.museums);
+    const on = ids.filter((id) => visibleMuseums[id]);
+    const museumsText =
+      on.length === ids.length ? s.listAllMuseums : on.map((id) => bundle.museums[id].name).join(", ") || "—";
+    const extras: string[] = [];
+    if (researchFilter !== "all") extras.push(s.researchFilterLabels[researchFilter].toLowerCase());
+    if (selectedFlags.size > 0)
+      extras.push(`${s.mechanismFilterLabel}: ${[...selectedFlags].map((f) => s.contextFlagLabels[f] ?? f).join(", ")}`);
+    if (selectedObjectTypes.size > 0)
+      extras.push(`${s.objectTypeFilterLabel}: ${[...selectedObjectTypes].map((x) => s.objectTypeLabels[x] ?? x).join(", ")}`);
+    return s.listSummary(museumsText, extras, visibleObjects.length);
+  }, [visibleMuseums, researchFilter, selectedFlags, selectedObjectTypes, visibleObjects.length, s]);
+
+  const listOpen = viewMode === "list";
 
   const clusters = useMemo(() => groupByOrigin(visibleObjects, lang), [visibleObjects, lang]);
 
@@ -902,7 +922,10 @@ function App() {
           ningún <h1> visible (el del modal de bienvenida existe solo mientras
           el modal está abierto). */}
       <h1 className="sr-only">Tracing Origins</h1>
-      <div className="map-pane" role="main">
+      <div
+        className={`map-pane${viewMode === "list" ? " list-mode" : ""}`}
+        role="main"
+      >
         {/* Orden de foco (08/10): los botones "?"/idioma son position:absolute,
             así que su lugar en el DOM no cambia lo visual; se movieron al
             final del .map-pane para que el Tab siga buscador → filtros →
@@ -923,137 +946,11 @@ function App() {
           {s.mobileFiltersToggleLabel}
           <span className="mobile-filters-toggle-arrow" aria-hidden="true">{filtersOpen ? "▲" : "▼"}</span>
         </button>
-        {/* Buscador de piezas por título (18/09, reubicado el mismo día
-            a pedido de la usuaria: "ubiquemos el search bar en un mejor
-            lugar") -- panel flotante propio, arriba-centro, en vez de vivir
-            como primera fila de .top-controls. Dos motivos: (1) no compite
-            visualmente con los filtros de museo/investigación (izquierda,
-            .top-controls dentro de .mobile-filters-wrap) ni con "Click en
-            el mapa"/"?"/idioma (derecha) -- zona neutral arriba-centro,
-            mismo lugar donde buscadores de mapas conocidos (Google/Apple
-            Maps) ponen el suyo; (2) bug real encontrado de paso -- vivir
-            dentro de .top-controls significaba vivir también dentro de
-            .mobile-filters-wrap, así que en mobile el buscador quedaba
-            oculto hasta abrir el drawer "Filtros ▼" (el atajo más directo
-            a una pieza puntual, escondido detrás de un tap extra). Al
-            quedar afuera de ese wrapper, en mobile permanece siempre
-            visible sin depender de filtersOpen. Opera sobre todas las
-            piezas (titleSearchResults/allClusters, arriba), no sobre
-            visibleObjects -- encontrar "Sleeping Hermaphroditus" no debería
-            depender de qué museos estén prendidos. */}
-        <div className={`title-search-panel${timelineOpen ? " timeline-open" : ""}`}>
-          <div
-            className="title-search-wrap"
-            ref={titleSearchRef}
-            // Ancho del estado inactivo ajustado al ancho real (en píxeles)
-            // del placeholder (01/10, pedido de la usuaria; segunda vuelta
-            // el mismo día -- la primera versión con `ch` quedaba con aire
-            // de sobra, ver comentario en el useEffect que mide
-            // searchPlaceholderWidth más arriba). `--search-text-width` se
-            // consume en .title-search-wrap (App.css) vía `calc(var(...) +
-            // 44px)`, donde 44px es el padding horizontal del input que no
-            // es texto (30px a la izquierda para la lupa + 12px a la
-            // derecha + ~2px de borde). El estado expandido (:focus-within,
-            // 260px) sigue fijo -- el pedido fue solo sobre el default.
-            style={{ "--search-text-width": `${searchPlaceholderWidth}px` } as CSSProperties}
-          >
-            <span className="title-search-icon" aria-hidden="true">
-              {TITLE_SEARCH_ICON}
-            </span>
-            <input
-              ref={titleSearchInputRef}
-              type="text"
-              className="title-search-input"
-              value={titleQuery}
-              placeholder={s.titleSearchPlaceholder}
-              aria-label={s.titleSearchAria}
-              role="combobox"
-              aria-expanded={titleSearchOpen && titleQuery.trim() !== ""}
-              aria-autocomplete="list"
-              onChange={(e) => {
-                setTitleQuery(e.target.value);
-                setTitleSearchOpen(true);
-              }}
-              onFocus={() => setTitleSearchOpen(true)}
-              onKeyDown={handleTitleSearchKeyDown}
-            />
-            {titleSearchOpen && titleQuery.trim() !== "" && (
-              <div className="title-search-menu">
-                {titleSearchResults.length === 0 ? (
-                  <div className="title-search-empty">{s.titleSearchNoResults}</div>
-                ) : (
-                  <ul className="title-search-list">
-                    {titleSearchResults.map((obj, index) => {
-                      const displayTitle = (lang === "en" ? obj.titleEn || obj.title : obj.title) || s.untitled;
-                      const museumName = obj.sourceMuseum ? bundle.museums[obj.sourceMuseum]?.name ?? "" : "";
-                      // Feedback de la usuaria (18/09, segunda vuelta): sumar
-                      // el origen a la subline, ej. "Musée du Louvre • Made
-                      // in Italy" -- antes solo mostraba el museo. Se usa
-                      // madeIn() (i18n.ts, ya usado en ObjectDetail para el
-                      // mismo dato) en vez de pegar el label crudo, para que
-                      // la frase quede natural en los dos idiomas ("Hecho en
-                      // Francia" / "Made in France"), no solo el nombre del
-                      // lugar suelto.
-                      const originLabelText = lang === "en" ? obj.originLabelEn || obj.originLabel : obj.originLabel;
-                      const subline = [museumName, originLabelText ? s.madeIn(originLabelText) : null]
-                        .filter(Boolean)
-                        .join(" • ");
-                      return (
-                        <li key={obj.objectID}>
-                          <button
-                            type="button"
-                            className={`title-search-item${index === titleSearchHighlight ? " highlighted" : ""}`}
-                            onClick={() => selectSearchedObject(obj)}
-                            onMouseEnter={() => setTitleSearchHighlight(index)}
-                          >
-                            <div
-                              className="title-search-item-thumb"
-                              style={obj.primaryImage ? { backgroundImage: `url(${obj.primaryImage})` } : undefined}
-                            />
-                            <div className="title-search-item-text">
-                              <span className="title-search-item-title">{displayTitle}</span>
-                              <span className="title-search-item-museum">{subline}</span>
-                            </div>
-                          </button>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-              </div>
-            )}
-          </div>
-        </div>
         {/* Envoltorio puramente estructural en desktop (los hijos siguen
             position:absolute contra .map-pane, este div no les cambia nada);
             en mobile es lo que el botón de arriba muestra/oculta como un
             único panel apilado en columna -- ver .mobile-filters-wrap.open
             en App.css. */}
-        {/* "Click en el mapa" vive FUERA del drawer de filtros (pedido de la
-            usuaria): no es un filtro, y en mobile queda siempre visible. */}
-        <div className="country-click-panel">
-          <span className="country-click-label">{s.countryClickToggleLabel}</span>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={countryClickEnabled}
-            aria-label={s.countryClickToggleAria}
-            className={`country-click-switch${countryClickEnabled ? " on" : ""}`}
-            onClick={toggleCountryClick}
-          >
-            <span className="country-click-switch-knob" aria-hidden="true" />
-          </button>
-          <button
-            type="button"
-            className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
-            aria-label={s.countryClickNoteAria}
-            aria-expanded={countryClickNoteOpen}
-            onClick={() => setCountryClickNoteOpen((v) => !v)}
-          >
-            i
-          </button>
-          {countryClickNoteOpen && <div className="museum-note country-click-note">{s.countryClickNoteText}</div>}
-        </div>
         <div className={`mobile-filters-wrap${filtersOpen ? " open" : ""}`}>
           {/* Copia del contador de piezas, visible solo dentro del drawer
               mobile (pedido de la usuaria: que el total quede arriba de
@@ -1223,8 +1120,51 @@ function App() {
         </div>
         </div>
         </div>
+        {/* Selector de vista (centro-izquierda): mapa o lista. La lista es una
+            página completa, no un panel. */}
+        <div className="view-switch" role="group" aria-label={s.viewSwitchAria}>
+          <button
+            type="button"
+            className={`view-switch-btn${!listOpen ? " active" : ""}`}
+            aria-pressed={!listOpen}
+            aria-label={s.viewMapAria}
+            title={s.viewMapAria}
+            onClick={() => setViewMode("map")}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            className={`view-switch-btn${listOpen ? " active" : ""}`}
+            aria-pressed={listOpen}
+            aria-label={s.viewListAria}
+            title={s.viewListAria}
+            onClick={() => setViewMode("list")}
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" focusable="false">
+              <path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" />
+            </svg>
+          </button>
+        </div>
+        <ListView
+          objects={visibleObjects}
+          museums={bundle.museums}
+          lang={lang}
+          hidden={viewMode !== "list"}
+          summary={listSummary}
+          groupBy={listGroupBy}
+          onGroupByChange={setListGroupBy}
+          onSelectObject={(obj) => {
+            const cluster = allClusters.find((c) => c.objects.some((o) => o.objectID === obj.objectID));
+            if (cluster) setPanel({ view: "object", cluster, object: obj });
+          }}
+        />
         {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
         {tourOpen && <SpotlightTour lang={lang} onClose={closeTour} onOpenInfo={openInfoFromTour} />}
+        <div className={`map-wrap${listOpen ? " map-wrap-hidden" : ""}`}>
         <Map
           ref={mapRef}
           mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
@@ -1403,36 +1343,6 @@ function App() {
             </Popup>
           )}
         </Map>
-        {/* Camino por teclado a los puntos de origen (solo clickeables con
-            mouse en el canvas): visualmente oculto hasta recibir foco. */}
-        <div className={`kbd-origins${kbdOriginsOpen ? " open" : ""}`}>
-          <button
-            type="button"
-            className="kbd-origins-toggle"
-            ref={kbdToggleRef}
-            aria-expanded={kbdOriginsOpen}
-            onClick={() => setKbdOriginsOpen((v) => !v)}
-          >
-            {s.kbdOriginsLabel}
-          </button>
-          {kbdOriginsOpen && (
-            <ul className="kbd-origins-list" aria-label={s.kbdOriginsAria}>
-              {clusters.map((c) => (
-                <li key={`${c.lat}|${c.lon}|${c.label}`}>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      panelOpenerRef.current = kbdToggleRef.current;
-                      setPanel({ view: "cluster", cluster: c });
-                      setKbdOriginsOpen(false);
-                    }}
-                  >
-                    {c.label} — {s.kbdOriginsPieces(c.objects.length)}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
         <div className="year-timeline-dock">
           <button
@@ -1467,14 +1377,151 @@ function App() {
             />
           )}
         </div>
-        <button
-          type="button"
-          className="welcome-trigger-btn"
-          aria-label={s.welcomeTriggerAria}
-          onClick={() => setWelcomeOpen(true)}
-        >
-          ?
-        </button>
+        {/* Buscador de piezas por título (18/09, reubicado el mismo día
+            a pedido de la usuaria: "ubiquemos el search bar en un mejor
+            lugar") -- panel flotante propio, arriba-centro, en vez de vivir
+            como primera fila de .top-controls. Dos motivos: (1) no compite
+            visualmente con los filtros de museo/investigación (izquierda,
+            .top-controls dentro de .mobile-filters-wrap) ni con "Click en
+            el mapa"/"?"/idioma (derecha) -- zona neutral arriba-centro,
+            mismo lugar donde buscadores de mapas conocidos (Google/Apple
+            Maps) ponen el suyo; (2) bug real encontrado de paso -- vivir
+            dentro de .top-controls significaba vivir también dentro de
+            .mobile-filters-wrap, así que en mobile el buscador quedaba
+            oculto hasta abrir el drawer "Filtros ▼" (el atajo más directo
+            a una pieza puntual, escondido detrás de un tap extra). Al
+            quedar afuera de ese wrapper, en mobile permanece siempre
+            visible sin depender de filtersOpen. Opera sobre todas las
+            piezas (titleSearchResults/allClusters, arriba), no sobre
+            visibleObjects -- encontrar "Sleeping Hermaphroditus" no debería
+            depender de qué museos estén prendidos. */}
+        <div className={`title-search-panel${timelineOpen ? " timeline-open" : ""}`}>
+          <div
+            className="title-search-wrap"
+            ref={titleSearchRef}
+            // Ancho del estado inactivo ajustado al ancho real (en píxeles)
+            // del placeholder (01/10, pedido de la usuaria; segunda vuelta
+            // el mismo día -- la primera versión con `ch` quedaba con aire
+            // de sobra, ver comentario en el useEffect que mide
+            // searchPlaceholderWidth más arriba). `--search-text-width` se
+            // consume en .title-search-wrap (App.css) vía `calc(var(...) +
+            // 44px)`, donde 44px es el padding horizontal del input que no
+            // es texto (30px a la izquierda para la lupa + 12px a la
+            // derecha + ~2px de borde). El estado expandido (:focus-within,
+            // 260px) sigue fijo -- el pedido fue solo sobre el default.
+            style={{ "--search-text-width": `${searchPlaceholderWidth}px` } as CSSProperties}
+          >
+            <span className="title-search-icon" aria-hidden="true">
+              {TITLE_SEARCH_ICON}
+            </span>
+            <input
+              ref={titleSearchInputRef}
+              type="text"
+              className="title-search-input"
+              value={titleQuery}
+              placeholder={s.titleSearchPlaceholder}
+              aria-label={s.titleSearchAria}
+              role="combobox"
+              aria-expanded={titleSearchOpen && titleQuery.trim() !== ""}
+              aria-autocomplete="list"
+              onChange={(e) => {
+                setTitleQuery(e.target.value);
+                setTitleSearchOpen(true);
+              }}
+              onFocus={() => setTitleSearchOpen(true)}
+              onKeyDown={handleTitleSearchKeyDown}
+            />
+            {titleSearchOpen && titleQuery.trim() !== "" && (
+              <div className="title-search-menu">
+                {titleSearchResults.length === 0 ? (
+                  <div className="title-search-empty">{s.titleSearchNoResults}</div>
+                ) : (
+                  <ul className="title-search-list">
+                    {titleSearchResults.map((obj, index) => {
+                      const displayTitle = (lang === "en" ? obj.titleEn || obj.title : obj.title) || s.untitled;
+                      const museumName = obj.sourceMuseum ? bundle.museums[obj.sourceMuseum]?.name ?? "" : "";
+                      // Feedback de la usuaria (18/09, segunda vuelta): sumar
+                      // el origen a la subline, ej. "Musée du Louvre • Made
+                      // in Italy" -- antes solo mostraba el museo. Se usa
+                      // madeIn() (i18n.ts, ya usado en ObjectDetail para el
+                      // mismo dato) en vez de pegar el label crudo, para que
+                      // la frase quede natural en los dos idiomas ("Hecho en
+                      // Francia" / "Made in France"), no solo el nombre del
+                      // lugar suelto.
+                      const originLabelText = lang === "en" ? obj.originLabelEn || obj.originLabel : obj.originLabel;
+                      const subline = [museumName, originLabelText ? s.madeIn(originLabelText) : null]
+                        .filter(Boolean)
+                        .join(" • ");
+                      return (
+                        <li key={obj.objectID}>
+                          <button
+                            type="button"
+                            className={`title-search-item${index === titleSearchHighlight ? " highlighted" : ""}`}
+                            onClick={() => selectSearchedObject(obj)}
+                            onMouseEnter={() => setTitleSearchHighlight(index)}
+                          >
+                            <div
+                              className="title-search-item-thumb"
+                              style={obj.primaryImage ? { backgroundImage: `url(${obj.primaryImage})` } : undefined}
+                            />
+                            <div className="title-search-item-text">
+                              <span className="title-search-item-title">{displayTitle}</span>
+                              <span className="title-search-item-museum">{subline}</span>
+                            </div>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+        {/* "Click en el mapa" vive FUERA del drawer de filtros (pedido de la
+            usuaria): no es un filtro, y en mobile queda siempre visible. */}
+        <div className="country-click-panel">
+          <span className="country-click-label">{s.countryClickToggleLabel}</span>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={countryClickEnabled}
+            aria-label={s.countryClickToggleAria}
+            className={`country-click-switch${countryClickEnabled ? " on" : ""}`}
+            onClick={toggleCountryClick}
+          >
+            <span className="country-click-switch-knob" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
+            aria-label={s.countryClickNoteAria}
+            aria-expanded={countryClickNoteOpen}
+            onClick={() => setCountryClickNoteOpen((v) => !v)}
+          >
+            i
+          </button>
+          <span className="sr-only" role="status">
+            {countryClickEnabled ? s.countryClickStatusOn : s.countryClickStatusOff}
+          </span>
+          {countryClickNoteOpen && (
+            <div className="museum-note country-click-note">
+              {s.countryClickNoteText}
+              {/* Alternativa sin ratón: la lista agrupada por país da acceso a las mismas piezas. */}
+              <button
+                type="button"
+                className="country-click-list-link"
+                onClick={() => {
+                  setListGroupBy("country");
+                  setViewMode("list");
+                  setCountryClickNoteOpen(false);
+                }}
+              >
+                {s.countryClickListLink}
+              </button>
+            </div>
+          )}
+        </div>
         <button
           type="button"
           className="lang-toggle-btn"
@@ -1482,6 +1529,14 @@ function App() {
           onClick={toggleLang}
         >
           {s.langToggleLabel}
+        </button>
+        <button
+          type="button"
+          className="welcome-trigger-btn"
+          aria-label={s.welcomeTriggerAria}
+          onClick={() => setWelcomeOpen(true)}
+        >
+          ?
         </button>
       </div>
 
@@ -1519,6 +1574,7 @@ function App() {
             }}
             onClose={() => setPanel(null)}
             clusterPosition={clusterPosition}
+            miniMap={listOpen}
             onPrev={index > 0 ? () => selectClusterObject(index - 1) : undefined}
             onNext={index >= 0 && index < objects.length - 1 ? () => selectClusterObject(index + 1) : undefined}
           />

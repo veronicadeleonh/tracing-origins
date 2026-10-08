@@ -3,6 +3,7 @@ import type { MuseumDestination, MuseumObject } from "../types";
 import { objectHasResearch, type OriginCluster } from "../geo";
 import { MUSEUM_COLORS, DEFAULT_COLOR } from "../colors";
 import { STRINGS, type Lang } from "../i18n";
+import { CloseIcon } from "./icons";
 
 interface ClusterPanelProps {
   cluster: OriginCluster;
@@ -114,7 +115,7 @@ export function ClusterPanel({ cluster, lang, onClose, onSelectObject, showOrigi
           <div className="panel-subtitle">{subtitleOverride ?? s.clusterPieceCount(cluster.objects.length)}</div>
         </div>
         <button className="icon-btn" onClick={onClose} aria-label={s.closePanelAria}>
-          ×
+          <CloseIcon />
         </button>
       </div>
 

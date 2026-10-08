@@ -1,4 +1,6 @@
+import { useEffect, useRef } from "react";
 import { STRINGS, type Lang } from "../i18n";
+import { CloseIcon } from "./icons";
 
 type WelcomeModalProps = {
   lang: Lang;
@@ -27,10 +29,47 @@ type WelcomeModalProps = {
 // archivos, solo se dejó de referenciarlas acá.
 export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps) {
   const s = STRINGS[lang];
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  // Foco dentro del modal al abrirlo, Tab atrapado dentro, Escape cierra, y al
+  // cerrar el foco vuelve al botón que lo abrió.
+  useEffect(() => {
+    const opener = document.activeElement as HTMLElement | null;
+    dialogRef.current?.focus();
+    return () => {
+      if (opener && opener.isConnected) opener.focus();
+    };
+  }, []);
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Escape") {
+      e.stopPropagation();
+      onClose();
+      return;
+    }
+    if (e.key !== "Tab") return;
+    const focusable = dialogRef.current?.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+    );
+    if (!focusable || focusable.length === 0) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    const active = document.activeElement;
+    if (e.shiftKey && (active === first || active === dialogRef.current)) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && active === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  };
 
   return (
     <div className="welcome-modal-backdrop" onClick={onClose}>
       <div
+        ref={dialogRef}
+        tabIndex={-1}
+        onKeyDown={onKeyDown}
         className="welcome-modal"
         role="dialog"
         aria-modal="true"
@@ -60,7 +99,7 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
               aria-label={s.welcomeCloseAria}
               onClick={onClose}
             >
-              ✕
+              <CloseIcon />
             </button>
           </div>
         </div>

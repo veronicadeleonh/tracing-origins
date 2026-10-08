@@ -25,7 +25,7 @@
    falta acá) y le saca la flecha/punta (mismo motivo: es un tooltip de
    hover, no un popup con contenido para leer con calma). */
 .map-tooltip-popup .mapboxgl-popup-content {
-  padding: 6px 10px;
+  padding: var(--space-3) var(--space-5);
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
@@ -109,7 +109,7 @@
   left: 12px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-4);
 }
 
 /* Buscador de piezas por título (18/09). Primera reubicación (mismo día,
@@ -245,7 +245,7 @@
   font: inherit;
   font-size: var(--font-size-sm);
   color: var(--color-ink);
-  padding: 6px 12px 6px 30px;
+  padding: var(--space-3) var(--space-5) var(--space-3) 30px;
   border-radius: var(--radius-pill);
   box-sizing: border-box;
   /* Séptima vuelta (18/09, mismo día): sin esto el input usa el outline de
@@ -314,13 +314,13 @@
   border: 1px solid var(--color-line);
   border-radius: 10px;
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
-  padding: 6px;
+  padding: var(--space-3);
 }
 
 .title-search-empty {
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  padding: 6px 8px;
+  padding: var(--space-3) var(--space-4);
 }
 
 .title-search-list {
@@ -332,13 +332,13 @@
 .title-search-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-4);
   width: 100%;
   text-align: left;
   border: none;
   background: none;
   font: inherit;
-  padding: 6px 8px;
+  padding: var(--space-3) var(--space-4);
   cursor: pointer;
   border-radius: 6px;
 }
@@ -378,7 +378,7 @@
 .title-search-item-text {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: var(--space-1);
   min-width: 0;
   flex: 1;
 }
@@ -402,7 +402,7 @@
 .museum-toggles {
   display: flex;
   align-items: center; /* el label de país ahora flota arriba vía position:absolute (ver .museum-country-label) en vez de ocupar espacio en el flujo, así que esta fila vuelve a ser de una sola línea "de facto" -- mismo align-items:center que .research-filter-row, para que "MUSEUMS"/el contador queden centrados respecto a la fila de pills, no a la altura del label de país (31/08, segunda vuelta -- la primera vuelta con margin-top a mano no daba un alineado preciso) */
-  gap: 14px; /* espacio entre grupos de país -- más ancho que el gap interno de .museum-country-row */
+  gap: var(--space-6); /* espacio entre grupos de país -- más ancho que el gap interno de .museum-country-row */
   flex-wrap: wrap;
   margin-top: 20px; /* el label de país, al flotar por fuera del flujo (position:absolute, bottom:100%), necesita este espacio arriba para no quedar recortado contra el borde superior de .top-controls/la ventana (31/08, tercera vuelta -- se veía cortado a la mitad) */
 }
@@ -427,7 +427,7 @@
 .museum-country-row {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-2);
 }
 
 .museum-country-label {
@@ -442,14 +442,14 @@
      "info, no clickeable" (los controles son crema), y contraste fijo sobre
      cualquier fondo del mapa. */
   background: var(--color-chip-dark);
-  padding: 2px 7px;
+  padding: var(--space-1) var(--space-4);
   border-radius: var(--radius-chip);
 }
 
 .research-filter-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-4);
 }
 
 /* Label chico en mayúsculas al inicio de cada fila (18/08, mismo
@@ -466,7 +466,7 @@
      "info, no clickeable" (los controles son crema), y contraste fijo sobre
      cualquier fondo del mapa. */
   background: var(--color-chip-dark);
-  padding: 2px 7px;
+  padding: var(--space-1) var(--space-4);
   border-radius: var(--radius-chip);
 }
 
@@ -474,11 +474,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-2);
   background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-pill);
-  padding: 2px 4px 2px 8px;
+  padding: var(--space-1) var(--space-2) var(--space-1) var(--space-4);
   transition: opacity 0.15s ease, border-color 0.15s ease;
 }
 
@@ -493,7 +493,7 @@
 .museum-toggle {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-3);
   background: none;
   border: none;
   padding: 0;
@@ -506,7 +506,6 @@
 
 .museum-toggle-wrap.active .museum-toggle {
   color: var(--color-ink);
-  font-weight: 500;
 }
 
 .museum-toggle-dot {
@@ -581,7 +580,7 @@
   color: var(--color-paper);
   font-size: var(--font-size-sm);
   line-height: 1.5;
-  padding: 10px 12px;
+  padding: var(--space-5) var(--space-5);
   border-radius: 8px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
 }
@@ -597,7 +596,7 @@
   background: var(--color-chip-dark);
   color: var(--color-paper);
   border-radius: var(--radius-chip);
-  padding: 5px 10px;
+  padding: var(--space-3) var(--space-5);
   font-size: var(--font-size-sm);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
@@ -610,11 +609,11 @@
    porque las 3 opciones son mutuamente excluyentes (todas/con/sin). */
 .research-filter {
   display: flex;
-  gap: 2px;
+  gap: var(--space-1);
   background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-pill);
-  padding: 3px;
+  padding: var(--space-2);
 }
 
 .research-filter-btn {
@@ -623,7 +622,7 @@
   font: inherit;
   font-size: var(--font-size-sm);
   color: var(--color-text-soft);
-  padding: 4px 10px;
+  padding: var(--space-2) var(--space-5);
   border-radius: 16px;
   cursor: pointer;
   white-space: nowrap;
@@ -636,7 +635,6 @@
 .research-filter-btn.active {
   background: var(--color-accent);
   color: var(--color-paper);
-  font-weight: 500;
 }
 
 /* Filtro por mecanismo (context_flags), 23/08 -- dropdown aparte del pill
@@ -650,13 +648,13 @@
 .mechanism-filter-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-3);
   border: 1px solid var(--color-line);
   background: var(--color-surface);
   font: inherit;
   font-size: var(--font-size-sm);
   color: var(--color-text-soft);
-  padding: 5px 12px;
+  padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-pill);
   cursor: pointer;
   white-space: nowrap;
@@ -676,7 +674,6 @@
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--color-paper);
-  font-weight: 500;
 }
 
 .mechanism-filter-caret {
@@ -695,7 +692,7 @@
   border: 1px solid var(--color-line);
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  padding: 6px;
+  padding: var(--space-3);
 }
 
 .mechanism-menu-clear {
@@ -707,7 +704,7 @@
   font: inherit;
   font-size: var(--font-size-sm);
   color: var(--color-accent);
-  padding: 6px 8px;
+  padding: var(--space-3) var(--space-4);
   cursor: pointer;
   border-radius: 6px;
 }
@@ -725,8 +722,8 @@
 .mechanism-menu-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 8px;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
   border-radius: 6px;
   cursor: pointer;
   font-size: var(--font-size-sm);
@@ -759,13 +756,13 @@
 .object-type-filter-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-3);
   border: 1px solid var(--color-line);
   background: var(--color-surface);
   font: inherit;
   font-size: var(--font-size-sm);
   color: var(--color-text-soft);
-  padding: 5px 12px;
+  padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-pill);
   cursor: pointer;
   white-space: nowrap;
@@ -780,7 +777,6 @@
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--color-paper);
-  font-weight: 500;
 }
 
 .object-type-filter-caret {
@@ -799,7 +795,7 @@
   border: 1px solid var(--color-line);
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  padding: 6px;
+  padding: var(--space-3);
 }
 
 .object-type-menu-clear {
@@ -811,7 +807,7 @@
   font: inherit;
   font-size: var(--font-size-sm);
   color: var(--color-accent);
-  padding: 6px 8px;
+  padding: var(--space-3) var(--space-4);
   cursor: pointer;
   border-radius: 6px;
 }
@@ -829,8 +825,8 @@
 .object-type-menu-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 6px 8px;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
   border-radius: 6px;
   cursor: pointer;
   font-size: var(--font-size-sm);
@@ -865,11 +861,11 @@
   right: 12px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-4);
   background: var(--color-surface);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-pill);
-  padding: 6px 10px 6px 14px;
+  padding: var(--space-3) var(--space-5) var(--space-3) var(--space-6);
 }
 
 .country-click-label {
@@ -970,7 +966,7 @@
   justify-content: center;
   min-width: 30px;
   height: 30px;
-  padding: 0 8px;
+  padding: 0 var(--space-4);
   border-radius: 15px;
   border: 1px solid var(--color-line);
   background: var(--color-surface);
@@ -995,7 +991,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: var(--space-7);
 }
 
 /* Reescrito el 19/08 (feedback directo: "incómodo de navegar, las imágenes
@@ -1021,33 +1017,33 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
-  padding: 22px 24px 18px;
+  gap: var(--space-5);
+  padding: var(--space-7) var(--space-7) var(--space-6);
   border-bottom: 1px solid var(--color-line);
 }
 
 .welcome-modal-heading-group {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: var(--space-5);
 }
 
 .welcome-modal-emoji {
-  font-size: var(--font-size-4xl);
+  font-size: var(--font-size-2xl);
   line-height: 1;
   flex-shrink: 0;
 }
 
 .welcome-modal-appname {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
   font-weight: 600;
   color: var(--color-ink);
   margin: 0 0 3px;
 }
 
 .welcome-modal-slogan {
-  font-size: var(--font-size-md-lg);
-  color: #6b665e;
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
   line-height: 1.5;
   margin: 0;
 }
@@ -1055,7 +1051,7 @@
 .welcome-modal-header-actions {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-3);
   flex-shrink: 0;
 }
 
@@ -1068,7 +1064,7 @@
   justify-content: center;
   min-width: 26px;
   height: 26px;
-  padding: 0 7px;
+  padding: 0 var(--space-4);
   border-radius: 13px;
   border: 1px solid var(--color-line);
   background: transparent;
@@ -1088,13 +1084,13 @@
 .welcome-modal-body {
   display: flex;
   flex-direction: column;
-  gap: 22px;
-  padding: 22px 24px;
+  gap: var(--space-7);
+  padding: var(--space-7) var(--space-7);
 }
 
 .welcome-modal-section + .welcome-modal-section {
   border-top: 1px solid var(--color-line);
-  padding-top: 22px;
+  padding-top: var(--space-7);
 }
 
 .welcome-modal-heading {
@@ -1131,10 +1127,10 @@
 
 .welcome-steps {
   margin: 0;
-  padding-left: 22px;
+  padding-left: var(--space-7);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--space-5);
 }
 
 .welcome-steps li {
@@ -1150,7 +1146,7 @@
 .welcome-modal-footer {
   position: sticky;
   bottom: 0;
-  padding: 16px 24px 20px;
+  padding: var(--space-6) var(--space-7) var(--space-7);
   border-top: 1px solid var(--color-line);
   background: var(--color-paper);
   box-shadow: 0 -4px 10px rgba(26, 26, 26, 0.06);
@@ -1159,9 +1155,9 @@
 .welcome-modal-btn {
   border: none;
   border-radius: 8px;
-  padding: 10px 16px;
+  padding: var(--space-5) var(--space-6);
   font: inherit;
-  font-size: var(--font-size-md-lg);
+  font-size: var(--font-size-base);
   font-weight: 500;
   cursor: pointer;
 }
@@ -1202,7 +1198,7 @@
   z-index: 2101;
   background: var(--color-paper);
   border-radius: 10px;
-  padding: 16px 18px;
+  padding: var(--space-6) var(--space-6);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
   transition: top 0.2s ease, left 0.2s ease;
 }
@@ -1224,7 +1220,7 @@
 }
 
 .spotlight-callout-text {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-base);
   line-height: 1.5;
   color: var(--color-ink-soft);
   margin: 0;
@@ -1248,7 +1244,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-5);
   margin-top: 14px;
 }
 
@@ -1277,16 +1273,16 @@
 
 .spotlight-callout-nav {
   display: flex;
-  gap: 8px;
+  gap: var(--space-4);
 }
 
 .spotlight-callout-btn {
   border: 1px solid var(--color-line);
   background: var(--color-paper);
   border-radius: 8px;
-  padding: 7px 14px;
+  padding: var(--space-4) var(--space-6);
   font: inherit;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-base);
   font-weight: 500;
   color: var(--color-ink-soft);
   cursor: pointer;
@@ -1321,14 +1317,14 @@
   pointer-events: auto;
   display: flex;
   align-items: center;
-  gap: 6px;
-  background: rgba(20, 19, 17, 0.88);
+  gap: var(--space-3);
+  background: var(--color-chip-dark);
   color: var(--color-paper);
   border: none;
   font: inherit;
   font-size: var(--font-size-sm);
   font-weight: 500;
-  padding: 6px 14px;
+  padding: var(--space-3) var(--space-6);
   border-radius: 14px 14px 0 0;
   cursor: pointer;
 }
@@ -1350,20 +1346,20 @@
 
 .year-timeline {
   width: 100%;
-  background: rgba(20, 19, 17, 0.88);
+  background: var(--color-chip-dark);
   backdrop-filter: blur(3px);
-  padding: 10px 28px 16px;
+  padding: var(--space-5) var(--space-7) var(--space-6);
   display: flex;
   flex-direction: column;
   /* un poco más de aire que antes (era 6px) para que los marcadores de
      hitos (year-timeline-event, flotan -14px arriba del track) no queden
      pegados al renglón de arriba */
-  gap: 14px;
+  gap: var(--space-6);
 }
 
 .year-timeline-layers {
   display: flex;
-  gap: 6px;
+  gap: var(--space-3);
   margin-left: auto;
 }
 
@@ -1375,11 +1371,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-2);
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 14px;
-  padding: 3px 5px 3px 10px;
+  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-5);
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 
@@ -1395,7 +1391,7 @@
 .year-timeline-layer-toggle {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-2);
   background: none;
   border: none;
   padding: 0;
@@ -1474,7 +1470,7 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   font-size: var(--font-size-sm);
   line-height: 1.5;
-  padding: 10px 12px;
+  padding: var(--space-5) var(--space-5);
   border-radius: 8px;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
 }
@@ -1488,13 +1484,13 @@
 
 .year-timeline-legend {
   display: flex;
-  gap: 14px;
+  gap: var(--space-6);
 }
 
 .year-timeline-legend-item {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: var(--space-3);
   font-size: var(--font-size-sm);
   color: rgba(255, 255, 255, 0.75);
   white-space: nowrap;
@@ -1512,7 +1508,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: var(--color-paper);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-base);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
@@ -1603,7 +1599,7 @@
   color: var(--color-paper);
   font-size: var(--font-size-sm);
   line-height: 1.5;
-  padding: 8px 10px;
+  padding: var(--space-4) var(--space-5);
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
@@ -1685,8 +1681,8 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 12px;
-  padding: 18px 18px 14px;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-6) var(--space-6);
   border-bottom: 1px solid var(--color-line);
 }
 
@@ -1705,11 +1701,15 @@
 .icon-btn {
   background: none;
   border: none;
-  font-size: var(--font-size-3xl);
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Área clickeable de 28×28 (mínimo WCAG 2.2: 24×24). */
+  width: 28px;
+  height: 28px;
+  padding: 0;
   color: var(--color-text-soft);
   cursor: pointer;
-  padding: 2px 4px;
   border-radius: var(--radius-chip);
 }
 
@@ -1721,14 +1721,14 @@
 .piece-list {
   display: flex;
   flex-direction: column;
-  padding: 8px;
+  padding: var(--space-4);
 }
 
 .piece-row {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px;
+  gap: var(--space-5);
+  padding: var(--space-4);
   border: none;
   background: none;
   border-radius: 8px;
@@ -1738,7 +1738,7 @@
 }
 
 .piece-row:hover {
-  background: #f0ede4;
+  background: var(--color-hover);
 }
 
 .piece-thumb {
@@ -1779,8 +1779,8 @@
 .piece-list-legend {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 4px 12px 8px;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-5) var(--space-4);
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
 }
@@ -1790,7 +1790,7 @@
    .filter-row-label (mayúsculas, letterspacing) para que se lea como
    metadata de agrupación y no como el título de una pieza. */
 .piece-list-museum-header {
-  padding: 10px 16px 2px;
+  padding: var(--space-5) var(--space-6) var(--space-1);
   font-size: var(--font-size-xs);
   font-weight: 600;
   text-transform: uppercase;
@@ -1799,7 +1799,7 @@
 }
 
 .piece-list-museum-group:first-child .piece-list-museum-header {
-  padding-top: 4px;
+  padding-top: var(--space-2);
 }
 
 .piece-info {
@@ -1808,7 +1808,7 @@
 }
 
 .piece-title {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-base);
   font-weight: 500;
   color: var(--color-ink);
   white-space: nowrap;
@@ -1827,12 +1827,12 @@
 
 .chevron {
   color: #c9a227;
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   flex-shrink: 0;
 }
 
 .object-header {
-  padding: 4px 18px 16px;
+  padding: var(--space-2) var(--space-6) var(--space-6);
 }
 
 .object-image-wrap {
@@ -1901,7 +1901,7 @@
 }
 
 .timeline {
-  padding: 4px 18px 16px 30px;
+  padding: var(--space-2) var(--space-6) var(--space-6) 30px;
   position: relative;
 }
 
@@ -1952,7 +1952,7 @@
 }
 
 .timeline-label {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-base);
   color: var(--color-ink);
 }
 
@@ -1966,12 +1966,12 @@
 .timeline-note {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--space-3);
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
-  background: #f0ede4;
+  background: var(--color-hover);
   border-radius: 6px;
-  padding: 6px 10px;
+  padding: var(--space-3) var(--space-5);
   margin: 0 0 14px -12px;
 }
 
@@ -1993,7 +1993,7 @@
   background: #f2e6d8;
   color: #7a4a1a;
   border-radius: var(--radius-chip);
-  padding: 2px 7px;
+  padding: var(--space-1) var(--space-4);
   margin: 0 4px 4px 0;
 }
 
@@ -2006,7 +2006,7 @@
 
 .museum-record {
   border-top: 1px solid var(--color-line);
-  padding: 14px 18px 18px;
+  padding: var(--space-6) var(--space-6) var(--space-6);
 }
 
 .museum-record-label {
@@ -2046,8 +2046,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  padding: 12px 18px 18px;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6) var(--space-6);
   border-top: 1px solid var(--color-line);
   margin-top: auto;
   position: sticky;
@@ -2063,7 +2063,7 @@
   border-radius: 6px;
   color: #55504a;
   font-size: var(--font-size-sm);
-  padding: 6px 12px;
+  padding: var(--space-3) var(--space-5);
   cursor: pointer;
 }
 
@@ -2163,16 +2163,16 @@
   .mobile-filters-toggle {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--space-3);
     position: absolute;
     z-index: 1100;
     top: 12px;
     left: 12px;
-    background: rgba(20, 19, 17, 0.88);
+    background: var(--color-chip-dark);
     color: var(--color-paper);
     border: none;
     border-radius: 16px;
-    padding: 7px 14px;
+    padding: var(--space-4) var(--space-6);
     font: inherit;
     font-size: var(--font-size-sm);
     font-weight: 500;
@@ -2201,7 +2201,7 @@
     background: rgba(251, 250, 247, 0.98);
     border: 1px solid var(--color-line);
     border-radius: 12px;
-    padding: 14px;
+    padding: var(--space-6);
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
   }
 
@@ -2240,7 +2240,7 @@
   /* iOS Safari hace zoom automático al enfocar inputs con font-size < 16px
      (era la "animación de zoom" al tocar el buscador). */
   .title-search-input {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
   }
 
   /* El menú de resultados NO puede ser position:fixed pegado abajo en mobile:
@@ -2283,7 +2283,7 @@
      width:100% para que se ajuste a su contenido, igual que en desktop. */
   .mobile-filters-wrap.open .top-controls {
     width: 100%;
-    padding-top: 14px;
+    padding-top: var(--space-6);
     border-top: 1px solid var(--color-line);
   }
 
@@ -2324,7 +2324,7 @@
   .mobile-filters-wrap.open .research-filter-row {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: var(--space-5);
     margin-top: 0;
   }
 
@@ -2335,7 +2335,7 @@
      sin pausas. */
   .mobile-filters-wrap.open .research-filter-row {
     margin-top: 4px;
-    padding-top: 14px;
+    padding-top: var(--space-6);
     border-top: 1px solid var(--color-line);
   }
 
@@ -2357,7 +2357,7 @@
      a la fila de abajo en vez de forzarlos a compartir una franja angosta. */
   .mobile-filters-wrap.open .museum-country-row {
     flex-wrap: wrap;
-    row-gap: 6px;
+    row-gap: var(--space-3);
   }
 
   /* --- Popovers de ancho fijo (notas "i" de museo/capa, menú de mecanismo)
@@ -2418,13 +2418,13 @@
 
   /* --- 3. Header del timeline: columna en vez de fila sin wrap --- */
   .year-timeline {
-    padding: 10px 14px 16px;
+    padding: var(--space-5) var(--space-6) var(--space-6);
   }
 
   .year-timeline-header {
     flex-direction: column;
     align-items: stretch;
-    gap: 8px;
+    gap: var(--space-4);
   }
 
   .year-timeline-year {
@@ -2437,7 +2437,7 @@
   .year-timeline-legend {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 6px 14px;
+    gap: var(--space-3) var(--space-6);
   }
 
   .year-timeline-layers {
@@ -2479,51 +2479,6 @@ input:focus-visible,
   box-shadow: none;
 }
 
-/* Lista de orígenes accesible por teclado: oculta hasta que algo dentro
-   recibe foco. */
-.kbd-origins {
-  position: absolute;
-  left: 12px;
-  bottom: 56px;
-  z-index: 1100;
-  max-width: 320px;
-}
-.kbd-origins:not(:focus-within):not(.open) {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-}
-.kbd-origins-toggle {
-  background: var(--color-paper);
-  border: 1px solid var(--color-line-strong);
-  border-radius: var(--radius-pill);
-  padding: 6px 12px;
-  font-size: var(--font-size-sm);
-  cursor: pointer;
-}
-.kbd-origins-list {
-  list-style: none;
-  margin: 6px 0 0;
-  padding: 4px;
-  max-height: 40vh;
-  overflow-y: auto;
-  background: var(--color-paper);
-  border: 1px solid var(--color-line-strong);
-  border-radius: 8px;
-}
-.kbd-origins-list button {
-  display: block;
-  width: 100%;
-  text-align: left;
-  background: none;
-  border: 0;
-  padding: 6px 8px;
-  font-size: var(--font-size-sm);
-  cursor: pointer;
-}
-
 /* Texto solo para lectores de pantalla (visualmente oculto, sigue en el árbol
    de accesibilidad). */
 .sr-only {
@@ -2536,4 +2491,314 @@ input:focus-visible,
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+
+/* Panel de lista (08/10): drawer desde el borde derecho */
+
+.map-pane.list-mode .year-timeline-dock,
+.map-pane.list-mode .country-click-panel {
+  display: none;
+}
+
+.list-view {
+  position: absolute;
+  inset: 0;
+  z-index: 900;
+  overflow-y: auto;
+  background: var(--color-paper);
+  /* deja lugar a los filtros (arriba), al selector de vista (izquierda) y al buscador (abajo) */
+  padding: 136px var(--space-7) 90px 72px;
+}
+
+.list-view.hidden {
+  display: none;
+}
+
+/* Mientras se arrastra el borde no se anima el ancho */
+
+
+
+
+
+
+.list-view-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.list-view-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.list-view-count {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-soft);
+}
+
+.list-group-control {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.list-group-label {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-soft);
+  margin-right: var(--space-2);
+}
+
+.list-group-btn {
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-soft);
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+}
+
+.list-group-btn.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-paper);
+}
+
+.list-group-header {
+  font-size: var(--font-size-lg);
+  color: var(--color-ink);
+  margin: var(--space-7) 0 var(--space-5);
+}
+
+.list-group-count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-soft);
+  font-weight: 400;
+}
+
+.list-empty {
+  color: var(--color-text-soft);
+}
+
+.list-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: var(--space-6);
+}
+
+.list-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.list-card-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--space-2);
+  padding: 0 0 var(--space-4);
+  border: none;
+  background: none;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.list-card-main:hover .list-card-title {
+  text-decoration: underline;
+}
+
+.list-card-image {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--color-line) center/cover no-repeat;
+  margin-bottom: var(--space-3);
+}
+
+.list-card-title,
+.list-card-sub {
+  display: block;
+  padding: 0 var(--space-5);
+}
+
+.list-card-title {
+  font-size: var(--font-size-base);
+  color: var(--color-ink);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.list-card-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-soft);
+}
+
+
+
+@media (max-width: 900px) {
+  .map-pane.list-mode::before {
+    height: 100px;
+    width: 100%;
+  }
+  .list-view {
+    padding: 116px var(--space-5) 90px 60px;
+  }
+  .list-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: var(--space-5);
+  }
+}
+
+/* Banda de fondo arriba en la vista de lista: los filtros flotantes se leen
+   sobre un color sólido en vez de sobre las tarjetas que pasan por debajo. */
+.map-pane.list-mode::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: var(--color-line-strong);
+  border-bottom: 1px solid var(--color-line-strong);
+  z-index: 950;
+  pointer-events: none;
+}
+
+/* El punto de investigación vive dentro de la imagen (la card recorta con
+   overflow:hidden, así que el offset negativo de la miniatura lo escondía). */
+.list-card-image .research-badge-thumb {
+  top: var(--space-4);
+  right: var(--space-4);
+  width: 10px;
+  height: 10px;
+}
+
+@media (min-width: 901px) {
+  .list-grid {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: var(--space-6);
+  }
+}
+
+/* Mini-mapa del origen en la ficha (mobile + lista) */
+.object-minimap {
+  width: 100%;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: var(--space-5);
+  border: 1px solid var(--color-line);
+}
+
+.object-minimap-dot {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+/* Foco en las tarjetas de la lista: el overflow:hidden de .list-card recorta
+   el anillo del botón interno, así que el anillo se dibuja en la tarjeta. */
+.list-card-main:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.list-card:has(.list-card-main:focus-visible) {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #ffffff;
+}
+
+.welcome-modal:focus {
+  outline: none;
+}
+
+
+
+
+
+
+.country-click-list-link {
+  display: block;
+  margin-top: var(--space-4);
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-size: var(--font-size-sm);
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+/* Selector de vista: dos botones con ícono, apilados, centro-izquierda */
+.view-switch {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+}
+
+.view-switch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--color-text-soft);
+  cursor: pointer;
+}
+
+.view-switch-btn:hover {
+  color: var(--color-ink);
+}
+
+.view-switch-btn.active {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+/* El globo se oculta del foco y de los lectores de pantalla en la vista de lista. */
+.map-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.map-wrap-hidden {
+  visibility: hidden;
 }

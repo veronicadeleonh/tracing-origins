@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import type { MuseumDestination, MuseumObject, ProvenanceEvent } from "../types";
 import { museumColor } from "../colors";
 import { STRINGS, type Lang } from "../i18n";
+import { Map as MiniMap, Marker } from "react-map-gl/mapbox";
+import { BackIcon, CloseIcon } from "./icons";
 
 // La imagen se muestra recortada por defecto (aspect-ratio 4/3, object-fit:
 // cover) para que la lista de piezas se vea pareja -- pero eso corta mucho
@@ -27,6 +29,8 @@ interface ObjectDetailProps {
   clusterPosition?: { index: number; total: number };
   onPrev?: () => void;
   onNext?: () => void;
+  // Mobile + vista de lista (08/10): mini-mapa del origen dentro de la ficha.
+  miniMap?: boolean;
 }
 
 function eventLabel(event: ProvenanceEvent, s: (typeof STRINGS)["es"]): string {
@@ -43,6 +47,7 @@ export function ObjectDetail({
   clusterPosition,
   onPrev,
   onNext,
+  miniMap,
 }: ObjectDetailProps) {
   const s = STRINGS[lang];
   const [imageExpanded, setImageExpanded] = useState(false);
@@ -91,10 +96,10 @@ export function ObjectDetail({
     <aside className="side-panel">
       <div className="panel-header">
         <button className="icon-btn" onClick={onBack} aria-label={s.backAria}>
-          ‹
+          <BackIcon />
         </button>
         <button className="icon-btn" onClick={onClose} aria-label={s.closePanelAria}>
-          ×
+          <CloseIcon />
         </button>
       </div>
 
@@ -155,6 +160,23 @@ export function ObjectDetail({
                 )}
               </span>
             )}
+          </div>
+        )}
+        {miniMap && Number.isFinite(object.originLat) && Number.isFinite(object.originLon) && (
+          <div className="object-minimap" role="img" aria-label={s.originMiniMapAria(originLabel || s.unknownPlace)}>
+            <MiniMap
+              key={object.objectID}
+              mapboxAccessToken={import.meta.env.VITE_MAPBOX_TOKEN}
+              mapStyle="mapbox://styles/mapbox/light-v11"
+              initialViewState={{ longitude: object.originLon, latitude: object.originLat, zoom: 3 }}
+              interactive={false}
+              attributionControl={false}
+              style={{ width: "100%", height: "100%" }}
+            >
+              <Marker longitude={object.originLon} latitude={object.originLat}>
+                <span className="object-minimap-dot" style={{ background: accentColor }} />
+              </Marker>
+            </MiniMap>
           </div>
         )}
         <div className="object-title">{displayTitle || s.untitled}</div>
