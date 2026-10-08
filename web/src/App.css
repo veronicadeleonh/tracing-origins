@@ -37,13 +37,13 @@
 .map-tooltip-title {
   font-size: 12px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-ink);
   line-height: 1.3;
 }
 
 .map-tooltip-subtitle {
   font-size: 11px;
-  color: #77726a;
+  color: var(--color-text-soft);
   line-height: 1.3;
 }
 
@@ -53,15 +53,15 @@
    pasa a fondo oscuro con texto claro, mismo par de colores que ya usa el
    resto de la UI para "superficie oscura" (.piece-counter, .museum-note). */
 .map-tooltip-popup--museum .mapboxgl-popup-content {
-  background: #1a1a1a;
+  background: var(--color-ink);
 }
 
 .map-tooltip-popup--museum .map-tooltip-title {
-  color: #fbfaf7;
+  color: var(--color-paper);
 }
 
 .map-tooltip-popup--museum .map-tooltip-subtitle {
-  color: #c9c4b8;
+  color: var(--color-line-strong);
 }
 
 /* Pointer/línea recta hacia el punto, solo para museos (31/08, pedido de la
@@ -83,19 +83,19 @@
 }
 
 .map-tooltip-popup--museum.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-  border-top-color: #1a1a1a;
+  border-top-color: var(--color-ink);
 }
 
 .map-tooltip-popup--museum.mapboxgl-popup-anchor-top .mapboxgl-popup-tip {
-  border-bottom-color: #1a1a1a;
+  border-bottom-color: var(--color-ink);
 }
 
 .map-tooltip-popup--museum.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
-  border-right-color: #1a1a1a;
+  border-right-color: var(--color-ink);
 }
 
 .map-tooltip-popup--museum.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
-  border-left-color: #1a1a1a;
+  border-left-color: var(--color-ink);
 }
 
 /* Contenedor de las 2 filas de controles arriba a la izquierda: toggles de
@@ -219,7 +219,7 @@
 }
 
 .title-search-wrap:focus-within .title-search-icon {
-  color: #77726a;
+  color: var(--color-text-soft);
   filter: none;
 }
 
@@ -244,9 +244,9 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   font: inherit;
   font-size: 12px;
-  color: #1a1a1a;
+  color: var(--color-ink);
   padding: 6px 12px 6px 30px;
-  border-radius: 20px;
+  border-radius: var(--radius-pill);
   box-sizing: border-box;
   /* Séptima vuelta (18/09, mismo día): sin esto el input usa el outline de
      foco nativo del navegador al activarse -- en varios navegadores/SO ese
@@ -266,7 +266,7 @@
 
 .title-search-wrap:focus-within .title-search-input {
   background: rgba(251, 250, 247, 0.96);
-  border-color: #e5e2da;
+  border-color: var(--color-line);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -290,7 +290,7 @@
 }
 
 .title-search-wrap:focus-within .title-search-input::placeholder {
-  color: #6b665d;
+  color: var(--color-text-muted);
 }
 
 /* Dropup, no dropdown (18/09, quinta vuelta, pedido de la usuaria) -- desde
@@ -310,8 +310,8 @@
   width: 280px;
   max-height: 320px;
   overflow-y: auto;
-  background: #fbfaf7;
-  border: 1px solid #e5e2da;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
   border-radius: 10px;
   box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
   padding: 6px;
@@ -319,7 +319,7 @@
 
 .title-search-empty {
   font-size: 12px;
-  color: #6b665d;
+  color: var(--color-text-muted);
   padding: 6px 8px;
 }
 
@@ -344,7 +344,7 @@
 }
 
 .title-search-item:hover {
-  background: #efece4;
+  background: var(--color-hover);
 }
 
 /* Resaltado de teclado (18/09, segunda vuelta, feedback de la usuaria: "no
@@ -354,7 +354,7 @@
    Mismo fondo que :hover a propósito, se ve como "esto es lo que se
    seleccionaría con Enter" sin introducir un color nuevo. */
 .title-search-item.highlighted {
-  background: #efece4;
+  background: var(--color-hover);
 }
 
 /* Thumbnail (18/09, segunda vuelta, pregunta de la usuaria: "sería
@@ -371,7 +371,7 @@
   width: 32px;
   height: 32px;
   border-radius: 6px;
-  background: #e5e2da center/cover no-repeat;
+  background: var(--color-line) center/cover no-repeat;
   flex-shrink: 0;
 }
 
@@ -385,7 +385,7 @@
 
 .title-search-item-title {
   font-size: 12px;
-  color: #3f3b34;
+  color: var(--color-ink-soft);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -393,7 +393,7 @@
 
 .title-search-item-museum {
   font-size: 11px;
-  color: #6b665d;
+  color: var(--color-text-muted);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -436,14 +436,14 @@
   left: 0;
   margin-bottom: 4px;
   font-size: 11px;
-  color: #fbfaf7;
+  color: var(--color-paper);
   white-space: nowrap;
   /* Chip oscuro igual al contador de piezas (08/10): lenguaje visual de
      "info, no clickeable" (los controles son crema), y contraste fijo sobre
      cualquier fondo del mapa. */
-  background: rgba(26, 26, 26, 0.85);
+  background: var(--color-chip-dark);
   padding: 2px 7px;
-  border-radius: 4px;
+  border-radius: var(--radius-chip);
 }
 
 .research-filter-row {
@@ -461,13 +461,13 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #fbfaf7;
+  color: var(--color-paper);
   /* Chip oscuro igual al contador de piezas (08/10): lenguaje visual de
      "info, no clickeable" (los controles son crema), y contraste fijo sobre
      cualquier fondo del mapa. */
-  background: rgba(26, 26, 26, 0.85);
+  background: var(--color-chip-dark);
   padding: 2px 7px;
-  border-radius: 4px;
+  border-radius: var(--radius-chip);
 }
 
 .museum-toggle-wrap {
@@ -475,15 +475,15 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  background: rgba(251, 250, 247, 0.92);
-  border: 1px solid #e5e2da;
-  border-radius: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
   padding: 2px 4px 2px 8px;
   transition: opacity 0.15s ease, border-color 0.15s ease;
 }
 
 .museum-toggle-wrap:hover {
-  border-color: #c9c4b8;
+  border-color: var(--color-line-strong);
 }
 
 .museum-toggle-wrap.inactive {
@@ -500,12 +500,12 @@
   min-height: 24px;
   font: inherit;
   font-size: 12px;
-  color: #77726a;
+  color: var(--color-text-soft);
   cursor: pointer;
 }
 
 .museum-toggle-wrap.active .museum-toggle {
-  color: #1a1a1a;
+  color: var(--color-ink);
   font-weight: 500;
 }
 
@@ -529,7 +529,7 @@
   flex-shrink: 0;
   border: none;
   background: transparent;
-  color: #6b665d;
+  color: var(--color-text-muted);
   font-size: 11px;
   font-style: italic;
   font-family: Georgia, "Times New Roman", serif;
@@ -548,27 +548,27 @@
   transform: translate(-50%, -50%);
   box-sizing: border-box;
   border-radius: 50%;
-  border: 1px solid #c9c4b8;
+  border: 1px solid var(--color-line-strong);
   background: transparent;
   z-index: -1;
 }
 
 .museum-info-btn:hover {
-  color: #1a1a1a;
+  color: var(--color-ink);
 }
 
 .museum-info-btn:hover::before {
-  background: #efece4;
-  border-color: #6b665d;
+  background: var(--color-hover);
+  border-color: var(--color-text-muted);
 }
 
 .museum-info-btn.open {
-  color: #fbfaf7;
+  color: var(--color-paper);
 }
 
 .museum-info-btn.open::before {
-  background: #1a1a1a;
-  border-color: #1a1a1a;
+  background: var(--color-ink);
+  border-color: var(--color-ink);
 }
 
 .museum-note {
@@ -577,8 +577,8 @@
   left: 0;
   z-index: 1001;
   width: 250px;
-  background: #1a1a1a;
-  color: #fbfaf7;
+  background: var(--color-ink);
+  color: var(--color-paper);
   font-size: 12px;
   line-height: 1.5;
   padding: 10px 12px;
@@ -594,9 +594,9 @@
 .piece-counter {
   display: flex;
   align-items: center;
-  background: rgba(26, 26, 26, 0.85);
-  color: #fbfaf7;
-  border-radius: 4px;
+  background: var(--color-chip-dark);
+  color: var(--color-paper);
+  border-radius: var(--radius-chip);
   padding: 5px 10px;
   font-size: 12px;
   font-weight: 500;
@@ -611,9 +611,9 @@
 .research-filter {
   display: flex;
   gap: 2px;
-  background: rgba(251, 250, 247, 0.92);
-  border: 1px solid #e5e2da;
-  border-radius: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
   padding: 3px;
 }
 
@@ -622,7 +622,7 @@
   background: none;
   font: inherit;
   font-size: 12px;
-  color: #77726a;
+  color: var(--color-text-soft);
   padding: 4px 10px;
   border-radius: 16px;
   cursor: pointer;
@@ -630,12 +630,12 @@
 }
 
 .research-filter-btn:hover {
-  color: #1a1a1a;
+  color: var(--color-ink);
 }
 
 .research-filter-btn.active {
-  background: #6a4c93;
-  color: #fbfaf7;
+  background: var(--color-accent);
+  color: var(--color-paper);
   font-weight: 500;
 }
 
@@ -651,20 +651,20 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  border: 1px solid #e5e2da;
-  background: rgba(251, 250, 247, 0.92);
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
   font: inherit;
   font-size: 12px;
-  color: #77726a;
+  color: var(--color-text-soft);
   padding: 5px 12px;
-  border-radius: 20px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   white-space: nowrap;
 }
 
 .mechanism-filter-btn:hover:not(:disabled) {
-  color: #1a1a1a;
-  border-color: #6b665d;
+  color: var(--color-ink);
+  border-color: var(--color-text-muted);
 }
 
 .mechanism-filter-btn:disabled {
@@ -673,9 +673,9 @@
 }
 
 .mechanism-filter-btn.active {
-  background: #6a4c93;
-  border-color: #6a4c93;
-  color: #fbfaf7;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-paper);
   font-weight: 500;
 }
 
@@ -691,8 +691,8 @@
   width: 280px;
   max-height: 320px;
   overflow-y: auto;
-  background: #fbfaf7;
-  border: 1px solid #e5e2da;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 6px;
@@ -706,14 +706,14 @@
   background: none;
   font: inherit;
   font-size: 12px;
-  color: #6a4c93;
+  color: var(--color-accent);
   padding: 6px 8px;
   cursor: pointer;
   border-radius: 6px;
 }
 
 .mechanism-menu-clear:hover {
-  background: #efece4;
+  background: var(--color-hover);
 }
 
 .mechanism-menu-list {
@@ -730,11 +730,11 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
-  color: #3f3b34;
+  color: var(--color-ink-soft);
 }
 
 .mechanism-menu-item:hover {
-  background: #efece4;
+  background: var(--color-hover);
 }
 
 .mechanism-menu-item-label {
@@ -743,7 +743,7 @@
 
 .mechanism-menu-item-count {
   font-size: 11px;
-  color: #6b665d;
+  color: var(--color-text-muted);
 }
 
 /* Filtro por "Tipo de pieza" (objectTypeFlags), 18/09 -- mismo mecanismo y
@@ -760,26 +760,26 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  border: 1px solid #e5e2da;
-  background: rgba(251, 250, 247, 0.92);
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
   font: inherit;
   font-size: 12px;
-  color: #77726a;
+  color: var(--color-text-soft);
   padding: 5px 12px;
-  border-radius: 20px;
+  border-radius: var(--radius-pill);
   cursor: pointer;
   white-space: nowrap;
 }
 
 .object-type-filter-btn:hover {
-  color: #1a1a1a;
-  border-color: #6b665d;
+  color: var(--color-ink);
+  border-color: var(--color-text-muted);
 }
 
 .object-type-filter-btn.active {
-  background: #6a4c93;
-  border-color: #6a4c93;
-  color: #fbfaf7;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-paper);
   font-weight: 500;
 }
 
@@ -795,8 +795,8 @@
   width: 280px;
   max-height: 320px;
   overflow-y: auto;
-  background: #fbfaf7;
-  border: 1px solid #e5e2da;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
   border-radius: 10px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   padding: 6px;
@@ -810,14 +810,14 @@
   background: none;
   font: inherit;
   font-size: 12px;
-  color: #6a4c93;
+  color: var(--color-accent);
   padding: 6px 8px;
   cursor: pointer;
   border-radius: 6px;
 }
 
 .object-type-menu-clear:hover {
-  background: #efece4;
+  background: var(--color-hover);
 }
 
 .object-type-menu-list {
@@ -834,11 +834,11 @@
   border-radius: 6px;
   cursor: pointer;
   font-size: 12px;
-  color: #3f3b34;
+  color: var(--color-ink-soft);
 }
 
 .object-type-menu-item:hover {
-  background: #efece4;
+  background: var(--color-hover);
 }
 
 .object-type-menu-item-label {
@@ -847,7 +847,7 @@
 
 .object-type-menu-item-count {
   font-size: 11px;
-  color: #6b665d;
+  color: var(--color-text-muted);
 }
 
 /* Búsqueda por país vía click en el mapa (19/08, quinta vuelta — reubicada
@@ -866,15 +866,15 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(251, 250, 247, 0.92);
-  border: 1px solid #e5e2da;
-  border-radius: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
   padding: 6px 10px 6px 14px;
 }
 
 .country-click-label {
   font-size: 12px;
-  color: #77726a;
+  color: var(--color-text-soft);
   white-space: nowrap;
 }
 
@@ -892,11 +892,11 @@
 }
 
 .country-click-switch:hover {
-  background: #c9c4b8;
+  background: var(--color-line-strong);
 }
 
 .country-click-switch.on {
-  background: #6a4c93;
+  background: var(--color-accent);
 }
 
 .country-click-switch.on:hover {
@@ -910,7 +910,7 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #fbfaf7;
+  background: var(--color-paper);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   transition: transform 0.15s ease;
 }
@@ -943,18 +943,18 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid #e5e2da;
-  background: rgba(251, 250, 247, 0.92);
-  color: #77726a;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-text-soft);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
 }
 
 .welcome-trigger-btn:hover {
-  background: #efece4;
-  color: #1a1a1a;
-  border-color: #c9c4b8;
+  background: var(--color-hover);
+  color: var(--color-ink);
+  border-color: var(--color-line-strong);
 }
 
 /* Toggle ES/EN (17/08) — mismo tratamiento visual que .welcome-trigger-btn,
@@ -972,9 +972,9 @@
   height: 30px;
   padding: 0 8px;
   border-radius: 15px;
-  border: 1px solid #e5e2da;
-  background: rgba(251, 250, 247, 0.92);
-  color: #77726a;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
+  color: var(--color-text-soft);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -982,9 +982,9 @@
 }
 
 .lang-toggle-btn:hover {
-  background: #efece4;
-  color: #1a1a1a;
-  border-color: #c9c4b8;
+  background: var(--color-hover);
+  color: var(--color-ink);
+  border-color: var(--color-line-strong);
 }
 
 .welcome-modal-backdrop {
@@ -1010,7 +1010,7 @@
   max-width: 560px;
   max-height: calc(100vh - 48px);
   overflow-y: auto;
-  background: #fbfaf7;
+  background: var(--color-paper);
   border-radius: 12px;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   display: flex;
@@ -1023,7 +1023,7 @@
   justify-content: space-between;
   gap: 12px;
   padding: 22px 24px 18px;
-  border-bottom: 1px solid #e5e2da;
+  border-bottom: 1px solid var(--color-line);
 }
 
 .welcome-modal-heading-group {
@@ -1041,7 +1041,7 @@
 .welcome-modal-appname {
   font-size: 19px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-ink);
   margin: 0 0 3px;
 }
 
@@ -1070,9 +1070,9 @@
   height: 26px;
   padding: 0 7px;
   border-radius: 13px;
-  border: 1px solid #e5e2da;
+  border: 1px solid var(--color-line);
   background: transparent;
-  color: #77726a;
+  color: var(--color-text-soft);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.02em;
@@ -1080,9 +1080,9 @@
 }
 
 .welcome-modal-lang-btn:hover {
-  background: #efece4;
-  color: #1a1a1a;
-  border-color: #c9c4b8;
+  background: var(--color-hover);
+  color: var(--color-ink);
+  border-color: var(--color-line-strong);
 }
 
 .welcome-modal-body {
@@ -1093,20 +1093,20 @@
 }
 
 .welcome-modal-section + .welcome-modal-section {
-  border-top: 1px solid #e5e2da;
+  border-top: 1px solid var(--color-line);
   padding-top: 22px;
 }
 
 .welcome-modal-heading {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-ink);
   margin: 0 0 12px;
 }
 
 .welcome-modal-section p {
   font-size: 14px;
-  color: #3f3b34;
+  color: var(--color-ink-soft);
   line-height: 1.65;
   margin: 0 0 10px;
 }
@@ -1126,7 +1126,7 @@
 }
 
 .welcome-modal-section p a:hover {
-  color: #1a1a1a;
+  color: var(--color-ink);
 }
 
 .welcome-steps {
@@ -1139,7 +1139,7 @@
 
 .welcome-steps li {
   font-size: 14px;
-  color: #3f3b34;
+  color: var(--color-ink-soft);
   line-height: 1.6;
 }
 
@@ -1151,8 +1151,8 @@
   position: sticky;
   bottom: 0;
   padding: 16px 24px 20px;
-  border-top: 1px solid #e5e2da;
-  background: #fbfaf7;
+  border-top: 1px solid var(--color-line);
+  background: var(--color-paper);
   box-shadow: 0 -4px 10px rgba(26, 26, 26, 0.06);
 }
 
@@ -1168,8 +1168,8 @@
 
 .welcome-modal-btn-primary {
   width: 100%;
-  background: #1a1a1a;
-  color: #fbfaf7;
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 .welcome-modal-btn-primary:hover {
@@ -1200,7 +1200,7 @@
 .spotlight-callout {
   position: fixed;
   z-index: 2101;
-  background: #fbfaf7;
+  background: var(--color-paper);
   border-radius: 10px;
   padding: 16px 18px;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.35);
@@ -1212,21 +1212,21 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #6b665d;
+  color: var(--color-text-muted);
   margin-bottom: 6px;
 }
 
 .spotlight-callout-title {
   font-size: 15px;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--color-ink);
   margin: 0 0 6px;
 }
 
 .spotlight-callout-text {
   font-size: 13px;
   line-height: 1.5;
-  color: #3f3b34;
+  color: var(--color-ink-soft);
   margin: 0;
 }
 
@@ -1239,7 +1239,7 @@
   font: inherit;
   font-size: 12px;
   font-weight: 500;
-  color: #6a4c93;
+  color: var(--color-accent);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -1267,12 +1267,12 @@
   padding: 0;
   font: inherit;
   font-size: 12px;
-  color: #6b665d;
+  color: var(--color-text-muted);
   cursor: pointer;
 }
 
 .spotlight-callout-skip:hover {
-  color: #77726a;
+  color: var(--color-text-soft);
 }
 
 .spotlight-callout-nav {
@@ -1281,25 +1281,25 @@
 }
 
 .spotlight-callout-btn {
-  border: 1px solid #e5e2da;
-  background: #fbfaf7;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper);
   border-radius: 8px;
   padding: 7px 14px;
   font: inherit;
   font-size: 13px;
   font-weight: 500;
-  color: #3f3b34;
+  color: var(--color-ink-soft);
   cursor: pointer;
 }
 
 .spotlight-callout-btn:hover {
-  border-color: #c9c4b8;
+  border-color: var(--color-line-strong);
 }
 
 .spotlight-callout-btn-primary {
-  border-color: #1a1a1a;
-  background: #1a1a1a;
-  color: #fbfaf7;
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
 }
 
 .spotlight-callout-btn-primary:hover {
@@ -1323,7 +1323,7 @@
   align-items: center;
   gap: 6px;
   background: rgba(20, 19, 17, 0.88);
-  color: #fbfaf7;
+  color: var(--color-paper);
   border: none;
   font: inherit;
   font-size: 12px;
@@ -1407,7 +1407,7 @@
 }
 
 .year-timeline-layer-toggle-wrap.active .year-timeline-layer-toggle {
-  color: #1a1a1a;
+  color: var(--color-ink);
 }
 
 .year-timeline-layer-toggle-icon {
@@ -1441,7 +1441,7 @@
 
 .year-timeline-note-btn:hover {
   border-color: rgba(255, 255, 255, 0.6);
-  color: #fbfaf7;
+  color: var(--color-paper);
 }
 
 .year-timeline-layer-toggle-wrap.active .year-timeline-note-btn {
@@ -1450,14 +1450,14 @@
 }
 
 .year-timeline-layer-toggle-wrap.active .year-timeline-note-btn:hover {
-  border-color: #1a1a1a;
-  color: #1a1a1a;
+  border-color: var(--color-ink);
+  color: var(--color-ink);
 }
 
 .year-timeline-note-btn.open {
-  background: #fbfaf7;
-  color: #1a1a1a;
-  border-color: #fbfaf7;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-color: var(--color-paper);
 }
 
 /* Abre hacia arriba (19/08, pedido de la usuaria) -- el dock del timeline
@@ -1469,8 +1469,8 @@
   right: 0;
   z-index: 1002;
   width: 240px;
-  background: #1a1a1a;
-  color: #fbfaf7;
+  background: var(--color-ink);
+  color: var(--color-paper);
   border: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 12px;
   line-height: 1.5;
@@ -1511,7 +1511,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  color: #fbfaf7;
+  color: var(--color-paper);
   font-size: 13px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
@@ -1599,8 +1599,8 @@
   transform: translateX(-50%);
   margin-bottom: 8px;
   width: 220px;
-  background: #1a1a1a;
-  color: #fbfaf7;
+  background: var(--color-ink);
+  color: var(--color-paper);
   font-size: 11px;
   line-height: 1.5;
   padding: 8px 10px;
@@ -1653,8 +1653,8 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #fbfaf7;
-  border: 2px solid #1a1a1a;
+  background: var(--color-paper);
+  border: 2px solid var(--color-ink);
   margin-top: -5.5px;
   cursor: grab;
 }
@@ -1663,8 +1663,8 @@
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #fbfaf7;
-  border: 2px solid #1a1a1a;
+  background: var(--color-paper);
+  border: 2px solid var(--color-ink);
   cursor: grab;
 }
 
@@ -1674,8 +1674,8 @@
 
 .side-panel {
   flex: 0 0 380px;
-  border-left: 1px solid #e5e2da;
-  background: #fbfaf7;
+  border-left: 1px solid var(--color-line);
+  background: var(--color-paper);
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -1687,18 +1687,18 @@
   justify-content: space-between;
   gap: 12px;
   padding: 18px 18px 14px;
-  border-bottom: 1px solid #e5e2da;
+  border-bottom: 1px solid var(--color-line);
 }
 
 .panel-title {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-ink);
 }
 
 .panel-subtitle {
   font-size: 12px;
-  color: #77726a;
+  color: var(--color-text-soft);
   margin-top: 2px;
 }
 
@@ -1707,15 +1707,15 @@
   border: none;
   font-size: 20px;
   line-height: 1;
-  color: #77726a;
+  color: var(--color-text-soft);
   cursor: pointer;
   padding: 2px 4px;
-  border-radius: 4px;
+  border-radius: var(--radius-chip);
 }
 
 .icon-btn:hover {
-  background: #efece4;
-  color: #1a1a1a;
+  background: var(--color-hover);
+  color: var(--color-ink);
 }
 
 .piece-list {
@@ -1746,7 +1746,7 @@
   width: 40px;
   height: 40px;
   border-radius: 6px;
-  background: #e5e2da center/cover no-repeat;
+  background: var(--color-line) center/cover no-repeat;
   flex-shrink: 0;
 }
 
@@ -1772,7 +1772,7 @@
 }
 
 .piece-list-legend-dot {
-  color: #6b665d;
+  color: var(--color-text-muted);
   font-size: 11px;
 }
 
@@ -1782,7 +1782,7 @@
   gap: 6px;
   padding: 4px 12px 8px;
   font-size: 11px;
-  color: #6b665d;
+  color: var(--color-text-muted);
 }
 
 /* Búsqueda por país agrupada por museo (19/08, tercera vuelta) — un
@@ -1795,7 +1795,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #6b665d;
+  color: var(--color-text-muted);
 }
 
 .piece-list-museum-group:first-child .piece-list-museum-header {
@@ -1810,7 +1810,7 @@
 .piece-title {
   font-size: 13px;
   font-weight: 500;
-  color: #1a1a1a;
+  color: var(--color-ink);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1818,7 +1818,7 @@
 
 .piece-sub {
   font-size: 11px;
-  color: #6b665d;
+  color: var(--color-text-muted);
   margin-top: 1px;
   white-space: nowrap;
   overflow: hidden;
@@ -1845,7 +1845,7 @@
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
-  background: #e5e2da;
+  background: var(--color-line);
   transition: aspect-ratio 0.2s ease;
 }
 
@@ -1863,7 +1863,7 @@
   height: 22px;
   border-radius: 50%;
   background: rgba(26, 26, 26, 0.55);
-  color: #fbfaf7;
+  color: var(--color-paper);
   opacity: 0.75;
   pointer-events: none;
   transition: opacity 0.15s ease;
@@ -1891,12 +1891,12 @@
 .object-title {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-ink);
 }
 
 .object-subtitle {
   font-size: 12px;
-  color: #77726a;
+  color: var(--color-text-soft);
   margin-top: 2px;
 }
 
@@ -1918,7 +1918,7 @@
   top: 6px;
   bottom: 16px;
   width: 1.5px;
-  background: #e5e2da;
+  background: var(--color-line);
 }
 
 .timeline-node {
@@ -1948,17 +1948,17 @@
 .timeline-date {
   font-size: 11px;
   /* #6b665d: contraste >= 4.5:1 sobre #fbfaf7 (axe/WCAG AA); #928d82 daba ~3.2:1 */
-  color: #6b665d;
+  color: var(--color-text-muted);
 }
 
 .timeline-label {
   font-size: 13px;
-  color: #1a1a1a;
+  color: var(--color-ink);
 }
 
 .timeline-desc {
   font-size: 12px;
-  color: #77726a;
+  color: var(--color-text-soft);
   margin-top: 2px;
   line-height: 1.5;
 }
@@ -1968,7 +1968,7 @@
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: #6b665d;
+  color: var(--color-text-muted);
   background: #f0ede4;
   border-radius: 6px;
   padding: 6px 10px;
@@ -1992,7 +1992,7 @@
   font-size: 11px;
   background: #f2e6d8;
   color: #7a4a1a;
-  border-radius: 4px;
+  border-radius: var(--radius-chip);
   padding: 2px 7px;
   margin: 0 4px 4px 0;
 }
@@ -2005,13 +2005,13 @@
 }
 
 .museum-record {
-  border-top: 1px solid #e5e2da;
+  border-top: 1px solid var(--color-line);
   padding: 14px 18px 18px;
 }
 
 .museum-record-label {
   font-size: 11px;
-  color: #6b665d;
+  color: var(--color-text-muted);
   margin-bottom: 6px;
 }
 
@@ -2048,18 +2048,18 @@
   justify-content: space-between;
   gap: 8px;
   padding: 12px 18px 18px;
-  border-top: 1px solid #e5e2da;
+  border-top: 1px solid var(--color-line);
   margin-top: auto;
   position: sticky;
   bottom: 0;
-  background: #fbfaf7;
+  background: var(--color-paper);
   box-shadow: 0 -4px 10px rgba(26, 26, 26, 0.06);
   z-index: 5;
 }
 
 .piece-nav-btn {
   background: none;
-  border: 1px solid #e5e2da;
+  border: 1px solid var(--color-line);
   border-radius: 6px;
   color: #55504a;
   font-size: 12px;
@@ -2068,8 +2068,8 @@
 }
 
 .piece-nav-btn:hover:not(:disabled) {
-  background: #efece4;
-  color: #1a1a1a;
+  background: var(--color-hover);
+  color: var(--color-ink);
 }
 
 .piece-nav-btn:disabled {
@@ -2079,7 +2079,7 @@
 
 .piece-nav-position {
   font-size: 11px;
-  color: #6b665d;
+  color: var(--color-text-muted);
   flex-shrink: 0;
 }
 
@@ -2169,7 +2169,7 @@
     top: 12px;
     left: 12px;
     background: rgba(20, 19, 17, 0.88);
-    color: #fbfaf7;
+    color: var(--color-paper);
     border: none;
     border-radius: 16px;
     padding: 7px 14px;
@@ -2199,7 +2199,7 @@
     max-height: calc(100vh - 68px);
     overflow-y: auto;
     background: rgba(251, 250, 247, 0.98);
-    border: 1px solid #e5e2da;
+    border: 1px solid var(--color-line);
     border-radius: 12px;
     padding: 14px;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
@@ -2284,7 +2284,7 @@
   .mobile-filters-wrap.open .top-controls {
     width: 100%;
     padding-top: 14px;
-    border-top: 1px solid #e5e2da;
+    border-top: 1px solid var(--color-line);
   }
 
   /* Contador de piezas duplicado arriba del drawer (pedido de la usuaria:
@@ -2336,7 +2336,7 @@
   .mobile-filters-wrap.open .research-filter-row {
     margin-top: 4px;
     padding-top: 14px;
-    border-top: 1px solid #e5e2da;
+    border-top: 1px solid var(--color-line);
   }
 
   /* El label de país deja de flotar (position:absolute) y pasa a ser un

@@ -1,5 +1,19 @@
 :root {
   color-scheme: light;
+  /* Design tokens (08/10): ver CLAUDE.md. */
+  --color-ink: #1a1a1a;
+  --color-ink-soft: #3f3b34;
+  --color-paper: #fbfaf7;
+  --color-line: #e5e2da;
+  --color-line-strong: #c9c4b8;
+  --color-hover: #efece4;
+  --color-text-muted: #6b665d;
+  --color-text-soft: #77726a;
+  --color-accent: #6a4c93;
+  --color-surface: rgba(251, 250, 247, 0.92);
+  --color-chip-dark: rgba(26, 26, 26, 0.85);
+  --radius-pill: 20px;
+  --radius-chip: 4px;
   font-family: system-ui, "Segoe UI", Roboto, sans-serif;
 }
 
