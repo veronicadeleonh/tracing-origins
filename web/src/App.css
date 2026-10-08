@@ -478,7 +478,7 @@
   background: rgba(251, 250, 247, 0.92);
   border: 1px solid #e5e2da;
   border-radius: 20px;
-  padding: 5px 6px 5px 8px;
+  padding: 2px 4px 2px 8px;
   transition: opacity 0.15s ease, border-color 0.15s ease;
 }
 
@@ -497,6 +497,7 @@
   background: none;
   border: none;
   padding: 0;
+  min-height: 24px;
   font: inherit;
   font-size: 12px;
   color: #77726a;
@@ -519,11 +520,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 15px;
-  height: 15px;
+  /* Caja de 24x24 (mínimo de Lighthouse/WCAG 2.2 para touch targets, 08/10);
+     el círculo visible de 15px se dibuja con ::before. */
+  position: relative;
+  isolation: isolate;
+  width: 24px;
+  height: 24px;
   flex-shrink: 0;
-  border-radius: 50%;
-  border: 1px solid #c9c4b8;
+  border: none;
   background: transparent;
   color: #6b665d;
   font-size: 11px;
@@ -534,15 +538,36 @@
   cursor: pointer;
 }
 
+.museum-info-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid #c9c4b8;
+  background: transparent;
+  z-index: -1;
+}
+
 .museum-info-btn:hover {
-  background: #efece4;
   color: #1a1a1a;
+}
+
+.museum-info-btn:hover::before {
+  background: #efece4;
   border-color: #6b665d;
 }
 
 .museum-info-btn.open {
-  background: #1a1a1a;
   color: #fbfaf7;
+}
+
+.museum-info-btn.open::before {
+  background: #1a1a1a;
   border-color: #1a1a1a;
 }
 
