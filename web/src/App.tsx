@@ -294,6 +294,35 @@ function App() {
       .catch((err) => console.error("No se pudo cargar countries.geojson", err));
   }, [countryClickEnabled, countryPolygons]);
   const [panel, setPanel] = useState<PanelState>(null);
+  const [kbdOriginsOpen, setKbdOriginsOpen] = useState(false);
+  // Devolver el foco al disparador al cerrar el panel lateral: se recuerda
+  // el último elemento enfocado FUERA del panel (focusin global); si el
+  // disparador se desmonta (ej. un botón de la lista de orígenes) se fija
+  // explícitamente otro (el botón de la lista). Al pasar de panel abierto
+  // a null se restaura, si el elemento sigue en el DOM.
+  const kbdToggleRef = useRef<HTMLButtonElement>(null);
+  const lastFocusOutsideRef = useRef<HTMLElement | null>(null);
+  const panelOpenerRef = useRef<HTMLElement | null>(null);
+  const panelWasOpenRef = useRef(false);
+  useEffect(() => {
+    const onFocusIn = (e: FocusEvent) => {
+      const t = e.target;
+      if (t instanceof HTMLElement && !t.closest(".side-panel")) lastFocusOutsideRef.current = t;
+    };
+    document.addEventListener("focusin", onFocusIn);
+    return () => document.removeEventListener("focusin", onFocusIn);
+  }, []);
+  useEffect(() => {
+    const isOpen = panel !== null;
+    if (isOpen && !panelWasOpenRef.current) {
+      panelOpenerRef.current ??= lastFocusOutsideRef.current;
+    } else if (!isOpen && panelWasOpenRef.current) {
+      const el = panelOpenerRef.current;
+      panelOpenerRef.current = null;
+      if (el && el.isConnected) el.focus();
+    }
+    panelWasOpenRef.current = isOpen;
+  }, [panel]);
   const [tooltip, setTooltip] = useState<TooltipState>(null);
   const [cursor, setCursor] = useState("grab");
   const [timelineYear, setTimelineYear] = useState(TIMELINE_DEFAULT_YEAR);
@@ -874,22 +903,10 @@ function App() {
           el modal está abierto). */}
       <h1 className="sr-only">Tracing Origins</h1>
       <div className="map-pane" role="main">
-        <button
-          type="button"
-          className="welcome-trigger-btn"
-          aria-label={s.welcomeTriggerAria}
-          onClick={() => setWelcomeOpen(true)}
-        >
-          ?
-        </button>
-        <button
-          type="button"
-          className="lang-toggle-btn"
-          aria-label={s.langToggleAria}
-          onClick={toggleLang}
-        >
-          {s.langToggleLabel}
-        </button>
+        {/* Orden de foco (08/10): los botones "?"/idioma son position:absolute,
+            así que su lugar en el DOM no cambia lo visual; se movieron al
+            final del .map-pane para que el Tab siga buscador → filtros →
+            mapa → contexto histórico → "?" → idioma. */}
         {/* Drawer de filtros para mobile (01/09) -- botón pull-tab siempre en
             el DOM, pero display:none arriba de ~900px (ver App.css): en
             desktop .mobile-filters-wrap de abajo ya está siempre visible por
@@ -1243,13 +1260,13 @@ function App() {
                 id="country-hit-highlight-fill"
                 type="fill"
                 filter={["in", ["get", "name"], ["literal", highlightedCountryNames]]}
-                paint={{ "fill-color": "#6a4c93", "fill-opacity": 0.22 }}
+                paint={{ "fill-color": "#5a3f80", "fill-opacity": 0.22 }}
               />
               <Layer
                 id="country-hit-highlight-outline"
                 type="line"
                 filter={["in", ["get", "name"], ["literal", highlightedCountryNames]]}
-                paint={{ "line-color": "#6a4c93", "line-width": 2.5, "line-opacity": 0.9 }}
+                paint={{ "line-color": "#5a3f80", "line-width": 2.5, "line-opacity": 0.9 }}
               />
             </Source>
           )}
@@ -1386,6 +1403,37 @@ function App() {
             </Popup>
           )}
         </Map>
+        {/* Camino por teclado a los puntos de origen (solo clickeables con
+            mouse en el canvas): visualmente oculto hasta recibir foco. */}
+        <div className={`kbd-origins${kbdOriginsOpen ? " open" : ""}`}>
+          <button
+            type="button"
+            className="kbd-origins-toggle"
+            ref={kbdToggleRef}
+            aria-expanded={kbdOriginsOpen}
+            onClick={() => setKbdOriginsOpen((v) => !v)}
+          >
+            {s.kbdOriginsLabel}
+          </button>
+          {kbdOriginsOpen && (
+            <ul className="kbd-origins-list" aria-label={s.kbdOriginsAria}>
+              {clusters.map((c) => (
+                <li key={`${c.lat}|${c.lon}|${c.label}`}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      panelOpenerRef.current = kbdToggleRef.current;
+                      setPanel({ view: "cluster", cluster: c });
+                      setKbdOriginsOpen(false);
+                    }}
+                  >
+                    {c.label} — {s.kbdOriginsPieces(c.objects.length)}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
         <div className="year-timeline-dock">
           <button
             type="button"
@@ -1419,7 +1467,22 @@ function App() {
             />
           )}
         </div>
-
+        <button
+          type="button"
+          className="welcome-trigger-btn"
+          aria-label={s.welcomeTriggerAria}
+          onClick={() => setWelcomeOpen(true)}
+        >
+          ?
+        </button>
+        <button
+          type="button"
+          className="lang-toggle-btn"
+          aria-label={s.langToggleAria}
+          onClick={toggleLang}
+        >
+          {s.langToggleLabel}
+        </button>
       </div>
 
       {panel?.view === "cluster" && (

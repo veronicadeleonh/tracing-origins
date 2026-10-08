@@ -35,14 +35,14 @@
 }
 
 .map-tooltip-title {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   font-weight: 700;
   color: var(--color-ink);
   line-height: 1.3;
 }
 
 .map-tooltip-subtitle {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   line-height: 1.3;
 }
@@ -243,7 +243,7 @@
   -webkit-backdrop-filter: blur(10px) saturate(160%);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-ink);
   padding: 6px 12px 6px 30px;
   border-radius: var(--radius-pill);
@@ -318,7 +318,7 @@
 }
 
 .title-search-empty {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   padding: 6px 8px;
 }
@@ -384,7 +384,7 @@
 }
 
 .title-search-item-title {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-ink-soft);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -392,7 +392,7 @@
 }
 
 .title-search-item-museum {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -435,7 +435,7 @@
   bottom: 100%;
   left: 0;
   margin-bottom: 4px;
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-paper);
   white-space: nowrap;
   /* Chip oscuro igual al contador de piezas (08/10): lenguaje visual de
@@ -457,7 +457,7 @@
    distinción entre los 2 ejes de filtrado sin depender solo de la
    separación en filas. */
 .filter-row-label {
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -499,7 +499,7 @@
   padding: 0;
   min-height: 24px;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   cursor: pointer;
 }
@@ -530,7 +530,7 @@
   border: none;
   background: transparent;
   color: var(--color-text-muted);
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   font-style: italic;
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1;
@@ -579,7 +579,7 @@
   width: 250px;
   background: var(--color-ink);
   color: var(--color-paper);
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   line-height: 1.5;
   padding: 10px 12px;
   border-radius: 8px;
@@ -598,7 +598,7 @@
   color: var(--color-paper);
   border-radius: var(--radius-chip);
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   font-variant-numeric: tabular-nums;
   cursor: default;
@@ -621,7 +621,7 @@
   border: none;
   background: none;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   padding: 4px 10px;
   border-radius: 16px;
@@ -654,7 +654,7 @@
   border: 1px solid var(--color-line);
   background: var(--color-surface);
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   padding: 5px 12px;
   border-radius: var(--radius-pill);
@@ -680,7 +680,7 @@
 }
 
 .mechanism-filter-caret {
-  font-size: 11px;
+  font-size: var(--font-size-xs);
 }
 
 .mechanism-menu {
@@ -705,7 +705,7 @@
   border: none;
   background: none;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-accent);
   padding: 6px 8px;
   cursor: pointer;
@@ -729,7 +729,7 @@
   padding: 6px 8px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-ink-soft);
 }
 
@@ -742,7 +742,7 @@
 }
 
 .mechanism-menu-item-count {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
 }
 
@@ -763,7 +763,7 @@
   border: 1px solid var(--color-line);
   background: var(--color-surface);
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   padding: 5px 12px;
   border-radius: var(--radius-pill);
@@ -784,7 +784,7 @@
 }
 
 .object-type-filter-caret {
-  font-size: 11px;
+  font-size: var(--font-size-xs);
 }
 
 .object-type-menu {
@@ -809,7 +809,7 @@
   border: none;
   background: none;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-accent);
   padding: 6px 8px;
   cursor: pointer;
@@ -833,7 +833,7 @@
   padding: 6px 8px;
   border-radius: 6px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-ink-soft);
 }
 
@@ -846,7 +846,7 @@
 }
 
 .object-type-menu-item-count {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
 }
 
@@ -873,7 +873,7 @@
 }
 
 .country-click-label {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   white-space: nowrap;
 }
@@ -946,7 +946,7 @@
   border: 1px solid var(--color-line);
   background: var(--color-surface);
   color: var(--color-text-soft);
-  font-size: 14px;
+  font-size: var(--font-size-base);
   font-weight: 600;
   cursor: pointer;
 }
@@ -975,7 +975,7 @@
   border: 1px solid var(--color-line);
   background: var(--color-surface);
   color: var(--color-text-soft);
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
@@ -1033,20 +1033,20 @@
 }
 
 .welcome-modal-emoji {
-  font-size: 30px;
+  font-size: var(--font-size-4xl);
   line-height: 1;
   flex-shrink: 0;
 }
 
 .welcome-modal-appname {
-  font-size: 19px;
+  font-size: var(--font-size-2xl);
   font-weight: 600;
   color: var(--color-ink);
   margin: 0 0 3px;
 }
 
 .welcome-modal-slogan {
-  font-size: 13.5px;
+  font-size: var(--font-size-md-lg);
   color: #6b665e;
   line-height: 1.5;
   margin: 0;
@@ -1073,7 +1073,7 @@
   border: 1px solid var(--color-line);
   background: transparent;
   color: var(--color-text-soft);
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
@@ -1098,14 +1098,14 @@
 }
 
 .welcome-modal-heading {
-  font-size: 15px;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-ink);
   margin: 0 0 12px;
 }
 
 .welcome-modal-section p {
-  font-size: 14px;
+  font-size: var(--font-size-base);
   color: var(--color-ink-soft);
   line-height: 1.65;
   margin: 0 0 10px;
@@ -1138,7 +1138,7 @@
 }
 
 .welcome-steps li {
-  font-size: 14px;
+  font-size: var(--font-size-base);
   color: var(--color-ink-soft);
   line-height: 1.6;
 }
@@ -1161,7 +1161,7 @@
   border-radius: 8px;
   padding: 10px 16px;
   font: inherit;
-  font-size: 13.5px;
+  font-size: var(--font-size-md-lg);
   font-weight: 500;
   cursor: pointer;
 }
@@ -1208,7 +1208,7 @@
 }
 
 .spotlight-callout-progress {
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1217,14 +1217,14 @@
 }
 
 .spotlight-callout-title {
-  font-size: 15px;
+  font-size: var(--font-size-lg);
   font-weight: 700;
   color: var(--color-ink);
   margin: 0 0 6px;
 }
 
 .spotlight-callout-text {
-  font-size: 13px;
+  font-size: var(--font-size-md);
   line-height: 1.5;
   color: var(--color-ink-soft);
   margin: 0;
@@ -1237,7 +1237,7 @@
   background: none;
   padding: 0;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   color: var(--color-accent);
   text-decoration: underline;
@@ -1266,7 +1266,7 @@
   background: none;
   padding: 0;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   cursor: pointer;
 }
@@ -1286,7 +1286,7 @@
   border-radius: 8px;
   padding: 7px 14px;
   font: inherit;
-  font-size: 13px;
+  font-size: var(--font-size-md);
   font-weight: 500;
   color: var(--color-ink-soft);
   cursor: pointer;
@@ -1326,7 +1326,7 @@
   color: var(--color-paper);
   border: none;
   font: inherit;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   padding: 6px 14px;
   border-radius: 14px 14px 0 0;
@@ -1340,7 +1340,7 @@
 
 .year-timeline-handle-arrow {
   display: inline-block;
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   transition: transform 0.2s ease;
 }
 
@@ -1400,7 +1400,7 @@
   border: none;
   padding: 0;
   font: inherit;
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
@@ -1431,7 +1431,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: transparent;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   font-style: italic;
   font-family: Georgia, "Times New Roman", serif;
   line-height: 1;
@@ -1472,7 +1472,7 @@
   background: var(--color-ink);
   color: var(--color-paper);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   line-height: 1.5;
   padding: 10px 12px;
   border-radius: 8px;
@@ -1495,7 +1495,7 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: rgba(255, 255, 255, 0.75);
   white-space: nowrap;
 }
@@ -1512,7 +1512,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: var(--color-paper);
-  font-size: 13px;
+  font-size: var(--font-size-md);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
@@ -1551,7 +1551,7 @@
   top: 12px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: rgba(255, 255, 255, 0.8);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
@@ -1601,7 +1601,7 @@
   width: 220px;
   background: var(--color-ink);
   color: var(--color-paper);
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   line-height: 1.5;
   padding: 8px 10px;
   border-radius: 6px;
@@ -1612,7 +1612,7 @@
 }
 
 .year-timeline-caption {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.4;
 }
@@ -1691,13 +1691,13 @@
 }
 
 .panel-title {
-  font-size: 15px;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-ink);
 }
 
 .panel-subtitle {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   margin-top: 2px;
 }
@@ -1705,7 +1705,7 @@
 .icon-btn {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: var(--font-size-3xl);
   line-height: 1;
   color: var(--color-text-soft);
   cursor: pointer;
@@ -1773,7 +1773,7 @@
 
 .piece-list-legend-dot {
   color: var(--color-text-muted);
-  font-size: 11px;
+  font-size: var(--font-size-xs);
 }
 
 .piece-list-legend {
@@ -1781,7 +1781,7 @@
   align-items: center;
   gap: 6px;
   padding: 4px 12px 8px;
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
 }
 
@@ -1791,7 +1791,7 @@
    metadata de agrupación y no como el título de una pieza. */
 .piece-list-museum-header {
   padding: 10px 16px 2px;
-  font-size: 11px;
+  font-size: var(--font-size-xs);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1808,7 +1808,7 @@
 }
 
 .piece-title {
-  font-size: 13px;
+  font-size: var(--font-size-md);
   font-weight: 500;
   color: var(--color-ink);
   white-space: nowrap;
@@ -1817,7 +1817,7 @@
 }
 
 .piece-sub {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   margin-top: 1px;
   white-space: nowrap;
@@ -1827,7 +1827,7 @@
 
 .chevron {
   color: #c9a227;
-  font-size: 16px;
+  font-size: var(--font-size-xl);
   flex-shrink: 0;
 }
 
@@ -1889,13 +1889,13 @@
 }
 
 .object-title {
-  font-size: 15px;
+  font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--color-ink);
 }
 
 .object-subtitle {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   margin-top: 2px;
 }
@@ -1946,18 +1946,18 @@
    que el color siempre corresponda al museo real en vez de un valor fijo. */
 
 .timeline-date {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   /* #6b665d: contraste >= 4.5:1 sobre #fbfaf7 (axe/WCAG AA); #928d82 daba ~3.2:1 */
   color: var(--color-text-muted);
 }
 
 .timeline-label {
-  font-size: 13px;
+  font-size: var(--font-size-md);
   color: var(--color-ink);
 }
 
 .timeline-desc {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-soft);
   margin-top: 2px;
   line-height: 1.5;
@@ -1967,7 +1967,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   background: #f0ede4;
   border-radius: 6px;
@@ -1989,7 +1989,7 @@
 
 .context-flag {
   display: inline-block;
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   background: #f2e6d8;
   color: #7a4a1a;
   border-radius: var(--radius-chip);
@@ -1998,7 +1998,7 @@
 }
 
 .context-notes {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: #555;
   margin: 0 0 12px -12px;
   line-height: 1.5;
@@ -2010,20 +2010,20 @@
 }
 
 .museum-record-label {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   margin-bottom: 6px;
 }
 
 .museum-record-field {
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: #555;
   line-height: 1.6;
 }
 
 .met-link {
   display: inline-block;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   color: #185fa5;
   margin-top: 8px;
   text-decoration: none;
@@ -2062,7 +2062,7 @@
   border: 1px solid var(--color-line);
   border-radius: 6px;
   color: #55504a;
-  font-size: 12px;
+  font-size: var(--font-size-sm);
   padding: 6px 12px;
   cursor: pointer;
 }
@@ -2078,7 +2078,7 @@
 }
 
 .piece-nav-position {
-  font-size: 11px;
+  font-size: var(--font-size-sm);
   color: var(--color-text-muted);
   flex-shrink: 0;
 }
@@ -2174,13 +2174,13 @@
     border-radius: 16px;
     padding: 7px 14px;
     font: inherit;
-    font-size: 12px;
+    font-size: var(--font-size-sm);
     font-weight: 500;
     cursor: pointer;
   }
 
   .mobile-filters-toggle-arrow {
-    font-size: 11px;
+    font-size: var(--font-size-xs);
   }
 
   /* Cerrado por default -- el mapa queda libre apenas se carga la página,
@@ -2240,7 +2240,7 @@
   /* iOS Safari hace zoom automático al enfocar inputs con font-size < 16px
      (era la "animación de zoom" al tocar el buscador). */
   .title-search-input {
-    font-size: 16px;
+    font-size: var(--font-size-xl);
   }
 
   /* El menú de resultados NO puede ser position:fixed pegado abajo en mobile:
@@ -2445,6 +2445,83 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+/* Foco visible global (08/10, navegación por teclado): doble anillo
+   claro+oscuro para que se vea sobre el mapa claro, el globo oscuro y el
+   dock oscuro del timeline. */
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px #ffffff;
+}
+/* El canvas de Mapbox es enfocable (flechas = mover, +/- = zoom) pero no
+   mostraba foco, lo que se sentía como un Tab fantasma. Anillo hacia adentro
+   para que no lo recorte el borde del viewport. */
+.mapboxgl-canvas:focus-visible {
+  outline: none;
+}
+/* Anillo como overlay (el outline/box-shadow sobre el canvas no se veía:
+   Mapbox lo suprime y el contenido del canvas tapa sombras inset). */
+.map-pane:has(.mapboxgl-canvas:focus-visible)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 900;
+  pointer-events: none;
+  border: 3px solid var(--color-ink);
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+.title-search-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Lista de orígenes accesible por teclado: oculta hasta que algo dentro
+   recibe foco. */
+.kbd-origins {
+  position: absolute;
+  left: 12px;
+  bottom: 56px;
+  z-index: 1100;
+  max-width: 320px;
+}
+.kbd-origins:not(:focus-within):not(.open) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+.kbd-origins-toggle {
+  background: var(--color-paper);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  padding: 6px 12px;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+.kbd-origins-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 4px;
+  max-height: 40vh;
+  overflow-y: auto;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 8px;
+}
+.kbd-origins-list button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  padding: 6px 8px;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
 }
 
 /* Texto solo para lectores de pantalla (visualmente oculto, sigue en el árbol

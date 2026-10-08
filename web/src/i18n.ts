@@ -19,6 +19,9 @@ export interface I18nStrings {
   curatedNoteRoutesSuffix: string;
   welcomeTriggerAria: string;
   langToggleAria: string;
+  kbdOriginsLabel: string;
+  kbdOriginsAria: string;
+  kbdOriginsPieces: (n: number) => string;
   contextDockLabel: string;
   legendUK: string;
   legendFR: string;
@@ -161,6 +164,9 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     curatedNoteRoutesSuffix: "(CC-BY 3.0) — muestra curada de 50 cruceros, no todas las rutas del período.",
     welcomeTriggerAria: "Sobre este proyecto",
     langToggleAria: "Cambiar a inglés",
+    kbdOriginsLabel: "Explorar orígenes (teclado)",
+    kbdOriginsAria: "Lista de orígenes en el mapa, navegable con teclado",
+    kbdOriginsPieces: (n) => `${n} ${n === 1 ? "pieza" : "piezas"}`,
     contextDockLabel: "Contexto histórico",
     legendUK: "Reino Unido",
     legendFR: "Francia",
@@ -375,6 +381,9 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     curatedNoteRoutesSuffix: "(CC-BY 3.0) — curated sample of 50 voyages, not every route from the period.",
     welcomeTriggerAria: "About this project",
     langToggleAria: "Switch to Spanish",
+    kbdOriginsLabel: "Browse origins (keyboard)",
+    kbdOriginsAria: "List of origins on the map, keyboard navigable",
+    kbdOriginsPieces: (n) => `${n} ${n === 1 ? "piece" : "pieces"}`,
     contextDockLabel: "Historical context",
     legendUK: "United Kingdom",
     legendFR: "France",

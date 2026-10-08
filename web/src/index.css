@@ -8,12 +8,26 @@
   --color-line-strong: #c9c4b8;
   --color-hover: #efece4;
   --color-text-muted: #6b665d;
-  --color-text-soft: #77726a;
-  --color-accent: #6a4c93;
+  --color-text-soft: #706b63;
+  --color-accent: #5a3f80;
   --color-surface: rgba(251, 250, 247, 0.92);
   --color-chip-dark: rgba(26, 26, 26, 0.85);
+  /* Focus ring: warm grey, ≥3:1 on --color-paper (3.49:1) and on
+     --color-chip-dark composited over paper (3.05:1). */
+  --color-focus-ring: #8a8680;
   --radius-pill: 20px;
   --radius-chip: 4px;
+  /* Type scale */
+  --font-size-xs:    11px;
+  --font-size-sm:    12px;
+  --font-size-md:    13px;
+  --font-size-md-lg: 13.5px;
+  --font-size-base:  14px;
+  --font-size-lg:    15px;
+  --font-size-xl:    16px;
+  --font-size-2xl:   19px;
+  --font-size-3xl:   20px;
+  --font-size-4xl:   30px;
   font-family: system-ui, "Segoe UI", Roboto, sans-serif;
 }
 
