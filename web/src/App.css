@@ -401,7 +401,7 @@
 
 .museum-toggles {
   display: flex;
-  align-items: center; /* el label de país ahora flota arriba vía position:absolute (ver .museum-country-label) en vez de ocupar espacio en el flujo, así que esta fila vuelve a ser de una sola línea "de facto" -- mismo align-items:center que .research-filter-row, para que "MUSEUMS:"/el contador queden centrados respecto a la fila de pills, no a la altura del label de país (31/08, segunda vuelta -- la primera vuelta con margin-top a mano no daba un alineado preciso) */
+  align-items: center; /* el label de país ahora flota arriba vía position:absolute (ver .museum-country-label) en vez de ocupar espacio en el flujo, así que esta fila vuelve a ser de una sola línea "de facto" -- mismo align-items:center que .research-filter-row, para que "MUSEUMS"/el contador queden centrados respecto a la fila de pills, no a la altura del label de país (31/08, segunda vuelta -- la primera vuelta con margin-top a mano no daba un alineado preciso) */
   gap: 14px; /* espacio entre grupos de país -- más ancho que el gap interno de .museum-country-row */
   flex-wrap: wrap;
   margin-top: 20px; /* el label de país, al flotar por fuera del flujo (position:absolute, bottom:100%), necesita este espacio arriba para no quedar recortado contra el borde superior de .top-controls/la ventana (31/08, tercera vuelta -- se veía cortado a la mitad) */
@@ -418,7 +418,7 @@
    .museum-country-label) en vez de flex-direction:column -- así el alto de
    este contenedor lo determina únicamente .museum-country-row (la fila de
    pills), y .museum-toggles puede centrar verticalmente todos sus hijos
-   (label "MUSEUMS:", cada grupo, el contador de piezas) por altura de pill,
+   (label "", cada grupo, el contador de piezas) por altura de pill,
    exactamente como ya hace .research-filter-row con "RESEARCH:". */
 .museum-country-group {
   position: relative;
@@ -436,8 +436,14 @@
   left: 0;
   margin-bottom: 4px;
   font-size: 11px;
-  color: #6b665d;
+  color: #fbfaf7;
   white-space: nowrap;
+  /* Chip oscuro igual al contador de piezas (08/10): lenguaje visual de
+     "info, no clickeable" (los controles son crema), y contraste fijo sobre
+     cualquier fondo del mapa. */
+  background: rgba(26, 26, 26, 0.85);
+  padding: 2px 7px;
+  border-radius: 4px;
 }
 
 .research-filter-row {
@@ -455,7 +461,13 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: #6b665d;
+  color: #fbfaf7;
+  /* Chip oscuro igual al contador de piezas (08/10): lenguaje visual de
+     "info, no clickeable" (los controles son crema), y contraste fijo sobre
+     cualquier fondo del mapa. */
+  background: rgba(26, 26, 26, 0.85);
+  padding: 2px 7px;
+  border-radius: 4px;
 }
 
 .museum-toggle-wrap {
@@ -643,7 +655,7 @@
 }
 
 .mechanism-filter-caret {
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .mechanism-menu {
@@ -747,7 +759,7 @@
 }
 
 .object-type-filter-caret {
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .object-type-menu {
@@ -2143,7 +2155,7 @@
   }
 
   .mobile-filters-toggle-arrow {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   /* Cerrado por default -- el mapa queda libre apenas se carga la página,
@@ -2278,7 +2290,7 @@
      desktop -- se solapaba con la fila de arriba cada vez que un grupo
      nuevo caía en una línea de wrap distinta, porque el `gap` entre líneas
      no alcanza para el label que escapa hacia arriba del flujo normal. En
-     columna cada elemento (label "MUSEUMS:", cada grupo de país, el
+     columna cada elemento (label "MUSEUMS", cada grupo de país, el
      contador) ocupa su propia fila completa, sin competir por ancho ni
      necesitar que ningún elemento escape del flujo -- más legible en un
      drawer angosto que intentar que todo entre en la menor cantidad de
