@@ -279,7 +279,14 @@
    :focus-within .title-search-input más arriba) vuelve al gris de siempre,
    porque ahí blanco fijo no se leería bien contra el fondo claro. */
 .title-search-input::placeholder {
-  color: rgba(255, 255, 255, 0.85);
+  color: #fff;
+  opacity: 1;
+}
+
+/* Inactivo: todo el texto del buscador en blanco (placeholder y texto tipeado). */
+.title-search-wrap:not(:focus-within) .title-search-input {
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
 }
 
 .title-search-wrap:focus-within .title-search-input::placeholder {
@@ -2178,6 +2185,9 @@
      acá porque quedó escopeada a `min-width:901px`, nunca se aplica bajo
      este breakpoint. */
   .title-search-panel {
+    /* Por encima de "Click en el mapa" (z-index 1000) para que el dropdown
+       de resultados no quede tapado por ese pill. */
+    z-index: 1200;
     left: 8px;
     right: 8px;
     top: 56px;
@@ -2189,12 +2199,38 @@
     width: 100%;
   }
 
-  /* Adentro del drawer, .country-click-panel y .top-controls dejan de ser
-     position:absolute (pensado para flotar sueltos sobre el mapa) y pasan a
-     fluir en columna -- ahí sí hay lugar para que .museum-toggles/
-     .research-filter-row wrapeen legibles, en vez de competir por una
-     franja angosta arriba del mapa. */
-  .mobile-filters-wrap.open .country-click-panel,
+  /* iOS Safari hace zoom automático al enfocar inputs con font-size < 16px
+     (era la "animación de zoom" al tocar el buscador). */
+  .title-search-input {
+    font-size: 16px;
+  }
+
+  /* El menú de resultados NO puede ser position:fixed pegado abajo en mobile:
+     queda tapado por el teclado y nunca se ve. Se despliega justo debajo del
+     input, dentro del panel. */
+  .title-search-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    max-height: 50vh;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  }
+
+  /* "Click en el mapa" ya no vive dentro del drawer: pill flotante propia,
+     debajo del buscador, siempre visible. */
+  .country-click-panel {
+    top: 100px;
+    left: 8px;
+    right: auto;
+  }
+
+  /* Adentro del drawer, .top-controls deja de ser position:absolute
+     (pensado para flotar suelto sobre el mapa) y pasa a fluir en columna --
+     ahí sí hay lugar para que .museum-toggles/.research-filter-row wrapeen
+     legibles. */
   .mobile-filters-wrap.open .top-controls {
     position: static;
     max-width: none;
@@ -2207,11 +2243,6 @@
      dejó de ser position:absolute -- feedback de la usuaria: "el borde no
      tiene por qué abarcar todo el width". width:fit-content en vez de
      width:100% para que se ajuste a su contenido, igual que en desktop. */
-  .mobile-filters-wrap.open .country-click-panel {
-    width: fit-content;
-    margin-bottom: 14px;
-  }
-
   .mobile-filters-wrap.open .top-controls {
     width: 100%;
     padding-top: 14px;
@@ -2303,7 +2334,6 @@
   .country-click-panel .museum-note,
   .mechanism-menu,
   .object-type-menu,
-  .title-search-menu,
   .year-timeline-note {
     position: fixed;
     left: 12px;

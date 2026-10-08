@@ -241,6 +241,17 @@ function App() {
   const [searchFocusObjectId, setSearchFocusObjectId] = useState<string | null>(null);
   const titleSearchRef = useRef<HTMLDivElement>(null);
   const titleSearchInputRef = useRef<HTMLInputElement>(null);
+  // Scroll de la lista de piezas: se guarda al abrir una ficha y se restaura
+  // solo al volver con "Atrás" (una apertura nueva desde el mapa arranca en 0).
+  const listScrollSavedRef = useRef(0);
+  const listScrollRestoreRef = useRef(0);
+  // Cámara previa a elegir un resultado del buscador (para revertir al tocar fuera).
+  const searchPrevViewRef = useRef<{
+    center: [number, number];
+    zoom: number;
+    bearing: number;
+    pitch: number;
+  } | null>(null);
   // Ancho del placeholder medido en píxeles reales -- ver el useEffect que
   // lo calcula más abajo (después de que `s` esté definido), 90 es solo el
   // valor para el primer render antes de que ese efecto corra.
@@ -527,7 +538,26 @@ function App() {
   // visibleObjects) — ver comentario en groupByCountry (geo.ts). Usado por
   // el click-en-el-mapa (handleClick/handleMouseMove) para encontrar el
   // CountryGroup correspondiente al país clickeado/hovereado.
-  const countryGroups = useMemo(() => groupByCountry(bundle.objects, lang), [lang]);
+  // Respeta los filtros activos (museos, investigación, mecanismo, tipo de
+  // pieza): si el usuario apagó 3 museos, "Click en el mapa" no debe listar
+  // piezas de esos museos (reportado con Louvre + Irán).
+  const countryGroups = useMemo(() => groupByCountry(visibleObjects, lang), [visibleObjects, lang]);
+
+  // Si hay un panel de país abierto y cambian los filtros (museos, etc.), la
+  // lista se recalcula en vivo en vez de quedar con la foto del momento del
+  // click.
+  useEffect(() => {
+    setPanel((prev) => {
+      if (!prev || prev.kind !== "country" || !prev.cluster.key) return prev;
+      const group = countryGroups.find((g) => g.key === prev.cluster.key);
+      const objects = group?.objects ?? [];
+      const same =
+        objects.length === prev.cluster.objects.length &&
+        objects.every((o, i) => o.objectID === prev.cluster.objects[i].objectID);
+      if (same) return prev;
+      return { ...prev, cluster: { ...prev.cluster, objects } };
+    });
+  }, [countryGroups]);
 
   // Clusters de origen sobre TODAS las piezas (no visibleObjects) -- solo
   // para el lookup del buscador de títulos: encontrar a qué cluster
@@ -574,6 +604,17 @@ function App() {
       // decorativo que convenga respetar esa preferencia.
       const map = mapRef.current?.getMap?.();
       if (map && Number.isFinite(obj.originLat) && Number.isFinite(obj.originLon)) {
+        // Guarda la cámara previa (solo la primera vez, si se elige otro
+        // resultado seguido) para poder volver al tocar fuera del buscador.
+        if (!searchPrevViewRef.current) {
+          const c = map.getCenter();
+          searchPrevViewRef.current = {
+            center: [c.lng, c.lat],
+            zoom: map.getZoom(),
+            bearing: map.getBearing?.() ?? 0,
+            pitch: map.getPitch?.() ?? 0,
+          };
+        }
         map.flyTo({
           center: [obj.originLon, obj.originLat],
           zoom: Math.max(map.getZoom?.() ?? 0, 4),
@@ -592,8 +633,28 @@ function App() {
   useEffect(() => {
     if (!searchFocusObjectId) return;
     const stillFocused = panel?.view === "object" && panel.object.objectID === searchFocusObjectId;
-    if (!stillFocused) setSearchFocusObjectId(null);
+    if (!stillFocused) {
+      setSearchFocusObjectId(null);
+      searchPrevViewRef.current = null;
+    }
   }, [panel, searchFocusObjectId]);
+
+  // Tocar fuera del buscador (mapa, filtros, etc.; no el panel lateral, que
+  // es donde se lee la pieza elegida) revierte el acercamiento y devuelve la
+  // cámara a donde estaba antes de elegir el resultado.
+  useEffect(() => {
+    if (!searchFocusObjectId) return;
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target as Element | null;
+      if (target?.closest?.(".title-search-wrap, .side-panel")) return;
+      const prev = searchPrevViewRef.current;
+      searchPrevViewRef.current = null;
+      const map = mapRef.current?.getMap?.();
+      if (map && prev) map.flyTo({ ...prev, duration: 1400, essential: true });
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [searchFocusObjectId]);
 
   const handleTitleSearchKeyDown = useCallback(
     (e: ReactKeyboardEvent<HTMLInputElement>) => {
@@ -606,10 +667,12 @@ function App() {
         e.preventDefault();
         setTitleSearchHighlight((i) => Math.max(i - 1, 0));
       } else if (e.key === "Enter") {
-        if (titleSearchHighlight >= 0 && titleSearchHighlight < titleSearchResults.length) {
-          e.preventDefault();
-          selectSearchedObject(titleSearchResults[titleSearchHighlight]);
-        }
+        // Sin ítem resaltado (típico en mobile, donde no hay hover/flechas),
+        // Enter elige el primer resultado.
+        const idx = titleSearchHighlight >= 0 && titleSearchHighlight < titleSearchResults.length ? titleSearchHighlight : 0;
+        e.preventDefault();
+        selectSearchedObject(titleSearchResults[idx]);
+        titleSearchInputRef.current?.blur();
       } else if (e.key === "Escape") {
         setTitleSearchOpen(false);
       }
@@ -945,6 +1008,31 @@ function App() {
             en mobile es lo que el botón de arriba muestra/oculta como un
             único panel apilado en columna -- ver .mobile-filters-wrap.open
             en App.css. */}
+        {/* "Click en el mapa" vive FUERA del drawer de filtros (pedido de la
+            usuaria): no es un filtro, y en mobile queda siempre visible. */}
+        <div className="country-click-panel">
+          <span className="country-click-label">{s.countryClickToggleLabel}</span>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={countryClickEnabled}
+            aria-label={s.countryClickToggleAria}
+            className={`country-click-switch${countryClickEnabled ? " on" : ""}`}
+            onClick={toggleCountryClick}
+          >
+            <span className="country-click-switch-knob" aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
+            aria-label={s.countryClickNoteAria}
+            aria-expanded={countryClickNoteOpen}
+            onClick={() => setCountryClickNoteOpen((v) => !v)}
+          >
+            i
+          </button>
+          {countryClickNoteOpen && <div className="museum-note country-click-note">{s.countryClickNoteText}</div>}
+        </div>
         <div className={`mobile-filters-wrap${filtersOpen ? " open" : ""}`}>
           {/* Copia del contador de piezas, visible solo dentro del drawer
               mobile (pedido de la usuaria: que el total quede arriba de
@@ -962,29 +1050,6 @@ function App() {
               hace un click en el mapa), así que separarla espacialmente y
               usar un switch en vez de un pill-botón (mismo lenguaje visual
               que los filtros) evita que se lea como "un filtro más". */}
-          <div className="country-click-panel">
-            <span className="country-click-label">{s.countryClickToggleLabel}</span>
-            <button
-              type="button"
-              role="switch"
-              aria-checked={countryClickEnabled}
-              aria-label={s.countryClickToggleAria}
-              className={`country-click-switch${countryClickEnabled ? " on" : ""}`}
-              onClick={toggleCountryClick}
-            >
-              <span className="country-click-switch-knob" aria-hidden="true" />
-            </button>
-            <button
-              type="button"
-              className={`museum-info-btn${countryClickNoteOpen ? " open" : ""}`}
-              aria-label={s.countryClickNoteAria}
-              aria-expanded={countryClickNoteOpen}
-              onClick={() => setCountryClickNoteOpen((v) => !v)}
-            >
-              i
-            </button>
-            {countryClickNoteOpen && <div className="museum-note country-click-note">{s.countryClickNoteText}</div>}
-          </div>
           <div className="top-controls">
         <div className="museum-toggles">
           <span className="filter-row-label">{s.museumFilterRowLabel}</span>
@@ -1358,10 +1423,18 @@ function App() {
           cluster={panel.cluster}
           lang={lang}
           onClose={() => setPanel(null)}
+          scrollSaveRef={listScrollSavedRef}
+          scrollRestoreRef={listScrollRestoreRef}
           onSelectObject={(object) => setPanel({ view: "object", cluster: panel.cluster, object, kind: panel.kind })}
           showOriginAndMuseum={panel.kind === "country"}
           museums={bundle.museums}
-          subtitleOverride={panel.kind === "country" ? s.countryResultsSubtitle(panel.cluster.objects.length) : undefined}
+          subtitleOverride={panel.kind === "country" ? s.countryResultsSubtitle(
+                panel.cluster.objects.length,
+                Object.keys(bundle.museums)
+                  .filter((id) => panel.cluster.objects.some((o) => o.sourceMuseum === id))
+                  .map((id) => bundle.museums[id].name)
+                  .join(", "),
+              ) : undefined}
         />
       )}
       {panel?.view === "object" && (() => {
@@ -1373,7 +1446,10 @@ function App() {
             object={panel.object}
             museums={bundle.museums}
             lang={lang}
-            onBack={() => setPanel({ view: "cluster", cluster: panel.cluster, kind: panel.kind })}
+            onBack={() => {
+              listScrollRestoreRef.current = listScrollSavedRef.current;
+              setPanel({ view: "cluster", cluster: panel.cluster, kind: panel.kind });
+            }}
             onClose={() => setPanel(null)}
             clusterPosition={clusterPosition}
             onPrev={index > 0 ? () => selectClusterObject(index - 1) : undefined}

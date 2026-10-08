@@ -122,7 +122,7 @@ export interface I18nStrings {
   imageExpandAria: string;
   imageCollapseAria: string;
 
-  countryResultsSubtitle: (n: number) => string;
+  countryResultsSubtitle: (n: number, museums: string) => string;
   countryClickToggleLabel: string;
   countryClickToggleAria: string;
   countryClickNoteAria: string;
@@ -309,7 +309,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     imageExpandAria: "Ver imagen completa",
     imageCollapseAria: "Volver al tamaño recortado",
 
-    countryResultsSubtitle: (n) => `${n} pieza${n === 1 ? "" : "s"} en los 3 museos, sin importar los filtros de arriba`,
+    countryResultsSubtitle: (n, museums) => `Mostrando ${n} pieza${n === 1 ? "" : "s"} en ${museums}`,
     countryClickToggleLabel: "Click en el mapa",
     countryClickToggleAria: "Activar búsqueda por países haciendo click en el mapa",
     countryClickNoteAria: "Sobre la búsqueda por país",
@@ -523,7 +523,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     imageExpandAria: "View full image",
     imageCollapseAria: "Back to cropped size",
 
-    countryResultsSubtitle: (n) => `${n} piece${n === 1 ? "" : "s"} across all 3 museums, regardless of the filters above`,
+    countryResultsSubtitle: (n, museums) => `Showing ${n} piece${n === 1 ? "" : "s"} in ${museums}`,
     countryClickToggleLabel: "Click on the map",
     countryClickToggleAria: "Enable searching by country by clicking the map",
     countryClickNoteAria: "About searching by country",

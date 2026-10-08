@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef, type MutableRefObject } from "react";
 import type { MuseumDestination, MuseumObject } from "../types";
 import { objectHasResearch, type OriginCluster } from "../geo";
 import { MUSEUM_COLORS, DEFAULT_COLOR } from "../colors";
@@ -18,10 +19,19 @@ interface ClusterPanelProps {
   showOriginAndMuseum?: boolean;
   museums?: Record<string, MuseumDestination>;
   subtitleOverride?: string;
+  // Posición de scroll: se guarda al abrir una ficha y se restaura al volver.
+  scrollSaveRef?: MutableRefObject<number>;
+  scrollRestoreRef?: MutableRefObject<number>;
 }
 
-export function ClusterPanel({ cluster, lang, onClose, onSelectObject, showOriginAndMuseum, museums, subtitleOverride }: ClusterPanelProps) {
+export function ClusterPanel({ cluster, lang, onClose, onSelectObject, showOriginAndMuseum, museums, subtitleOverride, scrollSaveRef, scrollRestoreRef }: ClusterPanelProps) {
   const s = STRINGS[lang];
+  const asideRef = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    if (!scrollRestoreRef || !asideRef.current) return;
+    asideRef.current.scrollTop = scrollRestoreRef.current;
+    scrollRestoreRef.current = 0;
+  }, [scrollRestoreRef]);
   // Tratamiento narrativo de context_flags (18/08, segunda vuelta): la
   // leyenda solo se muestra si al menos una pieza de este cluster tiene
   // investigación — si ninguna la tiene, explicar el marcador no aporta
@@ -40,7 +50,10 @@ export function ClusterPanel({ cluster, lang, onClose, onSelectObject, showOrigi
         key={obj.objectID}
         type="button"
         className="piece-row"
-        onClick={() => onSelectObject(obj)}
+        onClick={() => {
+          if (scrollSaveRef && asideRef.current) scrollSaveRef.current = asideRef.current.scrollTop;
+          onSelectObject(obj);
+        }}
       >
         <div
           className="piece-thumb"
@@ -94,7 +107,7 @@ export function ClusterPanel({ cluster, lang, onClose, onSelectObject, showOrigi
     : null;
 
   return (
-    <aside className="side-panel">
+    <aside className="side-panel" ref={asideRef}>
       <div className="panel-header">
         <div>
           <div className="panel-title">{cluster.label || s.clusterUnknownOrigin}</div>
