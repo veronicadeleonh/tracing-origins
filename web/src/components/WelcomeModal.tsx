@@ -41,7 +41,7 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
           <div className="welcome-modal-heading-group">
             <span className="welcome-modal-emoji" aria-hidden="true">🏛️</span>
             <div>
-              <h1 id="welcome-modal-title" className="welcome-modal-appname">Tracing Origins</h1>
+              <h2 id="welcome-modal-title" className="welcome-modal-appname">Tracing Origins</h2>
               <p className="welcome-modal-slogan">{s.welcomeSlogan}</p>
             </div>
           </div>

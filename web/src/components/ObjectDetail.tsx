@@ -187,7 +187,7 @@ export function ObjectDetail({
               return (
                 <div className="timeline-node" key={i}>
                   <span className="timeline-dot" style={{ background: accentColor }} aria-hidden="true" />
-                  <div className="timeline-date">{event.event_date || ""}</div>
+                  <div className="timeline-date">{(lang === "en" ? event.eventDateEn || event.event_date : event.event_date) || ""}</div>
                   <div className="timeline-label">{eventLabel(event, s)}</div>
                   {description && <div className="timeline-desc">{description}</div>}
                 </div>

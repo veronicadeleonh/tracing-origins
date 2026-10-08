@@ -1910,7 +1910,8 @@
 
 .timeline-date {
   font-size: 11px;
-  color: #928d82;
+  /* #6b665d: contraste >= 4.5:1 sobre #fbfaf7 (axe/WCAG AA); #928d82 daba ~3.2:1 */
+  color: #6b665d;
 }
 
 .timeline-label {
@@ -1930,7 +1931,7 @@
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: #928d82;
+  color: #6b665d;
   background: #f0ede4;
   border-radius: 6px;
   padding: 6px 10px;
@@ -1973,7 +1974,7 @@
 
 .museum-record-label {
   font-size: 11px;
-  color: #928d82;
+  color: #6b665d;
   margin-bottom: 6px;
 }
 
@@ -2407,4 +2408,18 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+/* Texto solo para lectores de pantalla (visualmente oculto, sigue en el árbol
+   de accesibilidad). */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

@@ -869,7 +869,11 @@ function App() {
 
   return (
     <div className="app-layout">
-      <div className="map-pane">
+      {/* Encabezado de página solo para lectores de pantalla: la app no tiene
+          ningún <h1> visible (el del modal de bienvenida existe solo mientras
+          el modal está abierto). */}
+      <h1 className="sr-only">Tracing Origins</h1>
+      <div className="map-pane" role="main">
         <button
           type="button"
           className="welcome-trigger-btn"

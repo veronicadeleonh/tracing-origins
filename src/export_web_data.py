@@ -12,6 +12,7 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
+from event_dates import translate_event_date
 from object_types import classify_object_type
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
@@ -104,6 +105,7 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
             "event_order": int(e["event_order"]) if e.get("event_order") else None,
             "event_type": e.get("event_type") or None,
             "event_date": e.get("event_date") or None,
+            "eventDateEn": translate_event_date(e.get("event_date")) or None,
             "actor_or_institution": e.get("actor_or_institution") or None,
             "location": e.get("location") or None,
             "description": e.get("description") or None,

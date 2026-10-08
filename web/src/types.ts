@@ -2,6 +2,8 @@ export interface ProvenanceEvent {
   event_order: number | null;
   event_type: string | null;
   event_date: string | null;
+  // Traducción al inglés de event_date (src/event_dates.py); null si no hay fecha.
+  eventDateEn?: string | null;
   actor_or_institution: string | null;
   location: string | null;
   description: string | null;
