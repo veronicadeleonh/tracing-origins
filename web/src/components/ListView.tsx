@@ -151,8 +151,8 @@ export function ListView({ objects, museums, lang, hidden, summary, groupBy, onG
                       }}
                     >
                       <span className="list-card-image">
-                        {obj.primaryImage && (
-                          <img src={obj.primaryImage} alt="" loading="lazy" decoding="async" width={200} height={150} />
+                        {(obj.thumbImage ?? obj.primaryImage) && (
+                          <img src={obj.thumbImage ?? obj.primaryImage ?? undefined} alt="" loading="lazy" decoding="async" width={200} height={150} />
                         )}
                         {objectHasResearch(obj) && (
                           <span

@@ -53,6 +53,8 @@ export interface MuseumObject {
   region: string | null;
   subregion: string | null;
   primaryImage: string | null;
+  /** Variante chica para miniaturas; la ficha usa primaryImage. */
+  thumbImage?: string | null;
   objectURL: string | null;
   originLabel: string | null;
   originLabelEn: string | null;

@@ -58,7 +58,7 @@ export function ClusterPanel({ cluster, lang, onClose, onSelectObject, showOrigi
       >
         <div
           className="piece-thumb"
-          style={obj.primaryImage ? { backgroundImage: `url(${obj.primaryImage})` } : undefined}
+          style={obj.thumbImage ?? obj.primaryImage ? { backgroundImage: `url(${obj.thumbImage ?? obj.primaryImage})` } : undefined}
         >
           {hasResearch && (
             <span

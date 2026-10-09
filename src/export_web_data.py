@@ -95,6 +95,22 @@ def _https(url):
     return url
 
 
+def _thumb(museum, url):
+    """Variante chica de la imagen para miniaturas (lista, panel, buscador).
+    Verificadas a mano en el navegador (09/10): Met web-large ~500px, Louvre
+    medium ~500px, Quai Branly proxy con width/height. BM ya guarda previews.
+    La ficha de la pieza sigue usando primaryImage a resolución completa."""
+    if not url:
+        return None
+    if museum == "met" and "/original/" in url:
+        return url.replace("/original/", "/web-large/")
+    if museum == "louvre" and "/media/cache/large/" in url:
+        return url.replace("/media/cache/large/", "/media/cache/medium/")
+    if museum == "qb" and "imageproxy.ashx" in url:
+        return url + "&width=400&height=400"
+    return url
+
+
 def build_object(row: dict, context: dict, events: dict) -> dict:
     object_id = row["objectID"]
     ctx = context.get(object_id)
@@ -153,6 +169,7 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
         "region": row.get("region") or None,
         "subregion": row.get("subregion") or None,
         "primaryImage": _https(row.get("primaryImage")),
+        "thumbImage": _thumb(row.get("sourceMuseum"), _https(row.get("primaryImage"))),
         "objectURL": row.get("objectURL") or None,
         "originLabel": row.get("origin_label") or None,
         "originLabelEn": row.get("origin_label_en") or row.get("origin_label") or None,
