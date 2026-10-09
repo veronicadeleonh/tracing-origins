@@ -59,7 +59,7 @@ export function ListView({ objects, museums, lang, hidden, summary, groupBy, onG
   ];
 
   return (
-    <section className={`list-view${hidden ? " hidden" : ""}`} aria-label={s.viewList} aria-hidden={hidden}>
+    <section id="list-content" tabIndex={-1} className={`list-view${hidden ? " hidden" : ""}`} aria-label={s.viewList} aria-hidden={hidden}>
       <div className="list-view-inner">
         <div className="list-view-toolbar">
           <p className="list-view-count" role="status">{summary}</p>

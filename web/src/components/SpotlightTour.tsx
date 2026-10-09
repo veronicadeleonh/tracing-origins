@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
 import { STRINGS, type Lang } from "../i18n";
 import { TOUR_STEPS } from "../data/tourSteps";
 
@@ -104,9 +104,37 @@ export function SpotlightTour({ lang, onClose, onOpenInfo }: SpotlightTourProps)
     return () => window.removeEventListener("resize", onResize);
   }, [recompute]);
 
+  // Foco: dentro del callout al abrir y en cada paso; Tab atrapado; al
+  // cerrar vuelve al elemento que lo tenía antes.
+  const calloutRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const opener = document.activeElement as HTMLElement | null;
+    return () => {
+      if (opener && opener.isConnected) opener.focus();
+    };
+  }, []);
+  useEffect(() => {
+    calloutRef.current?.focus();
+  }, [stepIndex]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
+      if (e.key === "Tab") {
+        const f = calloutRef.current?.querySelectorAll<HTMLElement>("button:not([disabled])");
+        if (!f || f.length === 0) return;
+        const first = f[0];
+        const last = f[f.length - 1];
+        const active = document.activeElement;
+        const outside = !calloutRef.current?.contains(active);
+        if (e.shiftKey && (active === first || active === calloutRef.current || outside)) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && (active === last || outside)) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -159,7 +187,7 @@ export function SpotlightTour({ lang, onClose, onOpenInfo }: SpotlightTourProps)
           }}
         />
       )}
-      <div className="spotlight-callout" style={{ ...calloutStyle, width: calloutWidth }}>
+      <div className="spotlight-callout" ref={calloutRef} tabIndex={-1} style={{ ...calloutStyle, width: calloutWidth }}>
         <div className="spotlight-callout-progress">{s.tourStepOf(stepIndex + 1, TOUR_STEPS.length)}</div>
         <h2 className="spotlight-callout-title">{stepText.title}</h2>
         <p className="spotlight-callout-text">{stepText.text}</p>

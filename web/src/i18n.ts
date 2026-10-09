@@ -135,6 +135,9 @@ export interface I18nStrings {
   viewMapAria: string;
   viewListAria: string;
   viewList: string;
+  listSkipLink: string;
+  mapPageTitle: string;
+  listPageTitle: string;
   listGroupByLabel: string;
   listGroupMuseum: string;
   listGroupCountry: string;
@@ -340,6 +343,9 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     viewMapAria: "Vista de mapa",
     viewListAria: "Vista de lista",
     viewList: "Lista",
+    listSkipLink: "Saltar a la lista",
+    mapPageTitle: "Tracing Origins: mapa",
+    listPageTitle: "Tracing Origins: lista de piezas",
     listGroupByLabel: "Agrupar por",
     listGroupMuseum: "Museo",
     listGroupCountry: "País",
@@ -572,6 +578,9 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     viewMapAria: "Map view",
     viewListAria: "List view",
     viewList: "List",
+    listSkipLink: "Skip to the list",
+    mapPageTitle: "Tracing Origins: map",
+    listPageTitle: "Tracing Origins: list of pieces",
     listGroupByLabel: "Group by",
     listGroupMuseum: "Museum",
     listGroupCountry: "Country",

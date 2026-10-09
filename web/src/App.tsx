@@ -1,3 +1,4 @@
+import { viewFromPath, parseFilters, buildSearch, LIST_PATH } from "./urlState";
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import type { KeyboardEvent as ReactKeyboardEvent, CSSProperties } from "react";
 import Map, { Source, Layer, Popup } from "react-map-gl/mapbox";
@@ -170,21 +171,21 @@ type PanelState =
 type TooltipState = { longitude: number; latitude: number; title: string; subtitle: string; kind: "origin" | "museum" | "country" } | null;
 
 function App() {
-  const [visibleMuseums, setVisibleMuseums] = useState<Record<string, boolean>>(
-    () => Object.fromEntries(Object.keys(bundle.museums).map((id) => [id, true])),
-  );
+  // Estado inicial de filtros y vista desde la URL (09/10).
+  const [initialUrl] = useState(() => parseFilters(window.location.search, Object.keys(bundle.museums)));
+  const [visibleMuseums, setVisibleMuseums] = useState<Record<string, boolean>>(initialUrl.visibleMuseums);
   // Filtro por estado de investigación (18/08, pedido explícito de la
   // usuaria junto con el tratamiento visual de context_flags): además de
   // marcar qué piezas tienen layer 3, dejar ocultar/mostrar según eso.
   // "all" es el default — no cambia el comportamiento previo.
-  const [researchFilter, setResearchFilter] = useState<"all" | "with" | "without">("all");
+  const [researchFilter, setResearchFilter] = useState<"all" | "with" | "without">(initialUrl.research);
   // Filtro por mecanismo (context_flags), agregado 23/08 al retomar el ítem
   // "tratamiento narrativo de context_flags" del backlog -- ver CLAUDE.md.
   // Multi-select (Set): una pieza matchea si tiene AL MENOS UNO de los
   // flags elegidos (OR, no AND) -- la mayoría de las piezas tienen 2-3
   // flags, exigir todos sería demasiado restrictivo. Vacío = sin filtro,
   // mismo comportamiento que antes de esta ronda.
-  const [selectedFlags, setSelectedFlags] = useState<Set<string>>(new Set());
+  const [selectedFlags, setSelectedFlags] = useState<Set<string>>(initialUrl.flags);
   const [mechanismMenuOpen, setMechanismMenuOpen] = useState(false);
   // Cerrar el dropdown al tocar/clickear afuera (01/09, reportado por la
   // usuaria: "tap afuera no funciona" -- las casillas ya aplican el filtro
@@ -209,7 +210,7 @@ function App() {
   // OR entre los tags elegidos), pero independiente de research_status:
   // toda pieza tiene objectTypeFlags (incl. "unclassified"), a diferencia
   // de context_flags que solo existe para piezas con layer 3.
-  const [selectedObjectTypes, setSelectedObjectTypes] = useState<Set<string>>(new Set());
+  const [selectedObjectTypes, setSelectedObjectTypes] = useState<Set<string>>(initialUrl.types);
   const [objectTypeMenuOpen, setObjectTypeMenuOpen] = useState(false);
   const objectTypeMenuRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -297,8 +298,67 @@ function App() {
   const [panel, setPanel] = useState<PanelState>(null);
   // Vista Mapa / Lista (08/10): la lista es alternativa al globo; el Map
   // queda montado detrás para conservar cámara y estado.
-  const [viewMode, setViewMode] = useState<"map" | "list">("map");
-  const [listGroupBy, setListGroupBy] = useState<GroupBy>("museum");
+  // La vista sale de la ruta ("/" mapa, "/list" lista); navegación con
+  // History API, sin router.
+  const [pathname, setPathname] = useState(() => window.location.pathname);
+  const viewMode = viewFromPath(pathname);
+  const [listGroupBy, setListGroupBy] = useState<GroupBy>(initialUrl.groupBy);
+  const museumIds = useMemo(() => Object.keys(bundle.museums), []);
+  const urlSearch = useMemo(
+    () =>
+      buildSearch(
+        { visibleMuseums, research: researchFilter, flags: selectedFlags, types: selectedObjectTypes, groupBy: listGroupBy },
+        museumIds,
+        viewMode === "list",
+      ),
+    [visibleMuseums, researchFilter, selectedFlags, selectedObjectTypes, listGroupBy, museumIds, viewMode],
+  );
+  const mapSearch = useMemo(
+    () =>
+      buildSearch(
+        { visibleMuseums, research: researchFilter, flags: selectedFlags, types: selectedObjectTypes, groupBy: listGroupBy },
+        museumIds,
+        false,
+      ),
+    [visibleMuseums, researchFilter, selectedFlags, selectedObjectTypes, listGroupBy, museumIds],
+  );
+  // Filtros -> URL (replaceState: no llena el historial con cada casilla).
+  useEffect(() => {
+    if (window.location.search !== urlSearch) {
+      window.history.replaceState(null, "", window.location.pathname + urlSearch);
+    }
+  }, [urlSearch]);
+  // Atrás/adelante: releer ruta y filtros.
+  useEffect(() => {
+    const onPop = () => {
+      setPathname(window.location.pathname);
+      const f = parseFilters(window.location.search, museumIds);
+      setVisibleMuseums(f.visibleMuseums);
+      setResearchFilter(f.research);
+      setSelectedFlags(f.flags);
+      setSelectedObjectTypes(f.types);
+      setListGroupBy(f.groupBy);
+    };
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [museumIds]);
+  const goTo = useCallback((path: string, search: string) => {
+    window.history.pushState(null, "", path + search);
+    setPathname(path);
+  }, []);
+  // Foco al <h1> de la vista al cambiar de ruta (no en la carga inicial).
+  const viewH1Ref = useRef<HTMLHeadingElement>(null);
+  const firstViewRender = useRef(true);
+  useEffect(() => {
+    if (firstViewRender.current) {
+      firstViewRender.current = false;
+      return;
+    }
+    viewH1Ref.current?.focus();
+  }, [viewMode]);
+  useEffect(() => {
+    document.title = viewMode === "list" ? "Tracing Origins · Lista" : "Tracing Origins";
+  }, [viewMode]);
   // Devolver el foco al disparador al cerrar el panel lateral: se recuerda
   // el último elemento enfocado FUERA del panel (focusin global); si el
   // disparador se desmonta se puede fijar explícitamente otro en
@@ -921,7 +981,9 @@ function App() {
       {/* Encabezado de página solo para lectores de pantalla: la app no tiene
           ningún <h1> visible (el del modal de bienvenida existe solo mientras
           el modal está abierto). */}
-      <h1 className="sr-only">Tracing Origins</h1>
+      <h1 className="sr-only" ref={viewH1Ref} tabIndex={-1}>
+        {listOpen ? s.listPageTitle : s.mapPageTitle}
+      </h1>
       <div
         className={`map-pane${viewMode === "list" ? " list-mode" : ""}`}
         role="main"
@@ -1116,6 +1178,18 @@ function App() {
                 </ul>
               </div>
             )}
+            {listOpen && (
+              <a
+                href="#list-content"
+                className="skip-link"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("list-content")?.focus();
+                }}
+              >
+                {s.listSkipLink}
+              </a>
+            )}
           </div>
         </div>
         </div>
@@ -1123,45 +1197,40 @@ function App() {
         {/* Selector de vista (centro-izquierda): mapa o lista. La lista es una
             página completa, no un panel. */}
         <div className="view-switch" role="group" aria-label={s.viewSwitchAria}>
-          <button
-            type="button"
+          <a
+            href={"/" + mapSearch}
             className={`view-switch-btn${!listOpen ? " active" : ""}`}
-            aria-pressed={!listOpen}
+            aria-current={!listOpen ? "page" : undefined}
             aria-label={s.viewMapAria}
             title={s.viewMapAria}
-            onClick={() => setViewMode("map")}
+            onClick={(e) => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+              e.preventDefault();
+              goTo("/", e.currentTarget.search);
+            }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
               <circle cx="12" cy="12" r="9" />
               <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18" />
             </svg>
-          </button>
-          <button
-            type="button"
+          </a>
+          <a
+            href={LIST_PATH + urlSearch}
             className={`view-switch-btn${listOpen ? " active" : ""}`}
-            aria-pressed={listOpen}
+            aria-current={listOpen ? "page" : undefined}
             aria-label={s.viewListAria}
             title={s.viewListAria}
-            onClick={() => setViewMode("list")}
+            onClick={(e) => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
+              e.preventDefault();
+              goTo(LIST_PATH, e.currentTarget.search);
+            }}
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true" focusable="false">
               <path d="M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01" />
             </svg>
-          </button>
+          </a>
         </div>
-        <ListView
-          objects={visibleObjects}
-          museums={bundle.museums}
-          lang={lang}
-          hidden={viewMode !== "list"}
-          summary={listSummary}
-          groupBy={listGroupBy}
-          onGroupByChange={setListGroupBy}
-          onSelectObject={(obj) => {
-            const cluster = allClusters.find((c) => c.objects.some((o) => o.objectID === obj.objectID));
-            if (cluster) setPanel({ view: "object", cluster, object: obj });
-          }}
-        />
         {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
         {tourOpen && <SpotlightTour lang={lang} onClose={closeTour} onOpenInfo={openInfoFromTour} />}
         <div className={`map-wrap${listOpen ? " map-wrap-hidden" : ""}`}>
@@ -1513,7 +1582,7 @@ function App() {
                 className="country-click-list-link"
                 onClick={() => {
                   setListGroupBy("country");
-                  setViewMode("list");
+                  goTo(LIST_PATH, "");
                   setCountryClickNoteOpen(false);
                 }}
               >
@@ -1538,6 +1607,19 @@ function App() {
         >
           ?
         </button>
+        <ListView
+          objects={visibleObjects}
+          museums={bundle.museums}
+          lang={lang}
+          hidden={viewMode !== "list"}
+          summary={listSummary}
+          groupBy={listGroupBy}
+          onGroupByChange={setListGroupBy}
+          onSelectObject={(obj) => {
+            const cluster = allClusters.find((c) => c.objects.some((o) => o.objectID === obj.objectID));
+            if (cluster) setPanel({ view: "object", cluster, object: obj });
+          }}
+        />
       </div>
 
       {panel?.view === "cluster" && (
