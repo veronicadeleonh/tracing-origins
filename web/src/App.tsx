@@ -379,6 +379,12 @@ function App() {
     const isOpen = panel !== null;
     if (isOpen && !panelWasOpenRef.current) {
       panelOpenerRef.current ??= lastFocusOutsideRef.current;
+      // El panel está en el DOM después de .map-pane (y de la lista): sin
+      // esto, el próximo Tab desde una tarjeta seguía en la lista y el panel
+      // era inalcanzable. Se mueve el foco al primer control del panel.
+      requestAnimationFrame(() => {
+        document.querySelector<HTMLElement>(".side-panel button")?.focus();
+      });
     } else if (!isOpen && panelWasOpenRef.current) {
       const el = panelOpenerRef.current;
       panelOpenerRef.current = null;
