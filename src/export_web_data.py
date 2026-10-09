@@ -86,6 +86,15 @@ def load_events() -> dict[str, list[dict]]:
     return events_by_object
 
 
+def _https(url):
+    """media.britishmuseum.org sirve las mismas imágenes por HTTPS; evita contenido mixto."""
+    if not url:
+        return None
+    if url.startswith("http://media.britishmuseum.org"):
+        return "https://" + url[len("http://"):]
+    return url
+
+
 def build_object(row: dict, context: dict, events: dict) -> dict:
     object_id = row["objectID"]
     ctx = context.get(object_id)
@@ -143,7 +152,7 @@ def build_object(row: dict, context: dict, events: dict) -> dict:
         "country": row.get("country") or None,
         "region": row.get("region") or None,
         "subregion": row.get("subregion") or None,
-        "primaryImage": row.get("primaryImage") or None,
+        "primaryImage": _https(row.get("primaryImage")),
         "objectURL": row.get("objectURL") or None,
         "originLabel": row.get("origin_label") or None,
         "originLabelEn": row.get("origin_label_en") or row.get("origin_label") or None,

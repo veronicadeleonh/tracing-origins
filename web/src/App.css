@@ -2630,8 +2630,21 @@ input:focus-visible,
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
-  background: var(--color-line) center/cover no-repeat;
+  background: var(--color-line);
   margin-bottom: var(--space-3);
+  overflow: hidden;
+}
+
+.list-card-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.list-sentinel {
+  height: 1px;
 }
 
 .list-card-title,
