@@ -2758,7 +2758,8 @@ input:focus-visible,
 .view-switch {
   position: absolute;
   left: 12px;
-  top: 50%;
+  /* max(): en viewports muy bajos (zoom 400%, 320x256) el centro caía sobre el buscador */
+  top: max(50%, 150px);
   transform: translateY(-50%);
   z-index: 1100;
   display: flex;
