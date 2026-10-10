@@ -12,6 +12,7 @@ import { ClusterPanel } from "./components/ClusterPanel";
 import { ObjectDetail } from "./components/ObjectDetail";
 import { ListView, type GroupBy } from "./components/ListView";
 import { Timeline } from "./components/Timeline";
+import { LangSwitch } from "./components/LangSwitch";
 import { WelcomeModal } from "./components/WelcomeModal";
 import { SpotlightTour } from "./components/SpotlightTour";
 import { HISTORICAL_EVENTS } from "./data/historicalEvents";
@@ -76,6 +77,20 @@ const MUSEUM_COUNTRY_ORDER = ["us", "fr", "uk"];
 // funcione igual de bien en landscape que en portrait. Calculado una sola
 // vez al montar -- initialViewState de react-map-gl solo se lee al primer
 // render, así que no hace falta recalcular en cada resize.
+/** Mueve la cámara animada (flyTo) o, con prefers-reduced-motion, de golpe (jumpTo).
+ *  Se evalúa en cada llamada para respetar cambios de la preferencia en vivo. */
+function moveCamera(
+  map: { flyTo: (o: any) => unknown; jumpTo: (o: any) => unknown },
+  opts: { center?: [number, number]; zoom?: number; bearing?: number; pitch?: number; duration?: number },
+) {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const { duration: _duration, ...jump } = opts;
+    map.jumpTo(jump);
+  } else {
+    map.flyTo(opts);
+  }
+}
+
 function getInitialMapZoom(): number {
   if (typeof window === "undefined") return 2;
   const size = Math.min(window.innerWidth, window.innerHeight);
@@ -356,9 +371,6 @@ function App() {
     }
     viewH1Ref.current?.focus();
   }, [viewMode]);
-  useEffect(() => {
-    document.title = viewMode === "list" ? "Tracing Origins · Lista" : "Tracing Origins";
-  }, [viewMode]);
   // Devolver el foco al disparador al cerrar el panel lateral: se recuerda
   // el último elemento enfocado FUERA del panel (focusin global); si el
   // disparador se desmonta se puede fijar explícitamente otro en
@@ -440,6 +452,15 @@ function App() {
   // ya tocó el toggle antes; el fallback (primera visita, sin nada guardado
   // todavía) es el único que cambió, de "es" a "en".
   const [lang, setLang] = useState<Lang>(() => (localStorage.getItem(LANG_KEY) === "es" ? "es" : "en"));
+  // WCAG 3.1.1: el idioma de la página debe reflejar el de la interfaz
+  // (index.html arranca en "en"); lo usan lectores de pantalla para la voz.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+  useEffect(() => {
+    document.title =
+      viewMode === "list" ? `Tracing Origins · ${lang === "es" ? "Lista" : "List"}` : "Tracing Origins";
+  }, [viewMode, lang]);
   const s = STRINGS[lang];
   // Ancho del placeholder del buscador de títulos, medido en píxeles reales
   // (01/10, segunda vuelta -- la primera aproximación con `ch` quedaba de
@@ -460,12 +481,9 @@ function App() {
     ctx.font = window.getComputedStyle(el).font;
     setSearchPlaceholderWidth(Math.ceil(ctx.measureText(s.titleSearchPlaceholder).width));
   }, [s.titleSearchPlaceholder]);
-  const toggleLang = useCallback(() => {
-    setLang((prev) => {
-      const next = prev === "es" ? "en" : "es";
-      localStorage.setItem(LANG_KEY, next);
-      return next;
-    });
+  const selectLang = useCallback((next: Lang) => {
+    localStorage.setItem(LANG_KEY, next);
+    setLang(next);
   }, []);
   // HISTORICAL_EVENTS trae year/color fijos (no cambian por idioma); el label
   // se toma de i18n.ts por índice — mismo orden que el array de datos.
@@ -713,10 +731,8 @@ function App() {
       // (obj.originLat/originLon), no la del cluster, que puede estar
       // jitereada para separarse visualmente de otro cluster superpuesto
       // (ver CLUSTER_COLLISION_JITTER_RADIUS_DEG en geo.ts). `essential:
-      // true` para que la animación corra igual si el usuario tiene
-      // "reduce motion" activado en el sistema -- es la única forma de
-      // feedback de que el buscador encontró algo, no un adorno puramente
-      // decorativo que convenga respetar esa preferencia.
+      // true` se quitó: con "reduce motion" activo, moveCamera salta
+      // directo (jumpTo) en vez de animar, así la cámara igual se centra.
       const map = mapRef.current?.getMap?.();
       if (map && Number.isFinite(obj.originLat) && Number.isFinite(obj.originLon)) {
         // Guarda la cámara previa (solo la primera vez, si se elige otro
@@ -730,11 +746,10 @@ function App() {
             pitch: map.getPitch?.() ?? 0,
           };
         }
-        map.flyTo({
+        moveCamera(map, {
           center: [obj.originLon, obj.originLat],
           zoom: Math.max(map.getZoom?.() ?? 0, 4),
           duration: 1800,
-          essential: true,
         });
       }
     },
@@ -765,7 +780,7 @@ function App() {
       const prev = searchPrevViewRef.current;
       searchPrevViewRef.current = null;
       const map = mapRef.current?.getMap?.();
-      if (map && prev) map.flyTo({ ...prev, duration: 1400, essential: true });
+      if (map && prev) moveCamera(map, { ...prev, duration: 1400 });
     };
     document.addEventListener("pointerdown", onPointerDown);
     return () => document.removeEventListener("pointerdown", onPointerDown);
@@ -1237,7 +1252,7 @@ function App() {
             </svg>
           </a>
         </div>
-        {welcomeOpen && <WelcomeModal lang={lang} onToggleLang={toggleLang} onClose={closeWelcome} />}
+        {welcomeOpen && <WelcomeModal lang={lang} onSelectLang={selectLang} onClose={closeWelcome} />}
         {tourOpen && <SpotlightTour lang={lang} onClose={closeTour} onOpenInfo={openInfoFromTour} />}
         <div className={`map-wrap${listOpen ? " map-wrap-hidden" : ""}`}>
         <Map
@@ -1597,14 +1612,7 @@ function App() {
             </div>
           )}
         </div>
-        <button
-          type="button"
-          className="lang-toggle-btn"
-          aria-label={s.langToggleAria}
-          onClick={toggleLang}
-        >
-          {s.langToggleLabel}
-        </button>
+        <LangSwitch lang={lang} onSelect={selectLang} ariaLabel={s.langSwitchAria} className="lang-switch-floating" />
         <button
           type="button"
           className="welcome-trigger-btn"

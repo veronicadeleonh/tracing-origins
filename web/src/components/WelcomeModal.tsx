@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
 import { STRINGS, type Lang } from "../i18n";
 import { CloseIcon } from "./icons";
+import { LangSwitch } from "./LangSwitch";
 
 type WelcomeModalProps = {
   lang: Lang;
-  onToggleLang: () => void;
+  onSelectLang: (lang: Lang) => void;
   onClose: () => void;
 };
 
@@ -27,7 +28,7 @@ type WelcomeModalProps = {
 // más grande y con más contraste, modal más ancho. Las capturas viejas
 // (web/public/onboarding/*.png) quedan sin usar — no se borraron los
 // archivos, solo se dejó de referenciarlas acá.
-export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps) {
+export function WelcomeModal({ lang, onSelectLang, onClose }: WelcomeModalProps) {
   const s = STRINGS[lang];
   const dialogRef = useRef<HTMLDivElement>(null);
 
@@ -85,14 +86,7 @@ export function WelcomeModal({ lang, onToggleLang, onClose }: WelcomeModalProps)
             </div>
           </div>
           <div className="welcome-modal-header-actions">
-            <button
-              type="button"
-              className="welcome-modal-lang-btn"
-              aria-label={s.langToggleAria}
-              onClick={onToggleLang}
-            >
-              {s.langToggleLabel}
-            </button>
+            <LangSwitch lang={lang} onSelect={onSelectLang} ariaLabel={s.langSwitchAria} />
             <button
               type="button"
               className="icon-btn welcome-modal-close"

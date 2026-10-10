@@ -954,34 +954,45 @@
   border-color: var(--color-line-strong);
 }
 
-/* Toggle ES/EN (17/08) — mismo tratamiento visual que .welcome-trigger-btn,
-   a su izquierda en la misma fila. Muestra el idioma AL QUE cambiarías al
-   click (si estás en español, dice "EN"), no el idioma actual. */
-.lang-toggle-btn {
+/* Control segmentado ES | EN: muestra los dos idiomas, el activo resaltado. */
+.lang-switch {
+  display: inline-flex;
+  height: 30px;
+  border: 1px solid var(--color-line);
+  border-radius: 15px;
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.lang-switch-floating {
   position: absolute;
   z-index: 1000;
   top: 12px;
   right: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 30px;
-  height: 30px;
+}
+
+.lang-switch-btn {
+  min-width: 34px;
   padding: 0 var(--space-4);
-  border-radius: 15px;
-  border: 1px solid var(--color-line);
-  background: var(--color-surface);
+  border: 0;
+  background: transparent;
   color: var(--color-text-soft);
+  font: inherit;
   font-size: var(--font-size-sm);
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
 }
 
-.lang-toggle-btn:hover {
+.lang-switch-btn:hover:not(.active) {
   background: var(--color-hover);
   color: var(--color-ink);
-  border-color: var(--color-line-strong);
+}
+
+.lang-switch-btn.active {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  cursor: default;
 }
 
 .welcome-modal-backdrop {
@@ -1054,32 +1065,6 @@
   align-items: center;
   gap: var(--space-3);
   flex-shrink: 0;
-}
-
-/* Mismo botón que .lang-toggle-btn (App.tsx) pero anclado adentro del modal
-   — el de afuera queda tapado por .welcome-modal-backdrop mientras el modal
-   está abierto, así que el onboarding necesita su propia copia. */
-.welcome-modal-lang-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 26px;
-  height: 26px;
-  padding: 0 var(--space-4);
-  border-radius: 13px;
-  border: 1px solid var(--color-line);
-  background: transparent;
-  color: var(--color-text-soft);
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  cursor: pointer;
-}
-
-.welcome-modal-lang-btn:hover {
-  background: var(--color-hover);
-  color: var(--color-ink);
-  border-color: var(--color-line-strong);
 }
 
 .welcome-modal-body {
@@ -2405,7 +2390,7 @@
     right: 8px;
   }
 
-  .lang-toggle-btn {
+  .lang-switch-floating {
     right: 46px;
   }
 
@@ -2545,6 +2530,7 @@ input:focus-visible,
 
 .list-group-control {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2);
 }

@@ -18,7 +18,7 @@ export interface I18nStrings {
   curatedNoteRoutesPrefix: string;
   curatedNoteRoutesSuffix: string;
   welcomeTriggerAria: string;
-  langToggleAria: string;
+  langSwitchAria: string;
   contextDockLabel: string;
   legendUK: string;
   legendFR: string;
@@ -111,7 +111,6 @@ export interface I18nStrings {
   // línea compartida por origins/country-hit (museums usa la ciudad
   // directamente, sin traducción).
   tooltipPieceCount: (count: number) => string;
-  langToggleLabel: string;
 
   prevPieceAria: string;
   nextPieceAria: string;
@@ -182,7 +181,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     curatedNoteRoutesPrefix: "Rutas navales: Jones et al. (2007),",
     curatedNoteRoutesSuffix: "(CC-BY 3.0) — muestra curada de 50 cruceros, no todas las rutas del período.",
     welcomeTriggerAria: "Sobre este proyecto",
-    langToggleAria: "Cambiar a inglés",
+    langSwitchAria: "Idioma",
           contextDockLabel: "Contexto histórico",
     legendUK: "Reino Unido",
     legendFR: "Francia",
@@ -320,7 +319,6 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     welcomeFinish: "Entendido, ver el mapa",
 
     tooltipPieceCount: (count) => `${count} pieza${count === 1 ? "" : "s"}`,
-    langToggleLabel: "EN",
 
     prevPieceAria: "Pieza anterior de este lugar",
     nextPieceAria: "Pieza siguiente de este lugar",
@@ -417,7 +415,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     curatedNoteRoutesPrefix: "Naval routes: Jones et al. (2007),",
     curatedNoteRoutesSuffix: "(CC-BY 3.0) — curated sample of 50 voyages, not every route from the period.",
     welcomeTriggerAria: "About this project",
-    langToggleAria: "Switch to Spanish",
+    langSwitchAria: "Language",
           contextDockLabel: "Historical context",
     legendUK: "United Kingdom",
     legendFR: "France",
@@ -555,7 +553,6 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     welcomeFinish: "Got it, see the map",
 
     tooltipPieceCount: (count) => `${count} piece${count === 1 ? "" : "s"}`,
-    langToggleLabel: "ES",
 
     prevPieceAria: "Previous piece from this location",
     nextPieceAria: "Next piece from this location",
