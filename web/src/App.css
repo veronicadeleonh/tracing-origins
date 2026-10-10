@@ -2335,6 +2335,7 @@
   .mobile-filters-wrap.open .museum-country-label {
     position: static;
     display: block;
+    width: fit-content;
     margin: 0 0 4px;
   }
 
@@ -2400,6 +2401,13 @@
      el riesgo de desbordar el viewport cerca de los extremos del track. */
   .year-timeline-event-tooltip {
     width: 170px;
+  }
+
+  /* El tooltip que aparece solo porque el año activo coincide con el hito (p. ej.
+     1920 por defecto) tapaba la leyenda y los botones de capas a 320px; en
+     teléfonos solo se muestra al pasar/enfocar el hito. */
+  .year-timeline-event-tooltip--year {
+    display: none;
   }
 
   /* --- 3. Header del timeline: columna en vez de fila sin wrap --- */
@@ -2669,6 +2677,15 @@ input:focus-visible,
   }
 }
 
+/* Teléfonos: el selector globo/lista flota sobre el contenido (no reserva
+   gutter) y la lista queda centrada en la pantalla; más aire bajo la banda
+   de filtros para que el resumen ("Showing … results") no quede pegado. */
+@media (max-width: 640px) {
+  .list-view {
+    padding: 136px var(--space-5) 90px var(--space-5);
+  }
+}
+
 /* Banda de fondo arriba en la vista de lista: los filtros flotantes se leen
    sobre un color sólido en vez de sobre las tarjetas que pasan por debajo. */
 .map-pane.list-mode::before {
@@ -2861,4 +2878,31 @@ h1.sr-only:focus { outline: none; }
 .map-pane.list-mode .title-search-wrap:not(:focus-within) .title-search-icon {
   color: var(--color-text-muted);
   filter: none;
+}
+
+/* Vista de lista: ninguna etiqueta de filtro lleva chip oscuro (ruido visual
+   sobre la banda); solo texto. El contador de piezas conserva su chip. */
+.map-pane.list-mode .filter-row-label,
+.map-pane.list-mode .museum-country-label {
+  background: none;
+  color: var(--color-text-soft);
+  padding-left: 0;
+  padding-right: 0;
+  font-weight: 600;
+}
+
+.map-pane.list-mode .filter-row-label {
+  color: var(--color-text-soft);
+}
+
+/* Al enfocar con Tab (o saltar a un ancla) el contenido no debe quedar bajo
+   la banda fija de filtros: 120px de banda (100px en <=900px) + aire. */
+.list-view {
+  scroll-padding-top: 136px;
+}
+
+@media (max-width: 900px) {
+  .list-view {
+    scroll-padding-top: 116px;
+  }
 }

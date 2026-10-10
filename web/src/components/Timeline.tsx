@@ -135,7 +135,9 @@ export function Timeline({
                   onBlur={() => setHoveredEvent((cur) => (cur === ev.year ? null : cur))}
                 />
                 {(hoveredEvent === ev.year || year === ev.year) && (
-                  <div className="year-timeline-event-tooltip">
+                  <div
+                    className={`year-timeline-event-tooltip${hoveredEvent === ev.year ? "" : " year-timeline-event-tooltip--year"}`}
+                  >
                     <strong>{ev.year}</strong> — {ev.label}
                   </div>
                 )}

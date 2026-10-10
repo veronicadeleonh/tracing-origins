@@ -77,6 +77,24 @@ const MUSEUM_COUNTRY_ORDER = ["us", "fr", "uk"];
 // funcione igual de bien en landscape que en portrait. Calculado una sola
 // vez al montar -- initialViewState de react-map-gl solo se lee al primer
 // render, así que no hace falta recalcular en cada resize.
+/** Teclado en dropdowns de filtro: Escape cierra y devuelve el foco al botón;
+ *  Tab que sale del contenedor cierra el menú (si no, el foco quedaba "perdido"
+ *  detrás de la hoja fija del menú en pantallas angostas / zoom alto). */
+function dropdownKeyHandler(close: () => void) {
+  return (e: ReactKeyboardEvent<HTMLElement>) => {
+    const wrap = e.currentTarget;
+    if (e.key === "Escape") {
+      e.stopPropagation();
+      close();
+      wrap.querySelector<HTMLElement>(":scope > button")?.focus();
+    } else if (e.key === "Tab") {
+      setTimeout(() => {
+        if (!wrap.contains(document.activeElement)) close();
+      }, 0);
+    }
+  };
+}
+
 /** Mueve la cámara animada (flyTo) o, con prefers-reduced-motion, de golpe (jumpTo).
  *  Se evalúa en cada llamada para respetar cambios de la preferencia en vivo. */
 function moveCamera(
@@ -1112,7 +1130,11 @@ function App() {
               del pill de arriba porque son ~21 opciones, no 3: un pill no
               escala a eso. Deshabilitado con "Sin investigación" activo
               (esas piezas nunca tienen flags, ver setResearchFilterAndClearFlags). */}
-          <div className="mechanism-filter-wrap" ref={mechanismMenuRef}>
+          <div
+            className="mechanism-filter-wrap"
+            ref={mechanismMenuRef}
+            onKeyDown={mechanismMenuOpen ? dropdownKeyHandler(() => setMechanismMenuOpen(false)) : undefined}
+          >
             <button
               type="button"
               className={`mechanism-filter-btn${selectedFlags.size > 0 ? " active" : ""}`}
@@ -1156,7 +1178,11 @@ function App() {
           {/* Filtro por "Tipo de pieza" (objectTypeFlags), 18/09 -- mismo
               patrón que el dropdown de mecanismo (arriba), pero sin
               disabled: toda pieza tiene objectTypeFlags, investigada o no. */}
-          <div className="object-type-filter-wrap" ref={objectTypeMenuRef}>
+          <div
+            className="object-type-filter-wrap"
+            ref={objectTypeMenuRef}
+            onKeyDown={objectTypeMenuOpen ? dropdownKeyHandler(() => setObjectTypeMenuOpen(false)) : undefined}
+          >
             <button
               type="button"
               className={`object-type-filter-btn${selectedObjectTypes.size > 0 ? " active" : ""}`}
@@ -1205,6 +1231,8 @@ function App() {
                 className="skip-link"
                 onClick={(e) => {
                   e.preventDefault();
+                  // En mobile el panel de filtros tapa la lista: se cierra al saltar.
+                  setFiltersOpen(false);
                   document.getElementById("list-content")?.focus();
                 }}
               >
