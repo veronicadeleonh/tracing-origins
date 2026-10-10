@@ -46,3 +46,61 @@ body,
 * {
   box-sizing: border-box;
 }
+
+/* Preferencia del sistema "aumentar contraste" (macOS/Windows/Android):
+   neutros más oscuros, bordes más marcados y fondos sólidos. Las líneas del
+   mapa se engrosan por JS (matchMedia en App.tsx). No cambia los colores de museo. */
+@media (prefers-contrast: more) {
+  :root {
+    --color-ink: #000;
+    --color-ink-soft: #1a1a1a;
+    --color-paper: #fff;
+    --color-line: #6b665d;
+    --color-line-strong: #1a1a1a;
+    --color-text-muted: #3f3b34;
+    --color-text-soft: #3f3b34;
+    --color-accent: #3b2560;
+    --color-surface: #fff;
+    --color-chip-dark: #000;
+    --color-focus-ring: #000;
+  }
+  button,
+  input,
+  select {
+    border-width: 2px;
+  }
+  .title-search-input,
+  .title-search-input:hover {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background: #fff;
+    color: #000;
+  }
+  .title-search-input::placeholder,
+  .title-search-icon {
+    color: #3f3b34;
+    filter: none;
+  }
+  .map-tooltip-popup .mapboxgl-popup-content {
+    border: 2px solid #000;
+  }
+}
+
+/* Modo de colores forzados (Windows Alto contraste): el sistema impone su
+   paleta; solo aseguramos bordes visibles y el anillo de foco. */
+@media (forced-colors: active) {
+  button,
+  input,
+  .museum-toggle-wrap,
+  .country-click-panel,
+  .piece-counter,
+  .list-card {
+    border: 1px solid CanvasText;
+  }
+  button:focus-visible,
+  input:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}

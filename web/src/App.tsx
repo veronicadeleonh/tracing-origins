@@ -423,6 +423,17 @@ function App() {
     panelWasOpenRef.current = isOpen;
   }, [panel]);
   const [tooltip, setTooltip] = useState<TooltipState>(null);
+  // Línea origen→museo bajo el cursor (objectID): se resalta solo esa línea.
+  const [hoveredLineId, setHoveredLineId] = useState<string | null>(null);
+  // Preferencia del sistema "aumentar contraste": engrosa/oscurece las líneas del
+  // mapa (que son capas de Mapbox y no se pueden tocar por CSS).
+  const [highContrast, setHighContrast] = useState(() => window.matchMedia("(prefers-contrast: more)").matches);
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-contrast: more)");
+    const onChange = () => setHighContrast(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
   const [cursor, setCursor] = useState("grab");
   const [timelineYear, setTimelineYear] = useState(TIMELINE_DEFAULT_YEAR);
   const [timelineOpen, setTimelineOpen] = useState(false);
@@ -955,7 +966,13 @@ function App() {
     if (!e.features?.length) return;
     const f = e.features[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> };
     const properties = f.properties ?? {};
-    if (f.layer?.id === "origins") {
+    if (f.layer?.id === "lines-hit") {
+      // Click en una línea: abre la ficha de esa pieza (sin mover la cámara).
+      const id = String(properties.objectID ?? "");
+      const cluster = allClusters.find((c) => c.objects.some((o) => o.objectID === id));
+      const object = cluster?.objects.find((o) => o.objectID === id);
+      if (cluster && object) setPanel({ view: "object", cluster, object });
+    } else if (f.layer?.id === "origins") {
       const key = properties.clusterKey as string;
       const cluster = clusters.find((c) => `${c.lat}|${c.lon}|${c.label}` === key);
       if (cluster) setPanel({ view: "cluster", cluster });
@@ -971,9 +988,18 @@ function App() {
       const group = key ? countryGroups.find((g) => g.key === key) : undefined;
       if (group && group.objects.length > 0) selectCountryGroup(group);
     }
-  }, [clusters, countryGroups, selectCountryGroup]);
+  }, [clusters, allClusters, countryGroups, selectCountryGroup]);
 
   const handleMouseMove = useCallback((e: MapMouseEvent) => {
+    const top = e.features?.[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> } | undefined;
+    if (top?.layer?.id === "lines-hit") {
+      // Solo línea (sin punto/museo/país encima): resaltarla, sin tooltip.
+      setHoveredLineId(String(top.properties?.objectID ?? "") || null);
+      setTooltip(null);
+      setCursor("pointer");
+      return;
+    }
+    setHoveredLineId(null);
     if (e.features?.length) {
       const f = e.features[0] as unknown as { layer?: { id?: string }; properties?: Record<string, string | number | undefined> };
       const properties = f.properties ?? {};
@@ -1292,12 +1318,12 @@ function App() {
           projection="globe"
           fog={{}}
           attributionControl={false}
-          interactiveLayerIds={countryClickEnabled ? ["origins", "museums", "country-hit"] : ["origins", "museums"]}
+          interactiveLayerIds={countryClickEnabled ? ["lines-hit", "origins", "museums", "country-hit"] : ["lines-hit", "origins", "museums"]}
           cursor={cursor}
           onLoad={handleMapLoad}
           onClick={handleClick}
           onMouseMove={handleMouseMove}
-          onMouseLeave={() => { setTooltip(null); setCursor("grab"); }}
+          onMouseLeave={() => { setTooltip(null); setHoveredLineId(null); setCursor("grab"); }}
         >
           {countryClickEnabled && countryPolygons && (
             // Capa invisible de hit-testing (19/08, click en el mapa) --
@@ -1389,12 +1415,32 @@ function App() {
               type="line"
               paint={{
                 "line-color": ["get", "color"],
-                "line-width": 1.4,
+                "line-width": highContrast ? 2.2 : 1.4,
                 // dimmed viene de highlightedObjectIds (búsqueda por país,
                 // 19/08 segunda vuelta) -- 0.55 de siempre cuando no hay país
                 // seleccionado o la línea pertenece a él, casi invisible si no.
-                "line-opacity": ["case", ["get", "dimmed"], 0.06, 0.55],
+                "line-opacity": [
+                  "case",
+                  ["get", "dimmed"], 0.06,
+                  highContrast ? 0.85 : 0.55,
+                ],
+                // Sin fundido: evita el parpadeo al cruzar líneas.
+                "line-opacity-transition": { duration: 0 },
               }}
+            />
+            {/* Línea resaltada al pasar el mouse (solo la tocada). */}
+            <Layer
+              id="lines-hover"
+              type="line"
+              filter={["==", ["get", "objectID"], hoveredLineId ?? ""]}
+              paint={{ "line-color": ["get", "color"], "line-width": 3.4, "line-opacity": 1, "line-opacity-transition": { duration: 0 }, "line-width-transition": { duration: 0 } }}
+            />
+            {/* Capa ancha e invisible solo para hit-testing: la línea visible mide
+                1.4px y sería casi imposible de apuntar. */}
+            <Layer
+              id="lines-hit"
+              type="line"
+              paint={{ "line-color": "#000", "line-width": 8, "line-opacity": 0 }}
             />
           </Source>
           <Source id="origins-src" type="geojson" data={originsGeoJSON}>
@@ -1513,7 +1559,7 @@ function App() {
             piezas (titleSearchResults/allClusters, arriba), no sobre
             visibleObjects -- encontrar "Sleeping Hermaphroditus" no debería
             depender de qué museos estén prendidos. */}
-        <div className={`title-search-panel${timelineOpen ? " timeline-open" : ""}`}>
+        <div className={`title-search-panel${timelineOpen && !listOpen ? " timeline-open" : ""}`}>
           <div
             className="title-search-wrap"
             ref={titleSearchRef}
