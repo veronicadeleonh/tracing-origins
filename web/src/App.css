@@ -2184,8 +2184,11 @@
      debajo del buscador, siempre visible. */
   .country-click-panel {
     top: 100px;
-    left: 8px;
+    left: 0;
     right: auto;
+    /* Misma pestaña pegada al borde izquierdo que en escritorio. */
+    border-left: none;
+    border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
   }
 
   /* Adentro del drawer, .top-controls deja de ser position:absolute
