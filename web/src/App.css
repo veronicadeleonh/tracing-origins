@@ -2276,6 +2276,17 @@
     margin: 0 0 4px;
   }
 
+  /* Etiquetas del drawer en mobile (mapa y lista): texto plano sobre la
+     hoja crema, no chips oscuros (los chips son para leerse sobre el mapa). */
+  .mobile-filters-wrap.open .filter-row-label,
+  .mobile-filters-wrap.open .museum-country-label {
+    background: none;
+    color: var(--color-text-soft);
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: 600;
+  }
+
   /* Nombres de museo largos (ej. "Musée du Quai Branly") no siempre entran
      dos pills en la misma fila dentro del drawer -- se les permite wrapear
      a la fila de abajo en vez de forzarlos a compartir una franja angosta. */
