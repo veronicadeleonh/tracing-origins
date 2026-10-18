@@ -112,6 +112,45 @@
   gap: var(--space-4);
 }
 
+/* Escritorio: los controles de arriba a la derecha (buscar, idioma, "?") se
+   anclan a la esquina de la VENTANA (position: fixed), no a la del mapa. Con el
+   panel lateral abierto quedan encima del panel, en una franja reservada
+   arriba (padding-top), así no se mueven ni se superponen con los filtros.
+   La franja del panel lleva un divisor debajo de los iconos (fondo que no
+   scrollea con el contenido). */
+@media (min-width: 901px) {
+  /* Mayor especificidad: las reglas base vienen después. */
+  .map-pane .top-right-actions {
+    position: fixed;
+  }
+
+  .map-pane.panel-open ~ .side-panel {
+    padding-top: 52px;
+    background-image: linear-gradient(var(--color-line), var(--color-line));
+    background-size: 100% 1px;
+    background-position: 0 51px;
+    background-repeat: no-repeat;
+  }
+
+  /* Arriba a la izquierda, como una tercera fila debajo de los filtros: queda
+     siempre en la misma posición, lejos del botón de cerrar del panel y del
+     dock "Contexto histórico". */
+  .map-pane .country-click-panel {
+    top: 152px;
+    right: auto;
+    left: 0;
+    /* Pestaña pegada al borde izquierdo de la pantalla: esquinas izquierdas
+       rectas, derechas redondeadas, sin borde del lado que "sale" del borde. */
+    border-left: none;
+    border-radius: 0 var(--radius-pill) var(--radius-pill) 0;
+  }
+
+  .map-pane .country-click-panel .museum-note {
+    left: 0;
+    right: auto;
+  }
+}
+
 /* Buscador de piezas (paleta, 16/10). El disparador es un botón circular con
    solo la lupa, en el grupo de acciones de arriba a la derecha (junto a
    idioma y "?"), con superficie sólida para leerse sobre cualquier fondo del

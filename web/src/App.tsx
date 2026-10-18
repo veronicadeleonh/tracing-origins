@@ -1050,7 +1050,7 @@ function App() {
         {listOpen ? s.listPageTitle : s.mapPageTitle}
       </h1>
       <div
-        className={`map-pane${viewMode === "list" ? " list-mode" : ""}`}
+        className={`map-pane${viewMode === "list" ? " list-mode" : ""}${panel ? " panel-open" : ""}${timelineOpen ? " timeline-open" : ""}`}
         role="main"
       >
         {/* Orden de foco (08/10): los botones "?"/idioma son position:absolute,
