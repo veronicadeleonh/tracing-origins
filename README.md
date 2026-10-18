@@ -46,6 +46,21 @@ If you'd rather not use the globe, `/list` shows the same pieces as a plain list
 
 <!-- 📸 SCREENSHOT: docs/screenshot-list-view.png — the list view with filters on top -->
 
+## Latest updates
+
+The most recent round of changes, from the accessibility pass (October 2026):
+
+- **List view at `/list`.** The same pieces as a plain list, grouped by museum or country, with filters shared with the map through the URL. It loads in batches, so it stays light.
+- **New search.** A magnifier button opens a centered search over a blurred map. It shows recently viewed pieces, filters by title as you type, and opens with `/` or Cmd/Ctrl+K.
+- **Keyboard and focus.** Tab order now follows the visual layout, there is a "skip to the list" link, focus moves into the piece panel when it opens, and menus close with Escape.
+- **Screen readers.** The page declares its language from the first load, the language switch is a clear ES | EN control, and the onboarding tour is announced as a dialog.
+- **Zoom and small screens.** The layout holds up at 320 px wide and at 200% zoom.
+- **System preferences.** The app respects reduced motion, higher contrast and forced colors, and the map moves with an instant jump instead of an animation when you ask for less motion.
+- **Map lines.** Hover highlights only the line you touch, and clicking it opens the piece.
+- **Contrast and sizes.** Muted text, labels and small buttons were adjusted to meet WCAG 2.2 AA, and the design tokens now live in one place.
+- **Performance.** The list view went from about 228 MB to 5 MB of images, with lazy-loaded thumbnails.
+- **Historical context, simplified.** The naval routes layer was removed because it didn't connect to the pieces; the colonial territories stay.
+
 ## Built to be usable by more people
 
 The whole app works with a keyboard, and the list view is a full alternative to the map. Text meets contrast requirements, it adapts to small screens and 200% zoom, and it respects system settings for reduced motion, higher contrast and forced colors. The interface is in Spanish and English, including the researched text. I audited it with Lighthouse, axe and WAVE and tested keyboard use, zoom and color-blindness simulations by hand. A screen-reader pass with VoiceOver is still in progress.
