@@ -69,18 +69,6 @@ body,
   select {
     border-width: 2px;
   }
-  .title-search-input,
-  .title-search-input:hover {
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background: #fff;
-    color: #000;
-  }
-  .title-search-input::placeholder,
-  .title-search-icon {
-    color: #3f3b34;
-    filter: none;
-  }
   .map-tooltip-popup .mapboxgl-popup-content {
     border: 2px solid #000;
   }

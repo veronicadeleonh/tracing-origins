@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from "react";
+import { useState } from "react";
 import type { HistoricalEvent } from "../data/historicalEvents";
 import { STRINGS, type Lang } from "../i18n";
 
@@ -7,22 +7,14 @@ interface LegendItem {
   color: string;
 }
 
-interface LayerToggle {
-  id: string;
-  label: string;
-  active: boolean;
-  icon?: ReactNode;
-  note?: string;
-}
-
 interface TimelineProps {
   minYear: number;
   maxYear: number;
   year: number;
   onChange: (year: number) => void;
   legend: LegendItem[];
-  layerToggles: LayerToggle[];
-  onToggleLayer: (id: string) => void;
+  layerLabel: string;
+  layerNote?: string;
   events: HistoricalEvent[];
   lang: Lang;
 }
@@ -35,8 +27,8 @@ export function Timeline({
   year,
   onChange,
   legend,
-  layerToggles,
-  onToggleLayer,
+  layerLabel,
+  layerNote,
   events,
   lang,
 }: TimelineProps) {
@@ -51,7 +43,7 @@ export function Timeline({
   // Mismo patrón que el botón "i" de cada museo, pero acá vive local al
   // componente en vez de en App.tsx porque es puramente informativo, no
   // afecta ningún otro estado de la app.
-  const [openNote, setOpenNote] = useState<string | null>(null);
+  const [noteOpen, setNoteOpen] = useState(false);
 
   return (
     <div className="year-timeline">
@@ -66,40 +58,23 @@ export function Timeline({
         </div>
         <div className="year-timeline-year">{year}</div>
         <div className="year-timeline-layers">
-          {layerToggles.map((toggle) => (
-            <div
-              key={toggle.id}
-              className={`year-timeline-layer-toggle-wrap${toggle.active ? " active" : " inactive"}`}
-            >
+          {/* Una sola capa (territorios coloniales): ya no es un toggle, es la
+              etiqueta de lo que muestra el mapa, con su nota "i". */}
+          <div className="year-timeline-layer-label-wrap">
+            <span className="year-timeline-layer-label">{layerLabel}</span>
+            {layerNote && (
               <button
                 type="button"
-                className="year-timeline-layer-toggle"
-                aria-pressed={toggle.active}
-                onClick={() => onToggleLayer(toggle.id)}
+                className={`year-timeline-note-btn${noteOpen ? " open" : ""}`}
+                aria-label={s.timelineNoteAria(layerLabel)}
+                aria-expanded={noteOpen}
+                onClick={() => setNoteOpen((v) => !v)}
               >
-                {toggle.icon && (
-                  <span className="year-timeline-layer-toggle-icon" aria-hidden="true">
-                    {toggle.icon}
-                  </span>
-                )}
-                {toggle.label}
+                i
               </button>
-              {toggle.note && (
-                <button
-                  type="button"
-                  className={`year-timeline-note-btn${openNote === toggle.id ? " open" : ""}`}
-                  aria-label={s.timelineNoteAria(toggle.label)}
-                  aria-expanded={openNote === toggle.id}
-                  onClick={() => setOpenNote((cur) => (cur === toggle.id ? null : toggle.id))}
-                >
-                  i
-                </button>
-              )}
-              {openNote === toggle.id && (
-                <div className="year-timeline-note">{toggle.note}</div>
-              )}
-            </div>
-          ))}
+            )}
+            {noteOpen && layerNote && <div className="year-timeline-note">{layerNote}</div>}
+          </div>
         </div>
       </div>
       <div className="year-timeline-track">

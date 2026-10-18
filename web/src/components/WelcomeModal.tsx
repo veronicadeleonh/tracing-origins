@@ -141,12 +141,6 @@ export function WelcomeModal({ lang, onSelectLang, onClose }: WelcomeModalProps)
                 Cliopatria
               </a>{" "}{s.curatedNoteTerritoriesLicense}
             </p>
-            <p>
-              {s.curatedNoteRoutesPrefix}{" "}
-              <a href="https://doi.org/10.1594/PANGAEA.611088" target="_blank" rel="noreferrer">
-                CLIWOC
-              </a>{" "}{s.curatedNoteRoutesSuffix}
-            </p>
           </section>
 
           {/* Créditos del proyecto (23/08, pedido de la usuaria): un lugar

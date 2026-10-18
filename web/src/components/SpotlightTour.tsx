@@ -174,7 +174,7 @@ export function SpotlightTour({ lang, onClose, onOpenInfo }: SpotlightTourProps)
   }
 
   return (
-    <div className="spotlight-overlay" role="dialog" aria-modal="true" aria-label={s.tourAria}>
+    <div className="spotlight-overlay">
       {rect && (
         <div
           className="spotlight-hole"
@@ -187,10 +187,18 @@ export function SpotlightTour({ lang, onClose, onOpenInfo }: SpotlightTourProps)
           }}
         />
       )}
-      <div className="spotlight-callout" ref={calloutRef} tabIndex={-1} style={{ ...calloutStyle, width: calloutWidth }}>
-        <div className="spotlight-callout-progress">{s.tourStepOf(stepIndex + 1, TOUR_STEPS.length)}</div>
-        <h2 className="spotlight-callout-title">{stepText.title}</h2>
-        <p className="spotlight-callout-text">{stepText.text}</p>
+      <div
+        className="spotlight-callout"
+        ref={calloutRef}
+        tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="tour-title"
+        aria-describedby="tour-progress tour-text"
+        style={{ ...calloutStyle, width: calloutWidth }}>
+        <div className="spotlight-callout-progress" id="tour-progress">{s.tourStepOf(stepIndex + 1, TOUR_STEPS.length)}</div>
+        <h2 className="spotlight-callout-title" id="tour-title">{stepText.title}</h2>
+        <p className="spotlight-callout-text" id="tour-text">{stepText.text}</p>
         {isLast && (
           <button type="button" className="spotlight-callout-link" onClick={onOpenInfo}>
             {s.welcomeTriggerAria}

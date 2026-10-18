@@ -112,209 +112,174 @@
   gap: var(--space-4);
 }
 
-/* Buscador de piezas por título (18/09). Primera reubicación (mismo día,
-   tercera vuelta) lo sacó de .top-controls a un panel flotante propio,
-   arriba-centro -- pero la usuaria probó eso en la práctica y lo rechazó
-   (cuarta vuelta, mismo día): "top center para desktop no funciona por los
-   filtros del mapa, se ve incómodo y no combina con las funciones de los
-   filtros de abajo". Su idea: abajo-centro, arriba de "Contexto colonial"
-   (el dock del timeline, .year-timeline-dock, z-index 999) -- misma zona
-   neutral pero sin competir con .top-controls/.country-click-panel/"?" de
-   arriba. Sigue siendo z-index 1000 (por encima del dock, que es 999).
-
-   El dock cambia de alto según esté colapsado (solo el pull-tab
-   .year-timeline-handle, ~40px con su margin-bottom) o abierto (handle +
-   panel .year-timeline completo, ~160px) -- un solo `bottom` fijo o se
-   superpone al panel abierto o deja un hueco grande de mapa vacío cuando
-   está cerrado. Se resuelve con 2 valores según `timelineOpen` (estado que
-   ya existe en App.tsx, controla el mismo pull-tab): clase `.timeline-open`
-   agregada condicionalmente al panel, con la variante alta escopeada a
-   `min-width:901px` (ver más abajo) para que nunca choque con el offset
-   fijo de la versión mobile (`top:56px`, ver @media 900px). Los dos valores
-   (56px/190px) son una estimación razonada a partir del CSS real de
-   .year-timeline-handle/.year-timeline (mismo criterio que el resto del
-   proyecto para estos casos -- ver SpotlightTour/zoom inicial en CLAUDE.md
-   -- no una medición en un navegador real). */
-.title-search-panel {
+/* Buscador de piezas (paleta, 16/10). El disparador es un botón circular con
+   solo la lupa, en el grupo de acciones de arriba a la derecha (junto a
+   idioma y "?"), con superficie sólida para leerse sobre cualquier fondo del
+   mapa; la paleta (overlay centrado, ver más abajo) lleva el foco al input. */
+.top-right-actions {
   position: absolute;
   z-index: 1000;
-  bottom: 56px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 12px;
+  right: 12px;
   display: flex;
-  transition: bottom 0.2s ease;
+  align-items: center;
+  gap: var(--space-4);
 }
 
-@media (min-width: 901px) {
-  .title-search-panel.timeline-open {
-    bottom: 190px;
-  }
-}
-
-/* Sexta vuelta (18/09, mismo día, pedido de la usuaria): el wrap arranca
-   mucho más angosto y se expande al enfocarse (:focus-within más abajo,
-   260px) -- transition acá para que el cambio de ancho sea animado en los
-   dos sentidos, no un salto brusco.
-   Ancho del estado inactivo ajustado al contenido real (01/10, pedido de la
-   usuaria; segunda vuelta el mismo día -- la primera versión usaba `ch`,
-   que sobreestima: 1ch es el ancho del glifo "0", más ancho que el
-   promedio de letras/espacios del placeholder real, así que quedaba con
-   aire de sobra a la derecha del texto). `--search-text-width` lo pone
-   App.tsx inline, medido con canvas contra la tipografía real del input
-   (ver el useEffect de searchPlaceholderWidth en App.tsx) -- ya es el
-   ancho exacto del texto en píxeles, no una aproximación por cantidad de
-   caracteres. 44px cubre lo que no es texto: 30px de padding-left para la
-   lupa + 12px de padding-right + ~2px de borde (ver .title-search-input).
-   El fallback (90px) es una estimación gruesa para el primer render. */
-.title-search-wrap {
-  position: relative;
-  width: calc(var(--search-text-width, 90px) + 44px);
-  transition: width 0.25s ease;
-}
-
-.title-search-wrap:focus-within {
-  width: 260px;
-}
-
-/* Ícono de lupa (18/09, quinta vuelta, pedido de la usuaria) -- posicionado
-   absoluto dentro de .title-search-wrap, a la izquierda del input (que gana
-   padding-left para dejarle lugar, ver .title-search-input abajo).
-   Sexta vuelta (mismo día): pasó de un gris apagado (#928d82, el mismo tono
-   que el placeholder) a blanco con opacidad -- la usuaria reportó que no se
-   veía bien en el estado inactivo/glass; un gris tan oscuro se perdía contra
-   el fondo semitransparente sobre casi cualquier color de mapa detrás,
-   mientras que blanco es el tono que mejor contrasta con un fondo glass en
-   general. Sigue oscureciéndose a un gris legible cuando el panel está
-   activo (:focus-within, fondo opaco claro) -- ahí blanco fijo se perdería. */
-.title-search-icon {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
+.title-search-trigger {
   display: flex;
-  color: rgba(255, 255, 255, 0.9);
-  pointer-events: none;
-  /* Séptima vuelta (18/09, mismo día): la usuaria reportó que la lupa
-     blanca seguía sin verse bien en reposo -- el problema real es que un
-     blanco a secas se pierde igual contra zonas claras del mapa detrás del
-     glass, sin importar la opacidad del color. Un drop-shadow oscuro chico
-     le da un borde de contraste propio, así que se lee tanto sobre fondos
-     claros como oscuros del mapa. Se retira en :focus-within porque ahí el
-     ícono ya es oscuro sobre un fondo opaco claro -- una sombra oscura ahí
-     se vería como un halo sucio en vez de dar contraste. */
-  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
-  /* Octava vuelta (18/09, mismo día): la usuaria seguía sin ver la lupa en
-     absoluto (no un problema de contraste -- directamente ausente), incluso
-     con el drop-shadow de la séptima vuelta. Causa real: `.title-search-input`
-     (el hermano siguiente en el DOM) tiene su propio `backdrop-filter`, que
-     -- igual que cualquier `filter`/`opacity<1`/`transform` -- lo promueve a
-     su propio contexto de apilamiento aunque no sea `position:absolute`. Una
-     vez que el input también forma su propio contexto de apilamiento, el
-     orden de pintado deja de ser "no-posicionado abajo, posicionado arriba"
-     (donde el ícono, absoluto, ya ganaría) y pasa a resolverse por orden de
-     DOM entre los dos contextos -- y el input, al venir DESPUÉS del ícono en
-     el JSX, pintaba encima y lo tapaba por completo. `z-index` explícito acá
-     desempata a favor del ícono sin importar el orden de DOM. */
-  z-index: 1;
-}
-
-.title-search-wrap:focus-within .title-search-icon {
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--color-line);
+  background: var(--color-surface);
   color: var(--color-text-soft);
-  filter: none;
+  cursor: pointer;
 }
 
-/* Efecto glass por defecto, opaco al estar en uso (pedido explícito de la
-   usuaria: "en vez de transparencia... un efecto glass"). Reemplaza la
-   primera versión (cuarta vuelta, opacity plano en .title-search-wrap) --
-   ese enfoque atenuaba TODO por igual (texto, ícono, borde), mientras que el
-   glass real (fondo semitransparente + blur) deja el input legible en
-   cualquier fondo del mapa detrás, en vez de simplemente "verse apagado".
-   :focus-within cubre tanto el input enfocado como cualquier ítem del
-   dropdown (ambos viven dentro de este mismo wrap, ver JSX), así que el
-   panel se mantiene opaco mientras se navega el menú de sugerencias, no solo
-   mientras se tipea. Hover (no pedido, agregado como pista de que es
-   interactivo antes de enfocarlo) sube la opacidad del glass a mitad de
-   camino entre los dos extremos, sin llegar a la versión opaca. */
-.title-search-input {
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(10px) saturate(160%);
-  -webkit-backdrop-filter: blur(10px) saturate(160%);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  font: inherit;
-  font-size: var(--font-size-sm);
-  color: var(--color-ink);
-  padding: var(--space-3) var(--space-5) var(--space-3) 30px;
-  border-radius: var(--radius-pill);
-  box-sizing: border-box;
-  /* Séptima vuelta (18/09, mismo día): sin esto el input usa el outline de
-     foco nativo del navegador al activarse -- en varios navegadores/SO ese
-     outline sale en el color de acento del sistema (a la usuaria le salía
-     naranja), no en el gris/borde que ya define este archivo. El estado
-     activo ya tiene su propio feedback visual (fondo opaco + border-color +
-     box-shadow, ver :focus-within más abajo), así que el outline nativo es
-     puramente redundante -- no hace falta reemplazarlo por otro. */
-  outline: none;
-  transition: background 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+.title-search-trigger:hover {
+  background: var(--color-hover);
 }
 
-.title-search-wrap:hover .title-search-input {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.5);
+.title-search-icon {
+  display: inline-flex;
+  color: inherit;
 }
 
-.title-search-wrap:focus-within .title-search-input {
-  background: rgba(251, 250, 247, 0.96);
-  border-color: var(--color-line);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+/* Paleta: fondo difuminado (solo oscurece y desenfoca un poco: un blur
+   fuerte sobre el canvas WebGL de Mapbox cuesta rendimiento). */
+.search-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1900;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 16vh var(--space-6) var(--space-6);
+  background: rgba(20, 19, 17, 0.45);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: search-fade 0.18s ease-out;
 }
 
-/* Sexta vuelta (18/09): "Search by title..." pasa de gris apagado (#928d82,
-   mismo problema de contraste que la lupa arriba) a blanco con opacidad en
-   reposo -- mismo criterio, mismo par de colores que .title-search-icon.
-   Cuando el panel está activo (fondo opaco, ver .title-search-wrap
-   :focus-within .title-search-input más arriba) vuelve al gris de siempre,
-   porque ahí blanco fijo no se leería bien contra el fondo claro. */
-.title-search-input::placeholder {
-  color: #fff;
-  opacity: 1;
+.search-palette {
+  width: min(560px, 100%);
+  max-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 14px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  animation: search-pop 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Inactivo: todo el texto del buscador en blanco (placeholder y texto tipeado). */
-.title-search-wrap:not(:focus-within) .title-search-input {
-  color: #fff;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-}
-
-.title-search-wrap:focus-within .title-search-input::placeholder {
+.search-palette-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-line);
   color: var(--color-text-muted);
 }
 
-/* Dropup, no dropdown (18/09, quinta vuelta, pedido de la usuaria) -- desde
-   que el buscador vive abajo-centro (cuarta vuelta, arriba), un menú que
-   sigue abriendo hacia abajo (`top: calc(100% + 6px)`) queda pegado contra
-   el piso del viewport o directamente tapado por el dock del timeline. Se
-   invierte a `bottom: calc(100% + 6px); top: auto` -- mismo offset, mismo
-   ancho/alto máximo, solo cambia qué borde ancla. El bloque mobile (ver
-   @media 900px) sigue pisando esto con `position:fixed` de todos modos, así
-   que el dropup es un comportamiento puramente desktop. */
-.title-search-menu {
-  position: absolute;
-  bottom: calc(100% + 6px);
-  top: auto;
-  left: 0;
-  z-index: 1001;
-  width: 280px;
-  max-height: 320px;
+/* El drop-shadow del ícono del disparador (pensado para fondo de mapa) se veía
+   borroso sobre el papel claro de la paleta. */
+.search-palette-field .title-search-icon {
+  filter: none;
+}
+
+.search-palette-input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  /* El anillo de foco global (input:focus-visible) se conserva y sigue este
+     radio; antes se dibujaba como un rectángulo de esquinas rectas. */
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-5);
+  background: none;
+  font: inherit;
+  font-size: var(--font-size-lg);
+  color: var(--color-ink);
+}
+
+.search-palette-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.search-palette-close {
+  font: inherit;
+  font-size: var(--font-size-xs);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-chip);
+  background: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+}
+
+.search-esc-x {
+  display: none;
+}
+
+.search-palette-body {
   overflow-y: auto;
-  background: var(--color-paper);
-  border: 1px solid var(--color-line);
-  border-radius: 10px;
-  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
   padding: var(--space-3);
+}
+
+.search-palette-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+}
+
+.search-palette-heading {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.search-palette-clear {
+  font: inherit;
+  font-size: var(--font-size-xs);
+  border: none;
+  background: none;
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@keyframes search-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes search-pop {
+  from { opacity: 0; transform: translateY(-8px) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-backdrop,
+  .search-palette {
+    animation: none;
+  }
+}
+
+/* Sin transparencia/blur si el sistema lo pide (o con alto contraste). */
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .search-backdrop {
+    background: rgba(20, 19, 17, 0.85);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
 }
 
 .title-search-empty {
@@ -930,10 +895,6 @@
    después de esa vez. Esquina opuesta a .museum-toggles para no sumar otro
    elemento a esa fila ya cargada. */
 .welcome-trigger-btn {
-  position: absolute;
-  z-index: 1000;
-  top: 12px;
-  right: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -962,13 +923,6 @@
   border-radius: 15px;
   background: var(--color-surface);
   overflow: hidden;
-}
-
-.lang-switch-floating {
-  position: absolute;
-  z-index: 1000;
-  top: 12px;
-  right: 50px;
 }
 
 .lang-switch-btn {
@@ -1349,52 +1303,19 @@
   margin-left: auto;
 }
 
-/* Píldora única (fondo+borde+radio viven acá, no en el botón de adentro) —
-   mismo patrón que .museum-toggle-wrap: el toggle y el botón "i" son 2
-   <button> hermanos dentro de un solo contenedor visual, en vez de 2 chips
-   separados uno al lado del otro. */
-.year-timeline-layer-toggle-wrap {
+/* Etiqueta de la capa (ya no es un toggle: hay una sola capa, territorios
+   coloniales). Texto plano con su nota "i" al lado, sin píldora. */
+.year-timeline-layer-label-wrap {
   position: relative;
   display: flex;
   align-items: center;
-  gap: var(--space-2);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 14px;
-  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-5);
-  transition: background 0.15s ease, border-color 0.15s ease;
+  gap: var(--space-3);
 }
 
-.year-timeline-layer-toggle-wrap:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-}
-
-.year-timeline-layer-toggle-wrap.active {
-  background: rgba(255, 255, 255, 0.92);
-  border-color: rgba(255, 255, 255, 0.92);
-}
-
-.year-timeline-layer-toggle {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: none;
-  border: none;
-  padding: 0;
-  font: inherit;
+.year-timeline-layer-label {
   font-size: var(--font-size-sm);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-}
-
-.year-timeline-layer-toggle-wrap.active .year-timeline-layer-toggle {
-  color: var(--color-ink);
-}
-
-.year-timeline-layer-toggle-icon {
-  display: flex;
-  align-items: center;
 }
 
 /* Nota por capa (nivel 3 de "notas de contexto en la UI") — mismo patrón
@@ -1424,16 +1345,6 @@
 .year-timeline-note-btn:hover {
   border-color: rgba(255, 255, 255, 0.6);
   color: var(--color-paper);
-}
-
-.year-timeline-layer-toggle-wrap.active .year-timeline-note-btn {
-  border-color: rgba(26, 26, 26, 0.35);
-  color: rgba(26, 26, 26, 0.6);
-}
-
-.year-timeline-layer-toggle-wrap.active .year-timeline-note-btn:hover {
-  border-color: var(--color-ink);
-  color: var(--color-ink);
 }
 
 .year-timeline-note-btn.open {
@@ -2205,42 +2116,29 @@
      `bottom: 56px/190px` de la base desktop (ver arriba) -- sin esto, un
      position:absolute con top Y bottom seteados a la vez se estira para
      llenar la distancia entre los dos en vez de tomar su alto natural. La
-     variante `.timeline-open` (bottom:190px) no necesita su propio reset
+     variante el offset del disparador no necesita su propio reset
      acá porque quedó escopeada a `min-width:901px`, nunca se aplica bajo
      este breakpoint. */
-  .title-search-panel {
-    /* Por encima de "Click en el mapa" (z-index 1000) para que el dropdown
-       de resultados no quede tapado por ese pill. */
-    z-index: 1200;
-    left: 8px;
-    right: 8px;
-    top: 56px;
-    bottom: auto;
-    transform: none;
+  /* Paleta a pantalla casi completa, anclada arriba (el teclado ocupa la
+     mitad inferior); input a 16px para evitar el zoom automático de iOS. */
+  .search-backdrop {
+    padding: var(--space-4);
   }
 
-  .title-search-panel .title-search-wrap {
-    width: 100%;
+  .search-palette {
+    max-height: 60vh;
   }
 
-  /* iOS Safari hace zoom automático al enfocar inputs con font-size < 16px
-     (era la "animación de zoom" al tocar el buscador). */
-  .title-search-input {
+  .search-esc-label {
+    display: none;
+  }
+
+  .search-esc-x {
+    display: inline;
+  }
+
+  .search-palette-input {
     font-size: var(--font-size-lg);
-  }
-
-  /* El menú de resultados NO puede ser position:fixed pegado abajo en mobile:
-     queda tapado por el teclado y nunca se ve. Se despliega justo debajo del
-     input, dentro del panel. */
-  .title-search-menu {
-    position: absolute;
-    top: calc(100% + 6px);
-    bottom: auto;
-    left: 0;
-    right: 0;
-    width: auto;
-    max-height: 50vh;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   }
 
   /* "Click en el mapa" ya no vive dentro del drawer: pill flotante propia,
@@ -2387,12 +2285,8 @@
   /* --- 2. Botones fijos arriba a la derecha ("?"/idioma): un poco más
      ajustados en teléfonos angostos, para dejarle aire al toggle "Filtros"
      de la esquina opuesta (ver drawer de filtros, @media 900px abajo). --- */
-  .welcome-trigger-btn {
+  .top-right-actions {
     right: 8px;
-  }
-
-  .lang-switch-floating {
-    right: 46px;
   }
 
   /* Tooltip de hitos del timeline (hover/año activo) -- se achica en vez de
@@ -2467,10 +2361,6 @@ input:focus-visible,
   pointer-events: none;
   border: 3px solid var(--color-ink);
   box-shadow: inset 0 0 0 3px #ffffff;
-}
-.title-search-input:focus-visible {
-  outline: none;
-  box-shadow: none;
 }
 
 /* Texto solo para lectores de pantalla (visualmente oculto, sigue en el árbol
@@ -2853,31 +2743,6 @@ h1.sr-only:focus { outline: none; }
 }
 .list-view:focus {
   outline: none;
-}
-
-/* Buscador sobre la vista /list: el fondo es --color-paper (claro), así que el
-   glass blanco/texto blanco del mapa no se lee. Se usan tokens con superficie
-   sólida y texto oscuro; el estado :focus-within ya es opaco y oscuro. */
-.map-pane.list-mode .title-search-wrap:not(:focus-within) .title-search-input {
-  background: var(--color-surface);
-  border-color: var(--color-line-strong);
-  color: var(--color-ink);
-  text-shadow: none;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-.map-pane.list-mode .title-search-wrap:not(:focus-within):hover .title-search-input {
-  background: var(--color-hover);
-}
-
-.map-pane.list-mode .title-search-input::placeholder {
-  color: var(--color-text-muted);
-}
-
-.map-pane.list-mode .title-search-wrap:not(:focus-within) .title-search-icon {
-  color: var(--color-text-muted);
-  filter: none;
 }
 
 /* Vista de lista: ninguna etiqueta de filtro lleva chip oscuro (ruido visual

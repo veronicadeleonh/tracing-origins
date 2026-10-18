@@ -1,6 +1,6 @@
 import { viewFromPath, parseFilters, buildSearch, LIST_PATH } from "./urlState";
 import { useState, useCallback, useMemo, useEffect, useRef } from "react";
-import type { KeyboardEvent as ReactKeyboardEvent, CSSProperties } from "react";
+import type { KeyboardEvent as ReactKeyboardEvent } from "react";
 import Map, { Source, Layer, Popup } from "react-map-gl/mapbox";
 import type { MapMouseEvent } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -32,6 +32,8 @@ const TOUR_SEEN_KEY = "tracing-origins-tour-seen";
 // interfaz (ver i18n.ts). Persistido igual que WELCOME_SEEN_KEY, mismo
 // patrón de localStorage + useEffect al montar.
 const LANG_KEY = "tracing-origins-lang";
+const RECENT_KEY = "tracing-origins-recent";
+const RECENT_MAX = 5;
 
 // Rango acortado el 03/09 (pedido de la usuaria, con datos reales de
 // respaldo): accessionYear de las piezas va de 1793 a 2025 (el grueso recién
@@ -52,11 +54,6 @@ const TIMELINE_DEFAULT_YEAR = 1920;
 // completo (todas las décadas) pesa varios MB — inlinearlo en el JS del build
 // infla el bundle principal innecesariamente para quien nunca prende la capa.
 const COLONIAL_OVERLAY_URL = `${import.meta.env.BASE_URL}colonial_overlay.geojson`;
-// navigator_routes.geojson pesa ~12KB (50 rutas, cada una una línea de 2
-// puntos) — nada que ver con el overlay colonial, pero se fetchea con el
-// mismo trigger (timelineOpen) por consistencia de patrón, no por necesidad
-// real de lazy-loading.
-const NAVIGATOR_ROUTES_URL = `${import.meta.env.BASE_URL}navigator_routes.geojson`;
 // Búsqueda por país vía click en el mapa (19/08, segunda vuelta) — capa
 // invisible de polígonos de país (Natural Earth 110m, ver countryPolygons.ts
 // para la traducción de nombres), fetcheada bajo demanda recién cuando se
@@ -119,6 +116,10 @@ function getInitialMapZoom(): number {
 }
 
 const bundle = data as DataBundle;
+// Búsqueda por objectID para resolver las piezas recientes (objeto plano:
+// `Map` está tapado por el componente de react-map-gl en este archivo).
+const OBJECTS_BY_ID: Record<string, MuseumObject> = {};
+for (const o of bundle.objects) OBJECTS_BY_ID[o.objectID] = o;
 
 // mismo color que cada museo, para reforzar la conexión territorio-colonial
 // -> museo que se benefició de él. UK = BM (rojo), Francia = el teal de
@@ -131,48 +132,10 @@ const COLONIAL_POWER_COLORS: Record<string, string> = {
   fr: MUSEUM_COLORS.louvre,
 };
 
-// Ícono de barco repetido a lo largo de las rutas de navegación (symbol-
-// placement: "line") — la única diferenciación visual entre esas líneas y
-// las de pieza->museo era el line-dasharray, que no se nota lo suficiente a
-// simple vista (confirmado por el usuario el 17/08). Se dibuja a mano en un
-// canvas en vez de cargar un asset externo, así el color exacto por potencia
-// (mismo COLONIAL_POWER_COLORS que ya se usa en el resto de esta capa) queda
-// resuelto sin necesitar 2 archivos SVG separados o un ícono SDF.
-function buildShipIcon(color: string, size = 11): { width: number; height: number; data: Uint8Array } {
-  const canvas = document.createElement("canvas");
-  canvas.width = size;
-  canvas.height = size;
-  const ctx = canvas.getContext("2d")!;
-  ctx.fillStyle = color;
-  // Triángulo simple apuntando "al este" — Mapbox lo rota solo según la
-  // dirección de la línea en cada tramo (symbol-placement: "line"). Alto
-  // proporcional a `size` (no un offset fijo en px) para que reducir el
-  // tamaño no lo deforme.
-  const halfHeight = size * 0.32;
-  ctx.beginPath();
-  ctx.moveTo(1, size / 2 - halfHeight);
-  ctx.lineTo(size - 1, size / 2);
-  ctx.lineTo(1, size / 2 + halfHeight);
-  ctx.closePath();
-  ctx.fill();
-  const { data } = ctx.getImageData(0, 0, size, size);
-  return { width: size, height: size, data: new Uint8Array(data.buffer) };
-}
-
-// Mismo triángulo que buildShipIcon (arriba), como SVG en vez de canvas —
-// para el chip "Rutas navales" del timeline, así el ícono del toggle es
-// literalmente la misma forma que se ve repetida sobre las rutas en el mapa,
-// no un emoji de barco sin relación visual con lo que representa.
-const ROUTES_TOGGLE_ICON = (
-  <svg viewBox="0 0 12 12" width="9" height="9" aria-hidden="true">
-    <polygon points="1,2.16 11,6 1,9.84" fill="currentColor" />
-  </svg>
-);
-
 // Ícono de lupa para el buscador de títulos (18/09, quinta vuelta, pedido de
-// la usuaria) -- mismo criterio que ROUTES_TOGGLE_ICON arriba: SVG inline con
+// la usuaria) -- SVG inline con
 // currentColor en vez de un emoji o librería de íconos nueva, para que herede
-// el color de texto que ya define .title-search-icon/.title-search-input
+// el color de texto que ya define .title-search-icon
 // según el estado glass/activo del panel.
 const TITLE_SEARCH_ICON = (
   <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true">
@@ -274,7 +237,6 @@ function App() {
   // pieza -- volver al cluster, navegar con prev/next, o cerrar el panel
   // todos cuentan como "ya no estamos mirando el resultado de la búsqueda".
   const [searchFocusObjectId, setSearchFocusObjectId] = useState<string | null>(null);
-  const titleSearchRef = useRef<HTMLDivElement>(null);
   const titleSearchInputRef = useRef<HTMLInputElement>(null);
   // Scroll de la lista de piezas: se guarda al abrir una ficha y se restaura
   // solo al volver con "Atrás" (una apertura nueva desde el mapa arranca en 0).
@@ -287,20 +249,19 @@ function App() {
     bearing: number;
     pitch: number;
   } | null>(null);
-  // Ancho del placeholder medido en píxeles reales -- ver el useEffect que
-  // lo calcula más abajo (después de que `s` esté definido), 90 es solo el
-  // valor para el primer render antes de que ese efecto corra.
-  const [searchPlaceholderWidth, setSearchPlaceholderWidth] = useState(90);
-  useEffect(() => {
-    if (!titleSearchOpen) return;
-    const onPointerDown = (e: PointerEvent) => {
-      if (titleSearchRef.current && !titleSearchRef.current.contains(e.target as Node)) {
-        setTitleSearchOpen(false);
-      }
-    };
-    document.addEventListener("pointerdown", onPointerDown);
-    return () => document.removeEventListener("pointerdown", onPointerDown);
-  }, [titleSearchOpen]);
+  // Paleta de búsqueda (16/10): el campo de la esquina es un disparador; al
+  // abrirse, la paleta (overlay centrado con fondo difuminado) lleva el foco al
+  // input real. Recientes = últimas piezas abiertas por cualquier camino.
+  const searchTriggerRef = useRef<HTMLButtonElement>(null);
+  const searchPaletteRef = useRef<HTMLDivElement>(null);
+  const [recentIds, setRecentIds] = useState<string[]>(() => {
+    try {
+      const v = JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]");
+      return Array.isArray(v) ? v.filter((x): x is string => typeof x === "string").slice(0, RECENT_MAX) : [];
+    } catch {
+      return [];
+    }
+  });
   // Navegación por teclado en el dropdown (18/09, segunda vuelta, feedback
   // de la usuaria: "no puedo ir con las flechas del teclado en las opciones
   // del dropdown") — ningún otro dropdown de la app tenía este patrón
@@ -319,7 +280,7 @@ function App() {
   // activa a mano con el toggle "Click en el mapa" + su botón "i".
   const [countryClickEnabled, setCountryClickEnabled] = useState(false);
   const [countryClickNoteOpen, setCountryClickNoteOpen] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- geojson global type no está disponible, mismo criterio que colonialOverlay/navigatorRoutes
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- geojson global type no está disponible, mismo criterio que colonialOverlay
   const [countryPolygons, setCountryPolygons] = useState<any>(null);
   useEffect(() => {
     if (!countryClickEnabled || countryPolygons) return;
@@ -438,11 +399,9 @@ function App() {
   const [timelineYear, setTimelineYear] = useState(TIMELINE_DEFAULT_YEAR);
   const [timelineOpen, setTimelineOpen] = useState(false);
   // Dos capas independientes dentro del mismo dock/timeline — el usuario
-  // puede ver solo imperios, solo rutas, o ambas a la vez. Arrancan
+  // puede ocultar o mostrar los territorios. Arranca
   // prendidas las dos cuando se abre el dock (menos fricción que arrancar
   // todo apagado y obligar a 2 clicks extra).
-  const [showTerritories, setShowTerritories] = useState(true);
-  const [showRoutes, setShowRoutes] = useState(true);
   const [museumNoteOpen, setMuseumNoteOpen] = useState<string | null>(null);
   // Drawer de filtros para mobile (01/09, feedback de la usuaria con
   // capturas de iPhone SE/iPad mini: los filtros de museo/investigación +
@@ -501,15 +460,6 @@ function App() {
   // resultado sea exacto sin importar qué fuente termine resolviendo el
   // navegador. Corre de nuevo cada vez que cambia el placeholder (toggle de
   // idioma), no solo al montar.
-  useEffect(() => {
-    const el = titleSearchInputRef.current;
-    if (!el || typeof document === "undefined") return;
-    const canvas = document.createElement("canvas");
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-    ctx.font = window.getComputedStyle(el).font;
-    setSearchPlaceholderWidth(Math.ceil(ctx.measureText(s.titleSearchPlaceholder).width));
-  }, [s.titleSearchPlaceholder]);
   const selectLang = useCallback((next: Lang) => {
     localStorage.setItem(LANG_KEY, next);
     setLang(next);
@@ -523,18 +473,8 @@ function App() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- tipo de MapRef de react-map-gl no vale la pena importar solo para esto
   const mapRef = useRef<any>(null);
 
-  const handleMapLoad = useCallback(() => {
-    const map = mapRef.current?.getMap?.();
-    if (!map) return;
-    // Se registran una sola vez, al cargar el mapa — los símbolos de las
-    // rutas de navegación (más abajo) referencian estos IDs por nombre.
-    if (!map.hasImage("ship-uk")) map.addImage("ship-uk", buildShipIcon(COLONIAL_POWER_COLORS.uk));
-    if (!map.hasImage("ship-fr")) map.addImage("ship-fr", buildShipIcon(COLONIAL_POWER_COLORS.fr));
-  }, []);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- geojson global type no está disponible, ver nota de colonialOverlay más arriba
   const [colonialOverlay, setColonialOverlay] = useState<any>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- ídem colonialOverlay
-  const [navigatorRoutes, setNavigatorRoutes] = useState<any>(null);
 
   useEffect(() => {
     if (!timelineOpen || colonialOverlay) return;
@@ -543,14 +483,6 @@ function App() {
       .then(setColonialOverlay)
       .catch((err) => console.error("No se pudo cargar colonial_overlay.geojson", err));
   }, [timelineOpen, colonialOverlay]);
-
-  useEffect(() => {
-    if (!timelineOpen || navigatorRoutes) return;
-    fetch(NAVIGATOR_ROUTES_URL)
-      .then((res) => res.json())
-      .then(setNavigatorRoutes)
-      .catch((err) => console.error("No se pudo cargar navigator_routes.geojson", err));
-  }, [timelineOpen, navigatorRoutes]);
 
   const toggleMuseum = useCallback((id: string) => {
     setVisibleMuseums((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -740,12 +672,61 @@ function App() {
       .slice(0, 8);
   }, [titleQuery]);
 
-  // Resetea el resaltado de teclado cada vez que cambian los resultados
-  // (nueva query) -- sin esto, un índice resaltado de la búsqueda anterior
-  // podría apuntar a un resultado que ya no existe o a uno distinto.
+  // Filas de la paleta: resultados si hay texto, si no las piezas recientes.
+  const hasQuery = titleQuery.trim() !== "";
+  const recentObjects = useMemo(
+    () => recentIds.map((id) => OBJECTS_BY_ID[id]).filter((o): o is MuseumObject => Boolean(o)),
+    [recentIds],
+  );
+  const paletteItems = hasQuery ? titleSearchResults : recentObjects;
+
+  // Resetea el resaltado de teclado cada vez que cambian las filas.
   useEffect(() => {
     setTitleSearchHighlight(-1);
-  }, [titleSearchResults]);
+  }, [paletteItems]);
+
+  // Recientes: cualquier pieza que se abra (mapa, lista o búsqueda).
+  useEffect(() => {
+    if (panel?.view !== "object") return;
+    const id = panel.object.objectID;
+    setRecentIds((prev) => (prev[0] === id ? prev : [id, ...prev.filter((x) => x !== id)].slice(0, RECENT_MAX)));
+  }, [panel]);
+  useEffect(() => {
+    try {
+      localStorage.setItem(RECENT_KEY, JSON.stringify(recentIds));
+    } catch {
+      /* localStorage no disponible: los recientes viven solo en memoria */
+    }
+  }, [recentIds]);
+
+  // Al abrir la paleta, el foco va al input real.
+  useEffect(() => {
+    if (!titleSearchOpen) return;
+    requestAnimationFrame(() => titleSearchInputRef.current?.focus());
+  }, [titleSearchOpen]);
+
+  const closeSearch = useCallback((restoreFocus: boolean) => {
+    setTitleSearchOpen(false);
+    setTitleQuery("");
+    if (restoreFocus) requestAnimationFrame(() => searchTriggerRef.current?.focus());
+  }, []);
+
+  // Atajos: "/" o Cmd/Ctrl+K abren la paleta (salvo escribiendo en un campo o
+  // con un diálogo modal ya abierto).
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const isSlash = e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey;
+      const isCmdK = e.key.toLowerCase() === "k" && (e.metaKey || e.ctrlKey);
+      if (!isSlash && !isCmdK) return;
+      const t = e.target as HTMLElement | null;
+      if (isSlash && t && (t.closest("input, textarea, select") || t.isContentEditable)) return;
+      if (document.querySelector('[aria-modal="true"]')) return;
+      e.preventDefault();
+      setTitleSearchOpen(true);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, []);
 
   const selectSearchedObject = useCallback(
     (obj: MuseumObject) => {
@@ -755,6 +736,9 @@ function App() {
       setSearchFocusObjectId(obj.objectID);
       setTitleQuery("");
       setTitleSearchOpen(false);
+      // Al cerrar el panel de la pieza, el foco vuelve al disparador (la
+      // paleta ya no está en el DOM).
+      panelOpenerRef.current = searchTriggerRef.current;
       // Globo acercándose al origen de la pieza elegida (pedido de la
       // usuaria, 01/10) -- usa la coordenada real de la pieza
       // (obj.originLat/originLon), no la del cluster, que puede estar
@@ -805,7 +789,7 @@ function App() {
     if (!searchFocusObjectId) return;
     const onPointerDown = (e: PointerEvent) => {
       const target = e.target as Element | null;
-      if (target?.closest?.(".title-search-wrap, .side-panel")) return;
+      if (target?.closest?.(".search-palette, .title-search-trigger, .side-panel")) return;
       const prev = searchPrevViewRef.current;
       searchPrevViewRef.current = null;
       const map = mapRef.current?.getMap?.();
@@ -817,27 +801,43 @@ function App() {
 
   const handleTitleSearchKeyDown = useCallback(
     (e: ReactKeyboardEvent<HTMLInputElement>) => {
-      if (titleSearchResults.length === 0) return;
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeSearch(true);
+        return;
+      }
+      if (paletteItems.length === 0) return;
       if (e.key === "ArrowDown") {
         e.preventDefault();
-        setTitleSearchOpen(true);
-        setTitleSearchHighlight((i) => Math.min(i + 1, titleSearchResults.length - 1));
+        setTitleSearchHighlight((i) => Math.min(i + 1, paletteItems.length - 1));
       } else if (e.key === "ArrowUp") {
         e.preventDefault();
         setTitleSearchHighlight((i) => Math.max(i - 1, 0));
       } else if (e.key === "Enter") {
-        // Sin ítem resaltado (típico en mobile, donde no hay hover/flechas),
-        // Enter elige el primer resultado.
-        const idx = titleSearchHighlight >= 0 && titleSearchHighlight < titleSearchResults.length ? titleSearchHighlight : 0;
+        // Sin ítem resaltado (típico en mobile), Enter elige el primero.
+        const idx = titleSearchHighlight >= 0 && titleSearchHighlight < paletteItems.length ? titleSearchHighlight : 0;
         e.preventDefault();
-        selectSearchedObject(titleSearchResults[idx]);
-        titleSearchInputRef.current?.blur();
-      } else if (e.key === "Escape") {
-        setTitleSearchOpen(false);
+        selectSearchedObject(paletteItems[idx]);
       }
     },
-    [titleSearchResults, titleSearchHighlight, selectSearchedObject],
+    [paletteItems, titleSearchHighlight, selectSearchedObject, closeSearch],
   );
+
+  // Foco atrapado dentro de la paleta (input, botón de historial, cerrar).
+  const handlePaletteKeyDown = useCallback((e: ReactKeyboardEvent<HTMLDivElement>) => {
+    if (e.key !== "Tab") return;
+    const f = searchPaletteRef.current?.querySelectorAll<HTMLElement>("input, button:not([disabled])");
+    if (!f || f.length === 0) return;
+    const first = f[0];
+    const last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }, []);
 
   // Búsqueda por país (19/08): mientras el panel abierto sea un resultado de
   // país (kind === "country", por click en el mapa), se atenúan todas las
@@ -1320,7 +1320,6 @@ function App() {
           attributionControl={false}
           interactiveLayerIds={countryClickEnabled ? ["lines-hit", "origins", "museums", "country-hit"] : ["lines-hit", "origins", "museums"]}
           cursor={cursor}
-          onLoad={handleMapLoad}
           onClick={handleClick}
           onMouseMove={handleMouseMove}
           onMouseLeave={() => { setTooltip(null); setHoveredLineId(null); setCursor("grab"); }}
@@ -1354,7 +1353,7 @@ function App() {
               />
             </Source>
           )}
-          {timelineOpen && showTerritories && colonialOverlay && (
+          {timelineOpen && colonialOverlay && (
             <Source id="colonial-overlay-src" type="geojson" data={colonialOverlay}>
               <Layer
                 id="colonial-overlay-fill"
@@ -1373,38 +1372,6 @@ function App() {
                   "line-color": ["match", ["get", "power"], "uk", COLONIAL_POWER_COLORS.uk, "fr", COLONIAL_POWER_COLORS.fr, DEFAULT_COLOR],
                   "line-width": 0.6,
                   "line-opacity": 0.4,
-                }}
-              />
-            </Source>
-          )}
-          {timelineOpen && showRoutes && navigatorRoutes && (
-            <Source id="navigator-routes-src" type="geojson" data={navigatorRoutes}>
-              <Layer
-                id="navigator-routes"
-                type="line"
-                filter={["all", ["<=", ["get", "FromYear"], timelineYear], [">=", ["get", "ToYear"], timelineYear]]}
-                paint={{
-                  "line-color": ["match", ["get", "power"], "uk", COLONIAL_POWER_COLORS.uk, "fr", COLONIAL_POWER_COLORS.fr, DEFAULT_COLOR],
-                  "line-width": 0.8,
-                  "line-opacity": 0.35,
-                  // discontinua y más fina que antes — ahora la diferenciación
-                  // fuerte con las líneas pieza->museo la hacen los íconos de
-                  // barco (capa de abajo), la línea es solo referencia del trazo
-                  "line-dasharray": [2, 1.5],
-                }}
-              />
-              <Layer
-                id="navigator-routes-ships"
-                type="symbol"
-                filter={["all", ["<=", ["get", "FromYear"], timelineYear], [">=", ["get", "ToYear"], timelineYear]]}
-                layout={{
-                  "symbol-placement": "line",
-                  "symbol-spacing": 160,
-                  "icon-image": ["match", ["get", "power"], "uk", "ship-uk", "fr", "ship-fr", "ship-uk"],
-                  "icon-size": 0.75,
-                  "icon-rotation-alignment": "map",
-                  "icon-allow-overlap": true,
-                  "icon-ignore-placement": true,
                 }}
               />
             </Source>
@@ -1528,14 +1495,8 @@ function App() {
                 { label: s.legendUK, color: COLONIAL_POWER_COLORS.uk },
                 { label: s.legendFR, color: COLONIAL_POWER_COLORS.fr },
               ]}
-              layerToggles={[
-                { id: "territories", label: s.layerToggleTerritories, active: showTerritories, note: s.layerNotes.territories },
-                { id: "routes", label: s.layerToggleRoutes, active: showRoutes, icon: ROUTES_TOGGLE_ICON, note: s.layerNotes.routes },
-              ]}
-              onToggleLayer={(id) => {
-                if (id === "territories") setShowTerritories((v) => !v);
-                if (id === "routes") setShowRoutes((v) => !v);
-              }}
+              layerLabel={s.layerToggleTerritories}
+              layerNote={s.layerNotes.territories}
               events={localizedEvents}
               lang={lang}
             />
@@ -1559,89 +1520,115 @@ function App() {
             piezas (titleSearchResults/allClusters, arriba), no sobre
             visibleObjects -- encontrar "Sleeping Hermaphroditus" no debería
             depender de qué museos estén prendidos. */}
-        <div className={`title-search-panel${timelineOpen && !listOpen ? " timeline-open" : ""}`}>
+        {titleSearchOpen && (
           <div
-            className="title-search-wrap"
-            ref={titleSearchRef}
-            // Ancho del estado inactivo ajustado al ancho real (en píxeles)
-            // del placeholder (01/10, pedido de la usuaria; segunda vuelta
-            // el mismo día -- la primera versión con `ch` quedaba con aire
-            // de sobra, ver comentario en el useEffect que mide
-            // searchPlaceholderWidth más arriba). `--search-text-width` se
-            // consume en .title-search-wrap (App.css) vía `calc(var(...) +
-            // 44px)`, donde 44px es el padding horizontal del input que no
-            // es texto (30px a la izquierda para la lupa + 12px a la
-            // derecha + ~2px de borde). El estado expandido (:focus-within,
-            // 260px) sigue fijo -- el pedido fue solo sobre el default.
-            style={{ "--search-text-width": `${searchPlaceholderWidth}px` } as CSSProperties}
+            className="search-backdrop"
+            onPointerDown={(e) => {
+              if (e.target === e.currentTarget) closeSearch(true);
+            }}
           >
-            <span className="title-search-icon" aria-hidden="true">
-              {TITLE_SEARCH_ICON}
-            </span>
-            <input
-              ref={titleSearchInputRef}
-              type="text"
-              className="title-search-input"
-              value={titleQuery}
-              placeholder={s.titleSearchPlaceholder}
+            <div
+              className="search-palette"
+              ref={searchPaletteRef}
+              role="dialog"
+              aria-modal="true"
               aria-label={s.titleSearchAria}
-              role="combobox"
-              aria-expanded={titleSearchOpen && titleQuery.trim() !== ""}
-              aria-autocomplete="list"
-              onChange={(e) => {
-                setTitleQuery(e.target.value);
-                setTitleSearchOpen(true);
-              }}
-              onFocus={() => setTitleSearchOpen(true)}
-              onKeyDown={handleTitleSearchKeyDown}
-            />
-            {titleSearchOpen && titleQuery.trim() !== "" && (
-              <div className="title-search-menu">
-                {titleSearchResults.length === 0 ? (
+              onKeyDown={handlePaletteKeyDown}
+            >
+              <div className="search-palette-field">
+                <span className="title-search-icon" aria-hidden="true">
+                  {TITLE_SEARCH_ICON}
+                </span>
+                <input
+                  ref={titleSearchInputRef}
+                  type="text"
+                  className="search-palette-input"
+                  value={titleQuery}
+                  placeholder={s.titleSearchPlaceholder}
+                  aria-label={s.titleSearchAria}
+                  role="combobox"
+                  aria-expanded={paletteItems.length > 0}
+                  aria-controls="search-listbox"
+                  aria-autocomplete="list"
+                  aria-activedescendant={
+                    titleSearchHighlight >= 0 && titleSearchHighlight < paletteItems.length
+                      ? `search-opt-${titleSearchHighlight}`
+                      : undefined
+                  }
+                  onChange={(e) => setTitleQuery(e.target.value)}
+                  onKeyDown={handleTitleSearchKeyDown}
+                />
+                <button
+                  type="button"
+                  className="search-palette-close"
+                  aria-label={s.searchCloseAria}
+                  onClick={() => closeSearch(true)}
+                >
+                  <span className="search-esc-label">Esc</span>
+                  <span className="search-esc-x" aria-hidden="true">&#10005;</span>
+                </button>
+              </div>
+              <div className="sr-only" role="status" aria-live="polite">
+                {hasQuery ? s.searchResultsCount(titleSearchResults.length) : ""}
+              </div>
+              <div className="search-palette-body">
+                {!hasQuery && (
+                  <div className="search-palette-section">
+                    <span className="search-palette-heading">{recentObjects.length > 0 ? s.searchRecentHeading : ""}</span>
+                    {recentObjects.length > 0 && (
+                      <button type="button" className="search-palette-clear" onClick={() => setRecentIds([])}>
+                        {s.searchClearHistory}
+                      </button>
+                    )}
+                  </div>
+                )}
+                {!hasQuery && recentObjects.length === 0 && (
+                  <div className="title-search-empty">{s.searchEmptyHint(bundle.objects.length)}</div>
+                )}
+                {hasQuery && titleSearchResults.length === 0 && (
                   <div className="title-search-empty">{s.titleSearchNoResults}</div>
-                ) : (
-                  <ul className="title-search-list">
-                    {titleSearchResults.map((obj, index) => {
+                )}
+                {paletteItems.length > 0 && (
+                  <ul
+                    className="title-search-list"
+                    role="listbox"
+                    id="search-listbox"
+                    aria-label={hasQuery ? s.searchResultsLabel : s.searchRecentHeading}
+                  >
+                    {paletteItems.map((obj, index) => {
                       const displayTitle = (lang === "en" ? obj.titleEn || obj.title : obj.title) || s.untitled;
                       const museumName = obj.sourceMuseum ? bundle.museums[obj.sourceMuseum]?.name ?? "" : "";
-                      // Feedback de la usuaria (18/09, segunda vuelta): sumar
-                      // el origen a la subline, ej. "Musée du Louvre • Made
-                      // in Italy" -- antes solo mostraba el museo. Se usa
-                      // madeIn() (i18n.ts, ya usado en ObjectDetail para el
-                      // mismo dato) en vez de pegar el label crudo, para que
-                      // la frase quede natural en los dos idiomas ("Hecho en
-                      // Francia" / "Made in France"), no solo el nombre del
-                      // lugar suelto.
                       const originLabelText = lang === "en" ? obj.originLabelEn || obj.originLabel : obj.originLabel;
                       const subline = [museumName, originLabelText ? s.madeIn(originLabelText) : null]
                         .filter(Boolean)
                         .join(" • ");
                       return (
-                        <li key={obj.objectID}>
-                          <button
-                            type="button"
-                            className={`title-search-item${index === titleSearchHighlight ? " highlighted" : ""}`}
-                            onClick={() => selectSearchedObject(obj)}
-                            onMouseEnter={() => setTitleSearchHighlight(index)}
-                          >
-                            <div
-                              className="title-search-item-thumb"
-                              style={obj.thumbImage ?? obj.primaryImage ? { backgroundImage: `url(${obj.thumbImage ?? obj.primaryImage})` } : undefined}
-                            />
-                            <div className="title-search-item-text">
-                              <span className="title-search-item-title">{displayTitle}</span>
-                              <span className="title-search-item-museum">{subline}</span>
-                            </div>
-                          </button>
+                        <li
+                          key={obj.objectID}
+                          id={`search-opt-${index}`}
+                          role="option"
+                          aria-selected={index === titleSearchHighlight}
+                          className={`title-search-item${index === titleSearchHighlight ? " highlighted" : ""}`}
+                          onClick={() => selectSearchedObject(obj)}
+                          onMouseEnter={() => setTitleSearchHighlight(index)}
+                        >
+                          <div
+                            className="title-search-item-thumb"
+                            style={obj.thumbImage ?? obj.primaryImage ? { backgroundImage: `url(${obj.thumbImage ?? obj.primaryImage})` } : undefined}
+                          />
+                          <div className="title-search-item-text">
+                            <span className="title-search-item-title">{displayTitle}</span>
+                            <span className="title-search-item-museum">{subline}</span>
+                          </div>
                         </li>
                       );
                     })}
                   </ul>
                 )}
               </div>
-            )}
+            </div>
           </div>
-        </div>
+        )}
         {/* "Click en el mapa" vive FUERA del drawer de filtros (pedido de la
             usuaria): no es un filtro, y en mobile queda siempre visible. */}
         <div className="country-click-panel">
@@ -1686,15 +1673,29 @@ function App() {
             </div>
           )}
         </div>
-        <LangSwitch lang={lang} onSelect={selectLang} ariaLabel={s.langSwitchAria} className="lang-switch-floating" />
-        <button
-          type="button"
-          className="welcome-trigger-btn"
-          aria-label={s.welcomeTriggerAria}
-          onClick={() => setWelcomeOpen(true)}
-        >
-          ?
-        </button>
+        <div className="top-right-actions">
+          <button
+            ref={searchTriggerRef}
+            type="button"
+            className="title-search-trigger"
+            aria-label={s.titleSearchPlaceholder}
+            title={s.titleSearchPlaceholder}
+            aria-haspopup="dialog"
+            aria-keyshortcuts="/"
+            onClick={() => setTitleSearchOpen(true)}
+          >
+            {TITLE_SEARCH_ICON}
+          </button>
+          <LangSwitch lang={lang} onSelect={selectLang} ariaLabel={s.langSwitchAria} />
+          <button
+            type="button"
+            className="welcome-trigger-btn"
+            aria-label={s.welcomeTriggerAria}
+            onClick={() => setWelcomeOpen(true)}
+          >
+            ?
+          </button>
+        </div>
         <ListView
           objects={visibleObjects}
           museums={bundle.museums}

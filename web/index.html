@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <script>
+    // Idioma correcto desde el primer render (antes de que cargue React): los
+    // lectores de pantalla eligen la voz al cargar y no siempre la reevalúan.
+    try { if (localStorage.getItem("tracing-origins-lang") === "es") document.documentElement.lang = "es"; } catch (e) {}
+  </script>
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 

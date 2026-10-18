@@ -15,15 +15,12 @@ export interface I18nStrings {
   curatedNoteBasemap: string;
   curatedNoteTerritoriesPrefix: string;
   curatedNoteTerritoriesLicense: string;
-  curatedNoteRoutesPrefix: string;
-  curatedNoteRoutesSuffix: string;
   welcomeTriggerAria: string;
   langSwitchAria: string;
   contextDockLabel: string;
   legendUK: string;
   legendFR: string;
   layerToggleTerritories: string;
-  layerToggleRoutes: string;
   layerNotes: Record<string, string>;
   historicalEvents: string[];
   timelineNoteAria: (label: string) => string;
@@ -50,6 +47,12 @@ export interface I18nStrings {
   titleSearchPlaceholder: string;
   titleSearchAria: string;
   titleSearchNoResults: string;
+  searchRecentHeading: string;
+  searchClearHistory: string;
+  searchCloseAria: string;
+  searchResultsLabel: string;
+  searchEmptyHint: (n: number) => string;
+  searchResultsCount: (n: number) => string;
   researchFilterAria: string;
   researchFilterRowLabel: string;
   researchFilterLabels: Record<"all" | "with" | "without", string>;
@@ -178,24 +181,20 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     curatedNoteBasemap: "Los límites y nombres del mapa base son la convención por default de Mapbox, no una postura editorial de este proyecto.",
     curatedNoteTerritoriesPrefix: "Territorios coloniales: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
-    curatedNoteRoutesPrefix: "Rutas navales: Jones et al. (2007),",
-    curatedNoteRoutesSuffix: "(CC-BY 3.0) — muestra curada de 50 cruceros, no todas las rutas del período.",
     welcomeTriggerAria: "Sobre este proyecto",
     langSwitchAria: "Idioma",
           contextDockLabel: "Contexto histórico",
     legendUK: "Reino Unido",
     legendFR: "Francia",
     layerToggleTerritories: "Colonias",
-    layerToggleRoutes: "Rutas navales",
     layerNotes: {
       territories: "Sombrea el territorio colonial de UK y Francia en el año seleccionado. EEUU no aparece (ver la nota del Met) ni los mandatos británicos de Irak/Palestina — la fuente no los modela.",
-      routes: "50 rutas curadas de barcos británicos y franceses, 1700-1900, de bitácoras reales de navegación (CLIWOC). No incluye viajes de exploradores famosos como Cook o Bougainville.",
     },
     historicalEvents: [
       "Se funda el Met — adquiere su primer objeto ese mismo año (un sarcófago romano). Colección inicial vía donaciones y compras en el mercado, no expansión territorial.",
       "Compra la Colección Cesnola (antigüedades de Chipre) — establece la reputación del Met como repositorio serio de antigüedades. Cesnola era cónsul de EEUU en Chipre; sus métodos de excavación fueron polémicos incluso en su época.",
       "El Met arranca su propia Expedición Egipcia (hasta 1935) — pasa de financiar excavaciones ajenas (Egypt Exploration Fund, 1897-1906) a excavar directamente, bajo autorización del gobierno egipcio de la época. El núcleo de sus ~30.000 piezas egipcias viene de este período.",
-      "Pico territorial simultáneo de ambos imperios coloniales — Reino Unido llega a ~13,7 millones de mi² (24% de la superficie terrestre) y Francia a ~12,5 millones de km², tras absorber los mandatos de la Sociedad de Naciones sobre territorio alemán y otomano (Irak, Palestina, Siria, Líbano, Camerún, Togo). Ambas potencias tenían asiento permanente en el Consejo de la Sociedad de Naciones recién fundada. Por esto el timeline arranca en este año por default.",
+      "Pico territorial simultáneo de ambos imperios: el Reino Unido llega a ~13,7 millones de mi² (24% de la superficie terrestre) y Francia a ~12,5 millones de km², tras recibir mandatos de la Sociedad de Naciones sobre territorios alemanes y otomanos.",
       "Se inaugura el Musée du Quai Branly — el fondo de África Subsahariana, América, Asia y Oceanía del Louvre (que nunca tuvo un departamento curatorial propio para esas regiones) se transfiere al museo nuevo. Desde entonces el Louvre queda concentrado en Egipto, Medio Oriente, el Mediterráneo y Europa, y Quai Branly cubre el resto del mundo — por eso las líneas de ambos museos en el mapa se leen como dos mitades de una misma colección francesa.",
     ],
     timelineNoteAria: (label) => `Sobre la capa de ${label}`,
@@ -213,6 +212,12 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     titleSearchPlaceholder: "Buscar pieza",
     titleSearchAria: "Buscar una pieza por título",
     titleSearchNoResults: "Sin resultados",
+    searchRecentHeading: "Vistas recientemente",
+    searchClearHistory: "Borrar historial",
+    searchCloseAria: "Cerrar búsqueda",
+    searchResultsLabel: "Resultados",
+    searchEmptyHint: (n) => `${n} piezas. Escribe un título para buscar.`,
+    searchResultsCount: (n) => (n === 1 ? "1 resultado" : `${n} resultados`),
     researchFilterAria: "Filtrar por estado de investigación",
     researchFilterRowLabel: "Investigación",
     researchFilterLabels: { all: "Todas", with: "Con investigación", without: "Sin investigación" },
@@ -299,7 +304,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       "Click en un punto de origen para ver las piezas de ese lugar.",
       "Click en una pieza para ver su ficha y su recorrido documentado.",
       'Los toggles arriba a la izquierda prenden o apagan cada museo — el botón "i" explica su lógica de adquisición.',
-      '"Contexto histórico", al pie del mapa, agrega territorios coloniales y rutas navales en un timeline 1700–2020.',
+      '"Contexto histórico", al pie del mapa, agrega territorios coloniales en un timeline 1700–2020.',
     ],
     welcomeDataModelHeading: "Modelo de datos — 3 capas",
     welcomeDataModelIntro: "Cada pieza separa siempre tres cosas, para que quede claro qué dice cada fuente:",
@@ -381,7 +386,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       },
       {
         title: "Contexto histórico",
-        text: "Abrí esto para sumar territorios coloniales y rutas navales en un timeline de 1700 a 2020.",
+        text: "Abrí esto para sumar territorios coloniales en un timeline de 1700 a 2020.",
       },
       {
         title: "¿Necesitás más info?",
@@ -412,24 +417,20 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     curatedNoteBasemap: "The basemap's borders and labels are Mapbox's default convention, not an editorial stance from this project.",
     curatedNoteTerritoriesPrefix: "Colonial territories: Seshat Global History Databank —",
     curatedNoteTerritoriesLicense: "(CC-BY 4.0).",
-    curatedNoteRoutesPrefix: "Naval routes: Jones et al. (2007),",
-    curatedNoteRoutesSuffix: "(CC-BY 3.0) — curated sample of 50 voyages, not every route from the period.",
     welcomeTriggerAria: "About this project",
     langSwitchAria: "Language",
           contextDockLabel: "Historical context",
     legendUK: "United Kingdom",
     legendFR: "France",
     layerToggleTerritories: "Colonies",
-    layerToggleRoutes: "Naval routes",
     layerNotes: {
       territories: "Shades UK and French colonial territory in the selected year. The US doesn't appear (see the Met's note) nor the British mandates of Iraq/Palestine — the source doesn't model them.",
-      routes: "50 curated British and French ship routes, 1700-1900, from real navigation logbooks (CLIWOC). Doesn't include famous explorers' voyages like Cook or Bougainville.",
     },
     historicalEvents: [
       "The Met is founded — it acquires its first object that same year (a Roman sarcophagus). Early collection built through donations and market purchases, not territorial expansion.",
       "Purchases the Cesnola Collection (antiquities from Cyprus) — establishes the Met's reputation as a serious antiquities repository. Cesnola was the US consul in Cyprus; his excavation methods were controversial even at the time.",
       "The Met starts its own Egyptian Expedition (through 1935) — moves from funding other institutions' excavations (Egypt Exploration Fund, 1897-1906) to excavating directly, authorized by the Egyptian government of the time. The core of its ~30,000 Egyptian pieces comes from this period.",
-      "Simultaneous territorial peak of both colonial empires — the UK reaches ~13.7 million sq mi (24% of the world's land area) and France ~12.5 million km², after absorbing League of Nations mandates over former German and Ottoman territory (Iraq, Palestine, Syria, Lebanon, Cameroon, Togo). Both powers held permanent seats on the newly founded League of Nations Council. This is why the timeline defaults to this year.",
+      "Simultaneous territorial peak of both colonial empires: the UK reaches ~13.7 million sq mi (24% of the world's land area) and France ~12.5 million km², after receiving League of Nations mandates over former German and Ottoman territories.",
       "The Musée du Quai Branly opens — the Louvre's Sub-Saharan Africa, Americas, Asia, and Oceania holdings (which never had their own curatorial department there) transfer to the new museum. Since then the Louvre stays concentrated on Egypt, the Middle East, the Mediterranean, and Europe, while Quai Branly covers the rest of the world — which is why both museums' lines on the map read as two halves of a single French collection.",
     ],
     timelineNoteAria: (label) => `About the ${label} layer`,
@@ -447,6 +448,12 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     titleSearchPlaceholder: "Search a piece",
     titleSearchAria: "Search a piece by title",
     titleSearchNoResults: "No results",
+    searchRecentHeading: "Recently viewed",
+    searchClearHistory: "Clear history",
+    searchCloseAria: "Close search",
+    searchResultsLabel: "Results",
+    searchEmptyHint: (n) => `${n} pieces. Type a title to search.`,
+    searchResultsCount: (n) => (n === 1 ? "1 result" : `${n} results`),
     researchFilterAria: "Filter by research status",
     researchFilterRowLabel: "Research",
     researchFilterLabels: { all: "All", with: "With research", without: "Without research" },
@@ -533,7 +540,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       "Click an origin point to see the pieces from that place.",
       "Click a piece to see its record and documented journey.",
       'The toggles in the top left turn each museum on or off — the "i" button explains its acquisition pattern.',
-      '"Historical context", at the bottom of the map, adds colonial territories and naval routes on a 1700–2020 timeline.',
+      '"Historical context", at the bottom of the map, adds colonial territories on a 1700–2020 timeline.',
     ],
     welcomeDataModelHeading: "Data model — 3 layers",
     welcomeDataModelIntro: "Each piece always keeps three things separate, so it's clear what each source says:",
@@ -615,7 +622,7 @@ export const STRINGS: Record<Lang, I18nStrings> = {
       },
       {
         title: "Historical context",
-        text: "Open this to add colonial territories and naval routes on a 1700–2020 timeline.",
+        text: "Open this to add colonial territories on a 1700–2020 timeline.",
       },
       {
         title: "Need more info?",
