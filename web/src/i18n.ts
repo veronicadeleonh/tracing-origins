@@ -147,6 +147,11 @@ export interface I18nStrings {
   originMiniMapAria: (place: string) => string;
   listUnknownCountry: string;
   listEmpty: string;
+  listFilterLabel: string;
+  listFilterPlaceholder: string;
+  listFilterClearAria: string;
+  listFilterCount: (n: number, query: string) => string;
+  listFilterEmpty: (query: string) => string;
   listAllPieces: string;
   listAllMuseums: string;
   countryClickListLink: string;
@@ -356,6 +361,11 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     originMiniMapAria: (place) => `Mapa del origen: ${place}`,
     listUnknownCountry: "País sin determinar",
     listEmpty: "Ninguna pieza coincide con los filtros activos.",
+    listFilterLabel: "Filtrar resultados",
+    listFilterPlaceholder: "Filtrar resultados…",
+    listFilterClearAria: "Borrar filtro de texto",
+    listFilterCount: (n, q) => `${n} ${n === 1 ? "resultado" : "resultados"} para «${q}»`,
+    listFilterEmpty: (q) => `Ninguna pieza de esta lista coincide con «${q}». Prueba con otra palabra o ajusta los filtros de arriba.`,
     listAllPieces: "Todas las piezas",
     listAllMuseums: "todos los museos",
     countryClickListLink: "Ver la lista agrupada por país",
@@ -592,6 +602,11 @@ export const STRINGS: Record<Lang, I18nStrings> = {
     originMiniMapAria: (place) => `Origin map: ${place}`,
     listUnknownCountry: "Country unknown",
     listEmpty: "No pieces match the active filters.",
+    listFilterLabel: "Filter results",
+    listFilterPlaceholder: "Filter results…",
+    listFilterClearAria: "Clear text filter",
+    listFilterCount: (n, q) => `${n} ${n === 1 ? "result" : "results"} for “${q}”`,
+    listFilterEmpty: (q) => `No piece in this list matches “${q}”. Try another word or adjust the filters above.`,
     listAllPieces: "All pieces",
     listAllMuseums: "all museums",
     countryClickListLink: "View the list grouped by country",

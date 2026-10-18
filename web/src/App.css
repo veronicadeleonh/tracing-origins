@@ -2465,6 +2465,54 @@ input:focus-visible,
   color: var(--color-text-soft);
 }
 
+.list-filter {
+  position: relative;
+  flex: 1 1 200px;
+  max-width: 280px;
+  margin-left: auto;
+}
+
+.list-filter-input {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  font-size: var(--font-size-sm);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-pill);
+  padding: var(--space-3) var(--space-8, 32px) var(--space-3) var(--space-6);
+}
+
+.list-filter-input:focus-visible {
+  outline: none;
+  border-color: var(--color-ink);
+  box-shadow: 0 0 0 2px var(--color-ink);
+}
+
+.list-filter-clear {
+  position: absolute;
+  top: 50%;
+  right: var(--space-3);
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: none;
+  color: var(--color-text-soft);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.list-filter-clear:hover {
+  background: var(--color-hover);
+}
+
 .list-group-control {
   display: flex;
   flex-wrap: wrap;

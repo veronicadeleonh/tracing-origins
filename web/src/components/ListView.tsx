@@ -29,8 +29,23 @@ interface Group {
 // Vista de lista (08/10): alternativa al globo. Recibe las piezas ya
 // filtradas (visibleObjects) para respetar los filtros del mapa. Se mantiene
 // montada aun oculta, para conservar scroll y agrupación al alternar.
-export function ListView({ objects, museums, lang, hidden, summary, groupBy, onGroupByChange, onSelectObject }: ListViewProps) {
+export function ListView({ objects: allObjects, museums, lang, hidden, summary, groupBy, onGroupByChange, onSelectObject }: ListViewProps) {
   const s = STRINGS[lang];
+
+  // "Filtrar resultados": texto libre aplicado solo a esta lista (ya filtrada
+  // por museo/investigación/mecanismo/tipo). Coincide con título (ES/EN) y
+  // lugar de origen; sin acentos ni mayúsculas.
+  const [query, setQuery] = useState("");
+  const q = query.trim();
+  const objects = useMemo(() => {
+    if (!q) return allObjects;
+    const norm = (t: string | null | undefined) =>
+      (t ?? "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    const needle = norm(q);
+    return allObjects.filter((o) =>
+      [o.title, o.titleEn, o.originLabel, o.originLabelEn].some((f) => norm(f).includes(needle)),
+    );
+  }, [allObjects, q]);
 
   const groups = useMemo<Group[]>(() => {
     const title = (o: MuseumObject) => ((lang === "en" ? o.titleEn || o.title : o.title) || "").toLowerCase();
@@ -103,7 +118,29 @@ export function ListView({ objects, museums, lang, hidden, summary, groupBy, onG
     <section id="list-content" tabIndex={-1} className={`list-view${hidden ? " hidden" : ""}`} aria-label={s.viewList} aria-hidden={hidden}>
       <div className="list-view-inner">
         <div className="list-view-toolbar">
-          <p className="list-view-count" role="status">{summary}</p>
+          <p className="list-view-count" role="status">{q ? s.listFilterCount(objects.length, q) : summary}</p>
+          <div className="list-filter">
+            <input
+              type="search"
+              className="list-filter-input"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={s.listFilterPlaceholder}
+              aria-label={s.listFilterLabel}
+              autoComplete="off"
+              spellCheck={false}
+            />
+            {query && (
+              <button
+                type="button"
+                className="list-filter-clear"
+                aria-label={s.listFilterClearAria}
+                onClick={() => setQuery("")}
+              >
+                ×
+              </button>
+            )}
+          </div>
           <div className="list-group-control" role="group" aria-label={s.listGroupByLabel}>
             <span className="list-group-label">{s.listGroupByLabel}</span>
             {options.map(([value, label]) => (
@@ -120,7 +157,8 @@ export function ListView({ objects, museums, lang, hidden, summary, groupBy, onG
           </div>
         </div>
 
-        {objects.length === 0 && <p className="list-empty">{s.listEmpty}</p>}
+        {allObjects.length === 0 && <p className="list-empty">{s.listEmpty}</p>}
+        {allObjects.length > 0 && objects.length === 0 && <p className="list-empty">{s.listFilterEmpty(q)}</p>}
 
         {visibleGroups.map((group) => (
           <div key={group.key} className="list-group">
