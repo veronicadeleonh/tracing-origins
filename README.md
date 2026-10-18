@@ -14,58 +14,44 @@ This is a personal portfolio project. It's a curated sample of about 645 pieces,
 
 Every object has a line from its museum to its place of origin. Click an origin point to see every piece from there, and open a piece to read its record.
 
-<!-- 📸 SCREENSHOT: docs/screenshot-globe-lines.png — the globe with lines from the four museums fanning out to their origins -->
+![descripción](docs/screenshot-globe-lines.png)
 
 &nbsp;
 
 Some pieces have a researched journey: creation, excavation, transfers and acquisition, each step with a source. There are 266 of them so far, from the Venus de Milo to the Rosetta Stone and the Benin Bronzes. The project never labels a piece as "stolen" or "not stolen". It documents the path and leaves the judgment to you.
 
-<!-- 📸 SCREENSHOT: docs/screenshot-piece-journey.png — a piece's detail panel with its provenance timeline -->
+![descripción](docs/screenshot-piece-journey.png)
 
 &nbsp;
 
 Turn on "Click on the map" and click any country to see its pieces grouped by museum, while the other lines fade out.
 
-<!-- 📸 SCREENSHOT: docs/screenshot-country-click.png — a country highlighted, with the grouped results panel open -->
+![descripción](docs/screenshot-country-click.png)
 
 &nbsp;
 
 Open "Historical context" to see the former British and French colonial territories change over time, from 1750 to 2020, and read the lines against who controlled what. The shading stops where our source's data stops: both countries still hold overseas territories today that aren't drawn here.
 
-<!-- 📸 SCREENSHOT: docs/screenshot-colonial-timeline.png — the timeline open, with colonial territories shaded on the globe -->
+![descripción](docs/screenshot-colonial-timeline.png)
 
 ## Finding things
 
 Press `/` (or Cmd/Ctrl+K) to open search. It shows the pieces you looked at recently, and filters by title as you type. You can also filter by museum, by how a piece was acquired and by type of object.
 
-<!-- 📸 SCREENSHOT: docs/screenshot-search.png — the search palette open over the blurred map -->
+![descripción](docs/screenshot-search.png)
 
 &nbsp;
 
 If you'd rather not use the globe, `/list` shows the same pieces as a plain list, grouped by museum or country, with the same filters carried in the URL.
 
-<!-- 📸 SCREENSHOT: docs/screenshot-list-view.png — the list view with filters on top -->
-
-## Latest updates
-
-The most recent round of changes, from the accessibility pass (October 2026):
-
-- **List view at `/list`.** The same pieces as a plain list, grouped by museum or country, with filters shared with the map through the URL. It loads in batches, so it stays light.
-- **New search.** A magnifier button opens a centered search over a blurred map. It shows recently viewed pieces, filters by title as you type, and opens with `/` or Cmd/Ctrl+K.
-- **Keyboard and focus.** Tab order now follows the visual layout, there is a "skip to the list" link, focus moves into the piece panel when it opens, and menus close with Escape.
-- **Screen readers.** The page declares its language from the first load, the language switch is a clear ES | EN control, and the onboarding tour is announced as a dialog.
-- **Zoom and small screens.** The layout holds up at 320 px wide and at 200% zoom.
-- **System preferences.** The app respects reduced motion, higher contrast and forced colors, and the map moves with an instant jump instead of an animation when you ask for less motion.
-- **Map lines.** Hover highlights only the line you touch, and clicking it opens the piece.
-- **Contrast and sizes.** Muted text, labels and small buttons were adjusted to meet WCAG 2.2 AA, and the design tokens now live in one place.
-- **Performance.** The list view went from about 228 MB to 5 MB of images, with lazy-loaded thumbnails.
-- **Historical context, simplified.** The naval routes layer was removed because it didn't connect to the pieces; the colonial territories stay.
+![descripción](docs/screenshot-list-view.png)
 
 ## Built to be usable by more people
 
 The whole app works with a keyboard, and the list view is a full alternative to the map. Text meets contrast requirements, it adapts to small screens and 200% zoom, and it respects system settings for reduced motion, higher contrast and forced colors. The interface is in Spanish and English, including the researched text. I audited it with Lighthouse, axe and WAVE and tested keyboard use, zoom and color-blindness simulations by hand. A screen-reader pass with VoiceOver is still in progress.
 
-<!-- 📸 SCREENSHOT (optional): docs/screenshot-mobile.png — the app on a phone, with the filters drawer open -->
+<!--
+![descripción](docs/screenshot-mobile.png) -->
 
 ## How the data is organized
 
